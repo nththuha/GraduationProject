@@ -13,7 +13,6 @@ import com.example.nthrestaurant.view.adapter.ViewPagerAdapter
 class TrangChuFragment : Fragment() {
     private var _binding: FragmentTrangChuBinding? = null
     private val binding get() = _binding!!
-    val n = 5;
 
     private lateinit var viewPager: ViewPager2
     private lateinit var viewPagerAdapter: ViewPagerAdapter
