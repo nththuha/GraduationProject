@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dp"
+    android:layout_height="120dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background_room_click_false"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginEnd="5dp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPhong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvTrangThai"
+        android:layout_marginTop="10dp"
+        tools:text="Phòng 1"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivTrangThai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_status"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/tvPhong"
+        app:layout_constraintBottom_toTopOf="@id/tvSoGhe"
+        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        android:layout_marginStart="10dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTrangThai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Còn bàn"
+        app:layout_constraintStart_toEndOf="@id/guideline1"
+        app:layout_constraintBottom_toBottomOf="@id/ivTrangThai"
+        app:layout_constraintTop_toTopOf="@id/ivTrangThai"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="2dp"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivSoGhe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_chair"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTrangThai"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSoGhe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="5/15"
+        app:layout_constraintStart_toEndOf="@id/guideline1"
+        app:layout_constraintBottom_toBottomOf="@id/ivSoGhe"
+        app:layout_constraintTop_toTopOf="@id/ivSoGhe"
+        android:layout_marginBottom="2dp"
+        android:textSize="15sp"
+        android:textColor="@color/black"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

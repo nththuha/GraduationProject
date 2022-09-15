@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dangNhapFragment">
+
+    <fragment
+        android:id="@+id/dangNhapFragment"
+        android:name="com.example.nthrestaurant.view.DangNhapFragment"
+        android:label="fragment_dang_nhap"
+        tools:layout="@layout/fragment_dang_nhap">
+        <action
+            android:id="@+id/action_dangNhapFragment_to_trangChuFragment"
+            app:destination="@id/trangChuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chucNangFragment"
+        android:name="com.example.nthrestaurant.view.QLPhieuDatFragment"
+        android:label="fragment_chuc_nang"
+        tools:layout="@layout/fragment_q_l_phieu_dat" >
+        <action
+            android:id="@+id/action_chucNangFragment_to_datChoFragment"
+            app:destination="@id/datChoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thongTinCaNhanFragment"
+        android:name="com.example.nthrestaurant.view.ThongTinCaNhanFragment"
+        android:label="fragment_thong_tin_ca_nhan"
+        tools:layout="@layout/fragment_thong_tin_ca_nhan" />
+    <fragment
+        android:id="@+id/trangChuFragment"
+        android:name="com.example.nthrestaurant.view.TrangChuFragment"
+        android:label="fragment_trang_chu"
+        tools:layout="@layout/fragment_trang_chu" />
+    <fragment
+        android:id="@+id/datChoFragment"
+        android:name="com.example.nthrestaurant.view.DatChoFragment"
+        android:label="fragment_dat_cho"
+        tools:layout="@layout/fragment_dat_cho" >
+        <action
+            android:id="@+id/action_datChoFragment_to_datMonFragment"
+            app:destination="@id/datMonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/datMonFragment"
+        android:name="com.example.nthrestaurant.view.DatMonFragment"
+        android:label="fragment_dat_mon"
+        tools:layout="@layout/fragment_dat_mon" />
+    <fragment
+        android:id="@+id/QLMonFragment"
+        android:name="com.example.nthrestaurant.view.QLMonFragment"
+        android:label="fragment_q_l_mon"
+        tools:layout="@layout/fragment_q_l_mon" />
+    <fragment
+        android:id="@+id/QLPhongFragment"
+        android:name="com.example.nthrestaurant.view.QLPhongFragment"
+        android:label="fragment_q_l_phong"
+        tools:layout="@layout/fragment_q_l_phong" />
+</navigation>

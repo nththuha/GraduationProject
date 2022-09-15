@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/grey"
+    tools:context=".view.DatMonFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.94" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/svMonAn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivLoc"
+        app:layout_constraintTop_toTopOf="parent"
+        android:hint="@string/fragment_datmon_et_hint"
+        style="@style/fragment_datmon_sv" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivLoc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/svMonAn"
+        android:src="@drawable/ic_filter"
+        app:layout_constraintStart_toEndOf="@id/svMonAn"
+        style="@style/fragnment_datmon_iv_filter" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvLoaiMonAn"
+        android:text="@string/fragment_datmon_tv_loaimonan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/svMonAn"
+        style="@style/fragmet_datmon_tv_tittle" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srLoaiMonAn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoaiMonAn"
+        app:layout_constraintBottom_toTopOf="@+id/srMonAn"
+        style="@style/fragment_datmon_sr_loaimonan">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLoaiMonAn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_loai_mon_an"
+            tools:itemCount="6"
+            android:scrollbars="horizontal"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srMonAn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/srLoaiMonAn"
+        app:layout_constraintBottom_toBottomOf="@id/guideline1"
+        style="@style/fragment_datmon_sr_monan">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMonAn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_mon_an"
+            tools:itemCount="12"
+            android:scrollbars="vertical" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/guideline1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivGioHang"
+            android:src="@drawable/ic_cart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            style="@style/fragment_datmon_iv_giohang" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivTrangThaiGH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/ivGioHang"
+            android:src="@drawable/ic_circle_red"
+            app:layout_constraintTop_toTopOf="@id/ivGioHang"
+            android:layout_margin="2dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center|end"
+            android:textSize="20sp"
+            tools:text="750,000 VND"
+            android:textColor="@color/red"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/tvDatMon"
+            android:layout_marginEnd="16dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tvDatMon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/btn_dangnhap"
+            android:text="@string/fragment_datmon_xacnhandat"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textStyle="bold"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

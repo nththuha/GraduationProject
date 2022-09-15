@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">NTH Restaurant</string>
+    <!--    Fragment Đăng nhập      -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_dangnhap_tieude">ĐĂNG NHẬP</string>
+    <string name="fragment_dangnhap_quenmatkhau">Quên mật khẩu?</string>
+    <string name="fragment_dangnhap_hint_tendangnhap">Tên đăng nhập</string>
+    <string name="fragment_dangnhap_hint_matkhau">Mật khẩu</string>
+    <!--    Fragment Đăng nhập      -->
+
+    <!--    Fragment Đặt món      -->
+    <string name="fragment_datmon_et_hint">Cá hấp</string>
+    <string name="fragment_datmon_tv_loaimonan">Loại món ăn</string>
+    <string name="fragment_datmon_xacnhandat">Xác nhận</string>
+    <!--    Fragment Đặt món      -->
+
+    <!--    Dialog Đặt món      -->
+    <string name="dialog_dat_mon_tv_chuthich">Chú thích:</string>
+    <string name="dialog_dat_mon_tv_so_luong">1</string>
+    <string name="dialog_dat_mon_btn_xac_nhan">Xác nhận</string>
+    <!--    Dialog Đặt món      -->
+
+    <!--    Dialog thông báo thành công      -->
+    <string name="dialog_thong_bao_thanh_cong_btn_xac_nhan">OK</string>
+    <!--    Dialog thông báo thành công      -->
+
+    <!--    Dialog thông báo thất bại      -->
+    <string name="dialog_thong_bao_that_bai_btn_xac_nhan">OK</string>
+    <!--    Dialog thông báo thất bại      -->
+
+    <!--    Dialog đăng xuất      -->
+    <string name="dialog_dang_xuat_tv_tieu_de">XÁC NHẬN ĐĂNG XUẤT</string>
+    <string name="dialog_dang_xuat_tv_cau_hoi">Bạn có muốn đăng xuất?</string>
+    <string name="dialog_dang_xuat_btn_dang_xuat">Đăng xuất</string>
+    <string name="dialog_dang_xuat_btn_huy">Hủy</string>
+    <!--    Dialog đăng xuất      -->
+
+    <!--    Dialog chi tiết đặt món      -->
+    <string name="dialog_chi_tiet_dat_mon_btn_da_phuc_vu">Đã phục vụ</string>
+    <!--    Dialog chi tiết đặt món      -->
+
+    <!--    Fragment đặt chỗ      -->
+    <string name="fragment_dat_cho_tv_hint_tim_kiem">Phòng 1</string>
+    <string name="fragment_dat_cho_tv_phong">Phòng</string>
+    <string name="fragment_dat_cho_tv_ban">Bàn</string>
+    <!--    Fragment đặt chỗ      -->
+
+</resources>
