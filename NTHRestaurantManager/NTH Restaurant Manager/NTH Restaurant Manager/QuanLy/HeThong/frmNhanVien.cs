@@ -21,7 +21,7 @@ namespace NTH_Restaurant_Manager
     {
         HinhAnhRepository repository = new HinhAnhRepository();
         MediaFile file;
-
+        MediaFile test;
         public frmNhanVien()
         {
             InitializeComponent();
