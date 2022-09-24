@@ -15,7 +15,7 @@
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/dialog_dat_mon.xml" value="0.15789473684210525" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/dialog_thong_bao_thanh_cong.xml" value="0.15789473684210525" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/dialog_thong_bao_that_bai.xml" value="0.15789473684210525" />
-        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_dang_nhap.xml" value="0.15789473684210525" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_dang_nhap.xml" value="0.2" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_dat_cho.xml" value="0.15789473684210525" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_dat_mon.xml" value="0.15789473684210525" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_q_l_mon.xml" value="0.264" />
@@ -26,6 +26,8 @@
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/item_ban.xml" value="0.15789473684210525" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/item_chi_tiet_dat_mon.xml" value="0.6" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/item_loai_mon_an.xml" value="0.15789473684210525" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/item_mon_an.xml" value="0.15789473684210525" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/item_phong.xml" value="0.15789473684210525" />
         <entry key="..\:/Project/NTHRestaurant/app/src/main/res/drawable-v24/background_monan_click_true.xml" value="0.155" />
         <entry key="..\:/Project/NTHRestaurant/app/src/main/res/drawable/background_grey.xml" value="0.1455" />
         <entry key="..\:/Project/NTHRestaurant/app/src/main/res/drawable/background_monan.xml" value="0.1455" />
