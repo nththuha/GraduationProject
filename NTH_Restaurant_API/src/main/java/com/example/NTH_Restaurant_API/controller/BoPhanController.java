@@ -8,4 +8,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/bophan")
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class BoPhanController {
+
 }

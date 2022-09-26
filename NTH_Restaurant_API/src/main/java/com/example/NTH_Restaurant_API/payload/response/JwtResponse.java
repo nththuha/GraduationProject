@@ -1,7 +1,5 @@
 package com.example.NTH_Restaurant_API.payload.response;
 
-import java.util.List;
-
 public class JwtResponse {
     private String token;
     private String type = "Bearer";
