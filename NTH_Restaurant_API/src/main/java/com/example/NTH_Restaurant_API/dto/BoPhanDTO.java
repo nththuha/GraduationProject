@@ -20,13 +20,6 @@ public class BoPhanDTO {
 
     public BoPhanDTO(BoPhanEntity boPhanEntity) {
         this.maBP = boPhanEntity.getMaBP();
-        this.tenBP = boPhanEntity.getTenBP();
-    }
-
-    public BoPhanEntity toEntity() {
-        BoPhanEntity boPhanEntity = new BoPhanEntity();
-        boPhanEntity.setMaBP(this.maBP);
-        boPhanEntity.setTenBP(this.tenBP);
-        return boPhanEntity;
+        this.tenBP = boPhanEntity.getTenBP().name();
     }
 }

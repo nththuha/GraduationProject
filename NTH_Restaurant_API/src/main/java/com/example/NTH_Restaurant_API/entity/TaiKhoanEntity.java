@@ -21,7 +21,7 @@ public class TaiKhoanEntity {
     private String maTK;
 
     @Column(name = "MATKHAU")
-    @Size(max = 50)
+    @Size(max = 255)
     private String matKhau;
 
     @OneToOne

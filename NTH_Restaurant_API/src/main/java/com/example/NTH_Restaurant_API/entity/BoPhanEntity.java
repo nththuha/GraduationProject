@@ -21,9 +21,9 @@ public class BoPhanEntity {
     @Size(max = 10)
     private String maBP;
 
-    @Column(name = "TENBP")
-    @Size(max = 50)
-    private String tenBP;
+    @Enumerated(EnumType.STRING)
+    @Column(length = 50)
+    private EnumBoPhan tenBP;
 
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "mapb")
     private List<NhanVienEntity> nhanVienList;

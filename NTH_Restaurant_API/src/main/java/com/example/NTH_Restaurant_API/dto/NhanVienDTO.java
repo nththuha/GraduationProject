@@ -38,7 +38,7 @@ public class NhanVienDTO {
         this.email = nhanVienEntity.getEmail();
         if (nhanVienEntity.getTaikhoan() != null) this.taiKhoan = nhanVienEntity.getTaikhoan().getMaTK();
         this.maBP = nhanVienEntity.getMapb().getMaBP();
-        this.tenBP = nhanVienEntity.getMapb().getTenBP();
+        this.tenBP = nhanVienEntity.getMapb().getTenBP().name();
     }
 
     public NhanVienEntity toEntity() {
