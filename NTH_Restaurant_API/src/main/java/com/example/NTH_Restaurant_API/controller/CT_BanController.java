@@ -6,6 +6,7 @@ import com.example.NTH_Restaurant_API.service.CT_BanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -23,5 +24,15 @@ public class CT_BanController {
     @GetMapping("/danhsach/{maphong}")
     public List<CT_BanDTO> layDSCTBanTheoPhong(@PathVariable String maphong) {
         return ct_banService.layDSCTBanTheoPhong(maphong);
+    }
+
+    @PostMapping("")
+    public String themCT_Ban(@Valid @RequestBody CT_BanDTO ct_banDTO){
+        return ct_banService.themCT_Ban(ct_banDTO);
+    }
+
+    @DeleteMapping("/{idCTB}")
+    public String xoaCT_Ban(@PathVariable Integer idCTB){
+        return ct_banService.xoaCT_Ban(idCTB);
     }
 }

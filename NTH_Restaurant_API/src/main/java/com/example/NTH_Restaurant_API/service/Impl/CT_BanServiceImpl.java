@@ -2,7 +2,9 @@ package com.example.NTH_Restaurant_API.service.Impl;
 
 import com.example.NTH_Restaurant_API.dto.BanDTO;
 import com.example.NTH_Restaurant_API.dto.CT_BanDTO;
+import com.example.NTH_Restaurant_API.entity.BanEntity;
 import com.example.NTH_Restaurant_API.entity.CT_BanEntity;
+import com.example.NTH_Restaurant_API.entity.PhongEntity;
 import com.example.NTH_Restaurant_API.repository.BanRepository;
 import com.example.NTH_Restaurant_API.repository.CT_BanRepository;
 import com.example.NTH_Restaurant_API.repository.PhongRepository;
@@ -51,5 +53,39 @@ public class CT_BanServiceImpl implements CT_BanService {
     public List<CT_BanDTO> layDSCTBanTheoPhong(String maphong) {
         List<CT_BanEntity> list = ct_banRepository.findByMaphong_MaPhong(maphong);
         return list.stream().map(CT_BanDTO::new).collect(Collectors.toList());
+    }
+
+    @Override
+    public String themCT_Ban(CT_BanDTO ct_banDTO) {
+        List<CT_BanEntity> list = ct_banRepository.findByMaphong_MaPhong(ct_banDTO.getMaphong());
+        for (CT_BanEntity item : list) {
+            if (item.getMaban().getMaBan().equals(ct_banDTO.getMaban())) {
+                return "false";
+            }
+        }
+        PhongEntity phong = phongRepository.getById(ct_banDTO.getMaphong());
+        BanEntity ban = banRepository.getById(ct_banDTO.getMaban());
+        CT_BanEntity ct_ban = ct_banDTO.toEntity();
+        ct_ban.setMaphong(phong);
+        ct_ban.setMaban(ban);
+        ct_ban.setTrangThai("Còn chỗ");
+        try {
+            ct_banRepository.save(ct_ban);
+            return "true";
+        }
+        catch (Exception e){
+            return "false";
+        }
+    }
+
+    @Override
+    public String xoaCT_Ban(Integer idCTB) {
+        try {
+            ct_banRepository.deleteById(idCTB);
+            return "true";
+        }
+        catch (Exception e){
+            return "false";
+        }
     }
 }
