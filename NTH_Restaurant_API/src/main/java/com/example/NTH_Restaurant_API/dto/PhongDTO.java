@@ -12,7 +12,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class PhongDTO {
     private String maPhong;
-
     private String tenPhong;
 
     private String trangThai;

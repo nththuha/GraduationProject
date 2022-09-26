@@ -12,9 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class LoaiMonAnDTO {
     private String maLMA;
-
     private String tenLMA;
-
     private String hinhAnh;
 
     public LoaiMonAnDTO(LoaiMonAnEntity loaiMonAnEntity) {

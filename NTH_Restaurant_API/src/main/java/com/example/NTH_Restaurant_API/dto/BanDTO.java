@@ -12,7 +12,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class BanDTO {
     private String maBan;
-
     private String tenBan;
 
     private String trangThai;
