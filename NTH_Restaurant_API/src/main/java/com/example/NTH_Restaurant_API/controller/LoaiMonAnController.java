@@ -1,6 +1,7 @@
 package com.example.NTH_Restaurant_API.controller;
 
 import com.example.NTH_Restaurant_API.dto.LoaiMonAnDTO;
+import com.example.NTH_Restaurant_API.dto.MonAnDTO;
 import com.example.NTH_Restaurant_API.service.LoaiMonAnService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,11 @@ public class LoaiMonAnController {
     @GetMapping("")
     public List<LoaiMonAnDTO> layDSLoaiMonAn(){
         return loaiMonAnService.layDSLoaiMonAn();
+    }
+
+    @GetMapping("/{maLMA}")
+    public List<MonAnDTO> layDSMonAnTheoLoaiMonAn(@PathVariable String maLMA){
+        return loaiMonAnService.layDSMonAnTheoLoaiMonAn(maLMA);
     }
 
     @PostMapping("")

@@ -27,6 +27,8 @@ public class MonAnDTO {
 
     private String tenlma;
 
+    private int idNV;
+
     public MonAnDTO(MonAnEntity monAnEntity) {
         this.maMA = monAnEntity.getMaMA();
         this.tenMA = monAnEntity.getTenMA();
