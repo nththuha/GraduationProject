@@ -27,6 +27,8 @@ public class CT_DatMonDTO {
 
     private String tenma;
 
+    private String hinhAnh;
+
     private String malma;
 
     private Integer idpd;
@@ -44,6 +46,7 @@ public class CT_DatMonDTO {
         this.gia = ct_datMonEntity.getGia();
         this.mama = ct_datMonEntity.getMama().getMaMA();
         this.tenma = ct_datMonEntity.getMama().getTenMA();
+        this.hinhAnh = ct_datMonEntity.getMama().getHinhAnh();
         this.malma = ct_datMonEntity.getMama().getMalma().getMaLMA();
         this.idpd = ct_datMonEntity.getIdpd().getIdPD();
     }
