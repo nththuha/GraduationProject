@@ -15,23 +15,10 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class PhucVuViewModel : ViewModel() {
-    var token: Token =  Token("", "", "", "")
+    var token: String = ""
 
-    fun dangNhap(taiKhoan: TaiKhoanEntity): Token {
-        viewModelScope.launch {
-            val job = async {
-                var token: Token = Token("", "", "", "")
-                try{
-                   // token = RestaurantApi.retrofitService.dangNhap(taiKhoan)
-                }
-                catch (e: Exception){
-                    Log.e("Đăng nhập", e.message.toString())
-                }
-                token
-            }
-            token = job.await()
-        }
-        return token
+    fun thietLapToken(token: String){
+        this.token = token
     }
 
 }

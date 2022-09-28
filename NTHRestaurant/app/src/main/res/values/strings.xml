@@ -45,4 +45,10 @@
     <string name="fragment_dat_cho_tv_ban">Bàn</string>
     <!--    Fragment đặt chỗ      -->
 
+    <!--    Item phiếu đặt      -->
+    <string name="item_phieu_dat_maphieudat">Phiếu đặt: %s</string>
+    <string name="item_phieu_dat_dat_mon">ĐẶT MÓN</string>
+    <string name="item_phieu_dat_chi_tiet">CHI TIẾT</string>
+    <!--    Item phiếu đặt      -->
+
 </resources>
