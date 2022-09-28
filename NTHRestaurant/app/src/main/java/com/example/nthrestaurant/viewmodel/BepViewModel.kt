@@ -1,0 +1,6 @@
+package com.example.nthrestaurant.viewmodel
+
+import androidx.lifecycle.ViewModel
+
+class BepViewModel: ViewModel() {
+}

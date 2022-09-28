@@ -7,6 +7,7 @@ import android.view.Gravity
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 
 fun dialogDatMon(fm: FragmentActivity) {
@@ -55,7 +56,7 @@ fun dialogThanhCong(fm: FragmentActivity) {
     dialog.show()
 }
 
-fun dialogThatBai(fm: FragmentActivity) {
+fun dialogThatBai(fm: FragmentActivity, thongBao: String) {
     val dialog = Dialog(fm)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
     dialog.setContentView(R.layout.dialog_thong_bao_that_bai)
@@ -73,6 +74,7 @@ fun dialogThatBai(fm: FragmentActivity) {
 
     dialog.setCancelable(false)
 
+    dialog.findViewById<TextView>(R.id.tvThongBao_TB).text = thongBao
     dialog.findViewById<Button>(R.id.btnXacNhan_TB).setOnClickListener {
         dialog.dismiss()
     }

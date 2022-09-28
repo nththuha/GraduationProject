@@ -52,14 +52,16 @@
             style="@style/fragment_dangnhap_et"
             android:drawableStart="@drawable/ic_person"
             android:inputType="text"
-            android:hint="@string/fragment_dangnhap_hint_tendangnhap" />
+            android:hint="@string/fragment_dangnhap_hint_tendangnhap"
+            android:text="NQN"/>
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/etMatKhau"
             style="@style/fragment_dangnhap_et"
             android:drawableStart="@drawable/ic_lock"
             android:inputType="textPassword"
-            android:hint="@string/fragment_dangnhap_hint_matkhau" />
+            android:hint="@string/fragment_dangnhap_hint_matkhau"
+            android:text="02042000"/>
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -84,6 +86,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
