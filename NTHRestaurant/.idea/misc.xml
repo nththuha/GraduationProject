@@ -13,6 +13,7 @@
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_cong_available.xml" value="0.1455" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_cong_unavailable.xml" value="0.1455" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_table.xml" value="0.1455" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_them.xml" value="0.1415" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/activity_main.xml" value="0.15789473684210525" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/dialog_dang_xuat.xml" value="0.15789473684210525" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/dialog_dat_mon.xml" value="0.15789473684210525" />
@@ -20,7 +21,7 @@
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/dialog_thong_bao_that_bai.xml" value="0.15789473684210525" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_dang_nhap.xml" value="0.2" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_dat_cho.xml" value="0.2" />
-        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_dat_mon.xml" value="0.4" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_dat_mon.xml" value="0.2" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_q_l_mon.xml" value="0.2" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_q_l_phieu_dat.xml" value="0.2" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_q_l_phong.xml" value="0.15789473684210525" />

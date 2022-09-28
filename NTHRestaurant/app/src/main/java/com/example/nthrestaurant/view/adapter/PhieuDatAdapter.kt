@@ -2,11 +2,15 @@ package com.example.nthrestaurant.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.nthrestaurant.R
 import com.example.nthrestaurant.databinding.ItemPhieuDatBinding
 import com.example.nthrestaurant.network.model.PhieuDatEntity
+import com.example.nthrestaurant.view.TrangChuFragmentDirections
 
 class PhieuDatAdapter(private val clickListener: (PhieuDatEntity) -> Unit) : ListAdapter<PhieuDatEntity, PhieuDatAdapter.PhieuDatEntityViewHolder>(DiffCallback) {
 
@@ -32,19 +36,19 @@ class PhieuDatAdapter(private val clickListener: (PhieuDatEntity) -> Unit) : Lis
     override fun onBindViewHolder(holder: PhieuDatEntityViewHolder, position: Int) {
         val ticketReservation = getItem(position)
 
-//        holder.itemView.findViewById<Button>(R.id.btnOrder).setOnClickListener {
+        holder.itemView.findViewById<Button>(R.id.btnDatMon).setOnClickListener {
+            val action =
+                TrangChuFragmentDirections.actionTrangChuFragmentToDatMonFragment()
+            holder.itemView.findNavController().navigate(action)
+            clickListener(ticketReservation)
+        }
+
+        holder.itemView.findViewById<Button>(R.id.btnChiTiet).setOnClickListener {
 //            val action =
-//                TicketReservationFragmentDirections.actionTicketReservationFragmentToOrderFragment()
+//                TrangChuFragmentDirections.
 //            holder.itemView.findNavController().navigate(action)
 //            clickListener(ticketReservation)
-//        }
-//
-//        holder.itemView.findViewById<Button>(R.id.btnDetail).setOnClickListener {
-//            val action =
-//                TicketReservationFragmentDirections.actionTicketReservationFragmentToDetailFragment()
-//            holder.itemView.findNavController().navigate(action)
-//            clickListener(ticketReservation)
-//        }
+        }
 
         holder.bind(ticketReservation)
     }

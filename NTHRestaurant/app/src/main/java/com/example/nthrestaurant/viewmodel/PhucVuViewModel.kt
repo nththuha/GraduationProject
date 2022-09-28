@@ -15,8 +15,15 @@ class PhucVuViewModel : ViewModel() {
     private val _dsPhieuDat = MutableLiveData<List<PhieuDatEntity>>()
     val dsPhieuDat: LiveData<List<PhieuDatEntity>> = _dsPhieuDat
 
+    private val _phieuDat = MutableLiveData<PhieuDatEntity>()
+    val phieuDat: LiveData<PhieuDatEntity> = _phieuDat
+
     fun thietLapToken(token: String){
         this.token = token
+    }
+
+    fun thietLapPhieuDat(phieuDat: PhieuDatEntity){
+        this._phieuDat.value = phieuDat
     }
 
     fun layDSPhieuDatChuaCoHoaDon(): LiveData<List<PhieuDatEntity>> {

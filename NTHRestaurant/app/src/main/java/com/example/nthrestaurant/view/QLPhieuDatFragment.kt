@@ -30,17 +30,17 @@ class QLPhieuDatFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = PhieuDatAdapter {
-            //viewModel.chonPhieuDat(it)
+            viewModel.thietLapPhieuDat(it)
         }
         loadDSPhieuDatKhongHoaDon()
         binding.apply {
             rvPhieuDat.adapter = adapter
 
-//            ivAdd.setOnClickListener {
-//                val action =
-//                    TicketReservationFragmentDirections.actionTicketReservationFragmentToRoomReservationFragment()
-//                view.findNavController().navigate(action)
-//            }
+            ivThem.setOnClickListener {
+                val action =
+                    TrangChuFragmentDirections.actionTrangChuFragmentToDatChoFragment()
+                view.findNavController().navigate(action)
+            }
 
             srPhieuDat.setOnRefreshListener {
                 loadDSPhieuDatKhongHoaDon()

@@ -18,11 +18,7 @@
         android:id="@+id/chucNangFragment"
         android:name="com.example.nthrestaurant.view.QLPhieuDatFragment"
         android:label="fragment_chuc_nang"
-        tools:layout="@layout/fragment_q_l_phieu_dat" >
-        <action
-            android:id="@+id/action_chucNangFragment_to_datChoFragment"
-            app:destination="@id/datChoFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_q_l_phieu_dat" />
     <fragment
         android:id="@+id/thongTinCaNhanFragment"
         android:name="com.example.nthrestaurant.view.ThongTinCaNhanFragment"
@@ -32,7 +28,14 @@
         android:id="@+id/trangChuFragment"
         android:name="com.example.nthrestaurant.view.TrangChuFragment"
         android:label="fragment_trang_chu"
-        tools:layout="@layout/fragment_trang_chu" />
+        tools:layout="@layout/fragment_trang_chu" >
+        <action
+            android:id="@+id/action_trangChuFragment_to_datChoFragment"
+            app:destination="@id/datChoFragment" />
+        <action
+            android:id="@+id/action_trangChuFragment_to_datMonFragment"
+            app:destination="@id/datMonFragment" />
+    </fragment>
     <fragment
         android:id="@+id/datChoFragment"
         android:name="com.example.nthrestaurant.view.DatChoFragment"
