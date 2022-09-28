@@ -20,15 +20,16 @@
         android:id="@+id/tvPhong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tvTrangThai"
         android:layout_marginTop="10dp"
-        tools:text="Phòng 1"
-        android:textSize="20sp"
+        android:fontFamily="sans-serif"
         android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tvTrangThai"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Phòng 1" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivTrangThai"

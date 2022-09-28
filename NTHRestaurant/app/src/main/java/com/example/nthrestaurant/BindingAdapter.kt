@@ -1,7 +1,6 @@
 package com.example.nthrestaurant
 
 import android.widget.ImageView
-import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import coil.load
 

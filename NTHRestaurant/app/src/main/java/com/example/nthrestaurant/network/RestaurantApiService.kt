@@ -1,5 +1,6 @@
 package com.example.nthrestaurant.network
 
+import com.example.nthrestaurant.network.model.PhieuDatEntity
 import com.example.nthrestaurant.network.model.TaiKhoanEntity
 import com.example.nthrestaurant.network.model.Token
 import com.squareup.moshi.Moshi
@@ -7,10 +8,11 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.Protocol
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -38,6 +40,9 @@ private val retrofit = Retrofit.Builder()
 interface RestaurantApiService {
     @POST("taikhoan/dangnhap")
     suspend fun dangNhap(@Body taiKhoan: TaiKhoanEntity): Token
+
+    @GET("phieudat")
+    suspend fun layDSPhieuDatChuaCoHoaDon(@Header("Authorization") token: String): List<PhieuDatEntity>
 }
 
 object RestaurantApi {
