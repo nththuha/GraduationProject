@@ -1,56 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="90dp"
-    android:layout_height="90dp"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/background_room"
-    android:layout_marginBottom="5dp"
-    android:layout_marginEnd="5dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.6" />
+    <data>
+        <variable
+            name="ban"
+            type="com.example.nthrestaurant.network.model.BanEntity" />
+    </data>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvBan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/ivSoGhe"
-        android:layout_marginTop="10dp"
-        tools:text="Bàn 1"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clBan"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/background_room"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="5dp">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivSoGhe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_chair"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvBan"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/guideline1"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvSoGhe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="2"
-        app:layout_constraintStart_toEndOf="@id/guideline1"
-        app:layout_constraintBottom_toBottomOf="@id/ivSoGhe"
-        app:layout_constraintTop_toTopOf="@id/ivSoGhe"
-        android:layout_marginBottom="2dp"
-        android:textSize="15sp"
-        android:textColor="@color/black"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/ivSoGhe"
+            android:layout_marginTop="10dp"
+            tools:text="Bàn 1"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="@{ban.tenBan}"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSoGhe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_chair"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvBan"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline1"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSoGhe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="2"
+            app:layout_constraintStart_toEndOf="@id/guideline1"
+            app:layout_constraintBottom_toBottomOf="@id/ivSoGhe"
+            app:layout_constraintTop_toTopOf="@id/ivSoGhe"
+            android:layout_marginBottom="2dp"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="@{@string/item_ban_so_ghe(ban.soGhe)}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

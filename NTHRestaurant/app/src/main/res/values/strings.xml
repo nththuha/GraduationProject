@@ -51,4 +51,7 @@
     <string name="item_phieu_dat_chi_tiet">CHI TIẾT</string>
     <!--    Item phiếu đặt      -->
 
+    <!--    Item bàn      -->
+    <string name="item_ban_so_ghe">%s</string>
+    <!--    Item bàn      -->
 </resources>
