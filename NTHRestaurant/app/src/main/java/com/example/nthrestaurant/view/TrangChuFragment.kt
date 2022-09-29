@@ -76,4 +76,9 @@ class TrangChuFragment : Fragment() {
         viewPager.adapter = viewPagerAdapter
         viewPager.isUserInputEnabled = false
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 }
