@@ -9,8 +9,9 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
+import com.example.nthrestaurant.network.model.MonAnEntity
 
-fun dialogDatMon(fm: FragmentActivity) {
+fun dialogDatMon(fm: FragmentActivity, monAn: MonAnEntity) {
     val dialog = Dialog(fm)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
     dialog.setContentView(R.layout.dialog_dat_mon)

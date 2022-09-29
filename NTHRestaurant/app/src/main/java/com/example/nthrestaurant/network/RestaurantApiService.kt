@@ -44,6 +44,12 @@ interface RestaurantApiService {
 
     @GET("ctban/{maPhong}")
     suspend fun layDSBanTheoPhong(@Path("maPhong") maPhong: String, @Header("Authorization") token: String): List<BanEntity>
+
+    @GET("loaimonan")
+    suspend fun layDSLoaiMonAn( @Header("Authorization") token: String): List<LoaiMonAnEntity>
+
+    @GET("loaimonan/{maLMA}")
+    suspend fun layDSMonAnTheoLoaiMonAn(@Path("maLMA") maLMA: String,  @Header("Authorization") token: String): List<MonAnEntity>
 }
 
 object RestaurantApi {

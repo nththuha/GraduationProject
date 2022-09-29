@@ -80,7 +80,7 @@
 
     <style name="fragment_datmon_sr_loaimonan">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">132dp</item>
+        <item name="android:layout_height">140dp</item>
         <item name="android:layout_marginStart">10dp</item>
         <item name="android:layout_marginEnd">10dp</item>
         <item name="android:orientation">horizontal</item>

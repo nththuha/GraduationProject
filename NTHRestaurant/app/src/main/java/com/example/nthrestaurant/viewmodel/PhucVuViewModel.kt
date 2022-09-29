@@ -6,9 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.nthrestaurant.network.RestaurantApi
-import com.example.nthrestaurant.network.model.BanEntity
-import com.example.nthrestaurant.network.model.PhieuDatEntity
-import com.example.nthrestaurant.network.model.PhongEntity
+import com.example.nthrestaurant.network.model.*
 import kotlinx.coroutines.launch
 
 class PhucVuViewModel : ViewModel() {
@@ -31,6 +29,18 @@ class PhucVuViewModel : ViewModel() {
 
     private val _ban = MutableLiveData<BanEntity>()
     val ban: LiveData<BanEntity> = _ban
+
+    private val _dsLMA = MutableLiveData<List<LoaiMonAnEntity>>()
+    val dsLMA: LiveData<List<LoaiMonAnEntity>> = _dsLMA
+
+    private val _loaiMonAn = MutableLiveData<LoaiMonAnEntity>()
+    val loaiMonAn: LiveData<LoaiMonAnEntity> = _loaiMonAn
+
+    private val _dsMA = MutableLiveData<List<MonAnEntity>>()
+    val dsMA: LiveData<List<MonAnEntity>> = _dsMA
+
+    private val _monAn = MutableLiveData<MonAnEntity>()
+    val monAn: LiveData<MonAnEntity> = _monAn
 
     fun thietLapToken(token: String){
         this.token = token
@@ -79,5 +89,35 @@ class PhucVuViewModel : ViewModel() {
 
     fun thietLapBan(ban: BanEntity){
         this._ban.value = ban
+    }
+
+    fun layDSLoaiMonAn(): LiveData<List<LoaiMonAnEntity>> {
+        viewModelScope.launch {
+            try {
+                _dsLMA.value = RestaurantApi.retrofitService.layDSLoaiMonAn(token)
+            } catch (e: Exception) {
+                Log.e("Lỗi load ds loại món ăn", e.message.toString())
+            }
+        }
+        return dsLMA
+    }
+
+    fun thietLapLoaiMonAn(loaiMonAn: LoaiMonAnEntity) {
+        this._loaiMonAn.value = loaiMonAn
+    }
+
+    fun layDSMonAnTheoLoaiMonAn(): LiveData<List<MonAnEntity>> {
+        viewModelScope.launch {
+            try {
+                _dsMA.value = RestaurantApi.retrofitService.layDSMonAnTheoLoaiMonAn(loaiMonAn.value?.maLMA + "", token)
+            } catch (e: Exception) {
+                Log.e("Lỗi load ds món ăn", e.message.toString())
+            }
+        }
+        return dsMA
+    }
+
+    fun thietLapMonAn(monAn: MonAnEntity) {
+        this._monAn.value = monAn
     }
 }

@@ -54,4 +54,9 @@
     <!--    Item bàn      -->
     <string name="item_ban_so_ghe">%s</string>
     <!--    Item bàn      -->
+
+    <!--    Item món ăn      -->
+    <string name="item_mon_an_chu_thich">Chú thích: </string>
+    <!--    Item món ăn      -->
+
 </resources>
