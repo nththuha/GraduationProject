@@ -36,7 +36,7 @@ public class PhongServiceImpl implements PhongService {
             }
             ds.get(i).setTrangThai(trangThai);
         }
-        return dsPhong.stream().map(PhongDTO::new).collect(Collectors.toList());
+        return ds;
     }
 
     @Override
