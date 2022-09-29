@@ -41,7 +41,12 @@ public class CT_DatMonServiceImpl implements CT_DatMonService {
                 }
             }
         }
-        return ds.stream().map(CT_DatMonDTO::new).collect(Collectors.toList());
+
+        List<CT_DatMonDTO> dsCTDM = ds.stream().map(CT_DatMonDTO::new).collect(Collectors.toList());
+        for (int i = 0; i < ds.size(); i++) {
+            dsCTDM.get(i).setGiaTungMon(dsCTDM.get(i).getGia() / dsCTDM.get(i).getSoLuong());
+        }
+        return dsCTDM;
     }
 
     @Override
