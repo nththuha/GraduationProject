@@ -13,12 +13,14 @@ class BanAdapter (private val clickListener: (BanEntity) -> Unit) : ListAdapter<
     class BanEntityViewHolder(private var binding: ItemBanBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(ban: BanEntity) {
-            binding.ban = ban
-            if(ban.trangThai == "Hết chỗ"){
-                binding.clBan.setBackgroundResource(R.drawable.background_room_unavailable)
-                binding.clBan.isEnabled = false;
+            binding.apply {
+                binding.ban = ban
+                if(ban.trangThai == "Hết chỗ"){
+                    clBan.setBackgroundResource(R.drawable.background_room_unavailable)
+                    clBan.isEnabled = false;
+                }
+                executePendingBindings()
             }
-            binding.executePendingBindings()
         }
     }
 

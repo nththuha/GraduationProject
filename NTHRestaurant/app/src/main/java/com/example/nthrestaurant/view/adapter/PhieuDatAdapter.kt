@@ -34,22 +34,22 @@ class PhieuDatAdapter(private val clickListener: (PhieuDatEntity) -> Unit) : Lis
     }
 
     override fun onBindViewHolder(holder: PhieuDatEntityViewHolder, position: Int) {
-        val ticketReservation = getItem(position)
+        val phieuDat = getItem(position)
 
         holder.itemView.findViewById<Button>(R.id.btnDatMon).setOnClickListener {
             val action =
                 TrangChuFragmentDirections.actionTrangChuFragmentToDatMonFragment()
             holder.itemView.findNavController().navigate(action)
-            clickListener(ticketReservation)
+            clickListener(phieuDat)
         }
 
         holder.itemView.findViewById<Button>(R.id.btnChiTiet).setOnClickListener {
             val action = TrangChuFragmentDirections.actionTrangChuFragmentToChiTietDatMonFragment()
             holder.itemView.findNavController().navigate(action)
-            clickListener(ticketReservation)
+            clickListener(phieuDat)
         }
 
-        holder.bind(ticketReservation)
+        holder.bind(phieuDat)
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<PhieuDatEntity>() {

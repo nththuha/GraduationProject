@@ -49,7 +49,10 @@ interface RestaurantApiService {
     suspend fun layDSLoaiMonAn( @Header("Authorization") token: String): List<LoaiMonAnEntity>
 
     @GET("loaimonan/{maLMA}")
-    suspend fun layDSMonAnTheoLoaiMonAn(@Path("maLMA") maLMA: String,  @Header("Authorization") token: String): List<MonAnEntity>
+    suspend fun layDSMonAnTheoLoaiMonAn(@Path("maLMA") maLMA: String, @Header("Authorization") token: String): List<MonAnEntity>
+
+    @GET("ctdatmon/{idpd}")
+    suspend fun layDSDatMonTheoPD(@Path("idpd") idpd: Int, @Header("Authorization") token: String): List<ChiTietDatMonEntity>
 }
 
 object RestaurantApi {

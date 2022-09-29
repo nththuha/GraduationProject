@@ -14,13 +14,15 @@ class PhongAdapter(private val clickListener: (PhongEntity) -> Unit) : ListAdapt
     class PhongEntityViewHolder(private var binding: ItemPhongBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(phong: PhongEntity) {
-            binding.phong = phong
-            if(phong.trangThai == "Hết chỗ"){
-                binding.clPhong.setBackgroundResource(R.drawable.background_room_unavailable)
-                binding.clPhong.isEnabled = false;
-            }
+            binding.apply {
+                binding.phong = phong
+                if(phong.trangThai == "Hết chỗ"){
+                    clPhong.setBackgroundResource(R.drawable.background_room_unavailable)
+                    clPhong.isEnabled = false;
+                }
 
-            binding.executePendingBindings()
+                executePendingBindings()
+            }
         }
     }
 

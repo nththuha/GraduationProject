@@ -33,16 +33,17 @@ class MonAnAdapter(private val clickListener: (MonAnEntity) -> Unit) : ListAdapt
     class MonAnEntityViewHolder(private var binding: ItemMonAnBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(monAn: MonAnEntity) {
-            if (monAn.trangThai == "Hết hàng" || monAn.gia == 0) {
-                binding.clMonAn.isEnabled = false
-                binding.clMonAn.setBackgroundResource(R.drawable.background_white_monan_unavailable)
-                binding.ivSold.visibility = View.VISIBLE
+            binding.apply {
+                if (monAn.trangThai == "Hết hàng" || monAn.gia == 0) {
+                    clMonAn.isEnabled = false
+                    clMonAn.setBackgroundResource(R.drawable.background_white_monan_unavailable)
+                    ivSold.visibility = View.VISIBLE
+                }
+                tvGia.text = monAn.gia.doiIntThanhTien()
+                if(monAn.chuThich != null) tvChuThich.text = "Chú thích: " + monAn.chuThich
+                monan = monAn
+                executePendingBindings()
             }
-            val money = monAn.gia.doiIntThanhTien()
-            binding.tvGia.text = money
-            if(monAn.chuThich != null) binding.tvChuThich.text = "Chú thích: " + monAn.chuThich
-            binding.monan = monAn
-            binding.executePendingBindings()
         }
     }
 

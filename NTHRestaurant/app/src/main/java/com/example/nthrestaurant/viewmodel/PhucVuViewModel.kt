@@ -42,6 +42,9 @@ class PhucVuViewModel : ViewModel() {
     private val _monAn = MutableLiveData<MonAnEntity>()
     val monAn: LiveData<MonAnEntity> = _monAn
 
+    private val _dsCTDatMon = MutableLiveData<List<ChiTietDatMonEntity>>()
+    val dsCTDatMon: LiveData<List<ChiTietDatMonEntity>> = _dsCTDatMon
+
     fun thietLapToken(token: String){
         this.token = token
     }
@@ -119,5 +122,18 @@ class PhucVuViewModel : ViewModel() {
 
     fun thietLapMonAn(monAn: MonAnEntity) {
         this._monAn.value = monAn
+    }
+
+    fun layDSDatMonTheoPD(): LiveData<List<ChiTietDatMonEntity>> {
+        viewModelScope.launch {
+            try {
+                _dsCTDatMon.value = phieuDat.value?.let {
+                    RestaurantApi.retrofitService.layDSDatMonTheoPD(it.idPD, token)
+                }
+            } catch (e: Exception) {
+                Log.e("Lỗi load ds CTDM", e.message.toString())
+            }
+        }
+        return dsCTDatMon
     }
 }
