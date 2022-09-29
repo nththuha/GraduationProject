@@ -8,14 +8,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
-import com.example.nthrestaurant.R
 import com.example.nthrestaurant.databinding.FragmentDatChoBinding
-import com.example.nthrestaurant.databinding.FragmentQLPhieuDatBinding
 import com.example.nthrestaurant.view.adapter.BanAdapter
 import com.example.nthrestaurant.view.adapter.PhongAdapter
 import com.example.nthrestaurant.viewmodel.PhucVuViewModel
-import java.text.SimpleDateFormat
-import java.util.*
 
 class DatChoFragment : Fragment() {
     private var _binding: FragmentDatChoBinding? = null

@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nthrestaurant.R
 import com.example.nthrestaurant.databinding.ItemBanBinding
-import com.example.nthrestaurant.databinding.ItemPhongBinding
 import com.example.nthrestaurant.network.model.BanEntity
 
 class BanAdapter (private val clickListener: (BanEntity) -> Unit) : ListAdapter<BanEntity, BanAdapter.BanEntityViewHolder>(DiffCallback) {

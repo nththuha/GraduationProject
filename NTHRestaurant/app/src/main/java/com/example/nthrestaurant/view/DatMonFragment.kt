@@ -6,10 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nthrestaurant.databinding.FragmentDatMonBinding
-import com.example.nthrestaurant.databinding.FragmentQLPhongBinding
 import com.example.nthrestaurant.dialogDatMon
 import com.example.nthrestaurant.view.adapter.LoaiMonAnAdapter
 import com.example.nthrestaurant.view.adapter.MonAnAdapter
