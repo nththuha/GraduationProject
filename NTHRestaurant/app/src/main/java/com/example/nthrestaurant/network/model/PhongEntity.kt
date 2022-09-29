@@ -1,7 +1,9 @@
 package com.example.nthrestaurant.network.model
 
+import com.squareup.moshi.Json
+
 data class PhongEntity(
-    val maPhong: String,
-    val tenPhong: String,
-    val trangThai: String
+    @Json(name = "maPhong") val maPhong: String,
+    @Json(name = "tenPhong") val tenPhong: String,
+    @Json(name = "trangThai") val trangThai: String
 )
