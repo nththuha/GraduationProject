@@ -4,13 +4,14 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1be282990ba7f1f2a4b0b02b2fd79d53/transformed/loader-1.0.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f3dda412ee1ffcbbc165fb88ed204939/transformed/loader-1.0.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2c7160fb64ad0cb0b2bad8bfd115e2d6/transformed/loader-1.0.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/496fc642db6a199b69667094301b87d9/transformed/loader-1.0.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/496fc642db6a199b69667094301b87d9/transformed/loader-1.0.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/496fc642db6a199b69667094301b87d9/transformed/loader-1.0.0/res" />
+      <root url="jar://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/496fc642db6a199b69667094301b87d9/transformed/loader-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/496fc642db6a199b69667094301b87d9/transformed/loader-1.0.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/496fc642db6a199b69667094301b87d9/transformed/loader-1.0.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.loader/loader/1.0.0/b9ef587f3e46c7fe5b00264989764e43ff45cada/loader-1.0.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/modules-2/files-2.1/androidx.loader/loader/1.0.0/b9ef587f3e46c7fe5b00264989764e43ff45cada/loader-1.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

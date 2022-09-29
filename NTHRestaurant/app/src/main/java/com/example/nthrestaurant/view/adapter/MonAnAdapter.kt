@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nthrestaurant.R
 import com.example.nthrestaurant.databinding.ItemMonAnBinding
+import com.example.nthrestaurant.doiIntThanhTien
 import com.example.nthrestaurant.network.model.MonAnEntity
-import java.text.DecimalFormat
 
 class MonAnAdapter(private val clickListener: (MonAnEntity) -> Unit) : ListAdapter<MonAnEntity, MonAnAdapter.MonAnEntityViewHolder>(DiffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MonAnEntityViewHolder {
@@ -38,8 +38,7 @@ class MonAnAdapter(private val clickListener: (MonAnEntity) -> Unit) : ListAdapt
                 binding.clMonAn.setBackgroundResource(R.drawable.background_white_monan_unavailable)
                 binding.ivSold.visibility = View.VISIBLE
             }
-            val dec = DecimalFormat("#,###.##")
-            val money = dec.format(monAn.gia) + " VND"
+            val money = monAn.gia.doiIntThanhTien()
             binding.tvGia.text = money
             if(monAn.chuThich != null) binding.tvChuThich.text = "Chú thích: " + monAn.chuThich
             binding.monan = monAn

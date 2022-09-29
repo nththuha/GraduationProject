@@ -1,13 +1,14 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.databinding:databinding-ktx:7.2.2@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/dd5d488f564860b0671255da8be2b68a/transformed/databinding-ktx-7.2.2/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/dd5d488f564860b0671255da8be2b68a/transformed/databinding-ktx-7.2.2/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/dd5d488f564860b0671255da8be2b68a/transformed/databinding-ktx-7.2.2/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/0e8e31d94af57c50af4c3db16c72488d/transformed/jetified-databinding-ktx-7.2.2/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/0e8e31d94af57c50af4c3db16c72488d/transformed/jetified-databinding-ktx-7.2.2/res" />
+      <root url="jar://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/0e8e31d94af57c50af4c3db16c72488d/transformed/jetified-databinding-ktx-7.2.2/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.databinding/databinding-ktx/7.2.2/cafadbddd634c7e242cd702a65499ed9e25e8882/databinding-ktx-7.2.2-sources.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/modules-2/files-2.1/androidx.databinding/databinding-ktx/7.2.2/cafadbddd634c7e242cd702a65499ed9e25e8882/databinding-ktx-7.2.2-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

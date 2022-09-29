@@ -32,6 +32,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="chiTietDatMonFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-1375" />
+                            <option name="y" value="-186" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="chucNangFragment">
                     <value>
                       <LayoutPositions>
@@ -70,8 +82,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-1612" />
-                            <option name="y" value="159" />
+                            <option name="x" value="-1835" />
+                            <option name="y" value="190" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -91,8 +103,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-1372" />
-                            <option name="y" value="-182" />
+                            <option name="x" value="-1611" />
+                            <option name="y" value="188" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -121,6 +133,11 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_trangChuFragment_to_chiTietDatMonFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_trangChuFragment_to_datChoFragment">
                               <value>
                                 <LayoutPositions />

@@ -18,8 +18,8 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cvHinhAnh"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,7 +47,7 @@
         android:lines="1"
         android:gravity="center_vertical"
         android:ellipsize="end"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"/>
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -67,74 +67,61 @@
         app:layout_constraintBottom_toBottomOf="@id/ivDongHo"
         app:layout_constraintEnd_toStartOf="@id/guideline1"
         android:layout_marginStart="10dp"
-        tools:text="Vừa đặt món"
+        tools:text="Đang chờ"
         android:textColor="@color/black"
-        android:textSize="14sp" />
+        android:textSize="12sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnChuyenTrangThai"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toEndOf="@id/guideline1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/btn_dangnhap"
+        android:text="@string/dialog_chi_tiet_dat_mon_btn_da_phuc_vu"/>
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivAmount"
+        android:id="@+id/ivPhong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_amount"
+        android:src="@drawable/ic_house"
         app:layout_constraintStart_toStartOf="@+id/ivDongHo"
         app:layout_constraintTop_toBottomOf="@id/ivDongHo"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/ivAmount"
-        app:layout_constraintTop_toTopOf="@id/ivAmount"
-        app:layout_constraintBottom_toBottomOf="@id/ivAmount"
+        app:layout_constraintStart_toEndOf="@id/ivPhong"
+        app:layout_constraintTop_toTopOf="@id/ivPhong"
+        app:layout_constraintBottom_toBottomOf="@id/ivPhong"
         app:layout_constraintEnd_toStartOf="@id/guideline1"
         android:layout_marginStart="10dp"
-        tools:text="1"
+        tools:text="Phòng 1"
         android:textColor="@color/black"
-        android:textSize="14sp" />
+        android:textSize="12sp" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivDollar"
+        android:id="@+id/ivBan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_dollar"
-        app:layout_constraintStart_toStartOf="@+id/ivAmount"
-        app:layout_constraintTop_toBottomOf="@id/ivAmount"/>
+        android:src="@drawable/ic_table"
+        app:layout_constraintStart_toStartOf="@+id/ivPhong"
+        app:layout_constraintTop_toBottomOf="@id/ivPhong"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/ivDollar"
-        app:layout_constraintTop_toTopOf="@id/ivDollar"
-        app:layout_constraintBottom_toBottomOf="@id/ivDollar"
+        app:layout_constraintStart_toEndOf="@id/ivBan"
+        app:layout_constraintTop_toTopOf="@id/ivBan"
+        app:layout_constraintBottom_toBottomOf="@id/ivBan"
         app:layout_constraintEnd_toStartOf="@id/guideline1"
         android:layout_marginStart="10dp"
-        tools:text="150.000 VND"
+        tools:text="Bàn 1"
         android:textColor="@color/black"
-        android:textSize="14sp" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnCapNhat"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        app:layout_constraintStart_toEndOf="@id/guideline1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btnHuyMon"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:background="@drawable/btn_dangnhap"
-        android:text="@string/item_chi_tiet_dat_mon_cap_nhat"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnHuyMon"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        app:layout_constraintStart_toEndOf="@id/guideline1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnCapNhat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:background="@drawable/btn_huymon"
-        android:text="@string/item_chi_tiet_dat_mon_huy_mon"/>
+        android:textSize="12sp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

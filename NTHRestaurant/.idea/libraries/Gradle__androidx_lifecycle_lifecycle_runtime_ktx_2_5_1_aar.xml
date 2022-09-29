@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.lifecycle:lifecycle-runtime-ktx:2.5.1@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/98d25a35f0b0dc07dd2a67b4e4bc2f57/transformed/lifecycle-runtime-ktx-2.5.1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/98d25a35f0b0dc07dd2a67b4e4bc2f57/transformed/lifecycle-runtime-ktx-2.5.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/98d25a35f0b0dc07dd2a67b4e4bc2f57/transformed/lifecycle-runtime-ktx-2.5.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/dd80b465be9210429a9565659487f38d/transformed/jetified-lifecycle-runtime-ktx-2.5.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/dd80b465be9210429a9565659487f38d/transformed/jetified-lifecycle-runtime-ktx-2.5.1/res" />
+      <root url="jar://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/dd80b465be9210429a9565659487f38d/transformed/jetified-lifecycle-runtime-ktx-2.5.1/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-runtime-ktx/2.5.1/6d338022f8fa82c24121d5d249fe5daeeb297742/lifecycle-runtime-ktx-2.5.1-sources.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-runtime-ktx/2.5.1/6d338022f8fa82c24121d5d249fe5daeeb297742/lifecycle-runtime-ktx-2.5.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -44,10 +44,9 @@ class PhieuDatAdapter(private val clickListener: (PhieuDatEntity) -> Unit) : Lis
         }
 
         holder.itemView.findViewById<Button>(R.id.btnChiTiet).setOnClickListener {
-//            val action =
-//                TrangChuFragmentDirections.
-//            holder.itemView.findNavController().navigate(action)
-//            clickListener(ticketReservation)
+            val action = TrangChuFragmentDirections.actionTrangChuFragmentToChiTietDatMonFragment()
+            holder.itemView.findNavController().navigate(action)
+            clickListener(ticketReservation)
         }
 
         holder.bind(ticketReservation)

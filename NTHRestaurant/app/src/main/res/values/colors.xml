@@ -20,6 +20,8 @@
     <color name="yellow_dark">#c8b900</color>
 
     <color name="red">#f44336</color>
+    <color name="red_light">#EC695F</color>
+    <color name="red_dark">#912A22</color>
 
     <color name="green">#27a511</color>
     <color name="green_dark">#15550A</color>

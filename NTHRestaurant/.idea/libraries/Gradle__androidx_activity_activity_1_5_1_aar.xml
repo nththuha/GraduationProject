@@ -1,16 +1,16 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.activity:activity:1.5.1@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f7c505fcea909b2be646510ee2c6456d/transformed/activity-1.5.1/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/bc4365d9a08136eefb76a6550cae93ed/transformed/jetified-activity-1.5.1/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f7c505fcea909b2be646510ee2c6456d/transformed/activity-1.5.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f7c505fcea909b2be646510ee2c6456d/transformed/activity-1.5.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f7c505fcea909b2be646510ee2c6456d/transformed/activity-1.5.1/res" />
+      <root url="file://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/bc4365d9a08136eefb76a6550cae93ed/transformed/jetified-activity-1.5.1/res" />
+      <root url="file://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/bc4365d9a08136eefb76a6550cae93ed/transformed/jetified-activity-1.5.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/bc4365d9a08136eefb76a6550cae93ed/transformed/jetified-activity-1.5.1/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.activity/activity/1.5.1/55c391fc0c910cc005c57b1767624a033fd0f013/activity-1.5.1-sources.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/modules-2/files-2.1/androidx.activity/activity/1.5.1/55c391fc0c910cc005c57b1767624a033fd0f013/activity-1.5.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

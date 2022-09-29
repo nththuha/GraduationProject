@@ -9,6 +9,6 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/item_chi_tiet_dat_mon"/>
+        tools:listitem="@layout/item_chi_tiet_dat_mon_cho_phuc_vu"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -59,4 +59,9 @@
     <string name="item_mon_an_chu_thich">Chú thích: </string>
     <!--    Item món ăn      -->
 
+    <!--    Item chi tiết đặt món      -->
+    <string name="item_chi_tiet_dat_mon_cap_nhat">CẬP NHẬT</string>
+    <string name="item_chi_tiet_dat_mon_huy_mon">HỦY MÓN</string>
+    <!--    Item chi tiết đặt món      -->
+
 </resources>
