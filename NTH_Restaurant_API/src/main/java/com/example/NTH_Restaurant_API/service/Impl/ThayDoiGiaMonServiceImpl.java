@@ -40,6 +40,7 @@ public class ThayDoiGiaMonServiceImpl implements ThayDoiGiaMonService {
         MonAnEntity monAnEntity = monAnRepository.getById(thayDoiGiaMonDTO.getMama());
         NhanVienEntity nhanVienEntity = nhanVienRepository.getById(thayDoiGiaMonDTO.getIdnv());
         ThayDoiGiaMonEntity temp = thayDoiGiaMonDTO.toEntity();
+        temp.setIdGM(null);
         temp.setIdnv(nhanVienEntity);
         temp.setMama(monAnEntity);
         try{

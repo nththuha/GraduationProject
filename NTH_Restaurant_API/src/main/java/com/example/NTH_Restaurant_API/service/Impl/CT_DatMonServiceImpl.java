@@ -1,9 +1,7 @@
 package com.example.NTH_Restaurant_API.service.Impl;
 
 import com.example.NTH_Restaurant_API.dto.CT_DatMonDTO;
-import com.example.NTH_Restaurant_API.entity.CT_BanEntity;
-import com.example.NTH_Restaurant_API.entity.CT_DatBanEntity;
-import com.example.NTH_Restaurant_API.entity.CT_DatMonEntity;
+import com.example.NTH_Restaurant_API.entity.*;
 import com.example.NTH_Restaurant_API.repository.*;
 import com.example.NTH_Restaurant_API.service.CT_DatMonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +27,7 @@ public class CT_DatMonServiceImpl implements CT_DatMonService {
 
     @Autowired
     private CT_BanRepository ct_banRepository;
+
     @Override
     public List<CT_DatMonDTO> layDSCT_DatMonTheoPhieuDat(Integer idpd) {
         List<CT_DatMonEntity> ds = ct_datMonRepository.findByIdpd_IdPD(idpd);
@@ -147,5 +146,72 @@ public class CT_DatMonServiceImpl implements CT_DatMonService {
             }
         }
         return m;
+    }
+
+    @Override
+    public String themCT_DatMon(CT_DatMonDTO ct_datMonDTO) {
+        PhieuDatEntity phieuDat = phieuDatRepository.getById(ct_datMonDTO.getIdpd());
+        MonAnEntity monAn = monAnRepository.getById(ct_datMonDTO.getMama());
+        CT_DatMonEntity ct_datMon = ct_datMonDTO.toEntity();
+        ct_datMon.setIdCTDM(null);
+        ct_datMon.setIdpd(phieuDat);
+        ct_datMon.setMama(monAn);
+        try {
+            ct_datMonRepository.save(ct_datMon);
+            return "true";
+        }
+        catch (Exception e){
+            return "false";
+        }
+    }
+
+    @Override
+    public String suaTrangThai_DangLam(Integer idCTDM) {
+        CT_DatMonEntity ct_datMon = ct_datMonRepository.getById(idCTDM);
+        ct_datMon.setTrangThai("Đang làm");
+        try {
+            ct_datMonRepository.save(ct_datMon);
+            return "true";
+        }
+        catch (Exception e){
+            return "false";
+        }
+    }
+
+    @Override
+    public String suaTrangThai_ChoPhucVu(Integer idCTDM) {
+        CT_DatMonEntity ct_datMon = ct_datMonRepository.getById(idCTDM);
+        ct_datMon.setTrangThai("Chờ phục vụ");
+        try {
+            ct_datMonRepository.save(ct_datMon);
+            return "true";
+        }
+        catch (Exception e){
+            return "false";
+        }
+    }
+
+    @Override
+    public String suaTrangThai_DaPhucVu(Integer idCTDM) {
+        CT_DatMonEntity ct_datMon = ct_datMonRepository.getById(idCTDM);
+        ct_datMon.setTrangThai("Đã phục vụ");
+        try {
+            ct_datMonRepository.save(ct_datMon);
+            return "true";
+        }
+        catch (Exception e){
+            return "false";
+        }
+    }
+
+    @Override
+    public String xoaCT_DatMon(Integer idCTDM) {
+        try {
+            ct_datMonRepository.deleteById(idCTDM);
+            return "false";
+        }
+        catch (Exception e){
+            return "true";
+        }
     }
 }

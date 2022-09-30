@@ -66,6 +66,7 @@ public class CT_BanServiceImpl implements CT_BanService {
         PhongEntity phong = phongRepository.getById(ct_banDTO.getMaphong());
         BanEntity ban = banRepository.getById(ct_banDTO.getMaban());
         CT_BanEntity ct_ban = ct_banDTO.toEntity();
+        ct_ban.setIdCTB(null);
         ct_ban.setMaphong(phong);
         ct_ban.setMaban(ban);
         ct_ban.setTrangThai("Còn chỗ");

@@ -56,6 +56,7 @@ public class CT_DatMonDTO {
         ct_datMonEntity.setIdCTDM(this.idCTDM);
         ct_datMonEntity.setSoLuong(this.soLuong);
         ct_datMonEntity.setChuThich(this.chuThich);
+        ct_datMonEntity.setTrangThai(this.trangThai);
         ct_datMonEntity.setGia(this.gia);
         return ct_datMonEntity;
     }

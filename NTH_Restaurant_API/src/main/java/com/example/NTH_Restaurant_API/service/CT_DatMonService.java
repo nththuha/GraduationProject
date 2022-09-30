@@ -12,4 +12,14 @@ public interface CT_DatMonService {
     List<CT_DatMonDTO> layDSCT_DatMon_NuocUong();
 
     List<CT_DatMonDTO> layDSCT_DatMon_MonAn_PhucVu();
+
+    String themCT_DatMon(CT_DatMonDTO ct_datMonDTO);
+
+    String suaTrangThai_DangLam(Integer idCTDM);
+
+    String suaTrangThai_ChoPhucVu(Integer idCTDM);
+
+    String suaTrangThai_DaPhucVu(Integer idCTDM);
+
+    String xoaCT_DatMon(Integer idCTDM);
 }
