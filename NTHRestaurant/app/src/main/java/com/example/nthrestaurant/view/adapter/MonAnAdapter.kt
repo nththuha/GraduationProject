@@ -34,7 +34,7 @@ class MonAnAdapter(private val clickListener: (MonAnEntity) -> Unit) : ListAdapt
         RecyclerView.ViewHolder(binding.root) {
         fun bind(monAn: MonAnEntity) {
             binding.apply {
-                if (monAn.trangThai == "Hết hàng" || monAn.gia == 0) {
+                if (monAn.trangThai == "Hết món" || monAn.gia == 0) {
                     clMonAn.isEnabled = false
                     clMonAn.setBackgroundResource(R.drawable.background_white_monan_unavailable)
                     ivSold.visibility = View.VISIBLE
