@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface PhieuDatService {
     List<PhieuDatDTO> layDSPhieuDatChuaCoHoaDon();
+
+    String themPhieuDat(PhieuDatDTO phieuDatDTO);
 }
