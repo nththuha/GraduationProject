@@ -77,6 +77,12 @@ public class PhieuDatServiceImpl implements PhieuDatService {
 
         try {
             PhieuDatEntity pd = phieuDatRepository.save(phieuDat);
+
+            CT_DatBanEntity ct_datBan = new CT_DatBanEntity();
+            ct_datBan.setIdctb(ct_banEntity);
+            ct_datBan.setIdpd(pd);
+            ct_datBanRepository.save(ct_datBan);
+
             return pd.getIdPD().toString();
         }
         catch (Exception e){
