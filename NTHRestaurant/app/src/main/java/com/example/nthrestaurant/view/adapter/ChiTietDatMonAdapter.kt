@@ -12,14 +12,13 @@ import com.example.nthrestaurant.doiIntThanhTien
 import com.example.nthrestaurant.network.model.ChiTietDatMonEntity
 
 class ChiTietDatMonAdapter(private val clickListener: (ChiTietDatMonEntity, Int) -> Unit) : ListAdapter<ChiTietDatMonEntity, ChiTietDatMonAdapter.ChiTietDatMonEntityViewHolder>(DiffCallback) {
-
     class ChiTietDatMonEntityViewHolder(private var binding: ItemChiTietDatMonBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(ctDM: ChiTietDatMonEntity) {
             binding.apply {
                 ctdm = ctDM
                 tvGia.text = ctDM.gia.doiIntThanhTien()
-                if(ctDM.trangThai != "Vừa đặt món"){
+                if(ctDM.trangThai != "Vừa đặt món" && ctDM.tenLMA != "Đồ uống đóng chai"){
                     btnCapNhat.setBackgroundResource(R.drawable.btn_huy)
                     btnCapNhat.isEnabled = false
                     btnHuyMon.setBackgroundResource(R.drawable.btn_huy)

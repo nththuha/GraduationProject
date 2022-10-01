@@ -30,6 +30,7 @@ public class CT_DatMonDTO {
     private String hinhAnh;
 
     private String malma;
+    private String tenlma;
 
     private Integer idpd;
 
@@ -48,6 +49,7 @@ public class CT_DatMonDTO {
         this.tenma = ct_datMonEntity.getMama().getTenMA();
         this.hinhAnh = ct_datMonEntity.getMama().getHinhAnh();
         this.malma = ct_datMonEntity.getMama().getMalma().getMaLMA();
+        this.tenlma = ct_datMonEntity.getMama().getMalma().getTenLMA();
         this.idpd = ct_datMonEntity.getIdpd().getIdPD();
     }
 
