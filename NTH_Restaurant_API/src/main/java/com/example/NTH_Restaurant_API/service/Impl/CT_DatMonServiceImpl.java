@@ -214,4 +214,20 @@ public class CT_DatMonServiceImpl implements CT_DatMonService {
             return "true";
         }
     }
+
+    @Override
+    public String suaCT_DatMon(CT_DatMonDTO ct_datMonDTO) {
+        MonAnEntity monAn = monAnRepository.getById(ct_datMonDTO.getMama());
+        PhieuDatEntity phieuDat = phieuDatRepository.getById(ct_datMonDTO.getIdpd());
+        CT_DatMonEntity ct_datMon = ct_datMonDTO.toEntity();
+        ct_datMon.setMama(monAn);
+        ct_datMon.setIdpd(phieuDat);
+        try {
+            ct_datMonRepository.save(ct_datMon);
+            return "true";
+        }
+        catch (Exception e){
+            return "false";
+        }
+    }
 }

@@ -22,4 +22,6 @@ public interface CT_DatMonService {
     String suaTrangThai_DaPhucVu(Integer idCTDM);
 
     String xoaCT_DatMon(Integer idCTDM);
+
+    String suaCT_DatMon(CT_DatMonDTO ct_datMonDTO);
 }
