@@ -65,6 +65,9 @@ interface RestaurantApiService {
 
     @DELETE("ctdatmon/{idCTDM}")
     suspend fun xoaCTDM(@Path("idCTDM") idCTDM: Int, @Header("Authorization") token: String): String
+
+    @PUT("ctdatmon")
+    suspend fun suaCTDM(@Body ctdm: ChiTietDatMonEntity, @Header("Authorization") token: String): String
 }
 
 object RestaurantApi {

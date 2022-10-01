@@ -180,6 +180,17 @@ class PhucVuViewModel : ViewModel() {
         if(temp != "false") _phieuDat.value?.idPD = temp.toInt()
     }
 
+    fun suaCTDM(ctdm: ChiTietDatMonEntity){
+        viewModelScope.launch {
+            try {
+                RestaurantApi.retrofitService.suaCTDM(ctdm, token)
+            }
+            catch (e: Exception){
+                Log.e("Lỗi sửa ctdm", e.message.toString())
+            }
+        }
+    }
+
     fun xoaCTDM(idCTDM: Int): String{
         var thongBao = "false"
         viewModelScope.launch {
