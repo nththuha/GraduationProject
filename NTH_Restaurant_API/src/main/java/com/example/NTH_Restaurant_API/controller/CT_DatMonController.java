@@ -40,6 +40,11 @@ public class CT_DatMonController {
         return ct_datMonService.themCT_DatMon(ct_datMonDTO);
     }
 
+    @PutMapping("")
+    public String suaCT_DatMon(@Valid @RequestBody CT_DatMonDTO ct_datMonDTO){
+        return ct_datMonService.suaCT_DatMon(ct_datMonDTO);
+    }
+
     @PutMapping("/danglam/{idCTDM}")
     public String suaTrangThai_DangLam(@PathVariable Integer idCTDM){
         return ct_datMonService.suaTrangThai_DangLam(idCTDM);

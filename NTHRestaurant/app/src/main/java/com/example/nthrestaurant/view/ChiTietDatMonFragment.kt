@@ -43,6 +43,7 @@ class ChiTietDatMonFragment : Fragment() {
                         if(viewModel.xoaCTDM(it.idCTDM) == "true") showToast("Xóa thành công!")
                         else showToast("Xóa thất bại!")
                     }
+                    loadDSCTDM()
                 }
             }
         }
