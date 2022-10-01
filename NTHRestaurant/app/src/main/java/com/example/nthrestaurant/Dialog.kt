@@ -28,6 +28,11 @@ fun dialogDatMon(fm: FragmentActivity, monAn: MonAnEntity) {
     window.attributes = windowAttributes
 
     dialog.setCancelable(true)
+    dialog.findViewById<TextView>(R.id.tvTenMA).text = monAn.tenMA
+    dialog.findViewById<TextView>(R.id.tvGia).text = monAn.gia.doiIntThanhTien()
+    dialog.findViewById<TextView>(R.id.tvMoTa).text = "Mô tả: " + monAn.chuThich
+
+
 
     dialog.show()
 }
