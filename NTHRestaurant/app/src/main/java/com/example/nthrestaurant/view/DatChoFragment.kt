@@ -9,9 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.example.nthrestaurant.databinding.FragmentDatChoBinding
+import com.example.nthrestaurant.network.model.PhieuDatEntity
 import com.example.nthrestaurant.view.adapter.BanAdapter
 import com.example.nthrestaurant.view.adapter.PhongAdapter
 import com.example.nthrestaurant.viewmodel.PhucVuViewModel
+import kotlinx.coroutines.runBlocking
+import java.text.SimpleDateFormat
+import java.util.*
 
 class DatChoFragment : Fragment() {
     private var _binding: FragmentDatChoBinding? = null
@@ -55,11 +59,19 @@ class DatChoFragment : Fragment() {
         adapterB = BanAdapter {
             viewModel.thietLapBan(it)
 
-            //THÊM PHIẾU ĐẶT VÀ THÊM CHI TIẾT ĐẶT BÀN
+            val idnv = viewModel.nhanVien.value?.idNV
+            val maBan = viewModel.ban.value?.maBan
+            val maPhong = viewModel.phong.value?.maPhong
+            val sdf = SimpleDateFormat("yyyy-MM-dd")
+            val ngay = sdf.format(Date())
 
-            Toast.makeText(context, "Successfully", Toast.LENGTH_SHORT).show()
+            val phieuDat = PhieuDatEntity(null, null, -5, -5, idnv!!, maBan!!, maPhong!!, ngay, null, null)
+
+            viewModel.themPhieuDat(phieuDat)
+            Toast.makeText(context, "Đặt bàn thành công", Toast.LENGTH_SHORT).show()
             val action = DatChoFragmentDirections.actionDatChoFragmentToDatMonFragment()
             view.findNavController().navigate(action)
+
         }
     }
 

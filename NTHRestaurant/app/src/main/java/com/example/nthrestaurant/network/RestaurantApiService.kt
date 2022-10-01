@@ -36,8 +36,14 @@ interface RestaurantApiService {
     @POST("taikhoan/dangnhap")
     suspend fun dangNhap(@Body taiKhoan: TaiKhoanEntity): Token
 
+    @GET("nhanvien/{maTK}")
+    suspend fun layThongTinNhanVienTheoMaTaiKhoan(@Path("maTK") maTK: String, @Header("Authorization") token: String): NhanVienEntity
+
     @GET("phieudat")
     suspend fun layDSPhieuDatChuaCoHoaDon(@Header("Authorization") token: String): List<PhieuDatEntity>
+
+    @POST("phieudat")
+    suspend fun themPhieuDat(@Body phieuDat: PhieuDatEntity,  @Header("Authorization") token: String): String
 
     @GET("phong")
     suspend fun layDSPhong(@Header("Authorization") token: String): List<PhongEntity>

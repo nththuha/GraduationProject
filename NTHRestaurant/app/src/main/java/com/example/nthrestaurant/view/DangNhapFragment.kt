@@ -68,6 +68,7 @@ class DangNhapFragment : Fragment() {
                     when (token.roles) {
                         PHUCVU -> {
                             vmPhucVu.thietLapToken(token.token)
+                            vmPhucVu.layThongTinNhanVien(token.maTK);
                             val action = DangNhapFragmentDirections.actionDangNhapFragmentToTrangChuFragment()
                             view.findNavController().navigate(action)
                         }

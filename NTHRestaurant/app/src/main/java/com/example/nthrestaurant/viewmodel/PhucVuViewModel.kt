@@ -7,10 +7,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.nthrestaurant.network.RestaurantApi
 import com.example.nthrestaurant.network.model.*
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 class PhucVuViewModel : ViewModel() {
     var token: String = ""
+
+    private val _nhanVien = MutableLiveData<NhanVienEntity>()
+    val nhanVien: LiveData<NhanVienEntity> = _nhanVien
 
     private val _dsPhieuDat = MutableLiveData<List<PhieuDatEntity>>()
     val dsPhieuDat: LiveData<List<PhieuDatEntity>> = _dsPhieuDat
@@ -50,6 +54,17 @@ class PhucVuViewModel : ViewModel() {
 
     fun thietLapToken(token: String){
         this.token = token
+    }
+
+    fun layThongTinNhanVien(maTK: String){
+        viewModelScope.launch {
+            try {
+                _nhanVien.value = RestaurantApi.retrofitService.layThongTinNhanVienTheoMaTaiKhoan(maTK, token)
+            }
+            catch (e: Exception){
+                Log.e("Lấy thông tin nhân viên", e.message.toString())
+            }
+        }
     }
 
     fun thietLapPhieuDat(phieuDat: PhieuDatEntity){
@@ -149,5 +164,18 @@ class PhucVuViewModel : ViewModel() {
             }
         }
         return dsCTDatMonCPV
+    }
+
+    fun themPhieuDat(phieuDat: PhieuDatEntity){
+        var temp = ""
+        viewModelScope.launch {
+            try {
+                temp = RestaurantApi.retrofitService.themPhieuDat(phieuDat, token)
+            }
+            catch (e: Exception){
+                Log.e("Lỗi thêm phiếu đặt", e.message.toString())
+            }
+        }
+        if(temp != "false") _phieuDat.value?.idPD = temp.toInt()
     }
 }
