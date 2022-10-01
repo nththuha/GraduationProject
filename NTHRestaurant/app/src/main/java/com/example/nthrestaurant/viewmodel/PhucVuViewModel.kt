@@ -1,5 +1,6 @@
 package com.example.nthrestaurant.viewmodel
 
+import android.icu.lang.UCharacter.GraphemeClusterBreak.L
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -177,5 +178,18 @@ class PhucVuViewModel : ViewModel() {
             }
         }
         if(temp != "false") _phieuDat.value?.idPD = temp.toInt()
+    }
+
+    fun xoaCTDM(idCTDM: Int): String{
+        var thongBao = "false"
+        viewModelScope.launch {
+            try {
+                thongBao = RestaurantApi.retrofitService.xoaCTDM(idCTDM, token)
+            }
+            catch (e: Exception){
+                Log.e("Lỗi xóa ctdm", e.message.toString())
+            }
+        }
+        return thongBao
     }
 }

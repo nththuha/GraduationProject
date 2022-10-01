@@ -10,6 +10,8 @@ import androidx.fragment.app.activityViewModels
 import com.example.nthrestaurant.R
 import com.example.nthrestaurant.databinding.FragmentChiTietDatMonBinding
 import com.example.nthrestaurant.databinding.FragmentDatChoBinding
+import com.example.nthrestaurant.dialogHuyChiTietDatMon
+import com.example.nthrestaurant.showToast
 import com.example.nthrestaurant.view.adapter.ChiTietDatMonAdapter
 import com.example.nthrestaurant.viewmodel.PhucVuViewModel
 
@@ -32,6 +34,17 @@ class ChiTietDatMonFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = ChiTietDatMonAdapter { it, num ->
+            when(num){
+                1 -> { //Cập nhật thông tin món ăn
+
+                }
+                2 -> { //Hủy món ăn đã đặt
+                    if(dialogHuyChiTietDatMon(requireActivity(), it)){
+                        if(viewModel.xoaCTDM(it.idCTDM) == "true") showToast("Xóa thành công!")
+                        else showToast("Xóa thất bại!")
+                    }
+                }
+            }
         }
         loadDSCTDM()
         binding.rvChiTietDatMon.adapter = adapter

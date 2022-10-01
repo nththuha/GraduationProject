@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.example.nthrestaurant.databinding.FragmentDatChoBinding
 import com.example.nthrestaurant.network.model.PhieuDatEntity
+import com.example.nthrestaurant.showToast
 import com.example.nthrestaurant.view.adapter.BanAdapter
 import com.example.nthrestaurant.view.adapter.PhongAdapter
 import com.example.nthrestaurant.viewmodel.PhucVuViewModel
@@ -68,7 +69,7 @@ class DatChoFragment : Fragment() {
             val phieuDat = PhieuDatEntity(null, null, -5, -5, idnv!!, maBan!!, maPhong!!, ngay, null, null)
 
             viewModel.themPhieuDat(phieuDat)
-            Toast.makeText(context, "Đặt bàn thành công", Toast.LENGTH_SHORT).show()
+            showToast("Đặt bàn thành công")
             val action = DatChoFragmentDirections.actionDatChoFragmentToDatMonFragment()
             view.findNavController().navigate(action)
 

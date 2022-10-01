@@ -10,6 +10,7 @@ data class ChiTietDatMonEntity(
     @Json(name = "idCTDM") val idCTDM: Int,
     @Json(name = "idpd") val idPD: Int,
     @Json(name = "malma") val maLMA: String,
+    @Json(name = "tenlma") val tenLMA: String,
     @Json(name = "mama") val maMA: String,
     @Json(name = "soLuong") val soLuong: Int,
     @Json(name = "tenBan") val tenBan: String?,

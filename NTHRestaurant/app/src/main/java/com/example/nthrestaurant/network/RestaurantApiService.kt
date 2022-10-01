@@ -62,6 +62,9 @@ interface RestaurantApiService {
 
     @GET("ctdatmon/phucvu/monan")
     suspend fun layDSDatMonChuaPhucVu(@Header("Authorization") token: String): List<ChiTietDatMonEntity>
+
+    @DELETE("ctdatmon/{idCTDM}")
+    suspend fun xoaCTDM(@Path("idCTDM") idCTDM: Int, @Header("Authorization") token: String): String
 }
 
 object RestaurantApi {

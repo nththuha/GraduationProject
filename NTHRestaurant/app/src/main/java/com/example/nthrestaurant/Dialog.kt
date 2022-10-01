@@ -9,7 +9,10 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
+import com.example.nthrestaurant.network.model.ChiTietDatMonEntity
 import com.example.nthrestaurant.network.model.MonAnEntity
+import com.example.nthrestaurant.viewmodel.PhucVuViewModel
+import org.w3c.dom.Text
 
 fun dialogDatMon(fm: FragmentActivity, monAn: MonAnEntity) {
     val dialog = Dialog(fm)
@@ -86,6 +89,41 @@ fun dialogThatBai(fm: FragmentActivity, thongBao: String) {
     }
 
     dialog.show()
+}
+
+fun dialogHuyChiTietDatMon(fm: FragmentActivity, ctdm: ChiTietDatMonEntity): Boolean {
+    val dialog = Dialog(fm)
+    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+    dialog.setContentView(R.layout.dialog_huy_mon_dat)
+
+    val window: Window? = dialog.window
+    window?.setLayout(
+        WindowManager.LayoutParams.MATCH_PARENT,
+        WindowManager.LayoutParams.WRAP_CONTENT
+    )
+    window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+    val windowAttributes: WindowManager.LayoutParams = window!!.attributes
+    windowAttributes.gravity = Gravity.CENTER
+    window.attributes = windowAttributes
+
+    var check = true
+
+    dialog.setCancelable(false)
+
+    dialog.findViewById<TextView>(R.id.tvCauHoi_HM).text = "Bạn có muốn xóa món " + ctdm.tenMA + "?"
+
+    dialog.findViewById<Button>(R.id.btnXacNhan_HM).setOnClickListener{
+        check = true
+        dialog.dismiss()
+    }
+
+    dialog.findViewById<Button>(R.id.btnCancel_HM).setOnClickListener{
+        check = false
+        dialog.dismiss()
+    }
+    dialog.show()
+    return check
 }
 
 fun dialogDangXuat(fm: FragmentActivity) {

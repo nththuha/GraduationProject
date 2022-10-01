@@ -39,6 +39,12 @@
     <string name="dialog_chi_tiet_dat_mon_btn_da_phuc_vu">Đã phục vụ</string>
     <!--    Dialog chi tiết đặt món      -->
 
+    <!--    Dialog hủy món đặt      -->
+    <string name="dialog_huy_mon_dat_tieu_de">XÁC NHẬN XÓA MÓN ĐẶT</string>
+    <string name="dialog_huy_mon_dat_tv_cau_hoi">Bạn muốn xóa chi tiết đặt món này?</string>
+    <string name="dialog_huy_mon_dat_btn_xac_nhan">Xác nhận</string>
+    <!--    Dialog hủy món đặt      -->
+
     <!--    Fragment đặt chỗ      -->
     <string name="fragment_dat_cho_tv_hint_tim_kiem">Phòng 1</string>
     <string name="fragment_dat_cho_tv_phong">Phòng</string>
