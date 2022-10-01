@@ -76,8 +76,8 @@ public class PhieuDatServiceImpl implements PhieuDatService {
         phieuDat.setIdnv(nhanVien);
 
         try {
-            phieuDatRepository.save(phieuDat);
-            return "true";
+            PhieuDatEntity pd = phieuDatRepository.save(phieuDat);
+            return pd.getIdPD().toString();
         }
         catch (Exception e){
             return "false";
