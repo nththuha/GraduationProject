@@ -64,7 +64,7 @@ interface RestaurantApiService {
     suspend fun layDSDatMonChuaPhucVu(@Header("Authorization") token: String): List<ChiTietDatMonEntity>
 
     @DELETE("ctdatmon/{idCTDM}")
-    suspend fun xoaCTDM(@Path("idCTDM") idCTDM: Int, @Header("Authorization") token: String): String
+    suspend fun xoaCTDM(@Path("idCTDM") idCTDM: Int, @Header("Authorization") token: String): Boolean
 
     @PUT("ctdatmon")
     suspend fun suaCTDM(@Body ctdm: ChiTietDatMonEntity, @Header("Authorization") token: String): String

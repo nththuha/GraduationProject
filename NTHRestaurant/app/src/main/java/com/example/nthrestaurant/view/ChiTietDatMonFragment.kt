@@ -1,6 +1,7 @@
 package com.example.nthrestaurant.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.fragment.app.activityViewModels
 import com.example.nthrestaurant.R
 import com.example.nthrestaurant.databinding.FragmentChiTietDatMonBinding
 import com.example.nthrestaurant.databinding.FragmentDatChoBinding
+import com.example.nthrestaurant.dialogChinhSuaDatMon
 import com.example.nthrestaurant.dialogHuyChiTietDatMon
 import com.example.nthrestaurant.showToast
 import com.example.nthrestaurant.view.adapter.ChiTietDatMonAdapter
@@ -36,13 +38,10 @@ class ChiTietDatMonFragment : Fragment() {
         adapter = ChiTietDatMonAdapter { it, num ->
             when(num){
                 1 -> { //Cập nhật thông tin món ăn
-
+                    dialogChinhSuaDatMon(requireActivity(), it)
                 }
                 2 -> { //Hủy món ăn đã đặt
-                    if(dialogHuyChiTietDatMon(requireActivity(), it)){
-                        if(viewModel.xoaCTDM(it.idCTDM) == "true") showToast("Xóa thành công!")
-                        else showToast("Xóa thất bại!")
-                    }
+                    dialogHuyChiTietDatMon(requireActivity(), it, viewModel)
                     loadDSCTDM()
                 }
             }
@@ -55,7 +54,7 @@ class ChiTietDatMonFragment : Fragment() {
         }
     }
 
-    private fun loadDSCTDM() {
+    fun loadDSCTDM() {
         viewModel.layDSDatMonTheoPD().observe(viewLifecycleOwner) { dsCTDM ->
             adapter?.submitList(dsCTDM)
         }

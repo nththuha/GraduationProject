@@ -191,11 +191,12 @@ class PhucVuViewModel : ViewModel() {
         }
     }
 
-    fun xoaCTDM(idCTDM: Int): String{
-        var thongBao = "false"
+    fun xoaCTDM(idCTDM: Int): Boolean{
+        var thongBao = true
         viewModelScope.launch {
             try {
                 thongBao = RestaurantApi.retrofitService.xoaCTDM(idCTDM, token)
+                layDSDatMonTheoPD()
             }
             catch (e: Exception){
                 Log.e("Lỗi xóa ctdm", e.message.toString())
