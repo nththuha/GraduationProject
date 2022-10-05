@@ -4,6 +4,9 @@
       <root url="jar://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/db45518295d222af41eff6fb9f30e116/transformed/jetified-startup-runtime-1.1.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/db45518295d222af41eff6fb9f30e116/transformed/jetified-startup-runtime-1.1.1/res" />
       <root url="file://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/db45518295d222af41eff6fb9f30e116/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/a75c944b003deefa7cbcfeba5235e5bb/transformed/startup-runtime-1.1.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/a75c944b003deefa7cbcfeba5235e5bb/transformed/startup-runtime-1.1.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/a75c944b003deefa7cbcfeba5235e5bb/transformed/startup-runtime-1.1.1/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
