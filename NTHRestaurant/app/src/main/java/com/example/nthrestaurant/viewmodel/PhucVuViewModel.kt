@@ -1,6 +1,5 @@
 package com.example.nthrestaurant.viewmodel
 
-import android.icu.lang.UCharacter.GraphemeClusterBreak.L
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.nthrestaurant.network.RestaurantApi
 import com.example.nthrestaurant.network.model.*
-import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 class PhucVuViewModel : ViewModel() {

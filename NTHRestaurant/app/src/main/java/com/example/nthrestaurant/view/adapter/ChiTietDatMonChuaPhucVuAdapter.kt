@@ -7,9 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nthrestaurant.R
-import com.example.nthrestaurant.databinding.ItemChiTietDatMonBinding
 import com.example.nthrestaurant.databinding.ItemChiTietDatMonChoPhucVuBinding
-import com.example.nthrestaurant.doiIntThanhTien
 import com.example.nthrestaurant.network.model.ChiTietDatMonEntity
 
 class ChiTietDatMonChuaPhucVuAdapter(private val clickListener: (ChiTietDatMonEntity) -> Unit) : ListAdapter<ChiTietDatMonEntity, ChiTietDatMonChuaPhucVuAdapter.ChiTietDatMonEntityViewHolder>(DiffCallback) {

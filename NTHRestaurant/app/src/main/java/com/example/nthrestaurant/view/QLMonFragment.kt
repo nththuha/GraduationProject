@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.nthrestaurant.databinding.FragmentQLMonBinding
-import com.example.nthrestaurant.view.adapter.ChiTietDatMonAdapter
 import com.example.nthrestaurant.view.adapter.ChiTietDatMonChuaPhucVuAdapter
 import com.example.nthrestaurant.viewmodel.PhucVuViewModel
 

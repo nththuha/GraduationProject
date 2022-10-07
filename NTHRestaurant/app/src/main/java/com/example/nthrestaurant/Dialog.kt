@@ -3,7 +3,6 @@ package com.example.nthrestaurant
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.view.Window
@@ -15,10 +14,8 @@ import androidx.fragment.app.FragmentActivity
 import androidx.navigation.findNavController
 import com.example.nthrestaurant.network.model.ChiTietDatMonEntity
 import com.example.nthrestaurant.network.model.MonAnEntity
-import com.example.nthrestaurant.view.ChiTietDatMonFragment
 import com.example.nthrestaurant.view.TrangChuFragmentDirections
 import com.example.nthrestaurant.viewmodel.PhucVuViewModel
-import org.w3c.dom.Text
 
 fun dialogDatMon(fm: FragmentActivity, monAn: MonAnEntity) {
     val dialog = Dialog(fm)

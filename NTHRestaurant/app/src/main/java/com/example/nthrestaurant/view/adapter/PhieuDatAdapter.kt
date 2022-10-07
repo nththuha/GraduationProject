@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nthrestaurant.R
-import com.example.nthrestaurant.databinding.ItemMonAnBinding
 import com.example.nthrestaurant.databinding.ItemPhieuDatBinding
 import com.example.nthrestaurant.network.model.PhieuDatEntity
 import com.example.nthrestaurant.view.TrangChuFragmentDirections
