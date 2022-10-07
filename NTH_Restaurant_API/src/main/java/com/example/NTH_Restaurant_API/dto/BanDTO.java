@@ -15,7 +15,6 @@ public class BanDTO {
     private String tenBan;
 
     private String trangThai;
-
     private Integer soGhe;
 
     public BanDTO(BanEntity banEntity) {
