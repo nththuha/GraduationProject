@@ -44,25 +44,17 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivQLMon"
             app:layout_constraintStart_toEndOf="@+id/ivChucNang"
-            app:layout_constraintEnd_toStartOf="@+id/ivQLPhong"
+            app:layout_constraintEnd_toStartOf="@+id/ivTTCaNhan"
             app:layout_constraintBottom_toBottomOf="parent"
             android:src="@drawable/ic_fastfood_50"
             android:paddingBottom="2dp"
             style="@style/fragment_trangchu_iv" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivQLPhong"
-            app:layout_constraintStart_toEndOf="@+id/ivQLMon"
-            app:layout_constraintEnd_toStartOf="@+id/ivTTCaNhan"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:src="@drawable/ic_room_50"
-            style="@style/fragment_trangchu_iv" />
-
-        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivTTCaNhan"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ivQLPhong"
+            app:layout_constraintStart_toEndOf="@+id/ivQLMon"
             android:src="@drawable/ic_person_50"
             style="@style/fragment_trangchu_iv" />
 

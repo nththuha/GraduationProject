@@ -35,30 +35,18 @@ class TrangChuFragment : Fragment() {
                 viewPager.currentItem = 0
                 ivChucNang.setImageResource(R.drawable.ic_home_50_click_true)
                 ivQLMon.setImageResource(R.drawable.ic_fastfood_50)
-                ivQLPhong.setImageResource(R.drawable.ic_room_50)
                 ivTTCaNhan.setImageResource(R.drawable.ic_person_50)
             }
             ivQLMon.setOnClickListener {
                 viewPager.currentItem = 1
                 ivChucNang.setImageResource(R.drawable.ic_home_50)
                 ivQLMon.setImageResource(R.drawable.ic_fastfood_50_click_true)
-                ivQLPhong.setImageResource(R.drawable.ic_room_50)
                 ivTTCaNhan.setImageResource(R.drawable.ic_person_50)
-            }
-            ivQLPhong.setOnClickListener {
-                ivQLPhong.setOnClickListener {
-                    viewPager.currentItem = 2
-                    ivChucNang.setImageResource(R.drawable.ic_home_50)
-                    ivQLMon.setImageResource(R.drawable.ic_fastfood_50)
-                    ivQLPhong.setImageResource(R.drawable.ic_room_50_click_true)
-                    ivTTCaNhan.setImageResource(R.drawable.ic_person_50)
-                }
             }
             ivTTCaNhan.setOnClickListener {
                 viewPager.currentItem = 3
                 ivChucNang.setImageResource(R.drawable.ic_home_50)
                 ivQLMon.setImageResource(R.drawable.ic_fastfood_50)
-                ivQLPhong.setImageResource(R.drawable.ic_room_50)
                 ivTTCaNhan.setImageResource(R.drawable.ic_person_50_click_true)
             }
         }
@@ -67,7 +55,7 @@ class TrangChuFragment : Fragment() {
     private fun setUpViewPager() {
         viewPager = binding.vpTrangChu
         val listFragment =
-            arrayListOf(QLPhieuDatFragment(), QLMonFragment(), QLPhongFragment(), ThongTinCaNhanFragment())
+            arrayListOf(QLPhieuDatFragment(), QLMonFragment(), ThongTinCaNhanFragment())
         viewPagerAdapter = ViewPagerAdapter(
             listFragment,
             requireActivity().supportFragmentManager,

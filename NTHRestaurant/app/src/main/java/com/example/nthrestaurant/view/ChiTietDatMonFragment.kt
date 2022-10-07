@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import com.example.nthrestaurant.R
 import com.example.nthrestaurant.databinding.FragmentChiTietDatMonBinding
 import com.example.nthrestaurant.databinding.FragmentDatChoBinding
@@ -47,14 +48,20 @@ class ChiTietDatMonFragment : Fragment() {
             }
         }
         loadDSCTDM()
-        binding.rvChiTietDatMon.adapter = adapter
-        binding.srChiTietDatMon.setOnRefreshListener {
-            loadDSCTDM()
-            binding.srChiTietDatMon.isRefreshing = false
+        binding.apply {
+            rvChiTietDatMon.adapter = adapter
+            srChiTietDatMon.setOnRefreshListener {
+                loadDSCTDM()
+                srChiTietDatMon.isRefreshing = false
+            }
+            ivBack.setOnClickListener {
+                val action = ChiTietDatMonFragmentDirections.actionChiTietDatMonFragmentToTrangChuFragment()
+                view.findNavController().navigate(action)
+            }
         }
     }
 
-    fun loadDSCTDM() {
+    private fun loadDSCTDM() {
         viewModel.layDSDatMonTheoPD().observe(viewLifecycleOwner) { dsCTDM ->
             adapter?.submitList(dsCTDM)
         }

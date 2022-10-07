@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import com.example.nthrestaurant.databinding.FragmentDatMonBinding
 import com.example.nthrestaurant.dialogDatMon
 import com.example.nthrestaurant.view.adapter.LoaiMonAnAdapter
@@ -48,6 +49,11 @@ class DatMonFragment : Fragment() {
             srMonAn.setOnRefreshListener {
                 loadDSMonAn()
                 srMonAn.isRefreshing = false
+            }
+
+            ivBack.setOnClickListener {
+                val action = DatMonFragmentDirections.actionDatMonFragmentToTrangChuFragment()
+                view.findNavController().navigate(action)
             }
         }
         adapterMA = MonAnAdapter{

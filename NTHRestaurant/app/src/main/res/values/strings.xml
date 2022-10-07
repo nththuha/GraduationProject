@@ -70,4 +70,13 @@
     <string name="item_chi_tiet_dat_mon_huy_mon">HỦY MÓN</string>
     <!--    Item chi tiết đặt món      -->
 
+    <!--    Fragment chi tiết đặt món      -->
+    <string name="fragment_chi_tiet_dat_mon_tv_tieu_de">CHI TIẾT ĐƠN HÀNG</string>
+    <!--    Fragment chi tiết đặt món      -->
+
+    <!--    Fragment thông tin cá nhân      -->
+    <string name="fragment_thong_tin_ca_nhan_doi_mat_khau">ĐỔI MẬT KHẨU</string>
+    <string name="fragment_thong_tin_ca_nhan_dang_xuat">ĐĂNG XUẤT</string>
+    <!--    Fragment thông tin cá nhân      -->
+
 </resources>

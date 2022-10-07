@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nthrestaurant.R
+import com.example.nthrestaurant.databinding.ItemMonAnBinding
 import com.example.nthrestaurant.databinding.ItemPhieuDatBinding
 import com.example.nthrestaurant.network.model.PhieuDatEntity
 import com.example.nthrestaurant.view.TrangChuFragmentDirections
@@ -26,11 +27,18 @@ class PhieuDatAdapter(private val clickListener: (PhieuDatEntity) -> Unit) : Lis
         parent: ViewGroup,
         viewType: Int
     ): PhieuDatEntityViewHolder {
-        return PhieuDatEntityViewHolder(
+        val viewHolder = PhieuDatEntityViewHolder(
             ItemPhieuDatBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             )
         )
+        viewHolder.itemView.setOnClickListener {
+            val position = viewHolder.adapterPosition
+            val action = TrangChuFragmentDirections.actionTrangChuFragmentToChiTietDatMonFragment()
+            viewHolder.itemView.findNavController().navigate(action)
+            clickListener(getItem(position))
+        }
+        return viewHolder
     }
 
     override fun onBindViewHolder(holder: PhieuDatEntityViewHolder, position: Int) {

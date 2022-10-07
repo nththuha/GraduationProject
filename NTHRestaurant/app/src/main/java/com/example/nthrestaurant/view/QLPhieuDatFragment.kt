@@ -31,6 +31,7 @@ class QLPhieuDatFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         adapter = PhieuDatAdapter {
             viewModel.thietLapPhieuDat(it)
+
         }
         loadDSPhieuDatKhongHoaDon()
         binding.apply {

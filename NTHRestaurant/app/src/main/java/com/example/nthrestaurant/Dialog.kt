@@ -5,15 +5,18 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.util.Log
 import android.view.Gravity
+import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
+import androidx.navigation.findNavController
 import com.example.nthrestaurant.network.model.ChiTietDatMonEntity
 import com.example.nthrestaurant.network.model.MonAnEntity
 import com.example.nthrestaurant.view.ChiTietDatMonFragment
+import com.example.nthrestaurant.view.TrangChuFragmentDirections
 import com.example.nthrestaurant.viewmodel.PhucVuViewModel
 import org.w3c.dom.Text
 
@@ -145,7 +148,7 @@ fun dialogChinhSuaDatMon(fm: FragmentActivity, ctdm: ChiTietDatMonEntity) {
     dialog.show()
 }
 
-fun dialogDangXuat(fm: FragmentActivity) {
+fun dialogDangXuat(fm: FragmentActivity, view: View) {
     val dialog = Dialog(fm)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
     dialog.setContentView(R.layout.dialog_dang_xuat)
@@ -162,5 +165,14 @@ fun dialogDangXuat(fm: FragmentActivity) {
     window.attributes = windowAttributes
 
     dialog.setCancelable(false)
+
+    dialog.findViewById<Button>(R.id.btnDangXuat).setOnClickListener {
+        dialog.dismiss()
+        val action = TrangChuFragmentDirections.actionTrangChuFragmentToDangNhapFragment()
+        view.findNavController().navigate(action)
+    }
+    dialog.findViewById<Button>(R.id.btnCancel).setOnClickListener {
+        dialog.dismiss()
+    }
     dialog.show()
 }

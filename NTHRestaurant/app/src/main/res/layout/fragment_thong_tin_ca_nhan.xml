@@ -1,14 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/grey"
-    tools:context=".view.ThongTinCaNhanFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
+    <data>
+        <variable
+            name="nhanVien"
+            type="com.example.nthrestaurant.network.model.NhanVienEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Thông tin cá nhân" />
+        android:background="@color/orange"
+        tools:context=".view.ThongTinCaNhanFragment">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/guideline1"
+            tools:text="Ngô Thu Hà"
+            android:textSize="36sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="@{nhanVien.hoTen}"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/background_grey_nhan_vien">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDoiMatKhau"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/fragment_thong_tin_ca_nhan_doi_mat_khau"
+                android:background="@drawable/btn_dangnhap"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnDangXuat"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDangXuat"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/fragment_thong_tin_ca_nhan_dang_xuat"
+                android:background="@drawable/btn_huymon"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/btnDoiMatKhau"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="20dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -15,9 +15,20 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.94" />
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/svMonAn"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/ic_back" />
+
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/svMonAn"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivBack"
         app:layout_constraintEnd_toStartOf="@+id/ivLoc"
         app:layout_constraintTop_toTopOf="parent"
         android:hint="@string/fragment_datmon_et_hint"
