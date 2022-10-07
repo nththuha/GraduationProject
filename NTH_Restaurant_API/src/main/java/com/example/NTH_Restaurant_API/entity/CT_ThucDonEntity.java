@@ -12,12 +12,12 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "CT_MONAN")
-public class CT_MonAnEntity {
+@Table(name = "CT_THUCDON")
+public class CT_ThucDonEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IDCTMA")
-    private Integer idCTMA;
+    @Column(name = "IDCTTD")
+    private Integer idCTTD;
 
     @Column(name = "SOLUONG")
     private Integer soLuong;
@@ -27,6 +27,7 @@ public class CT_MonAnEntity {
     private MonAnEntity mama;
 
     @ManyToOne
-    @JoinColumn(name = "MANL")
-    private NguyenLieuEntity manl;
+    @JoinColumn(name = "IDTD")
+    private ThucDonEntity idtd;
+
 }

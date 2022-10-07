@@ -37,5 +37,8 @@ public class CT_BanEntity {
     private PhongEntity maphong;
 
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idctb")
+    private List<CT_DatBanTruocEntity> ctDatBanTruocList;
+
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idctb")
     private List<CT_DatBanEntity> ctDatBanList;
 }

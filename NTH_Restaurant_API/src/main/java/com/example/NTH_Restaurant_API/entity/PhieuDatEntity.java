@@ -25,6 +25,10 @@ public class PhieuDatEntity {
     @Temporal(TemporalType.DATE)
     private Date ngay;
 
+    @JoinColumn(name = "IDPDT")
+    @ManyToOne
+    private PhieuDatTruocEntity idpdt;
+
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idpd")
     private List<CT_DatMonEntity> ctDatmonList;
 

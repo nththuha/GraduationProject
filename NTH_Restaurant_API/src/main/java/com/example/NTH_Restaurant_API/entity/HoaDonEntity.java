@@ -29,10 +29,10 @@ public class HoaDonEntity {
     private Date ngay;
 
     @Column(name = "TRIGIA")
-    private int trigia;
+    private Integer trigia;
 
     @Column(name = "GIASAUTHUE")
-    private int giaSauThue;
+    private Integer giaSauThue;
 
     @Column(name = "MASOTHUE")
     @Size(max = 50)
@@ -42,7 +42,7 @@ public class HoaDonEntity {
     @Size(max = 50)
     private String hotenkh;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "mahd")
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "mahd")
     private List<PhieuDatEntity> phieudatList;
 
     @ManyToOne

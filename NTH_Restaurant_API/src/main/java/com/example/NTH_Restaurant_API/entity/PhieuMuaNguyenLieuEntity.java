@@ -15,12 +15,12 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "PHIEUNHAPNGUYENLIEU")
-public class PhieuNhapNguyenLieuEntity {
+@Table(name = "PHIEUMUANGUYENLIEU")
+public class PhieuMuaNguyenLieuEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IDPN")
-    private Integer idPN;
+    @Column(name = "IDPM")
+    private Integer idPM;
 
     @Column(name = "NGAY")
     @Temporal(TemporalType.DATE)
@@ -31,10 +31,9 @@ public class PhieuNhapNguyenLieuEntity {
     @JoinColumn(name = "IDNV")
     private NhanVienEntity idnv;
 
-    @ManyToOne
-    @JoinColumn(name = "IDPM")
-    private PhieuMuaNguyenLieuEntity idpm;
+    @OneToMany(mappedBy = "idpm")
+    private List<PhieuNhapNguyenLieuEntity> phieunhapnguyenlieuList;
 
-    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idpn")
-    private List<CT_PhieuNhapEntity> ctPhieunhapList;
+    @OneToMany(mappedBy = "idpm")
+    private List<CT_PhieuMuaEntity> ctPhieumuaList;
 }

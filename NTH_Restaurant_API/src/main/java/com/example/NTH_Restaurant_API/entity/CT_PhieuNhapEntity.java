@@ -12,21 +12,24 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "CT_MONAN")
-public class CT_MonAnEntity {
+@Table(name = "CTPN_NGUYENLIEU")
+public class CT_PhieuNhapEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IDCTMA")
-    private Integer idCTMA;
+    @Column(name = "IDCTPN")
+    private Integer idCTPN;
 
     @Column(name = "SOLUONG")
     private Integer soLuong;
 
-    @ManyToOne
-    @JoinColumn(name = "MAMA")
-    private MonAnEntity mama;
+    @Column(name = "GIA")
+    private Integer gia;
 
     @ManyToOne
     @JoinColumn(name = "MANL")
     private NguyenLieuEntity manl;
+
+    @ManyToOne
+    @JoinColumn(name = "IDPN")
+    private PhieuNhapNguyenLieuEntity idpn;
 }

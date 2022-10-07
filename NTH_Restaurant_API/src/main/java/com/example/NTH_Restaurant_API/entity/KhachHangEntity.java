@@ -30,6 +30,9 @@ public class KhachHangEntity {
     private String sDT;
 
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idkh")
+    private List<PhieuDatTruocEntity> phieudattruocList;
+
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idkh")
     private List<PhieuDatEntity> phieudatList;
 
 }

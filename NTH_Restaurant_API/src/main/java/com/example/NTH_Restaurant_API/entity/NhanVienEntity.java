@@ -38,6 +38,9 @@ public class NhanVienEntity {
     private String email;
 
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idnv")
+    private List<PhieuMuaNguyenLieuEntity> phieumuanguyenlieuList;
+
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idnv")
     private List<PhieuNhapNguyenLieuEntity> phieunhapnguyenlieuList;
 
     @OneToOne(cascade = CascadeType.REFRESH, mappedBy = "idnv")

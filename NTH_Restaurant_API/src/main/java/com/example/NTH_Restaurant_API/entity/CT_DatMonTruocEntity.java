@@ -6,27 +6,32 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "CT_MONAN")
-public class CT_MonAnEntity {
+@Table(name = "CT_DATMONTRUOC")
+public class CT_DatMonTruocEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IDCTMA")
-    private Integer idCTMA;
+    @Column(name = "IDCTDMT")
+    private Integer idctdmt;
 
     @Column(name = "SOLUONG")
-    private Integer soLuong;
+    private Integer soluong;
 
-    @ManyToOne
+    @Column(name = "CHUTHICH")
+    @Size(max = 255)
+    private String chuthich;
+
     @JoinColumn(name = "MAMA")
+    @ManyToOne
     private MonAnEntity mama;
 
+    @JoinColumn(name = "IDPDT")
     @ManyToOne
-    @JoinColumn(name = "MANL")
-    private NguyenLieuEntity manl;
+    private PhieuDatTruocEntity idpdt;
 }

@@ -21,7 +21,7 @@ public class CT_DatMonEntity {
     private Integer idCTDM;
 
     @Column(name = "SOLUONG")
-    private int soLuong;
+    private Integer soLuong;
 
     @Column(name = "CHUTHICH")
     @Size(max = 255)
@@ -32,7 +32,7 @@ public class CT_DatMonEntity {
     private String trangThai;
 
     @Column(name = "GIA")
-    private int gia;
+    private Integer gia;
 
     @ManyToOne
     @JoinColumn(name = "MAMA")

@@ -29,6 +29,6 @@ public class LoaiMonAnEntity {
     @Size(max = 255)
     private String hinhAnh;
 
-    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "malma")
+    @OneToMany(mappedBy = "malma")
     private List<MonAnEntity> monanList;
 }

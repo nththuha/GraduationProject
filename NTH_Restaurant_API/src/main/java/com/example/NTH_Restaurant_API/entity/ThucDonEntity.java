@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.List;
 
@@ -15,26 +16,26 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "PHIEUNHAPNGUYENLIEU")
-public class PhieuNhapNguyenLieuEntity {
+@Table(name = "THUCDON")
+public class ThucDonEntity {
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IDPN")
-    private Integer idPN;
+    @Column(name = "IDTD")
+    private Integer idTD;
 
-    @Column(name = "NGAY")
+    @Column(name = "TENTD")
+    @Size(max = 50)
+    private String tenTD;
+
+    @Column(name = "NGAYTAO")
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date ngay;
+    private Date ngayTao;
 
-    @ManyToOne
-    @JoinColumn(name = "IDNV")
-    private NhanVienEntity idnv;
+    @Column(name = "GIA")
+    private Integer gia;
 
-    @ManyToOne
-    @JoinColumn(name = "IDPM")
-    private PhieuMuaNguyenLieuEntity idpm;
-
-    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idpn")
-    private List<CT_PhieuNhapEntity> ctPhieunhapList;
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idtd")
+    private List<CT_ThucDonEntity> ctThucdonList;
 }

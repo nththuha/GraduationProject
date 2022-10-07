@@ -25,6 +25,6 @@ public class BoPhanEntity {
     @Column(length = 50)
     private EnumBoPhan tenBP;
 
-    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "mapb")
+    @OneToMany(mappedBy = "mapb")
     private List<NhanVienEntity> nhanVienList;
 }

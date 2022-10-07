@@ -37,13 +37,19 @@ public class MonAnEntity {
     @Size(max = 255)
     private String hinhAnh;
 
-    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "mama")
+    @OneToMany(mappedBy = "mama")
+    private List<CT_DatMonTruocEntity> ctDatmontruocList;
+
+    @OneToMany(mappedBy = "mama")
+    private List<CT_ThucDonEntity> ctThucdonList;
+
+    @OneToMany(mappedBy = "mama")
     private List<CT_DatMonEntity> ctDatmonList;
 
-    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "mama")
+    @OneToMany(mappedBy = "mama")
     private List<CT_MonAnEntity> ctMonanList;
 
-    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "mama")
+    @OneToMany(mappedBy = "mama")
     private List<ThayDoiGiaMonEntity> thaydoigiamonList;
 
     @ManyToOne

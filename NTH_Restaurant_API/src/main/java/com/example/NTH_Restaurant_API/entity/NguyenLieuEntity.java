@@ -29,9 +29,15 @@ public class NguyenLieuEntity {
     @Size(max = 50)
     private String donVi;
 
+    @Column(name = "SLTON")
+    private Integer slTon;
+
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "manl")
     private List<CT_MonAnEntity> ctMonanList;
 
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "manl")
-    private List<CTPN_NguyenLieuEntity> ctpnNguyenlieuList;
+    private List<CT_PhieuMuaEntity> ctPhieumuaList;
+
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "manl")
+    private List<CT_PhieuNhapEntity> ctPhieunhapList;
 }

@@ -6,30 +6,28 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "CTPN_NGUYENLIEU")
-public class CTPN_NguyenLieuEntity {
+@Table(name = "TIENCOC")
+public class TienCocEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IDCTPN")
-    private Integer idCTPN;
+    @Column(name = "IDTC")
+    private Integer idTC;
 
-    @Column(name = "SOLUONG")
-    private int soLuong;
+    @Column(name = "NGAY")
+    @Temporal(TemporalType.DATE)
+    private Date ngay;
 
     @Column(name = "GIA")
-    private int gia;
+    private Integer gia;
 
+    @JoinColumn(name = "IDPDT")
     @ManyToOne
-    @JoinColumn(name = "MANL")
-    private NguyenLieuEntity manl;
-
-    @ManyToOne
-    @JoinColumn(name = "IDPN")
-    private PhieuNhapNguyenLieuEntity idpn;
+    private PhieuDatTruocEntity idpdt;
 }
