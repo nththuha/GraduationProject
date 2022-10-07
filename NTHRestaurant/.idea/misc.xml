@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable-v23/background_grey_nhan_vien_1.xml" value="0.1695" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable-v23/background_grey_nv.xml" value="0.1695" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable-v24/background_grey_nhan_vien.xml" value="0.1695" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable-v24/background_grey_nhan_vien_2.xml" value="0.1695" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable-v24/background_white_loaimonan_click_false.xml" value="0.157" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable-v24/background_white_nhan_vien.xml" value="0.1415" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable-v24/btn_dangnhap.xml" value="0.157" />
@@ -14,6 +18,8 @@
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable-v24/img_room.xml" value="0.1455" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable-v24/test.xml" value="0.1455" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/background_datmon.xml" value="0.1415" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/background_grey_nhan_vien_1.xml" value="0.1695" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/background_grey_nv.xml" value="0.1695" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/background_monan.xml" value="0.1415" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/background_room.xml" value="0.1455" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/background_room_click_false.xml" value="0.1455" />
@@ -29,6 +35,7 @@
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/btn_huy_click_true.xml" value="0.1415" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_amount.xml" value="0.157" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_back.xml" value="0.1415" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_broken_image.xml" value="0.1695" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_circle_red.xml" value="0.1575" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_clock.xml" value="0.1455" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_cong_available.xml" value="0.1455" />
