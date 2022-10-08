@@ -14,7 +14,9 @@
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable-v24/btn_huymon_click_false.xml" value="0.157" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable-v24/btn_huymon_click_true.xml" value="0.157" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable-v24/ic_dollar.xml" value="0.157" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable-v24/ic_home_50_click_true.xml" value="0.1695" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable-v24/ic_house.xml" value="0.1455" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable-v24/ic_person_50_click_true.xml" value="0.1665" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable-v24/img_room.xml" value="0.1455" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable-v24/test.xml" value="0.1455" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/background_datmon.xml" value="0.1415" />
@@ -40,6 +42,11 @@
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_clock.xml" value="0.1455" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_cong_available.xml" value="0.1455" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_cong_unavailable.xml" value="0.1455" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_email.xml" value="0.1695" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_home_50.xml" value="0.1695" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_person.xml" value="0.1665" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_phone.xml" value="0.1695" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_room_50.xml" value="0.1695" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_table.xml" value="0.1455" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/ic_them.xml" value="0.1415" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/drawable/loading_img.xml" value="0.139" />

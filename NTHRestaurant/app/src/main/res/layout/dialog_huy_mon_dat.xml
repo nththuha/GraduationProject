@@ -35,7 +35,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCancel_HM"
-        android:background="@drawable/btn_huy"
+        android:background="@drawable/btn_huymon"
         app:layout_constraintStart_toEndOf="@id/btnXacNhan_HM"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvCauHoi_HM"

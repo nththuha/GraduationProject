@@ -30,6 +30,12 @@ class ThongTinCaNhanFragment : Fragment() {
         binding.apply {
             nhanVien = viewModel.nhanVien.value
 
+            when(viewModel.nhanVien.value?.tenBP){
+                "PHUCVU" -> tvBoPhan.text = "NHÂN VIÊN PHỤC VỤ"
+                "BOPHANBEP" -> tvBoPhan.text = "NHÂN VIÊN BỘ PHẬN BẾP"
+                "BOPHANPHACHE" -> tvBoPhan.text = "NHÂN VIÊN BỘ PHẬN PHA CHẾ"
+            }
+
             btnDangXuat.setOnClickListener {
                 dialogDangXuat(requireActivity(), view)
             }
