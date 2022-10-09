@@ -58,4 +58,7 @@ public class NhanVienEntity {
 
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idnv")
     private List<HoaDonEntity> hoadonList;
+
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idnv")
+    private List<TienCocEntity> tiencocList;
 }

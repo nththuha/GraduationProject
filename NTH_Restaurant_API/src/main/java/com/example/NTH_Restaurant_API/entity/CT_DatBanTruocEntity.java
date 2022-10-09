@@ -25,5 +25,9 @@ public class CT_DatBanTruocEntity {
 
     @JoinColumn(name = "IDPDT")
     @ManyToOne
-    private PhieuDatEntity idpdt;
+    private PhieuDatTruocEntity idpdt;
+
+    @JoinColumn(name = "IDTD")
+    @ManyToOne()
+    private ThucDonEntity idtd;
 }

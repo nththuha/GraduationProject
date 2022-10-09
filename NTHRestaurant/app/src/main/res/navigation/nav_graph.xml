@@ -50,6 +50,9 @@
         <action
             android:id="@+id/action_datChoFragment_to_datMonFragment"
             app:destination="@id/datMonFragment" />
+        <action
+            android:id="@+id/action_datChoFragment_to_trangChuFragment"
+            app:destination="@id/trangChuFragment" />
     </fragment>
     <fragment
         android:id="@+id/datMonFragment"

@@ -7,9 +7,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.DatChoFragment">
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/svPhong"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/ic_back" />
+
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/svPhong"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:hint="@string/fragment_dat_cho_tv_hint_tim_kiem"

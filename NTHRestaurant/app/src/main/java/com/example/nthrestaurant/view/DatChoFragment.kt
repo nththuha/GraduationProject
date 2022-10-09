@@ -53,6 +53,11 @@ class DatChoFragment : Fragment() {
                 loadDSBan()
                 srBan.isRefreshing = false
             }
+
+            ivBack.setOnClickListener {
+                val action = DatChoFragmentDirections.actionDatChoFragmentToTrangChuFragment()
+                view.findNavController().navigate(action)
+            }
         }
 
         adapterB = BanAdapter {

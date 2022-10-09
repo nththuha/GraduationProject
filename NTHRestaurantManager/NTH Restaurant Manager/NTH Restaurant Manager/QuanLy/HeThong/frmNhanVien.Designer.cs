@@ -44,12 +44,7 @@ namespace NTH_Restaurant_Manager
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.pb_HinhAnh = new System.Windows.Forms.PictureBox();
-            this.et_DuongDan = new DevExpress.XtraEditors.TextEdit();
-            this.btn_Browse = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_HinhAnh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.et_DuongDan.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -178,44 +173,11 @@ namespace NTH_Restaurant_Manager
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 703);
             // 
-            // pb_HinhAnh
-            // 
-            this.pb_HinhAnh.Location = new System.Drawing.Point(153, 100);
-            this.pb_HinhAnh.Name = "pb_HinhAnh";
-            this.pb_HinhAnh.Size = new System.Drawing.Size(430, 382);
-            this.pb_HinhAnh.TabIndex = 4;
-            this.pb_HinhAnh.TabStop = false;
-            // 
-            // et_DuongDan
-            // 
-            this.et_DuongDan.Enabled = false;
-            this.et_DuongDan.Location = new System.Drawing.Point(153, 524);
-            this.et_DuongDan.MenuManager = this.barManager1;
-            this.et_DuongDan.Name = "et_DuongDan";
-            this.et_DuongDan.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.et_DuongDan.Properties.Appearance.Options.UseFont = true;
-            this.et_DuongDan.Size = new System.Drawing.Size(430, 32);
-            this.et_DuongDan.TabIndex = 5;
-            // 
-            // btn_Browse
-            // 
-            this.btn_Browse.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Browse.Location = new System.Drawing.Point(620, 520);
-            this.btn_Browse.Name = "btn_Browse";
-            this.btn_Browse.Size = new System.Drawing.Size(136, 37);
-            this.btn_Browse.TabIndex = 6;
-            this.btn_Browse.Text = "Browse";
-            this.btn_Browse.UseVisualStyleBackColor = true;
-            this.btn_Browse.Click += new System.EventHandler(this.btn_Browse_Click);
-            // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1388, 733);
-            this.Controls.Add(this.btn_Browse);
-            this.Controls.Add(this.et_DuongDan);
-            this.Controls.Add(this.pb_HinhAnh);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -224,8 +186,6 @@ namespace NTH_Restaurant_Manager
             this.Text = "NHÂN VIÊN";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_HinhAnh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.et_DuongDan.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,8 +206,5 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private System.Windows.Forms.Button btn_Browse;
-        private DevExpress.XtraEditors.TextEdit et_DuongDan;
-        private System.Windows.Forms.PictureBox pb_HinhAnh;
     }
 }

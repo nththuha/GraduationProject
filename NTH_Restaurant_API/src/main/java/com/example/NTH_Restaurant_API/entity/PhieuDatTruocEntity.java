@@ -37,14 +37,11 @@ public class PhieuDatTruocEntity {
     @ManyToOne
     private NhanVienEntity idnv;
 
-    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idpdt")
-    private List<CT_DatMonTruocEntity> ctDatmontruocList;
-
     @OneToMany(mappedBy = "idpdt")
     private List<PhieuDatEntity> phieudatList;
 
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idpdt")
-    private List<CT_DatMonTruocEntity> ctDatbantruocList;
+    private List<CT_DatBanTruocEntity> ctDatbantruocList;
 
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idpdt")
     private List<TienCocEntity> tiencocList;

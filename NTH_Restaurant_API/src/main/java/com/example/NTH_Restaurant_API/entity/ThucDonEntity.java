@@ -33,9 +33,13 @@ public class ThucDonEntity {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date ngayTao;
 
-    @Column(name = "GIA")
-    private Integer gia;
+    @Column(name = "LOAITD")
+    @Size(max = 50)
+    private String loaitd;
 
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idtd")
     private List<CT_ThucDonEntity> ctThucdonList;
+
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idtd")
+    private List<CT_DatBanTruocEntity> ctDatbantruocList;
 }

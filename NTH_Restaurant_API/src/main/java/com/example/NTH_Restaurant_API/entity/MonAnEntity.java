@@ -38,9 +38,6 @@ public class MonAnEntity {
     private String hinhAnh;
 
     @OneToMany(mappedBy = "mama")
-    private List<CT_DatMonTruocEntity> ctDatmontruocList;
-
-    @OneToMany(mappedBy = "mama")
     private List<CT_ThucDonEntity> ctThucdonList;
 
     @OneToMany(mappedBy = "mama")

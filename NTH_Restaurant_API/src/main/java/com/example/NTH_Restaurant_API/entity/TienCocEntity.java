@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Getter
@@ -24,8 +25,20 @@ public class TienCocEntity {
     @Temporal(TemporalType.DATE)
     private Date ngay;
 
-    @Column(name = "GIA")
-    private Integer gia;
+    @Column(name = "TRIGIA")
+    private Integer triGia;
+
+    @Column(name = "CMND")
+    @Size(max = 50)
+    private String cmnd;
+
+    @Column(name = "HOTENKH")
+    @Size(max = 50)
+    private String hoTenKH;
+
+    @JoinColumn(name = "IDNV")
+    @ManyToOne()
+    private NhanVienEntity idnv;
 
     @JoinColumn(name = "IDPDT")
     @ManyToOne
