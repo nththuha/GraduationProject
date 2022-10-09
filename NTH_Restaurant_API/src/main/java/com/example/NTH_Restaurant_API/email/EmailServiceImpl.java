@@ -10,26 +10,26 @@ import javax.mail.internet.InternetAddress;
 
 @Service
 public class EmailServiceImpl implements EmailService {
-//    @Autowired
-//    private JavaMailSender javaMailSender;
-//
-//    @Value("${spring.mail.username}")
-//    private String sender;
+    @Autowired
+    private JavaMailSender javaMailSender;
+
+    @Value("${spring.mail.username}")
+    private String sender;
 
     @Override
     public String guiMail(EmailDetail details) {
         try {
-//            // Creating a simple mail message
-//            SimpleMailMessage mailMessage = new SimpleMailMessage();
-//
-//            // Setting up necessary details
-//            mailMessage.setFrom(String.valueOf(new InternetAddress("noreply@gmail.com", "noreply@gmail.com")));
-//            mailMessage.setTo(details.getNguoiNhan());
-//            mailMessage.setText(details.getNoiDung());
-//            mailMessage.setSubject(details.getTieuDe());
-//
-//            // Sending the mail
-//            javaMailSender.send(mailMessage);
+            // Creating a simple mail message
+            SimpleMailMessage mailMessage = new SimpleMailMessage();
+
+            // Setting up necessary details
+            mailMessage.setFrom(String.valueOf(new InternetAddress("noreply@gmail.com", "noreply@gmail.com")));
+            mailMessage.setTo(details.getNguoiNhan());
+            mailMessage.setText(details.getNoiDung());
+            mailMessage.setSubject(details.getTieuDe());
+
+            // Sending the mail
+            javaMailSender.send(mailMessage);
             return "Mail Sent Successfully...";
         }
         catch (Exception e) {
