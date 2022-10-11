@@ -1,5 +1,6 @@
 ﻿using DevExpress.Skins;
 using DevExpress.UserSkins;
+using NTH_Restaurant_Manager.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ namespace NTH_Restaurant_Manager
 {
     static class Program
     {
+        public static NhanVienModel nhanVienDangDangNhap = new NhanVienModel();
+
         public static frmMain frmChinh;
         public static frmDangNhap formDangNhap;
         public static frmNhanVien formNhanVien;

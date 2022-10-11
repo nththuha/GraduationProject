@@ -35,15 +35,15 @@ namespace NTH_Restaurant_Manager
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.bp_Icon = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.et_TenDangNhap = new DevExpress.XtraEditors.TextEdit();
-            this.et_MatKhau = new DevExpress.XtraEditors.TextEdit();
+            this.txt_TenDangNhap = new DevExpress.XtraEditors.TextEdit();
+            this.txt_MatKhau = new DevExpress.XtraEditors.TextEdit();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_DangNhap = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bp_Icon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.et_TenDangNhap.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.et_MatKhau.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TenDangNhap.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MatKhau.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -101,26 +101,28 @@ namespace NTH_Restaurant_Manager
             this.label3.TabIndex = 3;
             this.label3.Text = "Tên đăng nhập";
             // 
-            // et_TenDangNhap
+            // txt_TenDangNhap
             // 
-            this.et_TenDangNhap.Location = new System.Drawing.Point(623, 293);
-            this.et_TenDangNhap.Margin = new System.Windows.Forms.Padding(4);
-            this.et_TenDangNhap.Name = "et_TenDangNhap";
-            this.et_TenDangNhap.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.et_TenDangNhap.Properties.Appearance.Options.UseFont = true;
-            this.et_TenDangNhap.Size = new System.Drawing.Size(385, 32);
-            this.et_TenDangNhap.TabIndex = 4;
+            this.txt_TenDangNhap.EditValue = "NTH";
+            this.txt_TenDangNhap.Location = new System.Drawing.Point(623, 293);
+            this.txt_TenDangNhap.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_TenDangNhap.Name = "txt_TenDangNhap";
+            this.txt_TenDangNhap.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TenDangNhap.Properties.Appearance.Options.UseFont = true;
+            this.txt_TenDangNhap.Size = new System.Drawing.Size(385, 32);
+            this.txt_TenDangNhap.TabIndex = 4;
             // 
-            // et_MatKhau
+            // txt_MatKhau
             // 
-            this.et_MatKhau.Location = new System.Drawing.Point(623, 380);
-            this.et_MatKhau.Margin = new System.Windows.Forms.Padding(5);
-            this.et_MatKhau.Name = "et_MatKhau";
-            this.et_MatKhau.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.et_MatKhau.Properties.Appearance.Options.UseFont = true;
-            this.et_MatKhau.Properties.UseSystemPasswordChar = true;
-            this.et_MatKhau.Size = new System.Drawing.Size(385, 32);
-            this.et_MatKhau.TabIndex = 6;
+            this.txt_MatKhau.EditValue = "02042000";
+            this.txt_MatKhau.Location = new System.Drawing.Point(623, 380);
+            this.txt_MatKhau.Margin = new System.Windows.Forms.Padding(5);
+            this.txt_MatKhau.Name = "txt_MatKhau";
+            this.txt_MatKhau.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_MatKhau.Properties.Appearance.Options.UseFont = true;
+            this.txt_MatKhau.Properties.UseSystemPasswordChar = true;
+            this.txt_MatKhau.Size = new System.Drawing.Size(385, 32);
+            this.txt_MatKhau.TabIndex = 6;
             // 
             // label4
             // 
@@ -150,9 +152,9 @@ namespace NTH_Restaurant_Manager
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1408, 712);
             this.Controls.Add(this.btn_DangNhap);
-            this.Controls.Add(this.et_MatKhau);
+            this.Controls.Add(this.txt_MatKhau);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.et_TenDangNhap);
+            this.Controls.Add(this.txt_TenDangNhap);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panelControl1);
             this.Name = "frmDangNhap";
@@ -162,8 +164,8 @@ namespace NTH_Restaurant_Manager
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bp_Icon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.et_TenDangNhap.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.et_MatKhau.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TenDangNhap.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MatKhau.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,8 +178,8 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.PictureBox bp_Icon;
         private System.Windows.Forms.Label label3;
-        private DevExpress.XtraEditors.TextEdit et_TenDangNhap;
-        private DevExpress.XtraEditors.TextEdit et_MatKhau;
+        private DevExpress.XtraEditors.TextEdit txt_TenDangNhap;
+        private DevExpress.XtraEditors.TextEdit txt_MatKhau;
         private System.Windows.Forms.Label label4;
         private DevExpress.XtraEditors.SimpleButton btn_DangNhap;
     }

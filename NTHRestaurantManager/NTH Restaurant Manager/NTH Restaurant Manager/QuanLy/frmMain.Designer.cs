@@ -59,7 +59,7 @@ namespace NTH_Restaurant_Manager
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.sttl_MaNV = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tssl_MaNV = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssl_HoTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssl_BoPhan = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -311,29 +311,29 @@ namespace NTH_Restaurant_Manager
             // 
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sttl_MaNV,
+            this.tssl_MaNV,
             this.tssl_HoTen,
             this.tssl_BoPhan});
-            this.statusStrip.Location = new System.Drawing.Point(0, 738);
+            this.statusStrip.Location = new System.Drawing.Point(0, 736);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1448, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1448, 24);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "statusStrip1";
             // 
-            // sttl_MaNV
+            // tssl_MaNV
             // 
-            this.sttl_MaNV.Name = "sttl_MaNV";
-            this.sttl_MaNV.Size = new System.Drawing.Size(0, 16);
+            this.tssl_MaNV.Name = "tssl_MaNV";
+            this.tssl_MaNV.Size = new System.Drawing.Size(0, 18);
             // 
             // tssl_HoTen
             // 
             this.tssl_HoTen.Name = "tssl_HoTen";
-            this.tssl_HoTen.Size = new System.Drawing.Size(0, 16);
+            this.tssl_HoTen.Size = new System.Drawing.Size(0, 18);
             // 
             // tssl_BoPhan
             // 
             this.tssl_BoPhan.Name = "tssl_BoPhan";
-            this.tssl_BoPhan.Size = new System.Drawing.Size(0, 16);
+            this.tssl_BoPhan.Size = new System.Drawing.Size(0, 18);
             // 
             // frmMain
             // 
@@ -385,7 +385,7 @@ namespace NTH_Restaurant_Manager
         public DevExpress.XtraBars.BarButtonItem btn_PhongBan;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager;
         private System.Windows.Forms.StatusStrip statusStrip;
-        public System.Windows.Forms.ToolStripStatusLabel sttl_MaNV;
+        public System.Windows.Forms.ToolStripStatusLabel tssl_MaNV;
         public System.Windows.Forms.ToolStripStatusLabel tssl_HoTen;
         public System.Windows.Forms.ToolStripStatusLabel tssl_BoPhan;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;

@@ -214,6 +214,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\NhanVienModel.cs" />
+    <Compile Include="Model\TaiKhoanModel.cs" />
+    <Compile Include="Model\TokenModel.cs" />
     <Compile Include="QuanLy\DanhMuc\mesPhongBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,8 +315,10 @@
     <Compile Include="Repository\MonAnRepository.cs" />
     <Compile Include="Repository\NguyenLieuModel.cs" />
     <Compile Include="Repository\NguyenLieuRepository.cs" />
+    <Compile Include="Repository\NhanVienRepository.cs" />
     <Compile Include="Repository\PhieuDatRepository.cs" />
     <Compile Include="Repository\PhongRepository.cs" />
+    <Compile Include="Repository\TaiKhoanRepository.cs" />
     <Compile Include="Repository\ThayDoiGiaMonRepository.cs" />
     <EmbeddedResource Include="QuanLy\DanhMuc\frmNguyenLieu.resx">
       <DependentUpon>frmNguyenLieu.cs</DependentUpon>
