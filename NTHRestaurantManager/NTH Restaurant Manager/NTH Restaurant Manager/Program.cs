@@ -17,9 +17,12 @@ namespace NTH_Restaurant_Manager
         public static frmMonAn formMonAn;
         public static frmLoaiMonAn formLoaiMonAn;
         public static frmThayDoiGiaMon formThayDoiGiaMon;
+        public static frmNguyenLieu formNguyenLieu;
         public static frmPhongBan formPhongBan;
         public static frmChiTietPhong formChiTietPhong;
         public static frmThongKeDoanhThuTheoThang formThongKeDoanhThuTheoThang;
+
+        public static String URL = "https://nth-restaurant-api.herokuapp.com/api/";
 
         [STAThread]
         static void Main()

@@ -46,6 +46,8 @@ namespace NTH_Restaurant_Manager
             this.btn_ThayDoiGiaMon = new DevExpress.XtraBars.BarButtonItem();
             this.btn_PhongBan = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_NguyenLieu = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -60,7 +62,6 @@ namespace NTH_Restaurant_Manager
             this.sttl_MaNV = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssl_HoTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssl_BoPhan = new System.Windows.Forms.ToolStripStatusLabel();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             this.statusStrip.SuspendLayout();
@@ -86,10 +87,11 @@ namespace NTH_Restaurant_Manager
             this.btn_ThayDoiGiaMon,
             this.btn_PhongBan,
             this.barButtonItem1,
-            this.barButtonItem2});
+            this.barButtonItem2,
+            this.btn_NguyenLieu});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbonControl1.MaxItemId = 16;
+            this.ribbonControl1.MaxItemId = 17;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -161,6 +163,7 @@ namespace NTH_Restaurant_Manager
             // btn_NhanVien
             // 
             this.btn_NhanVien.Caption = "Nhân viên";
+            this.btn_NhanVien.Enabled = false;
             this.btn_NhanVien.Id = 8;
             this.btn_NhanVien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_NhanVien.ImageOptions.Image")));
             this.btn_NhanVien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_NhanVien.ImageOptions.LargeImage")));
@@ -223,6 +226,23 @@ namespace NTH_Restaurant_Manager
             this.barButtonItem1.Id = 14;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Temp";
+            this.barButtonItem2.Id = 15;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // btn_NguyenLieu
+            // 
+            this.btn_NguyenLieu.Caption = "Nguyên liệu";
+            this.btn_NguyenLieu.Enabled = false;
+            this.btn_NguyenLieu.Id = 16;
+            this.btn_NguyenLieu.ImageOptions.Image = global::NTH_Restaurant_Manager.Properties.Resources.nguyenlieu;
+            this.btn_NguyenLieu.Name = "btn_NguyenLieu";
+            this.btn_NguyenLieu.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btn_NguyenLieu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_NguyenLieu_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -262,6 +282,7 @@ namespace NTH_Restaurant_Manager
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_LoaiMonAn);
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_MonAn);
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_ThayDoiGiaMon);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btn_NguyenLieu);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
             // ribbonPageGroup4
@@ -313,12 +334,6 @@ namespace NTH_Restaurant_Manager
             // 
             this.tssl_BoPhan.Name = "tssl_BoPhan";
             this.tssl_BoPhan.Size = new System.Drawing.Size(0, 16);
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "Temp";
-            this.barButtonItem2.Id = 15;
-            this.barButtonItem2.Name = "barButtonItem2";
             // 
             // frmMain
             // 
@@ -374,6 +389,7 @@ namespace NTH_Restaurant_Manager
         public System.Windows.Forms.ToolStripStatusLabel tssl_HoTen;
         public System.Windows.Forms.ToolStripStatusLabel tssl_BoPhan;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem btn_NguyenLieu;
     }
 }
 

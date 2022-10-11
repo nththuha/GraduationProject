@@ -79,7 +79,7 @@ namespace NTH_Restaurant_Manager
         {
             btn_DangNhap.Enabled = !dangNhap;
             btn_DangXuat.Enabled = btn_NhanVien.Enabled = btn_TaiKhoan.Enabled = btn_TheoDoiDonHang.Enabled = dangNhap;
-            btn_LoaiMonAn.Enabled = btn_MonAn.Enabled = btn_ThayDoiGiaMon.Enabled = btn_PhongBan.Enabled = btn_ChiTietPhong.Enabled = dangNhap;
+            btn_LoaiMonAn.Enabled = btn_MonAn.Enabled = btn_ThayDoiGiaMon.Enabled = btn_PhongBan.Enabled = btn_ChiTietPhong.Enabled = btn_NguyenLieu.Enabled = dangNhap;
             btn_ThongKeDoanhThuTheoThang.Enabled = dangNhap;
         }
 
@@ -188,6 +188,18 @@ namespace NTH_Restaurant_Manager
                 Program.formThongKeDoanhThuTheoThang = new frmThongKeDoanhThuTheoThang();
                 Program.formThongKeDoanhThuTheoThang.MdiParent = this;
                 Program.formThongKeDoanhThuTheoThang.Show();
+            }
+        }
+
+        private void btn_NguyenLieu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmNguyenLieu));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.formNguyenLieu = new frmNguyenLieu();
+                Program.formNguyenLieu.MdiParent = this;
+                Program.formNguyenLieu.Show();
             }
         }
     }

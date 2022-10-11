@@ -75,7 +75,7 @@ namespace NTH_Restaurant_Manager
             this.panelControl1.Controls.Add(this.label2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1408, 220);
             this.panelControl1.TabIndex = 2;
@@ -104,7 +104,7 @@ namespace NTH_Restaurant_Manager
             // et_TenDangNhap
             // 
             this.et_TenDangNhap.Location = new System.Drawing.Point(623, 293);
-            this.et_TenDangNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.et_TenDangNhap.Margin = new System.Windows.Forms.Padding(4);
             this.et_TenDangNhap.Name = "et_TenDangNhap";
             this.et_TenDangNhap.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.et_TenDangNhap.Properties.Appearance.Options.UseFont = true;
@@ -114,7 +114,7 @@ namespace NTH_Restaurant_Manager
             // et_MatKhau
             // 
             this.et_MatKhau.Location = new System.Drawing.Point(623, 380);
-            this.et_MatKhau.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.et_MatKhau.Margin = new System.Windows.Forms.Padding(5);
             this.et_MatKhau.Name = "et_MatKhau";
             this.et_MatKhau.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.et_MatKhau.Properties.Appearance.Options.UseFont = true;
@@ -137,7 +137,7 @@ namespace NTH_Restaurant_Manager
             this.btn_DangNhap.Appearance.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DangNhap.Appearance.Options.UseFont = true;
             this.btn_DangNhap.Location = new System.Drawing.Point(623, 476);
-            this.btn_DangNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_DangNhap.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DangNhap.Name = "btn_DangNhap";
             this.btn_DangNhap.Size = new System.Drawing.Size(162, 54);
             this.btn_DangNhap.TabIndex = 7;
