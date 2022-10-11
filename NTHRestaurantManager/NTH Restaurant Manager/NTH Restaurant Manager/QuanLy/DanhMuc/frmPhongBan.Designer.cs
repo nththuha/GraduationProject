@@ -50,7 +50,7 @@ namespace NTH_Restaurant_Manager
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.panelPhong = new DevExpress.XtraEditors.PanelControl();
             this.txt_TenPhong = new DevExpress.XtraEditors.TextEdit();
             this.bdsPhong = new System.Windows.Forms.BindingSource(this.components);
             this.txt_MaPhong = new DevExpress.XtraEditors.TextEdit();
@@ -60,7 +60,7 @@ namespace NTH_Restaurant_Manager
             this.colmaPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltenPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.panelBan = new DevExpress.XtraEditors.PanelControl();
             this.se_SoGhe = new DevExpress.XtraEditors.SpinEdit();
             this.bdsBan = new System.Windows.Forms.BindingSource(this.components);
             this.txt_TenBan = new DevExpress.XtraEditors.TextEdit();
@@ -79,8 +79,8 @@ namespace NTH_Restaurant_Manager
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelPhong)).BeginInit();
+            this.panelPhong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenPhong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_MaPhong.Properties)).BeginInit();
@@ -88,8 +88,8 @@ namespace NTH_Restaurant_Manager
             ((System.ComponentModel.ISupportInitialize)(this.gvPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
-            this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelBan)).BeginInit();
+            this.panelBan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.se_SoGhe.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenBan.Properties)).BeginInit();
@@ -207,10 +207,12 @@ namespace NTH_Restaurant_Manager
             // btn_Luu
             // 
             this.btn_Luu.Caption = "Lưu";
+            this.btn_Luu.Enabled = false;
             this.btn_Luu.Id = 2;
             this.btn_Luu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Luu.ImageOptions.SvgImage")));
             this.btn_Luu.Name = "btn_Luu";
             this.btn_Luu.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_Luu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Luu_ItemClick);
             // 
             // btn_Xoa
             // 
@@ -219,6 +221,7 @@ namespace NTH_Restaurant_Manager
             this.btn_Xoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Xoa.ImageOptions.SvgImage")));
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_Xoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Xoa_ItemClick);
             // 
             // btn_PhucHoi
             // 
@@ -227,6 +230,7 @@ namespace NTH_Restaurant_Manager
             this.btn_PhucHoi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_PhucHoi.ImageOptions.SvgImage")));
             this.btn_PhucHoi.Name = "btn_PhucHoi";
             this.btn_PhucHoi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_PhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_PhucHoi_ItemClick);
             // 
             // btn_Reload
             // 
@@ -235,6 +239,7 @@ namespace NTH_Restaurant_Manager
             this.btn_Reload.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Reload.ImageOptions.SvgImage")));
             this.btn_Reload.Name = "btn_Reload";
             this.btn_Reload.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_Reload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Reload_ItemClick);
             // 
             // btn_Thoat
             // 
@@ -279,7 +284,7 @@ namespace NTH_Restaurant_Manager
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.panelControl3);
+            this.panelControl1.Controls.Add(this.panelPhong);
             this.panelControl1.Controls.Add(this.gcPhong);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(0, 30);
@@ -287,19 +292,19 @@ namespace NTH_Restaurant_Manager
             this.panelControl1.Size = new System.Drawing.Size(941, 795);
             this.panelControl1.TabIndex = 4;
             // 
-            // panelControl3
+            // panelPhong
             // 
-            this.panelControl3.Controls.Add(tenPhongLabel);
-            this.panelControl3.Controls.Add(this.txt_TenPhong);
-            this.panelControl3.Controls.Add(maPhongLabel);
-            this.panelControl3.Controls.Add(this.txt_MaPhong);
-            this.panelControl3.Controls.Add(this.label1);
-            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Enabled = false;
-            this.panelControl3.Location = new System.Drawing.Point(2, 382);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(937, 411);
-            this.panelControl3.TabIndex = 6;
+            this.panelPhong.Controls.Add(tenPhongLabel);
+            this.panelPhong.Controls.Add(this.txt_TenPhong);
+            this.panelPhong.Controls.Add(maPhongLabel);
+            this.panelPhong.Controls.Add(this.txt_MaPhong);
+            this.panelPhong.Controls.Add(this.label1);
+            this.panelPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPhong.Enabled = false;
+            this.panelPhong.Location = new System.Drawing.Point(2, 382);
+            this.panelPhong.Name = "panelPhong";
+            this.panelPhong.Size = new System.Drawing.Size(937, 411);
+            this.panelPhong.TabIndex = 6;
             // 
             // txt_TenPhong
             // 
@@ -382,7 +387,7 @@ namespace NTH_Restaurant_Manager
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.panelControl4);
+            this.panelControl2.Controls.Add(this.panelBan);
             this.panelControl2.Controls.Add(this.gcBan);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelControl2.Location = new System.Drawing.Point(952, 30);
@@ -390,21 +395,21 @@ namespace NTH_Restaurant_Manager
             this.panelControl2.Size = new System.Drawing.Size(972, 795);
             this.panelControl2.TabIndex = 5;
             // 
-            // panelControl4
+            // panelBan
             // 
-            this.panelControl4.Controls.Add(soGheLabel);
-            this.panelControl4.Controls.Add(this.se_SoGhe);
-            this.panelControl4.Controls.Add(tenBanLabel);
-            this.panelControl4.Controls.Add(this.txt_TenBan);
-            this.panelControl4.Controls.Add(maBanLabel);
-            this.panelControl4.Controls.Add(this.txt_MaBan);
-            this.panelControl4.Controls.Add(this.label2);
-            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl4.Enabled = false;
-            this.panelControl4.Location = new System.Drawing.Point(2, 382);
-            this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(968, 411);
-            this.panelControl4.TabIndex = 1;
+            this.panelBan.Controls.Add(soGheLabel);
+            this.panelBan.Controls.Add(this.se_SoGhe);
+            this.panelBan.Controls.Add(tenBanLabel);
+            this.panelBan.Controls.Add(this.txt_TenBan);
+            this.panelBan.Controls.Add(maBanLabel);
+            this.panelBan.Controls.Add(this.txt_MaBan);
+            this.panelBan.Controls.Add(this.label2);
+            this.panelBan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBan.Enabled = false;
+            this.panelBan.Location = new System.Drawing.Point(2, 382);
+            this.panelBan.Name = "panelBan";
+            this.panelBan.Size = new System.Drawing.Size(968, 411);
+            this.panelBan.TabIndex = 1;
             // 
             // se_SoGhe
             // 
@@ -532,9 +537,9 @@ namespace NTH_Restaurant_Manager
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
-            this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelPhong)).EndInit();
+            this.panelPhong.ResumeLayout(false);
+            this.panelPhong.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenPhong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsPhong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_MaPhong.Properties)).EndInit();
@@ -542,9 +547,9 @@ namespace NTH_Restaurant_Manager
             ((System.ComponentModel.ISupportInitialize)(this.gvPhong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
-            this.panelControl4.ResumeLayout(false);
-            this.panelControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelBan)).EndInit();
+            this.panelBan.ResumeLayout(false);
+            this.panelBan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.se_SoGhe.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsBan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenBan.Properties)).EndInit();
@@ -584,12 +589,12 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraGrid.Columns.GridColumn colsoGhe;
         private DevExpress.XtraGrid.Columns.GridColumn colmaPhong;
         private DevExpress.XtraGrid.Columns.GridColumn coltenPhong;
-        private DevExpress.XtraEditors.PanelControl panelControl4;
+        private DevExpress.XtraEditors.PanelControl panelBan;
         private DevExpress.XtraEditors.SpinEdit se_SoGhe;
         private DevExpress.XtraEditors.TextEdit txt_TenBan;
         private DevExpress.XtraEditors.TextEdit txt_MaBan;
         private System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.PanelControl panelPhong;
         private DevExpress.XtraEditors.TextEdit txt_TenPhong;
         private DevExpress.XtraEditors.TextEdit txt_MaPhong;
         private System.Windows.Forms.Label label1;
