@@ -251,11 +251,11 @@
     <Compile Include="QuanLy\ThongKe\frmThongKeDoanhThuTheoThang.Designer.cs">
       <DependentUpon>frmThongKeDoanhThuTheoThang.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLy\DanhMuc\frmChiTietPhong.cs">
+    <Compile Include="QuanLy\DanhMuc\frmChiTietBan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLy\DanhMuc\frmChiTietPhong.Designer.cs">
-      <DependentUpon>frmChiTietPhong.cs</DependentUpon>
+    <Compile Include="QuanLy\DanhMuc\frmChiTietBan.Designer.cs">
+      <DependentUpon>frmChiTietBan.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLy\HeThong\frmDangNhap.cs">
       <SubType>Form</SubType>
@@ -337,8 +337,8 @@
     <EmbeddedResource Include="QuanLy\ThongKe\frmThongKeDoanhThuTheoThang.resx">
       <DependentUpon>frmThongKeDoanhThuTheoThang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLy\DanhMuc\frmChiTietPhong.resx">
-      <DependentUpon>frmChiTietPhong.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLy\DanhMuc\frmChiTietBan.resx">
+      <DependentUpon>frmChiTietBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\DanhMuc\frmLoaiMonAn.resx">
       <DependentUpon>frmLoaiMonAn.cs</DependentUpon>
