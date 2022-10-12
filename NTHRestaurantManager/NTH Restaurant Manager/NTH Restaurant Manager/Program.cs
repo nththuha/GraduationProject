@@ -33,6 +33,13 @@ namespace NTH_Restaurant_Manager
 
         public static String URL = "https://nth-restaurant-api.herokuapp.com/api/";
 
+        public static int doiSpinEditThanhInt(String a)
+        {
+            String temp = a;
+            if (temp.EndsWith(".")) temp = temp.Substring(0, temp.Length - 1); ;
+            return int.Parse(temp);
+        }
+
         [STAThread]
         static void Main()
         {

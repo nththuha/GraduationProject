@@ -16,6 +16,7 @@ namespace NTH_Restaurant_Manager
     {
         NguyenLieuRepository _repository = new NguyenLieuRepository();
         String button;
+        int slTon;
         NguyenLieuModel nguyenLieu;
 
         public frmNguyenLieu()
@@ -53,6 +54,7 @@ namespace NTH_Restaurant_Manager
             txt_TenNL.Text = gvNL.GetRowCellValue(num, "tenNL").ToString();
             txt_DonVi.Text = gvNL.GetRowCellValue(num, "donVi").ToString();
             se_SLTon.Text = gvNL.GetRowCellValue(num, "slTon").ToString();
+            slTon = int.Parse(gvNL.GetRowCellValue(num, "slTon").ToString());
         }
 
         private void btn_Thoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -82,6 +84,7 @@ namespace NTH_Restaurant_Manager
             btn_Them.Enabled = btn_CapNhat.Enabled = btn_Reload.Enabled = btn_Xoa.Enabled = false;
             btn_Luu.Enabled = btn_PhucHoi.Enabled = true;
             panelControl2.Enabled = true;
+            se_SLTon.Enabled = false;
         }
 
         private void btn_CapNhat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -148,11 +151,11 @@ namespace NTH_Restaurant_Manager
                 txt_DonVi.Focus();
                 return;
             }
-            int tam = int.Parse(se_SLTon.Text.Trim());
-            if(tam < 0)
+            int tam = Program.doiSpinEditThanhInt(se_SLTon.Text.Trim());
+            if ((tam < 0 || tam > slTon) && button.Equals("Cập nhật"))
             {
-                MessageBox.Show("Số lượng tồn không hợp lý", "Thông báo", MessageBoxButtons.OK);
-                txt_DonVi.Focus();
+                MessageBox.Show("Số lượng tồn phải lớn hơn 0 và nhỏ hơn số lượng tồn ban đầu", "Thông báo", MessageBoxButtons.OK);
+                se_SLTon.Focus();
                 return;
             }
             nguyenLieu = new NguyenLieuModel();
@@ -163,6 +166,7 @@ namespace NTH_Restaurant_Manager
             if (button.Equals("Thêm"))
             {
                 themNguyenLieu();
+                se_SLTon.Enabled = true;
             }
             else
             {

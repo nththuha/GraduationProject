@@ -298,11 +298,11 @@ namespace NTH_Restaurant_Manager
                     txt_TenBan.Focus();
                     return;
                 }
-                int tam = int.Parse(se_SoGhe.Text.Trim());
+                int tam = Program.doiSpinEditThanhInt(se_SoGhe.Text.Trim());
                 if (tam < 0)
                 {
-                    MessageBox.Show("Số lượng không hợp lý", "Thông báo", MessageBoxButtons.OK);
-                    txt_TenBan.Focus();
+                    MessageBox.Show("Số ghế phải lớn hơn 0", "Thông báo", MessageBoxButtons.OK);
+                    se_SoGhe.Focus();
                     return;
                 }
                 ban = new BanModel();
