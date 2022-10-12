@@ -229,7 +229,7 @@
     <Compile Include="Model\HoaDonModel.cs" />
     <Compile Include="Model\LoaiMonAnModel.cs" />
     <Compile Include="Model\MonAnModel.cs" />
-    <Compile Include="Model\NguyenLieu.cs" />
+    <Compile Include="Model\NguyenLieuModel.cs" />
     <Compile Include="Model\PhieuDatModel.cs" />
     <Compile Include="Model\PhongModel.cs" />
     <Compile Include="Model\ThayDoiGiaMonModel.cs" />
@@ -313,7 +313,6 @@
     <Compile Include="Repository\HoaDonRepository.cs" />
     <Compile Include="Repository\LoaiMonAnRepository.cs" />
     <Compile Include="Repository\MonAnRepository.cs" />
-    <Compile Include="Repository\NguyenLieuModel.cs" />
     <Compile Include="Repository\NguyenLieuRepository.cs" />
     <Compile Include="Repository\NhanVienRepository.cs" />
     <Compile Include="Repository\PhieuDatRepository.cs" />
@@ -378,10 +377,13 @@
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.HoaDonModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.LoaiMonAnModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.MonAnModel.datasource" />
-    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.NguyenLieu.datasource" />
+    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.NguyenLieuModel.datasource" />
+    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.NhanVienModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.PhieuDatModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.PhongModel.datasource" />
+    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.TaiKhoanModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.ThayDoiGiaMonModel.datasource" />
+    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.TokenModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

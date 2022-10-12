@@ -17,6 +17,7 @@ namespace NTH_Restaurant_Manager
         TaiKhoanModel taiKhoan;
         TaiKhoanRepository _repositoryTK = new TaiKhoanRepository();
         NhanVienRepository _repositoryNV = new NhanVienRepository();
+
         public frmDangNhap()
         {
             InitializeComponent();
@@ -51,12 +52,13 @@ namespace NTH_Restaurant_Manager
             {
                 if (token.roles == "ADMIN")
                 {
-                    Program.frmChinh.dangNhap(true);
+                    Program.token = token.token;
                     Program.nhanVienDangDangNhap = await _repositoryNV.layThongTinNhanVien(token.maTK);
                     Program.frmChinh.tssl_MaNV.Text = "Mã nhân viên: " + Program.nhanVienDangDangNhap.idNV;
                     Program.frmChinh.tssl_HoTen.Text = "Họ tên: " + Program.nhanVienDangDangNhap.hoTen;
                     Program.frmChinh.tssl_BoPhan.Text = "Bộ phận " + Program.nhanVienDangDangNhap.tenBP;
                     MessageBox.Show("Đăng nhập thành công!", "Thông báo");
+                    Program.frmChinh.dangNhap(true);
                     this.Close();
                 }
                 else

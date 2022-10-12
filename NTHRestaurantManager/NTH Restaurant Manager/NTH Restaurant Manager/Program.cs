@@ -11,6 +11,7 @@ namespace NTH_Restaurant_Manager
     static class Program
     {
         public static NhanVienModel nhanVienDangDangNhap = new NhanVienModel();
+        public static String token;
 
         public static frmMain frmChinh;
         public static frmDangNhap formDangNhap;

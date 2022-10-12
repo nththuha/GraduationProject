@@ -31,6 +31,10 @@ namespace NTH_Restaurant_Manager
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNguyenLieu));
+            System.Windows.Forms.Label maNLLabel;
+            System.Windows.Forms.Label tenNLLabel;
+            System.Windows.Forms.Label donViLabel;
+            System.Windows.Forms.Label slTonLabel;
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btn_Them = new DevExpress.XtraBars.BarButtonItem();
@@ -44,7 +48,33 @@ namespace NTH_Restaurant_Manager
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.bdsNL = new System.Windows.Forms.BindingSource(this.components);
+            this.gcNL = new DevExpress.XtraGrid.GridControl();
+            this.gvNL = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colmaNL = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltenNL = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldonVi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colslTon = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_MaNL = new DevExpress.XtraEditors.TextEdit();
+            this.txt_TenNL = new DevExpress.XtraEditors.TextEdit();
+            this.txt_DonVi = new DevExpress.XtraEditors.TextEdit();
+            this.se_SLTon = new DevExpress.XtraEditors.SpinEdit();
+            maNLLabel = new System.Windows.Forms.Label();
+            tenNLLabel = new System.Windows.Forms.Label();
+            donViLabel = new System.Windows.Forms.Label();
+            slTonLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsNL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcNL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvNL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MaNL.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TenNL.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_DonVi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.se_SLTon.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -92,6 +122,7 @@ namespace NTH_Restaurant_Manager
             this.btn_Them.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Them.ImageOptions.SvgImage")));
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_Them.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Them_ItemClick);
             // 
             // btn_CapNhat
             // 
@@ -100,14 +131,17 @@ namespace NTH_Restaurant_Manager
             this.btn_CapNhat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_CapNhat.ImageOptions.SvgImage")));
             this.btn_CapNhat.Name = "btn_CapNhat";
             this.btn_CapNhat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_CapNhat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_CapNhat_ItemClick);
             // 
             // btn_Luu
             // 
             this.btn_Luu.Caption = "Lưu";
+            this.btn_Luu.Enabled = false;
             this.btn_Luu.Id = 2;
             this.btn_Luu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Luu.ImageOptions.SvgImage")));
             this.btn_Luu.Name = "btn_Luu";
             this.btn_Luu.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_Luu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Luu_ItemClick);
             // 
             // btn_Xoa
             // 
@@ -116,6 +150,7 @@ namespace NTH_Restaurant_Manager
             this.btn_Xoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Xoa.ImageOptions.SvgImage")));
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_Xoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Xoa_ItemClick);
             // 
             // btn_PhucHoi
             // 
@@ -124,6 +159,7 @@ namespace NTH_Restaurant_Manager
             this.btn_PhucHoi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_PhucHoi.ImageOptions.SvgImage")));
             this.btn_PhucHoi.Name = "btn_PhucHoi";
             this.btn_PhucHoi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_PhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_PhucHoi_ItemClick);
             // 
             // btn_Reload
             // 
@@ -140,6 +176,7 @@ namespace NTH_Restaurant_Manager
             this.btn_Thoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Thoat.ImageOptions.SvgImage")));
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_Thoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Thoat_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -147,7 +184,7 @@ namespace NTH_Restaurant_Manager
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1357, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(1406, 30);
             // 
             // barDockControlBottom
             // 
@@ -155,7 +192,7 @@ namespace NTH_Restaurant_Manager
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 733);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1357, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1406, 0);
             // 
             // barDockControlLeft
             // 
@@ -169,15 +206,205 @@ namespace NTH_Restaurant_Manager
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1357, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1406, 30);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 703);
+            // 
+            // bdsNL
+            // 
+            this.bdsNL.DataSource = typeof(NTH_Restaurant_Manager.Model.NguyenLieuModel);
+            // 
+            // gcNL
+            // 
+            this.gcNL.DataSource = this.bdsNL;
+            this.gcNL.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcNL.Location = new System.Drawing.Point(0, 30);
+            this.gcNL.MainView = this.gvNL;
+            this.gcNL.MenuManager = this.barManager1;
+            this.gcNL.Name = "gcNL";
+            this.gcNL.Size = new System.Drawing.Size(1406, 380);
+            this.gcNL.TabIndex = 5;
+            this.gcNL.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvNL});
+            // 
+            // gvNL
+            // 
+            this.gvNL.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colmaNL,
+            this.coltenNL,
+            this.coldonVi,
+            this.colslTon});
+            this.gvNL.GridControl = this.gcNL;
+            this.gvNL.Name = "gvNL";
+            this.gvNL.OptionsBehavior.Editable = false;
+            this.gvNL.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvNL_RowClick);
+            // 
+            // colmaNL
+            // 
+            this.colmaNL.Caption = "MÃ NGUYÊN LIỆU";
+            this.colmaNL.FieldName = "maNL";
+            this.colmaNL.MinWidth = 25;
+            this.colmaNL.Name = "colmaNL";
+            this.colmaNL.Visible = true;
+            this.colmaNL.VisibleIndex = 0;
+            this.colmaNL.Width = 94;
+            // 
+            // coltenNL
+            // 
+            this.coltenNL.Caption = "TÊN NGUYÊN LIỆU";
+            this.coltenNL.FieldName = "tenNL";
+            this.coltenNL.MinWidth = 25;
+            this.coltenNL.Name = "coltenNL";
+            this.coltenNL.Visible = true;
+            this.coltenNL.VisibleIndex = 1;
+            this.coltenNL.Width = 94;
+            // 
+            // coldonVi
+            // 
+            this.coldonVi.Caption = "ĐƠN VỊ";
+            this.coldonVi.FieldName = "donVi";
+            this.coldonVi.MinWidth = 25;
+            this.coldonVi.Name = "coldonVi";
+            this.coldonVi.Visible = true;
+            this.coldonVi.VisibleIndex = 2;
+            this.coldonVi.Width = 94;
+            // 
+            // colslTon
+            // 
+            this.colslTon.Caption = "SỐ LƯỢNG TỒN";
+            this.colslTon.FieldName = "slTon";
+            this.colslTon.MinWidth = 25;
+            this.colslTon.Name = "colslTon";
+            this.colslTon.Visible = true;
+            this.colslTon.VisibleIndex = 3;
+            this.colslTon.Width = 94;
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(slTonLabel);
+            this.panelControl2.Controls.Add(this.se_SLTon);
+            this.panelControl2.Controls.Add(donViLabel);
+            this.panelControl2.Controls.Add(this.txt_DonVi);
+            this.panelControl2.Controls.Add(tenNLLabel);
+            this.panelControl2.Controls.Add(this.txt_TenNL);
+            this.panelControl2.Controls.Add(maNLLabel);
+            this.panelControl2.Controls.Add(this.txt_MaNL);
+            this.panelControl2.Controls.Add(this.label1);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl2.Enabled = false;
+            this.panelControl2.Location = new System.Drawing.Point(0, 410);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(1406, 323);
+            this.panelControl2.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(374, 35);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "QUẢN LÝ NGUYÊN LIỆU";
+            // 
+            // maNLLabel
+            // 
+            maNLLabel.AutoSize = true;
+            maNLLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            maNLLabel.Location = new System.Drawing.Point(18, 75);
+            maNLLabel.Name = "maNLLabel";
+            maNLLabel.Size = new System.Drawing.Size(161, 27);
+            maNLLabel.TabIndex = 11;
+            maNLLabel.Text = "Mã nguyên liệu";
+            // 
+            // txt_MaNL
+            // 
+            this.txt_MaNL.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNL, "maNL", true));
+            this.txt_MaNL.Location = new System.Drawing.Point(220, 72);
+            this.txt_MaNL.MenuManager = this.barManager1;
+            this.txt_MaNL.Name = "txt_MaNL";
+            this.txt_MaNL.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_MaNL.Properties.Appearance.Options.UseFont = true;
+            this.txt_MaNL.Size = new System.Drawing.Size(561, 32);
+            this.txt_MaNL.TabIndex = 12;
+            // 
+            // tenNLLabel
+            // 
+            tenNLLabel.AutoSize = true;
+            tenNLLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tenNLLabel.Location = new System.Drawing.Point(18, 130);
+            tenNLLabel.Name = "tenNLLabel";
+            tenNLLabel.Size = new System.Drawing.Size(166, 27);
+            tenNLLabel.TabIndex = 12;
+            tenNLLabel.Text = "Tên nguyên liệu";
+            // 
+            // txt_TenNL
+            // 
+            this.txt_TenNL.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNL, "tenNL", true));
+            this.txt_TenNL.Location = new System.Drawing.Point(220, 127);
+            this.txt_TenNL.MenuManager = this.barManager1;
+            this.txt_TenNL.Name = "txt_TenNL";
+            this.txt_TenNL.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TenNL.Properties.Appearance.Options.UseFont = true;
+            this.txt_TenNL.Size = new System.Drawing.Size(561, 32);
+            this.txt_TenNL.TabIndex = 13;
+            // 
+            // donViLabel
+            // 
+            donViLabel.AutoSize = true;
+            donViLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            donViLabel.Location = new System.Drawing.Point(18, 182);
+            donViLabel.Name = "donViLabel";
+            donViLabel.Size = new System.Drawing.Size(78, 27);
+            donViLabel.TabIndex = 13;
+            donViLabel.Text = "Đơn vị";
+            // 
+            // txt_DonVi
+            // 
+            this.txt_DonVi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNL, "donVi", true));
+            this.txt_DonVi.Location = new System.Drawing.Point(220, 179);
+            this.txt_DonVi.MenuManager = this.barManager1;
+            this.txt_DonVi.Name = "txt_DonVi";
+            this.txt_DonVi.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DonVi.Properties.Appearance.Options.UseFont = true;
+            this.txt_DonVi.Size = new System.Drawing.Size(561, 32);
+            this.txt_DonVi.TabIndex = 14;
+            // 
+            // slTonLabel
+            // 
+            slTonLabel.AutoSize = true;
+            slTonLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            slTonLabel.Location = new System.Drawing.Point(18, 232);
+            slTonLabel.Name = "slTonLabel";
+            slTonLabel.Size = new System.Drawing.Size(134, 27);
+            slTonLabel.TabIndex = 14;
+            slTonLabel.Text = "Số lượng tồn";
+            // 
+            // se_SLTon
+            // 
+            this.se_SLTon.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNL, "slTon", true));
+            this.se_SLTon.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.se_SLTon.Location = new System.Drawing.Point(220, 229);
+            this.se_SLTon.MenuManager = this.barManager1;
+            this.se_SLTon.Name = "se_SLTon";
+            this.se_SLTon.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.se_SLTon.Properties.Appearance.Options.UseFont = true;
+            this.se_SLTon.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.se_SLTon.Size = new System.Drawing.Size(561, 32);
+            this.se_SLTon.TabIndex = 15;
             // 
             // frmNguyenLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1357, 733);
+            this.ClientSize = new System.Drawing.Size(1406, 733);
+            this.Controls.Add(this.panelControl2);
+            this.Controls.Add(this.gcNL);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -185,6 +412,16 @@ namespace NTH_Restaurant_Manager
             this.Name = "frmNguyenLieu";
             this.Text = "NGUYÊN LIỆU";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsNL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcNL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvNL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
+            this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MaNL.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TenNL.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_DonVi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.se_SLTon.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +442,18 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraGrid.GridControl gcNL;
+        private System.Windows.Forms.BindingSource bdsNL;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvNL;
+        private DevExpress.XtraGrid.Columns.GridColumn colmaNL;
+        private DevExpress.XtraGrid.Columns.GridColumn coltenNL;
+        private DevExpress.XtraGrid.Columns.GridColumn coldonVi;
+        private DevExpress.XtraGrid.Columns.GridColumn colslTon;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SpinEdit se_SLTon;
+        private DevExpress.XtraEditors.TextEdit txt_DonVi;
+        private DevExpress.XtraEditors.TextEdit txt_TenNL;
+        private DevExpress.XtraEditors.TextEdit txt_MaNL;
     }
 }

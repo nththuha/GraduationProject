@@ -15,7 +15,6 @@ namespace NTH_Restaurant_Manager
     public partial class frmLoaiMonAn : Form
     {
         LoaiMonAnRepository _repository = new LoaiMonAnRepository();
-        int numRow;
         String button;
         LoaiMonAnModel loaiMonAn;
 
@@ -63,8 +62,7 @@ namespace NTH_Restaurant_Manager
 
         private void gvLMA_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            numRow = e.RowHandle;
-            setGiaTri(numRow);
+            setGiaTri(e.RowHandle);
         }
 
         private void btn_Reload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -111,7 +109,7 @@ namespace NTH_Restaurant_Manager
             }
         }
 
-        public async void xoaLoaiMonAn(String maLMA)
+        private async void xoaLoaiMonAn(String maLMA)
         {
             String check = await _repository.xoaLoaiMonAn(maLMA);
             if (check.Equals("false")) MessageBox.Show("Xóa loại món ăn thất bại!", "Thông báo");
@@ -119,7 +117,7 @@ namespace NTH_Restaurant_Manager
             layDSLoaiMonAn();
         }
 
-        public async void themLoaiMonAn()
+        private async void themLoaiMonAn()
         {
             String check = await _repository.themLoaiMonAn(loaiMonAn);
             if(check.Equals("false")) MessageBox.Show("Thêm loại món ăn thất bại!", "Thông báo");
@@ -127,11 +125,11 @@ namespace NTH_Restaurant_Manager
             layDSLoaiMonAn();
         }
 
-        public async void suaLoaiMonAn()
+        private async void suaLoaiMonAn()
         {
             String check = await _repository.suaLoaiMonAn(loaiMonAn);
-            if (check.Equals("false")) MessageBox.Show("Sửa loại món ăn thất bại!", "Thông báo");
-            else MessageBox.Show("Sửa loại món ăn thành công!", "Thông báo");
+            if (check.Equals("false")) MessageBox.Show("Cập nhật loại món ăn thất bại!", "Thông báo");
+            else MessageBox.Show("Cập nhật loại món ăn thành công!", "Thông báo");
             layDSLoaiMonAn();
         }
 
@@ -143,14 +141,12 @@ namespace NTH_Restaurant_Manager
                 txt_MaLMA.Focus();
                 return;
             }
-
             if (txt_TenLMA.Text.Trim().Equals(""))
             {
                 MessageBox.Show("Tên loại món ăn không được để trống", "Thông báo", MessageBoxButtons.OK);
                 txt_TenLMA.Focus();
                 return;
             }
-
             if (txt_HinhAnh.Text.Trim().Equals(""))
             {
                 MessageBox.Show("Hình ảnh không được để trống", "Thông báo", MessageBoxButtons.OK);
