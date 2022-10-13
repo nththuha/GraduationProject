@@ -98,17 +98,6 @@ namespace NTH_Restaurant_Manager
             txt_MaLMA.Enabled = false;
         }
 
-        private void btn_Xoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            String maLMA = txt_MaLMA.Text;
-            String tenLMA = txt_TenLMA.Text;
-            if (MessageBox.Show("Bạn có thật sự muốn xóa loại món ăn " + tenLMA + "?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
-                xoaLoaiMonAn(maLMA);
-                khoiTao();
-            }
-        }
-
         private async void xoaLoaiMonAn(String maLMA)
         {
             String check = await _repository.xoaLoaiMonAn(maLMA);
@@ -169,6 +158,17 @@ namespace NTH_Restaurant_Manager
             btn_Them.Enabled = btn_CapNhat.Enabled = btn_Reload.Enabled = btn_Xoa.Enabled = true;
             btn_Luu.Enabled = btn_PhucHoi.Enabled = false;
             panelControl2.Enabled = false;
+        }
+
+        private void btn_Xoa_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            String maLMA = txt_MaLMA.Text;
+            String tenLMA = txt_TenLMA.Text;
+            if (MessageBox.Show("Bạn có thật sự muốn xóa loại món ăn " + tenLMA + "?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                xoaLoaiMonAn(maLMA);
+                khoiTao();
+            }
         }
     }
 }

@@ -298,6 +298,7 @@ namespace NTH_Restaurant_Manager
             this.btn_Xoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Xoa.ImageOptions.SvgImage")));
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_Xoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Xoa_ItemClick_1);
             // 
             // btn_PhucHoi
             // 
