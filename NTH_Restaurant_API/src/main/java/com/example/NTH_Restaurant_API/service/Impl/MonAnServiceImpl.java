@@ -81,7 +81,7 @@ public class MonAnServiceImpl implements MonAnService {
     @Override
     public String xoaMonAn(String maMA) {
         MonAnEntity monAn = monAnRepository.getById(maMA);
-        monAn.setTrangThai("Đã xóa");
+        monAn.setTrangThai("Đã ngừng kinh doanh");
         try{
             monAnRepository.save(monAn);
             return "true";

@@ -72,7 +72,7 @@ public class LoaiMonAnServiceImpl implements LoaiMonAnService {
         List<MonAnDTO> dsMADTO = dsMA.stream().map(MonAnDTO::new).collect(Collectors.toList());
 
         for(int i = 0; i < dsMADTO.size(); i++) {
-            if (dsMADTO.get(i).getTrangThai().equals("Đã xóa")) {
+            if (dsMADTO.get(i).getTrangThai().equals("Đã ngừng kinh doanh")) {
                 dsMADTO.remove(i);
                 i--;
             }

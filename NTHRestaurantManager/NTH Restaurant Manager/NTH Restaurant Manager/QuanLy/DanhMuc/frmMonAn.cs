@@ -205,7 +205,7 @@ namespace NTH_Restaurant_Manager
             monAn.tenMA = txt_TenMA.Text.Trim();
             if (!txt_ChuThich.Text.Trim().Equals("")) monAn.chuThich = txt_ChuThich.Text.Trim();
             else monAn.chuThich = null;
-            monAn.trangThai = "Còn món";
+            monAn.trangThai = cbb_TrangThai.Text;
             monAn.hinhAnh = txt_HinhAnh.Text.Trim();
             monAn.gia = tam;
             monAn.malma = ((LoaiMonAnModel)cbb_TenLMA.SelectedItem).maLMA;
