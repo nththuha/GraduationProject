@@ -314,26 +314,26 @@ namespace NTH_Restaurant_Manager
             this.tssl_MaNV,
             this.tssl_HoTen,
             this.tssl_BoPhan});
-            this.statusStrip.Location = new System.Drawing.Point(0, 736);
+            this.statusStrip.Location = new System.Drawing.Point(0, 738);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1448, 24);
+            this.statusStrip.Size = new System.Drawing.Size(1448, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "statusStrip1";
             // 
             // tssl_MaNV
             // 
             this.tssl_MaNV.Name = "tssl_MaNV";
-            this.tssl_MaNV.Size = new System.Drawing.Size(0, 18);
+            this.tssl_MaNV.Size = new System.Drawing.Size(0, 16);
             // 
             // tssl_HoTen
             // 
             this.tssl_HoTen.Name = "tssl_HoTen";
-            this.tssl_HoTen.Size = new System.Drawing.Size(0, 18);
+            this.tssl_HoTen.Size = new System.Drawing.Size(0, 16);
             // 
             // tssl_BoPhan
             // 
             this.tssl_BoPhan.Name = "tssl_BoPhan";
-            this.tssl_BoPhan.Size = new System.Drawing.Size(0, 18);
+            this.tssl_BoPhan.Size = new System.Drawing.Size(0, 16);
             // 
             // frmMain
             // 
