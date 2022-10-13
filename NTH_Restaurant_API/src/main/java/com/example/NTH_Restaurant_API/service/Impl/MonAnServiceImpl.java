@@ -48,12 +48,13 @@ public class MonAnServiceImpl implements MonAnService {
 
     @Override
     public String themMonAn(MonAnDTO monAnDTO) {
+        if(monAnRepository.existsByMaMA(monAnDTO.getMaMA())) return "false";
         LoaiMonAnEntity loaiMonAnEntity = loaiMonAnRepository.getById(monAnDTO.getMalma());
         MonAnEntity monAnTemp = monAnDTO.toEntity();
         monAnTemp.setMalma(loaiMonAnEntity);
-        ThayDoiGiaMonEntity thayDoiGiaMonEntity = new ThayDoiGiaMonEntity(-1, monAnDTO.getGia(), new Date(), monAnRepository.getById(monAnDTO.getMaMA()), nhanVienRepository.getById(monAnDTO.getIdNV()));
         try{
             monAnRepository.save(monAnTemp);
+            ThayDoiGiaMonEntity thayDoiGiaMonEntity = new ThayDoiGiaMonEntity(-1, monAnDTO.getGia(), new Date(), monAnRepository.getById(monAnDTO.getMaMA()), nhanVienRepository.getById(monAnDTO.getIdNV()));
             thayDoiGiaMonRepository.save(thayDoiGiaMonEntity);
             return "true";
         }
@@ -64,6 +65,7 @@ public class MonAnServiceImpl implements MonAnService {
 
     @Override
     public String suaMonAn(MonAnDTO monAnDTO) {
+        if(!monAnRepository.existsByMaMA(monAnDTO.getMaMA())) return "false";
         LoaiMonAnEntity loaiMonAnEntity = loaiMonAnRepository.getById(monAnDTO.getMalma());
         MonAnEntity monAnEntity = monAnDTO.toEntity();
         monAnEntity.setMalma(loaiMonAnEntity);

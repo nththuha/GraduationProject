@@ -215,6 +215,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\CTDatMonModel.cs" />
+    <Compile Include="Model\CTMonAnModel.cs" />
     <Compile Include="Model\NhanVienModel.cs" />
     <Compile Include="Model\TaiKhoanModel.cs" />
     <Compile Include="Model\TokenModel.cs" />
@@ -312,6 +313,7 @@
     <Compile Include="Repository\BoPhanRepository.cs" />
     <Compile Include="Repository\CTBanRepository.cs" />
     <Compile Include="Repository\CTDatMonRepository.cs" />
+    <Compile Include="Repository\CTMonAnRepository.cs" />
     <Compile Include="Repository\HoaDonRepository.cs" />
     <Compile Include="Repository\LoaiMonAnRepository.cs" />
     <Compile Include="Repository\MonAnRepository.cs" />
@@ -377,6 +379,7 @@
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.BoPhanModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTBanModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTDatMonModel.datasource" />
+    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTMonAnModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.HoaDonModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.LoaiMonAnModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.MonAnModel.datasource" />

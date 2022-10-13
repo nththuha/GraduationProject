@@ -62,6 +62,7 @@ namespace NTH_Restaurant_Manager
             this.tssl_MaNV = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssl_HoTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssl_BoPhan = new System.Windows.Forms.ToolStripStatusLabel();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             this.statusStrip.SuspendLayout();
@@ -88,10 +89,11 @@ namespace NTH_Restaurant_Manager
             this.btn_PhongBan,
             this.barButtonItem1,
             this.barButtonItem2,
-            this.btn_NguyenLieu});
+            this.btn_NguyenLieu,
+            this.barButtonItem3});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbonControl1.MaxItemId = 17;
+            this.ribbonControl1.MaxItemId = 18;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -281,8 +283,9 @@ namespace NTH_Restaurant_Manager
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_LoaiMonAn);
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_MonAn);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btn_ThayDoiGiaMon);
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_NguyenLieu);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btn_ThayDoiGiaMon);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
             // ribbonPageGroup4
@@ -334,6 +337,13 @@ namespace NTH_Restaurant_Manager
             // 
             this.tssl_BoPhan.Name = "tssl_BoPhan";
             this.tssl_BoPhan.Size = new System.Drawing.Size(0, 16);
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Công thức món ăn";
+            this.barButtonItem3.Enabled = false;
+            this.barButtonItem3.Id = 17;
+            this.barButtonItem3.Name = "barButtonItem3";
             // 
             // frmMain
             // 
@@ -390,6 +400,7 @@ namespace NTH_Restaurant_Manager
         public System.Windows.Forms.ToolStripStatusLabel tssl_BoPhan;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem btn_NguyenLieu;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
     }
 }
 

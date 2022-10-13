@@ -8,7 +8,7 @@ namespace NTH_Restaurant_Manager.Model
 {
     class NhanVienModel
     {
-        public string idNV { get; set; }
+        public int idNV { get; set; }
         public string hoTen { get; set; }
         public string sDT { get; set; }
         public string diaChi { get; set; }
