@@ -353,6 +353,9 @@
     <Compile Include="Repository\PhongRepository.cs" />
     <Compile Include="Repository\TaiKhoanRepository.cs" />
     <Compile Include="Repository\ThayDoiGiaMonRepository.cs" />
+    <EmbeddedResource Include="QuanLy\DanhMuc\frmChitietMonAn.resx">
+      <DependentUpon>frmChitietMonAn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\DanhMuc\frmNguyenLieu.resx">
       <DependentUpon>frmNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>

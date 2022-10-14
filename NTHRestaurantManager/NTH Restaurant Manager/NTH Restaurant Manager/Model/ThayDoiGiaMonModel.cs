@@ -8,5 +8,11 @@ namespace NTH_Restaurant_Manager.Model
 {
     class ThayDoiGiaMonModel
     {
+        public int idGM { get; set; }
+        public int gia { get; set; }
+        public String ngay { get; set; }
+        public String mama { get; set; }
+        public int idnv { get; set; }
+        public String hoTenNV { get; set; }
     }
 }

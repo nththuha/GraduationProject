@@ -193,6 +193,8 @@ namespace NTH_Restaurant_Manager
                 txt_HinhAnh.Focus();
                 return;
             }
+            txt_MaMA.Focus();
+            MessageBox.Show(se_Gia.Text, "Thông báo", MessageBoxButtons.OK);
             int tam = Program.doiSpinEditThanhInt(se_Gia.Text.Trim());
             if (tam < 0)
             {
