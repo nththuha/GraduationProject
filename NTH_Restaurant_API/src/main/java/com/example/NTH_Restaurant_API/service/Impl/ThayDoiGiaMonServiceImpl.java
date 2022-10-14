@@ -69,7 +69,7 @@ public class ThayDoiGiaMonServiceImpl implements ThayDoiGiaMonService {
         for (int i = 0; i < ds.size(); i++) {
             long getDiff = hienTai.getTime() - ds.get(i).getNgay().getTime();
             long getDaysDiff = getDiff / (24 * 60 * 60 * 1000);
-            if (getDaysDiff >= 0 && getDaysDiff < min) {
+            if (getDaysDiff >= 0 && getDaysDiff <= min) {
                 min = getDaysDiff;
                 vt = i;
             }
