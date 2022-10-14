@@ -78,9 +78,9 @@ namespace NTH_Restaurant_Manager
         public void dangNhap(bool dangNhap) // nếu đăng nhập thì gọi hàm này để cài đặt quyền
         {
             btn_DangNhap.Enabled = !dangNhap;
-            btn_DangXuat.Enabled = btn_NhanVien.Enabled = btn_TaiKhoan.Enabled = btn_TheoDoiDonHang.Enabled = dangNhap;
-            btn_LoaiMonAn.Enabled = btn_MonAn.Enabled = btn_ThayDoiGiaMon.Enabled = btn_PhongBan.Enabled = btn_ChiTietPhong.Enabled = btn_NguyenLieu.Enabled = dangNhap;
-            btn_ThongKeDoanhThuTheoThang.Enabled = dangNhap;
+            btn_DangXuat.Enabled = btn_NhanVien.Enabled = btn_TaiKhoan.Enabled = btn_DatBanTruoc.Enabled = btn_PhieuMua.Enabled = btn_PhieuNhap.Enabled = btn_TheoDoiDonHang.Enabled = dangNhap;
+            btn_LoaiMonAn.Enabled = btn_MonAn.Enabled = btn_ThayDoiGiaMon.Enabled = btn_PhongBan.Enabled = btn_ChiTietPhong.Enabled = btn_NguyenLieu.Enabled = btn_ChiTietMonAn.Enabled = dangNhap;
+            btn_ThongKeDoanhThuTheoThang.Enabled = btn_ThongKeLoiNhuan.Enabled = dangNhap;
         }
 
         private void btn_NhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -200,6 +200,66 @@ namespace NTH_Restaurant_Manager
                 Program.formNguyenLieu = new frmNguyenLieu();
                 Program.formNguyenLieu.MdiParent = this;
                 Program.formNguyenLieu.Show();
+            }
+        }
+
+        private void btn_DatBanTruoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmDatBanTruoc));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.formDatBanTruoc = new frmDatBanTruoc();
+                Program.formDatBanTruoc.MdiParent = this;
+                Program.formDatBanTruoc.Show();
+            }
+        }
+
+        private void btn_PhieuMua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmPhieuMua));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.formPhieuMua = new frmPhieuMua();
+                Program.formPhieuMua.MdiParent = this;
+                Program.formPhieuMua.Show();
+            }
+        }
+
+        private void btn_PhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmPhieuNhap));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.formPhieuNhap = new frmPhieuNhap();
+                Program.formPhieuNhap.MdiParent = this;
+                Program.formPhieuNhap.Show();
+            }
+        }
+
+        private void btn_ChiTietMonAn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmChitietMonAn));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.formChiTietMonAn = new frmChitietMonAn();
+                Program.formChiTietMonAn.MdiParent = this;
+                Program.formChiTietMonAn.Show();
+            }
+        }
+
+        private void btn_ThongKeLoiNhuan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmThongKeLoiNhuanTheoThang));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.formThongKeLoiNhuanTheoThang = new frmThongKeLoiNhuanTheoThang();
+                Program.formThongKeLoiNhuanTheoThang.MdiParent = this;
+                Program.formThongKeLoiNhuanTheoThang.Show();
             }
         }
     }

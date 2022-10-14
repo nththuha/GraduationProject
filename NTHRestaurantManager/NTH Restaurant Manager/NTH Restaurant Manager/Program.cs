@@ -17,14 +17,19 @@ namespace NTH_Restaurant_Manager
         public static frmDangNhap formDangNhap;
         public static frmNhanVien formNhanVien;
         public static frmTaiKhoan formTaiKhoan;
+        public static frmDatBanTruoc formDatBanTruoc;
+        public static frmPhieuMua formPhieuMua;
+        public static frmPhieuNhap formPhieuNhap;
         public static frmTheoDoiDonHang formTheoDoiDonHang;
         public static frmMonAn formMonAn;
         public static frmLoaiMonAn formLoaiMonAn;
         public static frmThayDoiGiaMon formThayDoiGiaMon;
         public static frmNguyenLieu formNguyenLieu;
+        public static frmChitietMonAn formChiTietMonAn;
         public static frmPhongBan formPhongBan;
         public static frmChiTietPhong formChiTietPhong;
         public static frmThongKeDoanhThuTheoThang formThongKeDoanhThuTheoThang;
+        public static frmThongKeLoiNhuanTheoThang formThongKeLoiNhuanTheoThang;
 
         public static mesPhongBan mesPhongBan;
 

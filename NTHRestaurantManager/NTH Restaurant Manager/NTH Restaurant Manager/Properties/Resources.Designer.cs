@@ -63,6 +63,36 @@ namespace NTH_Restaurant_Manager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chitietban {
+            get {
+                object obj = ResourceManager.GetObject("chitietban", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap congthuc {
+            get {
+                object obj = ResourceManager.GetObject("congthuc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap datbantruoc {
+            get {
+                object obj = ResourceManager.GetObject("datbantruoc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon {
             get {
                 object obj = ResourceManager.GetObject("icon", resourceCulture);
@@ -96,6 +126,26 @@ namespace NTH_Restaurant_Manager.Properties {
         internal static System.Drawing.Bitmap nguyenlieu {
             get {
                 object obj = ResourceManager.GetObject("nguyenlieu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap phieumua {
+            get {
+                object obj = ResourceManager.GetObject("phieumua", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap phieunhap {
+            get {
+                object obj = ResourceManager.GetObject("phieunhap", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

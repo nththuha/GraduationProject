@@ -214,6 +214,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="QuanLy\DanhMuc\frmChitietMonAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy\DanhMuc\frmChitietMonAn.Designer.cs">
+      <DependentUpon>frmChitietMonAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLy\HeThong\frmDatBanTruoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy\HeThong\frmDatBanTruoc.Designer.cs">
+      <DependentUpon>frmDatBanTruoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLy\HeThong\frmPhieuMua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy\HeThong\frmPhieuMua.Designer.cs">
+      <DependentUpon>frmPhieuMua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLy\HeThong\frmPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy\HeThong\frmPhieuNhap.Designer.cs">
+      <DependentUpon>frmPhieuNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLy\ThongKe\frmThongKeLoiNhuanTheoThang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy\ThongKe\frmThongKeLoiNhuanTheoThang.Designer.cs">
+      <DependentUpon>frmThongKeLoiNhuanTheoThang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\CTDatMonModel.cs" />
     <Compile Include="Model\CTMonAnModel.cs" />
     <Compile Include="Model\NhanVienModel.cs" />
@@ -400,7 +430,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\congthuc.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\loaimonan.png" />
   </ItemGroup>
@@ -412,6 +444,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\nguyenlieu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chitietban.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\datbantruoc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phieumua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phieunhap.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

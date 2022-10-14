@@ -48,12 +48,20 @@ namespace NTH_Restaurant_Manager
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_NguyenLieu = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_ChiTietMonAn = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_ThongKeLoiNhuan = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_DatBanTruoc = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_PhieuMua = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_PhieuNhap = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -62,7 +70,6 @@ namespace NTH_Restaurant_Manager
             this.tssl_MaNV = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssl_HoTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssl_BoPhan = new System.Windows.Forms.ToolStripStatusLabel();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             this.statusStrip.SuspendLayout();
@@ -90,10 +97,14 @@ namespace NTH_Restaurant_Manager
             this.barButtonItem1,
             this.barButtonItem2,
             this.btn_NguyenLieu,
-            this.barButtonItem3});
+            this.btn_ChiTietMonAn,
+            this.btn_ThongKeLoiNhuan,
+            this.btn_DatBanTruoc,
+            this.btn_PhieuMua,
+            this.btn_PhieuNhap});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbonControl1.MaxItemId = 18;
+            this.ribbonControl1.MaxItemId = 22;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -148,12 +159,14 @@ namespace NTH_Restaurant_Manager
             // 
             // btn_ChiTietPhong
             // 
-            this.btn_ChiTietPhong.Caption = "Chi tiết phòng";
+            this.btn_ChiTietPhong.Caption = "Chi tiết bàn";
             this.btn_ChiTietPhong.Enabled = false;
             this.btn_ChiTietPhong.Id = 6;
-            this.btn_ChiTietPhong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ChiTietPhong.ImageOptions.Image")));
+            this.btn_ChiTietPhong.ImageOptions.Image = global::NTH_Restaurant_Manager.Properties.Resources.chitietban;
             this.btn_ChiTietPhong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_ChiTietPhong.ImageOptions.LargeImage")));
             this.btn_ChiTietPhong.Name = "btn_ChiTietPhong";
+            this.btn_ChiTietPhong.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btn_ChiTietPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ChiTietPhong_ItemClick);
             // 
             // barButtonItem7
@@ -245,11 +258,63 @@ namespace NTH_Restaurant_Manager
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btn_NguyenLieu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_NguyenLieu_ItemClick);
             // 
+            // btn_ChiTietMonAn
+            // 
+            this.btn_ChiTietMonAn.Caption = "Công thức món ăn";
+            this.btn_ChiTietMonAn.Enabled = false;
+            this.btn_ChiTietMonAn.Id = 17;
+            this.btn_ChiTietMonAn.ImageOptions.Image = global::NTH_Restaurant_Manager.Properties.Resources.congthuc;
+            this.btn_ChiTietMonAn.Name = "btn_ChiTietMonAn";
+            this.btn_ChiTietMonAn.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText)));
+            this.btn_ChiTietMonAn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ChiTietMonAn_ItemClick);
+            // 
+            // btn_ThongKeLoiNhuan
+            // 
+            this.btn_ThongKeLoiNhuan.Caption = "Thống kê lợi nhuân theo tháng";
+            this.btn_ThongKeLoiNhuan.Enabled = false;
+            this.btn_ThongKeLoiNhuan.Id = 18;
+            this.btn_ThongKeLoiNhuan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ThongKeLoiNhuan.ImageOptions.Image")));
+            this.btn_ThongKeLoiNhuan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_ThongKeLoiNhuan.ImageOptions.LargeImage")));
+            this.btn_ThongKeLoiNhuan.Name = "btn_ThongKeLoiNhuan";
+            this.btn_ThongKeLoiNhuan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ThongKeLoiNhuan_ItemClick);
+            // 
+            // btn_DatBanTruoc
+            // 
+            this.btn_DatBanTruoc.Caption = "Đặt bàn trước";
+            this.btn_DatBanTruoc.Enabled = false;
+            this.btn_DatBanTruoc.Id = 19;
+            this.btn_DatBanTruoc.ImageOptions.Image = global::NTH_Restaurant_Manager.Properties.Resources.datbantruoc;
+            this.btn_DatBanTruoc.Name = "btn_DatBanTruoc";
+            this.btn_DatBanTruoc.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btn_DatBanTruoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DatBanTruoc_ItemClick);
+            // 
+            // btn_PhieuMua
+            // 
+            this.btn_PhieuMua.Caption = "Phiếu mua nguyên liệu";
+            this.btn_PhieuMua.Enabled = false;
+            this.btn_PhieuMua.Id = 20;
+            this.btn_PhieuMua.ImageOptions.Image = global::NTH_Restaurant_Manager.Properties.Resources.phieumua;
+            this.btn_PhieuMua.Name = "btn_PhieuMua";
+            this.btn_PhieuMua.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btn_PhieuMua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_PhieuMua_ItemClick);
+            // 
+            // btn_PhieuNhap
+            // 
+            this.btn_PhieuNhap.Caption = "Phiếu nhập nguyên liệu";
+            this.btn_PhieuNhap.Enabled = false;
+            this.btn_PhieuNhap.Id = 21;
+            this.btn_PhieuNhap.ImageOptions.Image = global::NTH_Restaurant_Manager.Properties.Resources.phieunhap;
+            this.btn_PhieuNhap.Name = "btn_PhieuNhap";
+            this.btn_PhieuNhap.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btn_PhieuNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_PhieuNhap_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup6,
+            this.ribbonPageGroup8,
+            this.ribbonPageGroup9,
             this.ribbonPageGroup5});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "HỆ THỐNG";
@@ -266,6 +331,17 @@ namespace NTH_Restaurant_Manager
             this.ribbonPageGroup6.ItemLinks.Add(this.btn_TaiKhoan);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.btn_DatBanTruoc);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.btn_PhieuMua);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btn_PhieuNhap);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            // 
             // ribbonPageGroup5
             // 
             this.ribbonPageGroup5.ItemLinks.Add(this.btn_TheoDoiDonHang);
@@ -275,6 +351,7 @@ namespace NTH_Restaurant_Manager
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2,
+            this.ribbonPageGroup7,
             this.ribbonPageGroup4});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "DANH MỤC";
@@ -284,9 +361,13 @@ namespace NTH_Restaurant_Manager
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_LoaiMonAn);
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_MonAn);
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_NguyenLieu);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btn_ThayDoiGiaMon);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.btn_ThayDoiGiaMon);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btn_ChiTietMonAn);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             // 
             // ribbonPageGroup4
             // 
@@ -304,6 +385,7 @@ namespace NTH_Restaurant_Manager
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btn_ThongKeDoanhThuTheoThang);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btn_ThongKeLoiNhuan);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
             // xtraTabbedMdiManager
@@ -337,13 +419,6 @@ namespace NTH_Restaurant_Manager
             // 
             this.tssl_BoPhan.Name = "tssl_BoPhan";
             this.tssl_BoPhan.Size = new System.Drawing.Size(0, 16);
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "Công thức món ăn";
-            this.barButtonItem3.Enabled = false;
-            this.barButtonItem3.Id = 17;
-            this.barButtonItem3.Name = "barButtonItem3";
             // 
             // frmMain
             // 
@@ -400,7 +475,14 @@ namespace NTH_Restaurant_Manager
         public System.Windows.Forms.ToolStripStatusLabel tssl_BoPhan;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem btn_NguyenLieu;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem btn_ChiTietMonAn;
+        private DevExpress.XtraBars.BarButtonItem btn_ThongKeLoiNhuan;
+        private DevExpress.XtraBars.BarButtonItem btn_DatBanTruoc;
+        private DevExpress.XtraBars.BarButtonItem btn_PhieuMua;
+        private DevExpress.XtraBars.BarButtonItem btn_PhieuNhap;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
     }
 }
 
