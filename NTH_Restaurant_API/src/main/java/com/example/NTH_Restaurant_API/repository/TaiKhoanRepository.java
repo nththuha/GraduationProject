@@ -9,4 +9,6 @@ public interface TaiKhoanRepository extends JpaRepository<TaiKhoanEntity, String
     Optional<TaiKhoanEntity> findByMaTK(String maTK);
 
     Boolean existsByMaTK(String maTK);
+
+    TaiKhoanEntity findByIdnv_IdNV(Integer idnv);
 }

@@ -1,8 +1,6 @@
 package com.example.NTH_Restaurant_API.dto;
 
 import com.example.NTH_Restaurant_API.entity.CT_MonAnEntity;
-import com.example.NTH_Restaurant_API.entity.MonAnEntity;
-import com.example.NTH_Restaurant_API.entity.NguyenLieuEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
