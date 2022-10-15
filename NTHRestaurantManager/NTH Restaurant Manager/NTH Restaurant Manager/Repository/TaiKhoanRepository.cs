@@ -33,5 +33,25 @@ namespace NTH_Restaurant_Manager.Repository
             var token = JsonConvert.DeserializeObject<TokenModel>(json);
             return token;
         }
+
+        public async Task<List<TaiKhoanModel>> layDSTaiKhoan()
+        {
+            _response = await _client.GetAsync("taikhoan");
+            var json = await _response.Content.ReadAsStringAsync();
+            var listTK = JsonConvert.DeserializeObject<List<TaiKhoanModel>>(json);
+            return listTK;
+        }
+
+        public async Task<String> suaTaiKhoan(TaiKhoanModel taiKhoan)
+        {
+            var taikhoan = JsonConvert.SerializeObject(taiKhoan);
+            var buffer = Encoding.UTF8.GetBytes(taikhoan);
+            var byteContent = new ByteArrayContent(buffer);
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            _response = await _client.PutAsync("taikhoan", byteContent);
+            var json = await _response.Content.ReadAsStringAsync();
+            var check = JsonConvert.DeserializeObject<String>(json);
+            return check;
+        }
     }
 }

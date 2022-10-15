@@ -10,5 +10,7 @@ namespace NTH_Restaurant_Manager.Model
     {
         public string maTK { get; set; }
         public string matKhau { get; set; }
+        public int idnv { get; set; }
+        public String hoTenNV { get; set; }
     }
 }

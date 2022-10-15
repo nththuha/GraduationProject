@@ -44,7 +44,15 @@ namespace NTH_Restaurant_Manager
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.bdsTK = new System.Windows.Forms.BindingSource(this.components);
+            this.gcTK = new DevExpress.XtraGrid.GridControl();
+            this.gvTK = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colmaTK = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colhoTenNV = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsTK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTK)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -74,11 +82,8 @@ namespace NTH_Restaurant_Manager
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Them),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_CapNhat),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Luu),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Xoa),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_PhucHoi),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Reload),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Thoat)});
             this.bar2.OptionsBar.MultiLine = true;
@@ -95,11 +100,12 @@ namespace NTH_Restaurant_Manager
             // 
             // btn_CapNhat
             // 
-            this.btn_CapNhat.Caption = "Cập nhật";
+            this.btn_CapNhat.Caption = "Reset mật khẩu";
             this.btn_CapNhat.Id = 1;
             this.btn_CapNhat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_CapNhat.ImageOptions.SvgImage")));
             this.btn_CapNhat.Name = "btn_CapNhat";
             this.btn_CapNhat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_CapNhat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_CapNhat_ItemClick);
             // 
             // btn_Luu
             // 
@@ -132,6 +138,7 @@ namespace NTH_Restaurant_Manager
             this.btn_Reload.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Reload.ImageOptions.SvgImage")));
             this.btn_Reload.Name = "btn_Reload";
             this.btn_Reload.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_Reload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Reload_ItemClick);
             // 
             // btn_Thoat
             // 
@@ -140,6 +147,7 @@ namespace NTH_Restaurant_Manager
             this.btn_Thoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Thoat.ImageOptions.SvgImage")));
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_Thoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Thoat_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -147,7 +155,7 @@ namespace NTH_Restaurant_Manager
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1399, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(1424, 30);
             // 
             // barDockControlBottom
             // 
@@ -155,7 +163,7 @@ namespace NTH_Restaurant_Manager
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 743);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1399, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1424, 0);
             // 
             // barDockControlLeft
             // 
@@ -169,15 +177,63 @@ namespace NTH_Restaurant_Manager
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1399, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1424, 30);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 713);
+            // 
+            // bdsTK
+            // 
+            this.bdsTK.DataSource = typeof(NTH_Restaurant_Manager.Model.TaiKhoanModel);
+            // 
+            // gcTK
+            // 
+            this.gcTK.DataSource = this.bdsTK;
+            this.gcTK.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcTK.Location = new System.Drawing.Point(0, 30);
+            this.gcTK.MainView = this.gvTK;
+            this.gcTK.MenuManager = this.barManager1;
+            this.gcTK.Name = "gcTK";
+            this.gcTK.Size = new System.Drawing.Size(1424, 440);
+            this.gcTK.TabIndex = 5;
+            this.gcTK.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvTK});
+            // 
+            // gvTK
+            // 
+            this.gvTK.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colmaTK,
+            this.colhoTenNV});
+            this.gvTK.GridControl = this.gcTK;
+            this.gvTK.Name = "gvTK";
+            this.gvTK.OptionsBehavior.Editable = false;
+            this.gvTK.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvTK_RowClick);
+            // 
+            // colmaTK
+            // 
+            this.colmaTK.Caption = "MÃ TÀI KHOẢN";
+            this.colmaTK.FieldName = "maTK";
+            this.colmaTK.MinWidth = 25;
+            this.colmaTK.Name = "colmaTK";
+            this.colmaTK.Visible = true;
+            this.colmaTK.VisibleIndex = 0;
+            this.colmaTK.Width = 94;
+            // 
+            // colhoTenNV
+            // 
+            this.colhoTenNV.Caption = "HỌ TÊN NHÂN VIÊN";
+            this.colhoTenNV.FieldName = "hoTenNV";
+            this.colhoTenNV.MinWidth = 25;
+            this.colhoTenNV.Name = "colhoTenNV";
+            this.colhoTenNV.Visible = true;
+            this.colhoTenNV.VisibleIndex = 1;
+            this.colhoTenNV.Width = 94;
             // 
             // frmTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1399, 743);
+            this.ClientSize = new System.Drawing.Size(1424, 743);
+            this.Controls.Add(this.gcTK);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -186,6 +242,9 @@ namespace NTH_Restaurant_Manager
             this.Text = "TÀI KHOẢN";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsTK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcTK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvTK)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,5 +265,10 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraGrid.GridControl gcTK;
+        private System.Windows.Forms.BindingSource bdsTK;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvTK;
+        private DevExpress.XtraGrid.Columns.GridColumn colmaTK;
+        private DevExpress.XtraGrid.Columns.GridColumn colhoTenNV;
     }
 }
