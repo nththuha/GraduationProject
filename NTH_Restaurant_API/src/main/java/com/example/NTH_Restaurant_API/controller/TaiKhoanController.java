@@ -99,8 +99,9 @@ public class TaiKhoanController {
     }
 
     @GetMapping("")
-    public List<SignupRequest> layDSNhanVienVaTaiKhoan(){
-        return nhanVienService.layDSNhanVienVaTaiKhoan();
+    public List<TaiKhoanDTO> layDSTaiKhoan(){
+        List<TaiKhoanEntity> listTK = taiKhoanRepository.findAll();
+        return listTK.stream().map(TaiKhoanDTO::new).collect(Collectors.toList());
     }
 
     @PutMapping("")

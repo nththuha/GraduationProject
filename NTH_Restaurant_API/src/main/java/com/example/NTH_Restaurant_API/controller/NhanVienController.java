@@ -19,4 +19,9 @@ public class NhanVienController {
     public NhanVienDTO layThongTinNhanVienTheoMaTaiKhoan(@PathVariable String taikhoan){
         return nhanVienService.layThongTinNhanVienTheoMaTaiKhoan(taikhoan);
     }
+
+    @GetMapping("")
+    public List<SignupRequest> layDSNhanVienVaTaiKhoan(){
+        return nhanVienService.layDSNhanVienVaTaiKhoan();
+    }
 }
