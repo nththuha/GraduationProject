@@ -21,7 +21,7 @@ namespace NTH_Restaurant_Manager.Repository
             _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task<List<CTMonAnModel>> layDSBan(String maMA)
+        public async Task<List<CTMonAnModel>> layDSCTMonAnTheoMonAn(String maMA)
         {
             _response = await _client.GetAsync("ctmonan/" + maMA);
             var json = await _response.Content.ReadAsStringAsync();

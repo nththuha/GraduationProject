@@ -362,8 +362,17 @@
     <EmbeddedResource Include="QuanLy\DanhMuc\mesPhongBan.resx">
       <DependentUpon>mesPhongBan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy\HeThong\frmDatBanTruoc.resx">
+      <DependentUpon>frmDatBanTruoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\HeThong\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy\HeThong\frmPhieuMua.resx">
+      <DependentUpon>frmPhieuMua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy\HeThong\frmPhieuNhap.resx">
+      <DependentUpon>frmPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\HeThong\frmTaiKhoan.resx">
       <DependentUpon>frmTaiKhoan.cs</DependentUpon>
@@ -405,6 +414,9 @@
     </Compile>
     <EmbeddedResource Include="QuanLy\HeThong\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy\ThongKe\frmThongKeLoiNhuanTheoThang.resx">
+      <DependentUpon>frmThongKeLoiNhuanTheoThang.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

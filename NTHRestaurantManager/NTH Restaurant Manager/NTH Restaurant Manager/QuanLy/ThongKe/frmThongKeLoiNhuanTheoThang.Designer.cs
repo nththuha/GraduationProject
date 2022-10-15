@@ -29,10 +29,17 @@ namespace NTH_Restaurant_Manager
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmThongKeLoiNhuanTheoThang
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "frmThongKeLoiNhuanTheoThang";
+            this.ClientSize = new System.Drawing.Size(1314, 696);
+            this.Name = "frmThongKeLoiNhuanTheoThang";
+            this.Text = "THỐNG KÊ LỢI NHUẬN THEO THÁNG";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
