@@ -25,8 +25,8 @@ namespace NTH_Restaurant_Manager
         {
             InitializeComponent();
             khoiTao();
-            layDSMonAn();
             layDSLoaiMonAn();
+            layDSMonAn();
         }
 
         private async void layDSLoaiMonAn()
@@ -112,8 +112,8 @@ namespace NTH_Restaurant_Manager
         private void btn_PhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             bdsMA.CancelEdit();
-            layDSMonAn();
             layDSLoaiMonAn();
+            layDSMonAn();
             panelControl2.Enabled = false;
 
             btn_Them.Enabled = btn_Xoa.Enabled = btn_CapNhat.Enabled = btn_Thoat.Enabled = btn_Reload.Enabled = true;
@@ -135,7 +135,7 @@ namespace NTH_Restaurant_Manager
             btn_Them.Enabled = btn_CapNhat.Enabled = btn_Reload.Enabled = btn_Xoa.Enabled = false;
             btn_Luu.Enabled = btn_PhucHoi.Enabled = true;
             panelControl2.Enabled = true;
-            txt_MaMA.Enabled = false;
+            txt_MaMA.Enabled = se_Gia.Enabled = false;
         }
 
         private async void themMonAn()
@@ -193,8 +193,7 @@ namespace NTH_Restaurant_Manager
                 txt_HinhAnh.Focus();
                 return;
             }
-            txt_MaMA.Focus();
-            MessageBox.Show(se_Gia.Text, "Thông báo", MessageBoxButtons.OK);
+            txt_TenMA.Focus();
             int tam = Program.doiSpinEditThanhInt(se_Gia.Text.Trim());
             if (tam < 0)
             {
@@ -219,7 +218,7 @@ namespace NTH_Restaurant_Manager
             else
             {
                 suaMonAn();
-                txt_MaMA.Enabled = true;
+                txt_MaMA.Enabled = se_Gia.Enabled = true;
             }
             btn_Them.Enabled = btn_CapNhat.Enabled = btn_Reload.Enabled = btn_Xoa.Enabled = true;
             btn_Luu.Enabled = btn_PhucHoi.Enabled = false;

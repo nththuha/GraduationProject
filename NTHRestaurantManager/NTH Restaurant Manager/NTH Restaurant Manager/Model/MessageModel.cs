@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace NTH_Restaurant_Manager.Model
 {
-    class BoPhanModel
+    class MessageModel
     {
-        public String maBP { get; set; }
-        public String tenBP { get; set; }
+        public String message { get; set; }
     }
 }

@@ -52,6 +52,15 @@ namespace NTH_Restaurant_Manager
                 frm = this.CheckExists(typeof(frmTaiKhoan));
                 if (frm != null) frm.Close();
 
+                frm = this.CheckExists(typeof(frmDatBanTruoc));
+                if (frm != null) frm.Close();
+
+                frm = this.CheckExists(typeof(frmPhieuMua));
+                if (frm != null) frm.Close();
+
+                frm = this.CheckExists(typeof(frmPhieuNhap));
+                if (frm != null) frm.Close();
+
                 frm = this.CheckExists(typeof(frmTheoDoiDonHang));
                 if (frm != null) frm.Close();
 
@@ -61,7 +70,13 @@ namespace NTH_Restaurant_Manager
                 frm = this.CheckExists(typeof(frmMonAn));
                 if (frm != null) frm.Close();
 
+                frm = this.CheckExists(typeof(frmNguyenLieu));
+                if (frm != null) frm.Close();
+
                 frm = this.CheckExists(typeof(frmThayDoiGiaMon));
+                if (frm != null) frm.Close();
+
+                frm = this.CheckExists(typeof(frmChitietMonAn));
                 if (frm != null) frm.Close();
 
                 frm = this.CheckExists(typeof(frmPhongBan));
@@ -71,6 +86,9 @@ namespace NTH_Restaurant_Manager
                 if (frm != null) frm.Close();
 
                 frm = this.CheckExists(typeof(frmThongKeDoanhThuTheoThang));
+                if (frm != null) frm.Close();
+
+                frm = this.CheckExists(typeof(frmThongKeLoiNhuanTheoThang));
                 if (frm != null) frm.Close();
             }
         }

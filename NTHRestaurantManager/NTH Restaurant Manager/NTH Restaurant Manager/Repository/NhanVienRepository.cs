@@ -29,5 +29,13 @@ namespace NTH_Restaurant_Manager.Repository
             var nhanVien = JsonConvert.DeserializeObject<NhanVienModel>(json);
             return nhanVien;
         }
+
+        public async Task<List<NVTKModel>> layDSNhanVien()
+        {
+            _response = await _client.GetAsync("nhanvien");
+            var json = await _response.Content.ReadAsStringAsync();
+            var listNVTK = JsonConvert.DeserializeObject<List<NVTKModel>>(json);
+            return listNVTK;
+        }
     }
 }
