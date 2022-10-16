@@ -72,8 +72,7 @@ namespace NTH_Restaurant_Manager
             bdsNL.CancelEdit();
             layDSNguyenLieu();
             panelControl2.Enabled = false;
-
-            btn_Them.Enabled = btn_Xoa.Enabled = btn_CapNhat.Enabled = btn_Thoat.Enabled = btn_Reload.Enabled = true;
+            panelControl1.Enabled = btn_Them.Enabled = btn_Xoa.Enabled = btn_CapNhat.Enabled = btn_Thoat.Enabled = btn_Reload.Enabled = true;
             btn_PhucHoi.Enabled = btn_Luu.Enabled = false;
         }
 
@@ -81,7 +80,7 @@ namespace NTH_Restaurant_Manager
         {
             button = "Thêm";
             khoiTao();
-            btn_Them.Enabled = btn_CapNhat.Enabled = btn_Reload.Enabled = btn_Xoa.Enabled = false;
+            panelControl1.Enabled = btn_Them.Enabled = btn_CapNhat.Enabled = btn_Reload.Enabled = btn_Xoa.Enabled = false;
             btn_Luu.Enabled = btn_PhucHoi.Enabled = true;
             panelControl2.Enabled = true;
             se_SLTon.Enabled = false;
@@ -90,10 +89,11 @@ namespace NTH_Restaurant_Manager
         private void btn_CapNhat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             button = "Cập nhật";
-            btn_Them.Enabled = btn_CapNhat.Enabled = btn_Reload.Enabled = btn_Xoa.Enabled = false;
+            panelControl1.Enabled = btn_Them.Enabled = btn_CapNhat.Enabled = btn_Reload.Enabled = btn_Xoa.Enabled = false;
             btn_Luu.Enabled = btn_PhucHoi.Enabled = true;
             panelControl2.Enabled = true;
             txt_MaNL.Enabled = false;
+            se_SLTon.Enabled = true;
         }
 
         private async void themNguyenLieu()
@@ -173,7 +173,7 @@ namespace NTH_Restaurant_Manager
                 suaNguyenLieu();
                 txt_MaNL.Enabled = true;
             }
-            btn_Them.Enabled = btn_CapNhat.Enabled = btn_Reload.Enabled = btn_Xoa.Enabled = true;
+            panelControl1.Enabled = btn_Them.Enabled = btn_CapNhat.Enabled = btn_Reload.Enabled = btn_Xoa.Enabled = true;
             btn_Luu.Enabled = btn_PhucHoi.Enabled = false;
             panelControl2.Enabled = false;
         }

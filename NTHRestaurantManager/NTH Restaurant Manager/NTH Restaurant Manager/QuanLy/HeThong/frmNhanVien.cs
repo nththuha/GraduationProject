@@ -117,7 +117,8 @@ namespace NTH_Restaurant_Manager
         {
             button = "Thêm";
             khoiTao();
-            btn_Them.Enabled = btn_CapNhat.Enabled = btn_Reload.Enabled = btn_Xoa.Enabled = false;
+            txt_MaTK.Enabled = txt_MatKhau.Enabled = true;
+            gcNVTK.Enabled = btn_Them.Enabled = btn_CapNhat.Enabled = btn_Reload.Enabled = btn_Xoa.Enabled = false;
             btn_Luu.Enabled = btn_PhucHoi.Enabled = true;
             panelControl2.Enabled = true;
         }
@@ -126,7 +127,7 @@ namespace NTH_Restaurant_Manager
         {
             button = "Cập nhật";
             txt_MaTK.Enabled = txt_MatKhau.Enabled = false;
-            btn_Them.Enabled = btn_CapNhat.Enabled = btn_Reload.Enabled = btn_Xoa.Enabled = false;
+            gcNVTK.Enabled = btn_Them.Enabled = btn_CapNhat.Enabled = btn_Reload.Enabled = btn_Xoa.Enabled = false;
             btn_Luu.Enabled = btn_PhucHoi.Enabled = true;
             panelControl2.Enabled = true;
         }
@@ -149,7 +150,7 @@ namespace NTH_Restaurant_Manager
             layDSNVTK();
             panelControl2.Enabled = false;
 
-            btn_Them.Enabled = btn_Xoa.Enabled = btn_CapNhat.Enabled = btn_Thoat.Enabled = btn_Reload.Enabled = true;
+            gcNVTK.Enabled = btn_Them.Enabled = btn_Xoa.Enabled = btn_CapNhat.Enabled = btn_Thoat.Enabled = btn_Reload.Enabled = true;
             btn_PhucHoi.Enabled = btn_Luu.Enabled = false;
         }
 
@@ -215,7 +216,7 @@ namespace NTH_Restaurant_Manager
             {
                 txt_MaTK.Enabled = txt_MatKhau.Enabled = true;
             }
-            btn_Them.Enabled = btn_CapNhat.Enabled = btn_Reload.Enabled = btn_Xoa.Enabled = true;
+            gcNVTK.Enabled = btn_Them.Enabled = btn_CapNhat.Enabled = btn_Reload.Enabled = btn_Xoa.Enabled = true;
             btn_Luu.Enabled = btn_PhucHoi.Enabled = false;
             panelControl2.Enabled = false;
         }
