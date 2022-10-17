@@ -34,7 +34,7 @@ class ChiTietDatMonFragment : Fragment() {
         adapter = ChiTietDatMonAdapter { it, num ->
             when(num){
                 1 -> { //Cập nhật thông tin món ăn
-                    dialogChinhSuaDatMon(requireActivity(), it)
+                    dialogChinhSuaDatMon(requireActivity(), it, viewModel)
                 }
                 2 -> { //Hủy món ăn đã đặt
                     dialogHuyChiTietDatMon(requireActivity(), it, viewModel)

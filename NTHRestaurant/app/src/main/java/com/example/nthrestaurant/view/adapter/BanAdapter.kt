@@ -19,6 +19,10 @@ class BanAdapter (private val clickListener: (BanEntity) -> Unit) : ListAdapter<
                     clBan.setBackgroundResource(R.drawable.background_room_unavailable)
                     clBan.isEnabled = false;
                 }
+                else{
+                    clBan.setBackgroundResource(R.drawable.background_room)
+                    clBan.isEnabled = true;
+                }
                 executePendingBindings()
             }
         }

@@ -40,7 +40,7 @@ class MonAnAdapter(private val clickListener: (MonAnEntity) -> Unit) : ListAdapt
                     ivSold.visibility = View.VISIBLE
                 }
                 tvGia.text = monAn.gia.doiIntThanhTien()
-                if(monAn.chuThich != null) tvChuThich.text = "Chú thích: " + monAn.chuThich
+                if(monAn.chuThich != null) tvChuThich.text = "Mô tả " + monAn.chuThich
                 monan = monAn
                 executePendingBindings()
             }

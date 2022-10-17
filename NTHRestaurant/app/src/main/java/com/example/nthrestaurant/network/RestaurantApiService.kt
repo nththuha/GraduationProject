@@ -67,10 +67,13 @@ interface RestaurantApiService {
     suspend fun xoaCTDM(@Path("idCTDM") idCTDM: Int, @Header("Authorization") token: String): Boolean
 
     @PUT("ctdatmon")
-    suspend fun suaCTDM(@Body ctdm: ChiTietDatMonEntity, @Header("Authorization") token: String): String
+    suspend fun suaCTDM(@Body ctdm: ChiTietDatMonEntity, @Header("Authorization") token: String): Boolean
 
     @POST("ctdatmon")
-    suspend fun themCTDatMon(@Body ctdatmon: ChiTietDatMonEntity, @Header("Authorization") token: String): Boolean
+    suspend fun themCTDM(@Body ctdatmon: ChiTietDatMonEntity, @Header("Authorization") token: String): Boolean
+
+    @PUT("ctdatmon/daphucvu/{idCTDM}")
+    suspend fun suaTrangThaiDaPhucVu(@Path("idCTDM") idCTDM: Int, @Header("Authorization") token: String): Boolean
 }
 
 object RestaurantApi {

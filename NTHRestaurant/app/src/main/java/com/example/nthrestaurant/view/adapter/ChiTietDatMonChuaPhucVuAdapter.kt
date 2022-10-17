@@ -35,11 +35,9 @@ class ChiTietDatMonChuaPhucVuAdapter(private val clickListener: (ChiTietDatMonEn
 
     override fun onBindViewHolder(holder: ChiTietDatMonEntityViewHolder, position: Int) {
         val ctDM = getItem(position)
-
         holder.itemView.findViewById<Button>(R.id.btnChuyenTrangThai).setOnClickListener {
             clickListener(ctDM)
         }
-
         holder.bind(ctDM)
     }
 

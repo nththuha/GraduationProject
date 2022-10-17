@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.nthrestaurant.databinding.FragmentQLMonBinding
+import com.example.nthrestaurant.showToast
 import com.example.nthrestaurant.view.adapter.ChiTietDatMonChuaPhucVuAdapter
 import com.example.nthrestaurant.viewmodel.PhucVuViewModel
 
@@ -29,6 +30,11 @@ class QLMonFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = ChiTietDatMonChuaPhucVuAdapter {
+            if(viewModel.suaTrangThaiDaPhucVu(it)){
+                showToast("Phục vụ món ăn thành công!")
+                loadDSCTDM()
+            }
+            else showToast("Phục vụ món ăn thất bại!")
         }
         loadDSCTDM()
         binding.rvMonChoPV.adapter = adapter

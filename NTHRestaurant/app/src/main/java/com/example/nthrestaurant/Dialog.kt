@@ -18,65 +18,6 @@ import com.example.nthrestaurant.network.model.MonAnEntity
 import com.example.nthrestaurant.view.TrangChuFragmentDirections
 import com.example.nthrestaurant.viewmodel.PhucVuViewModel
 
-fun dialogDatMon(fm: FragmentActivity, monAn: MonAnEntity, viewModel: PhucVuViewModel) {
-    val dialog = Dialog(fm)
-    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-    dialog.setContentView(R.layout.dialog_dat_mon)
-
-    val window: Window? = dialog.window
-    window?.setLayout(
-        WindowManager.LayoutParams.MATCH_PARENT,
-        WindowManager.LayoutParams.WRAP_CONTENT
-    )
-    window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-    val windowAttributes: WindowManager.LayoutParams = window!!.attributes
-    windowAttributes.gravity = Gravity.BOTTOM
-    window.attributes = windowAttributes
-
-    dialog.setCancelable(true)
-    dialog.findViewById<TextView>(R.id.tvTenMA).text = monAn.tenMA
-    dialog.findViewById<TextView>(R.id.tvGia).text = monAn.gia.doiIntThanhTien()
-    if(monAn.chuThich != null){
-        dialog.findViewById<TextView>(R.id.tvMoTa).text = "Mô tả: " + monAn.chuThich
-    }
-
-    val tvSoLuong = dialog.findViewById<TextView>(R.id.tvSoLuong)
-
-    dialog.findViewById<ImageView>(R.id.ivCong).setOnClickListener {
-        val sl = tvSoLuong.text.toString().toInt() + 1
-        if(sl > 1) dialog.findViewById<ImageView>(R.id.ivTru).setImageResource(R.drawable.ic_tru_available)
-        tvSoLuong.text = sl.toString()
-    }
-
-    dialog.findViewById<ImageView>(R.id.ivTru).setOnClickListener {
-        var sl = tvSoLuong.text.toString().toInt()
-        if(sl > 1){
-            sl -= 1
-            tvSoLuong.text = sl.toString()
-            if(sl == 1){
-                dialog.findViewById<ImageView>(R.id.ivTru).setImageResource(R.drawable.ic_tru_unavailable)
-            }
-        }
-    }
-
-    dialog.findViewById<Button>(R.id.btnXacNhan_DM).setOnClickListener {
-        val chuThich =  dialog.findViewById<TextView>(R.id.etChuThich).text.trim()
-        val soLuong = tvSoLuong.text.toString().toInt();
-        val trangThai = "Vừa đặt món"
-        val gia = viewModel.monAn.value?.gia
-        val maMA = viewModel.monAn.value?.maMA
-        val idPD = viewModel.phieuDat.value?.idPD
-        val ctDatMon = ChiTietDatMonEntity(chuThich.toString(), gia!!, 0, "", -5, idPD!!, "", "", maMA!!, soLuong, "", "", "", trangThai)
-        if(viewModel.themCTDatMon(ctDatMon)){
-            Toast.makeText(fm, "Đặt món thành công!", Toast.LENGTH_SHORT).show()
-        }
-        else Toast.makeText(fm, "Đặt món thất bại!", Toast.LENGTH_SHORT).show()
-        dialog.dismiss()
-    }
-    dialog.show()
-}
-
 fun dialogThanhCong(fm: FragmentActivity) {
     val dialog = Dialog(fm)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -147,9 +88,9 @@ fun dialogHuyChiTietDatMon(fm: FragmentActivity, ctdm: ChiTietDatMonEntity, view
     dialog.findViewById<TextView>(R.id.tvCauHoi_HM).text = "Bạn có muốn xóa món " + ctdm.tenMA + "?"
     dialog.findViewById<Button>(R.id.btnXacNhan_HM).setOnClickListener{
         if(viewModel.xoaCTDM(ctdm.idCTDM)) {
-            Toast.makeText(fm, "Xóa thành công!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(fm, "Hủy món thành công!", Toast.LENGTH_SHORT).show()
         }
-        else Toast.makeText(fm, "Xóa thất bại!", Toast.LENGTH_SHORT).show()
+        else Toast.makeText(fm, "Hủy món thất bại!", Toast.LENGTH_SHORT).show()
         dialog.dismiss()
     }
 
@@ -159,7 +100,66 @@ fun dialogHuyChiTietDatMon(fm: FragmentActivity, ctdm: ChiTietDatMonEntity, view
     dialog.show()
 }
 
-fun dialogChinhSuaDatMon(fm: FragmentActivity, ctdm: ChiTietDatMonEntity) {
+fun dialogDatMon(fm: FragmentActivity, monAn: MonAnEntity, viewModel: PhucVuViewModel) {
+    val dialog = Dialog(fm)
+    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+    dialog.setContentView(R.layout.dialog_dat_mon)
+
+    val window: Window? = dialog.window
+    window?.setLayout(
+        WindowManager.LayoutParams.MATCH_PARENT,
+        WindowManager.LayoutParams.WRAP_CONTENT
+    )
+    window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+    val windowAttributes: WindowManager.LayoutParams = window!!.attributes
+    windowAttributes.gravity = Gravity.BOTTOM
+    window.attributes = windowAttributes
+
+    dialog.setCancelable(true)
+    dialog.findViewById<TextView>(R.id.tvTenMA).text = monAn.tenMA
+    dialog.findViewById<TextView>(R.id.tvGia).text = monAn.gia.doiIntThanhTien()
+    if(monAn.chuThich != null){
+        dialog.findViewById<TextView>(R.id.tvMoTa).text = "Mô tả: " + monAn.chuThich
+    }
+
+    val tvSoLuong = dialog.findViewById<TextView>(R.id.tvSoLuong)
+
+    dialog.findViewById<ImageView>(R.id.ivCong).setOnClickListener {
+        val sl = tvSoLuong.text.toString().toInt() + 1
+        if(sl > 1) dialog.findViewById<ImageView>(R.id.ivTru).setImageResource(R.drawable.ic_tru_available)
+        tvSoLuong.text = sl.toString()
+    }
+
+    dialog.findViewById<ImageView>(R.id.ivTru).setOnClickListener {
+        var sl = tvSoLuong.text.toString().toInt()
+        if(sl > 1){
+            sl -= 1
+            tvSoLuong.text = sl.toString()
+            if(sl == 1){
+                dialog.findViewById<ImageView>(R.id.ivTru).setImageResource(R.drawable.ic_tru_unavailable)
+            }
+        }
+    }
+
+    dialog.findViewById<Button>(R.id.btnXacNhan_DM).setOnClickListener {
+        val chuThich = dialog.findViewById<TextView>(R.id.etChuThich_DM).text.trim().toString()
+        val soLuong = tvSoLuong.text.toString().toInt();
+        val trangThai = "Vừa đặt món"
+        val gia = viewModel.monAn.value?.gia
+        val maMA = viewModel.monAn.value?.maMA
+        val idPD = viewModel.phieuDat.value?.idPD
+        val ctDatMon = ChiTietDatMonEntity(chuThich, gia!! * soLuong, 0, "", -5, idPD!!, "", "", maMA!!, soLuong, "", "", "", trangThai)
+        if(viewModel.themCTDatMon(ctDatMon)){
+            Toast.makeText(fm, "Đặt món thành công!", Toast.LENGTH_SHORT).show()
+        }
+        else Toast.makeText(fm, "Đặt món thất bại!", Toast.LENGTH_SHORT).show()
+        dialog.dismiss()
+    }
+    dialog.show()
+}
+
+fun dialogChinhSuaDatMon(fm: FragmentActivity, ctdm: ChiTietDatMonEntity, viewModel: PhucVuViewModel) {
     val dialog = Dialog(fm)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
     dialog.setContentView(R.layout.dialog_dat_mon)
@@ -179,7 +179,42 @@ fun dialogChinhSuaDatMon(fm: FragmentActivity, ctdm: ChiTietDatMonEntity) {
     dialog.findViewById<TextView>(R.id.tvTenMA).text = ctdm.tenMA
     dialog.findViewById<TextView>(R.id.tvGia).text = ctdm.gia.doiIntThanhTien()
     if(ctdm.chuThich != null) {
-        dialog.findViewById<TextView>(R.id.tvMoTa).text = "Mô tả: " + ctdm.chuThich
+        dialog.findViewById<TextView>(R.id.etChuThich_DM).text = ctdm.chuThich
+    }
+
+    val tvSoLuong = dialog.findViewById<TextView>(R.id.tvSoLuong)
+    tvSoLuong.text = ctdm.soLuong.toString()
+    if(ctdm.soLuong > 1) dialog.findViewById<ImageView>(R.id.ivTru).setImageResource(R.drawable.ic_tru_available)
+
+    dialog.findViewById<ImageView>(R.id.ivCong).setOnClickListener {
+        val sl = tvSoLuong.text.toString().toInt() + 1
+        if(sl > 1) dialog.findViewById<ImageView>(R.id.ivTru).setImageResource(R.drawable.ic_tru_available)
+        tvSoLuong.text = sl.toString()
+    }
+
+    dialog.findViewById<ImageView>(R.id.ivTru).setOnClickListener {
+        var sl = tvSoLuong.text.toString().toInt()
+        if(sl > 1){
+            sl -= 1
+            tvSoLuong.text = sl.toString()
+            if(sl == 1){
+                dialog.findViewById<ImageView>(R.id.ivTru).setImageResource(R.drawable.ic_tru_unavailable)
+            }
+        }
+    }
+
+    dialog.findViewById<Button>(R.id.btnXacNhan_DM).setOnClickListener {
+        val chuThich =  dialog.findViewById<TextView>(R.id.etChuThich_DM).text.trim()
+        val soLuong = tvSoLuong.text.toString().toInt();
+        val trangThai = ctdm.trangThai
+        val maMA = ctdm.maMA
+        val idPD = viewModel.phieuDat.value?.idPD
+        val ctDatMon = ChiTietDatMonEntity(chuThich.toString(), ctdm.giaTungMon * soLuong, 0, "", ctdm.idCTDM, idPD!!, "", "", maMA!!, soLuong, "", "", "", trangThai)
+        if(viewModel.suaCTDM(ctDatMon)){
+            Toast.makeText(fm, "Cập nhật thành công!", Toast.LENGTH_SHORT).show()
+        }
+        else Toast.makeText(fm, "Cập nhật thất bại!", Toast.LENGTH_SHORT).show()
+        dialog.dismiss()
     }
     dialog.show()
 }

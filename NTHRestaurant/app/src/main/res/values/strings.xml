@@ -15,7 +15,7 @@
     <!--    Fragment Đặt món      -->
 
     <!--    Dialog Đặt món      -->
-    <string name="dialog_dat_mon_tv_chuthich">Chú thích:</string>
+    <string name="dialog_dat_mon_tv_chuthich">Ghi chú:</string>
     <string name="dialog_dat_mon_tv_so_luong">1</string>
     <string name="dialog_dat_mon_btn_xac_nhan">Xác nhận</string>
     <!--    Dialog Đặt món      -->

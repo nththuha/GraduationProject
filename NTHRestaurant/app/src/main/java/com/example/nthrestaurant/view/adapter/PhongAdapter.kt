@@ -20,7 +20,10 @@ class PhongAdapter(private val clickListener: (PhongEntity) -> Unit) : ListAdapt
                     clPhong.setBackgroundResource(R.drawable.background_room_unavailable)
                     clPhong.isEnabled = false;
                 }
-
+                else {
+                    clPhong.setBackgroundResource(R.drawable.background_room)
+                    clPhong.isEnabled = true;
+                }
                 executePendingBindings()
             }
         }
