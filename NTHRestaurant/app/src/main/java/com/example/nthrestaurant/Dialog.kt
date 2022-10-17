@@ -7,14 +7,12 @@ import android.view.Gravity
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.findNavController
 import com.example.nthrestaurant.network.model.ChiTietDatMonEntity
 import com.example.nthrestaurant.network.model.MonAnEntity
+import com.example.nthrestaurant.network.model.TaiKhoanEntity
 import com.example.nthrestaurant.view.TrangChuFragmentDirections
 import com.example.nthrestaurant.viewmodel.PhucVuViewModel
 
@@ -216,6 +214,47 @@ fun dialogChinhSuaDatMon(fm: FragmentActivity, ctdm: ChiTietDatMonEntity, viewMo
         else Toast.makeText(fm, "Cập nhật thất bại!", Toast.LENGTH_SHORT).show()
         dialog.dismiss()
     }
+    dialog.show()
+}
+
+fun dialogDoiMatKhau(fm: FragmentActivity, view: View, viewModel: PhucVuViewModel) {
+    val dialog = Dialog(fm)
+    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+    dialog.setContentView(R.layout.dialog_doi_mat_khau)
+
+    val window: Window? = dialog.window
+    window?.setLayout(
+        WindowManager.LayoutParams.MATCH_PARENT,
+        WindowManager.LayoutParams.WRAP_CONTENT
+    )
+    window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+    val windowAttributes: WindowManager.LayoutParams = window!!.attributes
+    windowAttributes.gravity = Gravity.CENTER
+    window.attributes = windowAttributes
+
+    dialog.setCancelable(false)
+
+    dialog.findViewById<Button>(R.id.btnDoiMatKhau_MK).setOnClickListener {
+        val tvMatKhauMoi = dialog.findViewById<EditText>(R.id.etMatKhauMoi)
+        val tvXacNhanMK = dialog.findViewById<EditText>(R.id.etMatKhauMoi_XM)
+        if(tvMatKhauMoi.text.toString() != tvXacNhanMK.text.toString()){
+            Toast.makeText(fm, "Mật khẩu không khớp!", Toast.LENGTH_SHORT).show()
+        }
+        else{
+            val taiKhoan = TaiKhoanEntity(viewModel.maTK, tvMatKhauMoi.text.toString(), viewModel.nhanVien.value?.idNV!!)
+            if(viewModel.suaTaiKhoan(taiKhoan)){
+                Toast.makeText(fm, "Đổi mật khẩu thành công!", Toast.LENGTH_SHORT).show()
+            }
+            else Toast.makeText(fm, "Đổi mật khẩu thất bại!", Toast.LENGTH_SHORT).show()
+            dialog.dismiss()
+        }
+    }
+
+    dialog.findViewById<Button>(R.id.btnCancel_MK).setOnClickListener {
+        dialog.dismiss()
+    }
+
     dialog.show()
 }
 

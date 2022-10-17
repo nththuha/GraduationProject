@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.nthrestaurant.databinding.FragmentThongTinCaNhanBinding
 import com.example.nthrestaurant.dialogDangXuat
+import com.example.nthrestaurant.dialogDoiMatKhau
 import com.example.nthrestaurant.viewmodel.PhucVuViewModel
 
 class ThongTinCaNhanFragment : Fragment() {
@@ -34,6 +35,10 @@ class ThongTinCaNhanFragment : Fragment() {
                 "PHUCVU" -> tvBoPhan.text = "NHÂN VIÊN PHỤC VỤ"
                 "BOPHANBEP" -> tvBoPhan.text = "NHÂN VIÊN BỘ PHẬN BẾP"
                 "BOPHANPHACHE" -> tvBoPhan.text = "NHÂN VIÊN BỘ PHẬN PHA CHẾ"
+            }
+
+            btnDoiMatKhau.setOnClickListener{
+                dialogDoiMatKhau(requireActivity(), view, viewModel)
             }
 
             btnDangXuat.setOnClickListener {

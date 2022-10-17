@@ -12,6 +12,7 @@ import kotlinx.coroutines.runBlocking
 
 class PhucVuViewModel : ViewModel() {
     var token: String = ""
+    var maTK: String = ""
 
     private val _nhanVien = MutableLiveData<NhanVienEntity>()
     val nhanVien: LiveData<NhanVienEntity> = _nhanVien
@@ -57,6 +58,10 @@ class PhucVuViewModel : ViewModel() {
 
     fun thietLapToken(token: String){
         this.token = token
+    }
+
+    fun thietLapMaTK(maTK: String){
+        this.maTK = maTK
     }
 
     fun layThongTinNhanVien(maTK: String){
@@ -227,6 +232,18 @@ class PhucVuViewModel : ViewModel() {
         runBlocking {
             try {
                 thongBao = RestaurantApi.retrofitService.suaTrangThaiDaPhucVu(ctdatmon.idCTDM, token)
+            } catch (e: Exception) {
+                Log.e("Lỗi sửa tt ct đặt món", e.message.toString())
+            }
+        }
+        return thongBao;
+    }
+
+    fun suaTaiKhoan(taiKhoan: TaiKhoanEntity): Boolean{
+        var thongBao = false
+        runBlocking {
+            try {
+                thongBao = RestaurantApi.retrofitService.suaTaiKhoan(taiKhoan, token)
             } catch (e: Exception) {
                 Log.e("Lỗi sửa tt ct đặt món", e.message.toString())
             }

@@ -59,7 +59,7 @@ class DangNhapFragment : Fragment() {
                 else{
                     runBlocking {
                         try {
-                            token = RestaurantApi.retrofitService.dangNhap(TaiKhoanEntity(maTK, matKhau))
+                            token = RestaurantApi.retrofitService.dangNhap(TaiKhoanEntity(maTK, matKhau, -1))
                         } catch (e: Exception) {
                             Log.e("Fragment đăng nhập", e.message.toString())
                         }
@@ -68,6 +68,7 @@ class DangNhapFragment : Fragment() {
                     when (token.roles) {
                         PHUCVU -> {
                             vmPhucVu.thietLapToken(token.token)
+                            vmPhucVu.thietLapMaTK(token.maTK)
                             vmPhucVu.layThongTinNhanVien(token.maTK);
                             val action = DangNhapFragmentDirections.actionDangNhapFragmentToTrangChuFragment()
                             view.findNavController().navigate(action)

@@ -74,6 +74,9 @@ interface RestaurantApiService {
 
     @PUT("ctdatmon/daphucvu/{idCTDM}")
     suspend fun suaTrangThaiDaPhucVu(@Path("idCTDM") idCTDM: Int, @Header("Authorization") token: String): Boolean
+
+    @PUT("taikhoan")
+    suspend fun suaTaiKhoan(@Body taiKhoan: TaiKhoanEntity, @Header("Authorization") token: String): Boolean
 }
 
 object RestaurantApi {

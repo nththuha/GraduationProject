@@ -79,4 +79,11 @@
     <string name="fragment_thong_tin_ca_nhan_dang_xuat">ĐĂNG XUẤT</string>
     <!--    Fragment thông tin cá nhân      -->
 
+    <!--    Dialog đổi mật khẩu      -->
+    <string name="dialog_doi_mat_khau_tv_tieu_de">THAY ĐỔI MẬT KHẨU</string>
+    <string name="dialog_doi_mat_khau_et_mat_khau_moi">Mật khẩu mới</string>
+    <string name="dialog_doi_mat_khau_et_xm_mat_khau_moi">Xác nhận lại mật khẩu</string>
+    <string name="dialog_doi_mat_khau_btn_doi_mat_khau">ĐỔI MẬT KHẨU</string>
+    <!--    Dialog đổi mật khẩu      -->
+
 </resources>
