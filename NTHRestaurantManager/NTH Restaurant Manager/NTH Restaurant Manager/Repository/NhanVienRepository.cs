@@ -37,5 +37,17 @@ namespace NTH_Restaurant_Manager.Repository
             var listNVTK = JsonConvert.DeserializeObject<List<NVTKModel>>(json);
             return listNVTK;
         }
+
+        public async Task<String> suaNhanVien(NhanVienModel nhanVien)
+        {
+            var nhanvien = JsonConvert.SerializeObject(nhanVien);
+            var buffer = Encoding.UTF8.GetBytes(nhanvien);
+            var byteContent = new ByteArrayContent(buffer);
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            _response = await _client.PutAsync("nhanvien", byteContent);
+            var json = await _response.Content.ReadAsStringAsync();
+            var check = JsonConvert.DeserializeObject<String>(json);
+            return check;
+        }
     }
 }

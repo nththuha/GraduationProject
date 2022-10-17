@@ -25,8 +25,11 @@ namespace NTH_Restaurant_Manager
 
         List<BoPhanModel> listBP = new List<BoPhanModel>();
         NVTKModel nVTK;
+        NhanVienModel nhanVien;
 
         String button;
+
+        int num;
 
         public frmNhanVien()
         {
@@ -81,7 +84,8 @@ namespace NTH_Restaurant_Manager
                 gcNVTK.DataSource = listNVTK;
                 if(listNVTK.Count > 0)
                 {
-                    setGiaTri(0);
+                    num = 0;
+                    setGiaTri();
                 }
             }
             catch(Exception e)
@@ -90,7 +94,7 @@ namespace NTH_Restaurant_Manager
             }
         }
 
-        private void setGiaTri(int num)
+        private void setGiaTri()
         {
             txt_HoTen.Text = gvNVTK.GetRowCellValue(num, "hoTen").ToString();
             txt_SDT.Text = gvNVTK.GetRowCellValue(num, "sdt").ToString();
@@ -110,7 +114,8 @@ namespace NTH_Restaurant_Manager
 
         private void gvNVTK_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            setGiaTri(e.RowHandle);
+            num = e.RowHandle;
+            setGiaTri();
         }
 
         private void btn_Them_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -159,6 +164,14 @@ namespace NTH_Restaurant_Manager
             MessageModel mes = await _repositoryTK.dangKy(nVTK);
             if (mes.message.Equals("Đăng ký thất bại!")) MessageBox.Show("Thêm nhân viên thất bại!", "Thông báo");
             else MessageBox.Show("Thêm nhân viên thành công!", "Thông báo");
+            layDSNVTK();
+        }
+
+        private async void suaNhanVien()
+        {
+            var check = await _repositoryNV.suaNhanVien(nhanVien);
+            if (check.Equals("false")) MessageBox.Show("Cập nhật nhân viên thất bại!", "Thông báo");
+            else MessageBox.Show("Cập nhật nhân viên thành công!", "Thông báo");
             layDSNVTK();
         }
 
@@ -214,6 +227,14 @@ namespace NTH_Restaurant_Manager
             }
             else
             {
+                nhanVien = new NhanVienModel();
+                nhanVien.idNV = int.Parse(gvNVTK.GetRowCellValue(num, "idnv").ToString());
+                nhanVien.hoTen = txt_HoTen.Text.Trim();
+                nhanVien.sdt = txt_SDT.Text.Trim();
+                nhanVien.diaChi = txt_DiaChi.Text.Trim();
+                nhanVien.email = txt_Email.Text.Trim();
+                nhanVien.maBP = ((BoPhanModel)cbb_TenBP.SelectedItem).maBP;
+                suaNhanVien();
                 txt_MaTK.Enabled = txt_MatKhau.Enabled = true;
             }
             gcNVTK.Enabled = btn_Them.Enabled = btn_CapNhat.Enabled = btn_Reload.Enabled = btn_Xoa.Enabled = true;
