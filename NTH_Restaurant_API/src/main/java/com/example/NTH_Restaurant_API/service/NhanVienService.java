@@ -9,4 +9,6 @@ public interface NhanVienService {
     NhanVienDTO layThongTinNhanVienTheoMaTaiKhoan(String taikhoan);
 
     List<SignupRequest> layDSNhanVienVaTaiKhoan();
+
+    String suaNhanVien(NhanVienDTO nhanVienDTO);
 }

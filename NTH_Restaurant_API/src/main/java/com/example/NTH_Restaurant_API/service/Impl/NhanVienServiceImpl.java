@@ -1,9 +1,11 @@
 package com.example.NTH_Restaurant_API.service.Impl;
 
 import com.example.NTH_Restaurant_API.dto.NhanVienDTO;
+import com.example.NTH_Restaurant_API.entity.BoPhanEntity;
 import com.example.NTH_Restaurant_API.entity.NhanVienEntity;
 import com.example.NTH_Restaurant_API.entity.TaiKhoanEntity;
 import com.example.NTH_Restaurant_API.payload.request.SignupRequest;
+import com.example.NTH_Restaurant_API.repository.BoPhanRepository;
 import com.example.NTH_Restaurant_API.repository.NhanVienRepository;
 import com.example.NTH_Restaurant_API.repository.TaiKhoanRepository;
 import com.example.NTH_Restaurant_API.service.NhanVienService;
@@ -20,6 +22,9 @@ public class NhanVienServiceImpl implements NhanVienService {
 
     @Autowired
     private TaiKhoanRepository taiKhoanRepository;
+
+    @Autowired
+    private BoPhanRepository boPhanRepository;
 
     @Override
     public NhanVienDTO layThongTinNhanVienTheoMaTaiKhoan(String taikhoan) {
@@ -45,5 +50,20 @@ public class NhanVienServiceImpl implements NhanVienService {
             list.add(temp);
         }
         return list;
+    }
+
+    @Override
+    public String suaNhanVien(NhanVienDTO nhanVienDTO) {
+        if(!nhanVienRepository.existsByIdNV(nhanVienDTO.getIdNV())) return "false";
+        BoPhanEntity boPhan = boPhanRepository.getById(nhanVienDTO.getMaBP());
+        NhanVienEntity nhanVien = nhanVienDTO.toEntity();
+        nhanVien.setMapb(boPhan);
+        try{
+            nhanVienRepository.save(nhanVien);
+            return "true";
+        }
+        catch (Exception e){
+            return "false";
+        }
     }
 }

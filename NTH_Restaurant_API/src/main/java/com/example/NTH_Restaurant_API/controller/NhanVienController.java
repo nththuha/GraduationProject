@@ -6,6 +6,7 @@ import com.example.NTH_Restaurant_API.service.NhanVienService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -23,5 +24,10 @@ public class NhanVienController {
     @GetMapping("")
     public List<SignupRequest> layDSNhanVienVaTaiKhoan(){
         return nhanVienService.layDSNhanVienVaTaiKhoan();
+    }
+
+    @PutMapping("")
+    public String suaNhanVien(@Valid @RequestBody NhanVienDTO nhanVienDTO){
+        return nhanVienService.suaNhanVien(nhanVienDTO);
     }
 }
