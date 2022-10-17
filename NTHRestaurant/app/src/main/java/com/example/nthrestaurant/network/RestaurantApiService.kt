@@ -68,6 +68,9 @@ interface RestaurantApiService {
 
     @PUT("ctdatmon")
     suspend fun suaCTDM(@Body ctdm: ChiTietDatMonEntity, @Header("Authorization") token: String): String
+
+    @POST("ctdatmon")
+    suspend fun themCTDatMon(@Body ctdatmon: ChiTietDatMonEntity, @Header("Authorization") token: String): Boolean
 }
 
 object RestaurantApi {

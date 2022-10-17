@@ -8,6 +8,7 @@ import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
@@ -17,7 +18,7 @@ import com.example.nthrestaurant.network.model.MonAnEntity
 import com.example.nthrestaurant.view.TrangChuFragmentDirections
 import com.example.nthrestaurant.viewmodel.PhucVuViewModel
 
-fun dialogDatMon(fm: FragmentActivity, monAn: MonAnEntity) {
+fun dialogDatMon(fm: FragmentActivity, monAn: MonAnEntity, viewModel: PhucVuViewModel) {
     val dialog = Dialog(fm)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
     dialog.setContentView(R.layout.dialog_dat_mon)
@@ -36,7 +37,43 @@ fun dialogDatMon(fm: FragmentActivity, monAn: MonAnEntity) {
     dialog.setCancelable(true)
     dialog.findViewById<TextView>(R.id.tvTenMA).text = monAn.tenMA
     dialog.findViewById<TextView>(R.id.tvGia).text = monAn.gia.doiIntThanhTien()
-    dialog.findViewById<TextView>(R.id.tvMoTa).text = "Mô tả: " + monAn.chuThich
+    if(monAn.chuThich != null){
+        dialog.findViewById<TextView>(R.id.tvMoTa).text = "Mô tả: " + monAn.chuThich
+    }
+
+    val tvSoLuong = dialog.findViewById<TextView>(R.id.tvSoLuong)
+
+    dialog.findViewById<ImageView>(R.id.ivCong).setOnClickListener {
+        val sl = tvSoLuong.text.toString().toInt() + 1
+        if(sl > 1) dialog.findViewById<ImageView>(R.id.ivTru).setImageResource(R.drawable.ic_tru_available)
+        tvSoLuong.text = sl.toString()
+    }
+
+    dialog.findViewById<ImageView>(R.id.ivTru).setOnClickListener {
+        var sl = tvSoLuong.text.toString().toInt()
+        if(sl > 1){
+            sl -= 1
+            tvSoLuong.text = sl.toString()
+            if(sl == 1){
+                dialog.findViewById<ImageView>(R.id.ivTru).setImageResource(R.drawable.ic_tru_unavailable)
+            }
+        }
+    }
+
+    dialog.findViewById<Button>(R.id.btnXacNhan_DM).setOnClickListener {
+        val chuThich =  dialog.findViewById<TextView>(R.id.etChuThich).text.trim()
+        val soLuong = tvSoLuong.text.toString().toInt();
+        val trangThai = "Vừa đặt món"
+        val gia = viewModel.monAn.value?.gia
+        val maMA = viewModel.monAn.value?.maMA
+        val idPD = viewModel.phieuDat.value?.idPD
+        val ctDatMon = ChiTietDatMonEntity(chuThich.toString(), gia!!, 0, "", -5, idPD!!, "", "", maMA!!, soLuong, "", "", "", trangThai)
+        if(viewModel.themCTDatMon(ctDatMon)){
+            Toast.makeText(fm, "Đặt món thành công!", Toast.LENGTH_SHORT).show()
+        }
+        else Toast.makeText(fm, "Đặt món thất bại!", Toast.LENGTH_SHORT).show()
+        dialog.dismiss()
+    }
     dialog.show()
 }
 
@@ -141,7 +178,9 @@ fun dialogChinhSuaDatMon(fm: FragmentActivity, ctdm: ChiTietDatMonEntity) {
     dialog.setCancelable(true)
     dialog.findViewById<TextView>(R.id.tvTenMA).text = ctdm.tenMA
     dialog.findViewById<TextView>(R.id.tvGia).text = ctdm.gia.doiIntThanhTien()
-    dialog.findViewById<TextView>(R.id.tvMoTa).text = "Mô tả: " + ctdm.chuThich
+    if(ctdm.chuThich != null) {
+        dialog.findViewById<TextView>(R.id.tvMoTa).text = "Mô tả: " + ctdm.chuThich
+    }
     dialog.show()
 }
 

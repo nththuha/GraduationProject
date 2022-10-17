@@ -208,10 +208,10 @@ public class CT_DatMonServiceImpl implements CT_DatMonService {
     public String xoaCT_DatMon(Integer idCTDM) {
         try {
             ct_datMonRepository.deleteById(idCTDM);
-            return "false";
+            return "true";
         }
         catch (Exception e){
-            return "true";
+            return "false";
         }
     }
 

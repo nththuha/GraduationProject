@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.nthrestaurant.network.RestaurantApi
 import com.example.nthrestaurant.network.model.*
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class PhucVuViewModel : ViewModel() {
     var token: String = ""
@@ -50,6 +51,9 @@ class PhucVuViewModel : ViewModel() {
 
     private val _dsCTDatMonCPV = MutableLiveData<List<ChiTietDatMonEntity>>()
     val dsCTDatMonCPV: LiveData<List<ChiTietDatMonEntity>> = _dsCTDatMonCPV
+
+    private val _ctDatMon = MutableLiveData<ChiTietDatMonEntity>()
+    val ctDatMon: LiveData<ChiTietDatMonEntity> = _ctDatMon
 
     fun thietLapToken(token: String){
         this.token = token
@@ -191,7 +195,7 @@ class PhucVuViewModel : ViewModel() {
 
     fun xoaCTDM(idCTDM: Int): Boolean{
         var thongBao = true
-        viewModelScope.launch {
+        runBlocking {
             try {
                 thongBao = RestaurantApi.retrofitService.xoaCTDM(idCTDM, token)
                 layDSDatMonTheoPD()
@@ -201,5 +205,17 @@ class PhucVuViewModel : ViewModel() {
             }
         }
         return thongBao
+    }
+
+    fun themCTDatMon(ctdatmon: ChiTietDatMonEntity): Boolean {
+        var thongBao = false
+        runBlocking {
+            try {
+                thongBao = RestaurantApi.retrofitService.themCTDatMon(ctdatmon, token)
+            } catch (e: Exception) {
+                Log.e("Lỗi thêm ct đặt món", e.message.toString())
+            }
+        }
+        return thongBao;
     }
 }

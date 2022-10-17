@@ -58,7 +58,7 @@ class DatMonFragment : Fragment() {
         }
         adapterMA = MonAnAdapter{
             viewModel.thietLapMonAn(it)
-            dialogDatMon(requireActivity(), it)
+            dialogDatMon(requireActivity(), it, viewModel)
         }
     }
 
