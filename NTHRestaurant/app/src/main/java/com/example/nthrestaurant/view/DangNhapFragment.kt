@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.example.nthrestaurant.databinding.FragmentDangNhapBinding
+import com.example.nthrestaurant.dialogThanhCong
 import com.example.nthrestaurant.dialogThatBai
 import com.example.nthrestaurant.network.RestaurantApi
 import com.example.nthrestaurant.network.model.TaiKhoanEntity
@@ -54,7 +55,7 @@ class DangNhapFragment : Fragment() {
                 val maTK = etTenDangNhap.text.toString().trim()
                 val matKhau = etMatKhau.text.toString().trim()
                 if (maTK == "" || matKhau == "") {
-                    dialogThatBai( requireActivity(), "Tên đăng nhập và mật khẩu không được để trống!")
+                    dialogThatBai(requireActivity(), "Tên đăng nhập và mật khẩu không được để trống!")
                 }
                 else{
                     runBlocking {
@@ -87,6 +88,30 @@ class DangNhapFragment : Fragment() {
                     }
                     btnDangNhap.isClickable = true
                     pbLogin.visibility = View.GONE
+                }
+            }
+
+            tvQuenMatKhau.setOnClickListener {
+                val maTK = etTenDangNhap.text.toString().trim()
+                var check = false
+                if (maTK == "") {
+                    dialogThatBai(requireActivity(), "Bạn cần nhập tên đăng nhập!")
+                }
+                else{
+                    runBlocking {
+                        try {
+                            check = RestaurantApi.retrofitService.doiMatKhau(maTK)
+                        }
+                        catch (e: Exception){
+                            Log.e("Fragment đăng nhập", e.message.toString())
+                        }
+                    }
+                    if(check){
+                        dialogThanhCong(requireActivity(), "Mật khẩu mới đã được gửi vào mail của bạn!")
+                    }
+                    else{
+                        dialogThatBai(requireActivity(), "Gửi mail mật khẩu mới thất bại!")
+                    }
                 }
             }
         }

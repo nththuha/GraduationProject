@@ -73,6 +73,7 @@
         style="@style/fragment_dangnhap_btnDangNhap" />
 
     <TextView
+        android:id="@+id/tvQuenMatKhau"
         app:layout_constraintTop_toBottomOf="@id/btnDangNhap"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

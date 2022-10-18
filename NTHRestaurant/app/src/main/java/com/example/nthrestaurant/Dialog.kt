@@ -17,7 +17,7 @@ import com.example.nthrestaurant.network.model.TaiKhoanEntity
 import com.example.nthrestaurant.view.TrangChuFragmentDirections
 import com.example.nthrestaurant.viewmodel.PhucVuViewModel
 
-fun dialogThanhCong(fm: FragmentActivity) {
+fun dialogThanhCong(fm: FragmentActivity, thongBao: String) {
     val dialog = Dialog(fm)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
     dialog.setContentView(R.layout.dialog_thong_bao_thanh_cong)
@@ -35,6 +35,7 @@ fun dialogThanhCong(fm: FragmentActivity) {
 
     dialog.setCancelable(false)
 
+    dialog.findViewById<TextView>(R.id.tvThongBao_TC).text = thongBao
     dialog.findViewById<Button>(R.id.btnXacNhan_TC).setOnClickListener {
         dialog.dismiss()
     }

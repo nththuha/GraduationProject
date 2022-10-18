@@ -77,6 +77,9 @@ interface RestaurantApiService {
 
     @PUT("taikhoan")
     suspend fun suaTaiKhoan(@Body taiKhoan: TaiKhoanEntity, @Header("Authorization") token: String): Boolean
+
+    @POST("taikhoan/{maTK}")
+    suspend fun doiMatKhau(@Path("maTK") maTK: String): Boolean
 }
 
 object RestaurantApi {
