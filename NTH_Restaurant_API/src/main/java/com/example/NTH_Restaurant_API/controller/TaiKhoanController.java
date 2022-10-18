@@ -1,6 +1,8 @@
 package com.example.NTH_Restaurant_API.controller;
 
 import com.example.NTH_Restaurant_API.dto.TaiKhoanDTO;
+import com.example.NTH_Restaurant_API.email.EmailDetail;
+import com.example.NTH_Restaurant_API.email.EmailService;
 import com.example.NTH_Restaurant_API.entity.NhanVienEntity;
 import com.example.NTH_Restaurant_API.entity.TaiKhoanEntity;
 import com.example.NTH_Restaurant_API.payload.request.LoginRequest;
@@ -53,6 +55,9 @@ public class TaiKhoanController {
 
     @Autowired
     private JwtUtils jwtUtils;
+
+    @Autowired
+    private EmailService emailService;
 
     @PostMapping("/dangnhap")
     public ResponseEntity<?> dangNhap(@Valid @RequestBody LoginRequest loginRequest) {
@@ -119,4 +124,31 @@ public class TaiKhoanController {
         }
     }
 
+    @PostMapping("/{maTK}")
+    public String doiMatKhau(@PathVariable String maTK){
+        if (taiKhoanRepository.existsByMaTK(maTK)) {
+            TaiKhoanEntity tk = taiKhoanRepository.getById(maTK);
+            NhanVienEntity nv = nhanVienRepository.findByTaikhoan_MaTK(maTK);
+            String matKhau = soNgauNhien();
+            EmailDetail details = new EmailDetail();
+            details.setNguoiNhan(nv.getEmail());
+            details.setNoiDung("Mật khẩu mới của bạn là " + matKhau);
+            details.setTieuDe("LẤY LẠI MẬT KHẨU - NTH RESTAURANT");
+            try {
+                tk.setMatKhau(encoder.encode(matKhau));
+                taiKhoanRepository.save(tk);
+            }
+            catch (Exception e){
+                return "false";
+            }
+            return emailService.guiMail(details);
+        }
+        else return "false";
+    }
+
+    public String soNgauNhien(){
+        Random rand = new Random();
+        int value = rand.nextInt((999999 - 100000) + 1) + 100000;
+        return value + "";
+    }
 }

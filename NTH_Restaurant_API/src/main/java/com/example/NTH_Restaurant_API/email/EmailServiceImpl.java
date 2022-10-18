@@ -30,10 +30,10 @@ public class EmailServiceImpl implements EmailService {
 
             // Sending the mail
             javaMailSender.send(mailMessage);
-            return "Mail Sent Successfully...";
+            return "true";
         }
         catch (Exception e) {
-            return "Error while Sending Mail";
+            return "false";
         }
     }
 }
