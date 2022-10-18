@@ -24,6 +24,12 @@ class ChiTietDatMonAdapter(private val clickListener: (ChiTietDatMonEntity, Int)
                     btnHuyMon.setBackgroundResource(R.drawable.btn_huy)
                     btnHuyMon.isEnabled = false
                 }
+                else{
+                    btnCapNhat.setBackgroundResource(R.drawable.btn_dangnhap)
+                    btnCapNhat.isEnabled = true
+                    btnHuyMon.setBackgroundResource(R.drawable.btn_huymon)
+                    btnHuyMon.isEnabled = true
+                }
                 executePendingBindings()
             }
         }

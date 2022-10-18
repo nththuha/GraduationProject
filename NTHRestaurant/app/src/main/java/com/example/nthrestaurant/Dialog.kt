@@ -3,6 +3,7 @@ package com.example.nthrestaurant
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.view.Window
@@ -86,9 +87,11 @@ fun dialogHuyChiTietDatMon(fm: FragmentActivity, ctdm: ChiTietDatMonEntity, view
     dialog.findViewById<TextView>(R.id.tvCauHoi_HM).text = "Bạn có muốn xóa món " + ctdm.tenMA + "?"
     dialog.findViewById<Button>(R.id.btnXacNhan_HM).setOnClickListener{
         if(viewModel.xoaCTDM(ctdm.idCTDM)) {
-            Toast.makeText(fm, "Hủy món thành công!", Toast.LENGTH_SHORT).show()
+            fm.showToast("Hủy món thành công!")
         }
-        else Toast.makeText(fm, "Hủy món thất bại!", Toast.LENGTH_SHORT).show()
+        else {
+            fm.showToast("Hủy món thất bại!")
+        }
         dialog.dismiss()
     }
 
@@ -147,11 +150,18 @@ fun dialogDatMon(fm: FragmentActivity, monAn: MonAnEntity, viewModel: PhucVuView
         val gia = viewModel.monAn.value?.gia
         val maMA = viewModel.monAn.value?.maMA
         val idPD = viewModel.phieuDat.value?.idPD
+        Log.e("đặt món", "chú thích: $chuThich")
+        Log.e("đặt món", "giá: $gia số lượng: $soLuong")
+        Log.e("đặt món", "idPD: $idPD")
+        Log.e("đặt món", "mã MA: $maMA")
+        Log.e("đặt món", "trạng thái: $trangThai")
         val ctDatMon = ChiTietDatMonEntity(chuThich, gia!! * soLuong, 0, "", -5, idPD!!, "", "", maMA!!, soLuong, "", "", "", trangThai)
         if(viewModel.themCTDatMon(ctDatMon)){
-            Toast.makeText(fm, "Đặt món thành công!", Toast.LENGTH_SHORT).show()
+            fm.showToast("Đặt món thành công!")
         }
-        else Toast.makeText(fm, "Đặt món thất bại!", Toast.LENGTH_SHORT).show()
+        else {
+            fm.showToast("Đặt món thất bại!")
+        }
         dialog.dismiss()
     }
     dialog.show()
@@ -209,9 +219,11 @@ fun dialogChinhSuaDatMon(fm: FragmentActivity, ctdm: ChiTietDatMonEntity, viewMo
         val idPD = viewModel.phieuDat.value?.idPD
         val ctDatMon = ChiTietDatMonEntity(chuThich.toString(), ctdm.giaTungMon * soLuong, 0, "", ctdm.idCTDM, idPD!!, "", "", maMA!!, soLuong, "", "", "", trangThai)
         if(viewModel.suaCTDM(ctDatMon)){
-            Toast.makeText(fm, "Cập nhật thành công!", Toast.LENGTH_SHORT).show()
+            fm.showToast("Cập nhật thành công!")
         }
-        else Toast.makeText(fm, "Cập nhật thất bại!", Toast.LENGTH_SHORT).show()
+        else{
+            fm.showToast("Cập nhật thất bại!")
+        }
         dialog.dismiss()
     }
     dialog.show()
@@ -239,14 +251,16 @@ fun dialogDoiMatKhau(fm: FragmentActivity, view: View, viewModel: PhucVuViewMode
         val tvMatKhauMoi = dialog.findViewById<EditText>(R.id.etMatKhauMoi)
         val tvXacNhanMK = dialog.findViewById<EditText>(R.id.etMatKhauMoi_XM)
         if(tvMatKhauMoi.text.toString() != tvXacNhanMK.text.toString()){
-            Toast.makeText(fm, "Mật khẩu không khớp!", Toast.LENGTH_SHORT).show()
+            fm.showToast("Mật khẩu không khớp!")
         }
         else{
             val taiKhoan = TaiKhoanEntity(viewModel.maTK, tvMatKhauMoi.text.toString(), viewModel.nhanVien.value?.idNV!!)
             if(viewModel.suaTaiKhoan(taiKhoan)){
-                Toast.makeText(fm, "Đổi mật khẩu thành công!", Toast.LENGTH_SHORT).show()
+                fm.showToast("Đổi mật khẩu thành công!")
             }
-            else Toast.makeText(fm, "Đổi mật khẩu thất bại!", Toast.LENGTH_SHORT).show()
+            else {
+                fm.showToast("Đổi mật khẩu thất bại!")
+            }
             dialog.dismiss()
         }
     }

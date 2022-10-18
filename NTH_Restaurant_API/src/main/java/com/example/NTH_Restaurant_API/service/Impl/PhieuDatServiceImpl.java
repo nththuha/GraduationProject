@@ -58,7 +58,7 @@ public class PhieuDatServiceImpl implements PhieuDatService {
     }
 
     @Override
-    public String themPhieuDat(PhieuDatDTO phieuDatDTO) {
+    public PhieuDatDTO themPhieuDat(PhieuDatDTO phieuDatDTO) {
         List<CT_BanEntity> temp = ct_banRepository.findByMaphong_MaPhong(phieuDatDTO.getMaPhong());
         CT_BanEntity ct_banEntity = null;
         for (CT_BanEntity ctBanEntity : temp) {
@@ -83,10 +83,10 @@ public class PhieuDatServiceImpl implements PhieuDatService {
             ct_datBan.setIdpd(pd);
             ct_datBanRepository.save(ct_datBan);
 
-            return pd.getIdPD().toString();
+            return new PhieuDatDTO(pd);
         }
         catch (Exception e){
-            return "false";
+            return null;
         }
     }
 }

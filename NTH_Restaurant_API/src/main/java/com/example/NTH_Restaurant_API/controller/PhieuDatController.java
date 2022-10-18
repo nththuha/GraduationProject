@@ -21,7 +21,7 @@ public class PhieuDatController {
     }
 
     @PostMapping("")
-    public String themPhieuDat(@Valid @RequestBody PhieuDatDTO phieuDatDTO){
+    public PhieuDatDTO themPhieuDat(@Valid @RequestBody PhieuDatDTO phieuDatDTO){
         return phieuDatService.themPhieuDat(phieuDatDTO);
     }
 }
