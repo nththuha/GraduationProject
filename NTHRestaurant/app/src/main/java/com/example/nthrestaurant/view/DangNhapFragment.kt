@@ -75,12 +75,18 @@ class DangNhapFragment : Fragment() {
                             view.findNavController().navigate(action)
                         }
                         BOPHANBEP -> {
-                            vmPhucVu.thietLapToken(token.token)
-                            //DO SOMETHING
+                            vmBep.thietLapToken(token.token)
+                            vmBep.thietLapMaTK(token.maTK)
+                            vmBep.layThongTinNhanVien(token.maTK);
+                            val action = DangNhapFragmentDirections.actionDangNhapFragmentToTrangChuBepFragment()
+                            view.findNavController().navigate(action)
                         }
                         BOPHANPHACHE -> {
-                            vmPhucVu.thietLapToken(token.token)
-                            //DO SOMETHING
+                            vmPhaChe.thietLapToken(token.token)
+                            vmPhaChe.thietLapMaTK(token.maTK)
+                            vmPhaChe.layThongTinNhanVien(token.maTK);
+                            val action = DangNhapFragmentDirections.actionDangNhapFragmentToTrangChuPhaCheFragment()
+                            view.findNavController().navigate(action)
                         }
                         else -> {
                             dialogThatBai( requireActivity(), "Tên đăng nhập và mật khẩu không đúng!")

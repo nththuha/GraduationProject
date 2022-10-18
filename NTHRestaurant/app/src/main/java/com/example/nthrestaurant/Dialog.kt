@@ -3,7 +3,6 @@ package com.example.nthrestaurant
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.view.Window
@@ -14,7 +13,11 @@ import androidx.navigation.findNavController
 import com.example.nthrestaurant.network.model.ChiTietDatMonEntity
 import com.example.nthrestaurant.network.model.MonAnEntity
 import com.example.nthrestaurant.network.model.TaiKhoanEntity
-import com.example.nthrestaurant.view.TrangChuFragmentDirections
+import com.example.nthrestaurant.view.bep.TrangChuBepFragmentDirections
+import com.example.nthrestaurant.view.phache.TrangChuPhaCheFragmentDirections
+import com.example.nthrestaurant.view.phucvu.TrangChuPhucVuFragmentDirections
+import com.example.nthrestaurant.viewmodel.BepViewModel
+import com.example.nthrestaurant.viewmodel.PhaCheViewModel
 import com.example.nthrestaurant.viewmodel.PhucVuViewModel
 
 fun dialogThanhCong(fm: FragmentActivity, thongBao: String) {
@@ -213,7 +216,7 @@ fun dialogChinhSuaDatMon(fm: FragmentActivity, ctdm: ChiTietDatMonEntity, viewMo
         val trangThai = ctdm.trangThai
         val maMA = ctdm.maMA
         val idPD = viewModel.phieuDat.value?.idPD
-        val ctDatMon = ChiTietDatMonEntity(chuThich.toString(), ctdm.giaTungMon * soLuong, 0, "", ctdm.idCTDM, idPD!!, "", "", maMA!!, soLuong, "", "", "", trangThai)
+        val ctDatMon = ChiTietDatMonEntity(chuThich.toString(), ctdm.giaTungMon * soLuong, 0, "", ctdm.idCTDM, idPD!!, "", "", maMA, soLuong, "", "", "", trangThai)
         if(viewModel.suaCTDM(ctDatMon)){
             fm.showToast("Cập nhật thành công!")
         }
@@ -225,7 +228,7 @@ fun dialogChinhSuaDatMon(fm: FragmentActivity, ctdm: ChiTietDatMonEntity, viewMo
     dialog.show()
 }
 
-fun dialogDoiMatKhau(fm: FragmentActivity, view: View, viewModel: PhucVuViewModel) {
+fun dialogDoiMatKhau(fm: FragmentActivity, vmPhucVu: PhucVuViewModel, vmBep: BepViewModel, vmPhaChe: PhaCheViewModel) {
     val dialog = Dialog(fm)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
     dialog.setContentView(R.layout.dialog_doi_mat_khau)
@@ -250,25 +253,45 @@ fun dialogDoiMatKhau(fm: FragmentActivity, view: View, viewModel: PhucVuViewMode
             fm.showToast("Mật khẩu không khớp!")
         }
         else{
-            val taiKhoan = TaiKhoanEntity(viewModel.maTK, tvMatKhauMoi.text.toString(), viewModel.nhanVien.value?.idNV!!)
-            if(viewModel.suaTaiKhoan(taiKhoan)){
-                fm.showToast("Đổi mật khẩu thành công!")
+            if(vmPhucVu.nhanVien.value != null){
+                val taiKhoan = TaiKhoanEntity(vmPhucVu.maTK, tvMatKhauMoi.text.toString(), vmPhucVu.nhanVien.value?.idNV!!)
+                if(vmPhucVu.suaTaiKhoan(taiKhoan)){
+                    fm.showToast("Đổi mật khẩu thành công!")
+                }
+                else {
+                    fm.showToast("Đổi mật khẩu thất bại!")
+                }
+                dialog.dismiss()
             }
-            else {
-                fm.showToast("Đổi mật khẩu thất bại!")
+            else if(vmBep.nhanVien.value != null){
+                val taiKhoan = TaiKhoanEntity(vmBep.maTK, tvMatKhauMoi.text.toString(), vmBep.nhanVien.value?.idNV!!)
+                if(vmBep.suaTaiKhoan(taiKhoan)){
+                    fm.showToast("Đổi mật khẩu thành công!")
+                }
+                else {
+                    fm.showToast("Đổi mật khẩu thất bại!")
+                }
+                dialog.dismiss()
             }
-            dialog.dismiss()
+            else{
+                val taiKhoan = TaiKhoanEntity(vmPhaChe.maTK, tvMatKhauMoi.text.toString(), vmPhaChe.nhanVien.value?.idNV!!)
+                if(vmPhaChe.suaTaiKhoan(taiKhoan)){
+                    fm.showToast("Đổi mật khẩu thành công!")
+                }
+                else {
+                    fm.showToast("Đổi mật khẩu thất bại!")
+                }
+                dialog.dismiss()
+            }
         }
     }
-
     dialog.findViewById<Button>(R.id.btnCancel_MK).setOnClickListener {
         dialog.dismiss()
     }
-
     dialog.show()
 }
 
-fun dialogDangXuat(fm: FragmentActivity, view: View) {
+fun dialogDangXuat(fm: FragmentActivity, view: View, vmPhucVu: PhucVuViewModel, vmBep: BepViewModel, vmPhaChe: PhaCheViewModel) {
     val dialog = Dialog(fm)
     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
     dialog.setContentView(R.layout.dialog_dang_xuat)
@@ -288,8 +311,27 @@ fun dialogDangXuat(fm: FragmentActivity, view: View) {
 
     dialog.findViewById<Button>(R.id.btnDangXuat).setOnClickListener {
         dialog.dismiss()
-        val action = TrangChuFragmentDirections.actionTrangChuFragmentToDangNhapFragment()
-        view.findNavController().navigate(action)
+        if(vmPhucVu.nhanVien.value != null){
+            vmPhucVu.resetNhanVien()
+            vmBep.resetNhanVien()
+            vmPhaChe.resetNhanVien()
+            val action = TrangChuPhucVuFragmentDirections.actionTrangChuFragmentToDangNhapFragment()
+            view.findNavController().navigate(action)
+        }
+        else if(vmBep.nhanVien.value != null){
+            vmPhucVu.resetNhanVien()
+            vmBep.resetNhanVien()
+            vmPhaChe.resetNhanVien()
+            val action = TrangChuBepFragmentDirections.actionTrangChuBepFragmentToDangNhapFragment()
+            view.findNavController().navigate(action)
+        }
+        else{
+            vmPhucVu.resetNhanVien()
+            vmBep.resetNhanVien()
+            vmPhaChe.resetNhanVien()
+            val action = TrangChuPhaCheFragmentDirections.actionTrangChuPhaCheFragmentToDangNhapFragment()
+            view.findNavController().navigate(action)
+        }
     }
     dialog.findViewById<Button>(R.id.btnCancel).setOnClickListener {
         dialog.dismiss()

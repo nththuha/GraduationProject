@@ -63,10 +63,15 @@
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_dat_cho.xml" value="0.2" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_dat_mon.xml" value="0.2" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_q_l_mon.xml" value="0.2" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_q_l_mon_dat.xml" value="0.20521590423257802" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_q_l_nuoc_dat.xml" value="0.1936725096194955" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_q_l_phieu_dat.xml" value="0.2" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_q_l_phong.xml" value="0.15789473684210525" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_thong_tin_ca_nhan.xml" value="0.15789473684210525" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_trang_chu.xml" value="0.15789473684210525" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_trang_chu_bep.xml" value="0.20521590423257802" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_trang_chu_pha_che.xml" value="0.1936725096194955" />
+        <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/fragment_trang_chu_phuc_vu.xml" value="0.20521590423257802" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/item_ban.xml" value="0.8800000000000001" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/item_chi_tiet_dat_mon.xml" value="0.2" />
         <entry key="..\:/GraduationProject/NTHRestaurant/app/src/main/res/layout/item_chi_tiet_dat_mon_cho_phuc_vu.xml" value="0.15789473684210525" />

@@ -8,6 +8,18 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="QLMonDatFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-952" />
+                            <option name="y" value="-200" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="QLMonFragment">
                     <value>
                       <LayoutPositions>
@@ -37,9 +49,18 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-1375" />
-                            <option name="y" value="-186" />
+                            <option name="x" value="-1555" />
+                            <option name="y" value="-182" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_chiTietDatMonFragment_to_trangChuFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -67,7 +88,17 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_dangNhapFragment_to_trangChuBepFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_dangNhapFragment_to_trangChuFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_dangNhapFragment_to_trangChuPhaCheFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -93,6 +124,11 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_datChoFragment_to_trangChuFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                           </map>
                         </option>
                       </LayoutPositions>
@@ -107,6 +143,15 @@
                             <option name="y" value="188" />
                           </Point>
                         </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_datMonFragment_to_trangChuFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                       </LayoutPositions>
                     </value>
                   </entry>
@@ -118,6 +163,27 @@
                             <option name="x" value="-864" />
                             <option name="y" value="-550" />
                           </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="trangChuBepFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-1302" />
+                            <option name="y" value="-163" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_trangChuBepFragment_to_dangNhapFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -138,12 +204,38 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_trangChuFragment_to_dangNhapFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_trangChuFragment_to_datChoFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
                             </entry>
                             <entry key="action_trangChuFragment_to_datMonFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="trangChuPhaCheFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-1556" />
+                            <option name="y" value="-601" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_trangChuPhaCheFragment_to_dangNhapFragment">
                               <value>
                                 <LayoutPositions />
                               </value>

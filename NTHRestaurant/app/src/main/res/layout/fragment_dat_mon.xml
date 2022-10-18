@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/grey"
-    tools:context=".view.DatMonFragment">
+    tools:context=".view.phucvu.DatMonFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"

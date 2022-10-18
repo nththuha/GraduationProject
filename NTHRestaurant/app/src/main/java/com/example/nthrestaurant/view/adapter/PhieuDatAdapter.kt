@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.nthrestaurant.R
 import com.example.nthrestaurant.databinding.ItemPhieuDatBinding
 import com.example.nthrestaurant.network.model.PhieuDatEntity
-import com.example.nthrestaurant.view.TrangChuFragmentDirections
+import com.example.nthrestaurant.view.phucvu.TrangChuPhucVuFragmentDirections
 
 class PhieuDatAdapter(private val clickListener: (PhieuDatEntity) -> Unit) : ListAdapter<PhieuDatEntity, PhieuDatAdapter.PhieuDatEntityViewHolder>(DiffCallback) {
 
@@ -33,7 +33,7 @@ class PhieuDatAdapter(private val clickListener: (PhieuDatEntity) -> Unit) : Lis
         )
         viewHolder.itemView.setOnClickListener {
             val position = viewHolder.adapterPosition
-            val action = TrangChuFragmentDirections.actionTrangChuFragmentToChiTietDatMonFragment()
+            val action = TrangChuPhucVuFragmentDirections.actionTrangChuFragmentToChiTietDatMonFragment()
             viewHolder.itemView.findNavController().navigate(action)
             clickListener(getItem(position))
         }
@@ -44,14 +44,13 @@ class PhieuDatAdapter(private val clickListener: (PhieuDatEntity) -> Unit) : Lis
         val phieuDat = getItem(position)
 
         holder.itemView.findViewById<Button>(R.id.btnDatMon).setOnClickListener {
-            val action =
-                TrangChuFragmentDirections.actionTrangChuFragmentToDatMonFragment()
+            val action = TrangChuPhucVuFragmentDirections.actionTrangChuFragmentToDatMonFragment()
             holder.itemView.findNavController().navigate(action)
             clickListener(phieuDat)
         }
 
         holder.itemView.findViewById<Button>(R.id.btnChiTiet).setOnClickListener {
-            val action = TrangChuFragmentDirections.actionTrangChuFragmentToChiTietDatMonFragment()
+            val action = TrangChuPhucVuFragmentDirections.actionTrangChuFragmentToChiTietDatMonFragment()
             holder.itemView.findNavController().navigate(action)
             clickListener(phieuDat)
         }

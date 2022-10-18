@@ -14,8 +14,8 @@ class PhucVuViewModel : ViewModel() {
     var token: String = ""
     var maTK: String = ""
 
-    private val _nhanVien = MutableLiveData<NhanVienEntity>()
-    val nhanVien: LiveData<NhanVienEntity> = _nhanVien
+    private val _nhanVien = MutableLiveData<NhanVienEntity?>()
+    val nhanVien: LiveData<NhanVienEntity?> = _nhanVien
 
     private val _dsPhieuDat = MutableLiveData<List<PhieuDatEntity>>()
     val dsPhieuDat: LiveData<List<PhieuDatEntity>> = _dsPhieuDat
@@ -73,6 +73,10 @@ class PhucVuViewModel : ViewModel() {
                 Log.e("Lấy thông tin nhân viên", e.message.toString())
             }
         }
+    }
+
+    fun resetNhanVien(){
+        _nhanVien.value = null
     }
 
     fun thietLapPhieuDat(phieuDat: PhieuDatEntity){

@@ -1,4 +1,4 @@
-package com.example.nthrestaurant.view
+package com.example.nthrestaurant.view.phucvu
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -38,8 +38,7 @@ class QLPhieuDatFragment : Fragment() {
             rvPhieuDat.adapter = adapter
 
             ivThem.setOnClickListener {
-                val action =
-                    TrangChuFragmentDirections.actionTrangChuFragmentToDatChoFragment()
+                val action = TrangChuPhucVuFragmentDirections.actionTrangChuFragmentToDatChoFragment()
                 view.findNavController().navigate(action)
             }
 

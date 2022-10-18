@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">NTH Restaurant</string>
+    <string name="bophanphucvu">BỘ PHẬN PHỤC VỤ</string>
+    <string name="bophanbep">BỘ PHẬN BẾP</string>
+    <string name="bophanphache">BỘ PHẬN PHA CHẾ</string>
+
+
     <!--    Fragment Đăng nhập      -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fragment_dangnhap_tieude">ĐĂNG NHẬP</string>
