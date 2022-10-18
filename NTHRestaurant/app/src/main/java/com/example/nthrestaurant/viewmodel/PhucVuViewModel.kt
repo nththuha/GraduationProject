@@ -175,16 +175,14 @@ class PhucVuViewModel : ViewModel() {
     }
 
     fun themPhieuDat(phieuDat: PhieuDatEntity){
-        var temp = ""
-        viewModelScope.launch {
+        runBlocking {
             try {
-                temp = RestaurantApi.retrofitService.themPhieuDat(phieuDat, token)
+                _phieuDat.value = RestaurantApi.retrofitService.themPhieuDat(phieuDat, token)
             }
             catch (e: Exception){
                 Log.e("Lỗi thêm phiếu đặt", e.message.toString())
             }
         }
-        if(temp != "false") _phieuDat.value?.idPD = temp.toInt()
     }
 
     fun suaCTDM(ctdm: ChiTietDatMonEntity): Boolean{

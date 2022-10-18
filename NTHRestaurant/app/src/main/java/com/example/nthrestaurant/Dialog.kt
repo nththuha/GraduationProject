@@ -150,11 +150,6 @@ fun dialogDatMon(fm: FragmentActivity, monAn: MonAnEntity, viewModel: PhucVuView
         val gia = viewModel.monAn.value?.gia
         val maMA = viewModel.monAn.value?.maMA
         val idPD = viewModel.phieuDat.value?.idPD
-        Log.e("đặt món", "chú thích: $chuThich")
-        Log.e("đặt món", "giá: $gia số lượng: $soLuong")
-        Log.e("đặt món", "idPD: $idPD")
-        Log.e("đặt món", "mã MA: $maMA")
-        Log.e("đặt món", "trạng thái: $trangThai")
         val ctDatMon = ChiTietDatMonEntity(chuThich, gia!! * soLuong, 0, "", -5, idPD!!, "", "", maMA!!, soLuong, "", "", "", trangThai)
         if(viewModel.themCTDatMon(ctDatMon)){
             fm.showToast("Đặt món thành công!")

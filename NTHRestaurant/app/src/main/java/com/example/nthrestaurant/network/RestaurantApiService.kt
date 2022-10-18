@@ -43,7 +43,7 @@ interface RestaurantApiService {
     suspend fun layDSPhieuDatChuaCoHoaDon(@Header("Authorization") token: String): List<PhieuDatEntity>
 
     @POST("phieudat")
-    suspend fun themPhieuDat(@Body phieuDat: PhieuDatEntity,  @Header("Authorization") token: String): String
+    suspend fun themPhieuDat(@Body phieuDat: PhieuDatEntity,  @Header("Authorization") token: String): PhieuDatEntity
 
     @GET("phong")
     suspend fun layDSPhong(@Header("Authorization") token: String): List<PhongEntity>
