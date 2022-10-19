@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="ctdm"
+            type="com.example.nthrestaurant.network.model.ChiTietDatMonEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/background_white"
+        android:layout_marginTop="7dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="7dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvHinhAnh"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTenMA"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="24dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:src="@drawable/img_cheese_pizza"
+                android:scaleType="centerCrop"
+                imageUrl="@{ctdm.hinhAnh}"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTenMA"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Cheese Pizza"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/cvHinhAnh"
+            app:layout_constraintEnd_toStartOf="@id/guideline1"
+            android:lines="1"
+            android:gravity="center_vertical"
+            android:ellipsize="end"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="8dp"
+            android:text="@{ctdm.tenMA}"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivDongHo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_clock"
+            app:layout_constraintStart_toEndOf="@id/cvHinhAnh"
+            app:layout_constraintTop_toBottomOf="@id/tvTenMA"
+            android:layout_marginStart="10dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/ivDongHo"
+            app:layout_constraintTop_toTopOf="@id/ivDongHo"
+            app:layout_constraintBottom_toBottomOf="@id/ivDongHo"
+            app:layout_constraintEnd_toStartOf="@id/guideline1"
+            android:layout_marginStart="10dp"
+            tools:text="Chờ phục vụ"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:text="@{ctdm.trangThai}"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSoLuong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_amount"
+            app:layout_constraintStart_toStartOf="@+id/ivDongHo"
+            app:layout_constraintTop_toBottomOf="@id/ivDongHo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/ivSoLuong"
+            app:layout_constraintTop_toTopOf="@id/ivSoLuong"
+            app:layout_constraintBottom_toBottomOf="@id/ivSoLuong"
+            app:layout_constraintEnd_toStartOf="@id/guideline1"
+            android:layout_marginStart="10dp"
+            tools:text="1"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:text="@{@string/item_ban_so_ghe(ctdm.soLuong)}"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivChuThich"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_note"
+            app:layout_constraintStart_toStartOf="@+id/ivSoLuong"
+            app:layout_constraintTop_toBottomOf="@id/ivSoLuong" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvChuThich_MD"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/ivChuThich"
+            app:layout_constraintTop_toTopOf="@id/ivChuThich"
+            app:layout_constraintBottom_toBottomOf="@id/ivChuThich"
+            app:layout_constraintEnd_toStartOf="@id/guideline1"
+            android:layout_marginStart="10dp"
+            tools:text="Không cay"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:textSize="12sp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPhong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_house"
+            app:layout_constraintStart_toStartOf="@+id/ivChuThich"
+            app:layout_constraintTop_toBottomOf="@id/ivChuThich" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/ivPhong"
+            app:layout_constraintTop_toTopOf="@id/ivPhong"
+            app:layout_constraintBottom_toBottomOf="@id/ivPhong"
+            app:layout_constraintEnd_toStartOf="@id/guideline1"
+            android:layout_marginStart="10dp"
+            tools:text="Phòng 1"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:text="@{ctdm.tenPhong}"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_table"
+            app:layout_constraintStart_toStartOf="@+id/ivPhong"
+            app:layout_constraintTop_toBottomOf="@id/ivPhong" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/ivBan"
+            app:layout_constraintTop_toTopOf="@id/ivBan"
+            app:layout_constraintBottom_toBottomOf="@id/ivBan"
+            app:layout_constraintEnd_toStartOf="@id/guideline1"
+            android:layout_marginStart="10dp"
+            tools:text="Bàn 1"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:text="@{ctdm.tenBan}"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDangLam"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            app:layout_constraintStart_toEndOf="@id/guideline1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnChoPhucVu"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/btn_dangnhap"
+            android:text="@string/item_mon_dat_btn_dang_lam" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnChoPhucVu"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            app:layout_constraintStart_toEndOf="@id/guideline1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnDangLam"
+            app:layout_constraintBottom_toTopOf="@id/btnHuyMonDat"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/btn_dangnhap"
+            android:text="@string/item_mon_dat_btn_cho_phuc_vu" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnHuyMonDat"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            app:layout_constraintStart_toEndOf="@id/guideline1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnChoPhucVu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/btn_huymon"
+            android:text="@string/item_mon_dat_btn_huy_mon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -91,4 +91,10 @@
     <string name="dialog_doi_mat_khau_btn_doi_mat_khau">ĐỔI MẬT KHẨU</string>
     <!--    Dialog đổi mật khẩu      -->
 
+    <!--    Item món đặt      -->
+    <string name="item_mon_dat_btn_dang_lam">ĐANG LÀM</string>
+    <string name="item_mon_dat_btn_cho_phuc_vu">HOÀN TẤT</string>
+    <string name="item_mon_dat_btn_huy_mon">HỦY MÓN</string>
+    <!--    Item món đặt      -->
+
 </resources>

@@ -1,17 +1,15 @@
 package com.example.nthrestaurant.view.phache
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.nthrestaurant.R
-import com.example.nthrestaurant.databinding.FragmentTrangChuBepBinding
 import com.example.nthrestaurant.databinding.FragmentTrangChuPhaCheBinding
 import com.example.nthrestaurant.view.ThongTinCaNhanFragment
 import com.example.nthrestaurant.view.adapter.ViewPagerAdapter
-import com.example.nthrestaurant.view.bep.QLMonDatFragment
 
 class TrangChuPhaCheFragment : Fragment() {
     private var _binding: FragmentTrangChuPhaCheBinding? = null

@@ -7,7 +7,10 @@ import android.view.Gravity
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.findNavController
 import com.example.nthrestaurant.network.model.ChiTietDatMonEntity
