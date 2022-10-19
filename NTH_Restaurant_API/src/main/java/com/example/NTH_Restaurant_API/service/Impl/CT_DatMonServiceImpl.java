@@ -54,7 +54,7 @@ public class CT_DatMonServiceImpl implements CT_DatMonService {
         List<CT_DatMonEntity> list = new ArrayList<>();
         for (CT_DatMonEntity d : ds) {
             if (d.getTrangThai().equals("Vừa đặt món") || d.getTrangThai().equals("Đang làm")) {
-                if (!d.getMama().getTenMA().equals("Đồ uống pha chế") || !d.getMama().getTenMA().equals("Đồ uống đóng chai")) {
+                if (!d.getMama().getMalma().getTenLMA().equals("Đồ uống pha chế") && !d.getMama().getMalma().getTenLMA().equals("Đồ uống đóng chai")) {
                     list.add(d);
                 }
             }
@@ -88,7 +88,7 @@ public class CT_DatMonServiceImpl implements CT_DatMonService {
         List<CT_DatMonEntity> list = new ArrayList<>();
         for (CT_DatMonEntity d : ds) {
             if (d.getTrangThai().equals("Vừa đặt món") || d.getTrangThai().equals("Đang làm")) {
-                if (d.getMama().getTenMA().equals("Đồ uống pha chế") || d.getMama().getTenMA().equals("Đồ uống đóng chai")) {
+                if (d.getMama().getMalma().getTenLMA().equals("Đồ uống pha chế") || d.getMama().getMalma().getTenLMA().equals("Đồ uống đóng chai")) {
                     list.add(d);
                 }
             }
