@@ -45,7 +45,7 @@
     <!--    Dialog chi tiết đặt món      -->
 
     <!--    Dialog hủy món đặt      -->
-    <string name="dialog_huy_mon_dat_tieu_de">XÁC NHẬN XÓA MÓN ĐẶT</string>
+    <string name="dialog_huy_mon_dat_tieu_de">XÁC NHẬN HỦY MÓN ĐẶT</string>
     <string name="dialog_huy_mon_dat_tv_cau_hoi">Bạn muốn xóa chi tiết đặt món này?</string>
     <string name="dialog_huy_mon_dat_btn_xac_nhan">Xác nhận</string>
     <!--    Dialog hủy món đặt      -->

@@ -91,4 +91,18 @@ class PhaCheViewModel : ViewModel() {
         }
         return thongBao;
     }
+
+    fun xoaCTDM(idCTDM: Int): Boolean{
+        var thongBao = false
+        runBlocking {
+            try {
+                thongBao = RestaurantApi.retrofitService.xoaCTDM(idCTDM, token)
+                layDSDatMonNuocUong()
+            }
+            catch (e: Exception){
+                Log.e("Lỗi xóa ctdm", e.message.toString())
+            }
+        }
+        return thongBao
+    }
 }

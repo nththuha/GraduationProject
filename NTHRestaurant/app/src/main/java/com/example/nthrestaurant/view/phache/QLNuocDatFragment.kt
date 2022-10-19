@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.nthrestaurant.databinding.FragmentQLNuocDatBinding
+import com.example.nthrestaurant.dialogHuyChiTietDatMonBPC
 import com.example.nthrestaurant.showToast
 import com.example.nthrestaurant.view.adapter.ChiTietNuocDatAdapter
+import com.example.nthrestaurant.viewmodel.BepViewModel
 import com.example.nthrestaurant.viewmodel.PhaCheViewModel
 
 class QLNuocDatFragment : Fragment() {
@@ -50,7 +52,7 @@ class QLNuocDatFragment : Fragment() {
                     }
                 }
                 3 -> { //Hủy món
-
+                    dialogHuyChiTietDatMonBPC(requireActivity(), it, BepViewModel(), viewModel)
                 }
             }
         }

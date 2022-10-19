@@ -7,10 +7,7 @@ import android.view.Gravity
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.findNavController
 import com.example.nthrestaurant.network.model.ChiTietDatMonEntity
@@ -91,7 +88,7 @@ fun dialogHuyChiTietDatMon(fm: FragmentActivity, ctdm: ChiTietDatMonEntity, view
 
     dialog.setCancelable(false)
 
-    dialog.findViewById<TextView>(R.id.tvCauHoi_HM).text = "Bạn có muốn xóa món " + ctdm.tenMA + "?"
+    dialog.findViewById<TextView>(R.id.tvCauHoi_HM).text = "Bạn có muốn hủy món " + ctdm.tenMA + "?"
     dialog.findViewById<Button>(R.id.btnXacNhan_HM).setOnClickListener{
         if(viewModel.xoaCTDM(ctdm.idCTDM)) {
             fm.showToast("Hủy món thành công!")
@@ -103,6 +100,52 @@ fun dialogHuyChiTietDatMon(fm: FragmentActivity, ctdm: ChiTietDatMonEntity, view
     }
 
     dialog.findViewById<Button>(R.id.btnCancel_HM).setOnClickListener{
+        dialog.dismiss()
+    }
+    dialog.show()
+}
+
+fun dialogHuyChiTietDatMonBPC(fm: FragmentActivity, ctdm: ChiTietDatMonEntity, vmB: BepViewModel, vmPC: PhaCheViewModel) {
+    val dialog = Dialog(fm)
+    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+    dialog.setContentView(R.layout.dialog_huy_mon_dat_bep_pha_che)
+
+    val window: Window? = dialog.window
+    window?.setLayout(
+        WindowManager.LayoutParams.MATCH_PARENT,
+        WindowManager.LayoutParams.WRAP_CONTENT
+    )
+    window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+    val windowAttributes: WindowManager.LayoutParams = window!!.attributes
+    windowAttributes.gravity = Gravity.CENTER
+    window.attributes = windowAttributes
+
+    dialog.setCancelable(false)
+
+    dialog.findViewById<TextView>(R.id.tvCauHoi_HM_BPC).text = "Bạn có muốn hủy món " + ctdm.tenMA + "?"
+
+    dialog.findViewById<Button>(R.id.btnXacNhan_HM_BPC).setOnClickListener {
+        if(vmB.nhanVien.value != null){
+            if(vmB.xoaCTDM(ctdm.idCTDM)){
+                fm.showToast("Hủy món thành công!")
+            }
+            else{
+                fm.showToast("Hủy món thất bại!")
+            }
+        }
+        else{
+            if(vmPC.xoaCTDM(ctdm.idCTDM)){
+                fm.showToast("Hủy món thành công!")
+            }
+            else{
+                fm.showToast("Hủy món thất bại!")
+            }
+        }
+        dialog.dismiss()
+    }
+
+    dialog.findViewById<Button>(R.id.btnCancel_HM_BPC).setOnClickListener{
         dialog.dismiss()
     }
     dialog.show()
