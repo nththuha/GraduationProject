@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/background_white"
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp">
@@ -41,6 +40,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvCauHoi_HM_BPC"
         android:text="@string/dialog_dang_xuat_btn_huy"
-        style="@style/dialog_dang_xuat_btn"/>
+        style="@style/dialog_dang_xuat_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

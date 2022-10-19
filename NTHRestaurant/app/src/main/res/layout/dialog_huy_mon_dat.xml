@@ -40,6 +40,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvCauHoi_HM"
         android:text="@string/dialog_dang_xuat_btn_huy"
-        style="@style/dialog_dang_xuat_btn"/>
+        style="@style/dialog_dang_xuat_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

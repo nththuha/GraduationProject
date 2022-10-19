@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="ctdm"
             type="com.example.nthrestaurant.network.model.ChiTietDatMonEntity" />
@@ -39,7 +40,7 @@
                 android:layout_height="wrap_content"
                 tools:src="@drawable/img_cheese_pizza"
                 android:scaleType="centerCrop"
-                imageUrl="@{ctdm.hinhAnh}"/>
+                imageUrl="@{ctdm.hinhAnh}" />
         </com.google.android.material.card.MaterialCardView>
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -57,7 +58,7 @@
             android:gravity="center_vertical"
             android:ellipsize="end"
             android:layout_marginStart="12dp"
-            android:text="@{ctdm.tenMA}"/>
+            android:text="@{ctdm.tenMA}" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivDongHo"
@@ -79,7 +80,7 @@
             tools:text="Vừa đặt món"
             android:textColor="@color/black"
             android:textSize="14sp"
-            android:text="@{ctdm.trangThai}"/>
+            android:text="@{ctdm.trangThai}" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivAmount"
@@ -100,7 +101,7 @@
             tools:text="1"
             android:textColor="@color/black"
             android:textSize="14sp"
-            android:text="@{@string/item_ban_so_ghe(ctdm.soLuong)}"/>
+            android:text="@{@string/item_ban_so_ghe(ctdm.soLuong)}" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivDollar"

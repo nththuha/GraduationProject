@@ -1,90 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/background_datmon">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvTenMA"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Cheese Pizza"
-            style="@style/dialog_dat_mon_tv_ten_mon_an" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTenMA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Cheese Pizza"
+        style="@style/dialog_dat_mon_tv_ten_mon_an" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvGia"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTenMA"
-            tools:text="120,000 VND"
-            style="@style/dialog_dat_mon_tv_gia" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvGia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTenMA"
+        tools:text="120,000 VND"
+        style="@style/dialog_dat_mon_tv_gia" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvMoTa"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvGia"
-            tools:text="Pizza cheese encompasses several varieties and types of cheeses and dairy products that are designed and manufactured for use specifically on pizza."
-            style="@style/dialog_dat_mon_tv_mo_ta" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMoTa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvGia"
+        tools:text="Pizza cheese encompasses several varieties and types of cheeses and dairy products that are designed and manufactured for use specifically on pizza."
+        style="@style/dialog_dat_mon_tv_mo_ta" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvChuThich"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/etChuThich_DM"
-            app:layout_constraintTop_toTopOf="@id/etChuThich_DM"
-            android:text="@string/dialog_dat_mon_tv_chuthich"
-            style="@style/dialog_dat_mon_tv_chu_thich" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvChuThich"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/etChuThich_DM"
+        app:layout_constraintTop_toTopOf="@id/etChuThich_DM"
+        android:text="@string/dialog_dat_mon_tv_chuthich"
+        style="@style/dialog_dat_mon_tv_chu_thich" />
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etChuThich_DM"
-            app:layout_constraintStart_toEndOf="@+id/tvChuThich"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvMoTa"
-            tools:text="Không cay"
-            style="@style/dialog_dat_mon_et_chu_thich" />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etChuThich_DM"
+        app:layout_constraintStart_toEndOf="@+id/tvChuThich"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMoTa"
+        tools:text="Không cay"
+        style="@style/dialog_dat_mon_et_chu_thich" />
 
-        <LinearLayout
-            android:id="@+id/llSoLuong"
-            android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/llSoLuong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etChuThich_DM"
+        android:layout_marginTop="28dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivTru"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etChuThich_DM"
-            android:layout_marginTop="28dp"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:src="@drawable/ic_tru_unavailable"
+            android:layout_gravity="center" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivTru"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_tru_unavailable"
-                android:layout_gravity="center"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSoLuong"
+            android:text="@string/dialog_dat_mon_tv_so_luong"
+            style="@style/dialog_dat_mon_tv_so_luong" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvSoLuong"
-                android:text="@string/dialog_dat_mon_tv_so_luong"
-                style="@style/dialog_dat_mon_tv_so_luong" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cong_available" />
+    </LinearLayout>
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivCong"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_cong_available"/>
-        </LinearLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnXacNhan_DM"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llSoLuong"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/dialog_dat_mon_btn_xac_nhan"
+        style="@style/dialog_dat_mon_btn_xac_nhan" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnXacNhan_DM"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/llSoLuong"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:text="@string/dialog_dat_mon_btn_xac_nhan"
-            style="@style/dialog_dat_mon_btn_xac_nhan" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
 

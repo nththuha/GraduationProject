@@ -36,27 +36,23 @@ class ThongTinCaNhanFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
-            if(vmPhucVu.nhanVien.value != null){
+            if (vmPhucVu.nhanVien.value != null) {
                 nhanVien = vmPhucVu.nhanVien.value
                 thietLapBoPhan(vmPhucVu.nhanVien.value?.tenBP.toString())
-            }
-            else if(vmBep.nhanVien.value != null){
+            } else if (vmBep.nhanVien.value != null) {
                 nhanVien = vmBep.nhanVien.value
                 thietLapBoPhan(vmBep.nhanVien.value?.tenBP.toString())
-            }
-            else{
+            } else {
                 nhanVien = vmPhaChe.nhanVien.value
                 thietLapBoPhan(vmPhaChe.nhanVien.value?.tenBP.toString())
             }
 
-            btnDoiMatKhau.setOnClickListener{
-                if(vmPhucVu.nhanVien.value != null){
+            btnDoiMatKhau.setOnClickListener {
+                if (vmPhucVu.nhanVien.value != null) {
                     dialogDoiMatKhau(requireActivity(), vmPhucVu, vmBep, vmPhaChe)
-                }
-                else if(vmBep.nhanVien.value != null){
+                } else if (vmBep.nhanVien.value != null) {
                     dialogDoiMatKhau(requireActivity(), vmPhucVu, vmBep, vmPhaChe)
-                }
-                else{
+                } else {
                     dialogDoiMatKhau(requireActivity(), vmPhucVu, vmBep, vmPhaChe)
                 }
             }
@@ -67,9 +63,9 @@ class ThongTinCaNhanFragment : Fragment() {
         }
     }
 
-    private fun thietLapBoPhan(boPhan: String){
+    private fun thietLapBoPhan(boPhan: String) {
         binding.apply {
-            when(boPhan){
+            when (boPhan) {
                 "PHUCVU" -> tvBoPhan.text = resources.getString(R.string.bophanphucvu)
                 "BOPHANBEP" -> tvBoPhan.text = resources.getString(R.string.bophanbep)
                 "BOPHANPHACHE" -> tvBoPhan.text = resources.getString(R.string.bophanphache)

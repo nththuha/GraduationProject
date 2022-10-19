@@ -37,28 +37,43 @@ interface RestaurantApiService {
     suspend fun dangNhap(@Body taiKhoan: TaiKhoanEntity): Token
 
     @GET("nhanvien/{maTK}")
-    suspend fun layThongTinNhanVienTheoMaTaiKhoan(@Path("maTK") maTK: String, @Header("Authorization") token: String): NhanVienEntity
+    suspend fun layThongTinNhanVienTheoMaTaiKhoan(
+        @Path("maTK") maTK: String,
+        @Header("Authorization") token: String
+    ): NhanVienEntity
 
     @GET("phieudat")
     suspend fun layDSPhieuDatChuaCoHoaDon(@Header("Authorization") token: String): List<PhieuDatEntity>
 
     @POST("phieudat")
-    suspend fun themPhieuDat(@Body phieuDat: PhieuDatEntity,  @Header("Authorization") token: String): PhieuDatEntity
+    suspend fun themPhieuDat(
+        @Body phieuDat: PhieuDatEntity,
+        @Header("Authorization") token: String
+    ): PhieuDatEntity
 
     @GET("phong")
     suspend fun layDSPhong(@Header("Authorization") token: String): List<PhongEntity>
 
     @GET("ctban/{maPhong}")
-    suspend fun layDSBanTheoPhong(@Path("maPhong") maPhong: String, @Header("Authorization") token: String): List<BanEntity>
+    suspend fun layDSBanTheoPhong(
+        @Path("maPhong") maPhong: String,
+        @Header("Authorization") token: String
+    ): List<BanEntity>
 
     @GET("loaimonan")
-    suspend fun layDSLoaiMonAn( @Header("Authorization") token: String): List<LoaiMonAnEntity>
+    suspend fun layDSLoaiMonAn(@Header("Authorization") token: String): List<LoaiMonAnEntity>
 
     @GET("loaimonan/{maLMA}")
-    suspend fun layDSMonAnTheoLoaiMonAn(@Path("maLMA") maLMA: String, @Header("Authorization") token: String): List<MonAnEntity>
+    suspend fun layDSMonAnTheoLoaiMonAn(
+        @Path("maLMA") maLMA: String,
+        @Header("Authorization") token: String
+    ): List<MonAnEntity>
 
     @GET("ctdatmon/{idpd}")
-    suspend fun layDSDatMonTheoPD(@Path("idpd") idpd: Int, @Header("Authorization") token: String): List<ChiTietDatMonEntity>
+    suspend fun layDSDatMonTheoPD(
+        @Path("idpd") idpd: Int,
+        @Header("Authorization") token: String
+    ): List<ChiTietDatMonEntity>
 
     @GET("ctdatmon/phucvu/monan")
     suspend fun layDSDatMonChuaPhucVu(@Header("Authorization") token: String): List<ChiTietDatMonEntity>
@@ -70,25 +85,46 @@ interface RestaurantApiService {
     suspend fun layDSDatMonPhaChe(@Header("Authorization") token: String): List<ChiTietDatMonEntity>
 
     @DELETE("ctdatmon/{idCTDM}")
-    suspend fun xoaCTDM(@Path("idCTDM") idCTDM: Int, @Header("Authorization") token: String): Boolean
+    suspend fun xoaCTDM(
+        @Path("idCTDM") idCTDM: Int,
+        @Header("Authorization") token: String
+    ): Boolean
 
     @PUT("ctdatmon")
-    suspend fun suaCTDM(@Body ctdm: ChiTietDatMonEntity, @Header("Authorization") token: String): Boolean
+    suspend fun suaCTDM(
+        @Body ctdm: ChiTietDatMonEntity,
+        @Header("Authorization") token: String
+    ): Boolean
 
     @POST("ctdatmon")
-    suspend fun themCTDM(@Body ctdatmon: ChiTietDatMonEntity, @Header("Authorization") token: String): Boolean
+    suspend fun themCTDM(
+        @Body ctdatmon: ChiTietDatMonEntity,
+        @Header("Authorization") token: String
+    ): Boolean
 
     @PUT("ctdatmon/danglam/{idCTDM}")
-    suspend fun suaTrangThaiDangLam(@Path("idCTDM") idCTDM: Int, @Header("Authorization") token: String): Boolean
+    suspend fun suaTrangThaiDangLam(
+        @Path("idCTDM") idCTDM: Int,
+        @Header("Authorization") token: String
+    ): Boolean
 
     @PUT("ctdatmon/chophucvu/{idCTDM}")
-    suspend fun suaTrangThaiChoPhucVu(@Path("idCTDM") idCTDM: Int, @Header("Authorization") token: String): Boolean
+    suspend fun suaTrangThaiChoPhucVu(
+        @Path("idCTDM") idCTDM: Int,
+        @Header("Authorization") token: String
+    ): Boolean
 
     @PUT("ctdatmon/daphucvu/{idCTDM}")
-    suspend fun suaTrangThaiDaPhucVu(@Path("idCTDM") idCTDM: Int, @Header("Authorization") token: String): Boolean
+    suspend fun suaTrangThaiDaPhucVu(
+        @Path("idCTDM") idCTDM: Int,
+        @Header("Authorization") token: String
+    ): Boolean
 
     @PUT("taikhoan")
-    suspend fun suaTaiKhoan(@Body taiKhoan: TaiKhoanEntity, @Header("Authorization") token: String): Boolean
+    suspend fun suaTaiKhoan(
+        @Body taiKhoan: TaiKhoanEntity,
+        @Header("Authorization") token: String
+    ): Boolean
 
     @POST("taikhoan/{maTK}")
     suspend fun doiMatKhau(@Path("maTK") maTK: String): Boolean

@@ -11,7 +11,8 @@ import com.example.nthrestaurant.databinding.ItemMonAnBinding
 import com.example.nthrestaurant.doiIntThanhTien
 import com.example.nthrestaurant.network.model.MonAnEntity
 
-class MonAnAdapter(private val clickListener: (MonAnEntity) -> Unit) : ListAdapter<MonAnEntity, MonAnAdapter.MonAnEntityViewHolder>(DiffCallback) {
+class MonAnAdapter(private val clickListener: (MonAnEntity) -> Unit) :
+    ListAdapter<MonAnEntity, MonAnAdapter.MonAnEntityViewHolder>(DiffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MonAnEntityViewHolder {
         val viewHolder = MonAnEntityViewHolder(
             ItemMonAnBinding.inflate(
@@ -40,7 +41,7 @@ class MonAnAdapter(private val clickListener: (MonAnEntity) -> Unit) : ListAdapt
                     ivSold.visibility = View.VISIBLE
                 }
                 tvGia.text = monAn.gia.doiIntThanhTien()
-                if(monAn.chuThich != null) tvChuThich.text = "Mô tả " + monAn.chuThich
+                if (monAn.chuThich != null) tvChuThich.text = "Mô tả " + monAn.chuThich
                 monan = monAn
                 executePendingBindings()
             }

@@ -32,7 +32,7 @@ class DatMonFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapterLMA = LoaiMonAnAdapter{
+        adapterLMA = LoaiMonAnAdapter {
             viewModel.thietLapLoaiMonAn(it)
             loadDSMonAn()
             binding.rvMonAn.adapter = adapterMA
@@ -56,7 +56,7 @@ class DatMonFragment : Fragment() {
                 view.findNavController().navigate(action)
             }
         }
-        adapterMA = MonAnAdapter{
+        adapterMA = MonAnAdapter {
             viewModel.thietLapMonAn(it)
             dialogDatMon(requireActivity(), it, viewModel)
         }

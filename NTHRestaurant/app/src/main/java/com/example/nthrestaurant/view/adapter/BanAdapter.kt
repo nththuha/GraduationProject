@@ -9,17 +9,17 @@ import com.example.nthrestaurant.R
 import com.example.nthrestaurant.databinding.ItemBanBinding
 import com.example.nthrestaurant.network.model.BanEntity
 
-class BanAdapter (private val clickListener: (BanEntity) -> Unit) : ListAdapter<BanEntity, BanAdapter.BanEntityViewHolder>(DiffCallback) {
+class BanAdapter(private val clickListener: (BanEntity) -> Unit) :
+    ListAdapter<BanEntity, BanAdapter.BanEntityViewHolder>(DiffCallback) {
     class BanEntityViewHolder(private var binding: ItemBanBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(ban: BanEntity) {
             binding.apply {
                 binding.ban = ban
-                if(ban.trangThai == "Hết chỗ"){
+                if (ban.trangThai == "Hết chỗ") {
                     clBan.setBackgroundResource(R.drawable.background_room_unavailable)
                     clBan.isEnabled = false;
-                }
-                else{
+                } else {
                     clBan.setBackgroundResource(R.drawable.background_room)
                     clBan.isEnabled = true;
                 }

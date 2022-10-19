@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="phieuDat"
             type="com.example.nthrestaurant.network.model.PhieuDatEntity" />
@@ -56,7 +57,7 @@
             tools:text="Phòng 1"
             android:textColor="@color/black"
             android:textSize="14sp"
-            android:text="@{phieuDat.tenPhong}"/>
+            android:text="@{phieuDat.tenPhong}" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivBan"
@@ -78,7 +79,7 @@
             tools:text="Bàn 1"
             android:textColor="@color/black"
             android:textSize="14sp"
-            android:text="@{phieuDat.tenBan}"/>
+            android:text="@{phieuDat.tenBan}" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnDatMon"

@@ -34,7 +34,7 @@
         android:id="@+id/trangChuFragment"
         android:name="com.example.nthrestaurant.view.phucvu.TrangChuPhucVuFragment"
         android:label="fragment_trang_chu"
-        tools:layout="@layout/fragment_trang_chu_phuc_vu" >
+        tools:layout="@layout/fragment_trang_chu_phuc_vu">
         <action
             android:id="@+id/action_trangChuFragment_to_datChoFragment"
             app:destination="@id/datChoFragment" />
@@ -52,7 +52,7 @@
         android:id="@+id/datChoFragment"
         android:name="com.example.nthrestaurant.view.phucvu.DatChoFragment"
         android:label="fragment_dat_cho"
-        tools:layout="@layout/fragment_dat_cho" >
+        tools:layout="@layout/fragment_dat_cho">
         <action
             android:id="@+id/action_datChoFragment_to_datMonFragment"
             app:destination="@id/datMonFragment" />
@@ -64,7 +64,7 @@
         android:id="@+id/datMonFragment"
         android:name="com.example.nthrestaurant.view.phucvu.DatMonFragment"
         android:label="fragment_dat_mon"
-        tools:layout="@layout/fragment_dat_mon" >
+        tools:layout="@layout/fragment_dat_mon">
         <action
             android:id="@+id/action_datMonFragment_to_trangChuFragment"
             app:destination="@id/trangChuFragment" />
@@ -83,7 +83,7 @@
         android:id="@+id/chiTietDatMonFragment"
         android:name="com.example.nthrestaurant.view.phucvu.ChiTietDatMonFragment"
         android:label="fragment_chi_tiet_dat_mon"
-        tools:layout="@layout/fragment_chi_tiet_dat_mon" >
+        tools:layout="@layout/fragment_chi_tiet_dat_mon">
         <action
             android:id="@+id/action_chiTietDatMonFragment_to_trangChuFragment"
             app:destination="@id/trangChuFragment" />
@@ -92,7 +92,7 @@
         android:id="@+id/trangChuBepFragment"
         android:name="com.example.nthrestaurant.view.bep.TrangChuBepFragment"
         android:label="fragment_trang_chu_bep"
-        tools:layout="@layout/fragment_trang_chu_bep" >
+        tools:layout="@layout/fragment_trang_chu_bep">
         <action
             android:id="@+id/action_trangChuBepFragment_to_dangNhapFragment"
             app:destination="@id/dangNhapFragment" />
@@ -101,7 +101,7 @@
         android:id="@+id/trangChuPhaCheFragment"
         android:name="com.example.nthrestaurant.view.phache.TrangChuPhaCheFragment"
         android:label="fragment_trang_chu_pha_che"
-        tools:layout="@layout/fragment_trang_chu_pha_che" >
+        tools:layout="@layout/fragment_trang_chu_pha_che">
         <action
             android:id="@+id/action_trangChuPhaCheFragment_to_dangNhapFragment"
             app:destination="@id/dangNhapFragment" />

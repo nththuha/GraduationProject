@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="loaimonan"
             type="com.example.nthrestaurant.network.model.LoaiMonAnEntity" />
@@ -34,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
                 tools:src="@drawable/img_pizza"
-                imageUrl="@{loaimonan.hinhAnh}"/>
+                imageUrl="@{loaimonan.hinhAnh}" />
         </com.google.android.material.card.MaterialCardView>
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -52,7 +53,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cvLoaiMonAn"
-            android:text="@{loaimonan.tenLMA}"/>
+            android:text="@{loaimonan.tenLMA}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

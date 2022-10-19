@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="ban"
             type="com.example.nthrestaurant.network.model.BanEntity" />
@@ -37,7 +38,7 @@
             android:textSize="20sp"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:text="@{ban.tenBan}"/>
+            android:text="@{ban.tenBan}" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivSoGhe"
@@ -62,7 +63,7 @@
             android:layout_marginBottom="2dp"
             android:textSize="15sp"
             android:textColor="@color/black"
-            android:text="@{@string/item_ban_so_ghe(ban.soGhe)}"/>
+            android:text="@{@string/item_ban_so_ghe(ban.soGhe)}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

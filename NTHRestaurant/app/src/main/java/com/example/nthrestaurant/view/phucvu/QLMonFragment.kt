@@ -30,11 +30,10 @@ class QLMonFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = ChiTietDatMonChuaPhucVuAdapter {
-            if(viewModel.suaTrangThaiDaPhucVu(it)){
+            if (viewModel.suaTrangThaiDaPhucVu(it)) {
                 showToast("Phục vụ món ăn thành công!")
                 loadDSCTDM()
-            }
-            else showToast("Phục vụ món ăn thất bại!")
+            } else showToast("Phục vụ món ăn thất bại!")
         }
         loadDSCTDM()
         binding.rvMonChoPV.adapter = adapter

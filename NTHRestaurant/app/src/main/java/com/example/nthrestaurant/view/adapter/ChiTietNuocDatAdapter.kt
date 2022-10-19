@@ -10,18 +10,20 @@ import com.example.nthrestaurant.R
 import com.example.nthrestaurant.databinding.ItemNuocDatBinding
 import com.example.nthrestaurant.network.model.ChiTietDatMonEntity
 
-class ChiTietNuocDatAdapter(private val clickListener: (ChiTietDatMonEntity, Int) -> Unit) : ListAdapter<ChiTietDatMonEntity, ChiTietNuocDatAdapter.ChiTietDatMonEntityViewHolder>(DiffCallback) {
+class ChiTietNuocDatAdapter(private val clickListener: (ChiTietDatMonEntity, Int) -> Unit) :
+    ListAdapter<ChiTietDatMonEntity, ChiTietNuocDatAdapter.ChiTietDatMonEntityViewHolder>(
+        DiffCallback
+    ) {
     class ChiTietDatMonEntityViewHolder(private var binding: ItemNuocDatBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(ctDM: ChiTietDatMonEntity) {
             binding.apply {
                 ctdm = ctDM
-                if(ctDM.chuThich != null) tvChuThichMD.text = ctDM.chuThich
-                if(ctDM.trangThai == "Đang làm"){
+                if (ctDM.chuThich != null) tvChuThichMD.text = ctDM.chuThich
+                if (ctDM.trangThai == "Đang làm") {
                     btnDangLam.setBackgroundResource(R.drawable.btn_huy)
                     btnDangLam.isEnabled = false
-                }
-                else{
+                } else {
                     btnDangLam.setBackgroundResource(R.drawable.btn_dangnhap)
                     btnDangLam.isEnabled = true
                 }
@@ -58,11 +60,17 @@ class ChiTietNuocDatAdapter(private val clickListener: (ChiTietDatMonEntity, Int
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<ChiTietDatMonEntity>() {
-        override fun areItemsTheSame(oldItem: ChiTietDatMonEntity, newItem: ChiTietDatMonEntity): Boolean {
+        override fun areItemsTheSame(
+            oldItem: ChiTietDatMonEntity,
+            newItem: ChiTietDatMonEntity
+        ): Boolean {
             return oldItem.idCTDM == newItem.idCTDM
         }
 
-        override fun areContentsTheSame(oldItem: ChiTietDatMonEntity, newItem: ChiTietDatMonEntity): Boolean {
+        override fun areContentsTheSame(
+            oldItem: ChiTietDatMonEntity,
+            newItem: ChiTietDatMonEntity
+        ): Boolean {
             return oldItem == newItem
         }
     }

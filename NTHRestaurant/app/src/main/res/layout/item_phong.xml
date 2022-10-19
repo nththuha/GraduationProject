@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="phong"
             type="com.example.nthrestaurant.network.model.PhongEntity" />
@@ -38,7 +39,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Phòng 1"
-            android:text="@{phong.tenPhong}"/>
+            android:text="@{phong.tenPhong}" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivTrangThai"
@@ -62,6 +63,6 @@
             android:textSize="15sp"
             android:textColor="@color/black"
             android:layout_marginBottom="2dp"
-            android:text="@{phong.trangThai}"/>
+            android:text="@{phong.trangThai}" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

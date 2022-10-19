@@ -8,7 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.nthrestaurant.databinding.ItemLoaiMonAnBinding
 import com.example.nthrestaurant.network.model.LoaiMonAnEntity
 
-class LoaiMonAnAdapter(private val clickListener: (LoaiMonAnEntity) -> Unit) : ListAdapter<LoaiMonAnEntity, LoaiMonAnAdapter.LoaiMonAnEntityViewHolder>(DiffCallback) {
+class LoaiMonAnAdapter(private val clickListener: (LoaiMonAnEntity) -> Unit) :
+    ListAdapter<LoaiMonAnEntity, LoaiMonAnAdapter.LoaiMonAnEntityViewHolder>(DiffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LoaiMonAnEntityViewHolder {
         val viewHolder = LoaiMonAnEntityViewHolder(
             ItemLoaiMonAnBinding.inflate(
@@ -40,7 +41,10 @@ class LoaiMonAnAdapter(private val clickListener: (LoaiMonAnEntity) -> Unit) : L
             return oldItem.maLMA == newItem.maLMA
         }
 
-        override fun areContentsTheSame(oldItem: LoaiMonAnEntity, newItem: LoaiMonAnEntity): Boolean {
+        override fun areContentsTheSame(
+            oldItem: LoaiMonAnEntity,
+            newItem: LoaiMonAnEntity
+        ): Boolean {
             return oldItem == newItem
         }
     }

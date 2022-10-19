@@ -32,22 +32,20 @@ class QLMonDatFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = ChiTietMonDatAdapter { it, num ->
-            when(num){
+            when (num) {
                 1 -> { //Đang làm
-                    if(viewModel.suaTrangThaiDangLam(it)){
+                    if (viewModel.suaTrangThaiDangLam(it)) {
                         showToast("Chuyển trạng thái đang được làm")
                         loadDSCTDMPhaChe()
-                    }
-                    else{
+                    } else {
                         showToast("Chuyển trạng thái thất bại!")
                     }
                 }
                 2 -> { //Chờ phục vụ
-                    if(viewModel.suaTrangThaiChoPhucVu(it)){
+                    if (viewModel.suaTrangThaiChoPhucVu(it)) {
                         showToast("Chuyển trạng thái chờ được phục vụ")
                         loadDSCTDMPhaChe()
-                    }
-                    else{
+                    } else {
                         showToast("Chuyển trạng thái thất bại!")
                     }
                 }

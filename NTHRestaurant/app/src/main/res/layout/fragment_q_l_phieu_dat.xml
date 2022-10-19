@@ -23,7 +23,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_phieu_dat"
             tools:itemCount="10"
-            android:scrollbars="vertical"/>
+            android:scrollbars="vertical" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <ImageView
@@ -34,6 +34,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/ic_them"/>
+        android:src="@drawable/ic_them" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

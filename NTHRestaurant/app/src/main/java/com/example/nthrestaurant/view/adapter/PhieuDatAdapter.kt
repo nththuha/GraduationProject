@@ -12,7 +12,8 @@ import com.example.nthrestaurant.databinding.ItemPhieuDatBinding
 import com.example.nthrestaurant.network.model.PhieuDatEntity
 import com.example.nthrestaurant.view.phucvu.TrangChuPhucVuFragmentDirections
 
-class PhieuDatAdapter(private val clickListener: (PhieuDatEntity) -> Unit) : ListAdapter<PhieuDatEntity, PhieuDatAdapter.PhieuDatEntityViewHolder>(DiffCallback) {
+class PhieuDatAdapter(private val clickListener: (PhieuDatEntity) -> Unit) :
+    ListAdapter<PhieuDatEntity, PhieuDatAdapter.PhieuDatEntityViewHolder>(DiffCallback) {
 
     class PhieuDatEntityViewHolder(private var binding: ItemPhieuDatBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -33,7 +34,8 @@ class PhieuDatAdapter(private val clickListener: (PhieuDatEntity) -> Unit) : Lis
         )
         viewHolder.itemView.setOnClickListener {
             val position = viewHolder.adapterPosition
-            val action = TrangChuPhucVuFragmentDirections.actionTrangChuFragmentToChiTietDatMonFragment()
+            val action =
+                TrangChuPhucVuFragmentDirections.actionTrangChuFragmentToChiTietDatMonFragment()
             viewHolder.itemView.findNavController().navigate(action)
             clickListener(getItem(position))
         }
@@ -50,7 +52,8 @@ class PhieuDatAdapter(private val clickListener: (PhieuDatEntity) -> Unit) : Lis
         }
 
         holder.itemView.findViewById<Button>(R.id.btnChiTiet).setOnClickListener {
-            val action = TrangChuPhucVuFragmentDirections.actionTrangChuFragmentToChiTietDatMonFragment()
+            val action =
+                TrangChuPhucVuFragmentDirections.actionTrangChuFragmentToChiTietDatMonFragment()
             holder.itemView.findNavController().navigate(action)
             clickListener(phieuDat)
         }

@@ -32,7 +32,7 @@ class ChiTietDatMonFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = ChiTietDatMonAdapter { it, num ->
-            when(num){
+            when (num) {
                 1 -> { //Cập nhật thông tin món ăn
                     dialogChinhSuaDatMon(requireActivity(), it, viewModel)
                 }
@@ -50,7 +50,8 @@ class ChiTietDatMonFragment : Fragment() {
                 srChiTietDatMon.isRefreshing = false
             }
             ivBack.setOnClickListener {
-                val action = ChiTietDatMonFragmentDirections.actionChiTietDatMonFragmentToTrangChuFragment()
+                val action =
+                    ChiTietDatMonFragmentDirections.actionChiTietDatMonFragmentToTrangChuFragment()
                 view.findNavController().navigate(action)
             }
         }

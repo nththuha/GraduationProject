@@ -12,7 +12,7 @@ import com.example.nthrestaurant.view.adapter.PhieuDatAdapter
 import com.example.nthrestaurant.viewmodel.PhucVuViewModel
 
 class QLPhieuDatFragment : Fragment() {
-    private var _binding: FragmentQLPhieuDatBinding ? = null
+    private var _binding: FragmentQLPhieuDatBinding? = null
     private val binding get() = _binding!!
 
     private val viewModel: PhucVuViewModel by activityViewModels()
@@ -38,7 +38,8 @@ class QLPhieuDatFragment : Fragment() {
             rvPhieuDat.adapter = adapter
 
             ivThem.setOnClickListener {
-                val action = TrangChuPhucVuFragmentDirections.actionTrangChuFragmentToDatChoFragment()
+                val action =
+                    TrangChuPhucVuFragmentDirections.actionTrangChuFragmentToDatChoFragment()
                 view.findNavController().navigate(action)
             }
 

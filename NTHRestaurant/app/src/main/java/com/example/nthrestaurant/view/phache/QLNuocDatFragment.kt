@@ -32,22 +32,20 @@ class QLNuocDatFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = ChiTietNuocDatAdapter { it, num ->
-            when(num){
+            when (num) {
                 1 -> { //Đang làm
-                    if(viewModel.suaTrangThaiDangLam(it)){
+                    if (viewModel.suaTrangThaiDangLam(it)) {
                         showToast("Chuyển trạng thái đang được làm")
                         loadDSCTDMBep()
-                    }
-                    else{
+                    } else {
                         showToast("Chuyển trạng thái thất bại!")
                     }
                 }
                 2 -> { //Chờ phục vụ
-                    if(viewModel.suaTrangThaiChoPhucVu(it)){
+                    if (viewModel.suaTrangThaiChoPhucVu(it)) {
                         showToast("Chuyển trạng thái chờ được phục vụ")
                         loadDSCTDMBep()
-                    }
-                    else{
+                    } else {
                         showToast("Chuyển trạng thái thất bại!")
                     }
                 }

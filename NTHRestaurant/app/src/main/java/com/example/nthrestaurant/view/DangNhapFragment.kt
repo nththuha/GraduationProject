@@ -55,12 +55,20 @@ class DangNhapFragment : Fragment() {
                 val maTK = etTenDangNhap.text.toString().trim()
                 val matKhau = etMatKhau.text.toString().trim()
                 if (maTK == "" || matKhau == "") {
-                    dialogThatBai(requireActivity(), "Tên đăng nhập và mật khẩu không được để trống!")
-                }
-                else{
+                    dialogThatBai(
+                        requireActivity(),
+                        "Tên đăng nhập và mật khẩu không được để trống!"
+                    )
+                } else {
                     runBlocking {
                         try {
-                            token = RestaurantApi.retrofitService.dangNhap(TaiKhoanEntity(maTK, matKhau, -1))
+                            token = RestaurantApi.retrofitService.dangNhap(
+                                TaiKhoanEntity(
+                                    maTK,
+                                    matKhau,
+                                    -1
+                                )
+                            )
                         } catch (e: Exception) {
                             Log.e("Fragment đăng nhập", e.message.toString())
                         }
@@ -71,25 +79,31 @@ class DangNhapFragment : Fragment() {
                             vmPhucVu.thietLapToken(token.token)
                             vmPhucVu.thietLapMaTK(token.maTK)
                             vmPhucVu.layThongTinNhanVien(token.maTK);
-                            val action = DangNhapFragmentDirections.actionDangNhapFragmentToTrangChuFragment()
+                            val action =
+                                DangNhapFragmentDirections.actionDangNhapFragmentToTrangChuFragment()
                             view.findNavController().navigate(action)
                         }
                         BOPHANBEP -> {
                             vmBep.thietLapToken(token.token)
                             vmBep.thietLapMaTK(token.maTK)
                             vmBep.layThongTinNhanVien(token.maTK);
-                            val action = DangNhapFragmentDirections.actionDangNhapFragmentToTrangChuBepFragment()
+                            val action =
+                                DangNhapFragmentDirections.actionDangNhapFragmentToTrangChuBepFragment()
                             view.findNavController().navigate(action)
                         }
                         BOPHANPHACHE -> {
                             vmPhaChe.thietLapToken(token.token)
                             vmPhaChe.thietLapMaTK(token.maTK)
                             vmPhaChe.layThongTinNhanVien(token.maTK);
-                            val action = DangNhapFragmentDirections.actionDangNhapFragmentToTrangChuPhaCheFragment()
+                            val action =
+                                DangNhapFragmentDirections.actionDangNhapFragmentToTrangChuPhaCheFragment()
                             view.findNavController().navigate(action)
                         }
                         else -> {
-                            dialogThatBai( requireActivity(), "Tên đăng nhập và mật khẩu không đúng!")
+                            dialogThatBai(
+                                requireActivity(),
+                                "Tên đăng nhập và mật khẩu không đúng!"
+                            )
                         }
                     }
                     btnDangNhap.isClickable = true
@@ -102,20 +116,20 @@ class DangNhapFragment : Fragment() {
                 var check = false
                 if (maTK == "") {
                     dialogThatBai(requireActivity(), "Bạn cần nhập tên đăng nhập!")
-                }
-                else{
+                } else {
                     runBlocking {
                         try {
                             check = RestaurantApi.retrofitService.doiMatKhau(maTK)
-                        }
-                        catch (e: Exception){
+                        } catch (e: Exception) {
                             Log.e("Fragment đăng nhập", e.message.toString())
                         }
                     }
-                    if(check){
-                        dialogThanhCong(requireActivity(), "Mật khẩu mới đã được gửi vào mail của bạn!")
-                    }
-                    else{
+                    if (check) {
+                        dialogThanhCong(
+                            requireActivity(),
+                            "Mật khẩu mới đã được gửi vào mail của bạn!"
+                        )
+                    } else {
                         dialogThatBai(requireActivity(), "Gửi mail mật khẩu mới thất bại!")
                     }
                 }

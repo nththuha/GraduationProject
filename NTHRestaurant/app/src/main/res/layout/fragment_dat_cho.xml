@@ -47,7 +47,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_phong"
             tools:itemCount="6"
-            android:scrollbars="horizontal"/>
+            android:scrollbars="horizontal" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <androidx.appcompat.widget.AppCompatTextView

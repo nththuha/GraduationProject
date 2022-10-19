@@ -69,7 +69,8 @@ class DatChoFragment : Fragment() {
             val sdf = SimpleDateFormat("yyyy-MM-dd")
             val ngay = sdf.format(Date())
 
-            val phieuDat = PhieuDatEntity(null, null, -5, -5, idnv!!, maBan!!, maPhong!!, ngay, null, null)
+            val phieuDat =
+                PhieuDatEntity(null, null, -5, -5, idnv!!, maBan!!, maPhong!!, ngay, null, null)
 
             viewModel.themPhieuDat(phieuDat)
             showToast("Đặt bàn thành công")

@@ -12,7 +12,7 @@ import com.example.nthrestaurant.network.model.TaiKhoanEntity
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
-class BepViewModel: ViewModel() {
+class BepViewModel : ViewModel() {
     var token: String = ""
     var maTK: String = ""
 
@@ -22,30 +22,30 @@ class BepViewModel: ViewModel() {
     private val _dsCTDatMon = MutableLiveData<List<ChiTietDatMonEntity>>()
     val dsCTDatMon: LiveData<List<ChiTietDatMonEntity>> = _dsCTDatMon
 
-    fun thietLapToken(token: String){
+    fun thietLapToken(token: String) {
         this.token = token
     }
 
-    fun thietLapMaTK(maTK: String){
+    fun thietLapMaTK(maTK: String) {
         this.maTK = maTK
     }
 
-    fun resetNhanVien(){
+    fun resetNhanVien() {
         _nhanVien.value = null
     }
 
-    fun layThongTinNhanVien(maTK: String){
+    fun layThongTinNhanVien(maTK: String) {
         viewModelScope.launch {
             try {
-                _nhanVien.value = RestaurantApi.retrofitService.layThongTinNhanVienTheoMaTaiKhoan(maTK, token)
-            }
-            catch (e: Exception){
+                _nhanVien.value =
+                    RestaurantApi.retrofitService.layThongTinNhanVienTheoMaTaiKhoan(maTK, token)
+            } catch (e: Exception) {
                 Log.e("Lấy thông tin nhân viên", e.message.toString())
             }
         }
     }
 
-    fun suaTaiKhoan(taiKhoan: TaiKhoanEntity): Boolean{
+    fun suaTaiKhoan(taiKhoan: TaiKhoanEntity): Boolean {
         var thongBao = false
         runBlocking {
             try {
@@ -68,7 +68,7 @@ class BepViewModel: ViewModel() {
         return dsCTDatMon
     }
 
-    fun suaTrangThaiDangLam(ctdatmon: ChiTietDatMonEntity): Boolean{
+    fun suaTrangThaiDangLam(ctdatmon: ChiTietDatMonEntity): Boolean {
         var thongBao = false
         runBlocking {
             try {
@@ -80,11 +80,12 @@ class BepViewModel: ViewModel() {
         return thongBao;
     }
 
-    fun suaTrangThaiChoPhucVu(ctdatmon: ChiTietDatMonEntity): Boolean{
+    fun suaTrangThaiChoPhucVu(ctdatmon: ChiTietDatMonEntity): Boolean {
         var thongBao = false
         runBlocking {
             try {
-                thongBao = RestaurantApi.retrofitService.suaTrangThaiChoPhucVu(ctdatmon.idCTDM, token)
+                thongBao =
+                    RestaurantApi.retrofitService.suaTrangThaiChoPhucVu(ctdatmon.idCTDM, token)
             } catch (e: Exception) {
                 Log.e("Lỗi sửa tt ct đặt món", e.message.toString())
             }
@@ -92,14 +93,13 @@ class BepViewModel: ViewModel() {
         return thongBao;
     }
 
-    fun xoaCTDM(idCTDM: Int): Boolean{
+    fun xoaCTDM(idCTDM: Int): Boolean {
         var thongBao = false
         runBlocking {
             try {
                 thongBao = RestaurantApi.retrofitService.xoaCTDM(idCTDM, token)
                 layDSDatMonMonAn()
-            }
-            catch (e: Exception){
+            } catch (e: Exception) {
                 Log.e("Lỗi xóa ctdm", e.message.toString())
             }
         }

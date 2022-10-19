@@ -10,10 +10,10 @@ fun Int.doiIntThanhTien(): String {
     return dec.format(this) + " VND"
 }
 
-fun Fragment.showToast(s: String){
+fun Fragment.showToast(s: String) {
     Toast.makeText(this.context, s, Toast.LENGTH_SHORT).show()
 }
 
-fun Activity.showToast(s: String){
+fun Activity.showToast(s: String) {
     Toast.makeText(this, s, Toast.LENGTH_SHORT).show()
 }

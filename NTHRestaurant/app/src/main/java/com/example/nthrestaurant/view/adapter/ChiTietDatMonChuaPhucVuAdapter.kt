@@ -10,7 +10,10 @@ import com.example.nthrestaurant.R
 import com.example.nthrestaurant.databinding.ItemChiTietDatMonChoPhucVuBinding
 import com.example.nthrestaurant.network.model.ChiTietDatMonEntity
 
-class ChiTietDatMonChuaPhucVuAdapter(private val clickListener: (ChiTietDatMonEntity) -> Unit) : ListAdapter<ChiTietDatMonEntity, ChiTietDatMonChuaPhucVuAdapter.ChiTietDatMonEntityViewHolder>(DiffCallback) {
+class ChiTietDatMonChuaPhucVuAdapter(private val clickListener: (ChiTietDatMonEntity) -> Unit) :
+    ListAdapter<ChiTietDatMonEntity, ChiTietDatMonChuaPhucVuAdapter.ChiTietDatMonEntityViewHolder>(
+        DiffCallback
+    ) {
 
     class ChiTietDatMonEntityViewHolder(private var binding: ItemChiTietDatMonChoPhucVuBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -42,11 +45,17 @@ class ChiTietDatMonChuaPhucVuAdapter(private val clickListener: (ChiTietDatMonEn
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<ChiTietDatMonEntity>() {
-        override fun areItemsTheSame(oldItem: ChiTietDatMonEntity, newItem: ChiTietDatMonEntity): Boolean {
+        override fun areItemsTheSame(
+            oldItem: ChiTietDatMonEntity,
+            newItem: ChiTietDatMonEntity
+        ): Boolean {
             return oldItem.idCTDM == newItem.idCTDM
         }
 
-        override fun areContentsTheSame(oldItem: ChiTietDatMonEntity, newItem: ChiTietDatMonEntity): Boolean {
+        override fun areContentsTheSame(
+            oldItem: ChiTietDatMonEntity,
+            newItem: ChiTietDatMonEntity
+        ): Boolean {
             return oldItem == newItem
         }
     }

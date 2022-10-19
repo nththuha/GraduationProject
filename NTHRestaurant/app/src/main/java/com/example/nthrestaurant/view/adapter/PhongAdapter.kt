@@ -9,18 +9,18 @@ import com.example.nthrestaurant.R
 import com.example.nthrestaurant.databinding.ItemPhongBinding
 import com.example.nthrestaurant.network.model.PhongEntity
 
-class PhongAdapter(private val clickListener: (PhongEntity) -> Unit) : ListAdapter<PhongEntity, PhongAdapter.PhongEntityViewHolder>(DiffCallback) {
+class PhongAdapter(private val clickListener: (PhongEntity) -> Unit) :
+    ListAdapter<PhongEntity, PhongAdapter.PhongEntityViewHolder>(DiffCallback) {
 
     class PhongEntityViewHolder(private var binding: ItemPhongBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(phong: PhongEntity) {
             binding.apply {
                 binding.phong = phong
-                if(phong.trangThai == "Hết chỗ"){
+                if (phong.trangThai == "Hết chỗ") {
                     clPhong.setBackgroundResource(R.drawable.background_room_unavailable)
                     clPhong.isEnabled = false;
-                }
-                else {
+                } else {
                     clPhong.setBackgroundResource(R.drawable.background_room)
                     clPhong.isEnabled = true;
                 }

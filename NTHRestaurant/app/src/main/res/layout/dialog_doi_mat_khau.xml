@@ -28,14 +28,14 @@
             style="@style/fragment_dangnhap_et"
             android:drawableStart="@drawable/ic_lock"
             android:inputType="textPassword"
-            android:hint="@string/dialog_doi_mat_khau_et_mat_khau_moi"/>
+            android:hint="@string/dialog_doi_mat_khau_et_mat_khau_moi" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/etMatKhauMoi_XM"
             style="@style/fragment_dangnhap_et"
             android:drawableStart="@drawable/ic_lock"
             android:inputType="textPassword"
-            android:hint="@string/dialog_doi_mat_khau_et_xm_mat_khau_moi"/>
+            android:hint="@string/dialog_doi_mat_khau_et_xm_mat_khau_moi" />
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -55,6 +55,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/llMatKhau"
         android:text="@string/dialog_dang_xuat_btn_huy"
-        style="@style/dialog_dang_xuat_btn"/>
+        style="@style/dialog_dang_xuat_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

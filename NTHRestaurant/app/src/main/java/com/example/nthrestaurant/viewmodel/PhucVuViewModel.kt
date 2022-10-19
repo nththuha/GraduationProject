@@ -56,30 +56,30 @@ class PhucVuViewModel : ViewModel() {
     private val _ctDatMon = MutableLiveData<ChiTietDatMonEntity>()
     val ctDatMon: LiveData<ChiTietDatMonEntity> = _ctDatMon
 
-    fun thietLapToken(token: String){
+    fun thietLapToken(token: String) {
         this.token = token
     }
 
-    fun thietLapMaTK(maTK: String){
+    fun thietLapMaTK(maTK: String) {
         this.maTK = maTK
     }
 
-    fun layThongTinNhanVien(maTK: String){
+    fun layThongTinNhanVien(maTK: String) {
         viewModelScope.launch {
             try {
-                _nhanVien.value = RestaurantApi.retrofitService.layThongTinNhanVienTheoMaTaiKhoan(maTK, token)
-            }
-            catch (e: Exception){
+                _nhanVien.value =
+                    RestaurantApi.retrofitService.layThongTinNhanVienTheoMaTaiKhoan(maTK, token)
+            } catch (e: Exception) {
                 Log.e("Lấy thông tin nhân viên", e.message.toString())
             }
         }
     }
 
-    fun resetNhanVien(){
+    fun resetNhanVien() {
         _nhanVien.value = null
     }
 
-    fun thietLapPhieuDat(phieuDat: PhieuDatEntity){
+    fun thietLapPhieuDat(phieuDat: PhieuDatEntity) {
         this._phieuDat.value = phieuDat
     }
 
@@ -105,14 +105,17 @@ class PhucVuViewModel : ViewModel() {
         return dsPhong
     }
 
-    fun thietLapPhong(phong: PhongEntity){
+    fun thietLapPhong(phong: PhongEntity) {
         this._phong.value = phong
     }
 
     fun layDSBanTheoPhong(): LiveData<List<BanEntity>> {
         viewModelScope.launch {
             try {
-                _dsBan.value = RestaurantApi.retrofitService.layDSBanTheoPhong(phong.value?.maPhong + "", token)
+                _dsBan.value = RestaurantApi.retrofitService.layDSBanTheoPhong(
+                    phong.value?.maPhong + "",
+                    token
+                )
             } catch (e: Exception) {
                 Log.e("Lỗi load ds bàn", e.message.toString())
             }
@@ -120,7 +123,7 @@ class PhucVuViewModel : ViewModel() {
         return dsBan
     }
 
-    fun thietLapBan(ban: BanEntity){
+    fun thietLapBan(ban: BanEntity) {
         this._ban.value = ban
     }
 
@@ -142,7 +145,10 @@ class PhucVuViewModel : ViewModel() {
     fun layDSMonAnTheoLoaiMonAn(): LiveData<List<MonAnEntity>> {
         viewModelScope.launch {
             try {
-                _dsMA.value = RestaurantApi.retrofitService.layDSMonAnTheoLoaiMonAn(loaiMonAn.value?.maLMA + "", token)
+                _dsMA.value = RestaurantApi.retrofitService.layDSMonAnTheoLoaiMonAn(
+                    loaiMonAn.value?.maLMA + "",
+                    token
+                )
             } catch (e: Exception) {
                 Log.e("Lỗi load ds món ăn", e.message.toString())
             }
@@ -178,39 +184,36 @@ class PhucVuViewModel : ViewModel() {
         return dsCTDatMonCPV
     }
 
-    fun themPhieuDat(phieuDat: PhieuDatEntity){
+    fun themPhieuDat(phieuDat: PhieuDatEntity) {
         runBlocking {
             try {
                 _phieuDat.value = RestaurantApi.retrofitService.themPhieuDat(phieuDat, token)
-            }
-            catch (e: Exception){
+            } catch (e: Exception) {
                 Log.e("Lỗi thêm phiếu đặt", e.message.toString())
             }
         }
     }
 
-    fun suaCTDM(ctdm: ChiTietDatMonEntity): Boolean{
+    fun suaCTDM(ctdm: ChiTietDatMonEntity): Boolean {
         var thongBao = false
         runBlocking {
             try {
                 thongBao = RestaurantApi.retrofitService.suaCTDM(ctdm, token)
                 layDSDatMonTheoPD()
-            }
-            catch (e: Exception){
+            } catch (e: Exception) {
                 Log.e("Lỗi sửa ctdm", e.message.toString())
             }
         }
         return thongBao
     }
 
-    fun xoaCTDM(idCTDM: Int): Boolean{
+    fun xoaCTDM(idCTDM: Int): Boolean {
         var thongBao = false
         runBlocking {
             try {
                 thongBao = RestaurantApi.retrofitService.xoaCTDM(idCTDM, token)
                 layDSDatMonTheoPD()
-            }
-            catch (e: Exception){
+            } catch (e: Exception) {
                 Log.e("Lỗi xóa ctdm", e.message.toString())
             }
         }
@@ -229,11 +232,12 @@ class PhucVuViewModel : ViewModel() {
         return thongBao;
     }
 
-    fun suaTrangThaiDaPhucVu(ctdatmon: ChiTietDatMonEntity): Boolean{
+    fun suaTrangThaiDaPhucVu(ctdatmon: ChiTietDatMonEntity): Boolean {
         var thongBao = false
         runBlocking {
             try {
-                thongBao = RestaurantApi.retrofitService.suaTrangThaiDaPhucVu(ctdatmon.idCTDM, token)
+                thongBao =
+                    RestaurantApi.retrofitService.suaTrangThaiDaPhucVu(ctdatmon.idCTDM, token)
             } catch (e: Exception) {
                 Log.e("Lỗi sửa tt ct đặt món", e.message.toString())
             }
@@ -241,7 +245,7 @@ class PhucVuViewModel : ViewModel() {
         return thongBao;
     }
 
-    fun suaTaiKhoan(taiKhoan: TaiKhoanEntity): Boolean{
+    fun suaTaiKhoan(taiKhoan: TaiKhoanEntity): Boolean {
         var thongBao = false
         runBlocking {
             try {

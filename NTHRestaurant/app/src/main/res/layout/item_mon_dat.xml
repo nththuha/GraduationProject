@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="ctdm"
             type="com.example.nthrestaurant.network.model.ChiTietDatMonEntity" />
@@ -39,7 +40,7 @@
                 android:layout_height="wrap_content"
                 tools:src="@drawable/img_cheese_pizza"
                 android:scaleType="centerCrop"
-                imageUrl="@{ctdm.hinhAnh}"/>
+                imageUrl="@{ctdm.hinhAnh}" />
         </com.google.android.material.card.MaterialCardView>
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -58,7 +59,7 @@
             android:ellipsize="end"
             android:layout_marginTop="4dp"
             android:layout_marginStart="8dp"
-            android:text="@{ctdm.tenMA}"/>
+            android:text="@{ctdm.tenMA}" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivDongHo"
@@ -67,7 +68,7 @@
             android:src="@drawable/ic_clock"
             app:layout_constraintStart_toEndOf="@id/cvHinhAnh"
             app:layout_constraintTop_toBottomOf="@id/tvTenMA"
-            android:layout_marginStart="10dp"/>
+            android:layout_marginStart="10dp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
@@ -80,7 +81,7 @@
             tools:text="Chờ phục vụ"
             android:textColor="@color/black"
             android:textSize="12sp"
-            android:text="@{ctdm.trangThai}"/>
+            android:text="@{ctdm.trangThai}" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivSoLuong"
@@ -101,7 +102,7 @@
             tools:text="1"
             android:textColor="@color/black"
             android:textSize="12sp"
-            android:text="@{@string/item_ban_so_ghe(ctdm.soLuong)}"/>
+            android:text="@{@string/item_ban_so_ghe(ctdm.soLuong)}" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivChuThich"
@@ -123,7 +124,7 @@
             tools:text="Không cay"
             android:ellipsize="end"
             android:textColor="@color/black"
-            android:textSize="12sp"/>
+            android:textSize="12sp" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivPhong"
@@ -144,7 +145,7 @@
             tools:text="Phòng 1"
             android:textColor="@color/black"
             android:textSize="12sp"
-            android:text="@{ctdm.tenPhong}"/>
+            android:text="@{ctdm.tenPhong}" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivBan"
@@ -165,7 +166,7 @@
             tools:text="Bàn 1"
             android:textColor="@color/black"
             android:textSize="12sp"
-            android:text="@{ctdm.tenBan}"/>
+            android:text="@{ctdm.tenBan}" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnDangLam"
