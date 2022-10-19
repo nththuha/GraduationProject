@@ -41,8 +41,8 @@ namespace NTH_Restaurant_Manager
             this.coltenBan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltenPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bdsCTDM = new System.Windows.Forms.BindingSource(this.components);
-            this.cTDatMonModelGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcCTDM = new DevExpress.XtraGrid.GridControl();
+            this.gvCTDM = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.coltenma = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colgia = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,24 +51,25 @@ namespace NTH_Restaurant_Manager
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btn_Them = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_CapNhat = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Luu = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Xoa = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_PhucHoi = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Reload = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Thoat = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.btn_CapNhat = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Luu = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_PhucHoi = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_XuatHoaDon = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcPD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsPD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCTDM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cTDatMonModelGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcCTDM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCTDM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,6 +108,8 @@ namespace NTH_Restaurant_Manager
             this.coltenPhong});
             this.gvPD.GridControl = this.gcPD;
             this.gvPD.Name = "gvPD";
+            this.gvPD.OptionsBehavior.Editable = false;
+            this.gvPD.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvPD_RowClick);
             // 
             // colidPD
             // 
@@ -162,28 +165,29 @@ namespace NTH_Restaurant_Manager
             // 
             this.bdsCTDM.DataSource = typeof(NTH_Restaurant_Manager.Model.CTDatMonModel);
             // 
-            // cTDatMonModelGridControl
+            // gcCTDM
             // 
-            this.cTDatMonModelGridControl.DataSource = this.bdsCTDM;
-            this.cTDatMonModelGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cTDatMonModelGridControl.Location = new System.Drawing.Point(976, 30);
-            this.cTDatMonModelGridControl.MainView = this.gridView1;
-            this.cTDatMonModelGridControl.Name = "cTDatMonModelGridControl";
-            this.cTDatMonModelGridControl.Size = new System.Drawing.Size(444, 405);
-            this.cTDatMonModelGridControl.TabIndex = 1;
-            this.cTDatMonModelGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gcCTDM.DataSource = this.bdsCTDM;
+            this.gcCTDM.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcCTDM.Location = new System.Drawing.Point(976, 30);
+            this.gcCTDM.MainView = this.gvCTDM;
+            this.gcCTDM.Name = "gcCTDM";
+            this.gcCTDM.Size = new System.Drawing.Size(444, 405);
+            this.gcCTDM.TabIndex = 1;
+            this.gcCTDM.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvCTDM});
             // 
-            // gridView1
+            // gvCTDM
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvCTDM.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.coltenma,
             this.colsoLuong,
             this.colgia,
             this.coltrangThai,
             this.colchuThich});
-            this.gridView1.GridControl = this.cTDatMonModelGridControl;
-            this.gridView1.Name = "gridView1";
+            this.gvCTDM.GridControl = this.gcCTDM;
+            this.gvCTDM.Name = "gvCTDM";
+            this.gvCTDM.OptionsBehavior.Editable = false;
             // 
             // coltenma
             // 
@@ -251,9 +255,10 @@ namespace NTH_Restaurant_Manager
             this.btn_Xoa,
             this.btn_Reload,
             this.btn_Thoat,
-            this.btn_PhucHoi});
+            this.btn_PhucHoi,
+            this.btn_XuatHoaDon});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 7;
+            this.barManager1.MaxItemId = 8;
             // 
             // bar2
             // 
@@ -265,6 +270,7 @@ namespace NTH_Restaurant_Manager
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Them),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Xoa),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_XuatHoaDon),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Reload),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Thoat)});
             this.bar2.OptionsBar.MultiLine = true;
@@ -279,23 +285,6 @@ namespace NTH_Restaurant_Manager
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
-            // btn_CapNhat
-            // 
-            this.btn_CapNhat.Caption = "Cập nhật";
-            this.btn_CapNhat.Id = 1;
-            this.btn_CapNhat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_CapNhat.ImageOptions.SvgImage")));
-            this.btn_CapNhat.Name = "btn_CapNhat";
-            this.btn_CapNhat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // btn_Luu
-            // 
-            this.btn_Luu.Caption = "Lưu";
-            this.btn_Luu.Enabled = false;
-            this.btn_Luu.Id = 2;
-            this.btn_Luu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Luu.ImageOptions.SvgImage")));
-            this.btn_Luu.Name = "btn_Luu";
-            this.btn_Luu.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
             // btn_Xoa
             // 
             this.btn_Xoa.Caption = "Xóa";
@@ -303,14 +292,6 @@ namespace NTH_Restaurant_Manager
             this.btn_Xoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Xoa.ImageOptions.SvgImage")));
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // btn_PhucHoi
-            // 
-            this.btn_PhucHoi.Caption = "Phục Hồi";
-            this.btn_PhucHoi.Id = 6;
-            this.btn_PhucHoi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_PhucHoi.ImageOptions.SvgImage")));
-            this.btn_PhucHoi.Name = "btn_PhucHoi";
-            this.btn_PhucHoi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // btn_Reload
             // 
@@ -360,12 +341,46 @@ namespace NTH_Restaurant_Manager
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 711);
             // 
+            // btn_CapNhat
+            // 
+            this.btn_CapNhat.Caption = "Cập nhật";
+            this.btn_CapNhat.Id = 1;
+            this.btn_CapNhat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_CapNhat.ImageOptions.SvgImage")));
+            this.btn_CapNhat.Name = "btn_CapNhat";
+            this.btn_CapNhat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // btn_Luu
+            // 
+            this.btn_Luu.Caption = "Lưu";
+            this.btn_Luu.Enabled = false;
+            this.btn_Luu.Id = 2;
+            this.btn_Luu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Luu.ImageOptions.SvgImage")));
+            this.btn_Luu.Name = "btn_Luu";
+            this.btn_Luu.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // btn_PhucHoi
+            // 
+            this.btn_PhucHoi.Caption = "Phục Hồi";
+            this.btn_PhucHoi.Id = 6;
+            this.btn_PhucHoi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_PhucHoi.ImageOptions.SvgImage")));
+            this.btn_PhucHoi.Name = "btn_PhucHoi";
+            this.btn_PhucHoi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // btn_XuatHoaDon
+            // 
+            this.btn_XuatHoaDon.Caption = "Xuất hóa đơn";
+            this.btn_XuatHoaDon.Id = 7;
+            this.btn_XuatHoaDon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btn_XuatHoaDon.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btn_XuatHoaDon.Name = "btn_XuatHoaDon";
+            this.btn_XuatHoaDon.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
             // frmTheoDoiDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1420, 741);
-            this.Controls.Add(this.cTDatMonModelGridControl);
+            this.Controls.Add(this.gcCTDM);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -380,8 +395,8 @@ namespace NTH_Restaurant_Manager
             ((System.ComponentModel.ISupportInitialize)(this.bdsPD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCTDM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cTDatMonModelGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcCTDM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCTDM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -400,8 +415,8 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraGrid.Columns.GridColumn coltenBan;
         private DevExpress.XtraGrid.Columns.GridColumn coltenPhong;
         private System.Windows.Forms.BindingSource bdsCTDM;
-        private DevExpress.XtraGrid.GridControl cTDatMonModelGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gcCTDM;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvCTDM;
         private DevExpress.XtraGrid.Columns.GridColumn coltenma;
         private DevExpress.XtraGrid.Columns.GridColumn colsoLuong;
         private DevExpress.XtraGrid.Columns.GridColumn colgia;
@@ -420,5 +435,6 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraBars.BarButtonItem btn_CapNhat;
         private DevExpress.XtraBars.BarButtonItem btn_Luu;
         private DevExpress.XtraBars.BarButtonItem btn_PhucHoi;
+        private DevExpress.XtraBars.BarButtonItem btn_XuatHoaDon;
     }
 }
