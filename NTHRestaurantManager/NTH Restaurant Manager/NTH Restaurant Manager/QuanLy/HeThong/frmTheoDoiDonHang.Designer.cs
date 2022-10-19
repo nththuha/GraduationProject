@@ -52,6 +52,7 @@ namespace NTH_Restaurant_Manager
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btn_Them = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Xoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_XuatHoaDon = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Reload = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Thoat = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -61,7 +62,6 @@ namespace NTH_Restaurant_Manager
             this.btn_CapNhat = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Luu = new DevExpress.XtraBars.BarButtonItem();
             this.btn_PhucHoi = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_XuatHoaDon = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcPD)).BeginInit();
@@ -293,6 +293,15 @@ namespace NTH_Restaurant_Manager
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
+            // btn_XuatHoaDon
+            // 
+            this.btn_XuatHoaDon.Caption = "Xuất hóa đơn";
+            this.btn_XuatHoaDon.Id = 7;
+            this.btn_XuatHoaDon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_XuatHoaDon.ImageOptions.Image")));
+            this.btn_XuatHoaDon.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_XuatHoaDon.ImageOptions.LargeImage")));
+            this.btn_XuatHoaDon.Name = "btn_XuatHoaDon";
+            this.btn_XuatHoaDon.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
             // btn_Reload
             // 
             this.btn_Reload.Caption = "Reload";
@@ -365,15 +374,6 @@ namespace NTH_Restaurant_Manager
             this.btn_PhucHoi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_PhucHoi.ImageOptions.SvgImage")));
             this.btn_PhucHoi.Name = "btn_PhucHoi";
             this.btn_PhucHoi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // btn_XuatHoaDon
-            // 
-            this.btn_XuatHoaDon.Caption = "Xuất hóa đơn";
-            this.btn_XuatHoaDon.Id = 7;
-            this.btn_XuatHoaDon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btn_XuatHoaDon.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.btn_XuatHoaDon.Name = "btn_XuatHoaDon";
-            this.btn_XuatHoaDon.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // frmTheoDoiDonHang
             // 
