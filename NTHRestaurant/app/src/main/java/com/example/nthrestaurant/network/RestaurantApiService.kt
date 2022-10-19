@@ -66,6 +66,9 @@ interface RestaurantApiService {
     @GET("ctdatmon/bep/monan")
     suspend fun layDSDatMonBep(@Header("Authorization") token: String): List<ChiTietDatMonEntity>
 
+    @GET("ctdatmon/phache/nuocuong")
+    suspend fun layDSDatMonPhaChe(@Header("Authorization") token: String): List<ChiTietDatMonEntity>
+
     @DELETE("ctdatmon/{idCTDM}")
     suspend fun xoaCTDM(@Path("idCTDM") idCTDM: Int, @Header("Authorization") token: String): Boolean
 
@@ -74,6 +77,12 @@ interface RestaurantApiService {
 
     @POST("ctdatmon")
     suspend fun themCTDM(@Body ctdatmon: ChiTietDatMonEntity, @Header("Authorization") token: String): Boolean
+
+    @PUT("ctdatmon/danglam/{idCTDM}")
+    suspend fun suaTrangThaiDangLam(@Path("idCTDM") idCTDM: Int, @Header("Authorization") token: String): Boolean
+
+    @PUT("ctdatmon/chophucvu/{idCTDM}")
+    suspend fun suaTrangThaiChoPhucVu(@Path("idCTDM") idCTDM: Int, @Header("Authorization") token: String): Boolean
 
     @PUT("ctdatmon/daphucvu/{idCTDM}")
     suspend fun suaTrangThaiDaPhucVu(@Path("idCTDM") idCTDM: Int, @Header("Authorization") token: String): Boolean

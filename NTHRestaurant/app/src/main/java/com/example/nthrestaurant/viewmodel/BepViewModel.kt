@@ -67,4 +67,28 @@ class BepViewModel: ViewModel() {
         }
         return dsCTDatMon
     }
+
+    fun suaTrangThaiDangLam(ctdatmon: ChiTietDatMonEntity): Boolean{
+        var thongBao = false
+        runBlocking {
+            try {
+                thongBao = RestaurantApi.retrofitService.suaTrangThaiDangLam(ctdatmon.idCTDM, token)
+            } catch (e: Exception) {
+                Log.e("Lỗi sửa tt ct đặt món", e.message.toString())
+            }
+        }
+        return thongBao;
+    }
+
+    fun suaTrangThaiChoPhucVu(ctdatmon: ChiTietDatMonEntity): Boolean{
+        var thongBao = false
+        runBlocking {
+            try {
+                thongBao = RestaurantApi.retrofitService.suaTrangThaiChoPhucVu(ctdatmon.idCTDM, token)
+            } catch (e: Exception) {
+                Log.e("Lỗi sửa tt ct đặt món", e.message.toString())
+            }
+        }
+        return thongBao;
+    }
 }

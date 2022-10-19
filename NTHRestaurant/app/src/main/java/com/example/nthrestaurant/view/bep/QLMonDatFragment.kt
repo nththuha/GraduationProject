@@ -6,15 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.findNavController
 import com.example.nthrestaurant.databinding.FragmentQLMonDatBinding
-import com.example.nthrestaurant.dialogChinhSuaDatMon
-import com.example.nthrestaurant.dialogHuyChiTietDatMon
-import com.example.nthrestaurant.view.adapter.ChiTietDatMonAdapter
+import com.example.nthrestaurant.showToast
 import com.example.nthrestaurant.view.adapter.ChiTietMonDatAdapter
-import com.example.nthrestaurant.view.phucvu.ChiTietDatMonFragmentDirections
 import com.example.nthrestaurant.viewmodel.BepViewModel
-import com.example.nthrestaurant.viewmodel.PhucVuViewModel
 
 class QLMonDatFragment : Fragment() {
     private var _binding: FragmentQLMonDatBinding? = null
@@ -36,28 +31,40 @@ class QLMonDatFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         adapter = ChiTietMonDatAdapter { it, num ->
             when(num){
-                1 -> {
-
+                1 -> { //Đang làm
+                    if(viewModel.suaTrangThaiDangLam(it)){
+                        showToast("Chuyển trạng thái đang được làm")
+                        loadDSCTDMPhaChe()
+                    }
+                    else{
+                        showToast("Chuyển trạng thái thất bại!")
+                    }
                 }
-                2 -> {
-
+                2 -> { //Chờ phục vụ
+                    if(viewModel.suaTrangThaiChoPhucVu(it)){
+                        showToast("Chuyển trạng thái chờ được phục vụ")
+                        loadDSCTDMPhaChe()
+                    }
+                    else{
+                        showToast("Chuyển trạng thái thất bại!")
+                    }
                 }
-                3 -> {
+                3 -> { //Hủy món
 
                 }
             }
         }
-        loadDSCTDMBep()
+        loadDSCTDMPhaChe()
         binding.apply {
             rvMonDat.adapter = adapter
             srMonDat.setOnRefreshListener {
-                loadDSCTDMBep()
+                loadDSCTDMPhaChe()
                 srMonDat.isRefreshing = false
             }
         }
     }
 
-    private fun loadDSCTDMBep() {
+    private fun loadDSCTDMPhaChe() {
         viewModel.layDSDatMonMonAn().observe(viewLifecycleOwner) { dsCTDM ->
             adapter?.submitList(dsCTDM)
         }

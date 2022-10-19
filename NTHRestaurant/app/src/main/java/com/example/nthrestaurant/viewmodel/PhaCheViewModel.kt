@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.nthrestaurant.network.RestaurantApi
+import com.example.nthrestaurant.network.model.ChiTietDatMonEntity
 import com.example.nthrestaurant.network.model.NhanVienEntity
 import com.example.nthrestaurant.network.model.TaiKhoanEntity
 import kotlinx.coroutines.launch
@@ -17,6 +18,9 @@ class PhaCheViewModel : ViewModel() {
 
     private val _nhanVien = MutableLiveData<NhanVienEntity?>()
     val nhanVien: LiveData<NhanVienEntity?> = _nhanVien
+
+    private val _dsCTDatNuoc = MutableLiveData<List<ChiTietDatMonEntity>>()
+    val dsCTDatNuoc: LiveData<List<ChiTietDatMonEntity>> = _dsCTDatNuoc
 
     fun thietLapToken(token: String){
         this.token = token
@@ -46,6 +50,41 @@ class PhaCheViewModel : ViewModel() {
         runBlocking {
             try {
                 thongBao = RestaurantApi.retrofitService.suaTaiKhoan(taiKhoan, token)
+            } catch (e: Exception) {
+                Log.e("Lỗi sửa tt ct đặt món", e.message.toString())
+            }
+        }
+        return thongBao;
+    }
+
+    fun layDSDatMonNuocUong(): LiveData<List<ChiTietDatMonEntity>> {
+        viewModelScope.launch {
+            try {
+                _dsCTDatNuoc.value = RestaurantApi.retrofitService.layDSDatMonPhaChe(token)
+            } catch (e: Exception) {
+                Log.e("Lỗi load ds CTDM", e.message.toString())
+            }
+        }
+        return dsCTDatNuoc
+    }
+
+    fun suaTrangThaiDangLam(ctdatmon: ChiTietDatMonEntity): Boolean{
+        var thongBao = false
+        runBlocking {
+            try {
+                thongBao = RestaurantApi.retrofitService.suaTrangThaiDangLam(ctdatmon.idCTDM, token)
+            } catch (e: Exception) {
+                Log.e("Lỗi sửa tt ct đặt món", e.message.toString())
+            }
+        }
+        return thongBao;
+    }
+
+    fun suaTrangThaiChoPhucVu(ctdatmon: ChiTietDatMonEntity): Boolean{
+        var thongBao = false
+        runBlocking {
+            try {
+                thongBao = RestaurantApi.retrofitService.suaTrangThaiChoPhucVu(ctdatmon.idCTDM, token)
             } catch (e: Exception) {
                 Log.e("Lỗi sửa tt ct đặt món", e.message.toString())
             }

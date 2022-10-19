@@ -41,7 +41,7 @@
     <!--    Dialog đăng xuất      -->
 
     <!--    Dialog chi tiết đặt món      -->
-    <string name="dialog_chi_tiet_dat_mon_btn_da_phuc_vu">Đã phục vụ</string>
+    <string name="dialog_chi_tiet_dat_mon_btn_da_phuc_vu">PHỤC VỤ</string>
     <!--    Dialog chi tiết đặt món      -->
 
     <!--    Dialog hủy món đặt      -->
@@ -92,7 +92,7 @@
     <!--    Dialog đổi mật khẩu      -->
 
     <!--    Item món đặt      -->
-    <string name="item_mon_dat_btn_dang_lam">ĐANG LÀM</string>
+    <string name="item_mon_dat_btn_dang_lam">BẮT ĐẦU LÀM</string>
     <string name="item_mon_dat_btn_cho_phuc_vu">HOÀN TẤT</string>
     <string name="item_mon_dat_btn_huy_mon">HỦY MÓN</string>
     <!--    Item món đặt      -->

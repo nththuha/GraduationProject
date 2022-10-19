@@ -7,11 +7,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nthrestaurant.R
-import com.example.nthrestaurant.databinding.ItemMonDatBinding
+import com.example.nthrestaurant.databinding.ItemNuocDatBinding
 import com.example.nthrestaurant.network.model.ChiTietDatMonEntity
 
-class ChiTietMonDatAdapter(private val clickListener: (ChiTietDatMonEntity, Int) -> Unit) : ListAdapter<ChiTietDatMonEntity, ChiTietMonDatAdapter.ChiTietDatMonEntityViewHolder>(DiffCallback) {
-    class ChiTietDatMonEntityViewHolder(private var binding: ItemMonDatBinding) :
+class ChiTietNuocDatAdapter(private val clickListener: (ChiTietDatMonEntity, Int) -> Unit) : ListAdapter<ChiTietDatMonEntity, ChiTietNuocDatAdapter.ChiTietDatMonEntityViewHolder>(DiffCallback) {
+    class ChiTietDatMonEntityViewHolder(private var binding: ItemNuocDatBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(ctDM: ChiTietDatMonEntity) {
             binding.apply {
@@ -35,7 +35,7 @@ class ChiTietMonDatAdapter(private val clickListener: (ChiTietDatMonEntity, Int)
         viewType: Int
     ): ChiTietDatMonEntityViewHolder {
         return ChiTietDatMonEntityViewHolder(
-            ItemMonDatBinding.inflate(
+            ItemNuocDatBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             )
         )
