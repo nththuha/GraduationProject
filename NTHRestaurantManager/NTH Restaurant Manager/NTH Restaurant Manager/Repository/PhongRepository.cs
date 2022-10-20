@@ -26,8 +26,8 @@ namespace NTH_Restaurant_Manager.Repository
         {
             _response = await _client.GetAsync("phong");
             var json = await _response.Content.ReadAsStringAsync();
-            var listLMA = JsonConvert.DeserializeObject<List<PhongModel>>(json);
-            return listLMA;
+            var listP = JsonConvert.DeserializeObject<List<PhongModel>>(json);
+            return listP;
         }
 
         public async Task<String> themPhong(PhongModel phong)

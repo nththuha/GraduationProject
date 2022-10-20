@@ -26,8 +26,8 @@ namespace NTH_Restaurant_Manager.Repository
         {
             _response = await _client.GetAsync("thaydoigiamon/" + maMA);
             var json = await _response.Content.ReadAsStringAsync();
-            var listCTB = JsonConvert.DeserializeObject<List<ThayDoiGiaMonModel>>(json);
-            return listCTB;
+            var listTDGM = JsonConvert.DeserializeObject<List<ThayDoiGiaMonModel>>(json);
+            return listTDGM;
         }
 
         public async Task<String> themThayDoiGiaMon(ThayDoiGiaMonModel thayDoiGiaMon)

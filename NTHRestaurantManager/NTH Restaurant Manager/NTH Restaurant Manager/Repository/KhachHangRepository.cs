@@ -10,53 +10,53 @@ using System.Threading.Tasks;
 
 namespace NTH_Restaurant_Manager.Repository
 {
-    class NguyenLieuRepository
+    class KhachHangRepository
     {
         public HttpClient _client;
         public HttpResponseMessage _response;
 
-        public NguyenLieuRepository()
+        public KhachHangRepository()
         {
             _client = new HttpClient();
             _client.BaseAddress = new Uri(Program.URL);
             _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task<List<NguyenLieuModel>> layDSNguyenLieu()
+        public async Task<List<KhachHangModel>> layDSKhachHang()
         {
-            _response = await _client.GetAsync("nguyenlieu");
+            _response = await _client.GetAsync("khachhang");
             var json = await _response.Content.ReadAsStringAsync();
-            var listNL = JsonConvert.DeserializeObject<List<NguyenLieuModel>>(json);
-            return listNL;
+            var listKH = JsonConvert.DeserializeObject<List<KhachHangModel>>(json);
+            return listKH;
         }
 
-        public async Task<String> themNguyenLieu(NguyenLieuModel nguyenLieu)
+        public async Task<String> themKhachHang(KhachHangModel khachHang)
         {
-            var nguyenlieu = JsonConvert.SerializeObject(nguyenLieu);
-            var buffer = Encoding.UTF8.GetBytes(nguyenlieu);
+            var khachhang = JsonConvert.SerializeObject(khachHang);
+            var buffer = Encoding.UTF8.GetBytes(khachhang);
             var byteContent = new ByteArrayContent(buffer);
             byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            _response = await _client.PostAsync("nguyenlieu", byteContent);
+            _response = await _client.PostAsync("khachhang", byteContent);
             var json = await _response.Content.ReadAsStringAsync();
             var check = JsonConvert.DeserializeObject<String>(json);
             return check;
         }
 
-        public async Task<String> suaNguyenLieu(NguyenLieuModel nguyenLieu)
+        public async Task<String> suaKhachHang(KhachHangModel khachHang)
         {
-            var nguyenlieu = JsonConvert.SerializeObject(nguyenLieu);
-            var buffer = Encoding.UTF8.GetBytes(nguyenlieu);
+            var khachhang = JsonConvert.SerializeObject(khachHang);
+            var buffer = Encoding.UTF8.GetBytes(khachhang);
             var byteContent = new ByteArrayContent(buffer);
             byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            _response = await _client.PutAsync("nguyenlieu", byteContent);
+            _response = await _client.PutAsync("khachhang", byteContent);
             var json = await _response.Content.ReadAsStringAsync();
             var check = JsonConvert.DeserializeObject<String>(json);
             return check;
         }
 
-        public async Task<String> xoaNguyenLieu(String maNL)
+        public async Task<String> xoaKhachHang(int idKH)
         {
-            _response = await _client.DeleteAsync("nguyenlieu/" + maNL);
+            _response = await _client.DeleteAsync("khachhang/" + idKH);
             var json = await _response.Content.ReadAsStringAsync();
             var check = JsonConvert.DeserializeObject<String>(json);
             return check;

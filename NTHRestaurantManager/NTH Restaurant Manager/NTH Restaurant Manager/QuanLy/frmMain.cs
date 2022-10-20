@@ -52,6 +52,9 @@ namespace NTH_Restaurant_Manager
                 frm = this.CheckExists(typeof(frmTaiKhoan));
                 if (frm != null) frm.Close();
 
+                frm = this.CheckExists(typeof(frmKhachHang));
+                if (frm != null) frm.Close();
+
                 frm = this.CheckExists(typeof(frmDatBanTruoc));
                 if (frm != null) frm.Close();
 
@@ -96,7 +99,7 @@ namespace NTH_Restaurant_Manager
         public void dangNhap(bool dangNhap) // nếu đăng nhập thì gọi hàm này để cài đặt quyền
         {
             btn_DangNhap.Enabled = !dangNhap;
-            btn_DangXuat.Enabled = btn_NhanVien.Enabled = btn_TaiKhoan.Enabled = btn_DatBanTruoc.Enabled = btn_PhieuMua.Enabled = btn_PhieuNhap.Enabled = btn_TheoDoiDonHang.Enabled = dangNhap;
+            btn_DangXuat.Enabled = btn_NhanVien.Enabled = btn_TaiKhoan.Enabled = btn_KhachHang.Enabled = btn_DatBanTruoc.Enabled = btn_PhieuMua.Enabled = btn_PhieuNhap.Enabled = btn_TheoDoiDonHang.Enabled = dangNhap;
             btn_LoaiMonAn.Enabled = btn_MonAn.Enabled = btn_ThayDoiGiaMon.Enabled = btn_PhongBan.Enabled = btn_ChiTietPhong.Enabled = btn_NguyenLieu.Enabled = btn_ChiTietMonAn.Enabled = dangNhap;
             btn_ThongKeDoanhThuTheoThang.Enabled = btn_ThongKeLoiNhuan.Enabled = dangNhap;
         }
@@ -278,6 +281,18 @@ namespace NTH_Restaurant_Manager
                 Program.formThongKeLoiNhuanTheoThang = new frmThongKeLoiNhuanTheoThang();
                 Program.formThongKeLoiNhuanTheoThang.MdiParent = this;
                 Program.formThongKeLoiNhuanTheoThang.Show();
+            }
+        }
+
+        private void btnKhachHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmKhachHang));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.formKhachHang = new frmKhachHang();
+                Program.formKhachHang.MdiParent = this;
+                Program.formKhachHang.Show();
             }
         }
     }

@@ -214,6 +214,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\KhachHangModel.cs" />
+    <Compile Include="QuanLy\HeThong\frmKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy\HeThong\frmKhachHang.Designer.cs">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\MessageModel.cs" />
     <Compile Include="Model\NhanVienTaiKhoanModel.cs" />
     <Compile Include="Model\NVTKModel.cs" />
@@ -348,6 +355,7 @@
     <Compile Include="Repository\CTDatMonRepository.cs" />
     <Compile Include="Repository\CTMonAnRepository.cs" />
     <Compile Include="Repository\HoaDonRepository.cs" />
+    <Compile Include="Repository\KhachHangRepository.cs" />
     <Compile Include="Repository\LoaiMonAnRepository.cs" />
     <Compile Include="Repository\MonAnRepository.cs" />
     <Compile Include="Repository\NguyenLieuRepository.cs" />
@@ -356,6 +364,9 @@
     <Compile Include="Repository\PhongRepository.cs" />
     <Compile Include="Repository\TaiKhoanRepository.cs" />
     <Compile Include="Repository\ThayDoiGiaMonRepository.cs" />
+    <EmbeddedResource Include="QuanLy\HeThong\frmKhachHang.resx">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\DanhMuc\frmChitietMonAn.resx">
       <DependentUpon>frmChitietMonAn.cs</DependentUpon>
     </EmbeddedResource>

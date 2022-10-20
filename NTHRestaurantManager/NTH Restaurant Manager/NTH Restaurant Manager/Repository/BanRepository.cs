@@ -26,8 +26,8 @@ namespace NTH_Restaurant_Manager.Repository
         {
             _response = await _client.GetAsync("ban");
             var json = await _response.Content.ReadAsStringAsync();
-            var listLMA = JsonConvert.DeserializeObject<List<BanModel>>(json);
-            return listLMA;
+            var listB = JsonConvert.DeserializeObject<List<BanModel>>(json);
+            return listB;
         }
 
         public async Task<String> themBan(BanModel ban)
