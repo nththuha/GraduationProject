@@ -17,7 +17,7 @@ import com.example.nthrestaurant.network.model.Token
 import com.example.nthrestaurant.viewmodel.BepViewModel
 import com.example.nthrestaurant.viewmodel.PhaCheViewModel
 import com.example.nthrestaurant.viewmodel.PhucVuViewModel
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 
 class DangNhapFragment : Fragment() {
     private var _binding: FragmentDangNhapBinding? = null
@@ -52,6 +52,7 @@ class DangNhapFragment : Fragment() {
             btnDangNhap.setOnClickListener {
                 btnDangNhap.isClickable = false
                 pbLogin.visibility = View.VISIBLE
+
                 val maTK = etTenDangNhap.text.toString().trim()
                 val matKhau = etMatKhau.text.toString().trim()
                 if (maTK == "" || matKhau == "") {
