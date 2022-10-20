@@ -11,6 +11,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clLoaiMonAn"
         android:layout_width="125dp"
         android:layout_height="125dp"
         android:layout_marginTop="5dp"

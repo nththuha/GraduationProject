@@ -21,16 +21,6 @@
             app:destination="@id/trangChuPhaCheFragment" />
     </fragment>
     <fragment
-        android:id="@+id/chucNangFragment"
-        android:name="com.example.nthrestaurant.view.phucvu.QLPhieuDatFragment"
-        android:label="fragment_chuc_nang"
-        tools:layout="@layout/fragment_q_l_phieu_dat" />
-    <fragment
-        android:id="@+id/thongTinCaNhanFragment"
-        android:name="com.example.nthrestaurant.view.ThongTinCaNhanFragment"
-        android:label="fragment_thong_tin_ca_nhan"
-        tools:layout="@layout/fragment_thong_tin_ca_nhan" />
-    <fragment
         android:id="@+id/trangChuFragment"
         android:name="com.example.nthrestaurant.view.phucvu.TrangChuPhucVuFragment"
         android:label="fragment_trang_chu"
@@ -70,16 +60,6 @@
             app:destination="@id/trangChuFragment" />
     </fragment>
     <fragment
-        android:id="@+id/QLMonFragment"
-        android:name="com.example.nthrestaurant.view.phucvu.QLMonFragment"
-        android:label="fragment_q_l_mon"
-        tools:layout="@layout/fragment_q_l_mon" />
-    <fragment
-        android:id="@+id/QLPhongFragment"
-        android:name="com.example.nthrestaurant.view.QLPhongFragment"
-        android:label="fragment_q_l_phong"
-        tools:layout="@layout/fragment_q_l_phong" />
-    <fragment
         android:id="@+id/chiTietDatMonFragment"
         android:name="com.example.nthrestaurant.view.phucvu.ChiTietDatMonFragment"
         android:label="fragment_chi_tiet_dat_mon"
@@ -106,9 +86,4 @@
             android:id="@+id/action_trangChuPhaCheFragment_to_dangNhapFragment"
             app:destination="@id/dangNhapFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/QLMonDatFragment"
-        android:name="com.example.nthrestaurant.view.bep.QLMonDatFragment"
-        android:label="fragment_q_l_mon_dat"
-        tools:layout="@layout/fragment_q_l_mon_dat" />
 </navigation>

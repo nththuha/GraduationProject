@@ -1,5 +1,6 @@
 package com.example.nthrestaurant.view.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -12,18 +13,25 @@ import com.example.nthrestaurant.network.model.PhongEntity
 class PhongAdapter(private val clickListener: (PhongEntity) -> Unit) :
     ListAdapter<PhongEntity, PhongAdapter.PhongEntityViewHolder>(DiffCallback) {
 
+    var row: Int = -1
+
     class PhongEntityViewHolder(private var binding: ItemPhongBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(phong: PhongEntity) {
+        fun bind(phong: PhongEntity, position: Int, row: Int) {
             binding.apply {
                 binding.phong = phong
                 if (phong.trangThai == "Hết chỗ") {
                     clPhong.setBackgroundResource(R.drawable.background_room_unavailable)
                     clPhong.isEnabled = false;
                 } else {
-                    clPhong.setBackgroundResource(R.drawable.background_room)
+                    if (position == row) {
+                        clPhong.setBackgroundResource(R.drawable.background_room_click_true)
+                    } else {
+                        clPhong.setBackgroundResource(R.drawable.background_room)
+                    }
                     clPhong.isEnabled = true;
                 }
+                Log.e("phòng", "positon $position, row $row")
                 executePendingBindings()
             }
         }
@@ -40,6 +48,8 @@ class PhongAdapter(private val clickListener: (PhongEntity) -> Unit) :
         )
         viewHolder.itemView.setOnClickListener {
             val position = viewHolder.adapterPosition
+            row = position
+            notifyDataSetChanged()
             clickListener(getItem(position))
         }
         return viewHolder
@@ -47,7 +57,7 @@ class PhongAdapter(private val clickListener: (PhongEntity) -> Unit) :
 
     override fun onBindViewHolder(holder: PhongEntityViewHolder, position: Int) {
         val phong = getItem(position)
-        holder.bind(phong)
+        holder.bind(phong, position, row)
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<PhongEntity>() {
