@@ -29,6 +29,10 @@ public class KhachHangEntity {
     @Size(max = 50)
     private String sDT;
 
+    @Column(name = "CMND")
+    @Size(max = 50)
+    private String cmnd;
+
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idkh")
     private List<PhieuDatTruocEntity> phieudattruocList;
 

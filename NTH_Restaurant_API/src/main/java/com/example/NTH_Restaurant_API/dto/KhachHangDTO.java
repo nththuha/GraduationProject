@@ -17,10 +17,13 @@ public class KhachHangDTO {
 
     private String sDT;
 
+    private String cmnd;
+
     public KhachHangDTO(KhachHangEntity khachHangEntity) {
         this.idKH = khachHangEntity.getIdKH();
         this.hoTen = khachHangEntity.getHoTen();
         this.sDT = khachHangEntity.getSDT();
+        this.cmnd = khachHangEntity.getCmnd();
     }
 
     public KhachHangEntity toEntity() {
@@ -28,6 +31,7 @@ public class KhachHangDTO {
         khachHangEntity.setIdKH(this.idKH);
         khachHangEntity.setHoTen(this.hoTen);
         khachHangEntity.setSDT(this.sDT);
+        khachHangEntity.setCmnd(this.cmnd);
         return khachHangEntity;
     }
 }
