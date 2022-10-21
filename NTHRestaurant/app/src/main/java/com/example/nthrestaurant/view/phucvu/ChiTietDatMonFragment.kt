@@ -54,6 +54,11 @@ class ChiTietDatMonFragment : Fragment() {
                     ChiTietDatMonFragmentDirections.actionChiTietDatMonFragmentToTrangChuFragment()
                 view.findNavController().navigate(action)
             }
+            ivThem.setOnClickListener {
+                val action =
+                    ChiTietDatMonFragmentDirections.actionChiTietDatMonFragmentToDatMonFragment()
+                view.findNavController().navigate(action)
+            }
         }
     }
 
