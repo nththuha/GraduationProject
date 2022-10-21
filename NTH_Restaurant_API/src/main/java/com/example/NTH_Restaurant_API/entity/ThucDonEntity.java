@@ -33,6 +33,9 @@ public class ThucDonEntity {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date ngayTao;
 
+    @Column(name = "GIA")
+    private Integer gia;
+
     @Column(name = "LOAITD")
     @Size(max = 50)
     private String loaitd;
