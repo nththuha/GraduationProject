@@ -22,6 +22,9 @@ public class CT_ThucDonEntity {
     @Column(name = "SOLUONG")
     private Integer soLuong;
 
+    @Column(name = "GIA")
+    private Integer gia;
+
     @ManyToOne
     @JoinColumn(name = "MAMA")
     private MonAnEntity mama;

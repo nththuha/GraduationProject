@@ -9,7 +9,7 @@ public interface ThucDonService {
 
     String themThucDon(ThucDonDTO thucDonDTO);
 
-    String suaThucDon();
+    String xoaThucDon(Integer idTD);
 
-    String xoaThucDon();
+    String saoChepThucDon(ThucDonDTO thucDonDTO);
 }

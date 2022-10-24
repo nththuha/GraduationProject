@@ -33,17 +33,18 @@ public class ThucDonServiceImpl implements ThucDonService {
     @Override
     public List<ThucDonDTO> layDSThucDon() {
         List<ThucDonEntity> listTD = thucDonRepository.findAll();
-        List<ThucDonDTO> list = listTD.stream().map(ThucDonDTO::new).collect(Collectors.toList());
-        for(ThucDonDTO i: list){
+        for(ThucDonEntity i: listTD){
             int t = 0;
-            for(CT_ThucDonDTO j: i.getListCT_ThucDon()){
-                int gia = thayDoiGiaMonService.layGiaHienTai(j.getMama());
+            for(CT_ThucDonEntity j: i.getCtThucdonList()){
+                int gia = thayDoiGiaMonService.layGiaHienTai(j.getMama().getMaMA());
                 j.setGia(gia);
+                ct_thucDonRepository.save(j);
                 t += gia;
             }
             i.setGia(t);
+            thucDonRepository.save(i);
         }
-        return list;
+        return listTD.stream().map(ThucDonDTO::new).collect(Collectors.toList());
     }
 
     @Override
@@ -68,12 +69,22 @@ public class ThucDonServiceImpl implements ThucDonService {
     }
 
     @Override
-    public String suaThucDon() {
-        return null;
+    public String xoaThucDon(Integer idTD) {
+        if(!thucDonRepository.existsByIdTD(idTD)) return "false";
+        List<CT_ThucDonEntity> listCTT = ct_thucDonRepository.findByIdtd_IdTD(idTD);
+        try {
+            ct_thucDonRepository.deleteAll(listCTT);
+            thucDonRepository.deleteById(idTD);
+            return "true";
+        }
+        catch (Exception e){
+            return "false";
+        }
     }
 
     @Override
-    public String xoaThucDon() {
+    public String saoChepThucDon(ThucDonDTO thucDonDTO) {
+
         return null;
     }
 }

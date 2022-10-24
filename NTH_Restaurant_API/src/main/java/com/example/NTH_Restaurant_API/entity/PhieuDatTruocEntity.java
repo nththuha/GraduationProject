@@ -29,15 +29,18 @@ public class PhieuDatTruocEntity {
     @Temporal(TemporalType.TIMESTAMP)
     private Date ngayDat;
 
+    @Column(name = "GIA")
+    private Integer gia;
+
     @JoinColumn(name = "IDKH")
-    @ManyToOne(optional = false)
+    @ManyToOne()
     private KhachHangEntity idkh;
 
     @JoinColumn(name = "IDNV")
     @ManyToOne
     private NhanVienEntity idnv;
 
-    @OneToMany(mappedBy = "idpdt")
+    @OneToOne(mappedBy = "idpdt")
     private List<PhieuDatEntity> phieudatList;
 
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idpdt")

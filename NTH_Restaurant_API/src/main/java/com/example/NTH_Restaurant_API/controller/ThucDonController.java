@@ -26,12 +26,12 @@ public class ThucDonController {
     }
 
     @PutMapping("")
-    public String suaThucDon(@Valid @RequestBody ThucDonDTO thucDonDTO){
-        return thucDonService.suaThucDon();
+    public String saoChepThucDon(@Valid @RequestBody ThucDonDTO thucDonDTO){
+        return thucDonService.saoChepThucDon(thucDonDTO);
     }
 
     @DeleteMapping("/{idTD}")
     public String xoaThucDon(@PathVariable Integer idTD){
-        return thucDonService.xoaThucDon();
+        return thucDonService.xoaThucDon(idTD);
     }
 }

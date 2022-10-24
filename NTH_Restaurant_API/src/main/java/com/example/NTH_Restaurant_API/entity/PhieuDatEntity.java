@@ -26,7 +26,7 @@ public class PhieuDatEntity {
     private Date ngay;
 
     @JoinColumn(name = "IDPDT")
-    @ManyToOne
+    @OneToOne
     private PhieuDatTruocEntity idpdt;
 
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idpd")

@@ -15,7 +15,7 @@ public class CT_ThucDonDTO {
     private Integer soLuong;
     private String mama;
     private String tenma;
-    private int gia;
+    private Integer gia;
     private Integer idtd;
 
     public CT_ThucDonDTO(CT_ThucDonEntity ct_thucDonEntity){
@@ -23,6 +23,7 @@ public class CT_ThucDonDTO {
         this.soLuong = ct_thucDonEntity.getSoLuong();
         this.mama = ct_thucDonEntity.getMama().getMaMA();
         this.tenma = ct_thucDonEntity.getMama().getTenMA();
+        this.gia = ct_thucDonEntity.getGia();
         this.idtd = ct_thucDonEntity.getIdtd().getIdTD();
     }
 
