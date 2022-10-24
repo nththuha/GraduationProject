@@ -38,7 +38,7 @@ public class MonAnServiceImpl implements MonAnService {
 
     @Override
     public List<MonAnDTO> layDSMonAn() {
-        List<MonAnEntity> dsMA = monAnRepository.findAll();
+        List<MonAnEntity> dsMA = monAnRepository.layDSMonAnTheoLoai();
         List<MonAnDTO> dsMADTO = dsMA.stream().map(MonAnDTO::new).collect(Collectors.toList());
         for(int i = 0; i < dsMADTO.size(); i++){
             dsMADTO.get(i).setGia(thayDoiGiaMonService.layGiaHienTai(dsMADTO.get(i).getMaMA()));

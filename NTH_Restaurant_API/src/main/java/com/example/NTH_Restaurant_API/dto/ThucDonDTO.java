@@ -20,7 +20,6 @@ public class ThucDonDTO {
     private Date ngayTao;
     private Integer gia;
     private String loaitd;
-
     private List<CT_ThucDonDTO> listCT_ThucDon;
 
     public ThucDonDTO(ThucDonEntity thucDonEntity){

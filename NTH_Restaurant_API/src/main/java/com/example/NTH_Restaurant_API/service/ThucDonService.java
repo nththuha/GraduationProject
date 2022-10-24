@@ -6,4 +6,10 @@ import java.util.List;
 
 public interface ThucDonService {
     List<ThucDonDTO> layDSThucDon();
+
+    String themThucDon(ThucDonDTO thucDonDTO);
+
+    String suaThucDon();
+
+    String xoaThucDon();
 }

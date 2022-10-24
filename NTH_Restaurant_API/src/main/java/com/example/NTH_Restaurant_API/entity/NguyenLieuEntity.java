@@ -32,6 +32,9 @@ public class NguyenLieuEntity {
     @Column(name = "SLTON")
     private Integer slTon;
 
+    @Column(name = "SLTOITHIEU")
+    private Integer slToiThieu;
+
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "manl")
     private List<CT_MonAnEntity> ctMonanList;
 
