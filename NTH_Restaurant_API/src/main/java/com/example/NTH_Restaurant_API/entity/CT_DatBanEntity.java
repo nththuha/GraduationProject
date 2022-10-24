@@ -26,4 +26,8 @@ public class CT_DatBanEntity {
     @ManyToOne
     @JoinColumn(name = "IDPD")
     private PhieuDatEntity idpd;
+
+    @JoinColumn(name = "IDTD")
+    @ManyToOne()
+    private ThucDonEntity idtd;
 }

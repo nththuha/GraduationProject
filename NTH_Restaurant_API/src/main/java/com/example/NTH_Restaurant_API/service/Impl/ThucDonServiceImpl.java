@@ -2,9 +2,11 @@ package com.example.NTH_Restaurant_API.service.Impl;
 
 import com.example.NTH_Restaurant_API.dto.CT_ThucDonDTO;
 import com.example.NTH_Restaurant_API.dto.ThucDonDTO;
+import com.example.NTH_Restaurant_API.entity.CT_DatBanTruocEntity;
 import com.example.NTH_Restaurant_API.entity.CT_ThucDonEntity;
 import com.example.NTH_Restaurant_API.entity.MonAnEntity;
 import com.example.NTH_Restaurant_API.entity.ThucDonEntity;
+import com.example.NTH_Restaurant_API.repository.CT_DatBanTruocRepository;
 import com.example.NTH_Restaurant_API.repository.CT_ThucDonRepository;
 import com.example.NTH_Restaurant_API.repository.MonAnRepository;
 import com.example.NTH_Restaurant_API.repository.ThucDonRepository;
@@ -26,6 +28,9 @@ public class ThucDonServiceImpl implements ThucDonService {
 
     @Autowired
     private ThayDoiGiaMonService thayDoiGiaMonService;
+
+    @Autowired
+    private CT_DatBanTruocRepository ct_datBanTruocRepository;
 
     @Autowired
     private MonAnRepository monAnRepository;
@@ -71,6 +76,8 @@ public class ThucDonServiceImpl implements ThucDonService {
     @Override
     public String xoaThucDon(Integer idTD) {
         if(!thucDonRepository.existsByIdTD(idTD)) return "false";
+        List<CT_DatBanTruocEntity> listCTDBT = ct_datBanTruocRepository.findByIdtd_IdTD(idTD);
+        if(listCTDBT.size() > 0) return "false";
         List<CT_ThucDonEntity> listCTT = ct_thucDonRepository.findByIdtd_IdTD(idTD);
         try {
             ct_thucDonRepository.deleteAll(listCTT);
