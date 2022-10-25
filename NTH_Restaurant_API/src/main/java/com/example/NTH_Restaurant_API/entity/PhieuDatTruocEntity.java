@@ -41,7 +41,7 @@ public class PhieuDatTruocEntity {
     private NhanVienEntity idnv;
 
     @OneToOne(mappedBy = "idpdt")
-    private List<PhieuDatEntity> phieudatList;
+    private PhieuDatEntity idpdt;
 
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idpdt")
     private List<CT_DatBanTruocEntity> ctDatbantruocList;

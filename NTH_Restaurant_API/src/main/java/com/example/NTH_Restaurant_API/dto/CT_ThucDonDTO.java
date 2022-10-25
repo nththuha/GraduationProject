@@ -31,6 +31,7 @@ public class CT_ThucDonDTO {
         CT_ThucDonEntity ct_thucDonEntity = new CT_ThucDonEntity();
         ct_thucDonEntity.setIdCTTD(this.idCTTD);
         ct_thucDonEntity.setSoLuong(this.soLuong);
+        ct_thucDonEntity.setGia(this.gia);
         return ct_thucDonEntity;
     }
 }
