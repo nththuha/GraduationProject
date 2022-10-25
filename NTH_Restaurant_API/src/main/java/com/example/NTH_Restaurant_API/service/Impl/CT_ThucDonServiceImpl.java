@@ -38,7 +38,9 @@ public class CT_ThucDonServiceImpl implements CT_ThucDonService {
         ThucDonEntity thucDon = thucDonRepository.getById(ct_thucDonDTO.getIdtd());
         ct_thucDon.setMama(monAn);
         ct_thucDon.setIdtd(thucDon);
+        thucDon.setGia(thucDon.getGia() + ct_thucDon.getGia());
         try {
+            thucDonRepository.save(thucDon);
             ct_thucDonRepository.save(ct_thucDon);
             return "true";
         }
