@@ -214,6 +214,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="mesCTThucDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mesCTThucDon.Designer.cs">
+      <DependentUpon>mesCTThucDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CTThucDonModel.cs" />
+    <Compile Include="Model\ThucDonModel.cs" />
+    <Compile Include="QuanLy\DanhMuc\frmThucDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy\DanhMuc\frmThucDon.Designer.cs">
+      <DependentUpon>frmThucDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\KhachHangModel.cs" />
     <Compile Include="QuanLy\HeThong\frmKhachHang.cs">
       <SubType>Form</SubType>
@@ -354,6 +368,7 @@
     <Compile Include="Repository\CTBanRepository.cs" />
     <Compile Include="Repository\CTDatMonRepository.cs" />
     <Compile Include="Repository\CTMonAnRepository.cs" />
+    <Compile Include="Repository\CTThucDonRepository.cs" />
     <Compile Include="Repository\HoaDonRepository.cs" />
     <Compile Include="Repository\KhachHangRepository.cs" />
     <Compile Include="Repository\LoaiMonAnRepository.cs" />
@@ -364,6 +379,13 @@
     <Compile Include="Repository\PhongRepository.cs" />
     <Compile Include="Repository\TaiKhoanRepository.cs" />
     <Compile Include="Repository\ThayDoiGiaMonRepository.cs" />
+    <Compile Include="Repository\ThucDonRepository.cs" />
+    <EmbeddedResource Include="mesCTThucDon.resx">
+      <DependentUpon>mesCTThucDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy\DanhMuc\frmThucDon.resx">
+      <DependentUpon>frmThucDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\HeThong\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -439,6 +461,7 @@
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTBanModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTDatMonModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTMonAnModel.datasource" />
+    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTThucDonModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.HoaDonModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.KhachHangModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.LoaiMonAnModel.datasource" />
@@ -452,6 +475,7 @@
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.PhongModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.TaiKhoanModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.ThayDoiGiaMonModel.datasource" />
+    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.ThucDonModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.TokenModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -282,7 +282,6 @@ namespace NTH_Restaurant_Manager
                     capNhatPhong();
                     txt_MaPhong.Enabled = true;
                 }
-                
             }
             else
             {

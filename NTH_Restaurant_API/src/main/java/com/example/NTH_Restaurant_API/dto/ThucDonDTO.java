@@ -37,6 +37,7 @@ public class ThucDonDTO {
         thucDonEntity.setTenTD(this.tenTD);
         thucDonEntity.setNgayTao(this.ngayTao);
         thucDonEntity.setLoaitd(this.loaitd);
+        thucDonEntity.setGia(this.gia);
         return thucDonEntity;
     }
 }

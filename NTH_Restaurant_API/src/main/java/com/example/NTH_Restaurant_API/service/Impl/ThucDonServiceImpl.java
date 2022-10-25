@@ -55,17 +55,8 @@ public class ThucDonServiceImpl implements ThucDonService {
     @Override
     public String themThucDon(ThucDonDTO thucDonDTO) {
         ThucDonEntity thucDon = thucDonDTO.toEntity();
-        List<CT_ThucDonDTO> listCTTD = thucDonDTO.getListCT_ThucDon();
         try{
-            ThucDonEntity td = thucDonRepository.save(thucDon);
-            for(CT_ThucDonDTO i: listCTTD){
-                CT_ThucDonEntity temp = i.toEntity();
-                temp.setIdCTTD(null);
-                MonAnEntity monAn = monAnRepository.getById(i.getMama());
-                temp.setMama(monAn);
-                temp.setIdtd(td);
-                ct_thucDonRepository.save(temp);
-            }
+            thucDonRepository.save(thucDon);
             return "true";
         }
         catch (Exception e){

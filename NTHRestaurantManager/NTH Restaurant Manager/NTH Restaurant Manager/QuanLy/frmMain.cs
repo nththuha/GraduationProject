@@ -76,6 +76,9 @@ namespace NTH_Restaurant_Manager
                 frm = this.CheckExists(typeof(frmNguyenLieu));
                 if (frm != null) frm.Close();
 
+                frm = this.CheckExists(typeof(frmThucDon));
+                if (frm != null) frm.Close();
+
                 frm = this.CheckExists(typeof(frmThayDoiGiaMon));
                 if (frm != null) frm.Close();
 
@@ -100,7 +103,7 @@ namespace NTH_Restaurant_Manager
         {
             btn_DangNhap.Enabled = !dangNhap;
             btn_DangXuat.Enabled = btn_NhanVien.Enabled = btn_TaiKhoan.Enabled = btn_KhachHang.Enabled = btn_DatBanTruoc.Enabled = btn_PhieuMua.Enabled = btn_PhieuNhap.Enabled = btn_TheoDoiDonHang.Enabled = dangNhap;
-            btn_LoaiMonAn.Enabled = btn_MonAn.Enabled = btn_ThayDoiGiaMon.Enabled = btn_PhongBan.Enabled = btn_ChiTietPhong.Enabled = btn_NguyenLieu.Enabled = btn_ChiTietMonAn.Enabled = dangNhap;
+            btn_LoaiMonAn.Enabled = btn_MonAn.Enabled = btn_ThayDoiGiaMon.Enabled = btn_PhongBan.Enabled = btn_ChiTietPhong.Enabled = btn_NguyenLieu.Enabled = btn_ChiTietMonAn.Enabled = btn_ThucDon.Enabled = dangNhap;
             btn_ThongKeDoanhThuTheoThang.Enabled = btn_ThongKeLoiNhuan.Enabled = dangNhap;
         }
 
@@ -293,6 +296,18 @@ namespace NTH_Restaurant_Manager
                 Program.formKhachHang = new frmKhachHang();
                 Program.formKhachHang.MdiParent = this;
                 Program.formKhachHang.Show();
+            }
+        }
+
+        private void btn_ThucDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmThucDon));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.formThucDon = new frmThucDon();
+                Program.formThucDon.MdiParent = this;
+                Program.formThucDon.Show();
             }
         }
     }

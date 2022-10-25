@@ -53,6 +53,8 @@ namespace NTH_Restaurant_Manager
             this.btn_DatBanTruoc = new DevExpress.XtraBars.BarButtonItem();
             this.btn_PhieuMua = new DevExpress.XtraBars.BarButtonItem();
             this.btn_PhieuNhap = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_KhachHang = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_ThucDon = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -70,7 +72,6 @@ namespace NTH_Restaurant_Manager
             this.tssl_MaNV = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssl_HoTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssl_BoPhan = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btn_KhachHang = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             this.statusStrip.SuspendLayout();
@@ -103,10 +104,11 @@ namespace NTH_Restaurant_Manager
             this.btn_DatBanTruoc,
             this.btn_PhieuMua,
             this.btn_PhieuNhap,
-            this.btn_KhachHang});
+            this.btn_KhachHang,
+            this.btn_ThucDon});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbonControl1.MaxItemId = 23;
+            this.ribbonControl1.MaxItemId = 24;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -310,6 +312,26 @@ namespace NTH_Restaurant_Manager
             this.btn_PhieuNhap.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btn_PhieuNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_PhieuNhap_ItemClick);
             // 
+            // btn_KhachHang
+            // 
+            this.btn_KhachHang.Caption = "Khách hàng";
+            this.btn_KhachHang.Enabled = false;
+            this.btn_KhachHang.Id = 22;
+            this.btn_KhachHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_KhachHang.ImageOptions.Image")));
+            this.btn_KhachHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_KhachHang.ImageOptions.LargeImage")));
+            this.btn_KhachHang.Name = "btn_KhachHang";
+            this.btn_KhachHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhachHang_ItemClick);
+            // 
+            // btn_ThucDon
+            // 
+            this.btn_ThucDon.Caption = "Thực đơn";
+            this.btn_ThucDon.Enabled = false;
+            this.btn_ThucDon.Id = 23;
+            this.btn_ThucDon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ThucDon.ImageOptions.Image")));
+            this.btn_ThucDon.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_ThucDon.ImageOptions.LargeImage")));
+            this.btn_ThucDon.Name = "btn_ThucDon";
+            this.btn_ThucDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ThucDon_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -370,6 +392,7 @@ namespace NTH_Restaurant_Manager
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.btn_ThayDoiGiaMon);
             this.ribbonPageGroup7.ItemLinks.Add(this.btn_ChiTietMonAn);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btn_ThucDon);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             // 
             // ribbonPageGroup4
@@ -422,16 +445,6 @@ namespace NTH_Restaurant_Manager
             // 
             this.tssl_BoPhan.Name = "tssl_BoPhan";
             this.tssl_BoPhan.Size = new System.Drawing.Size(0, 16);
-            // 
-            // btn_KhachHang
-            // 
-            this.btn_KhachHang.Caption = "Khách hàng";
-            this.btn_KhachHang.Enabled = false;
-            this.btn_KhachHang.Id = 22;
-            this.btn_KhachHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.btn_KhachHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.btn_KhachHang.Name = "btn_KhachHang";
-            this.btn_KhachHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhachHang_ItemClick);
             // 
             // frmMain
             // 
@@ -497,6 +510,7 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.BarButtonItem btn_KhachHang;
+        private DevExpress.XtraBars.BarButtonItem btn_ThucDon;
     }
 }
 

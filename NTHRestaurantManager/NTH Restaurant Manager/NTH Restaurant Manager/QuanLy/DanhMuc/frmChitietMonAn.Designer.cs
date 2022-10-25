@@ -30,8 +30,8 @@ namespace NTH_Restaurant_Manager
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChitietMonAn));
             System.Windows.Forms.Label soLuongLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChitietMonAn));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btn_Them = new DevExpress.XtraBars.BarButtonItem();
@@ -59,15 +59,14 @@ namespace NTH_Restaurant_Manager
             this.colchuThich = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.gcCTMA = new DevExpress.XtraGrid.GridControl();
+            this.se_SoLuong = new DevExpress.XtraEditors.SpinEdit();
             this.bdsCTMA = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.gcCTMA = new DevExpress.XtraGrid.GridControl();
             this.gvCTMA = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colsoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltenma1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltennl1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldonVi1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.se_SoLuong = new DevExpress.XtraEditors.SpinEdit();
             soLuongLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -79,11 +78,21 @@ namespace NTH_Restaurant_Manager
             ((System.ComponentModel.ISupportInitialize)(this.gvMA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcCTMA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCTMA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvCTMA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.se_SoLuong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCTMA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcCTMA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCTMA)).BeginInit();
             this.SuspendLayout();
+            // 
+            // soLuongLabel
+            // 
+            soLuongLabel.AutoSize = true;
+            soLuongLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            soLuongLabel.Location = new System.Drawing.Point(28, 430);
+            soLuongLabel.Name = "soLuongLabel";
+            soLuongLabel.Size = new System.Drawing.Size(97, 27);
+            soLuongLabel.TabIndex = 13;
+            soLuongLabel.Text = "Số lượng";
             // 
             // barManager1
             // 
@@ -351,95 +360,6 @@ namespace NTH_Restaurant_Manager
             this.panelControl1.Size = new System.Drawing.Size(635, 672);
             this.panelControl1.TabIndex = 5;
             // 
-            // gcCTMA
-            // 
-            this.gcCTMA.DataSource = this.bdsCTMA;
-            this.gcCTMA.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcCTMA.Location = new System.Drawing.Point(2, 2);
-            this.gcCTMA.MainView = this.gvCTMA;
-            this.gcCTMA.MenuManager = this.barManager1;
-            this.gcCTMA.Name = "gcCTMA";
-            this.gcCTMA.Size = new System.Drawing.Size(631, 354);
-            this.gcCTMA.TabIndex = 0;
-            this.gcCTMA.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvCTMA});
-            // 
-            // bdsCTMA
-            // 
-            this.bdsCTMA.DataSource = typeof(NTH_Restaurant_Manager.Model.CTMonAnModel);
-            // 
-            // gvCTMA
-            // 
-            this.gvCTMA.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colsoLuong,
-            this.coltenma1,
-            this.coltennl1,
-            this.coldonVi1});
-            this.gvCTMA.GridControl = this.gcCTMA;
-            this.gvCTMA.Name = "gvCTMA";
-            this.gvCTMA.OptionsBehavior.Editable = false;
-            this.gvCTMA.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvCTMA_RowClick);
-            // 
-            // colsoLuong
-            // 
-            this.colsoLuong.Caption = "SỐ LƯỢNG";
-            this.colsoLuong.FieldName = "soLuong";
-            this.colsoLuong.MinWidth = 25;
-            this.colsoLuong.Name = "colsoLuong";
-            this.colsoLuong.Visible = true;
-            this.colsoLuong.VisibleIndex = 3;
-            this.colsoLuong.Width = 94;
-            // 
-            // coltenma1
-            // 
-            this.coltenma1.Caption = "TẾN MÓN ĂN";
-            this.coltenma1.FieldName = "tenma";
-            this.coltenma1.MinWidth = 25;
-            this.coltenma1.Name = "coltenma1";
-            this.coltenma1.Visible = true;
-            this.coltenma1.VisibleIndex = 0;
-            this.coltenma1.Width = 94;
-            // 
-            // coltennl1
-            // 
-            this.coltennl1.Caption = "TÊN NGUYÊN LIỆU";
-            this.coltennl1.FieldName = "tennl";
-            this.coltennl1.MinWidth = 25;
-            this.coltennl1.Name = "coltennl1";
-            this.coltennl1.Visible = true;
-            this.coltennl1.VisibleIndex = 1;
-            this.coltennl1.Width = 94;
-            // 
-            // coldonVi1
-            // 
-            this.coldonVi1.Caption = "ĐƠN VỊ";
-            this.coldonVi1.FieldName = "donVi";
-            this.coldonVi1.MinWidth = 25;
-            this.coldonVi1.Name = "coldonVi1";
-            this.coldonVi1.Visible = true;
-            this.coldonVi1.VisibleIndex = 2;
-            this.coldonVi1.Width = 94;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 369);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(479, 35);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "QUẢN LÝ CÔNG THỨC MÓN ĂN";
-            // 
-            // soLuongLabel
-            // 
-            soLuongLabel.AutoSize = true;
-            soLuongLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            soLuongLabel.Location = new System.Drawing.Point(28, 430);
-            soLuongLabel.Name = "soLuongLabel";
-            soLuongLabel.Size = new System.Drawing.Size(97, 27);
-            soLuongLabel.TabIndex = 13;
-            soLuongLabel.Text = "Số lượng";
-            // 
             // se_SoLuong
             // 
             this.se_SoLuong.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsCTMA, "soLuong", true));
@@ -457,6 +377,74 @@ namespace NTH_Restaurant_Manager
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.se_SoLuong.Size = new System.Drawing.Size(435, 32);
             this.se_SoLuong.TabIndex = 14;
+            // 
+            // bdsCTMA
+            // 
+            this.bdsCTMA.DataSource = typeof(NTH_Restaurant_Manager.Model.CTMonAnModel);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 369);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(479, 35);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "QUẢN LÝ CÔNG THỨC MÓN ĂN";
+            // 
+            // gcCTMA
+            // 
+            this.gcCTMA.DataSource = this.bdsCTMA;
+            this.gcCTMA.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcCTMA.Location = new System.Drawing.Point(2, 2);
+            this.gcCTMA.MainView = this.gvCTMA;
+            this.gcCTMA.MenuManager = this.barManager1;
+            this.gcCTMA.Name = "gcCTMA";
+            this.gcCTMA.Size = new System.Drawing.Size(631, 354);
+            this.gcCTMA.TabIndex = 0;
+            this.gcCTMA.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvCTMA});
+            // 
+            // gvCTMA
+            // 
+            this.gvCTMA.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colsoLuong,
+            this.coltennl1,
+            this.coldonVi1});
+            this.gvCTMA.GridControl = this.gcCTMA;
+            this.gvCTMA.Name = "gvCTMA";
+            this.gvCTMA.OptionsBehavior.Editable = false;
+            this.gvCTMA.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvCTMA_RowClick);
+            // 
+            // colsoLuong
+            // 
+            this.colsoLuong.Caption = "SỐ LƯỢNG";
+            this.colsoLuong.FieldName = "soLuong";
+            this.colsoLuong.MinWidth = 25;
+            this.colsoLuong.Name = "colsoLuong";
+            this.colsoLuong.Visible = true;
+            this.colsoLuong.VisibleIndex = 2;
+            this.colsoLuong.Width = 94;
+            // 
+            // coltennl1
+            // 
+            this.coltennl1.Caption = "TÊN NGUYÊN LIỆU";
+            this.coltennl1.FieldName = "tennl";
+            this.coltennl1.MinWidth = 25;
+            this.coltennl1.Name = "coltennl1";
+            this.coltennl1.Visible = true;
+            this.coltennl1.VisibleIndex = 0;
+            this.coltennl1.Width = 94;
+            // 
+            // coldonVi1
+            // 
+            this.coldonVi1.Caption = "ĐƠN VỊ";
+            this.coldonVi1.FieldName = "donVi";
+            this.coldonVi1.MinWidth = 25;
+            this.coldonVi1.Name = "coldonVi1";
+            this.coldonVi1.Visible = true;
+            this.coldonVi1.VisibleIndex = 1;
+            this.coldonVi1.Width = 94;
             // 
             // frmChitietMonAn
             // 
@@ -482,10 +470,10 @@ namespace NTH_Restaurant_Manager
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcCTMA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsCTMA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvCTMA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.se_SoLuong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCTMA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcCTMA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCTMA)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -524,7 +512,6 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraGrid.Columns.GridColumn coldonVi;
         private DevExpress.XtraGrid.Columns.GridColumn colslTon;
         private DevExpress.XtraGrid.Columns.GridColumn colsoLuong;
-        private DevExpress.XtraGrid.Columns.GridColumn coltenma1;
         private DevExpress.XtraGrid.Columns.GridColumn coltennl1;
         private DevExpress.XtraGrid.Columns.GridColumn coldonVi1;
         private System.Windows.Forms.Label label1;

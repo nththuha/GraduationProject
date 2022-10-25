@@ -26,6 +26,7 @@ namespace NTH_Restaurant_Manager
         public static frmLoaiMonAn formLoaiMonAn;
         public static frmThayDoiGiaMon formThayDoiGiaMon;
         public static frmNguyenLieu formNguyenLieu;
+        public static frmThucDon formThucDon;
         public static frmChitietMonAn formChiTietMonAn;
         public static frmPhongBan formPhongBan;
         public static frmChiTietPhong formChiTietPhong;
@@ -33,9 +34,12 @@ namespace NTH_Restaurant_Manager
         public static frmThongKeLoiNhuanTheoThang formThongKeLoiNhuanTheoThang;
 
         public static mesPhongBan mesPhongBan;
+        public static mesCTThucDon mesCTThucDon;
 
         public static String luaChonPB; //Phòng hay Bàn
         public static String actionPB; //Thêm, Cập nhật, Xóa
+
+        public static int soLuong; //Số lượng đặt cho chi tiết thực đơn
 
         public static String URL = "https://nth-restaurant-api.herokuapp.com/api/";
 
