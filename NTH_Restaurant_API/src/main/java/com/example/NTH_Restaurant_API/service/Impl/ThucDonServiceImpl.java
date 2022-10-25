@@ -37,7 +37,7 @@ public class ThucDonServiceImpl implements ThucDonService {
 
     @Override
     public List<ThucDonDTO> layDSThucDon() {
-        List<ThucDonEntity> listTD = thucDonRepository.findAll();
+        List<ThucDonEntity> listTD = thucDonRepository.layDSThucDonTheoLoai();
         for(ThucDonEntity i: listTD){
             int t = 0;
             for(CT_ThucDonEntity j: i.getCtThucdonList()){
