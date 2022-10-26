@@ -30,6 +30,18 @@ namespace NTH_Restaurant_Manager.Repository
             return listCTB;
         }
 
+        public async Task<List<BanModel>> layDSBanTheoPhongTheoNgay(PhongNgay phongNgay)
+        {
+            var phongngay = JsonConvert.SerializeObject(phongNgay);
+            var buffer = Encoding.UTF8.GetBytes(phongngay);
+            var byteContent = new ByteArrayContent(buffer);
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            _response = await _client.PostAsync("ctban/dattruoc", byteContent);
+            var json = await _response.Content.ReadAsStringAsync();
+            var listB = JsonConvert.DeserializeObject<List<BanModel>>(json);
+            return listB;
+        }
+
         public async Task<String> themCTBan(CTBanModel ctBan)
         {
             var ctban = JsonConvert.SerializeObject(ctBan);

@@ -17,14 +17,18 @@ public class PhieuDatTruocDTO {
     private Date ngayTao;
     private Date ngayDat;
     private Integer idkh;
+    private String hoTenKH;
     private Integer idnv;
+    private String hoTenNV;
 
     public PhieuDatTruocDTO(PhieuDatTruocEntity phieuDatTruocEntity){
         this.idPDT = phieuDatTruocEntity.getIdPDT();
         this.ngayTao = phieuDatTruocEntity.getNgayTao();
         this.ngayDat = phieuDatTruocEntity.getNgayDat();
         this.idnv = phieuDatTruocEntity.getIdnv().getIdNV();
+        this.hoTenNV = phieuDatTruocEntity.getIdnv().getHoTen();
         this.idkh = phieuDatTruocEntity.getIdkh().getIdKH();
+        this.hoTenKH = phieuDatTruocEntity.getIdkh().getHoTen();
     }
 
     public PhieuDatTruocEntity toEntity(){
