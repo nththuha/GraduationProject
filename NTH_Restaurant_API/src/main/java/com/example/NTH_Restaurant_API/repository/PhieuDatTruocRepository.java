@@ -10,8 +10,13 @@ import java.util.List;
 
 public interface PhieuDatTruocRepository extends JpaRepository<PhieuDatTruocEntity, Integer> {
     Boolean existsByIdPDT(Integer idPDT);
+//    @Transactional
+//    @Modifying
+//    @Query(value = "select * from phieudattruoc where phieudattruoc.ngaydat >= GETDATE()", nativeQuery = true)
+//    public List<PhieuDatTruocEntity> layDSPhieuDatTruoc();
+
     @Transactional
     @Modifying
-    @Query(value = "select * from phieudattruoc where phieudattruoc.ngaydat >= GETDATE()", nativeQuery = true)
+    @Query(value = "select * from phieudattruoc where phieudattruoc.ngaydat >= current_date", nativeQuery = true)
     public List<PhieuDatTruocEntity> layDSPhieuDatTruoc();
 }

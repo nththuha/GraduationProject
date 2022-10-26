@@ -221,6 +221,7 @@
       <DependentUpon>mesCTThucDon.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\CTThucDonModel.cs" />
+    <Compile Include="Model\PhongNgay.cs" />
     <Compile Include="Model\ThucDonModel.cs" />
     <Compile Include="QuanLy\DanhMuc\frmThucDon.cs">
       <SubType>Form</SubType>
