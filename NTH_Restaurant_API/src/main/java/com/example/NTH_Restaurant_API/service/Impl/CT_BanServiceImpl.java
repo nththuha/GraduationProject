@@ -1,7 +1,9 @@
 package com.example.NTH_Restaurant_API.service.Impl;
 
 import com.example.NTH_Restaurant_API.dto.BanDTO;
+import com.example.NTH_Restaurant_API.dto.BanDaDat;
 import com.example.NTH_Restaurant_API.dto.CT_BanDTO;
+import com.example.NTH_Restaurant_API.dto.PhongNgay;
 import com.example.NTH_Restaurant_API.entity.BanEntity;
 import com.example.NTH_Restaurant_API.entity.CT_BanEntity;
 import com.example.NTH_Restaurant_API.entity.PhongEntity;
@@ -88,5 +90,19 @@ public class CT_BanServiceImpl implements CT_BanService {
         catch (Exception e){
             return "false";
         }
+    }
+
+    @Override
+    public List<BanDTO> layDSBanTheoPhongTheoNgay(PhongNgay phongNgay) {
+        List<BanDaDat> listT = ct_banRepository.layCTBanDaDat(phongNgay.getNgay(), phongNgay.getMaPhong());
+        List<BanDTO> listB = layDSBanTheoPhong(phongNgay.getMaPhong());
+        for(BanDTO ban: listB){
+            for(BanDaDat i: listT){
+                if(ban.getMaBan().equals(i.getMaban())){
+                    ban.setTrangThai("Đã đặt");
+                }
+            }
+        }
+        return listB;
     }
 }

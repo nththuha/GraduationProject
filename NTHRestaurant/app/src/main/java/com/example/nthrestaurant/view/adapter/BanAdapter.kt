@@ -16,7 +16,7 @@ class BanAdapter(private val clickListener: (BanEntity) -> Unit) :
         fun bind(ban: BanEntity) {
             binding.apply {
                 binding.ban = ban
-                if (ban.trangThai == "Hết chỗ") {
+                if (ban.trangThai == "Hết chỗ" || ban.trangThai == "Đã đặt") {
                     clBan.setBackgroundResource(R.drawable.background_room_unavailable)
                     clBan.isEnabled = false;
                 } else {

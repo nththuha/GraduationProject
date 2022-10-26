@@ -1,6 +1,5 @@
 package com.example.NTH_Restaurant_API.repository;
 
-import com.example.NTH_Restaurant_API.entity.MonAnEntity;
 import com.example.NTH_Restaurant_API.entity.ThucDonEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

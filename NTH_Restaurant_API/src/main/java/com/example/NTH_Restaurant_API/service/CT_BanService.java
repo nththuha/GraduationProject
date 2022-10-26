@@ -2,6 +2,7 @@ package com.example.NTH_Restaurant_API.service;
 
 import com.example.NTH_Restaurant_API.dto.BanDTO;
 import com.example.NTH_Restaurant_API.dto.CT_BanDTO;
+import com.example.NTH_Restaurant_API.dto.PhongNgay;
 
 import java.util.List;
 
@@ -14,4 +15,5 @@ public interface CT_BanService {
 
     String xoaCT_Ban(Integer idCTB);
 
+    List<BanDTO> layDSBanTheoPhongTheoNgay(PhongNgay phongNgay);
 }

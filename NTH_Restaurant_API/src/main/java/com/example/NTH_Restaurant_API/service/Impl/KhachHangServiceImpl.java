@@ -24,8 +24,8 @@ public class KhachHangServiceImpl implements KhachHangService {
     @Override
     public String themKhachHang(KhachHangDTO khachHangDTO) {
         try {
-            khachHangRepository.save(khachHangDTO.toEntity());
-            return "true";
+            KhachHangEntity kh = khachHangRepository.save(khachHangDTO.toEntity());
+            return kh.getIdKH() + "";
         }
         catch (Exception e){
             return "false";

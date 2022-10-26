@@ -29,9 +29,6 @@ public class PhieuDatTruocEntity {
     @Temporal(TemporalType.TIMESTAMP)
     private Date ngayDat;
 
-    @Column(name = "GIA")
-    private Integer gia;
-
     @JoinColumn(name = "IDKH")
     @ManyToOne()
     private KhachHangEntity idkh;
