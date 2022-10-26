@@ -27,7 +27,7 @@ public class CT_BanController {
         return ct_banService.layDSCTBanTheoPhong(maphong);
     }
 
-    @GetMapping("/dattruoc")
+    @PostMapping("/dattruoc")
     public List<BanDTO> layDSBanTheoPhongTheoNgay(@Valid @RequestBody PhongNgay phongNgay){
         return ct_banService.layDSBanTheoPhongTheoNgay(phongNgay);
     }
