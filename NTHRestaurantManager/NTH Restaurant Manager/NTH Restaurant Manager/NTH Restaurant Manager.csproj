@@ -220,7 +220,9 @@
     <Compile Include="mesCTThucDon.Designer.cs">
       <DependentUpon>mesCTThucDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\CTDatBanTruocModel.cs" />
     <Compile Include="Model\CTThucDonModel.cs" />
+    <Compile Include="Model\PhieuDatTruocModel.cs" />
     <Compile Include="Model\PhongNgay.cs" />
     <Compile Include="Model\ThucDonModel.cs" />
     <Compile Include="QuanLy\DanhMuc\frmThucDon.cs">
@@ -367,6 +369,7 @@
     <Compile Include="Repository\BanRepository.cs" />
     <Compile Include="Repository\BoPhanRepository.cs" />
     <Compile Include="Repository\CTBanRepository.cs" />
+    <Compile Include="Repository\CTDatBanTruoc.cs" />
     <Compile Include="Repository\CTDatMonRepository.cs" />
     <Compile Include="Repository\CTMonAnRepository.cs" />
     <Compile Include="Repository\CTThucDonRepository.cs" />
@@ -377,6 +380,7 @@
     <Compile Include="Repository\NguyenLieuRepository.cs" />
     <Compile Include="Repository\NhanVienRepository.cs" />
     <Compile Include="Repository\PhieuDatRepository.cs" />
+    <Compile Include="Repository\PhieuDatTruocRepository.cs" />
     <Compile Include="Repository\PhongRepository.cs" />
     <Compile Include="Repository\TaiKhoanRepository.cs" />
     <Compile Include="Repository\ThayDoiGiaMonRepository.cs" />
@@ -473,7 +477,9 @@
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.NhanVienTaiKhoanModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.NVTKModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.PhieuDatModel.datasource" />
+    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.PhieuDatTruocModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.PhongModel.datasource" />
+    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.PhongNgay.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.TaiKhoanModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.ThayDoiGiaMonModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.ThucDonModel.datasource" />

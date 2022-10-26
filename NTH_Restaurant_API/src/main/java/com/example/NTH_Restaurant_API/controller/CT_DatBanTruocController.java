@@ -11,11 +11,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/ctdatbantruoc")
 @CrossOrigin(origins = "*", maxAge = 3600)
-public class CT_DatBanTruoc {
+public class CT_DatBanTruocController {
     @Autowired
     private CT_DatBanTruocService ct_datBanTruocService;
 
-    @GetMapping("{idpdt}")
+    @GetMapping("/{idpdt}")
     private List<CT_DatBanTruocDTO> layDSCT_DatBanTruocTheoPDT(@PathVariable Integer idpdt){
         return ct_datBanTruocService.layDSCT_DatBanTruocTheoPDT(idpdt);
     }
@@ -25,7 +25,7 @@ public class CT_DatBanTruoc {
         return ct_datBanTruocService.themCT_DatBanTruoc(ct_datBanTruocDTO);
     }
 
-    @DeleteMapping("{idCTDBT}")
+    @DeleteMapping("/{idCTDBT}")
     private String xoaCT_DatBanTruoc(@PathVariable Integer idCTDBT){
         return ct_datBanTruocService.xoaCT_DatBanTruoc(idCTDBT);
     }
