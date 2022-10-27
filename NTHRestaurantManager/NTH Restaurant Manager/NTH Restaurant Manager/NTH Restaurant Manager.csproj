@@ -214,11 +214,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="mesCTThucDon.cs">
+    <Compile Include="QuanLy\DanhMuc\mesCTThucDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mesCTThucDon.Designer.cs">
+    <Compile Include="QuanLy\DanhMuc\mesCTThucDon.Designer.cs">
       <DependentUpon>mesCTThucDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLy\HeThong\mesKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy\HeThong\mesKhachHang.Designer.cs">
+      <DependentUpon>mesKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\CTDatBanTruocModel.cs" />
     <Compile Include="Model\CTThucDonModel.cs" />
@@ -369,7 +375,7 @@
     <Compile Include="Repository\BanRepository.cs" />
     <Compile Include="Repository\BoPhanRepository.cs" />
     <Compile Include="Repository\CTBanRepository.cs" />
-    <Compile Include="Repository\CTDatBanTruoc.cs" />
+    <Compile Include="Repository\CTDatBanTruocRepository.cs" />
     <Compile Include="Repository\CTDatMonRepository.cs" />
     <Compile Include="Repository\CTMonAnRepository.cs" />
     <Compile Include="Repository\CTThucDonRepository.cs" />
@@ -385,8 +391,11 @@
     <Compile Include="Repository\TaiKhoanRepository.cs" />
     <Compile Include="Repository\ThayDoiGiaMonRepository.cs" />
     <Compile Include="Repository\ThucDonRepository.cs" />
-    <EmbeddedResource Include="mesCTThucDon.resx">
+    <EmbeddedResource Include="QuanLy\DanhMuc\mesCTThucDon.resx">
       <DependentUpon>mesCTThucDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy\HeThong\mesKhachHang.resx">
+      <DependentUpon>mesKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\DanhMuc\frmThucDon.resx">
       <DependentUpon>frmThucDon.cs</DependentUpon>
@@ -464,6 +473,7 @@
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.BanModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.BoPhanModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTBanModel.datasource" />
+    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTDatBanTruocModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTDatMonModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTMonAnModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTThucDonModel.datasource" />

@@ -79,7 +79,7 @@ namespace NTH_Restaurant_Manager
             txt_MaMA.Text = "";
             txt_TenMA.Text = txt_MaMA.Text = "";
             se_Gia.Text = "0";
-            de_Ngay.DateTime = new DateTime();
+            de_Ngay.DateTime = DateTime.Now;
         }
 
         private void setGiaTri()

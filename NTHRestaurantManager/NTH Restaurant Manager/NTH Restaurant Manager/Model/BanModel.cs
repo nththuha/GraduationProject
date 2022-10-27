@@ -11,5 +11,6 @@ namespace NTH_Restaurant_Manager.Model
         public string maBan { get; set; }
         public string tenBan { get; set; }
         public int soGhe { get; set; }
+        public String trangThai { get; set; }
     }
 }
