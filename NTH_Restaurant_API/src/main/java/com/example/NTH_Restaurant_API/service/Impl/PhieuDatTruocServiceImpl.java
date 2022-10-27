@@ -32,18 +32,17 @@ public class PhieuDatTruocServiceImpl implements PhieuDatTruocService {
     }
 
     @Override
-    public String themPhieuDatTruoc(PhieuDatTruocDTO phieuDatTruocDTO) {
+    public PhieuDatTruocDTO themPhieuDatTruoc(PhieuDatTruocDTO phieuDatTruocDTO) {
         PhieuDatTruocEntity pd = phieuDatTruocDTO.toEntity();
         KhachHangEntity kh = khachHangRepository.getById(phieuDatTruocDTO.getIdkh());
         NhanVienEntity nv = nhanVienRepository.getById(phieuDatTruocDTO.getIdnv());
         pd.setIdkh(kh);
         pd.setIdnv(nv);
         try {
-            phieuDatTruocRepository.save(pd);
-            return "true";
+            return new PhieuDatTruocDTO(phieuDatTruocRepository.save(pd));
         }
         catch (Exception e) {
-            return "false";
+            return null;
         }
     }
 

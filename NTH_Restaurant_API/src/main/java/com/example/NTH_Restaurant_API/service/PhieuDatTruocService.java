@@ -7,7 +7,7 @@ import java.util.List;
 public interface PhieuDatTruocService {
     List<PhieuDatTruocDTO> layDSPhieuDatTruoc();
 
-    String themPhieuDatTruoc(PhieuDatTruocDTO phieuDatTruocDTO);
+    PhieuDatTruocDTO themPhieuDatTruoc(PhieuDatTruocDTO phieuDatTruocDTO);
 
     String suaPhieuDatTruoc(PhieuDatTruocDTO phieuDatTruocDTO);
 

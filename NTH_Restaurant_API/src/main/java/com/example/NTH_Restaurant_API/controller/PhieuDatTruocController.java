@@ -21,7 +21,7 @@ public class PhieuDatTruocController {
     }
 
     @PostMapping("")
-    public String themPhieuDatTruoc(@Valid @RequestBody PhieuDatTruocDTO phieuDatTruocDTO){
+    public PhieuDatTruocDTO themPhieuDatTruoc(@Valid @RequestBody PhieuDatTruocDTO phieuDatTruocDTO){
         return phieuDatTruocService.themPhieuDatTruoc(phieuDatTruocDTO);
     }
 
