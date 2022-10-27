@@ -44,6 +44,8 @@ namespace NTH_Restaurant_Manager
 
         public static KhachHangModel khachHang;
 
+        public static PhieuDatTruocModel pdt;
+
         public static String URL = "https://nth-restaurant-api.herokuapp.com/api/";
 
         public static int doiSpinEditThanhInt(String a)

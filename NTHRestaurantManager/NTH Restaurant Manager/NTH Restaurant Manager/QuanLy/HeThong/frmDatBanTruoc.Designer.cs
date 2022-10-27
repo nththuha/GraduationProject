@@ -232,6 +232,7 @@ namespace NTH_Restaurant_Manager
             this.btn_Thoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Thoat.ImageOptions.SvgImage")));
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_Thoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Thoat_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -306,6 +307,8 @@ namespace NTH_Restaurant_Manager
             this.gvTD.DetailHeight = 1065;
             this.gvTD.GridControl = this.gcTD;
             this.gvTD.Name = "gvTD";
+            this.gvTD.OptionsBehavior.Editable = false;
+            this.gvTD.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvTD_RowClick);
             // 
             // colidTD
             // 
@@ -391,6 +394,8 @@ namespace NTH_Restaurant_Manager
             this.gvBan.DetailHeight = 1065;
             this.gvBan.GridControl = this.gcBan;
             this.gvBan.Name = "gvBan";
+            this.gvBan.OptionsBehavior.Editable = false;
+            this.gvBan.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvBan_RowClick);
             // 
             // colmaBan
             // 
@@ -459,8 +464,10 @@ namespace NTH_Restaurant_Manager
             this.gvPhong.DetailHeight = 1065;
             this.gvPhong.GridControl = this.gcPhong;
             this.gvPhong.Name = "gvPhong";
+            this.gvPhong.OptionsBehavior.Editable = false;
             this.gvPhong.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.coltenPhong, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gvPhong.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvPhong_RowClick);
             // 
             // colmaPhong
             // 
@@ -596,6 +603,8 @@ namespace NTH_Restaurant_Manager
             this.gvCTDBT.DetailHeight = 1065;
             this.gvCTDBT.GridControl = this.gcCTDBT;
             this.gvCTDBT.Name = "gvCTDBT";
+            this.gvCTDBT.OptionsBehavior.Editable = false;
+            this.gvCTDBT.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvCTDBT_RowClick);
             // 
             // colidCTDBT
             // 

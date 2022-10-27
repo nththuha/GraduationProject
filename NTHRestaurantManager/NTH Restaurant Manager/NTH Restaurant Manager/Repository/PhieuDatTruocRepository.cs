@@ -30,7 +30,7 @@ namespace NTH_Restaurant_Manager.Repository
             return listPDT;
         }
 
-        public async Task<String> themPhieuDatTruoc(PhieuDatTruocModel phieuDatTruoc)
+        public async Task<PhieuDatTruocModel> themPhieuDatTruoc(PhieuDatTruocModel phieuDatTruoc)
         {
             var pdt = JsonConvert.SerializeObject(phieuDatTruoc);
             var buffer = Encoding.UTF8.GetBytes(pdt);
@@ -38,7 +38,7 @@ namespace NTH_Restaurant_Manager.Repository
             byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             _response = await _client.PostAsync("phieudattruoc", byteContent);
             var json = await _response.Content.ReadAsStringAsync();
-            var check = JsonConvert.DeserializeObject<String>(json);
+            var check = JsonConvert.DeserializeObject<PhieuDatTruocModel>(json);
             return check;
         }
 
