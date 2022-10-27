@@ -19,6 +19,7 @@ namespace NTH_Restaurant_Manager
         public static frmTaiKhoan formTaiKhoan;
         public static frmKhachHang formKhachHang;
         public static frmDatBanTruoc formDatBanTruoc;
+        public static frmPhieuDatTruoc formPhieuDatTruoc;
         public static frmPhieuMua formPhieuMua;
         public static frmPhieuNhap formPhieuNhap;
         public static frmTheoDoiDonHang formTheoDoiDonHang;

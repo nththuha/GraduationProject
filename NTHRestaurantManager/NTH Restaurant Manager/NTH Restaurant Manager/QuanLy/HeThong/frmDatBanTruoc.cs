@@ -24,6 +24,7 @@ namespace NTH_Restaurant_Manager
 
         String maPhong;
         String maBan;
+        String trangThai;
         int idTD;
         int idCTDBT;
 
@@ -32,10 +33,13 @@ namespace NTH_Restaurant_Manager
             InitializeComponent();
             if(Program.pdt == null)
             {
-
+                btn_ThemPhieuDat.Enabled = panelControl4.Enabled = true;
+                btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = false;
             }
             else
             {
+                btn_ThemPhieuDat.Enabled = panelControl4.Enabled = false;
+                btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = true;
                 layDSPhong();
                 layDSThucDon();
                 layDSCTDatBanTruoc();
@@ -77,13 +81,15 @@ namespace NTH_Restaurant_Manager
             Program.pdt.ngayTao = now;
 
             themPhieuDatTruoc();
+            btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = true;
+            btn_ThemPhieuDat.Enabled = false;
         }
 
         private async void themPhieuDatTruoc()
         {
             Program.pdt = await _repositoryPDT.themPhieuDatTruoc(Program.pdt);
             if (Program.pdt == null) MessageBox.Show("Đặt bàn trước thất bại!", "Thông báo");
-            else MessageBox.Show("Đặt bàn trước thành công\nBạn hãy chọn phòng, bàn và thực đơn nhé!", "Thông báo");
+            else MessageBox.Show("Lập phiếu đặt trước thành công\nBạn hãy chọn phòng, bàn và thực đơn nhé!", "Thông báo");
             panelControl4.Enabled = btn_ThemPhieuDat.Enabled = false;
             layDSPhong();
             layDSThucDon();
@@ -184,6 +190,7 @@ namespace NTH_Restaurant_Manager
         private void gvBan_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             maBan = gvBan.GetRowCellValue(e.RowHandle, "maBan").ToString();
+            trangThai = gvBan.GetRowCellValue(e.RowHandle, "trangThai").ToString();
         }
 
         private void gvTD_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
@@ -194,6 +201,54 @@ namespace NTH_Restaurant_Manager
         private void gvCTDBT_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             idCTDBT = int.Parse(gvCTDBT.GetRowCellValue(e.RowHandle, "idCTDBT").ToString());
+        }
+
+        private void btn_ThemChiTietDatBan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if(trangThai.Equals("Đã đặt"))
+            {
+                MessageBox.Show("Bàn này đã được đặt rồi! Vui lòng chọn bàn khác!", "Thông báo");
+                return;
+            }
+            ctdbt = new CTDatBanTruocModel();
+            ctdbt.idtd = idTD;
+            ctdbt.maBan = maBan;
+            ctdbt.maPhong = maPhong;
+            ctdbt.idpdt = Program.pdt.idPDT;
+            themCTDatBanTruoc();
+        }
+
+        private void btn_XoaChiTietDatBan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có thật sự muốn xóa chi tiết đặt bàn trước này?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                xoaCTDatBanTruoc();
+            }
+        }
+
+        private async void themCTDatBanTruoc()
+        {
+            var check = await _repositoryCTDBT.themCTDatBanTruoc(ctdbt);
+            if (check.Equals("false")) MessageBox.Show("Thêm chi tiết đặt bàn trước thất bại", "Thông báo");
+            else MessageBox.Show("Thêm chi tiết đặt bàn trước thành công", "Thông báo");
+            layDSCTDatBanTruoc();
+            layDSBan();
+        }
+
+        private async void xoaCTDatBanTruoc()
+        {
+            var check = await _repositoryCTDBT.xoaCTDatBanTruoc(idCTDBT);
+            if (check.Equals("false")) MessageBox.Show("Xóa chi tiết đặt bàn trước thất bại", "Thông báo");
+            else MessageBox.Show("Xóa chi tiết đặt bàn trước thành công", "Thông báo");
+            layDSCTDatBanTruoc();
+            layDSBan();
+        }
+
+        private void btn_Reload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            layDSPhong();
+            layDSThucDon();
+            layDSCTDatBanTruoc();
         }
     }
 }

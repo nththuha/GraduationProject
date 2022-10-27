@@ -30,7 +30,7 @@ namespace NTH_Restaurant_Manager.Repository
             return listCTDBT;
         }
 
-        public async Task<String> themCTBan(CTDatBanTruocModel cTDatBanTruoc)
+        public async Task<String> themCTDatBanTruoc(CTDatBanTruocModel cTDatBanTruoc)
         {
             var ctdbt = JsonConvert.SerializeObject(cTDatBanTruoc);
             var buffer = Encoding.UTF8.GetBytes(ctdbt);
@@ -42,7 +42,7 @@ namespace NTH_Restaurant_Manager.Repository
             return check;
         }
 
-        public async Task<String> xoaCTBan(int idCTDBT)
+        public async Task<String> xoaCTDatBanTruoc(int idCTDBT)
         {
             _response = await _client.DeleteAsync("ctdatbantruoc/" + idCTDBT);
             var json = await _response.Content.ReadAsStringAsync();

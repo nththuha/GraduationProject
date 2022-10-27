@@ -127,7 +127,7 @@ namespace NTH_Restaurant_Manager
             this.Controls.Add(this.btn_XacNhan);
             this.Controls.Add(this.gcKH);
             this.Name = "mesKhachHang";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CHỌN KHÁCH HÀNG";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mesKhachHang_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.gcKH)).EndInit();

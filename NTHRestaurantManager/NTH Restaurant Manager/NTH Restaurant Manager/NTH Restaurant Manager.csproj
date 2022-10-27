@@ -214,6 +214,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="QuanLy\HeThong\frmPhieuDatTruoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy\HeThong\frmPhieuDatTruoc.Designer.cs">
+      <DependentUpon>frmPhieuDatTruoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLy\DanhMuc\mesCTThucDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -391,6 +397,9 @@
     <Compile Include="Repository\TaiKhoanRepository.cs" />
     <Compile Include="Repository\ThayDoiGiaMonRepository.cs" />
     <Compile Include="Repository\ThucDonRepository.cs" />
+    <EmbeddedResource Include="QuanLy\HeThong\frmPhieuDatTruoc.resx">
+      <DependentUpon>frmPhieuDatTruoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\DanhMuc\mesCTThucDon.resx">
       <DependentUpon>mesCTThucDon.cs</DependentUpon>
     </EmbeddedResource>

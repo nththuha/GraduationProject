@@ -14,6 +14,14 @@ namespace NTH_Restaurant_Manager
         public frmMain()
         {
             InitializeComponent();
+            Form frm = this.CheckExists(typeof(frmDangNhap));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.formDangNhap = new frmDangNhap();
+                Program.formDangNhap.MdiParent = this;
+                Program.formDangNhap.Show();
+            }
         }
 
         private Form CheckExists(Type ftype)
@@ -56,6 +64,9 @@ namespace NTH_Restaurant_Manager
                 if (frm != null) frm.Close();
 
                 frm = this.CheckExists(typeof(frmDatBanTruoc));
+                if (frm != null) frm.Close();
+
+                frm = this.CheckExists(typeof(frmPhieuDatTruoc));
                 if (frm != null) frm.Close();
 
                 frm = this.CheckExists(typeof(frmPhieuMua));
@@ -102,7 +113,7 @@ namespace NTH_Restaurant_Manager
         public void dangNhap(bool dangNhap) // nếu đăng nhập thì gọi hàm này để cài đặt quyền
         {
             btn_DangNhap.Enabled = !dangNhap;
-            btn_DangXuat.Enabled = btn_NhanVien.Enabled = btn_TaiKhoan.Enabled = btn_KhachHang.Enabled = btn_DatBanTruoc.Enabled = btn_PhieuMua.Enabled = btn_PhieuNhap.Enabled = btn_TheoDoiDonHang.Enabled = dangNhap;
+            btn_DangXuat.Enabled = btn_NhanVien.Enabled = btn_TaiKhoan.Enabled = btn_KhachHang.Enabled = btn_DatBanTruoc.Enabled = btn_PhieuMua.Enabled = btn_PhieuNhap.Enabled = btn_TheoDoiDonHang.Enabled = btn_PhieuDatTruoc.Enabled = dangNhap;
             btn_LoaiMonAn.Enabled = btn_MonAn.Enabled = btn_ThayDoiGiaMon.Enabled = btn_PhongBan.Enabled = btn_ChiTietPhong.Enabled = btn_NguyenLieu.Enabled = btn_ChiTietMonAn.Enabled = btn_ThucDon.Enabled = dangNhap;
             btn_ThongKeDoanhThuTheoThang.Enabled = btn_ThongKeLoiNhuan.Enabled = dangNhap;
         }
@@ -308,6 +319,18 @@ namespace NTH_Restaurant_Manager
                 Program.formThucDon = new frmThucDon();
                 Program.formThucDon.MdiParent = this;
                 Program.formThucDon.Show();
+            }
+        }
+
+        private void btn_PhieuDatTruoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmPhieuDatTruoc));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.formPhieuDatTruoc = new frmPhieuDatTruoc();
+                Program.formPhieuDatTruoc.MdiParent = this;
+                Program.formPhieuDatTruoc.Show();
             }
         }
     }
