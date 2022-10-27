@@ -22,7 +22,7 @@ public class PhieuDatTruocController {
         return phieuDatTruocService.layDSPhieuDatTruoc();
     }
 
-    @PostMapping("/ngay/")
+    @PostMapping("/ngay")
     public List<PhieuDatTruocDTO> layDSPhieuDatTruocTheoNgay(@Valid @RequestBody PhongNgay phongNgay){
         return phieuDatTruocService.layDSPhieuDatTruocTheoNgay(phongNgay);
     }
