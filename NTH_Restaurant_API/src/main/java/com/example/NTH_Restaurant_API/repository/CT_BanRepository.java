@@ -18,6 +18,13 @@ public interface CT_BanRepository extends JpaRepository<CT_BanEntity, Integer> {
 
     @Transactional
     @Modifying
+    @Query(value = "select * \n" +
+                "from ct_ban \n" +
+                "where maban = :maBan and maphong = :maPhong", nativeQuery = true)
+    List<CT_BanEntity> layCTBanTheoPhongBan(@Param("maPhong") String maPhong, @Param("maBan") String maBan);
+
+    @Transactional
+    @Modifying
     @Query(value = "select t.idctb, t.maphong, t.maban \n" +
             "from (select idpdt \n" +
             "from phieudattruoc \n" +

@@ -41,7 +41,8 @@ public class CT_DatBanTruocServiceImpl implements CT_DatBanTruocService {
         CT_DatBanTruocEntity ct_datBanTruoc = new CT_DatBanTruocEntity();
         ThucDonEntity thucDon = thucDonRepository.getById(ct_datBanTruocDTO.getIdtd());
         PhieuDatTruocEntity pdt = phieuDatTruocRepository.getById(ct_datBanTruocDTO.getIdpdt());
-        CT_BanEntity ctBan = ct_banRepository.getById(ct_datBanTruocDTO.getIdctb());
+        List<CT_BanEntity> listCTB = ct_banRepository.layCTBanTheoPhongBan(ct_datBanTruocDTO.getMaPhong(), ct_datBanTruocDTO.getMaBan());
+        CT_BanEntity ctBan = listCTB.get(0);
         ct_datBanTruoc.setIdtd(thucDon);
         ct_datBanTruoc.setIdpdt(pdt);
         ct_datBanTruoc.setIdctb(ctBan);

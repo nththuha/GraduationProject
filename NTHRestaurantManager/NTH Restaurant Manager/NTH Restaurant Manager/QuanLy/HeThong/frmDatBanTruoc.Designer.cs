@@ -519,9 +519,9 @@ namespace NTH_Restaurant_Manager
             // 
             this.btn_ChonKH.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ChonKH.Appearance.Options.UseFont = true;
-            this.btn_ChonKH.Location = new System.Drawing.Point(654, 71);
+            this.btn_ChonKH.Location = new System.Drawing.Point(654, 75);
             this.btn_ChonKH.Name = "btn_ChonKH";
-            this.btn_ChonKH.Size = new System.Drawing.Size(62, 36);
+            this.btn_ChonKH.Size = new System.Drawing.Size(62, 29);
             this.btn_ChonKH.TabIndex = 27;
             this.btn_ChonKH.Text = "...";
             this.btn_ChonKH.Click += new System.EventHandler(this.btn_ChonKH_Click);
