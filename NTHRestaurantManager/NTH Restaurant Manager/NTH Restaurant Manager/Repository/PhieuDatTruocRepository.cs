@@ -30,6 +30,18 @@ namespace NTH_Restaurant_Manager.Repository
             return listPDT;
         }
 
+        public async Task<List<PhieuDatTruocModel>> layDSPhieuDatTruocTheoNgay(PhongNgay phongNgay)
+        {
+            var pn = JsonConvert.SerializeObject(phongNgay);
+            var buffer = Encoding.UTF8.GetBytes(pn);
+            var byteContent = new ByteArrayContent(buffer);
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            _response = await _client.PostAsync("phieudattruoc/ngay", byteContent);
+            var json = await _response.Content.ReadAsStringAsync();
+            var listPDT = JsonConvert.DeserializeObject<List<PhieuDatTruocModel>>(json);
+            return listPDT;
+        }
+
         public async Task<PhieuDatTruocModel> themPhieuDatTruoc(PhieuDatTruocModel phieuDatTruoc)
         {
             var pdt = JsonConvert.SerializeObject(phieuDatTruoc);

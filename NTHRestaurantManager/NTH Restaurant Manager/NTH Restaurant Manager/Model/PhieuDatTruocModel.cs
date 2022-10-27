@@ -15,5 +15,6 @@ namespace NTH_Restaurant_Manager.Model
         public String hoTenNV { get; set; }
         public int idkh { get; set; }
         public String hoTenKH { get; set; }
+        public String sdt { get; set; }
     }
 }

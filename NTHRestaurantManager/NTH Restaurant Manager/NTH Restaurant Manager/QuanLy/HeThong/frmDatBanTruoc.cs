@@ -117,6 +117,10 @@ namespace NTH_Restaurant_Manager
             try
             {
                 var listTD = await _repositoryTD.layDSThucDon();
+                for (int i = 0; i < listTD.Count; i++)
+                {
+                    listTD[i].ngayTao = listTD[i].ngayTao.Substring(8, 2) + "-" + listTD[i].ngayTao.Substring(5, 2) + "-" + listTD[i].ngayTao.Substring(0, 4);
+                }
                 gcTD.DataSource = listTD;
                 if (listTD.Count > 0)
                 {
