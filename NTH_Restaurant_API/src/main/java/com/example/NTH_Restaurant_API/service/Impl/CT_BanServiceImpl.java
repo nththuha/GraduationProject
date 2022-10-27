@@ -97,11 +97,11 @@ public class CT_BanServiceImpl implements CT_BanService {
         List<BanDaDat> listT = ct_banRepository.layCTBanDaDat(phongNgay.getNgay(), phongNgay.getMaPhong());
         List<BanDTO> listB = layDSBanTheoPhong(phongNgay.getMaPhong());
         for(BanDTO ban: listB){
+            ban.setTrangThai("Còn chỗ");
             for(BanDaDat i: listT){
                 if(ban.getMaBan().equals(i.getMaban())){
                     ban.setTrangThai("Đã đặt");
                 }
-                else ban.setTrangThai("Còn chỗ");
             }
         }
         return listB;
