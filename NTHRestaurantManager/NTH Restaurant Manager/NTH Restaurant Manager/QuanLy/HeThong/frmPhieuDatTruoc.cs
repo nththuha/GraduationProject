@@ -47,5 +47,10 @@ namespace NTH_Restaurant_Manager
         {
             de_Ngay.DateTime = DateTime.Now;
         }
+
+        private void de_Ngay_EditValueChanged(object sender, EventArgs e)
+        {
+            layDSPhieuDatTheoNgay();
+        }
     }
 }

@@ -268,6 +268,7 @@ namespace NTH_Restaurant_Manager
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.de_Ngay.Size = new System.Drawing.Size(332, 32);
             this.de_Ngay.TabIndex = 7;
+            this.de_Ngay.EditValueChanged += new System.EventHandler(this.de_Ngay_EditValueChanged);
             // 
             // colidPDT
             // 
