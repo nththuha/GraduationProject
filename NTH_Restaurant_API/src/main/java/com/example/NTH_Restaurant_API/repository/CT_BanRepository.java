@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import javax.transaction.Transactional;
+import java.util.Date;
 import java.util.List;
 
 public interface CT_BanRepository extends JpaRepository<CT_BanEntity, Integer> {
@@ -25,5 +26,5 @@ public interface CT_BanRepository extends JpaRepository<CT_BanEntity, Integer> {
             "from ct_ban ctb, ct_datbantruoc dbt \n" +
             "where ctb.idctb = dbt.idctb and ctb.maphong = :maPhong) t \n" +
             "where pdt.idpdt = t.idpdt", nativeQuery = true)
-    List<BanDaDat> layCTBanDaDat(@Param("ngay") String ngay, @Param("maPhong") String maPhong);
+    List<BanDaDat> layCTBanDaDat(@Param("ngay") Date ngay, @Param("maPhong") String maPhong);
 }
