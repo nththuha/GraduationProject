@@ -1,6 +1,7 @@
 package com.example.NTH_Restaurant_API.service.Impl;
 
 import com.example.NTH_Restaurant_API.dto.PhieuDatTruocDTO;
+import com.example.NTH_Restaurant_API.dto.PhongNgay;
 import com.example.NTH_Restaurant_API.entity.KhachHangEntity;
 import com.example.NTH_Restaurant_API.entity.NhanVienEntity;
 import com.example.NTH_Restaurant_API.entity.PhieuDatTruocEntity;
@@ -11,7 +12,6 @@ import com.example.NTH_Restaurant_API.service.PhieuDatTruocService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -70,8 +70,8 @@ public class PhieuDatTruocServiceImpl implements PhieuDatTruocService {
     }
 
     @Override
-    public List<PhieuDatTruocDTO> layDSPhieuDatTruocTheoNgay(String ngay) {
-        List<PhieuDatTruocEntity> listPDT = phieuDatTruocRepository.layDSPhieuDatTruocNgayNgay(ngay);
+    public List<PhieuDatTruocDTO> layDSPhieuDatTruocTheoNgay(PhongNgay phongNgay) {
+        List<PhieuDatTruocEntity> listPDT = phieuDatTruocRepository.layDSPhieuDatTruocNgayNgay(phongNgay.getNgay());
         return listPDT.stream().map(PhieuDatTruocDTO::new).collect(Collectors.toList());
     }
 }

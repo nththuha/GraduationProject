@@ -1,6 +1,7 @@
 package com.example.NTH_Restaurant_API.controller;
 
 import com.example.NTH_Restaurant_API.dto.PhieuDatTruocDTO;
+import com.example.NTH_Restaurant_API.dto.PhongNgay;
 import com.example.NTH_Restaurant_API.service.PhieuDatTruocService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,9 +22,9 @@ public class PhieuDatTruocController {
         return phieuDatTruocService.layDSPhieuDatTruoc();
     }
 
-    @GetMapping("/{ngay}")
-    public List<PhieuDatTruocDTO> layDSPhieuDatTruocTheoNgay(@PathVariable String ngay){
-        return phieuDatTruocService.layDSPhieuDatTruocTheoNgay(ngay);
+    @GetMapping("/ngay/")
+    public List<PhieuDatTruocDTO> layDSPhieuDatTruocTheoNgay(@PathVariable PhongNgay phongNgay){
+        return phieuDatTruocService.layDSPhieuDatTruocTheoNgay(phongNgay);
     }
 
     @PostMapping("")

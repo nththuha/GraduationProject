@@ -34,12 +34,12 @@ namespace NTH_Restaurant_Manager
             if(Program.pdt == null)
             {
                 btn_ThemPhieuDat.Enabled = panelControl4.Enabled = true;
-                btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = false;
+                btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = false;
             }
             else
             {
                 btn_ThemPhieuDat.Enabled = panelControl4.Enabled = false;
-                btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = true;
+                btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = true;
                 layDSPhong();
                 layDSThucDon();
                 layDSCTDatBanTruoc();
@@ -81,16 +81,15 @@ namespace NTH_Restaurant_Manager
             Program.pdt.ngayTao = now;
 
             themPhieuDatTruoc();
-            btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = true;
-            btn_ThemPhieuDat.Enabled = false;
+            panelControl4.Enabled = btn_ThemPhieuDat.Enabled = false;
+            btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = true;
         }
 
         private async void themPhieuDatTruoc()
         {
             Program.pdt = await _repositoryPDT.themPhieuDatTruoc(Program.pdt);
             if (Program.pdt == null) MessageBox.Show("Đặt bàn trước thất bại!", "Thông báo");
-            else MessageBox.Show("Lập phiếu đặt trước thành công\nBạn hãy chọn phòng, bàn và thực đơn nhé!", "Thông báo");
-            panelControl4.Enabled = btn_ThemPhieuDat.Enabled = false;
+            else MessageBox.Show("Lập phiếu đặt trước thành công\nBạn hãy chọn phòng, bàn và thực đơn nhé!", "Thông báo");      
             layDSPhong();
             layDSThucDon();
             layDSCTDatBanTruoc();
@@ -142,6 +141,7 @@ namespace NTH_Restaurant_Manager
                 if (listB.Count > 0)
                 {
                     maBan = listB[0].maBan;
+                    trangThai = listB[0].trangThai;
                 }
             }
             catch (Exception e)
@@ -158,7 +158,7 @@ namespace NTH_Restaurant_Manager
                 gcPhong.DataSource = listP;
                 if(listP.Count > 0)
                 {
-                    maPhong = listP[0].maPhong;
+                    maPhong = listP[0].maPhong;         
                     layDSBan();
                 }
             }
@@ -249,6 +249,25 @@ namespace NTH_Restaurant_Manager
             layDSPhong();
             layDSThucDon();
             layDSCTDatBanTruoc();
+        }
+
+        private void btn_Load_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            List<PhongModel> listP = new List<PhongModel>();
+            List<BanModel> listB = new List<BanModel>();
+            List<ThucDonModel> listTD = new List<ThucDonModel>();
+            List<CTDatBanTruocModel> listCTDBT = new List<CTDatBanTruocModel>();
+            khoiTao();
+            gcPhong.DataSource = listP;
+            gcBan.DataSource = listB;
+            gcTD.DataSource = listTD;
+            gcCTDBT.DataSource = listCTDBT;
+
+            Program.pdt = null;
+            Program.khachHang = null;
+
+            panelControl4.Enabled = btn_ThemPhieuDat.Enabled = true;
+            btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = false;
         }
     }
 }

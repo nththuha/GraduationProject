@@ -36,6 +36,7 @@ namespace NTH_Restaurant_Manager
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btn_ThemPhieuDat = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Load = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ThemChiTietDatBan = new DevExpress.XtraBars.BarButtonItem();
             this.btn_XoaChiTietDatBan = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Thoat = new DevExpress.XtraBars.BarButtonItem();
@@ -150,9 +151,10 @@ namespace NTH_Restaurant_Manager
             this.btn_XoaChiTietDatBan,
             this.btn_Reload,
             this.btn_Thoat,
-            this.btn_PhucHoi});
+            this.btn_PhucHoi,
+            this.btn_Load});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 7;
+            this.barManager1.MaxItemId = 8;
             // 
             // bar2
             // 
@@ -163,6 +165,7 @@ namespace NTH_Restaurant_Manager
             this.bar2.FloatLocation = new System.Drawing.Point(189, 199);
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_ThemPhieuDat),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Load),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_ThemChiTietDatBan),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_XoaChiTietDatBan),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Thoat)});
@@ -178,6 +181,16 @@ namespace NTH_Restaurant_Manager
             this.btn_ThemPhieuDat.Name = "btn_ThemPhieuDat";
             this.btn_ThemPhieuDat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btn_ThemPhieuDat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Them_ItemClick);
+            // 
+            // btn_Load
+            // 
+            this.btn_Load.Caption = "Reload";
+            this.btn_Load.Enabled = false;
+            this.btn_Load.Id = 7;
+            this.btn_Load.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Load.ImageOptions.SvgImage")));
+            this.btn_Load.Name = "btn_Load";
+            this.btn_Load.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_Load.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Load_ItemClick);
             // 
             // btn_ThemChiTietDatBan
             // 
@@ -768,5 +781,6 @@ namespace NTH_Restaurant_Manager
         private System.Windows.Forms.BindingSource bdsPDT;
         private DevExpress.XtraEditors.SimpleButton btn_ChonKH;
         public DevExpress.XtraEditors.TextEdit txt_HoTenKH;
+        private DevExpress.XtraBars.BarButtonItem btn_Load;
     }
 }

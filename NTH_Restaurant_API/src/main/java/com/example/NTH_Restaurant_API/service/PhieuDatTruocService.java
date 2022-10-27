@@ -1,8 +1,8 @@
 package com.example.NTH_Restaurant_API.service;
 
 import com.example.NTH_Restaurant_API.dto.PhieuDatTruocDTO;
+import com.example.NTH_Restaurant_API.dto.PhongNgay;
 
-import java.util.Date;
 import java.util.List;
 
 public interface PhieuDatTruocService {
@@ -14,5 +14,5 @@ public interface PhieuDatTruocService {
 
     String xoaPhieuDatTruoc(Integer idPDT);
 
-    List<PhieuDatTruocDTO> layDSPhieuDatTruocTheoNgay(String ngay);
+    List<PhieuDatTruocDTO> layDSPhieuDatTruocTheoNgay(PhongNgay phongNgay);
 }

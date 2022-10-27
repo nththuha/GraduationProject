@@ -80,7 +80,7 @@ namespace NTH_Restaurant_Manager
             // 
             // colhoTen
             // 
-            this.colhoTen.Caption = "HỌ TÊN KHÁCH HẦNG";
+            this.colhoTen.Caption = "HỌ TÊN KHÁCH HÀNG";
             this.colhoTen.FieldName = "hoTen";
             this.colhoTen.MinWidth = 25;
             this.colhoTen.Name = "colhoTen";
