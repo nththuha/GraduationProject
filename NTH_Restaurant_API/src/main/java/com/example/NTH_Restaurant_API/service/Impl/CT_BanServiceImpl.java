@@ -101,6 +101,7 @@ public class CT_BanServiceImpl implements CT_BanService {
                 if(ban.getMaBan().equals(i.getMaban())){
                     ban.setTrangThai("Đã đặt");
                 }
+                else ban.setTrangThai("Còn chỗ");
             }
         }
         return listB;
