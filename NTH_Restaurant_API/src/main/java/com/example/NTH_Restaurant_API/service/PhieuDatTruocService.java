@@ -14,5 +14,5 @@ public interface PhieuDatTruocService {
 
     String xoaPhieuDatTruoc(Integer idPDT);
 
-    List<PhieuDatTruocDTO> layDSPhieuDatTruocTheoNgay(Date ngay);
+    List<PhieuDatTruocDTO> layDSPhieuDatTruocTheoNgay(String ngay);
 }

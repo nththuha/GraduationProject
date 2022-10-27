@@ -70,7 +70,7 @@ public class PhieuDatTruocServiceImpl implements PhieuDatTruocService {
     }
 
     @Override
-    public List<PhieuDatTruocDTO> layDSPhieuDatTruocTheoNgay(Date ngay) {
+    public List<PhieuDatTruocDTO> layDSPhieuDatTruocTheoNgay(String ngay) {
         List<PhieuDatTruocEntity> listPDT = phieuDatTruocRepository.layDSPhieuDatTruocNgayNgay(ngay);
         return listPDT.stream().map(PhieuDatTruocDTO::new).collect(Collectors.toList());
     }

@@ -20,7 +20,7 @@ public interface PhieuDatTruocRepository extends JpaRepository<PhieuDatTruocEnti
     @Transactional
     @Modifying
     @Query(value = "select * from phieudattruoc where phieudattruoc.ngaydat = :ngay", nativeQuery = true)
-    public List<PhieuDatTruocEntity> layDSPhieuDatTruocNgayNgay(@Param("ngay") Date ngay);
+    public List<PhieuDatTruocEntity> layDSPhieuDatTruocNgayNgay(@Param("ngay") String ngay);
 
     @Transactional
     @Modifying

@@ -22,7 +22,7 @@ public class PhieuDatTruocController {
     }
 
     @GetMapping("/{ngay}")
-    public List<PhieuDatTruocDTO> layDSPhieuDatTruoc(@PathVariable Date ngay){
+    public List<PhieuDatTruocDTO> layDSPhieuDatTruocTheoNgay(@PathVariable String ngay){
         return phieuDatTruocService.layDSPhieuDatTruocTheoNgay(ngay);
     }
 
