@@ -15,6 +15,7 @@ public class CT_DatBanTruocDTO {
     private Integer idctb;
     private Integer idpdt;
     private Integer idtd;
+    private String tentd;
     private String maBan;
     private String tenBan;
     private String maPhong;
@@ -25,6 +26,7 @@ public class CT_DatBanTruocDTO {
         this.idctb = ct_datBanTruocEntity.getIdctb().getIdCTB();
         this.idpdt = ct_datBanTruocEntity.getIdpdt().getIdPDT();
         this.idtd = ct_datBanTruocEntity.getIdtd().getIdTD();
+        this.tentd = ct_datBanTruocEntity.getIdtd().getTenTD();
         this.maBan = ct_datBanTruocEntity.getIdctb().getMaban().getMaBan();
         this.tenBan = ct_datBanTruocEntity.getIdctb().getMaban().getTenBan();
         this.maPhong = ct_datBanTruocEntity.getIdctb().getMaphong().getMaPhong();
