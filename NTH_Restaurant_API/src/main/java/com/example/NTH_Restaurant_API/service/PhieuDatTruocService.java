@@ -2,6 +2,7 @@ package com.example.NTH_Restaurant_API.service;
 
 import com.example.NTH_Restaurant_API.dto.PhieuDatTruocDTO;
 
+import java.util.Date;
 import java.util.List;
 
 public interface PhieuDatTruocService {
@@ -12,4 +13,6 @@ public interface PhieuDatTruocService {
     String suaPhieuDatTruoc(PhieuDatTruocDTO phieuDatTruocDTO);
 
     String xoaPhieuDatTruoc(Integer idPDT);
+
+    List<PhieuDatTruocDTO> layDSPhieuDatTruocTheoNgay(Date ngay);
 }

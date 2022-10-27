@@ -36,16 +36,15 @@ namespace NTH_Restaurant_Manager
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btn_ThemPhieuDat = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Luu = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ThemChiTietDatBan = new DevExpress.XtraBars.BarButtonItem();
             this.btn_XoaChiTietDatBan = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_PhucHoi = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Reload = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Thoat = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.btn_Reload = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_PhucHoi = new DevExpress.XtraBars.BarButtonItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gcTD = new DevExpress.XtraGrid.GridControl();
             this.bdsTD = new System.Windows.Forms.BindingSource(this.components);
@@ -148,7 +147,6 @@ namespace NTH_Restaurant_Manager
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.btn_ThemPhieuDat,
             this.btn_ThemChiTietDatBan,
-            this.btn_Luu,
             this.btn_XoaChiTietDatBan,
             this.btn_Reload,
             this.btn_Thoat,
@@ -165,11 +163,8 @@ namespace NTH_Restaurant_Manager
             this.bar2.FloatLocation = new System.Drawing.Point(189, 199);
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_ThemPhieuDat),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Luu),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_ThemChiTietDatBan),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_XoaChiTietDatBan),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_PhucHoi),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Reload),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Thoat)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
@@ -184,46 +179,25 @@ namespace NTH_Restaurant_Manager
             this.btn_ThemPhieuDat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btn_ThemPhieuDat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Them_ItemClick);
             // 
-            // btn_Luu
-            // 
-            this.btn_Luu.Caption = "Lưu";
-            this.btn_Luu.Enabled = false;
-            this.btn_Luu.Id = 2;
-            this.btn_Luu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Luu.ImageOptions.SvgImage")));
-            this.btn_Luu.Name = "btn_Luu";
-            this.btn_Luu.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
             // btn_ThemChiTietDatBan
             // 
             this.btn_ThemChiTietDatBan.Caption = "Thêm chi tiết đặt bàn";
+            this.btn_ThemChiTietDatBan.Enabled = false;
             this.btn_ThemChiTietDatBan.Id = 1;
             this.btn_ThemChiTietDatBan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_ThemChiTietDatBan.ImageOptions.SvgImage")));
             this.btn_ThemChiTietDatBan.Name = "btn_ThemChiTietDatBan";
             this.btn_ThemChiTietDatBan.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_ThemChiTietDatBan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ThemChiTietDatBan_ItemClick);
             // 
             // btn_XoaChiTietDatBan
             // 
             this.btn_XoaChiTietDatBan.Caption = "Xóa chi tiết đặt bàn";
+            this.btn_XoaChiTietDatBan.Enabled = false;
             this.btn_XoaChiTietDatBan.Id = 3;
             this.btn_XoaChiTietDatBan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_XoaChiTietDatBan.ImageOptions.SvgImage")));
             this.btn_XoaChiTietDatBan.Name = "btn_XoaChiTietDatBan";
             this.btn_XoaChiTietDatBan.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // btn_PhucHoi
-            // 
-            this.btn_PhucHoi.Caption = "Phục Hồi";
-            this.btn_PhucHoi.Id = 6;
-            this.btn_PhucHoi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_PhucHoi.ImageOptions.SvgImage")));
-            this.btn_PhucHoi.Name = "btn_PhucHoi";
-            this.btn_PhucHoi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // btn_Reload
-            // 
-            this.btn_Reload.Caption = "Reload";
-            this.btn_Reload.Id = 4;
-            this.btn_Reload.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Reload.ImageOptions.SvgImage")));
-            this.btn_Reload.Name = "btn_Reload";
-            this.btn_Reload.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_XoaChiTietDatBan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_XoaChiTietDatBan_ItemClick);
             // 
             // btn_Thoat
             // 
@@ -265,6 +239,23 @@ namespace NTH_Restaurant_Manager
             this.barDockControlRight.Location = new System.Drawing.Point(1636, 30);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 795);
+            // 
+            // btn_Reload
+            // 
+            this.btn_Reload.Caption = "Reload";
+            this.btn_Reload.Id = 4;
+            this.btn_Reload.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Reload.ImageOptions.SvgImage")));
+            this.btn_Reload.Name = "btn_Reload";
+            this.btn_Reload.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_Reload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Reload_ItemClick);
+            // 
+            // btn_PhucHoi
+            // 
+            this.btn_PhucHoi.Caption = "Phục Hồi";
+            this.btn_PhucHoi.Id = 6;
+            this.btn_PhucHoi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_PhucHoi.ImageOptions.SvgImage")));
+            this.btn_PhucHoi.Name = "btn_PhucHoi";
+            this.btn_PhucHoi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // panelControl1
             // 
@@ -641,7 +632,7 @@ namespace NTH_Restaurant_Manager
             this.coltentd1.MinWidth = 25;
             this.coltentd1.Name = "coltentd1";
             this.coltentd1.Visible = true;
-            this.coltentd1.VisibleIndex = 0;
+            this.coltentd1.VisibleIndex = 2;
             this.coltentd1.Width = 94;
             // 
             // colmaBan1
@@ -675,7 +666,7 @@ namespace NTH_Restaurant_Manager
             this.coltenPhong1.MinWidth = 25;
             this.coltenPhong1.Name = "coltenPhong1";
             this.coltenPhong1.Visible = true;
-            this.coltenPhong1.VisibleIndex = 2;
+            this.coltenPhong1.VisibleIndex = 0;
             this.coltenPhong1.Width = 94;
             // 
             // frmDatBanTruoc
@@ -728,7 +719,6 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.BarButtonItem btn_ThemPhieuDat;
         private DevExpress.XtraBars.BarButtonItem btn_ThemChiTietDatBan;
-        private DevExpress.XtraBars.BarButtonItem btn_Luu;
         private DevExpress.XtraBars.BarButtonItem btn_XoaChiTietDatBan;
         private DevExpress.XtraBars.BarButtonItem btn_PhucHoi;
         private DevExpress.XtraBars.BarButtonItem btn_Reload;

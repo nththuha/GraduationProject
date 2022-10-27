@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -18,6 +19,11 @@ public class PhieuDatTruocController {
     @GetMapping("")
     public List<PhieuDatTruocDTO> layDSPhieuDatTruoc(){
         return phieuDatTruocService.layDSPhieuDatTruoc();
+    }
+
+    @GetMapping("/{ngay}")
+    public List<PhieuDatTruocDTO> layDSPhieuDatTruoc(@PathVariable Date ngay){
+        return phieuDatTruocService.layDSPhieuDatTruocTheoNgay(ngay);
     }
 
     @PostMapping("")

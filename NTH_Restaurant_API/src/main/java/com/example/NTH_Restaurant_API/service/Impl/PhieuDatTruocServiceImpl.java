@@ -11,6 +11,7 @@ import com.example.NTH_Restaurant_API.service.PhieuDatTruocService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -66,5 +67,11 @@ public class PhieuDatTruocServiceImpl implements PhieuDatTruocService {
     @Override
     public String xoaPhieuDatTruoc(Integer idPDT) {
         return null;
+    }
+
+    @Override
+    public List<PhieuDatTruocDTO> layDSPhieuDatTruocTheoNgay(Date ngay) {
+        List<PhieuDatTruocEntity> listPDT = phieuDatTruocRepository.layDSPhieuDatTruocNgayNgay(ngay);
+        return listPDT.stream().map(PhieuDatTruocDTO::new).collect(Collectors.toList());
     }
 }
