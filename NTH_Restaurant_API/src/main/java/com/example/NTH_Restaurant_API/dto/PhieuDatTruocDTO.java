@@ -18,6 +18,7 @@ public class PhieuDatTruocDTO {
     private Date ngayDat;
     private Integer idkh;
     private String hoTenKH;
+    private String sdt;
     private Integer idnv;
     private String hoTenNV;
 
@@ -29,6 +30,7 @@ public class PhieuDatTruocDTO {
         this.hoTenNV = phieuDatTruocEntity.getIdnv().getHoTen();
         this.idkh = phieuDatTruocEntity.getIdkh().getIdKH();
         this.hoTenKH = phieuDatTruocEntity.getIdkh().getHoTen();
+        this.sdt = phieuDatTruocEntity.getIdkh().getSDT();
     }
 
     public PhieuDatTruocEntity toEntity(){
