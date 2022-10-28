@@ -31,10 +31,12 @@ namespace NTH_Restaurant_Manager
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhieuDatTruoc));
+            System.Windows.Forms.Label ngayDatLabel;
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.btn_Them = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_CapNhatDatBan = new DevExpress.XtraBars.BarButtonItem();
             this.btn_CapNhat = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Luu = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Xoa = new DevExpress.XtraBars.BarButtonItem();
             this.btn_PhucHoi = new DevExpress.XtraBars.BarButtonItem();
@@ -47,10 +49,6 @@ namespace NTH_Restaurant_Manager
             this.bdsPDT = new System.Windows.Forms.BindingSource(this.components);
             this.gcPDT = new DevExpress.XtraGrid.GridControl();
             this.gvPDT = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.barToolbarsListItem1 = new DevExpress.XtraBars.BarToolbarsListItem();
-            this.de_Ngay = new DevExpress.XtraEditors.DateEdit();
             this.colidPDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colngayTao = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colngayDat = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,6 +57,12 @@ namespace NTH_Restaurant_Manager
             this.colidkh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colhoTenKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsdt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.label1 = new System.Windows.Forms.Label();
+            this.barToolbarsListItem1 = new DevExpress.XtraBars.BarToolbarsListItem();
+            this.de_Ngay = new DevExpress.XtraEditors.DateEdit();
+            this.de_NgayDat = new DevExpress.XtraEditors.DateEdit();
+            ngayDatLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsPDT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcPDT)).BeginInit();
@@ -67,6 +71,8 @@ namespace NTH_Restaurant_Manager
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.de_Ngay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.de_Ngay.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_NgayDat.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_NgayDat.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -79,15 +85,16 @@ namespace NTH_Restaurant_Manager
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.btn_Them,
+            this.btn_CapNhatDatBan,
             this.btn_CapNhat,
             this.btn_Luu,
             this.btn_Xoa,
             this.btn_Reload,
             this.btn_Thoat,
-            this.btn_PhucHoi});
+            this.btn_PhucHoi,
+            this.barButtonItem1});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 8;
+            this.barManager1.MaxItemId = 9;
             // 
             // bar2
             // 
@@ -97,10 +104,11 @@ namespace NTH_Restaurant_Manager
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.FloatLocation = new System.Drawing.Point(120, 174);
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Them),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_CapNhatDatBan),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_CapNhat),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Luu),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Xoa),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Luu),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_PhucHoi),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Reload),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Thoat)});
@@ -108,21 +116,31 @@ namespace NTH_Restaurant_Manager
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
             // 
-            // btn_Them
+            // btn_CapNhatDatBan
             // 
-            this.btn_Them.Caption = "Thêm";
-            this.btn_Them.Id = 0;
-            this.btn_Them.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Them.ImageOptions.SvgImage")));
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_CapNhatDatBan.Caption = "Cập nhật đặt bàn trước";
+            this.btn_CapNhatDatBan.Id = 0;
+            this.btn_CapNhatDatBan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_CapNhatDatBan.ImageOptions.SvgImage")));
+            this.btn_CapNhatDatBan.Name = "btn_CapNhatDatBan";
+            this.btn_CapNhatDatBan.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_CapNhatDatBan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_CapNhatDatBan_ItemClick);
             // 
             // btn_CapNhat
             // 
-            this.btn_CapNhat.Caption = "Cập nhật";
+            this.btn_CapNhat.Caption = "Cập nhật phiếu đặt";
             this.btn_CapNhat.Id = 1;
             this.btn_CapNhat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_CapNhat.ImageOptions.SvgImage")));
             this.btn_CapNhat.Name = "btn_CapNhat";
             this.btn_CapNhat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Cọc tiền";
+            this.barButtonItem1.Id = 8;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // btn_Luu
             // 
@@ -135,7 +153,7 @@ namespace NTH_Restaurant_Manager
             // 
             // btn_Xoa
             // 
-            this.btn_Xoa.Caption = "Xóa";
+            this.btn_Xoa.Caption = "Hủy phiếu đặt trước";
             this.btn_Xoa.Id = 3;
             this.btn_Xoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Xoa.ImageOptions.SvgImage")));
             this.btn_Xoa.Name = "btn_Xoa";
@@ -156,6 +174,7 @@ namespace NTH_Restaurant_Manager
             this.btn_Reload.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Reload.ImageOptions.SvgImage")));
             this.btn_Reload.Name = "btn_Reload";
             this.btn_Reload.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_Reload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Reload_ItemClick);
             // 
             // btn_Thoat
             // 
@@ -164,6 +183,7 @@ namespace NTH_Restaurant_Manager
             this.btn_Thoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Thoat.ImageOptions.SvgImage")));
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_Thoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Thoat_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -228,47 +248,7 @@ namespace NTH_Restaurant_Manager
             this.gvPDT.GridControl = this.gcPDT;
             this.gvPDT.Name = "gvPDT";
             this.gvPDT.OptionsBehavior.Editable = false;
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.label1);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 380);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1447, 329);
-            this.panelControl2.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(445, 35);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "QUẢN LÝ PHIẾU ĐẶT TRƯỚC";
-            // 
-            // barToolbarsListItem1
-            // 
-            this.barToolbarsListItem1.Caption = "barToolbarsListItem1";
-            this.barToolbarsListItem1.Id = 7;
-            this.barToolbarsListItem1.Name = "barToolbarsListItem1";
-            // 
-            // de_Ngay
-            // 
-            this.de_Ngay.EditValue = null;
-            this.de_Ngay.Location = new System.Drawing.Point(750, -2);
-            this.de_Ngay.MenuManager = this.barManager1;
-            this.de_Ngay.Name = "de_Ngay";
-            this.de_Ngay.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.de_Ngay.Properties.Appearance.Options.UseFont = true;
-            this.de_Ngay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.de_Ngay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.de_Ngay.Size = new System.Drawing.Size(332, 32);
-            this.de_Ngay.TabIndex = 7;
-            this.de_Ngay.EditValueChanged += new System.EventHandler(this.de_Ngay_EditValueChanged);
+            this.gvPDT.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvPDT_RowClick);
             // 
             // colidPDT
             // 
@@ -341,6 +321,75 @@ namespace NTH_Restaurant_Manager
             this.colsdt.VisibleIndex = 1;
             this.colsdt.Width = 94;
             // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(ngayDatLabel);
+            this.panelControl2.Controls.Add(this.de_NgayDat);
+            this.panelControl2.Controls.Add(this.label1);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl2.Location = new System.Drawing.Point(0, 380);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(1447, 329);
+            this.panelControl2.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(445, 35);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "QUẢN LÝ PHIẾU ĐẶT TRƯỚC";
+            // 
+            // barToolbarsListItem1
+            // 
+            this.barToolbarsListItem1.Caption = "barToolbarsListItem1";
+            this.barToolbarsListItem1.Id = 7;
+            this.barToolbarsListItem1.Name = "barToolbarsListItem1";
+            // 
+            // de_Ngay
+            // 
+            this.de_Ngay.EditValue = null;
+            this.de_Ngay.Location = new System.Drawing.Point(1115, -2);
+            this.de_Ngay.MenuManager = this.barManager1;
+            this.de_Ngay.Name = "de_Ngay";
+            this.de_Ngay.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.de_Ngay.Properties.Appearance.Options.UseFont = true;
+            this.de_Ngay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.de_Ngay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.de_Ngay.Size = new System.Drawing.Size(332, 32);
+            this.de_Ngay.TabIndex = 7;
+            this.de_Ngay.EditValueChanged += new System.EventHandler(this.de_Ngay_EditValueChanged);
+            // 
+            // ngayDatLabel
+            // 
+            ngayDatLabel.AutoSize = true;
+            ngayDatLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            ngayDatLabel.Location = new System.Drawing.Point(13, 75);
+            ngayDatLabel.Name = "ngayDatLabel";
+            ngayDatLabel.Size = new System.Drawing.Size(99, 27);
+            ngayDatLabel.TabIndex = 10;
+            ngayDatLabel.Text = "Ngày đặt";
+            // 
+            // de_NgayDat
+            // 
+            this.de_NgayDat.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsPDT, "ngayDat", true));
+            this.de_NgayDat.EditValue = null;
+            this.de_NgayDat.Location = new System.Drawing.Point(146, 72);
+            this.de_NgayDat.MenuManager = this.barManager1;
+            this.de_NgayDat.Name = "de_NgayDat";
+            this.de_NgayDat.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.de_NgayDat.Properties.Appearance.Options.UseFont = true;
+            this.de_NgayDat.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.de_NgayDat.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.de_NgayDat.Size = new System.Drawing.Size(462, 32);
+            this.de_NgayDat.TabIndex = 11;
+            // 
             // frmPhieuDatTruoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -364,6 +413,8 @@ namespace NTH_Restaurant_Manager
             this.panelControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.de_Ngay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.de_Ngay.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_NgayDat.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_NgayDat.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,7 +424,7 @@ namespace NTH_Restaurant_Manager
 
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar2;
-        private DevExpress.XtraBars.BarButtonItem btn_Them;
+        private DevExpress.XtraBars.BarButtonItem btn_CapNhatDatBan;
         private DevExpress.XtraBars.BarButtonItem btn_CapNhat;
         private DevExpress.XtraBars.BarButtonItem btn_Luu;
         private DevExpress.XtraBars.BarButtonItem btn_Xoa;
@@ -399,5 +450,7 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraGrid.Columns.GridColumn colidkh;
         private DevExpress.XtraGrid.Columns.GridColumn colhoTenKH;
         private DevExpress.XtraGrid.Columns.GridColumn colsdt;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraEditors.DateEdit de_NgayDat;
     }
 }

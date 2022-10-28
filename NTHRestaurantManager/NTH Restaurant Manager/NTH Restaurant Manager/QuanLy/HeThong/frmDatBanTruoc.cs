@@ -31,25 +31,33 @@ namespace NTH_Restaurant_Manager
         public frmDatBanTruoc()
         {
             InitializeComponent();
-            if(Program.pdt == null)
-            {
-                btn_ThemPhieuDat.Enabled = panelControl4.Enabled = true;
-                btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = false;
-            }
-            else
-            {
-                btn_ThemPhieuDat.Enabled = panelControl4.Enabled = false;
-                btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = true;
-                layDSPhong();
-                layDSThucDon();
-                layDSCTDatBanTruoc();
-            }
+            setUp();
             this.de_NgayDat.Properties.DisplayFormat.FormatString = "dd-MM-yyyy";
             this.de_NgayDat.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.de_NgayDat.Properties.EditFormat.FormatString = "dd-MM-yyyy";
             this.de_NgayDat.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.de_NgayDat.Properties.Mask.EditMask = "dd-MM-yyyy";
             khoiTao();
+        }
+
+        public void setUp()
+        {
+            if (Program.pdt == null)
+            {
+                btn_ThemPhieuDat.Enabled = panelControl4.Enabled = true;
+                btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = btn_InHopDong.Enabled = false;
+            }
+            else
+            {
+                txt_HoTenKH.Text = Program.pdt.hoTenKH;
+                String ngayDat = Program.pdt.ngayDat;
+                de_NgayDat.Text = ngayDat.Substring(8, 2) + "-" + ngayDat.Substring(5, 2) + "-" + ngayDat.Substring(0, 4); ;
+                btn_ThemPhieuDat.Enabled = panelControl4.Enabled = false;
+                btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = btn_InHopDong.Enabled = true;
+                layDSPhong();
+                layDSThucDon();
+                layDSCTDatBanTruoc();
+            }
         }
 
         private void khoiTao()
@@ -82,7 +90,7 @@ namespace NTH_Restaurant_Manager
 
             themPhieuDatTruoc();
             panelControl4.Enabled = btn_ThemPhieuDat.Enabled = false;
-            btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = true;
+            btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = btn_InHopDong.Enabled = true;
         }
 
         private async void themPhieuDatTruoc()
@@ -271,7 +279,12 @@ namespace NTH_Restaurant_Manager
             Program.khachHang = null;
 
             panelControl4.Enabled = btn_ThemPhieuDat.Enabled = true;
-            btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = false;
+            btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = btn_InHopDong.Enabled = false;
+        }
+
+        private void btn_InHopDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

@@ -49,6 +49,8 @@ public class MonAnEntity {
     @OneToMany(mappedBy = "mama")
     private List<ThayDoiGiaMonEntity> thaydoigiamonList;
 
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "mama")
+    private List<CT_DatMonTruocEntity> ctDatmontruocList;
     @ManyToOne
     @JoinColumn(name = "MALMA")
     private LoaiMonAnEntity malma;

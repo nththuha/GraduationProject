@@ -45,4 +45,7 @@ public class PhieuDatTruocEntity {
 
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idpdt")
     private List<TienCocEntity> tiencocList;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idpdt")
+    private List<CT_DatMonTruocEntity> ctDatmontruocList;
 }
