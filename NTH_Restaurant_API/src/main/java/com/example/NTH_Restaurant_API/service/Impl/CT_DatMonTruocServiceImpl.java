@@ -28,7 +28,7 @@ public class CT_DatMonTruocServiceImpl implements CT_DatMonTruocService {
     private PhieuDatTruocRepository phieuDatTruocRepository;
 
     @Override
-    public List<CT_DatMonTruocDTO> layDSDatMonTheoPhieuDatTruoc(Integer idpdt) {
+    public List<CT_DatMonTruocDTO> layDSDatMonTheoPhieuDatTruoc(int idpdt) {
         try {
             List<CT_DatMonTruocEntity> listT = ct_datMonTruocRepository.findByIdpdt_IdPDT(idpdt);
             for(CT_DatMonTruocEntity i: listT){
@@ -38,7 +38,6 @@ public class CT_DatMonTruocServiceImpl implements CT_DatMonTruocService {
         catch (Exception e){
             return null;
         }
-
         List<CTDatMon> list = ct_datMonTruocRepository.layDSChiTietDatMon(idpdt);
         List<CT_DatMonTruocEntity> listDMT = new ArrayList<>();
         CT_DatMonTruocEntity ct_datMonTruoc;

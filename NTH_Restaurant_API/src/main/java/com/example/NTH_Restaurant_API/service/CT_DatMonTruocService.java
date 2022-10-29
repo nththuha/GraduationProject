@@ -5,5 +5,5 @@ import com.example.NTH_Restaurant_API.dto.CT_DatMonTruocDTO;
 import java.util.List;
 
 public interface CT_DatMonTruocService {
-    List<CT_DatMonTruocDTO> layDSDatMonTheoPhieuDatTruoc(Integer idpdt);
+    List<CT_DatMonTruocDTO> layDSDatMonTheoPhieuDatTruoc(int idpdt);
 }

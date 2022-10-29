@@ -12,7 +12,6 @@ import java.util.List;
 
 public interface CT_DatMonTruocRepository extends JpaRepository<CT_DatMonTruocEntity, Integer> {
     List<CT_DatMonTruocEntity> findByIdpdt_IdPDT(Integer idPDT);
-    void deleteByIdpdt_IdPDT(Integer idPDT);
 
     @Transactional
     @Modifying
@@ -21,5 +20,5 @@ public interface CT_DatMonTruocRepository extends JpaRepository<CT_DatMonTruocEn
                 "from ct_datbantruoc cd \n" +
                 "where cd.idpdt = :idPDT) t\n" +
                 "where ct.idtd = t.idtd", nativeQuery = true)
-    public List<CTDatMon> layDSChiTietDatMon(@Param("idPDT") Integer idPDT);
+    public List<CTDatMon> layDSChiTietDatMon(@Param("idPDT") int idPDT);
 }

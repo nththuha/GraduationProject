@@ -15,7 +15,7 @@ public class CT_DatMonTruocController {
     private CT_DatMonTruocService ct_datMonTruocService;
 
     @PostMapping("/{idpdt}")
-    public List<CT_DatMonTruocDTO> layDSDatMonTheoPhieuDatTruoc(@PathVariable Integer idpdt){
+    public List<CT_DatMonTruocDTO> layDSDatMonTheoPhieuDatTruoc(@PathVariable int idpdt){
         return ct_datMonTruocService.layDSDatMonTheoPhieuDatTruoc(idpdt);
     }
 }
