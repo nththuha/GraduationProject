@@ -9,6 +9,4 @@ public interface CT_DatBanTruocRepository extends JpaRepository<CT_DatBanTruocEn
     List<CT_DatBanTruocEntity> findByIdtd_IdTD(Integer idTD);
 
     List<CT_DatBanTruocEntity> findByIdpdt_IdPDT(Integer idPDT);
-
-
 }
