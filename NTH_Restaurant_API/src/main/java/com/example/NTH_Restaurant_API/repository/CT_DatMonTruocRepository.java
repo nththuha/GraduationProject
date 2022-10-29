@@ -20,5 +20,5 @@ public interface CT_DatMonTruocRepository extends JpaRepository<CT_DatMonTruocEn
                 "from ct_datbantruoc cd \n" +
                 "where cd.idpdt = :idPDT) t\n" +
                 "where ct.idtd = t.idtd", nativeQuery = true)
-    public List<CTDatMon> layDSChiTietDatMon(@Param("idPDT") int idPDT);
+    public List<CTDatMon> layDSChiTietDatMon(@Param("idPDT") String idPDT);
 }
