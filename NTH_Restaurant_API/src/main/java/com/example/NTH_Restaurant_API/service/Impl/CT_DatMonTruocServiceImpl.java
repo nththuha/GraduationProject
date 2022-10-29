@@ -40,33 +40,33 @@ public class CT_DatMonTruocServiceImpl implements CT_DatMonTruocService {
         }
         List<CTDatMon> list = ct_datMonTruocRepository.layDSChiTietDatMon(idpdt);
         List<CT_DatMonTruocEntity> listDMT = new ArrayList<>();
-        CT_DatMonTruocEntity ct_datMonTruoc;
-        String maMA = "";
-        for(int i = 0; i < list.size(); i++){
-            if(i == 0){
-                ct_datMonTruoc = new CT_DatMonTruocEntity();
-                ct_datMonTruoc.setIdpdt(phieuDatTruocRepository.getById(idpdt));
-                ct_datMonTruoc.setGia(list.get(i).getGia());
-                ct_datMonTruoc.setSoluong(list.get(i).getSoluong());
-                ct_datMonTruoc.setMama(monAnRepository.getById(list.get(i).getMama()));
-                maMA = list.get(i).getMama();
-                listDMT.add(ct_datMonTruoc);
-            }
-            else{
-                if(list.get(i).getMama().equals(maMA)){
-                    listDMT.get(list.size() - 1).setSoluong(listDMT.get(list.size() - 1).getSoluong() + list.get(i).getSoluong());
-                }
-                else{
-                    ct_datMonTruoc = new CT_DatMonTruocEntity();
-                    ct_datMonTruoc.setIdpdt(phieuDatTruocRepository.getById(idpdt));
-                    ct_datMonTruoc.setGia(list.get(i).getGia());
-                    ct_datMonTruoc.setSoluong(list.get(i).getSoluong());
-                    ct_datMonTruoc.setMama(monAnRepository.getById(list.get(i).getMama()));
-                    maMA = list.get(i).getMama();
-                    listDMT.add(ct_datMonTruoc);
-                }
-            }
-        }
+//        CT_DatMonTruocEntity ct_datMonTruoc;
+//        String maMA = "";
+//        for(int i = 0; i < list.size(); i++){
+//            if(i == 0){
+//                ct_datMonTruoc = new CT_DatMonTruocEntity();
+//                ct_datMonTruoc.setIdpdt(phieuDatTruocRepository.getById(idpdt));
+//                ct_datMonTruoc.setGia(list.get(i).getGia());
+//                ct_datMonTruoc.setSoluong(list.get(i).getSoluong());
+//                ct_datMonTruoc.setMama(monAnRepository.getById(list.get(i).getMama()));
+//                maMA = list.get(i).getMama();
+//                listDMT.add(ct_datMonTruoc);
+//            }
+//            else{
+//                if(list.get(i).getMama().equals(maMA)){
+//                    listDMT.get(list.size() - 1).setSoluong(listDMT.get(list.size() - 1).getSoluong() + list.get(i).getSoluong());
+//                }
+//                else{
+//                    ct_datMonTruoc = new CT_DatMonTruocEntity();
+//                    ct_datMonTruoc.setIdpdt(phieuDatTruocRepository.getById(idpdt));
+//                    ct_datMonTruoc.setGia(list.get(i).getGia());
+//                    ct_datMonTruoc.setSoluong(list.get(i).getSoluong());
+//                    ct_datMonTruoc.setMama(monAnRepository.getById(list.get(i).getMama()));
+//                    maMA = list.get(i).getMama();
+//                    listDMT.add(ct_datMonTruoc);
+//                }
+//            }
+//        }
         try {
             ct_datMonTruocRepository.saveAll(listDMT);
         }
