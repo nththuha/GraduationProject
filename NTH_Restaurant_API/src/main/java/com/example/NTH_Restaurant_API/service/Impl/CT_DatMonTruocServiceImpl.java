@@ -40,6 +40,16 @@ public class CT_DatMonTruocServiceImpl implements CT_DatMonTruocService {
         }
         List<CTDatMon> list = ct_datMonTruocRepository.layDSChiTietDatMon(idpdt);
         List<CT_DatMonTruocEntity> listDMT = new ArrayList<>();
+        CT_DatMonTruocEntity ct_datMonTruoc;
+        for(CTDatMon i: list){
+            ct_datMonTruoc = new CT_DatMonTruocEntity();
+            ct_datMonTruoc.setIdpdt(phieuDatTruocRepository.getById(idpdt));
+            ct_datMonTruoc.setMama(monAnRepository.getById(i.getMama()));
+            ct_datMonTruoc.setSoluong(i.getSoluong());
+            ct_datMonTruoc.setGia(i.getGia());
+            listDMT.add(ct_datMonTruoc);
+        }
+
 //        CT_DatMonTruocEntity ct_datMonTruoc;
 //        String maMA = "";
 //        for(int i = 0; i < list.size(); i++){
