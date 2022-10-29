@@ -15,6 +15,7 @@ import javax.persistence.*;
 @Table(name = "CT_DATMONTRUOc")
 public class CT_DatMonTruocEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "IDCTDMT")
     private Integer idctdmt;
 

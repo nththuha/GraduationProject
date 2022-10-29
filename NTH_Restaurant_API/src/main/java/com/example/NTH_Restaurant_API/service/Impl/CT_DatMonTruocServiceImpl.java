@@ -28,10 +28,12 @@ public class CT_DatMonTruocServiceImpl implements CT_DatMonTruocService {
     private PhieuDatTruocRepository phieuDatTruocRepository;
 
     @Override
-    @Transactional
     public List<CT_DatMonTruocDTO> layDSDatMonTheoPhieuDatTruoc(Integer idpdt) {
         try {
-            ct_datMonTruocRepository.deleteByIdpdt_IdPDT(idpdt);
+            List<CT_DatMonTruocEntity> listT = ct_datMonTruocRepository.findByIdpdt_IdPDT(idpdt);
+            for(CT_DatMonTruocEntity i: listT){
+                ct_datMonTruocRepository.deleteById(i.getIdctdmt());
+            }
         }
         catch (Exception e){
             return null;
