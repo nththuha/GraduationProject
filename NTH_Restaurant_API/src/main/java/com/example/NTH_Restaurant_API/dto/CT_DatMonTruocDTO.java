@@ -14,6 +14,7 @@ public class CT_DatMonTruocDTO {
     private Integer idctdmt;
     private Integer soluong;
     private Integer gia;
+    private Integer giaTungMon;
     private String mama;
     private String tenma;
     private Integer idpdt;
@@ -22,6 +23,7 @@ public class CT_DatMonTruocDTO {
         this.idctdmt = ct_datMonTruocEntity.getIdctdmt();
         this.soluong = ct_datMonTruocEntity.getSoluong();
         this.gia = ct_datMonTruocEntity.getGia();
+        this.giaTungMon = ct_datMonTruocEntity.getGia() / ct_datMonTruocEntity.getSoluong();
         this.mama = ct_datMonTruocEntity.getMama().getMaMA();
         this.tenma = ct_datMonTruocEntity.getMama().getTenMA();
         this.idpdt = ct_datMonTruocEntity.getIdpdt().getIdPDT();
