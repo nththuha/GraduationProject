@@ -38,7 +38,7 @@ public class CT_DatMonTruocServiceImpl implements CT_DatMonTruocService {
         catch (Exception e){
             return null;
         }
-        List<CTDatMon> list = ct_datMonTruocRepository.layDSChiTietDatMon(idpdt + "");
+        List<CTDatMon> list = ct_datMonTruocRepository.layDSChiTietDatMon(idpdt);
         List<CT_DatMonTruocEntity> listDMT = new ArrayList<>();
         CT_DatMonTruocEntity ct_datMonTruoc;
         String maMA = "";
