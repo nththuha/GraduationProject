@@ -82,7 +82,7 @@ public class CT_DatMonTruocServiceImpl implements CT_DatMonTruocService {
             }
         }
         pdt.setGia(tongTien);
-        pdt.setGiaSauThue((int) (tongTien * 0.1));
+        pdt.setGiaSauThue((int) (tongTien * 1.1));
 
         List<TienCocEntity> listTC = tienCocRepository.findByIdpdt_IdPDT(idpdt);
 
