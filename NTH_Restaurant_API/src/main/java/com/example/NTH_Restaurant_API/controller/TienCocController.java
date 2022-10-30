@@ -17,7 +17,7 @@ public class TienCocController {
 
     @GetMapping("/{idpdt}")
     public List<TienCocDTO> layDSTienCocTheoPDT(@PathVariable Integer idpdt){
-        return tienCocService.latDSTienCocTheoPDT(idpdt);
+        return tienCocService.layDSTienCocTheoPDT(idpdt);
     }
 
     @PostMapping("")

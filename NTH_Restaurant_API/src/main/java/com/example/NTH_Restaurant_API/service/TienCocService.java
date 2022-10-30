@@ -5,7 +5,7 @@ import com.example.NTH_Restaurant_API.dto.TienCocDTO;
 import java.util.List;
 
 public interface TienCocService {
-    List<TienCocDTO> latDSTienCocTheoPDT(Integer idpdt);
+    List<TienCocDTO> layDSTienCocTheoPDT(Integer idpdt);
 
     String themTienCoc(TienCocDTO tienCocDTO);
 

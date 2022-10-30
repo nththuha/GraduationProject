@@ -228,6 +228,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\CTDatMonTruocModel.cs" />
+    <Compile Include="Model\PhieuDatCocModel.cs" />
+    <Compile Include="Model\TienCocModel.cs" />
     <Compile Include="QuanLy\HeThong\frmPhieuDatTruoc.cs">
       <SubType>Form</SubType>
     </Compile>

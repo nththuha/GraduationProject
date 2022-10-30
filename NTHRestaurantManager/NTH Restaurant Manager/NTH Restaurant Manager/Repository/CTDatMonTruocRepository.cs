@@ -22,7 +22,7 @@ namespace NTH_Restaurant_Manager.Repository
             _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task<List<CTDatMonTruocModel>> layDSDatMonTheoPhieuDatTruoc(int idPDT)
+        public async Task<PhieuDatCocModel> layDSDatMonTheoPhieuDatTruoc(int idPDT)
         {
             var id = JsonConvert.SerializeObject(idPDT);
             var buffer = Encoding.UTF8.GetBytes(id);
@@ -30,8 +30,8 @@ namespace NTH_Restaurant_Manager.Repository
             byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             _response = await _client.PostAsync("ctdatmontruoc/" + idPDT, byteContent);
             var json = await _response.Content.ReadAsStringAsync();
-            var listCTDMT = JsonConvert.DeserializeObject<List<CTDatMonTruocModel>>(json);
-            return listCTDMT;
+            var pdc = JsonConvert.DeserializeObject<PhieuDatCocModel>(json);
+            return pdc;
         }
     }
 }

@@ -291,7 +291,7 @@ namespace NTH_Restaurant_Manager
 
         private async void layDSCTDatMonTruoc()
         {
-            var listCTDMT = await _repositoryCTDMT.layDSDatMonTheoPhieuDatTruoc(Program.pdt.idPDT);
+            /*var listCTDMT = await _repositoryCTDMT.layDSDatMonTheoPhieuDatTruoc(Program.pdt.idPDT);
             if(listCTDMT == null)
             {
                 MessageBox.Show("Tạo hợp đồng thất bại!", "Thông báo");
@@ -326,7 +326,7 @@ namespace NTH_Restaurant_Manager
                 rp.DataSource = ds;
                 ReportPrintTool print = new ReportPrintTool(rp);
                 print.ShowPreviewDialog();
-            }
+            }*/
         }
     }
 }

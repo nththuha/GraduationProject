@@ -6,5 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface TienCocRepository extends JpaRepository<TienCocEntity, Integer> {
+    Boolean existsByIdTC(Integer idTC);
     List<TienCocEntity> findByIdpdt_IdPDT(Integer idPDT);
 }
