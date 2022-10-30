@@ -65,12 +65,12 @@ namespace NTH_Restaurant_Manager
             Program.pdt.idPDT = int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString());
             Program.pdt.idkh = int.Parse(gvPDT.GetRowCellValue(num, "idkh").ToString());
             Program.pdt.hoTenKH = gvPDT.GetRowCellValue(num, "hoTenKH").ToString();
+            Program.pdt.sdt = gvPDT.GetRowCellValue(num, "sdt").ToString();
             Program.pdt.idnv = int.Parse(gvPDT.GetRowCellValue(num, "idnv").ToString());
             String ngayDat = gvPDT.GetRowCellValue(num, "ngayDat").ToString();
             Program.pdt.ngayDat = ngayDat.Substring(6, 4) + "-" + ngayDat.Substring(3, 2) + "-" + ngayDat.Substring(0, 2);
             String ngayTao = gvPDT.GetRowCellValue(num, "ngayTao").ToString();
             Program.pdt.ngayTao = ngayTao.Substring(6, 4) + "-" + ngayTao.Substring(3, 2) + "-" + ngayTao.Substring(0, 2);
-
             Program.frmChinh.btn_DatBanTruoc_ItemClick(sender, e);
             Program.formDatBanTruoc.setUp();
         }
