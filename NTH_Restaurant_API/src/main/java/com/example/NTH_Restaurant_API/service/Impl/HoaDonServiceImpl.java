@@ -46,7 +46,7 @@ public class HoaDonServiceImpl implements HoaDonService {
         }
     };
 
-    public static String chuyenSangChu(String x) {
+    public String chuyenSangChu(String x) {
         StringBuilder kq = new StringBuilder();
         String m = x;
         int dem = m.length();
