@@ -28,9 +28,9 @@ public class TienCocEntity {
     @Column(name = "TRIGIA")
     private Integer triGia;
 
-    @Column(name = "CMND")
+    @Column(name = "SDT")
     @Size(max = 50)
-    private String cmnd;
+    private String sdt;
 
     @Column(name = "HOTENKH")
     @Size(max = 50)
