@@ -1,4 +1,5 @@
-﻿using NTH_Restaurant_Manager.Model;
+﻿using DevExpress.XtraReports.UI;
+using NTH_Restaurant_Manager.Model;
 using NTH_Restaurant_Manager.Repository;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace NTH_Restaurant_Manager
     public partial class frmPhieuDatTruoc : Form
     {
         PhieuDatTruocRepository _repositoryPDT = new PhieuDatTruocRepository();
+        CTDatMonTruocRepository _repositoryCTDMT = new CTDatMonTruocRepository();
         int num;
 
         public frmPhieuDatTruoc()
@@ -88,6 +90,79 @@ namespace NTH_Restaurant_Manager
         private void btn_Reload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             layDSPhieuDatTheoNgay();
+        }
+
+        private void btn_InHopDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int idPDT = int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString());
+            layPhieuDatCoc(idPDT);
+        }
+
+        private async void layPhieuDatCoc(int idPDT)
+        {
+            PhieuDatCocModel pdc = await _repositoryCTDMT.layDSDatMonTheoPhieuDatTruoc(idPDT);
+            if (pdc == null)
+            {
+                MessageBox.Show("Tạo phiếu đặt cọc thất bại!", "Thông báo");
+            }
+            else
+            {
+                MessageBox.Show("Tạo phiếu đặt cọc thành công!", "Thông báo");
+                rpHopDong rp = new rpHopDong();
+
+                rp.lb_HoTenKH.Text = pdc.hoTenKH;
+                rp.lb_SDT.Text = pdc.sdt;
+                rp.lb_NgayDat.Text = pdc.ngayDat.Substring(8, 2) + "-" + pdc.ngayDat.Substring(5, 2) + "-" + pdc.ngayDat.Substring(0, 4);
+                rp.lb_NhanVien.Text = pdc.hoTenNV;
+                rp.lb_Tien.Text = String.Format("{0:0,0}", pdc.gia);
+                rp.lb_Thue.Text = String.Format("{0:0,0}", (pdc.gia * 0.1));
+                rp.lb_TongTien.Text = String.Format("{0:0,0}", pdc.giaSauThue);
+
+                DataTable dt = new DataTable("listCTDMT");
+                dt.Columns.Add("tenma", typeof(String));
+                dt.Columns.Add("soLuong", typeof(int));
+                dt.Columns.Add("giaTungMon", typeof(String));
+                dt.Columns.Add("gia", typeof(String));
+                List<CTDatMonTruocModel> listCTDMT = pdc.listCTDMT;
+                foreach (CTDatMonTruocModel i in listCTDMT)
+                {
+                    var giaTungMon = String.Format("{0:0,0}", i.giaTungMon);
+                    var gia = String.Format("{0:0,0}", i.gia);
+                    dt.Rows.Add(new Object[] { i.tenma, i.soluong, giaTungMon, gia });
+                }
+
+                List<TienCocModel> listTC = pdc.listTC;
+                int tong = 0;
+                if(listTC.Count == 1)
+                {
+                    tong += listTC[0].triGia;
+                    var tien = String.Format("{0:0,0}", listTC[0].triGia);
+                    rp.tc_HoTenKH1.Text = listTC[0].hoTenKH;
+                    rp.tc_SDT1.Text = listTC[0].sdt;
+                    rp.tc_NgayCoc1.Text = listTC[0].ngay.Substring(8, 2) + "-" + listTC[0].ngay.Substring(5, 2) + "-" + listTC[0].ngay.Substring(0, 4);
+                    rp.tc_SoTien1.Text = tien;
+                }
+                else if(listTC.Count == 2)
+                {
+                    tong += listTC[0].triGia + listTC[1].triGia;
+                    var tien = String.Format("{0:0,0}", listTC[0].triGia);
+                    rp.tc_HoTenKH1.Text = listTC[0].hoTenKH;
+                    rp.tc_SDT1.Text = listTC[0].sdt;
+                    rp.tc_NgayCoc1.Text = listTC[0].ngay.Substring(8, 2) + "-" + listTC[0].ngay.Substring(5, 2) + "-" + listTC[0].ngay.Substring(0, 4);
+                    rp.tc_SoTien1.Text = tien;
+                    tien = String.Format("{0:0,0}", listTC[1].triGia);
+                    rp.tc_HoTenKH2.Text = listTC[1].hoTenKH;
+                    rp.tc_SDT2.Text = listTC[1].sdt;
+                    rp.tc_NgayCoc2.Text = listTC[1].ngay.Substring(8, 2) + "-" + listTC[1].ngay.Substring(5, 2) + "-" + listTC[1].ngay.Substring(0, 4);
+                    rp.tc_SoTien2.Text = tien;
+                }
+                rp.lb_TienCoc.Text = String.Format("{0:0,0}", tong);
+                DataSet ds = new DataSet();
+                ds.Tables.Add(dt);
+                rp.DataSource = ds;
+                ReportPrintTool print = new ReportPrintTool(rp);
+                print.ShowPreviewDialog();
+            }
         }
     }
 }

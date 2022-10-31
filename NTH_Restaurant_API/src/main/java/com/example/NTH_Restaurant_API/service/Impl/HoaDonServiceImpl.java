@@ -28,7 +28,7 @@ public class HoaDonServiceImpl implements HoaDonService {
     };
     public static HashMap<String, String> hm_hanh = new HashMap<String, String>() {
         {
-            put("1", "VND");
+            put("1", "");
             put("2", "mươi");
             put("3", "trăm");
             put("4", "nghìn");
