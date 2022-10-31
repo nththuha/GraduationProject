@@ -50,7 +50,8 @@ public class PhieuDatTruocServiceImpl implements PhieuDatTruocService {
     @Override
     public String suaPhieuDatTruoc(PhieuDatTruocDTO phieuDatTruocDTO) {
         if(!phieuDatTruocRepository.existsByIdPDT(phieuDatTruocDTO.getIdPDT())) return "false";
-        PhieuDatTruocEntity pd = phieuDatTruocDTO.toEntity();
+        PhieuDatTruocEntity pd = phieuDatTruocRepository.getById(phieuDatTruocDTO.getIdPDT());
+        pd.setNgayDat(phieuDatTruocDTO.getNgayDat());
         KhachHangEntity kh = khachHangRepository.getById(phieuDatTruocDTO.getIdkh());
         NhanVienEntity nv = nhanVienRepository.getById(phieuDatTruocDTO.getIdnv());
         pd.setIdkh(kh);

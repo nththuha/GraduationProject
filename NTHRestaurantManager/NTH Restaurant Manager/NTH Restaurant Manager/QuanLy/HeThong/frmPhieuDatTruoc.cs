@@ -17,6 +17,7 @@ namespace NTH_Restaurant_Manager
     {
         PhieuDatTruocRepository _repositoryPDT = new PhieuDatTruocRepository();
         CTDatMonTruocRepository _repositoryCTDMT = new CTDatMonTruocRepository();
+        TienCocRepository _repositoryTC = new TienCocRepository();
         int num;
 
         public frmPhieuDatTruoc()
@@ -27,6 +28,11 @@ namespace NTH_Restaurant_Manager
             this.de_Ngay.Properties.EditFormat.FormatString = "dd-MM-yyyy";
             this.de_Ngay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.de_Ngay.Properties.Mask.EditMask = "dd-MM-yyyy";
+            this.de_NgayDat.Properties.DisplayFormat.FormatString = "dd-MM-yyyy";
+            this.de_NgayDat.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.de_NgayDat.Properties.EditFormat.FormatString = "dd-MM-yyyy";
+            this.de_NgayDat.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.de_NgayDat.Properties.Mask.EditMask = "dd-MM-yyyy";
             khoiTao();
             layDSPhieuDatTheoNgay();
         }
@@ -44,10 +50,32 @@ namespace NTH_Restaurant_Manager
                     listPDT[i].ngayTao = listPDT[i].ngayTao.Substring(8, 2) + "-" + listPDT[i].ngayTao.Substring(5, 2) + "-" + listPDT[i].ngayTao.Substring(0, 4);
                 }
                 gcPDT.DataSource = listPDT;
+                if(listPDT.Count > 0)
+                {
+                    layDSTienCocTheoPDT(listPDT[0].idPDT);
+                }
             }
             catch(Exception e)
             {
                 MessageBox.Show("Lỗi lấy danh sách phiếu đặt trước: " + e.Message, "Thông báo");
+            }
+        }
+
+        private async void layDSTienCocTheoPDT(int idPDT)
+        {
+            gcTC.DataSource = null;
+            try
+            {
+                var listTC = await _repositoryTC.layDSTienCocTheoPDT(idPDT);
+                for (int i = 0; i < listTC.Count; i++)
+                {
+                    listTC[i].ngay = listTC[i].ngay.Substring(8, 2) + "-" + listTC[i].ngay.Substring(5, 2) + "-" + listTC[i].ngay.Substring(0, 4);
+                }
+                gcTC.DataSource = listTC;
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Lỗi lấy danh sách tiền cọc: " + e.Message, "Thông báo");
             }
         }
 
@@ -58,6 +86,7 @@ namespace NTH_Restaurant_Manager
 
         private void de_Ngay_EditValueChanged(object sender, EventArgs e)
         {
+            gcTC.DataSource = null;
             layDSPhieuDatTheoNgay();
         }
 
@@ -80,6 +109,9 @@ namespace NTH_Restaurant_Manager
         private void gvPDT_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             num = e.RowHandle;
+            layDSTienCocTheoPDT(int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString()));
+            de_NgayDat.DateTime = DateTime.ParseExact(gvPDT.GetRowCellValue(num, "ngayDat").ToString(), "dd-MM-yyyy",
+                                       System.Globalization.CultureInfo.InvariantCulture);
         }
 
         private void btn_Thoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -117,6 +149,7 @@ namespace NTH_Restaurant_Manager
                 rp.lb_Tien.Text = String.Format("{0:0,0}", pdc.gia);
                 rp.lb_Thue.Text = String.Format("{0:0,0}", (pdc.gia * 0.1));
                 rp.lb_TongTien.Text = String.Format("{0:0,0}", pdc.giaSauThue);
+                rp.lb_TienChu.Text = pdc.giaChu;
 
                 DataTable dt = new DataTable("listCTDMT");
                 dt.Columns.Add("tenma", typeof(String));
@@ -163,6 +196,22 @@ namespace NTH_Restaurant_Manager
                 ReportPrintTool print = new ReportPrintTool(rp);
                 print.ShowPreviewDialog();
             }
+        }
+
+        private void btn_PhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gcPDT.Enabled = gcTC.Enabled = true;
+            panelControl2.Enabled = false;
+            btn_CapNhatDatBan.Enabled = btn_CapNhat.Enabled = btn_InHopDong.Enabled = btn_Huy.Enabled = btn_CocTien.Enabled = btn_Reload.Enabled = true;
+            btn_Luu.Enabled = btn_PhucHoi.Enabled = false;
+        }
+
+        private void btn_CapNhat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gcPDT.Enabled = gcTC.Enabled = false;
+            panelControl2.Enabled = true;
+            btn_CapNhatDatBan.Enabled = btn_CapNhat.Enabled = btn_InHopDong.Enabled = btn_Huy.Enabled = btn_CocTien.Enabled = btn_Reload.Enabled = false;
+            btn_Luu.Enabled = btn_PhucHoi.Enabled = true;
         }
     }
 }

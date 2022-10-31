@@ -420,6 +420,7 @@
     <Compile Include="QuanLy\HeThong\rpHopDong.Designer.cs">
       <DependentUpon>rpHopDong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repository\TienCocRepository.cs" />
     <EmbeddedResource Include="QuanLy\HeThong\frmPhieuDatTruoc.resx">
       <DependentUpon>frmPhieuDatTruoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -522,6 +523,7 @@
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.NhanVienModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.NhanVienTaiKhoanModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.NVTKModel.datasource" />
+    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.PhieuDatCocModel1.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.PhieuDatModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.PhieuDatTruocModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.PhongModel.datasource" />
@@ -529,6 +531,7 @@
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.TaiKhoanModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.ThayDoiGiaMonModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.ThucDonModel.datasource" />
+    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.TienCocModel1.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.TokenModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
