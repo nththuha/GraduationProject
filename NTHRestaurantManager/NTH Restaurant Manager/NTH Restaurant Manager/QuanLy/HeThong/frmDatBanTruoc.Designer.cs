@@ -87,7 +87,6 @@ namespace NTH_Restaurant_Manager
             this.coltenBan1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmaPhong1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltenPhong1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btn_InHopDong = new DevExpress.XtraBars.BarButtonItem();
             hoTenKHLabel = new System.Windows.Forms.Label();
             ngayDatLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -153,8 +152,7 @@ namespace NTH_Restaurant_Manager
             this.btn_Reload,
             this.btn_Thoat,
             this.btn_PhucHoi,
-            this.btn_Load,
-            this.btn_InHopDong});
+            this.btn_Load});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 9;
             // 
@@ -170,7 +168,6 @@ namespace NTH_Restaurant_Manager
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Load),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_ThemChiTietDatBan),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_XoaChiTietDatBan),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_InHopDong),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Thoat)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
@@ -685,16 +682,6 @@ namespace NTH_Restaurant_Manager
             this.coltenPhong1.VisibleIndex = 0;
             this.coltenPhong1.Width = 94;
             // 
-            // btn_InHopDong
-            // 
-            this.btn_InHopDong.Caption = "In hợp đồng";
-            this.btn_InHopDong.Enabled = false;
-            this.btn_InHopDong.Id = 8;
-            this.btn_InHopDong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
-            this.btn_InHopDong.Name = "btn_InHopDong";
-            this.btn_InHopDong.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btn_InHopDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_InHopDong_ItemClick);
-            // 
             // frmDatBanTruoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -795,6 +782,5 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraEditors.SimpleButton btn_ChonKH;
         public DevExpress.XtraEditors.TextEdit txt_HoTenKH;
         private DevExpress.XtraBars.BarButtonItem btn_Load;
-        private DevExpress.XtraBars.BarButtonItem btn_InHopDong;
     }
 }

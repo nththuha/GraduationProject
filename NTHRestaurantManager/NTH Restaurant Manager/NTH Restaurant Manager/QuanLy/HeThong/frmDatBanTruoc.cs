@@ -47,7 +47,7 @@ namespace NTH_Restaurant_Manager
             if (Program.pdt == null)
             {
                 btn_ThemPhieuDat.Enabled = panelControl4.Enabled = true;
-                btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = btn_InHopDong.Enabled = false;
+                btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = false;
             }
             else
             {
@@ -55,7 +55,7 @@ namespace NTH_Restaurant_Manager
                 String ngayDat = Program.pdt.ngayDat;
                 de_NgayDat.Text = ngayDat.Substring(8, 2) + "-" + ngayDat.Substring(5, 2) + "-" + ngayDat.Substring(0, 4); ;
                 btn_ThemPhieuDat.Enabled = panelControl4.Enabled = false;
-                btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = btn_InHopDong.Enabled = true;
+                btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = true;
                 layDSPhong();
                 layDSThucDon();
                 layDSCTDatBanTruoc();
@@ -92,7 +92,7 @@ namespace NTH_Restaurant_Manager
 
             themPhieuDatTruoc();
             panelControl4.Enabled = btn_ThemPhieuDat.Enabled = false;
-            btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = btn_InHopDong.Enabled = true;
+            btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = true;
         }
 
         private async void themPhieuDatTruoc()
@@ -281,52 +281,7 @@ namespace NTH_Restaurant_Manager
             Program.khachHang = null;
 
             panelControl4.Enabled = btn_ThemPhieuDat.Enabled = true;
-            btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = btn_InHopDong.Enabled = false;
-        }
-
-        private void btn_InHopDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            layDSCTDatMonTruoc();
-        }
-
-        private async void layDSCTDatMonTruoc()
-        {
-            /*var listCTDMT = await _repositoryCTDMT.layDSDatMonTheoPhieuDatTruoc(Program.pdt.idPDT);
-            if(listCTDMT == null)
-            {
-                MessageBox.Show("Tạo hợp đồng thất bại!", "Thông báo");
-            }
-            else
-            {
-                MessageBox.Show("Tạo hợp đồng thành công!", "Thông báo");
-                rpHopDong rp = new rpHopDong();
-
-                DataSet ds = new DataSet();
-
-                rp.lb_HoTenKH.Text = Program.pdt.hoTenKH;
-                rp.lb_SDTKH.Text = Program.pdt.sdt;
-                rp.lb_NgayDat.Text = Program.pdt.ngayDat.Substring(8, 2) + "-" + Program.pdt.ngayDat.Substring(5, 2) + "-" + Program.pdt.ngayDat.Substring(0, 4);
-                rp.lb_NhanVienLap.Text = Program.nhanVienDangDangNhap.hoTen;
-
-                DataTable dt = new DataTable();
-                dt.TableName = "CTDatMonTruoc";
-                dt.Columns.Add("tenma", typeof(String));
-                dt.Columns.Add("soLuong", typeof(int));
-                dt.Columns.Add("giaTungMon", typeof(String));
-                dt.Columns.Add("gia", typeof(String));
-                ds.Tables.Add(dt);
-
-                foreach (CTDatMonTruocModel i in listCTDMT)
-                {
-                    var giaTungMon = String.Format("{0:0,0}", i.giaTungMon);
-                    var gia = String.Format("{0:0,0}", i.gia);
-                    ds.Tables["CTDatMonTruoc"].Rows.Add(new Object[] { i.tenma, i.soluong, giaTungMon, gia });
-                }
-
-                rp.DataSource = ds;
-                ReportPrintTool print = new ReportPrintTool(rp);
-                print.ShowPreviewDialog();
-            }*/
+            btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = false;
         }
     }
 }
