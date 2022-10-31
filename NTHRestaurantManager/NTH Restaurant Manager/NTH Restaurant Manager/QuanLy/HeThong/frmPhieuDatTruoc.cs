@@ -20,6 +20,8 @@ namespace NTH_Restaurant_Manager
         TienCocRepository _repositoryTC = new TienCocRepository();
         int num;
 
+        PhieuDatTruocModel pdt;
+
         public frmPhieuDatTruoc()
         {
             InitializeComponent();
@@ -52,6 +54,8 @@ namespace NTH_Restaurant_Manager
                 gcPDT.DataSource = listPDT;
                 if(listPDT.Count > 0)
                 {
+                    de_NgayDat.DateTime = DateTime.ParseExact(gvPDT.GetRowCellValue(num, "ngayDat").ToString(), "dd-MM-yyyy",
+                                       System.Globalization.CultureInfo.InvariantCulture);
                     layDSTienCocTheoPDT(listPDT[0].idPDT);
                 }
             }
@@ -202,7 +206,7 @@ namespace NTH_Restaurant_Manager
         {
             gcPDT.Enabled = gcTC.Enabled = true;
             panelControl2.Enabled = false;
-            btn_CapNhatDatBan.Enabled = btn_CapNhat.Enabled = btn_InHopDong.Enabled = btn_Huy.Enabled = btn_CocTien.Enabled = btn_Reload.Enabled = true;
+            btn_CapNhatDatBan.Enabled = btn_CapNhat.Enabled = btn_InHopDong.Enabled = btn_Huy.Enabled = btn_CocTien.Enabled = btn_Reload.Enabled = de_Ngay.Enabled = true;
             btn_Luu.Enabled = btn_PhucHoi.Enabled = false;
         }
 
@@ -210,8 +214,36 @@ namespace NTH_Restaurant_Manager
         {
             gcPDT.Enabled = gcTC.Enabled = false;
             panelControl2.Enabled = true;
-            btn_CapNhatDatBan.Enabled = btn_CapNhat.Enabled = btn_InHopDong.Enabled = btn_Huy.Enabled = btn_CocTien.Enabled = btn_Reload.Enabled = false;
+            btn_CapNhatDatBan.Enabled = btn_CapNhat.Enabled = btn_InHopDong.Enabled = btn_Huy.Enabled = btn_CocTien.Enabled = btn_Reload.Enabled = de_Ngay.Enabled = false;
             btn_Luu.Enabled = btn_PhucHoi.Enabled = true;
+        }
+
+        private void btn_Luu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DateTime aDate = DateTime.Now;
+            String now = aDate.ToString("yyyy-MM-dd");
+            String ngay = de_NgayDat.DateTime.ToString("yyyy-MM-dd");
+            if (now.CompareTo(ngay) > 0)
+            {
+                MessageBox.Show("Ngày đặt phải lớn hơn hoặc bằng ngày hiện tại", "Thông báo");
+                return;
+            }
+            pdt = new PhieuDatTruocModel();
+            pdt.idPDT = int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString());
+            pdt.ngayDat = ngay;
+            suaPhieuDatTruoc();
+            gcPDT.Enabled = gcTC.Enabled = false;
+            panelControl2.Enabled = true;
+            btn_CapNhatDatBan.Enabled = btn_CapNhat.Enabled = btn_InHopDong.Enabled = btn_Huy.Enabled = btn_CocTien.Enabled = btn_Reload.Enabled = de_Ngay.Enabled = false;
+            btn_Luu.Enabled = btn_PhucHoi.Enabled = true;
+        }
+
+        private async void suaPhieuDatTruoc()
+        {
+            var check = await _repositoryPDT.suaPhieuDatTruoc(pdt);
+            if (check.Equals("false")) MessageBox.Show("Sửa phiếu đặt trước thất bại!", "Thông báo");
+            else MessageBox.Show("Sửa phiếu đặt trước thành công!", "Thông báo");
+            layDSPhieuDatTheoNgay();
         }
     }
 }
