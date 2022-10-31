@@ -232,10 +232,10 @@ namespace NTH_Restaurant_Manager
             pdt.idPDT = int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString());
             pdt.ngayDat = ngay;
             suaPhieuDatTruoc();
-            gcPDT.Enabled = gcTC.Enabled = false;
-            panelControl2.Enabled = true;
-            btn_CapNhatDatBan.Enabled = btn_CapNhat.Enabled = btn_InHopDong.Enabled = btn_Huy.Enabled = btn_CocTien.Enabled = btn_Reload.Enabled = de_Ngay.Enabled = false;
-            btn_Luu.Enabled = btn_PhucHoi.Enabled = true;
+            gcPDT.Enabled = gcTC.Enabled = true;
+            panelControl2.Enabled = false;
+            btn_CapNhatDatBan.Enabled = btn_CapNhat.Enabled = btn_InHopDong.Enabled = btn_Huy.Enabled = btn_CocTien.Enabled = btn_Reload.Enabled = de_Ngay.Enabled = true;
+            btn_Luu.Enabled = btn_PhucHoi.Enabled = false;
         }
 
         private async void suaPhieuDatTruoc()
