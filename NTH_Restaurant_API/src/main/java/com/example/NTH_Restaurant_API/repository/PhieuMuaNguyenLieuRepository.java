@@ -12,6 +12,10 @@ import java.util.Date;
 import java.util.List;
 
 public interface PhieuMuaNguyenLieuRepository extends JpaRepository<PhieuMuaNguyenLieuEntity, Integer> {
+    Boolean existsByNgay(Date ngay);
+
+    PhieuMuaNguyenLieuEntity findByNgay(Date ngay);
+
     @Transactional
     @Modifying
     @Query(value = "select t.manl as manl, sum(t.soluong) as soluong\n" +

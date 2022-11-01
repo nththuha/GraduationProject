@@ -30,11 +30,12 @@ namespace NTH_Restaurant_Manager
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNguyenLieu));
             System.Windows.Forms.Label slTonLabel;
             System.Windows.Forms.Label donViLabel;
             System.Windows.Forms.Label tenNLLabel;
             System.Windows.Forms.Label maNLLabel;
+            System.Windows.Forms.Label label2;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNguyenLieu));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btn_Them = new DevExpress.XtraBars.BarButtonItem();
@@ -55,30 +56,84 @@ namespace NTH_Restaurant_Manager
             this.coltenNL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldonVi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colslTon = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colslToiThieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.se_SLToiThieu = new DevExpress.XtraEditors.SpinEdit();
             this.se_SLTon = new DevExpress.XtraEditors.SpinEdit();
             this.txt_DonVi = new DevExpress.XtraEditors.TextEdit();
             this.txt_TenNL = new DevExpress.XtraEditors.TextEdit();
             this.txt_MaNL = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             slTonLabel = new System.Windows.Forms.Label();
             donViLabel = new System.Windows.Forms.Label();
             tenNLLabel = new System.Windows.Forms.Label();
             maNLLabel = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcNL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvNL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.se_SLToiThieu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.se_SLTon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_DonVi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenNL.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_MaNL.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // slTonLabel
+            // 
+            slTonLabel.AutoSize = true;
+            slTonLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            slTonLabel.Location = new System.Drawing.Point(17, 603);
+            slTonLabel.Name = "slTonLabel";
+            slTonLabel.Size = new System.Drawing.Size(134, 27);
+            slTonLabel.TabIndex = 22;
+            slTonLabel.Text = "Số lượng tồn";
+            // 
+            // donViLabel
+            // 
+            donViLabel.AutoSize = true;
+            donViLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            donViLabel.Location = new System.Drawing.Point(17, 553);
+            donViLabel.Name = "donViLabel";
+            donViLabel.Size = new System.Drawing.Size(78, 27);
+            donViLabel.TabIndex = 20;
+            donViLabel.Text = "Đơn vị";
+            // 
+            // tenNLLabel
+            // 
+            tenNLLabel.AutoSize = true;
+            tenNLLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tenNLLabel.Location = new System.Drawing.Point(17, 501);
+            tenNLLabel.Name = "tenNLLabel";
+            tenNLLabel.Size = new System.Drawing.Size(166, 27);
+            tenNLLabel.TabIndex = 18;
+            tenNLLabel.Text = "Tên nguyên liệu";
+            // 
+            // maNLLabel
+            // 
+            maNLLabel.AutoSize = true;
+            maNLLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            maNLLabel.Location = new System.Drawing.Point(17, 446);
+            maNLLabel.Name = "maNLLabel";
+            maNLLabel.Size = new System.Drawing.Size(161, 27);
+            maNLLabel.TabIndex = 16;
+            maNLLabel.Text = "Mã nguyên liệu";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label2.Location = new System.Drawing.Point(17, 654);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(182, 27);
+            label2.TabIndex = 25;
+            label2.Text = "Số lượng tối thiểu";
             // 
             // barManager1
             // 
@@ -236,7 +291,8 @@ namespace NTH_Restaurant_Manager
             this.colmaNL,
             this.coltenNL,
             this.coldonVi,
-            this.colslTon});
+            this.colslTon,
+            this.colslToiThieu});
             this.gvNL.GridControl = this.gcNL;
             this.gvNL.Name = "gvNL";
             this.gvNL.OptionsBehavior.Editable = false;
@@ -282,8 +338,20 @@ namespace NTH_Restaurant_Manager
             this.colslTon.VisibleIndex = 3;
             this.colslTon.Width = 94;
             // 
+            // colslToiThieu
+            // 
+            this.colslToiThieu.Caption = "SỐ LƯỢNG TỐI THIỂU";
+            this.colslToiThieu.FieldName = "slToiThieu";
+            this.colslToiThieu.MinWidth = 25;
+            this.colslToiThieu.Name = "colslToiThieu";
+            this.colslToiThieu.Visible = true;
+            this.colslToiThieu.VisibleIndex = 4;
+            this.colslToiThieu.Width = 94;
+            // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(label2);
+            this.panelControl2.Controls.Add(this.se_SLToiThieu);
             this.panelControl2.Controls.Add(slTonLabel);
             this.panelControl2.Controls.Add(this.se_SLTon);
             this.panelControl2.Controls.Add(donViLabel);
@@ -300,24 +368,23 @@ namespace NTH_Restaurant_Manager
             this.panelControl2.Size = new System.Drawing.Size(1406, 703);
             this.panelControl2.TabIndex = 6;
             // 
-            // panelControl1
+            // se_SLToiThieu
             // 
-            this.panelControl1.Controls.Add(this.gcNL);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 30);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1406, 374);
-            this.panelControl1.TabIndex = 11;
-            // 
-            // slTonLabel
-            // 
-            slTonLabel.AutoSize = true;
-            slTonLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            slTonLabel.Location = new System.Drawing.Point(17, 603);
-            slTonLabel.Name = "slTonLabel";
-            slTonLabel.Size = new System.Drawing.Size(134, 27);
-            slTonLabel.TabIndex = 22;
-            slTonLabel.Text = "Số lượng tồn";
+            this.se_SLToiThieu.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNL, "slTon", true));
+            this.se_SLToiThieu.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.se_SLToiThieu.Location = new System.Drawing.Point(251, 651);
+            this.se_SLToiThieu.MenuManager = this.barManager1;
+            this.se_SLToiThieu.Name = "se_SLToiThieu";
+            this.se_SLToiThieu.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.se_SLToiThieu.Properties.Appearance.Options.UseFont = true;
+            this.se_SLToiThieu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.se_SLToiThieu.Size = new System.Drawing.Size(561, 32);
+            this.se_SLToiThieu.TabIndex = 26;
             // 
             // se_SLTon
             // 
@@ -327,7 +394,7 @@ namespace NTH_Restaurant_Manager
             0,
             0,
             0});
-            this.se_SLTon.Location = new System.Drawing.Point(219, 600);
+            this.se_SLTon.Location = new System.Drawing.Point(251, 600);
             this.se_SLTon.MenuManager = this.barManager1;
             this.se_SLTon.Name = "se_SLTon";
             this.se_SLTon.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -337,20 +404,10 @@ namespace NTH_Restaurant_Manager
             this.se_SLTon.Size = new System.Drawing.Size(561, 32);
             this.se_SLTon.TabIndex = 24;
             // 
-            // donViLabel
-            // 
-            donViLabel.AutoSize = true;
-            donViLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            donViLabel.Location = new System.Drawing.Point(17, 553);
-            donViLabel.Name = "donViLabel";
-            donViLabel.Size = new System.Drawing.Size(78, 27);
-            donViLabel.TabIndex = 20;
-            donViLabel.Text = "Đơn vị";
-            // 
             // txt_DonVi
             // 
             this.txt_DonVi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNL, "donVi", true));
-            this.txt_DonVi.Location = new System.Drawing.Point(219, 550);
+            this.txt_DonVi.Location = new System.Drawing.Point(251, 550);
             this.txt_DonVi.MenuManager = this.barManager1;
             this.txt_DonVi.Name = "txt_DonVi";
             this.txt_DonVi.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -358,20 +415,10 @@ namespace NTH_Restaurant_Manager
             this.txt_DonVi.Size = new System.Drawing.Size(561, 32);
             this.txt_DonVi.TabIndex = 23;
             // 
-            // tenNLLabel
-            // 
-            tenNLLabel.AutoSize = true;
-            tenNLLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tenNLLabel.Location = new System.Drawing.Point(17, 501);
-            tenNLLabel.Name = "tenNLLabel";
-            tenNLLabel.Size = new System.Drawing.Size(166, 27);
-            tenNLLabel.TabIndex = 18;
-            tenNLLabel.Text = "Tên nguyên liệu";
-            // 
             // txt_TenNL
             // 
             this.txt_TenNL.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNL, "tenNL", true));
-            this.txt_TenNL.Location = new System.Drawing.Point(219, 498);
+            this.txt_TenNL.Location = new System.Drawing.Point(251, 498);
             this.txt_TenNL.MenuManager = this.barManager1;
             this.txt_TenNL.Name = "txt_TenNL";
             this.txt_TenNL.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -379,20 +426,10 @@ namespace NTH_Restaurant_Manager
             this.txt_TenNL.Size = new System.Drawing.Size(561, 32);
             this.txt_TenNL.TabIndex = 21;
             // 
-            // maNLLabel
-            // 
-            maNLLabel.AutoSize = true;
-            maNLLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            maNLLabel.Location = new System.Drawing.Point(17, 446);
-            maNLLabel.Name = "maNLLabel";
-            maNLLabel.Size = new System.Drawing.Size(161, 27);
-            maNLLabel.TabIndex = 16;
-            maNLLabel.Text = "Mã nguyên liệu";
-            // 
             // txt_MaNL
             // 
             this.txt_MaNL.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNL, "maNL", true));
-            this.txt_MaNL.Location = new System.Drawing.Point(219, 443);
+            this.txt_MaNL.Location = new System.Drawing.Point(251, 443);
             this.txt_MaNL.MenuManager = this.barManager1;
             this.txt_MaNL.Name = "txt_MaNL";
             this.txt_MaNL.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -409,6 +446,15 @@ namespace NTH_Restaurant_Manager
             this.label1.Size = new System.Drawing.Size(374, 35);
             this.label1.TabIndex = 17;
             this.label1.Text = "QUẢN LÝ NGUYÊN LIỆU";
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.gcNL);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 30);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1406, 374);
+            this.panelControl1.TabIndex = 11;
             // 
             // frmNguyenLieu
             // 
@@ -430,12 +476,13 @@ namespace NTH_Restaurant_Manager
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.se_SLToiThieu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.se_SLTon.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_DonVi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenNL.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_MaNL.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -460,15 +507,17 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraGrid.GridControl gcNL;
         private System.Windows.Forms.BindingSource bdsNL;
         private DevExpress.XtraGrid.Views.Grid.GridView gvNL;
-        private DevExpress.XtraGrid.Columns.GridColumn colmaNL;
-        private DevExpress.XtraGrid.Columns.GridColumn coltenNL;
-        private DevExpress.XtraGrid.Columns.GridColumn coldonVi;
-        private DevExpress.XtraGrid.Columns.GridColumn colslTon;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SpinEdit se_SLTon;
         private DevExpress.XtraEditors.TextEdit txt_DonVi;
         private DevExpress.XtraEditors.TextEdit txt_TenNL;
         private DevExpress.XtraEditors.TextEdit txt_MaNL;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraGrid.Columns.GridColumn colmaNL;
+        private DevExpress.XtraGrid.Columns.GridColumn coltenNL;
+        private DevExpress.XtraGrid.Columns.GridColumn coldonVi;
+        private DevExpress.XtraGrid.Columns.GridColumn colslTon;
+        private DevExpress.XtraGrid.Columns.GridColumn colslToiThieu;
+        private DevExpress.XtraEditors.SpinEdit se_SLToiThieu;
     }
 }

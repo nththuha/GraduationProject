@@ -151,11 +151,19 @@ namespace NTH_Restaurant_Manager
                 txt_DonVi.Focus();
                 return;
             }
+            txt_DonVi.Focus();
             int tam = Program.doiSpinEditThanhInt(se_SLTon.Text.Trim());
             if ((tam < 0 || tam > slTon) && button.Equals("Cập nhật"))
             {
                 MessageBox.Show("Số lượng tồn phải lớn hơn 0 và nhỏ hơn số lượng tồn ban đầu", "Thông báo", MessageBoxButtons.OK);
                 se_SLTon.Focus();
+                return;
+            }
+            int slTT = Program.doiSpinEditThanhInt(se_SLToiThieu.Text.Trim());
+            if (slTT < 0)
+            {
+                MessageBox.Show("Số lượng tối thiểu phải lớn hơn 0", "Thông báo", MessageBoxButtons.OK);
+                se_SLToiThieu.Focus();
                 return;
             }
             nguyenLieu = new NguyenLieuModel();
