@@ -1,5 +1,6 @@
 package com.example.NTH_Restaurant_API.controller;
 
+import com.example.NTH_Restaurant_API.dto.CT_PhieuMuaDTO;
 import com.example.NTH_Restaurant_API.dto.NguyenLieuDTO;
 import com.example.NTH_Restaurant_API.dto.PhongNgay;
 import com.example.NTH_Restaurant_API.service.PhieuMuaNguyenLieuService;
@@ -7,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -18,7 +18,7 @@ public class PhieuMuaNguyenLieuController {
     private PhieuMuaNguyenLieuService phieuMuaNguyenLieuService;
 
     @PostMapping("")
-    public List<NguyenLieuDTO> layDSNguyenLieuCanMua(@Valid @RequestBody PhongNgay ngay){
+    public List<CT_PhieuMuaDTO> layDSNguyenLieuCanMua(@Valid @RequestBody PhongNgay ngay){
         return phieuMuaNguyenLieuService.layDSNguyenLieuCanMua(ngay);
     }
 }

@@ -1,6 +1,5 @@
 package com.example.NTH_Restaurant_API.repository;
 
-import com.example.NTH_Restaurant_API.dto.CTDatMon;
 import com.example.NTH_Restaurant_API.dto.NguyenLieuCanMua;
 import com.example.NTH_Restaurant_API.entity.PhieuMuaNguyenLieuEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
