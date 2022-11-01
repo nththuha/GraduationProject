@@ -22,16 +22,16 @@ namespace NTH_Restaurant_Manager.Repository
             _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task<List<NguyenLieuModel>> layDSNguyenLieuCanMuaTheoNgay(PhongNgay phongNgay)
+        public async Task<List<CTPhieuMuaModel>> layDSNguyenLieuCanMuaTheoNgay(PhieuMuaNguyenLieuModel phieuMua)
         {
-            var pn = JsonConvert.SerializeObject(phongNgay);
-            var buffer = Encoding.UTF8.GetBytes(pn);
+            var pm = JsonConvert.SerializeObject(phieuMua);
+            var buffer = Encoding.UTF8.GetBytes(pm);
             var byteContent = new ByteArrayContent(buffer);
             byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             _response = await _client.PostAsync("phieumuanguyenlieu", byteContent);
             var json = await _response.Content.ReadAsStringAsync();
-            var listNL = JsonConvert.DeserializeObject<List<NguyenLieuModel>>(json);
-            return listNL;
+            var listCTPM = JsonConvert.DeserializeObject<List<CTPhieuMuaModel>>(json);
+            return listCTPM;
         }
     }
 }
