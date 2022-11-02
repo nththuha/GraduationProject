@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface PhieuMuaNguyenLieuService {
     List<CT_PhieuMuaDTO> layDSNguyenLieuCanMua(PhieuMuaNguyenLieuDTO phieuMuaNguyenLieuDTO);
+
+    List<PhieuMuaNguyenLieuDTO> layDSPhieuMuaNguyenLieu();
 }

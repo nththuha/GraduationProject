@@ -18,6 +18,13 @@ public interface PhieuMuaNguyenLieuRepository extends JpaRepository<PhieuMuaNguy
 
     @Transactional
     @Modifying
+    @Query(value = "select * \n" +
+                    "from phieumuanguyenlieu p \n" +
+                    "order by ngay desc ", nativeQuery = true)
+    List<PhieuMuaNguyenLieuEntity> layDSPhieuMuaNguyenLieu();
+
+    @Transactional
+    @Modifying
     @Query(value = "select t.manl as manl, sum(t.soluong) as soluong\n" +
             "from (select ctma.manl, (ctma.soluong * ma.soluong) as soluong\n" +
             "from (select td.mama, td.soluong\n" +

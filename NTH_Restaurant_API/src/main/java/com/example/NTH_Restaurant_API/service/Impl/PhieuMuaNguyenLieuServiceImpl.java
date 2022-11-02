@@ -73,4 +73,10 @@ public class PhieuMuaNguyenLieuServiceImpl implements PhieuMuaNguyenLieuService 
         }
         return listCTPM.stream().map(CT_PhieuMuaDTO::new).collect(Collectors.toList());
     }
+
+    @Override
+    public List<PhieuMuaNguyenLieuDTO> layDSPhieuMuaNguyenLieu() {
+        List<PhieuMuaNguyenLieuEntity> listPM = phieuMuaNguyenLieuRepository.layDSPhieuMuaNguyenLieu();
+        return listPM.stream().map(PhieuMuaNguyenLieuDTO::new).collect(Collectors.toList());
+    }
 }

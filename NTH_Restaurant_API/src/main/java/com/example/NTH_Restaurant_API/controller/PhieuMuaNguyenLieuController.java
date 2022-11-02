@@ -18,6 +18,11 @@ public class PhieuMuaNguyenLieuController {
     @Autowired
     private PhieuMuaNguyenLieuService phieuMuaNguyenLieuService;
 
+    @GetMapping("")
+    public List<PhieuMuaNguyenLieuDTO> layDSPhieuMuaNguyenLieu(){
+        return phieuMuaNguyenLieuService.layDSPhieuMuaNguyenLieu();
+    }
+
     @PostMapping("")
     public List<CT_PhieuMuaDTO> layDSNguyenLieuCanMua(@Valid @RequestBody PhieuMuaNguyenLieuDTO phieuMuaNguyenLieuDTO){
         return phieuMuaNguyenLieuService.layDSNguyenLieuCanMua(phieuMuaNguyenLieuDTO);
