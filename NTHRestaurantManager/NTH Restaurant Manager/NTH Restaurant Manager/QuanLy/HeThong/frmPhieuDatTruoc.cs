@@ -245,5 +245,10 @@ namespace NTH_Restaurant_Manager
             else MessageBox.Show("Sửa phiếu đặt trước thành công!", "Thông báo");
             layDSPhieuDatTheoNgay();
         }
+
+        private void btn_CocTien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

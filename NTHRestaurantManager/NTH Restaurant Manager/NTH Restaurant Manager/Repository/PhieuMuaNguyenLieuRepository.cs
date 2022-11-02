@@ -28,10 +28,10 @@ namespace NTH_Restaurant_Manager.Repository
             var buffer = Encoding.UTF8.GetBytes(pm);
             var byteContent = new ByteArrayContent(buffer);
             byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            _response = await _client.PostAsync("ctban/dattruoc", byteContent);
+            _response = await _client.PostAsync("phieumuanguyenlieu", byteContent);
             var json = await _response.Content.ReadAsStringAsync();
-            var listCTPN = JsonConvert.DeserializeObject<List<CTPhieuMuaModel>>(json);
-            return listCTPN;
+            var listCTPM = JsonConvert.DeserializeObject<List<CTPhieuMuaModel>>(json);
+            return listCTPM;
         }
     }
 }

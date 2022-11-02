@@ -424,6 +424,12 @@
       <DependentUpon>rpHopDong.cs</DependentUpon>
     </Compile>
     <Compile Include="Repository\TienCocRepository.cs" />
+    <Compile Include="QuanLy\HeThong\rpPhieuMuaNguyenLieu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QuanLy\HeThong\rpPhieuMuaNguyenLieu.Designer.cs">
+      <DependentUpon>rpPhieuMuaNguyenLieu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="QuanLy\HeThong\frmPhieuDatTruoc.resx">
       <DependentUpon>frmPhieuDatTruoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -507,6 +513,9 @@
     <EmbeddedResource Include="QuanLy\HeThong\rpHopDong.resx">
       <DependentUpon>rpHopDong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy\HeThong\rpPhieuMuaNguyenLieu.resx">
+      <DependentUpon>rpPhieuMuaNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.BanModel.datasource" />
@@ -516,7 +525,7 @@
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTDatMonModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTDatMonTruocModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTMonAnModel.datasource" />
-    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTPhieuNhapModel.datasource" />
+    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTPhieuMuaModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTThucDonModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.HoaDonModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.KhachHangModel.datasource" />
@@ -530,7 +539,7 @@
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.PhieuDatCocModel1.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.PhieuDatModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.PhieuDatTruocModel.datasource" />
-    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.PhieuNhapNguyenLieuModel.datasource" />
+    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.PhieuMuaNguyenLieuModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.PhongModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.PhongNgay.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.TaiKhoanModel.datasource" />

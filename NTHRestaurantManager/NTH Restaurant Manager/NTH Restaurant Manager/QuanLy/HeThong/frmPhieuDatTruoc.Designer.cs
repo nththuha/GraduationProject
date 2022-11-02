@@ -189,6 +189,7 @@ namespace NTH_Restaurant_Manager
             this.btn_CocTien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_CocTien.ImageOptions.LargeImage")));
             this.btn_CocTien.Name = "btn_CocTien";
             this.btn_CocTien.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_CocTien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_CocTien_ItemClick);
             // 
             // btn_InHopDong
             // 
