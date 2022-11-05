@@ -14,7 +14,9 @@ import com.example.NTH_Restaurant_API.service.CT_BanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -94,7 +96,7 @@ public class CT_BanServiceImpl implements CT_BanService {
 
     @Override
     public List<BanDTO> layDSBanTheoPhongTheoNgay(PhongNgay phongNgay) {
-        List<BanDaDat> listT = ct_banRepository.layCTBanDaDat(phongNgay.getNgay(), phongNgay.getGio(), phongNgay.getMaPhong());
+        List<BanDaDat> listT = ct_banRepository.layCTBanDaDat(phongNgay.getNgay(), "22:00:00", phongNgay.getMaPhong());
         List<BanDTO> listB = layDSBanTheoPhong(phongNgay.getMaPhong());
         for(BanDTO ban: listB){
             ban.setTrangThai("Còn chỗ");

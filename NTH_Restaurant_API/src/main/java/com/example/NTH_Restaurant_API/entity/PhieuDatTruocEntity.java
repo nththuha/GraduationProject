@@ -30,7 +30,7 @@ public class PhieuDatTruocEntity {
     private Date ngayDat;
 
     @Column(name = "GIODAT")
-    @Temporal(TemporalType.TIME)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date gioDat;
 
     @Column(name = "GIA")
