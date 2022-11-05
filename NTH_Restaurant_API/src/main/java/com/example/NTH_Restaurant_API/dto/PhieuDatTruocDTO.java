@@ -15,7 +15,7 @@ import java.util.Date;
 public class PhieuDatTruocDTO {
     private Integer idPDT;
     private Date ngayTao;
-    private Date gioDat;
+    private Integer gioDat;
     private Date ngayDat;
     private Integer gia;
     private Integer giaSauThue;
