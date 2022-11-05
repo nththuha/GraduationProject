@@ -26,8 +26,12 @@ public class PhieuDatTruocEntity {
     private Date ngayTao;
 
     @Column(name = "NGAYDAT")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date ngayDat;
+
+    @Column(name = "GIODAT")
+    @Temporal(TemporalType.TIME)
+    private Date gioDat;
 
     @Column(name = "GIA")
     private Integer gia;
@@ -36,7 +40,7 @@ public class PhieuDatTruocEntity {
     private Integer giaSauThue;
 
     @JoinColumn(name = "IDKH")
-    @ManyToOne()
+    @ManyToOne
     private KhachHangEntity idkh;
 
     @JoinColumn(name = "IDNV")
@@ -52,6 +56,9 @@ public class PhieuDatTruocEntity {
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idpdt")
     private List<TienCocEntity> tiencocList;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idpdt")
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idpdt")
+    private List<HuyPhieuDatTruocEntity> huyphieudattruocList;
+
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idpdt")
     private List<CT_DatMonTruocEntity> ctDatmontruocList;
 }
