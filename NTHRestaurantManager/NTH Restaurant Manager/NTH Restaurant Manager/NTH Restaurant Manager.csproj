@@ -231,6 +231,7 @@
     <Compile Include="Model\CTPhieuMuaModel.cs" />
     <Compile Include="Model\PhieuDatCocModel.cs" />
     <Compile Include="Model\PhieuMuaNguyenLieuModel.cs" />
+    <Compile Include="Model\ThongKeModel.cs" />
     <Compile Include="Model\TienCocModel.cs" />
     <Compile Include="QuanLy\HeThong\frmPhieuDatTruoc.cs">
       <SubType>Form</SubType>
@@ -416,6 +417,7 @@
     <Compile Include="Repository\PhongRepository.cs" />
     <Compile Include="Repository\TaiKhoanRepository.cs" />
     <Compile Include="Repository\ThayDoiGiaMonRepository.cs" />
+    <Compile Include="Repository\ThongKeRepository.cs" />
     <Compile Include="Repository\ThucDonRepository.cs" />
     <Compile Include="QuanLy\HeThong\rpHopDong.cs">
       <SubType>Component</SubType>

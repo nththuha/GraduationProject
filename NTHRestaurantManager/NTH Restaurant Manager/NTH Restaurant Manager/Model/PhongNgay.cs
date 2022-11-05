@@ -10,5 +10,6 @@ namespace NTH_Restaurant_Manager.Model
     {
         public String maPhong { get; set; }
         public String ngay { get; set; }
+        public int gio { get; set; }
     }
 }

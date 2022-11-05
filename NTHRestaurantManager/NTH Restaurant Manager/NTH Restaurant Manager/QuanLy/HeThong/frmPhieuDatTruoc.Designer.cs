@@ -32,6 +32,7 @@ namespace NTH_Restaurant_Manager
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label ngayDatLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhieuDatTruoc));
+            System.Windows.Forms.Label gioDatLabel;
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btn_CapNhatDatBan = new DevExpress.XtraBars.BarButtonItem();
@@ -50,14 +51,6 @@ namespace NTH_Restaurant_Manager
             this.bdsPDT = new System.Windows.Forms.BindingSource(this.components);
             this.gcPDT = new DevExpress.XtraGrid.GridControl();
             this.gvPDT = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colidPDT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colngayTao = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colngayDat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colidnv = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colhoTenNV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colidkh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colhoTenKH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colsdt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.de_NgayDat = new DevExpress.XtraEditors.DateEdit();
             this.label1 = new System.Windows.Forms.Label();
@@ -74,7 +67,18 @@ namespace NTH_Restaurant_Manager
             this.colhoTenKH1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colidnv1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colidpdt1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colidPDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colngayTao = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colngayDat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colgioDat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colidnv = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colhoTenNV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colidkh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colhoTenKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsdt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.se_GioDat = new DevExpress.XtraEditors.SpinEdit();
             ngayDatLabel = new System.Windows.Forms.Label();
+            gioDatLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsPDT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcPDT)).BeginInit();
@@ -90,6 +94,7 @@ namespace NTH_Restaurant_Manager
             ((System.ComponentModel.ISupportInitialize)(this.gcTC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsTC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.se_GioDat.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ngayDatLabel
@@ -284,6 +289,7 @@ namespace NTH_Restaurant_Manager
             this.colidPDT,
             this.colngayTao,
             this.colngayDat,
+            this.colgioDat,
             this.colidnv,
             this.colhoTenNV,
             this.colidkh,
@@ -295,80 +301,11 @@ namespace NTH_Restaurant_Manager
             this.gvPDT.OptionsBehavior.Editable = false;
             this.gvPDT.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvPDT_RowClick);
             // 
-            // colidPDT
-            // 
-            this.colidPDT.FieldName = "idPDT";
-            this.colidPDT.MinWidth = 31;
-            this.colidPDT.Name = "colidPDT";
-            this.colidPDT.Width = 117;
-            // 
-            // colngayTao
-            // 
-            this.colngayTao.Caption = "NGÀY TẠO";
-            this.colngayTao.FieldName = "ngayTao";
-            this.colngayTao.MinWidth = 31;
-            this.colngayTao.Name = "colngayTao";
-            this.colngayTao.Visible = true;
-            this.colngayTao.VisibleIndex = 2;
-            this.colngayTao.Width = 117;
-            // 
-            // colngayDat
-            // 
-            this.colngayDat.Caption = "NGÀY ĐẶT";
-            this.colngayDat.FieldName = "ngayDat";
-            this.colngayDat.MinWidth = 31;
-            this.colngayDat.Name = "colngayDat";
-            this.colngayDat.Visible = true;
-            this.colngayDat.VisibleIndex = 3;
-            this.colngayDat.Width = 117;
-            // 
-            // colidnv
-            // 
-            this.colidnv.FieldName = "idnv";
-            this.colidnv.MinWidth = 31;
-            this.colidnv.Name = "colidnv";
-            this.colidnv.Width = 117;
-            // 
-            // colhoTenNV
-            // 
-            this.colhoTenNV.Caption = "HỌ TÊN NHÂN VIÊN LẬP PHIẾU";
-            this.colhoTenNV.FieldName = "hoTenNV";
-            this.colhoTenNV.MinWidth = 31;
-            this.colhoTenNV.Name = "colhoTenNV";
-            this.colhoTenNV.Visible = true;
-            this.colhoTenNV.VisibleIndex = 4;
-            this.colhoTenNV.Width = 117;
-            // 
-            // colidkh
-            // 
-            this.colidkh.FieldName = "idkh";
-            this.colidkh.MinWidth = 31;
-            this.colidkh.Name = "colidkh";
-            this.colidkh.Width = 117;
-            // 
-            // colhoTenKH
-            // 
-            this.colhoTenKH.Caption = "HỌ TÊN KHÁCH HÀNG";
-            this.colhoTenKH.FieldName = "hoTenKH";
-            this.colhoTenKH.MinWidth = 31;
-            this.colhoTenKH.Name = "colhoTenKH";
-            this.colhoTenKH.Visible = true;
-            this.colhoTenKH.VisibleIndex = 0;
-            this.colhoTenKH.Width = 117;
-            // 
-            // colsdt
-            // 
-            this.colsdt.Caption = "SỐ ĐIỆN THOẠI KHÁCH HÀNG";
-            this.colsdt.FieldName = "sdt";
-            this.colsdt.MinWidth = 31;
-            this.colsdt.Name = "colsdt";
-            this.colsdt.Visible = true;
-            this.colsdt.VisibleIndex = 1;
-            this.colsdt.Width = 117;
-            // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(gioDatLabel);
             this.panelControl2.Controls.Add(ngayDatLabel);
+            this.panelControl2.Controls.Add(this.se_GioDat);
             this.panelControl2.Controls.Add(this.de_NgayDat);
             this.panelControl2.Controls.Add(this.label1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -530,6 +467,115 @@ namespace NTH_Restaurant_Manager
             this.colidpdt1.Name = "colidpdt1";
             this.colidpdt1.Width = 94;
             // 
+            // colidPDT
+            // 
+            this.colidPDT.FieldName = "idPDT";
+            this.colidPDT.MinWidth = 25;
+            this.colidPDT.Name = "colidPDT";
+            this.colidPDT.Width = 94;
+            // 
+            // colngayTao
+            // 
+            this.colngayTao.Caption = "NGÀY TẠO";
+            this.colngayTao.FieldName = "ngayTao";
+            this.colngayTao.MinWidth = 25;
+            this.colngayTao.Name = "colngayTao";
+            this.colngayTao.Visible = true;
+            this.colngayTao.VisibleIndex = 2;
+            this.colngayTao.Width = 94;
+            // 
+            // colngayDat
+            // 
+            this.colngayDat.Caption = "NGÀY ĐẶT";
+            this.colngayDat.FieldName = "ngayDat";
+            this.colngayDat.MinWidth = 25;
+            this.colngayDat.Name = "colngayDat";
+            this.colngayDat.Visible = true;
+            this.colngayDat.VisibleIndex = 3;
+            this.colngayDat.Width = 94;
+            // 
+            // colgioDat
+            // 
+            this.colgioDat.Caption = "GIỜ ĐẶT";
+            this.colgioDat.FieldName = "gioDat";
+            this.colgioDat.MinWidth = 25;
+            this.colgioDat.Name = "colgioDat";
+            this.colgioDat.Visible = true;
+            this.colgioDat.VisibleIndex = 4;
+            this.colgioDat.Width = 94;
+            // 
+            // colidnv
+            // 
+            this.colidnv.FieldName = "idnv";
+            this.colidnv.MinWidth = 25;
+            this.colidnv.Name = "colidnv";
+            this.colidnv.Width = 94;
+            // 
+            // colhoTenNV
+            // 
+            this.colhoTenNV.Caption = "NHÂN VIÊN LẬP";
+            this.colhoTenNV.FieldName = "hoTenNV";
+            this.colhoTenNV.MinWidth = 25;
+            this.colhoTenNV.Name = "colhoTenNV";
+            this.colhoTenNV.Visible = true;
+            this.colhoTenNV.VisibleIndex = 5;
+            this.colhoTenNV.Width = 94;
+            // 
+            // colidkh
+            // 
+            this.colidkh.FieldName = "idkh";
+            this.colidkh.MinWidth = 25;
+            this.colidkh.Name = "colidkh";
+            this.colidkh.Width = 94;
+            // 
+            // colhoTenKH
+            // 
+            this.colhoTenKH.Caption = "KHÁCH HÀNG";
+            this.colhoTenKH.FieldName = "hoTenKH";
+            this.colhoTenKH.MinWidth = 25;
+            this.colhoTenKH.Name = "colhoTenKH";
+            this.colhoTenKH.Visible = true;
+            this.colhoTenKH.VisibleIndex = 0;
+            this.colhoTenKH.Width = 94;
+            // 
+            // colsdt
+            // 
+            this.colsdt.Caption = "SDT";
+            this.colsdt.FieldName = "sdt";
+            this.colsdt.MinWidth = 25;
+            this.colsdt.Name = "colsdt";
+            this.colsdt.Visible = true;
+            this.colsdt.VisibleIndex = 1;
+            this.colsdt.Width = 94;
+            // 
+            // gioDatLabel
+            // 
+            gioDatLabel.AutoSize = true;
+            gioDatLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            gioDatLabel.Location = new System.Drawing.Point(27, 525);
+            gioDatLabel.Name = "gioDatLabel";
+            gioDatLabel.Size = new System.Drawing.Size(84, 27);
+            gioDatLabel.TabIndex = 29;
+            gioDatLabel.Text = "Giờ đặt";
+            // 
+            // se_GioDat
+            // 
+            this.se_GioDat.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsPDT, "gioDat", true));
+            this.se_GioDat.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.se_GioDat.Location = new System.Drawing.Point(153, 522);
+            this.se_GioDat.MenuManager = this.barManager1;
+            this.se_GioDat.Name = "se_GioDat";
+            this.se_GioDat.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.se_GioDat.Properties.Appearance.Options.UseFont = true;
+            this.se_GioDat.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.se_GioDat.Size = new System.Drawing.Size(399, 32);
+            this.se_GioDat.TabIndex = 30;
+            // 
             // frmPhieuDatTruoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -560,6 +606,7 @@ namespace NTH_Restaurant_Manager
             ((System.ComponentModel.ISupportInitialize)(this.gcTC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsTC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvTC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.se_GioDat.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -586,14 +633,6 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraBars.BarToolbarsListItem barToolbarsListItem1;
         private DevExpress.XtraEditors.DateEdit de_Ngay;
-        private DevExpress.XtraGrid.Columns.GridColumn colidPDT;
-        private DevExpress.XtraGrid.Columns.GridColumn colngayTao;
-        private DevExpress.XtraGrid.Columns.GridColumn colngayDat;
-        private DevExpress.XtraGrid.Columns.GridColumn colidnv;
-        private DevExpress.XtraGrid.Columns.GridColumn colhoTenNV;
-        private DevExpress.XtraGrid.Columns.GridColumn colidkh;
-        private DevExpress.XtraGrid.Columns.GridColumn colhoTenKH;
-        private DevExpress.XtraGrid.Columns.GridColumn colsdt;
         private DevExpress.XtraBars.BarButtonItem btn_CocTien;
         private DevExpress.XtraBars.BarButtonItem btn_InHopDong;
         private DevExpress.XtraEditors.PanelControl panelControl1;
@@ -609,5 +648,15 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraGrid.Columns.GridColumn colidpdt1;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.DateEdit de_NgayDat;
+        private DevExpress.XtraGrid.Columns.GridColumn colidPDT;
+        private DevExpress.XtraGrid.Columns.GridColumn colngayTao;
+        private DevExpress.XtraGrid.Columns.GridColumn colngayDat;
+        private DevExpress.XtraGrid.Columns.GridColumn colgioDat;
+        private DevExpress.XtraGrid.Columns.GridColumn colidnv;
+        private DevExpress.XtraGrid.Columns.GridColumn colhoTenNV;
+        private DevExpress.XtraGrid.Columns.GridColumn colidkh;
+        private DevExpress.XtraGrid.Columns.GridColumn colhoTenKH;
+        private DevExpress.XtraGrid.Columns.GridColumn colsdt;
+        private DevExpress.XtraEditors.SpinEdit se_GioDat;
     }
 }

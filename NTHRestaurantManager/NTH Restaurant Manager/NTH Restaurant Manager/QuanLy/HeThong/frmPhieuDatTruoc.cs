@@ -104,6 +104,7 @@ namespace NTH_Restaurant_Manager
             Program.pdt.idnv = int.Parse(gvPDT.GetRowCellValue(num, "idnv").ToString());
             String ngayDat = gvPDT.GetRowCellValue(num, "ngayDat").ToString();
             Program.pdt.ngayDat = ngayDat.Substring(6, 4) + "-" + ngayDat.Substring(3, 2) + "-" + ngayDat.Substring(0, 2);
+            Program.pdt.gioDat = int.Parse(gvPDT.GetRowCellValue(num, "gioDat").ToString());
             String ngayTao = gvPDT.GetRowCellValue(num, "ngayTao").ToString();
             Program.pdt.ngayTao = ngayTao.Substring(6, 4) + "-" + ngayTao.Substring(3, 2) + "-" + ngayTao.Substring(0, 2);
             Program.frmChinh.btn_DatBanTruoc_ItemClick(sender, e);
@@ -116,6 +117,7 @@ namespace NTH_Restaurant_Manager
             layDSTienCocTheoPDT(int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString()));
             de_NgayDat.DateTime = DateTime.ParseExact(gvPDT.GetRowCellValue(num, "ngayDat").ToString(), "dd-MM-yyyy",
                                        System.Globalization.CultureInfo.InvariantCulture);
+            se_GioDat.Text = gvPDT.GetRowCellValue(num, "gioDat").ToString();
         }
 
         private void btn_Thoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -228,9 +230,17 @@ namespace NTH_Restaurant_Manager
                 MessageBox.Show("Ngày đặt phải lớn hơn hoặc bằng ngày hiện tại", "Thông báo");
                 return;
             }
+            de_NgayDat.Focus();
+            int gioDat = Program.doiSpinEditThanhInt(se_GioDat.Text);
+            if (gioDat < 7 || gioDat > 22)
+            {
+                MessageBox.Show("Giờ đặt phải nằm trong khoảng 7h - 22h", "Thông báo");
+                return;
+            }
             pdt = new PhieuDatTruocModel();
             pdt.idPDT = int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString());
             pdt.ngayDat = ngay;
+            pdt.gioDat = gioDat;
             suaPhieuDatTruoc();
             gcPDT.Enabled = gcTC.Enabled = true;
             panelControl2.Enabled = false;

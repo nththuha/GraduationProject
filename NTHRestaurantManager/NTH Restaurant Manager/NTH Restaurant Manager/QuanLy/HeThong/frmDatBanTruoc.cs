@@ -54,6 +54,7 @@ namespace NTH_Restaurant_Manager
                 txt_HoTenKH.Text = Program.pdt.hoTenKH;
                 String ngayDat = Program.pdt.ngayDat;
                 de_NgayDat.Text = ngayDat.Substring(8, 2) + "-" + ngayDat.Substring(5, 2) + "-" + ngayDat.Substring(0, 4); ;
+                se_GioDat.Text = Program.pdt.gioDat.ToString();
                 btn_ThemPhieuDat.Enabled = panelControl4.Enabled = false;
                 btn_ThemChiTietDatBan.Enabled = btn_XoaChiTietDatBan.Enabled = btn_Load.Enabled = true;
                 layDSPhong();
@@ -66,6 +67,7 @@ namespace NTH_Restaurant_Manager
         {
             txt_HoTenKH.Text = "";
             de_NgayDat.DateTime = DateTime.Now;
+            se_GioDat.Text = "0";
         }
 
         private void btn_Them_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -84,11 +86,19 @@ namespace NTH_Restaurant_Manager
                 MessageBox.Show("Ngày đặt phải lớn hơn ngày hiện tại", "Thông báo");
                 return;
             }
+            txt_HoTenKH.Focus();
+            int gioDat = Program.doiSpinEditThanhInt(se_GioDat.Text);
+            if(gioDat < 7 || gioDat > 22)
+            {
+                MessageBox.Show("Giờ đặt phải nằm trong khoảng 7h - 22h", "Thông báo");
+                return;
+            }
             Program.pdt = new PhieuDatTruocModel();
             Program.pdt.idkh = Program.khachHang.idKH;
             Program.pdt.idnv = Program.nhanVienDangDangNhap.idNV;
             Program.pdt.ngayDat = ngay;
             Program.pdt.ngayTao = now;
+            Program.pdt.gioDat = gioDat;
 
             themPhieuDatTruoc();
             panelControl4.Enabled = btn_ThemPhieuDat.Enabled = false;
@@ -148,6 +158,7 @@ namespace NTH_Restaurant_Manager
             PhongNgay pn = new PhongNgay();
             pn.maPhong = maPhong;
             pn.ngay = Program.pdt.ngayDat;
+            pn.gio = Program.pdt.gioDat;
             try
             {
                 var listB = await _repositoryCTB.layDSBanTheoPhongTheoNgay(pn);

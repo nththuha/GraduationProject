@@ -33,6 +33,7 @@ namespace NTH_Restaurant_Manager
             System.Windows.Forms.Label hoTenKHLabel;
             System.Windows.Forms.Label ngayDatLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatBanTruoc));
+            System.Windows.Forms.Label gioDatLabel;
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btn_ThemPhieuDat = new DevExpress.XtraBars.BarButtonItem();
@@ -87,8 +88,10 @@ namespace NTH_Restaurant_Manager
             this.coltenBan1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmaPhong1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltenPhong1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.se_GioDat = new DevExpress.XtraEditors.SpinEdit();
             hoTenKHLabel = new System.Windows.Forms.Label();
             ngayDatLabel = new System.Windows.Forms.Label();
+            gioDatLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -114,6 +117,7 @@ namespace NTH_Restaurant_Manager
             ((System.ComponentModel.ISupportInitialize)(this.gcCTDBT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsdCTDBT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTDBT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.se_GioDat.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // hoTenKHLabel
@@ -506,6 +510,8 @@ namespace NTH_Restaurant_Manager
             // 
             // panelControl4
             // 
+            this.panelControl4.Controls.Add(gioDatLabel);
+            this.panelControl4.Controls.Add(this.se_GioDat);
             this.panelControl4.Controls.Add(this.btn_ChonKH);
             this.panelControl4.Controls.Add(ngayDatLabel);
             this.panelControl4.Controls.Add(this.de_NgayDat);
@@ -682,6 +688,34 @@ namespace NTH_Restaurant_Manager
             this.coltenPhong1.VisibleIndex = 0;
             this.coltenPhong1.Width = 94;
             // 
+            // gioDatLabel
+            // 
+            gioDatLabel.AutoSize = true;
+            gioDatLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            gioDatLabel.Location = new System.Drawing.Point(19, 187);
+            gioDatLabel.Name = "gioDatLabel";
+            gioDatLabel.Size = new System.Drawing.Size(84, 27);
+            gioDatLabel.TabIndex = 27;
+            gioDatLabel.Text = "Giờ đặt";
+            // 
+            // se_GioDat
+            // 
+            this.se_GioDat.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsPDT, "gioDat", true));
+            this.se_GioDat.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.se_GioDat.Location = new System.Drawing.Point(254, 184);
+            this.se_GioDat.MenuManager = this.barManager1;
+            this.se_GioDat.Name = "se_GioDat";
+            this.se_GioDat.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.se_GioDat.Properties.Appearance.Options.UseFont = true;
+            this.se_GioDat.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.se_GioDat.Size = new System.Drawing.Size(377, 32);
+            this.se_GioDat.TabIndex = 28;
+            // 
             // frmDatBanTruoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -721,6 +755,7 @@ namespace NTH_Restaurant_Manager
             ((System.ComponentModel.ISupportInitialize)(this.gcCTDBT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsdCTDBT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTDBT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.se_GioDat.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -782,5 +817,6 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraEditors.SimpleButton btn_ChonKH;
         public DevExpress.XtraEditors.TextEdit txt_HoTenKH;
         private DevExpress.XtraBars.BarButtonItem btn_Load;
+        private DevExpress.XtraEditors.SpinEdit se_GioDat;
     }
 }
