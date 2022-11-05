@@ -28,8 +28,10 @@ public interface CT_BanRepository extends JpaRepository<CT_BanEntity, Integer> {
     @Modifying
     @Query(value = "select t.idctb, t.maphong, t.maban \n" +
             "from (select idpdt \n" +
-            "from phieudattruoc \n" +
-            "where ngaydat = :ngay and giodat - '03:00:00' < :gio and giodat + '03:00:00' > :gio) pdt, \n" +
+            "\t\tfrom phieudattruoc \n" +
+            "\t\twhere ngaydat = :ngay \n" +
+            "\t\t\tand (@DATE_PART('hour', giodat::timestamp - :gio::timestamp) < 3 \n" +
+            "\t\t\tor @DATE_PART('hour',:gio::timestamp - giodat::timestamp) < 3)) pdt, \n" +
             "(select ctb.idctb, ctb.maban, ctb.maphong, dbt.idpdt \n" +
             "from ct_ban ctb, ct_datbantruoc dbt \n" +
             "where ctb.idctb = dbt.idctb and ctb.maphong = :maPhong) t \n" +
