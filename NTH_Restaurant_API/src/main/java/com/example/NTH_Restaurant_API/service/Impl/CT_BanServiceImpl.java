@@ -96,7 +96,7 @@ public class CT_BanServiceImpl implements CT_BanService {
 
     @Override
     public List<BanDTO> layDSBanTheoPhongTheoNgay(PhongNgay phongNgay) {
-        List<BanDaDat> listT = ct_banRepository.layCTBanDaDat(phongNgay.getNgay(), "2022-10-28 19:00:00.000", phongNgay.getMaPhong());
+        List<BanDaDat> listT = ct_banRepository.layCTBanDaDat(phongNgay.getNgay(), phongNgay.getGio(), phongNgay.getMaPhong());
         List<BanDTO> listB = layDSBanTheoPhong(phongNgay.getMaPhong());
         for(BanDTO ban: listB){
             ban.setTrangThai("Còn chỗ");

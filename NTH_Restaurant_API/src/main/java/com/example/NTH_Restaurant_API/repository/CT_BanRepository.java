@@ -36,5 +36,5 @@ public interface CT_BanRepository extends JpaRepository<CT_BanEntity, Integer> {
             "from ct_ban ctb, ct_datbantruoc dbt \n" +
             "where ctb.idctb = dbt.idctb and ctb.maphong = :maPhong) t \n" +
             "where pdt.idpdt = t.idpdt", nativeQuery = true)
-    List<BanDaDat> layCTBanDaDat(@Param("ngay") Date ngay, @Param("gio") String gio, @Param("maPhong") String maPhong);
+    List<BanDaDat> layCTBanDaDat(@Param("ngay") Date ngay, @Param("gio") Date gio, @Param("maPhong") String maPhong);
 }
