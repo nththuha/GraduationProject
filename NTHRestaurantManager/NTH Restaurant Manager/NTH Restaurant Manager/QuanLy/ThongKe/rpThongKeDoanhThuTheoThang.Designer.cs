@@ -271,7 +271,7 @@ namespace NTH_Restaurant_Manager
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.StylePriority.UseForeColor = false;
             this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "NHÀ HÀNG NTH";
+            this.xrLabel1.Text = "NTH RESTAURANT";
             this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // lb_NgayBD

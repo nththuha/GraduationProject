@@ -30,11 +30,6 @@ namespace NTH_Restaurant_Manager
             this.de_Ngay.Properties.EditFormat.FormatString = "dd-MM-yyyy";
             this.de_Ngay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.de_Ngay.Properties.Mask.EditMask = "dd-MM-yyyy";
-            this.de_NgayDat.Properties.DisplayFormat.FormatString = "dd-MM-yyyy";
-            this.de_NgayDat.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.de_NgayDat.Properties.EditFormat.FormatString = "dd-MM-yyyy";
-            this.de_NgayDat.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.de_NgayDat.Properties.Mask.EditMask = "dd-MM-yyyy";
             khoiTao();
             layDSPhieuDatTheoNgay();
         }
@@ -54,8 +49,8 @@ namespace NTH_Restaurant_Manager
                 gcPDT.DataSource = listPDT;
                 if(listPDT.Count > 0)
                 {
-                    de_NgayDat.DateTime = DateTime.ParseExact(gvPDT.GetRowCellValue(num, "ngayDat").ToString(), "dd-MM-yyyy",
-                                       System.Globalization.CultureInfo.InvariantCulture);
+                    /*de_NgayDat.DateTime = DateTime.ParseExact(gvPDT.GetRowCellValue(num, "ngayDat").ToString(), "dd-MM-yyyy",
+                                       System.Globalization.CultureInfo.InvariantCulture);*/
                     layDSTienCocTheoPDT(listPDT[0].idPDT);
                 }
             }
@@ -115,9 +110,6 @@ namespace NTH_Restaurant_Manager
         {
             num = e.RowHandle;
             layDSTienCocTheoPDT(int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString()));
-            de_NgayDat.DateTime = DateTime.ParseExact(gvPDT.GetRowCellValue(num, "ngayDat").ToString(), "dd-MM-yyyy",
-                                       System.Globalization.CultureInfo.InvariantCulture);
-            se_GioDat.Text = gvPDT.GetRowCellValue(num, "gioDat").ToString();
         }
 
         private void btn_Thoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -208,44 +200,14 @@ namespace NTH_Restaurant_Manager
         {
             gcPDT.Enabled = gcTC.Enabled = true;
             panelControl2.Enabled = false;
-            btn_CapNhatDatBan.Enabled = btn_CapNhat.Enabled = btn_InHopDong.Enabled = btn_Huy.Enabled = btn_CocTien.Enabled = btn_Reload.Enabled = de_Ngay.Enabled = true;
-            btn_Luu.Enabled = btn_PhucHoi.Enabled = false;
+            btn_CapNhatDatBan.Enabled = btn_InHopDong.Enabled = btn_Huy.Enabled = btn_CocTien.Enabled = btn_Reload.Enabled = de_Ngay.Enabled = true;
         }
 
         private void btn_CapNhat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             gcPDT.Enabled = gcTC.Enabled = false;
             panelControl2.Enabled = true;
-            btn_CapNhatDatBan.Enabled = btn_CapNhat.Enabled = btn_InHopDong.Enabled = btn_Huy.Enabled = btn_CocTien.Enabled = btn_Reload.Enabled = de_Ngay.Enabled = false;
-            btn_Luu.Enabled = btn_PhucHoi.Enabled = true;
-        }
-
-        private void btn_Luu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            DateTime aDate = DateTime.Now;
-            String now = aDate.ToString("yyyy-MM-dd");
-            String ngay = de_NgayDat.DateTime.ToString("yyyy-MM-dd");
-            if (now.CompareTo(ngay) > 0)
-            {
-                MessageBox.Show("Ngày đặt phải lớn hơn hoặc bằng ngày hiện tại", "Thông báo");
-                return;
-            }
-            de_NgayDat.Focus();
-            int gioDat = Program.doiSpinEditThanhInt(se_GioDat.Text);
-            if (gioDat < 7 || gioDat > 22)
-            {
-                MessageBox.Show("Giờ đặt phải nằm trong khoảng 7h - 22h", "Thông báo");
-                return;
-            }
-            pdt = new PhieuDatTruocModel();
-            pdt.idPDT = int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString());
-            pdt.ngayDat = ngay;
-            pdt.gioDat = gioDat;
-            suaPhieuDatTruoc();
-            gcPDT.Enabled = gcTC.Enabled = true;
-            panelControl2.Enabled = false;
-            btn_CapNhatDatBan.Enabled = btn_CapNhat.Enabled = btn_InHopDong.Enabled = btn_Huy.Enabled = btn_CocTien.Enabled = btn_Reload.Enabled = de_Ngay.Enabled = true;
-            btn_Luu.Enabled = btn_PhucHoi.Enabled = false;
+            btn_CapNhatDatBan.Enabled = btn_InHopDong.Enabled = btn_Huy.Enabled = btn_CocTien.Enabled = btn_Reload.Enabled = de_Ngay.Enabled = false;
         }
 
         private async void suaPhieuDatTruoc()
@@ -257,6 +219,11 @@ namespace NTH_Restaurant_Manager
         }
 
         private void btn_CocTien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btn_Huy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }
