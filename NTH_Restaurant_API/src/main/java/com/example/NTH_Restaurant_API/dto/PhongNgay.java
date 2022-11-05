@@ -17,5 +17,5 @@ import java.util.TimerTask;
 public class PhongNgay {
     private String maPhong;
     private Date ngay;
-    private OffsetDateTime gio;
+    private Date gio;
 }
