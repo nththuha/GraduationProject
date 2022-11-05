@@ -15,6 +15,7 @@ import java.util.Date;
 public class PhieuDatTruocDTO {
     private Integer idPDT;
     private Date ngayTao;
+    private Date gioDat;
     private Date ngayDat;
     private Integer gia;
     private Integer giaSauThue;
@@ -27,6 +28,7 @@ public class PhieuDatTruocDTO {
     public PhieuDatTruocDTO(PhieuDatTruocEntity phieuDatTruocEntity){
         this.idPDT = phieuDatTruocEntity.getIdPDT();
         this.ngayTao = phieuDatTruocEntity.getNgayTao();
+        this.gioDat = phieuDatTruocEntity.getGioDat();
         this.ngayDat = phieuDatTruocEntity.getNgayDat();
         this.gia = phieuDatTruocEntity.getGia();
         this.giaSauThue = phieuDatTruocEntity.getGiaSauThue();
@@ -41,6 +43,7 @@ public class PhieuDatTruocDTO {
         PhieuDatTruocEntity pdt = new PhieuDatTruocEntity();
         pdt.setIdPDT(this.idPDT);
         pdt.setNgayDat(this.ngayDat);
+        pdt.setGioDat(this.gioDat);
         pdt.setNgayTao(this.ngayTao);
         return pdt;
     }

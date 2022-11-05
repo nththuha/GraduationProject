@@ -14,4 +14,5 @@ import java.util.Date;
 public class PhongNgay {
     private String maPhong;
     private Date ngay;
+    private Date gio;
 }

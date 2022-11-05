@@ -52,6 +52,7 @@ public class PhieuDatTruocServiceImpl implements PhieuDatTruocService {
         if(!phieuDatTruocRepository.existsByIdPDT(phieuDatTruocDTO.getIdPDT())) return "false";
         PhieuDatTruocEntity pd = phieuDatTruocRepository.getById(phieuDatTruocDTO.getIdPDT());
         pd.setNgayDat(phieuDatTruocDTO.getNgayDat());
+        pd.setGioDat(phieuDatTruocDTO.getGioDat());
         try {
             phieuDatTruocRepository.save(pd);
             return "true";

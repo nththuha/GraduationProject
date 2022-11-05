@@ -28,10 +28,10 @@ public interface CT_BanRepository extends JpaRepository<CT_BanEntity, Integer> {
     @Query(value = "select t.idctb, t.maphong, t.maban \n" +
             "from (select idpdt \n" +
             "from phieudattruoc \n" +
-            "where ngaydat = :ngay) pdt, \n" +
+            "where ngaydat = :ngay and giodat - '03:00:00' < :gio and giodat + '03:00:00' > :gio) pdt, \n" +
             "(select ctb.idctb, ctb.maban, ctb.maphong, dbt.idpdt \n" +
             "from ct_ban ctb, ct_datbantruoc dbt \n" +
             "where ctb.idctb = dbt.idctb and ctb.maphong = :maPhong) t \n" +
             "where pdt.idpdt = t.idpdt", nativeQuery = true)
-    List<BanDaDat> layCTBanDaDat(@Param("ngay") Date ngay, @Param("maPhong") String maPhong);
+    List<BanDaDat> layCTBanDaDat(@Param("ngay") Date ngay, @Param("gio") Date gio, @Param("maPhong") String maPhong);
 }
