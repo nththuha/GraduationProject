@@ -41,6 +41,10 @@ namespace NTH_Restaurant_Manager
             this.pageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.pageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lb_NhanVien = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lb_Ngay = new DevExpress.XtraReports.UI.XRLabel();
             this.table1 = new DevExpress.XtraReports.UI.XRTable();
             this.tableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.tableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -53,10 +57,7 @@ namespace NTH_Restaurant_Manager
             this.tableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lb_Ngay = new DevExpress.XtraReports.UI.XRLabel();
-            this.lb_NhanVien = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
@@ -150,6 +151,7 @@ namespace NTH_Restaurant_Manager
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel9,
             this.xrLabel4,
             this.lb_NhanVien,
             this.xrLabel3,
@@ -158,6 +160,58 @@ namespace NTH_Restaurant_Manager
             this.label1});
             this.ReportHeader.HeightF = 154.1667F;
             this.ReportHeader.Name = "ReportHeader";
+            // 
+            // xrLabel4
+            // 
+            this.xrLabel4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(4.166667F, 89.83337F);
+            this.xrLabel4.Multiline = true;
+            this.xrLabel4.Name = "xrLabel4";
+            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(152.5F, 23F);
+            this.xrLabel4.StylePriority.UseFont = false;
+            this.xrLabel4.StylePriority.UseTextAlignment = false;
+            this.xrLabel4.Text = "Nhân viên lập:";
+            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // lb_NhanVien
+            // 
+            this.lb_NhanVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_NhanVien.LocationFloat = new DevExpress.Utils.PointFloat(156.6666F, 89.83337F);
+            this.lb_NhanVien.Multiline = true;
+            this.lb_NhanVien.Name = "lb_NhanVien";
+            this.lb_NhanVien.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lb_NhanVien.SizeF = new System.Drawing.SizeF(260F, 23F);
+            this.lb_NhanVien.StylePriority.UseFont = false;
+            this.lb_NhanVien.StylePriority.UseTextAlignment = false;
+            this.lb_NhanVien.Text = "Ngô Thu Hà";
+            this.lb_NhanVien.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // xrLabel3
+            // 
+            this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(4.166667F, 66.8334F);
+            this.xrLabel3.Multiline = true;
+            this.xrLabel3.Name = "xrLabel3";
+            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(152.5F, 23F);
+            this.xrLabel3.StylePriority.UseFont = false;
+            this.xrLabel3.StylePriority.UseTextAlignment = false;
+            this.xrLabel3.Text = "Ngày:";
+            this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // lb_Ngay
+            // 
+            this.lb_Ngay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Ngay.LocationFloat = new DevExpress.Utils.PointFloat(156.6666F, 66.8334F);
+            this.lb_Ngay.Multiline = true;
+            this.lb_Ngay.Name = "lb_Ngay";
+            this.lb_Ngay.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lb_Ngay.SizeF = new System.Drawing.SizeF(260F, 23F);
+            this.lb_Ngay.StylePriority.UseFont = false;
+            this.lb_Ngay.StylePriority.UseTextAlignment = false;
+            this.lb_Ngay.Text = "15-12-2022";
+            this.lb_Ngay.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // table1
             // 
@@ -288,57 +342,19 @@ namespace NTH_Restaurant_Manager
             this.tableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell6.Weight = 0.31432287772876794D;
             // 
-            // xrLabel3
+            // xrLabel9
             // 
-            this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(3.333333F, 51.66667F);
-            this.xrLabel3.Multiline = true;
-            this.xrLabel3.Name = "xrLabel3";
-            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(152.5F, 23F);
-            this.xrLabel3.StylePriority.UseFont = false;
-            this.xrLabel3.StylePriority.UseTextAlignment = false;
-            this.xrLabel3.Text = "Ngày:";
-            this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // lb_Ngay
-            // 
-            this.lb_Ngay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Ngay.LocationFloat = new DevExpress.Utils.PointFloat(155.8333F, 51.66667F);
-            this.lb_Ngay.Multiline = true;
-            this.lb_Ngay.Name = "lb_Ngay";
-            this.lb_Ngay.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lb_Ngay.SizeF = new System.Drawing.SizeF(260F, 23F);
-            this.lb_Ngay.StylePriority.UseFont = false;
-            this.lb_Ngay.StylePriority.UseTextAlignment = false;
-            this.lb_Ngay.Text = "15-12-2022";
-            this.lb_Ngay.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // lb_NhanVien
-            // 
-            this.lb_NhanVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_NhanVien.LocationFloat = new DevExpress.Utils.PointFloat(155.8333F, 74.66665F);
-            this.lb_NhanVien.Multiline = true;
-            this.lb_NhanVien.Name = "lb_NhanVien";
-            this.lb_NhanVien.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lb_NhanVien.SizeF = new System.Drawing.SizeF(260F, 23F);
-            this.lb_NhanVien.StylePriority.UseFont = false;
-            this.lb_NhanVien.StylePriority.UseTextAlignment = false;
-            this.lb_NhanVien.Text = "Ngô Thu Hà";
-            this.lb_NhanVien.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // xrLabel4
-            // 
-            this.xrLabel4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(3.333333F, 74.66665F);
-            this.xrLabel4.Multiline = true;
-            this.xrLabel4.Name = "xrLabel4";
-            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(152.5F, 23F);
-            this.xrLabel4.StylePriority.UseFont = false;
-            this.xrLabel4.StylePriority.UseTextAlignment = false;
-            this.xrLabel4.Text = "Nhân viên lập:";
-            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrLabel9.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel9.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(4.444453F, 41.44443F);
+            this.xrLabel9.Name = "xrLabel9";
+            this.xrLabel9.SizeF = new System.Drawing.SizeF(617F, 24.19433F);
+            this.xrLabel9.StyleName = "Title";
+            this.xrLabel9.StylePriority.UseFont = false;
+            this.xrLabel9.StylePriority.UseForeColor = false;
+            this.xrLabel9.StylePriority.UseTextAlignment = false;
+            this.xrLabel9.Text = "NTH RESTAURANT";
+            this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // rpPhieuMuaNguyenLieu
             // 
@@ -397,5 +413,6 @@ namespace NTH_Restaurant_Manager
         public DevExpress.XtraReports.UI.XRLabel lb_NhanVien;
         private DevExpress.XtraReports.UI.XRLabel xrLabel3;
         public DevExpress.XtraReports.UI.XRLabel lb_Ngay;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel9;
     }
 }

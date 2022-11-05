@@ -432,6 +432,12 @@
     <Compile Include="QuanLy\HeThong\rpPhieuMuaNguyenLieu.Designer.cs">
       <DependentUpon>rpPhieuMuaNguyenLieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="rpThongKeDoanhThuTheoThang.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rpThongKeDoanhThuTheoThang.Designer.cs">
+      <DependentUpon>rpThongKeDoanhThuTheoThang.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="QuanLy\HeThong\frmPhieuDatTruoc.resx">
       <DependentUpon>frmPhieuDatTruoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -518,6 +524,9 @@
     <EmbeddedResource Include="QuanLy\HeThong\rpPhieuMuaNguyenLieu.resx">
       <DependentUpon>rpPhieuMuaNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rpThongKeDoanhThuTheoThang.resx">
+      <DependentUpon>rpThongKeDoanhThuTheoThang.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.BanModel.datasource" />
@@ -546,6 +555,7 @@
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.PhongNgay.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.TaiKhoanModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.ThayDoiGiaMonModel.datasource" />
+    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.ThongKeModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.ThucDonModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.TienCocModel1.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.TokenModel.datasource" />

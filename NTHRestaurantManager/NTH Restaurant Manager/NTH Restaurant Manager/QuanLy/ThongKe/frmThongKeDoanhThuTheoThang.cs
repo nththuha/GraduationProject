@@ -20,7 +20,6 @@ namespace NTH_Restaurant_Manager
         public frmThongKeDoanhThuTheoThang()
         {
             InitializeComponent();
-            InitializeComponent();
             this.de_NgayBD.Properties.DisplayFormat.FormatString = "dd-MM-yyyy";
             this.de_NgayBD.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.de_NgayBD.Properties.EditFormat.FormatString = "dd-MM-yyyy";
