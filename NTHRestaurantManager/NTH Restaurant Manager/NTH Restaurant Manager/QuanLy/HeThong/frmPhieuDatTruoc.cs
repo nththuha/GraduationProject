@@ -38,6 +38,7 @@ namespace NTH_Restaurant_Manager
 
         public async void layDSPhieuDatTheoNgay()
         {
+            gcTC.DataSource = null;
             PhongNgay pn = new PhongNgay();
             pn.ngay = de_Ngay.DateTime.ToString("yyyy-MM-dd");
             try
@@ -51,8 +52,6 @@ namespace NTH_Restaurant_Manager
                 gcPDT.DataSource = listPDT;
                 if(listPDT.Count > 0)
                 {
-                    /*de_NgayDat.DateTime = DateTime.ParseExact(gvPDT.GetRowCellValue(num, "ngayDat").ToString(), "dd-MM-yyyy",
-                                       System.Globalization.CultureInfo.InvariantCulture);*/
                     layDSTienCocTheoPDT(listPDT[0].idPDT);
                 }
             }
