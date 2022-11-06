@@ -1,8 +1,6 @@
 package com.example.NTH_Restaurant_API.controller;
 
-import com.example.NTH_Restaurant_API.dto.PhieuDatDTO;
 import com.example.NTH_Restaurant_API.dto.ThongKeDTO;
-import com.example.NTH_Restaurant_API.service.PhieuDatService;
 import com.example.NTH_Restaurant_API.service.ThongKeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

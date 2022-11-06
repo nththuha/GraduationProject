@@ -75,6 +75,10 @@ namespace NTH_Restaurant_Manager
             {
                 MessageBox.Show("Thêm tiền cọc thất bại!", "Thông báo");
             }
+            else if (check.Equals("money"))
+            {
+                MessageBox.Show("Số tiền cọc lớn hơn số tiền của phiếu đặt trước!", "Thông báo");
+            }
             else
             {
                 MessageBox.Show("Thêm tiền cọc thành công!", "Thông báo");

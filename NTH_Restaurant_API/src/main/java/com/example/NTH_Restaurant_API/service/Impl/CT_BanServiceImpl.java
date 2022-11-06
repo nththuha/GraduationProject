@@ -83,6 +83,9 @@ public class CT_BanServiceImpl implements CT_BanService {
 
     @Override
     public String xoaCT_Ban(Integer idCTB) {
+        if(!ct_banRepository.existsById(idCTB)){
+            return "false";
+        }
         try {
             ct_banRepository.deleteById(idCTB);
             return "true";
