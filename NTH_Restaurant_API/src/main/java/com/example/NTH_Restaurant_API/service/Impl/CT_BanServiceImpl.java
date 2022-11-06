@@ -47,7 +47,6 @@ public class CT_BanServiceImpl implements CT_BanService {
             temp.setTrangThai(item.getTrangThai());
             dsBan.add(temp);
         }
-
         return dsBan;
     }
 

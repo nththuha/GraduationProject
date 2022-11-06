@@ -22,6 +22,8 @@ namespace NTH_Restaurant_Manager
 
         PhieuDatTruocModel pdt;
 
+        int tongCoc = 0;
+
         public frmPhieuDatTruoc()
         {
             InitializeComponent();
@@ -34,7 +36,7 @@ namespace NTH_Restaurant_Manager
             layDSPhieuDatTheoNgay();
         }
 
-        private async void layDSPhieuDatTheoNgay()
+        public async void layDSPhieuDatTheoNgay()
         {
             PhongNgay pn = new PhongNgay();
             pn.ngay = de_Ngay.DateTime.ToString("yyyy-MM-dd");
@@ -62,6 +64,7 @@ namespace NTH_Restaurant_Manager
 
         public async void layDSTienCocTheoPDT(int idPDT)
         {
+            tongCoc = 0;
             gcTC.DataSource = null;
             try
             {
@@ -69,6 +72,7 @@ namespace NTH_Restaurant_Manager
                 for (int i = 0; i < listTC.Count; i++)
                 {
                     listTC[i].ngay = listTC[i].ngay.Substring(8, 2) + "-" + listTC[i].ngay.Substring(5, 2) + "-" + listTC[i].ngay.Substring(0, 4);
+                    tongCoc += listTC[i].triGia;
                 }
                 gcTC.DataSource = listTC;
             }
@@ -220,14 +224,21 @@ namespace NTH_Restaurant_Manager
 
         private void btn_CocTien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Program.mesTienCoc = new mesTienCoc(gvPDT.GetRowCellValue(num, "hoTenKH").ToString(), gvPDT.GetRowCellValue(num, "sdt").ToString(), int.Parse(gvPDT.GetRowCellValue(num, "giaSauThue").ToString()), int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString()));
+            Program.mesTienCoc = new mesTienCoc(gvPDT.GetRowCellValue(num, "hoTenKH").ToString(), gvPDT.GetRowCellValue(num, "sdt").ToString(), int.Parse(gvPDT.GetRowCellValue(num, "giaSauThue").ToString()), int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString()), tongCoc);
             Program.mesTienCoc.Show();
             Program.frmChinh.Enabled = false;
         }
 
         private void btn_Huy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Program.mesHuyPhieuDatTruoc = new mesHuyPhieuDatTruoc();
+            int idPDT = int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString());
+            String hoTenKH = gvPDT.GetRowCellValue(num, "hoTenKH").ToString();
+            String sdt = gvPDT.GetRowCellValue(num, "sdt").ToString();
+            String ngayDat = gvPDT.GetRowCellValue(num, "ngayDat").ToString();
+            String ngayTao = gvPDT.GetRowCellValue(num, "ngayTao").ToString();
+            int giaSauThue = int.Parse(gvPDT.GetRowCellValue(num, "giaSauThue").ToString());
+
+            Program.mesHuyPhieuDatTruoc = new mesHuyPhieuDatTruoc(hoTenKH, sdt, ngayTao, ngayDat, giaSauThue, tongCoc, idPDT);
             Program.mesHuyPhieuDatTruoc.Show();
             Program.frmChinh.Enabled = false;
         }

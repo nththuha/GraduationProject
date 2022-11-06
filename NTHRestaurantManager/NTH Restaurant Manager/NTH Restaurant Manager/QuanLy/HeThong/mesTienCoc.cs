@@ -18,15 +18,17 @@ namespace NTH_Restaurant_Manager
         TienCocModel tienCoc;
 
         int giaSauThue;
+        int coc;
         int idPDT;
 
-        public mesTienCoc(String hoTenKH, String sdt, int giaSauThue, int idPDT)
+        public mesTienCoc(String hoTenKH, String sdt, int giaSauThue, int idPDT, int coc)
         {
             InitializeComponent();
             txt_HoTenKH.Text = hoTenKH;
             txt_SDT.Text = sdt;
             this.giaSauThue = giaSauThue;
             this.idPDT = idPDT;
+            this.coc = coc;
         }
 
         private void mesTienCoc_FormClosing(object sender, FormClosingEventArgs e)
@@ -50,7 +52,7 @@ namespace NTH_Restaurant_Manager
             }
             txt_SDT.Focus();
             int soTien = Program.doiSpinEditThanhInt(se_SoTien.Text);
-            if(soTien < 0 || soTien > giaSauThue)
+            if(soTien < 0 || soTien + coc > giaSauThue)
             {
                 MessageBox.Show("Số tiền không hợp lý!", "Thông báo");
                 se_SoTien.Focus();

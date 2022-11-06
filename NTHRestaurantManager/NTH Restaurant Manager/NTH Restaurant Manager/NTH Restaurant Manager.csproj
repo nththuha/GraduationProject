@@ -227,6 +227,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\HuyPhieuDatTruocModel.cs" />
     <Compile Include="QuanLy\HeThong\mesHuyPhieuDatTruoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -418,6 +419,7 @@
     <Compile Include="Repository\CTMonAnRepository.cs" />
     <Compile Include="Repository\CTThucDonRepository.cs" />
     <Compile Include="Repository\HoaDonRepository.cs" />
+    <Compile Include="Repository\HuyPhieuDatTruocRepository.cs" />
     <Compile Include="Repository\KhachHangRepository.cs" />
     <Compile Include="Repository\LoaiMonAnRepository.cs" />
     <Compile Include="Repository\MonAnRepository.cs" />
@@ -557,6 +559,7 @@
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTPhieuMuaModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTThucDonModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.HoaDonModel.datasource" />
+    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.HuyPhieuDatTruocModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.KhachHangModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.LoaiMonAnModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.MessageModel.datasource" />
