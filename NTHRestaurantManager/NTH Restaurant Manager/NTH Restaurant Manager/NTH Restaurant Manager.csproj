@@ -227,6 +227,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="QuanLy\HeThong\mesHuyPhieuDatTruoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy\HeThong\mesHuyPhieuDatTruoc.Designer.cs">
+      <DependentUpon>mesHuyPhieuDatTruoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLy\HeThong\mesTienCoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy\HeThong\mesTienCoc.Designer.cs">
+      <DependentUpon>mesTienCoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\CTDatMonTruocModel.cs" />
     <Compile Include="Model\CTPhieuMuaModel.cs" />
     <Compile Include="Model\PhieuDatCocModel.cs" />
@@ -432,17 +444,20 @@
     <Compile Include="QuanLy\HeThong\rpPhieuMuaNguyenLieu.Designer.cs">
       <DependentUpon>rpPhieuMuaNguyenLieu.cs</DependentUpon>
     </Compile>
-    <Compile Include="rpThongKeDoanhThuTheoThang.cs">
+    <Compile Include="QuanLy\ThongKe\rpThongKeDoanhThuTheoThang1.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="rpThongKeDoanhThuTheoThang.Designer.cs">
-      <DependentUpon>rpThongKeDoanhThuTheoThang.cs</DependentUpon>
+    <Compile Include="QuanLy\ThongKe\rpThongKeDoanhThuTheoThang1.Designer.cs">
+      <DependentUpon>rpThongKeDoanhThuTheoThang1.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="QuanLy\HeThong\frmPhieuDatTruoc.resx">
       <DependentUpon>frmPhieuDatTruoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\DanhMuc\mesCTThucDon.resx">
       <DependentUpon>mesCTThucDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy\HeThong\mesHuyPhieuDatTruoc.resx">
+      <DependentUpon>mesHuyPhieuDatTruoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\HeThong\mesKhachHang.resx">
       <DependentUpon>mesKhachHang.cs</DependentUpon>
@@ -479,6 +494,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\HeThong\frmTheoDoiDonHang.resx">
       <DependentUpon>frmTheoDoiDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy\HeThong\mesTienCoc.resx">
+      <DependentUpon>mesTienCoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\ThongKe\frmThongKeDoanhThuTheoThang.resx">
       <DependentUpon>frmThongKeDoanhThuTheoThang.cs</DependentUpon>
@@ -524,8 +542,8 @@
     <EmbeddedResource Include="QuanLy\HeThong\rpPhieuMuaNguyenLieu.resx">
       <DependentUpon>rpPhieuMuaNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rpThongKeDoanhThuTheoThang.resx">
-      <DependentUpon>rpThongKeDoanhThuTheoThang.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLy\ThongKe\rpThongKeDoanhThuTheoThang1.resx">
+      <DependentUpon>rpThongKeDoanhThuTheoThang1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

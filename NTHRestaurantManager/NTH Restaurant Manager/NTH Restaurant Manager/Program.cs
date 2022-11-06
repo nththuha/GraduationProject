@@ -37,6 +37,8 @@ namespace NTH_Restaurant_Manager
         public static mesPhongBan mesPhongBan;
         public static mesCTThucDon mesCTThucDon;
         public static mesKhachHang mesKhachHang;
+        public static mesTienCoc mesTienCoc;
+        public static mesHuyPhieuDatTruoc mesHuyPhieuDatTruoc;
 
         public static String luaChonPB; //Phòng hay Bàn
         public static String actionPB; //Thêm, Cập nhật, Xóa

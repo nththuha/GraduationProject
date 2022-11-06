@@ -60,7 +60,7 @@ namespace NTH_Restaurant_Manager
             }
         }
 
-        private async void layDSTienCocTheoPDT(int idPDT)
+        public async void layDSTienCocTheoPDT(int idPDT)
         {
             gcTC.DataSource = null;
             try
@@ -220,12 +220,16 @@ namespace NTH_Restaurant_Manager
 
         private void btn_CocTien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            Program.mesTienCoc = new mesTienCoc(gvPDT.GetRowCellValue(num, "hoTenKH").ToString(), gvPDT.GetRowCellValue(num, "sdt").ToString(), int.Parse(gvPDT.GetRowCellValue(num, "giaSauThue").ToString()), int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString()));
+            Program.mesTienCoc.Show();
+            Program.frmChinh.Enabled = false;
         }
 
         private void btn_Huy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            Program.mesHuyPhieuDatTruoc = new mesHuyPhieuDatTruoc();
+            Program.mesHuyPhieuDatTruoc.Show();
+            Program.frmChinh.Enabled = false;
         }
     }
 }

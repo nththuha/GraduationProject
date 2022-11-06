@@ -50,6 +50,8 @@ namespace NTH_Restaurant_Manager
             this.colngayTao = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colngayDat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colgioDat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colgia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colgiaSauThue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colidnv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colhoTenNV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colidkh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -221,7 +223,7 @@ namespace NTH_Restaurant_Manager
             this.gcPDT.Margin = new System.Windows.Forms.Padding(4);
             this.gcPDT.MenuManager = this.barManager1;
             this.gcPDT.Name = "gcPDT";
-            this.gcPDT.Size = new System.Drawing.Size(1122, 405);
+            this.gcPDT.Size = new System.Drawing.Size(1215, 405);
             this.gcPDT.TabIndex = 5;
             this.gcPDT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPDT});
@@ -233,6 +235,8 @@ namespace NTH_Restaurant_Manager
             this.colngayTao,
             this.colngayDat,
             this.colgioDat,
+            this.colgia,
+            this.colgiaSauThue,
             this.colidnv,
             this.colhoTenNV,
             this.colidkh,
@@ -253,12 +257,9 @@ namespace NTH_Restaurant_Manager
             // 
             // colngayTao
             // 
-            this.colngayTao.Caption = "NGÀY TẠO";
             this.colngayTao.FieldName = "ngayTao";
             this.colngayTao.MinWidth = 25;
             this.colngayTao.Name = "colngayTao";
-            this.colngayTao.Visible = true;
-            this.colngayTao.VisibleIndex = 2;
             this.colngayTao.Width = 94;
             // 
             // colngayDat
@@ -268,7 +269,7 @@ namespace NTH_Restaurant_Manager
             this.colngayDat.MinWidth = 25;
             this.colngayDat.Name = "colngayDat";
             this.colngayDat.Visible = true;
-            this.colngayDat.VisibleIndex = 3;
+            this.colngayDat.VisibleIndex = 2;
             this.colngayDat.Width = 94;
             // 
             // colgioDat
@@ -278,8 +279,28 @@ namespace NTH_Restaurant_Manager
             this.colgioDat.MinWidth = 25;
             this.colgioDat.Name = "colgioDat";
             this.colgioDat.Visible = true;
-            this.colgioDat.VisibleIndex = 4;
+            this.colgioDat.VisibleIndex = 3;
             this.colgioDat.Width = 94;
+            // 
+            // colgia
+            // 
+            this.colgia.Caption = "GIÁ";
+            this.colgia.FieldName = "gia";
+            this.colgia.MinWidth = 25;
+            this.colgia.Name = "colgia";
+            this.colgia.Visible = true;
+            this.colgia.VisibleIndex = 4;
+            this.colgia.Width = 94;
+            // 
+            // colgiaSauThue
+            // 
+            this.colgiaSauThue.Caption = "GIÁ SAU THUẾ";
+            this.colgiaSauThue.FieldName = "giaSauThue";
+            this.colgiaSauThue.MinWidth = 25;
+            this.colgiaSauThue.Name = "colgiaSauThue";
+            this.colgiaSauThue.Visible = true;
+            this.colgiaSauThue.VisibleIndex = 5;
+            this.colgiaSauThue.Width = 94;
             // 
             // colidnv
             // 
@@ -295,7 +316,7 @@ namespace NTH_Restaurant_Manager
             this.colhoTenNV.MinWidth = 25;
             this.colhoTenNV.Name = "colhoTenNV";
             this.colhoTenNV.Visible = true;
-            this.colhoTenNV.VisibleIndex = 5;
+            this.colhoTenNV.VisibleIndex = 6;
             this.colhoTenNV.Width = 94;
             // 
             // colidkh
@@ -317,7 +338,7 @@ namespace NTH_Restaurant_Manager
             // 
             // colsdt
             // 
-            this.colsdt.Caption = "SDT";
+            this.colsdt.Caption = "SỐ ĐIỆN THOẠI";
             this.colsdt.FieldName = "sdt";
             this.colsdt.MinWidth = 25;
             this.colsdt.Name = "colsdt";
@@ -372,11 +393,11 @@ namespace NTH_Restaurant_Manager
             // 
             this.gcTC.DataSource = this.bdsTC;
             this.gcTC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcTC.Location = new System.Drawing.Point(1124, 2);
+            this.gcTC.Location = new System.Drawing.Point(1217, 2);
             this.gcTC.MainView = this.gvTC;
             this.gcTC.MenuManager = this.barManager1;
             this.gcTC.Name = "gcTC";
-            this.gcTC.Size = new System.Drawing.Size(507, 405);
+            this.gcTC.Size = new System.Drawing.Size(414, 405);
             this.gcTC.TabIndex = 5;
             this.gcTC.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTC});
@@ -526,6 +547,8 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraGrid.Columns.GridColumn colngayTao;
         private DevExpress.XtraGrid.Columns.GridColumn colngayDat;
         private DevExpress.XtraGrid.Columns.GridColumn colgioDat;
+        private DevExpress.XtraGrid.Columns.GridColumn colgia;
+        private DevExpress.XtraGrid.Columns.GridColumn colgiaSauThue;
         private DevExpress.XtraGrid.Columns.GridColumn colidnv;
         private DevExpress.XtraGrid.Columns.GridColumn colhoTenNV;
         private DevExpress.XtraGrid.Columns.GridColumn colidkh;

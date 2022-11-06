@@ -12,6 +12,8 @@ namespace NTH_Restaurant_Manager.Model
         public String ngayTao { get; set; }
         public String ngayDat { get; set; }
         public int gioDat { get; set; }
+        public int gia { get; set; }
+        public int giaSauThue { get; set; }
         public int idnv { get; set; }
         public String hoTenNV { get; set; }
         public int idkh { get; set; }
