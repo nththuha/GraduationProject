@@ -35,6 +35,7 @@ public class PhieuDatTruocServiceImpl implements PhieuDatTruocService {
     @Override
     public PhieuDatTruocDTO themPhieuDatTruoc(PhieuDatTruocDTO phieuDatTruocDTO) {
         PhieuDatTruocEntity pd = phieuDatTruocDTO.toEntity();
+        pd.setTrangThai("Đã đặt");
         KhachHangEntity kh = khachHangRepository.getById(phieuDatTruocDTO.getIdkh());
         NhanVienEntity nv = nhanVienRepository.getById(phieuDatTruocDTO.getIdnv());
         pd.setIdkh(kh);

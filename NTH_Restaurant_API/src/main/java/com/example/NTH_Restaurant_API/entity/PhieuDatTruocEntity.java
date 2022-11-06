@@ -38,6 +38,9 @@ public class PhieuDatTruocEntity {
     @Column(name = "GIASAUTHUE")
     private Integer giaSauThue;
 
+    @Column(name = "TRANGTHAI")
+    private String trangThai;
+
     @JoinColumn(name = "IDKH")
     @ManyToOne
     private KhachHangEntity idkh;

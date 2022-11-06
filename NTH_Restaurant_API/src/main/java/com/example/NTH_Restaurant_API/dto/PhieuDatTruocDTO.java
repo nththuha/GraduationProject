@@ -19,6 +19,8 @@ public class PhieuDatTruocDTO {
     private Date ngayDat;
     private Integer gia;
     private Integer giaSauThue;
+
+    private String trangThai;
     private Integer idkh;
     private String hoTenKH;
     private String sdt;
@@ -32,6 +34,7 @@ public class PhieuDatTruocDTO {
         this.ngayDat = phieuDatTruocEntity.getNgayDat();
         this.gia = phieuDatTruocEntity.getGia();
         this.giaSauThue = phieuDatTruocEntity.getGiaSauThue();
+        this.trangThai = phieuDatTruocEntity.getTrangThai();
         this.idnv = phieuDatTruocEntity.getIdnv().getIdNV();
         this.hoTenNV = phieuDatTruocEntity.getIdnv().getHoTen();
         this.idkh = phieuDatTruocEntity.getIdkh().getIdKH();
