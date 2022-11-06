@@ -66,7 +66,7 @@ namespace NTH_Restaurant_Manager
             }
             else
             {
-                rpThongKeDoanhThuTheoThang rp = new rpThongKeDoanhThuTheoThang();
+                rpThongKeDoanhThuTheoThang1 rp = new rpThongKeDoanhThuTheoThang1();
 
                 DataSet ds = new DataSet();
 
