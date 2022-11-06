@@ -34,8 +34,16 @@ public class TienCocServiceImpl implements TienCocService {
     @Override
     public String themTienCoc(TienCocDTO tienCocDTO) {
         if(tienCocRepository.existsByIdTC(tienCocDTO.getIdTC())) return "false";
-        TienCocEntity tienCoc = tienCocDTO.toEntity();
+        List<TienCocEntity> listTC = tienCocRepository.findByIdpdt_IdPDT(tienCocDTO.getIdpdt());
+        int tong = tienCocDTO.getTriGia();;
+        for(TienCocEntity i: listTC){
+            tong += i.getTriGia();
+        }
         PhieuDatTruocEntity pdt = phieuDatTruocRepository.getById(tienCocDTO.getIdpdt());
+        if(tong > pdt.getGiaSauThue()){
+            return "money";
+        }
+        TienCocEntity tienCoc = tienCocDTO.toEntity();
         NhanVienEntity nv = nhanVienRepository.getById(tienCocDTO.getIdnv());
         tienCoc.setIdpdt(pdt);
         tienCoc.setIdnv(nv);
