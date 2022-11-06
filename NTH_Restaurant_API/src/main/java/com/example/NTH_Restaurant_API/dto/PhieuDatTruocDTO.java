@@ -19,7 +19,6 @@ public class PhieuDatTruocDTO {
     private Date ngayDat;
     private Integer gia;
     private Integer giaSauThue;
-
     private String trangThai;
     private Integer idkh;
     private String hoTenKH;

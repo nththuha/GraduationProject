@@ -46,8 +46,11 @@ public class CT_DatBanTruocServiceImpl implements CT_DatBanTruocService {
         ct_datBanTruoc.setIdtd(thucDon);
         ct_datBanTruoc.setIdpdt(pdt);
         ct_datBanTruoc.setIdctb(ctBan);
+        pdt.setGia(pdt.getGia() + thucDon.getGia());
+        pdt.setGiaSauThue((int) (pdt.getGia() * 1.1));
         try {
             ct_datBanTruocRepository.save(ct_datBanTruoc);
+            phieuDatTruocRepository.save(pdt);
             return "true";
         }
         catch (Exception e){
@@ -57,8 +60,14 @@ public class CT_DatBanTruocServiceImpl implements CT_DatBanTruocService {
 
     @Override
     public String xoaCT_DatBanTruoc(Integer idCTDBT) {
+        CT_DatBanTruocEntity ct_datBanTruoc = ct_datBanTruocRepository.getById(idCTDBT);
+        ThucDonEntity thucDon = thucDonRepository.getById(ct_datBanTruoc.getIdtd().getIdTD());
+        PhieuDatTruocEntity pdt = phieuDatTruocRepository.getById(ct_datBanTruoc.getIdpdt().getIdPDT());
+        pdt.setGia(pdt.getGia() - thucDon.getGia());
+        pdt.setGiaSauThue((int) (pdt.getGia() * 1.1));
         try {
             ct_datBanTruocRepository.deleteById(idCTDBT);
+            phieuDatTruocRepository.save(pdt);
             return "true";
         }
         catch (Exception e){
