@@ -56,14 +56,35 @@ public class PhieuMuaNguyenLieuServiceImpl implements PhieuMuaNguyenLieuService 
         catch (Exception e){
             return null;
         }
-        List<NguyenLieuCanMua> listNL = phieuMuaNguyenLieuRepository.layDSNguyenLieuCanMuaTheoNgay(phieuMuaNguyenLieuDTO.getNgay());
+        // lấy ds nguyên liệu cần mua theo phiếu đặt trước
+        List<NguyenLieuCanMua> listNLPDT = phieuMuaNguyenLieuRepository.layDSNguyenLieuCanMuaTheoNgay(phieuMuaNguyenLieuDTO.getNgay());
+
+        // sửa tiếp ở đây
+        List<NguyenLieuEntity> listNL = nguyenLieuRepository.findAll();
+        boolean xet = true; //true khi có nguyên liệu cần mua trong phiếu đặt trước trùng vs nguyên liệu tổng
+        for(NguyenLieuEntity i: listNL){
+            xet = false;
+            for(NguyenLieuCanMua j: listNLPDT){
+                if(i.getMaNL().equals(j.getManl())){
+                    xet = true;
+                    int soLuong = j.getSoluong() + (i.getSlToiThieu() - i.getSlTon());
+                    i.setSlTon(soLuong);
+                }
+            }
+            if(!xet){
+                if(i.getSlTon() > i.getSlToiThieu()){
+                    listNL.remove(i);
+                }
+                else{
+                    i.setSlTon(i.getSlToiThieu() - i.getSlTon());
+                }
+            }
+        }
         List<CT_PhieuMuaEntity> listCTPM = new ArrayList<>();
-        for(NguyenLieuCanMua i: listNL){
-            NguyenLieuEntity nl = nguyenLieuRepository.getById(i.getManl());
-            int soLuong = i.getSoluong() + (nl.getSlToiThieu() - nl.getSlTon());
+        for(NguyenLieuEntity i: listNL){
             CT_PhieuMuaEntity ct = new CT_PhieuMuaEntity();
-            ct.setSoLuong(soLuong);
-            ct.setManl(nl);
+            ct.setSoLuong(i.getSlTon());
+            ct.setManl(nguyenLieuRepository.getById(i.getMaNL()));
             ct.setIdpm(pm);
             listCTPM.add(ct);
         }
