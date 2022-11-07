@@ -58,7 +58,6 @@ public class PhieuMuaNguyenLieuServiceImpl implements PhieuMuaNguyenLieuService 
         }
         // lấy ds nguyên liệu cần mua theo phiếu đặt trước
         List<NguyenLieuCanMua> listNLPDT = phieuMuaNguyenLieuRepository.layDSNguyenLieuCanMuaTheoNgay(phieuMuaNguyenLieuDTO.getNgay());
-        System.out.println("Size nguyên liệu cần mua phiếu đặt trước: " + listNLPDT.size());
 
         List<NguyenLieuEntity> listNL = nguyenLieuRepository.findAll();
         List<CT_PhieuMuaEntity> listCTPM = new ArrayList<>();
