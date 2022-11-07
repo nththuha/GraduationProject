@@ -58,9 +58,10 @@ public class PhieuMuaNguyenLieuServiceImpl implements PhieuMuaNguyenLieuService 
         }
         // lấy ds nguyên liệu cần mua theo phiếu đặt trước
         List<NguyenLieuCanMua> listNLPDT = phieuMuaNguyenLieuRepository.layDSNguyenLieuCanMuaTheoNgay(phieuMuaNguyenLieuDTO.getNgay());
+        System.out.println("Size nguyên liệu cần mua phiếu đặt trước: " + listNLPDT.size());
 
-        // sửa tiếp ở đây
         List<NguyenLieuEntity> listNL = nguyenLieuRepository.findAll();
+        List<CT_PhieuMuaEntity> listCTPM = new ArrayList<>();
         boolean xet = true; //true khi có nguyên liệu cần mua trong phiếu đặt trước trùng vs nguyên liệu tổng
         for(NguyenLieuEntity i: listNL){
             xet = false;
@@ -68,25 +69,20 @@ public class PhieuMuaNguyenLieuServiceImpl implements PhieuMuaNguyenLieuService 
                 if(i.getMaNL().equals(j.getManl())){
                     xet = true;
                     int soLuong = j.getSoluong() + (i.getSlToiThieu() - i.getSlTon());
-                    i.setSlTon(soLuong);
+                    CT_PhieuMuaEntity ct = new CT_PhieuMuaEntity();
+                    ct.setSoLuong(soLuong);
+                    ct.setManl(i);
+                    ct.setIdpm(pm);
+                    listCTPM.add(ct);
                 }
             }
-            if(!xet){
-                if(i.getSlTon() > i.getSlToiThieu()){
-                    listNL.remove(i);
-                }
-                else{
-                    i.setSlTon(i.getSlToiThieu() - i.getSlTon());
-                }
+            if(!xet && i.getSlTon() < i.getSlToiThieu()){
+                CT_PhieuMuaEntity ct = new CT_PhieuMuaEntity();
+                ct.setSoLuong(i.getSlToiThieu() - i.getSlTon());
+                ct.setManl(i);
+                ct.setIdpm(pm);
+                listCTPM.add(ct);
             }
-        }
-        List<CT_PhieuMuaEntity> listCTPM = new ArrayList<>();
-        for(NguyenLieuEntity i: listNL){
-            CT_PhieuMuaEntity ct = new CT_PhieuMuaEntity();
-            ct.setSoLuong(i.getSlTon());
-            ct.setManl(nguyenLieuRepository.getById(i.getMaNL()));
-            ct.setIdpm(pm);
-            listCTPM.add(ct);
         }
         try {
             listCTPM = ct_phieuMuaRepository.saveAll(listCTPM);
