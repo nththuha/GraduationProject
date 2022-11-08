@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface CT_PhieuNhapRepository extends JpaRepository<CT_PhieuNhapEntity, Integer> {
     List<CT_PhieuNhapEntity> findByIdpn_IdPN(Integer idPN);
-    Boolean existByIdCTPN(Integer idCTPN);
+    Boolean existsByIdCTPN(Integer idCTPN);
 }

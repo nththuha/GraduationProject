@@ -33,7 +33,7 @@ public class CT_PhieuNhapServiceImpl implements CT_PhieuNhapService {
 
     @Override
     public String themCt_PhieuNhap(CT_PhieuNhapDTO ct_phieuNhapDTO) {
-        if(ct_phieuNhapRepository.existByIdCTPN(ct_phieuNhapDTO.getIdCTPN())) return "false";
+        if(ct_phieuNhapRepository.existsByIdCTPN(ct_phieuNhapDTO.getIdCTPN())) return "false";
         PhieuNhapNguyenLieuEntity pn = phieuNhapNguyenLieuRepository.getById(ct_phieuNhapDTO.getIdpn());
         NguyenLieuEntity nl = nguyenLieuRepository.getById(ct_phieuNhapDTO.getManl());
         CT_PhieuNhapEntity ct_phieuNhap = ct_phieuNhapDTO.toEntity();
@@ -50,7 +50,7 @@ public class CT_PhieuNhapServiceImpl implements CT_PhieuNhapService {
 
     @Override
     public String xoaCT_PhieuNhap(Integer idCTPN) {
-        if(!ct_phieuNhapRepository.existByIdCTPN(idCTPN)) return "false";
+        if(!ct_phieuNhapRepository.existsByIdCTPN(idCTPN)) return "false";
         try {
             ct_phieuNhapRepository.deleteById(idCTPN);
             return "true";
