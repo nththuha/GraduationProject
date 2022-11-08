@@ -27,7 +27,7 @@ public class PhieuDatController {
         return phieuDatService.themPhieuDat(phieuDatDTO);
     }
 
-    @PostMapping("/phieudattruoc")
+    @PutMapping("/phieudattruoc")
     public String themPhieuDatDuaTrenPhieuDatTruoc(@Valid @RequestBody PhieuDatTruocDTO phieuDatTruocDTO){
         return phieuDatService.themPhieuDatDuaTrenPhieuDatTruoc(phieuDatTruocDTO);
     }
