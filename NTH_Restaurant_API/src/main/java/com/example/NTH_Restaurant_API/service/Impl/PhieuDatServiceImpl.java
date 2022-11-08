@@ -29,6 +29,9 @@ public class PhieuDatServiceImpl implements PhieuDatService {
     @Autowired
     private PhieuDatTruocRepository phieuDatTruocRepository;
 
+    @Autowired
+    private CT_DatBanTruocRepository ct_datBanTruocRepository;
+
     @Override
     public List<PhieuDatDTO> layDSPhieuDatChuaCoHoaDon() {
         List<PhieuDatEntity> ds = phieuDatRepository.findAll();
@@ -98,8 +101,24 @@ public class PhieuDatServiceImpl implements PhieuDatService {
         pd.setIdnv(nhanVienRepository.getById(phieuDatTruocDTO.getIdnv()));
         pd.setNgay(new Date());
         try {
-            phieuDatRepository.save(pd);
+            pd = phieuDatRepository.save(pd);
             phieuDatTruocRepository.save(pdt);
+
+            List<CT_DatBanTruocEntity> listCTDBT = ct_datBanTruocRepository.findByIdpdt_IdPDT(pdt.getIdPDT());
+            List<CT_DatBanEntity> listCTDB = new ArrayList<>();
+            List<CT_BanEntity> listCTB = new ArrayList<>();
+            for(CT_DatBanTruocEntity i: listCTDBT){
+                CT_BanEntity ctBan = i.getIdctb();
+                CT_DatBanEntity ct_datBan = new CT_DatBanEntity();
+                ct_datBan.setIdpd(pd);
+                ct_datBan.setIdctb(ctBan);
+                ctBan.setTrangThai("Hết chỗ");
+                listCTB.add(ctBan);
+                listCTDB.add(ct_datBan);
+            }
+            ct_datBanRepository.saveAll(listCTDB);
+            ct_banRepository.saveAll(listCTB);
+
             return "true";
         }
         catch (Exception e){

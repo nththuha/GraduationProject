@@ -14,7 +14,9 @@ import com.example.NTH_Restaurant_API.service.CT_BanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,6 +33,10 @@ public class CT_BanServiceImpl implements CT_BanService {
 
     @Override
     public List<BanDTO> layDSBanTheoPhong(String maphong) {
+        Date d = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH");
+        List<BanDaDat> listT = ct_banRepository.layCTBanDaDat(new Date("yyyy-MM-dd"), Integer.valueOf(sdf.format(d)), maphong);
+
         List<CT_BanEntity> dsCT_Ban = ct_banRepository.findByMaphong_MaPhong(maphong);
         List<BanDTO> dsBan = new ArrayList<>();
         for (int i = 0; i < dsCT_Ban.size(); i++) {
@@ -46,6 +52,14 @@ public class CT_BanServiceImpl implements CT_BanService {
             BanDTO temp = new BanDTO(item.getMaban());
             temp.setTrangThai(item.getTrangThai());
             dsBan.add(temp);
+        }
+
+        for(BanDTO ban: dsBan){
+            for(BanDaDat b: listT){
+                if(ban.getMaBan().equals(b.getMaban())){
+                    ban.setTrangThai("Đã đặt");
+                }
+            }
         }
         return dsBan;
     }
@@ -96,7 +110,6 @@ public class CT_BanServiceImpl implements CT_BanService {
 
     @Override
     public List<BanDTO> layDSBanTheoPhongTheoNgay(PhongNgay phongNgay) {
-        System.out.println(phongNgay.getGio() + " giờ nha");
         List<BanDaDat> listT = ct_banRepository.layCTBanDaDat(phongNgay.getNgay(), phongNgay.getGio(), phongNgay.getMaPhong());
         List<BanDTO> listB = layDSBanTheoPhong(phongNgay.getMaPhong());
         for(BanDTO ban: listB){
