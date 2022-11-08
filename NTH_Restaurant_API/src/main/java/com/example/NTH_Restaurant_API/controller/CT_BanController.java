@@ -17,7 +17,7 @@ public class CT_BanController {
     @Autowired
     private CT_BanService ct_banService;
 
-    @GetMapping("/danhsach")
+    @PostMapping("/danhsach")
     public List<BanDTO> layDSBanTheoPhong(@Valid @RequestBody PhongNgay phongNgay){
         return ct_banService.layDSBanTheoPhong(phongNgay);
     }
