@@ -1,12 +1,62 @@
 package com.example.NTH_Restaurant_API.service.Impl;
 
+import com.example.NTH_Restaurant_API.dto.CT_PhieuNhapDTO;
+import com.example.NTH_Restaurant_API.entity.CT_PhieuNhapEntity;
+import com.example.NTH_Restaurant_API.entity.NguyenLieuEntity;
+import com.example.NTH_Restaurant_API.entity.PhieuNhapNguyenLieuEntity;
 import com.example.NTH_Restaurant_API.repository.CT_PhieuNhapRepository;
+import com.example.NTH_Restaurant_API.repository.NguyenLieuRepository;
+import com.example.NTH_Restaurant_API.repository.PhieuNhapNguyenLieuRepository;
 import com.example.NTH_Restaurant_API.service.CT_PhieuNhapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CT_PhieuNhapServiceImpl implements CT_PhieuNhapService {
     @Autowired
     private CT_PhieuNhapRepository ct_phieuNhapRepository;
+
+    @Autowired
+    private PhieuNhapNguyenLieuRepository phieuNhapNguyenLieuRepository;
+
+    @Autowired
+    private NguyenLieuRepository nguyenLieuRepository;
+
+    @Override
+    public List<CT_PhieuNhapDTO> layDSCT_PhieuNhapTheoPhieuNhap(Integer idpn) {
+        List<CT_PhieuNhapEntity> listCTPN = ct_phieuNhapRepository.findByIdpn_IdPN(idpn);
+        return listCTPN.stream().map(CT_PhieuNhapDTO::new).collect(Collectors.toList());
+    }
+
+    @Override
+    public String themCt_PhieuNhap(CT_PhieuNhapDTO ct_phieuNhapDTO) {
+        if(ct_phieuNhapRepository.existByIdCTPN(ct_phieuNhapDTO.getIdCTPN())) return "false";
+        PhieuNhapNguyenLieuEntity pn = phieuNhapNguyenLieuRepository.getById(ct_phieuNhapDTO.getIdpn());
+        NguyenLieuEntity nl = nguyenLieuRepository.getById(ct_phieuNhapDTO.getManl());
+        CT_PhieuNhapEntity ct_phieuNhap = ct_phieuNhapDTO.toEntity();
+        ct_phieuNhap.setIdpn(pn);
+        ct_phieuNhap.setManl(nl);
+        try {
+            ct_phieuNhapRepository.save(ct_phieuNhap);
+            return "true";
+        }
+        catch (Exception e){
+            return "false";
+        }
+    }
+
+    @Override
+    public String xoaCT_PhieuNhap(Integer idCTPN) {
+        if(!ct_phieuNhapRepository.existByIdCTPN(idCTPN)) return "false";
+        try {
+            ct_phieuNhapRepository.deleteById(idCTPN);
+            return "true";
+        }
+        catch (Exception e){
+            return "false";
+        }
+    }
 }
