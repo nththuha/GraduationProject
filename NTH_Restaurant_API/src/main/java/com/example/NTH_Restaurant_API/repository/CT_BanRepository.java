@@ -28,7 +28,7 @@ public interface CT_BanRepository extends JpaRepository<CT_BanEntity, Integer> {
     @Query(value = "select t.idctb, t.maphong, t.maban \n" +
             "from (select idpdt \n" +
             "from phieudattruoc \n" +
-            "where ngaydat = :ngay and giodat - 3 < :gio and giodat + 3 > :gio) pdt,\n" +
+            "where ngaydat = :ngay and giodat - 3 < :gio and giodat + 3 > :gio and trangthai != 'Hủy phiếu') pdt,\n" +
             "(select ctb.idctb, ctb.maban, ctb.maphong, dbt.idpdt\n" +
             "from ct_ban ctb, ct_datbantruoc dbt \n" +
             "where ctb.idctb = dbt.idctb and ctb.maphong = :maPhong) t \n" +
