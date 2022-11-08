@@ -35,12 +35,15 @@ public class PhieuDatDTO {
 
     private String tenPhong;
 
+    private Integer idPDT;
+
     public PhieuDatDTO(PhieuDatEntity phieuDatEntity) {
         this.idPD = phieuDatEntity.getIdPD();
         this.ngay = phieuDatEntity.getNgay();
         if (phieuDatEntity.getMahd() != null) this.mahd = phieuDatEntity.getMahd().getMaHD();
         this.idnv = phieuDatEntity.getIdnv().getIdNV();
         this.hoTenNV = phieuDatEntity.getIdnv().getHoTen();
+        this.idPDT = phieuDatEntity.getIdpdt().getIdPDT();
         if (phieuDatEntity.getIdkh() != null) this.idkh = phieuDatEntity.getIdkh().getIdKH();
         if (phieuDatEntity.getIdkh() != null) this.hoTenKH = phieuDatEntity.getIdkh().getHoTen();
     }

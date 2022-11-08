@@ -1,19 +1,15 @@
 package com.example.NTH_Restaurant_API.service.Impl;
 
 import com.example.NTH_Restaurant_API.dto.PhieuDatDTO;
-import com.example.NTH_Restaurant_API.entity.CT_BanEntity;
-import com.example.NTH_Restaurant_API.entity.CT_DatBanEntity;
-import com.example.NTH_Restaurant_API.entity.NhanVienEntity;
-import com.example.NTH_Restaurant_API.entity.PhieuDatEntity;
-import com.example.NTH_Restaurant_API.repository.CT_BanRepository;
-import com.example.NTH_Restaurant_API.repository.CT_DatBanRepository;
-import com.example.NTH_Restaurant_API.repository.NhanVienRepository;
-import com.example.NTH_Restaurant_API.repository.PhieuDatRepository;
+import com.example.NTH_Restaurant_API.dto.PhieuDatTruocDTO;
+import com.example.NTH_Restaurant_API.entity.*;
+import com.example.NTH_Restaurant_API.repository.*;
 import com.example.NTH_Restaurant_API.service.PhieuDatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -29,6 +25,9 @@ public class PhieuDatServiceImpl implements PhieuDatService {
 
     @Autowired
     private NhanVienRepository nhanVienRepository;
+
+    @Autowired
+    private PhieuDatTruocRepository phieuDatTruocRepository;
 
     @Override
     public List<PhieuDatDTO> layDSPhieuDatChuaCoHoaDon() {
@@ -87,6 +86,24 @@ public class PhieuDatServiceImpl implements PhieuDatService {
         }
         catch (Exception e){
             return null;
+        }
+    }
+
+    @Override
+    public String themPhieuDatDuaTrenPhieuDatTruoc(PhieuDatTruocDTO phieuDatTruocDTO) {
+        PhieuDatTruocEntity pdt = phieuDatTruocRepository.getById(phieuDatTruocDTO.getIdPDT());
+        pdt.setTrangThai("Đã đến");
+        PhieuDatEntity pd = new PhieuDatEntity();
+        pd.setIdpdt(pdt);
+        pd.setIdnv(nhanVienRepository.getById(phieuDatTruocDTO.getIdnv()));
+        pd.setNgay(new Date());
+        try {
+            phieuDatRepository.save(pd);
+            phieuDatTruocRepository.save(pdt);
+            return "true";
+        }
+        catch (Exception e){
+            return "false";
         }
     }
 }
