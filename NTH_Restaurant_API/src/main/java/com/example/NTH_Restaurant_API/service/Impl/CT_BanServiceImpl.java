@@ -35,7 +35,7 @@ public class CT_BanServiceImpl implements CT_BanService {
     public List<BanDTO> layDSBanTheoPhong(String maphong) {
         Date d = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("HH");
-        List<BanDaDat> listT = ct_banRepository.layCTBanDaDat(new Date("yyyy-MM-dd"), Integer.valueOf(sdf.format(d)), maphong);
+        List<BanDaDat> listT = ct_banRepository.layCTBanDaDat(new Date(), Integer.valueOf(sdf.format(d)), maphong);
 
         List<CT_BanEntity> dsCT_Ban = ct_banRepository.findByMaphong_MaPhong(maphong);
         List<BanDTO> dsBan = new ArrayList<>();
