@@ -32,11 +32,11 @@ public class CT_BanServiceImpl implements CT_BanService {
     private PhongRepository phongRepository;
 
     @Override
-    public List<BanDTO> layDSBanTheoPhong(String maphong) {
+    public List<BanDTO> layDSBanTheoPhong(PhongNgay phongNgay) {
         Date d = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("HH");
-        List<BanDaDat> listT = ct_banRepository.layCTBanDaDatTrongNgay(d, Integer.valueOf(sdf.format(d)), maphong);
-        List<CT_BanEntity> dsCT_Ban = ct_banRepository.findByMaphong_MaPhong(maphong);
+        List<BanDaDat> listT = ct_banRepository.layCTBanDaDatTrongNgay(phongNgay.getNgay(), Integer.valueOf(sdf.format(d)), phongNgay.getMaPhong());
+        List<CT_BanEntity> dsCT_Ban = ct_banRepository.findByMaphong_MaPhong(phongNgay.getMaPhong());
         List<BanDTO> dsBan = new ArrayList<>();
         for (int i = 0; i < dsCT_Ban.size(); i++) {
             for (int j = i; j < dsCT_Ban.size(); j++) {
@@ -105,6 +105,26 @@ public class CT_BanServiceImpl implements CT_BanService {
         catch (Exception e){
             return "false";
         }
+    }
+
+    public List<BanDTO> layDSBanTheoPhong(String maPhong) {
+        List<CT_BanEntity> dsCT_Ban = ct_banRepository.findByMaphong_MaPhong(maPhong);
+        List<BanDTO> dsBan = new ArrayList<>();
+        for (int i = 0; i < dsCT_Ban.size(); i++) {
+            for (int j = i; j < dsCT_Ban.size(); j++) {
+                if (dsCT_Ban.get(i).getIdCTB() > dsCT_Ban.get(j).getIdCTB()) {
+                    CT_BanEntity temp = dsCT_Ban.get(i);
+                    dsCT_Ban.set(i, dsCT_Ban.get(j));
+                    dsCT_Ban.set(j, temp);
+                }
+            }
+        }
+        for (CT_BanEntity item : dsCT_Ban) {
+            BanDTO temp = new BanDTO(item.getMaban());
+            temp.setTrangThai(item.getTrangThai());
+            dsBan.add(temp);
+        }
+        return dsBan;
     }
 
     @Override

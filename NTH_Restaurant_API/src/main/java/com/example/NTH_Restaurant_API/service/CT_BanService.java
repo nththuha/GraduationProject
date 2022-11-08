@@ -7,7 +7,7 @@ import com.example.NTH_Restaurant_API.dto.PhongNgay;
 import java.util.List;
 
 public interface CT_BanService {
-    List<BanDTO> layDSBanTheoPhong(String maphong);
+    List<BanDTO> layDSBanTheoPhong(PhongNgay phongNgay);
 
     List<CT_BanDTO> layDSCTBanTheoPhong(String maphong);
 
