@@ -42,7 +42,7 @@ namespace NTH_Restaurant_Manager.Repository
             return check;
         }
 
-        public async Task<String> xoaCTBan(int idCTPN)
+        public async Task<String> xoaCTPhieuNhap(int idCTPN)
         {
             _response = await _client.DeleteAsync("ctphieunhap/" + idCTPN);
             var json = await _response.Content.ReadAsStringAsync();

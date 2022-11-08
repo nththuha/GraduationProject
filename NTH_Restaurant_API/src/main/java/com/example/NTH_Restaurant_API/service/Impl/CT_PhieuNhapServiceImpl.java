@@ -36,11 +36,13 @@ public class CT_PhieuNhapServiceImpl implements CT_PhieuNhapService {
         if(ct_phieuNhapRepository.existsByIdCTPN(ct_phieuNhapDTO.getIdCTPN())) return "false";
         PhieuNhapNguyenLieuEntity pn = phieuNhapNguyenLieuRepository.getById(ct_phieuNhapDTO.getIdpn());
         NguyenLieuEntity nl = nguyenLieuRepository.getById(ct_phieuNhapDTO.getManl());
+        nl.setSlTon(nl.getSlTon() + ct_phieuNhapDTO.getSoLuong());
         CT_PhieuNhapEntity ct_phieuNhap = ct_phieuNhapDTO.toEntity();
         ct_phieuNhap.setIdpn(pn);
         ct_phieuNhap.setManl(nl);
         try {
             ct_phieuNhapRepository.save(ct_phieuNhap);
+            nguyenLieuRepository.save(nl);
             return "true";
         }
         catch (Exception e){
@@ -51,8 +53,12 @@ public class CT_PhieuNhapServiceImpl implements CT_PhieuNhapService {
     @Override
     public String xoaCT_PhieuNhap(Integer idCTPN) {
         if(!ct_phieuNhapRepository.existsByIdCTPN(idCTPN)) return "false";
+        CT_PhieuNhapEntity ct_phieuNhap = ct_phieuNhapRepository.getById(idCTPN);
+        NguyenLieuEntity nl = ct_phieuNhap.getManl();
+        nl.setSlTon(nl.getSlTon() - ct_phieuNhap.getSoLuong());
         try {
             ct_phieuNhapRepository.deleteById(idCTPN);
+            nguyenLieuRepository.save(nl);
             return "true";
         }
         catch (Exception e){

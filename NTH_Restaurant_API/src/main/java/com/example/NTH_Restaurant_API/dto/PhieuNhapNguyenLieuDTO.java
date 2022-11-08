@@ -14,9 +14,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class PhieuNhapNguyenLieuDTO {
     private Integer idPN;
-
     private Date ngay;
-
     private Integer idnv;
 
     public PhieuNhapNguyenLieuDTO(PhieuNhapNguyenLieuEntity pnnl){
