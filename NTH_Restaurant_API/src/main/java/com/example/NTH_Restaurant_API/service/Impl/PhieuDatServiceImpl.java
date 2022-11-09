@@ -134,7 +134,6 @@ public class PhieuDatServiceImpl implements PhieuDatService {
     @Override
     public List<PhieuDatDTO> layDSPhieuDatPhieuDatTruoc() {
         List<PhieuDatEntity> ds = phieuDatRepository.findAll();
-
         for (int i = 0; i < ds.size(); i++) {
             if (ds.get(i).getMahd() != null) {
                 ds.remove(ds.get(i));
@@ -145,7 +144,6 @@ public class PhieuDatServiceImpl implements PhieuDatService {
                 i--;
             }
         }
-
         return ds.stream().map(PhieuDatDTO::new).collect(Collectors.toList());
     }
 }

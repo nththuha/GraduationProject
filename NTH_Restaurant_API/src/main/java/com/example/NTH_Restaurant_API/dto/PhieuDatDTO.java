@@ -43,9 +43,9 @@ public class PhieuDatDTO {
         if (phieuDatEntity.getMahd() != null) this.mahd = phieuDatEntity.getMahd().getMaHD();
         this.idnv = phieuDatEntity.getIdnv().getIdNV();
         this.hoTenNV = phieuDatEntity.getIdnv().getHoTen();
-        this.idPDT = phieuDatEntity.getIdpdt().getIdPDT();
-        if (phieuDatEntity.getIdkh() != null) this.idkh = phieuDatEntity.getIdkh().getIdKH();
-        if (phieuDatEntity.getIdkh() != null) this.hoTenKH = phieuDatEntity.getIdkh().getHoTen();
+        if(phieuDatEntity.getIdpdt() != null) this.idPDT = phieuDatEntity.getIdpdt().getIdPDT();
+        if(phieuDatEntity.getIdkh() != null) this.idkh = phieuDatEntity.getIdkh().getIdKH();
+        if(phieuDatEntity.getIdkh() != null) this.hoTenKH = phieuDatEntity.getIdkh().getHoTen();
     }
 
     public PhieuDatEntity toEntity() {
