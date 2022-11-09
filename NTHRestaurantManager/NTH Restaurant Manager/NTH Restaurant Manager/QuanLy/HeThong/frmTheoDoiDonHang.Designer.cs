@@ -388,7 +388,7 @@ namespace NTH_Restaurant_Manager
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmTheoDoiDonHang";
-            this.Text = "THEO DÕI ĐƠN HÀNG";
+            this.Text = "THEO DÕI ĐƠN HÀNG - KHÁCH VÃNG LAI";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

@@ -233,6 +233,14 @@ namespace NTH_Restaurant_Manager
                 de_Ngay.Focus();
                 return;
             }
+            int gioHT = int.Parse(aDate.ToString("HH"));
+            int gioDat = int.Parse(gvPDT.GetRowCellValue(num, "gioDat").ToString());
+            if(gioDat > gioHT || gioDat < gioHT)
+            {
+                MessageBox.Show("Giờ đặt không hợp lý", "Thông báo");
+                return;
+            }
+
             pdt = new PhieuDatTruocModel();
             pdt.idPDT = int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString());
             pdt.idnv = Program.nhanVienDangDangNhap.idNV;
