@@ -18,6 +18,8 @@ namespace NTH_Restaurant_Manager
         PhieuDatTruocRepository _repositoryPDT = new PhieuDatTruocRepository();
         CTDatMonTruocRepository _repositoryCTDMT = new CTDatMonTruocRepository();
         TienCocRepository _repositoryTC = new TienCocRepository();
+        PhieuDatRepository _repositoryPD = new PhieuDatRepository();
+
         int num;
 
         PhieuDatTruocModel pdt;
@@ -199,28 +201,6 @@ namespace NTH_Restaurant_Manager
             }
         }
 
-        private void btn_PhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            gcPDT.Enabled = gcTC.Enabled = true;
-            panelControl2.Enabled = false;
-            btn_CapNhatDatBan.Enabled = btn_InHopDong.Enabled = btn_Huy.Enabled = btn_CocTien.Enabled = btn_Reload.Enabled = de_Ngay.Enabled = true;
-        }
-
-        private void btn_CapNhat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            gcPDT.Enabled = gcTC.Enabled = false;
-            panelControl2.Enabled = true;
-            btn_CapNhatDatBan.Enabled = btn_InHopDong.Enabled = btn_Huy.Enabled = btn_CocTien.Enabled = btn_Reload.Enabled = de_Ngay.Enabled = false;
-        }
-
-        private async void suaPhieuDatTruoc()
-        {
-            var check = await _repositoryPDT.suaPhieuDatTruoc(pdt);
-            if (check.Equals("false")) MessageBox.Show("Sửa phiếu đặt trước thất bại!", "Thông báo");
-            else MessageBox.Show("Sửa phiếu đặt trước thành công!", "Thông báo");
-            layDSPhieuDatTheoNgay();
-        }
-
         private void btn_CocTien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Program.mesTienCoc = new mesTienCoc(gvPDT.GetRowCellValue(num, "hoTenKH").ToString(), gvPDT.GetRowCellValue(num, "sdt").ToString(), int.Parse(gvPDT.GetRowCellValue(num, "giaSauThue").ToString()), int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString()), tongCoc);
@@ -240,6 +220,37 @@ namespace NTH_Restaurant_Manager
             Program.mesHuyPhieuDatTruoc = new mesHuyPhieuDatTruoc(hoTenKH, sdt, ngayTao, ngayDat, giaSauThue, tongCoc, idPDT);
             Program.mesHuyPhieuDatTruoc.Show();
             Program.frmChinh.Enabled = false;
+        }
+
+        private void btn_ChuyenThanhPhieuDat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DateTime aDate = DateTime.Now;
+            String now = aDate.ToString("yyyy-MM-dd");
+            String ngay = de_Ngay.DateTime.ToString("yyyy-MM-dd");
+            if (now.CompareTo(ngay) != 0)
+            {
+                MessageBox.Show("Ngày phải bằng ngày hiện tại", "Thông báo");
+                de_Ngay.Focus();
+                return;
+            }
+            pdt = new PhieuDatTruocModel();
+            pdt.idPDT = int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString());
+            pdt.idnv = Program.nhanVienDangDangNhap.idNV;
+            themPhieuDatTruocTrenPhieuDatTruoc();
+        }
+
+        private async void themPhieuDatTruocTrenPhieuDatTruoc()
+        {
+            var check = await _repositoryPD.themPhieuDatDuaTrenPhieuDatTruoc(pdt);
+            if (check.Equals("false"))
+            {
+                MessageBox.Show("Chuyển phiếu đặt thất bại", "Thông báo");
+            }
+            else
+            {
+                MessageBox.Show("Chuyển phiếu đặt thành công", "Thông báo");
+                layDSPhieuDatTheoNgay();
+            }
         }
     }
 }

@@ -72,7 +72,8 @@ public class CT_DatMonServiceImpl implements CT_DatMonService {
 
         List<CT_DatMonDTO> m = list.stream().map(CT_DatMonDTO::new).collect(Collectors.toList());
         for (int i = 0; i < m.size(); i++) {
-            CT_DatBanEntity ct_datBanEntity = ct_datBanRepository.findByIdpd_IdPD(m.get(i).getIdpd());
+            List<CT_DatBanEntity> listCTDB = ct_datBanRepository.findByIdpd_IdPD(m.get(i).getIdpd());
+            CT_DatBanEntity ct_datBanEntity = listCTDB.get(0);
             if (ct_datBanEntity.getIdctb() != null) {
                 CT_BanEntity ct_banEntity = ct_banRepository.getById(ct_datBanEntity.getIdctb().getIdCTB());
                 m.get(i).setTenPhong(ct_banEntity.getMaphong().getTenPhong());
@@ -106,7 +107,8 @@ public class CT_DatMonServiceImpl implements CT_DatMonService {
 
         List<CT_DatMonDTO> m = list.stream().map(CT_DatMonDTO::new).collect(Collectors.toList());
         for (int i = 0; i < m.size(); i++) {
-            CT_DatBanEntity ct_datBanEntity = ct_datBanRepository.findByIdpd_IdPD(m.get(i).getIdpd());
+            List<CT_DatBanEntity> listCTDB = ct_datBanRepository.findByIdpd_IdPD(m.get(i).getIdpd());
+            CT_DatBanEntity ct_datBanEntity = listCTDB.get(0);
             if (ct_datBanEntity.getIdctb() != null) {
                 CT_BanEntity ct_banEntity = ct_banRepository.getById(ct_datBanEntity.getIdctb().getIdCTB());
                 m.get(i).setTenPhong(ct_banEntity.getMaphong().getTenPhong());
@@ -138,7 +140,8 @@ public class CT_DatMonServiceImpl implements CT_DatMonService {
 
         List<CT_DatMonDTO> m = list.stream().map(CT_DatMonDTO::new).collect(Collectors.toList());
         for (int i = 0; i < m.size(); i++) {
-            CT_DatBanEntity ct_datBanEntity = ct_datBanRepository.findByIdpd_IdPD(m.get(i).getIdpd());
+            List<CT_DatBanEntity> listCTDB = ct_datBanRepository.findByIdpd_IdPD(m.get(i).getIdpd());
+            CT_DatBanEntity ct_datBanEntity = listCTDB.get(0);
             if (ct_datBanEntity.getIdctb() != null) {
                 CT_BanEntity ct_banEntity = ct_banRepository.getById(ct_datBanEntity.getIdctb().getIdCTB());
                 m.get(i).setTenPhong(ct_banEntity.getMaphong().getTenPhong());

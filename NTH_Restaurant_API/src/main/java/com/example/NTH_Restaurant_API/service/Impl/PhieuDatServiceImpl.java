@@ -46,7 +46,8 @@ public class PhieuDatServiceImpl implements PhieuDatService {
         List<PhieuDatDTO> list = new ArrayList<>();
 
         for (int i = 0; i < ds.size(); i++) {
-            CT_DatBanEntity ct_datBanEntity = ct_datBanRepository.findByIdpd_IdPD(ds.get(i).getIdPD());
+            List<CT_DatBanEntity> listCTDB = ct_datBanRepository.findByIdpd_IdPD(ds.get(i).getIdPD());
+            CT_DatBanEntity ct_datBanEntity = listCTDB.get(0);
             if (ct_datBanEntity != null) {
                 CT_BanEntity ct_banEntity = ct_banRepository.getById(ct_datBanEntity.getIdctb().getIdCTB());
                 list.add(new PhieuDatDTO(ds.get(i)));

@@ -37,6 +37,7 @@ namespace NTH_Restaurant_Manager
             this.btn_Huy = new DevExpress.XtraBars.BarButtonItem();
             this.btn_CocTien = new DevExpress.XtraBars.BarButtonItem();
             this.btn_InHopDong = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_ChuyenThanhPhieuDat = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Reload = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Thoat = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -100,9 +101,10 @@ namespace NTH_Restaurant_Manager
             this.btn_Reload,
             this.btn_Thoat,
             this.btn_CocTien,
-            this.btn_InHopDong});
+            this.btn_InHopDong,
+            this.btn_ChuyenThanhPhieuDat});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 10;
+            this.barManager1.MaxItemId = 11;
             // 
             // bar2
             // 
@@ -116,6 +118,7 @@ namespace NTH_Restaurant_Manager
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Huy),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_CocTien),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_InHopDong),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_ChuyenThanhPhieuDat),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Reload),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Thoat)});
             this.bar2.OptionsBar.MultiLine = true;
@@ -158,6 +161,15 @@ namespace NTH_Restaurant_Manager
             this.btn_InHopDong.Name = "btn_InHopDong";
             this.btn_InHopDong.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btn_InHopDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_InHopDong_ItemClick);
+            // 
+            // btn_ChuyenThanhPhieuDat
+            // 
+            this.btn_ChuyenThanhPhieuDat.Caption = "Chuyển thành phiếu đặt";
+            this.btn_ChuyenThanhPhieuDat.Id = 10;
+            this.btn_ChuyenThanhPhieuDat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_ChuyenThanhPhieuDat.ImageOptions.SvgImage")));
+            this.btn_ChuyenThanhPhieuDat.Name = "btn_ChuyenThanhPhieuDat";
+            this.btn_ChuyenThanhPhieuDat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_ChuyenThanhPhieuDat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ChuyenThanhPhieuDat_ItemClick);
             // 
             // btn_Reload
             // 
@@ -554,5 +566,6 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraGrid.Columns.GridColumn colidkh;
         private DevExpress.XtraGrid.Columns.GridColumn colhoTenKH;
         private DevExpress.XtraGrid.Columns.GridColumn colsdt;
+        private DevExpress.XtraBars.BarButtonItem btn_ChuyenThanhPhieuDat;
     }
 }
