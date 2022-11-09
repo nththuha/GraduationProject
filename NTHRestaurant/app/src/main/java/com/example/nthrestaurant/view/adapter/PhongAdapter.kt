@@ -1,6 +1,5 @@
 package com.example.nthrestaurant.view.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -31,7 +30,6 @@ class PhongAdapter(private val clickListener: (PhongEntity) -> Unit) :
                     }
                     clPhong.isEnabled = true;
                 }
-                Log.e("phòng", "positon $position, row $row")
                 executePendingBindings()
             }
         }

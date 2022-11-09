@@ -9,6 +9,8 @@ import com.example.nthrestaurant.network.RestaurantApi
 import com.example.nthrestaurant.network.model.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import java.text.SimpleDateFormat
+import java.util.*
 
 class PhucVuViewModel : ViewModel() {
     var token: String = ""
@@ -109,11 +111,31 @@ class PhucVuViewModel : ViewModel() {
         this._phong.value = phong
     }
 
+//    fun layDSBanTheoPhong1(): LiveData<List<BanEntity>> {
+//        viewModelScope.launch {
+//            try {
+//                _dsBan.value = RestaurantApi.retrofitService.layDSBanTheoPhong(
+//                    phong.value?.maPhong + "",
+//                    token
+//                )
+//            } catch (e: Exception) {
+//                Log.e("Lỗi load ds bàn", e.message.toString())
+//            }
+//        }
+//        return dsBan
+//    }
+
     fun layDSBanTheoPhong(): LiveData<List<BanEntity>> {
+        val sdf = SimpleDateFormat("yyyy-MM-dd")
+        val ngay = sdf.format(Date())
+        val sdfH = SimpleDateFormat("HH")
+        val gio = sdfH.format(Date())
+
+        val phongNgay = PhongNgay(phong.value?.maPhong + "", ngay, gio.toInt());
         viewModelScope.launch {
             try {
                 _dsBan.value = RestaurantApi.retrofitService.layDSBanTheoPhong(
-                    phong.value?.maPhong + "",
+                    phongNgay,
                     token
                 )
             } catch (e: Exception) {

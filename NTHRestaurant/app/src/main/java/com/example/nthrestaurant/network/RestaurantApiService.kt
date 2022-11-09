@@ -60,6 +60,12 @@ interface RestaurantApiService {
         @Header("Authorization") token: String
     ): List<BanEntity>
 
+    @POST("ctban/danhsach")
+    suspend fun layDSBanTheoPhong(
+        @Body phongNgay: PhongNgay,
+        @Header("Authorization") token: String
+    ): List<BanEntity>
+
     @GET("loaimonan")
     suspend fun layDSLoaiMonAn(@Header("Authorization") token: String): List<LoaiMonAnEntity>
 

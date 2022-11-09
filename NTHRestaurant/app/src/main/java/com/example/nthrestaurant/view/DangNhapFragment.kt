@@ -17,7 +17,7 @@ import com.example.nthrestaurant.network.model.Token
 import com.example.nthrestaurant.viewmodel.BepViewModel
 import com.example.nthrestaurant.viewmodel.PhaCheViewModel
 import com.example.nthrestaurant.viewmodel.PhucVuViewModel
-import kotlinx.coroutines.*
+import kotlinx.coroutines.runBlocking
 
 class DangNhapFragment : Fragment() {
     private var _binding: FragmentDangNhapBinding? = null
