@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface CT_DatBanRepository extends JpaRepository<CT_DatBanEntity, Integer> {
-    public List<CT_DatBanEntity> findByIdpd_IdPD(Integer idPD);
+    CT_DatBanEntity findByIdpd_IdPD(Integer idPD);
 
-    public List<CT_BanEntity> findByIdctb_IdCTB(Integer idCTB);
+    List<CT_BanEntity> findByIdctb_IdCTB(Integer idCTB);
 }

@@ -11,4 +11,6 @@ public interface PhieuDatService {
     PhieuDatDTO themPhieuDat(PhieuDatDTO phieuDatDTO);
 
     String themPhieuDatDuaTrenPhieuDatTruoc(PhieuDatTruocDTO phieuDatTruocDTO);
+
+    List<PhieuDatDTO> layDSPhieuDatPhieuDatTruoc();
 }

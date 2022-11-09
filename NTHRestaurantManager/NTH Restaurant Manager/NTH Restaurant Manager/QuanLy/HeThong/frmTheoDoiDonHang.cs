@@ -60,5 +60,10 @@ namespace NTH_Restaurant_Manager
             idPD = int.Parse(gvPD.GetRowCellValue(e.RowHandle, "idPD").ToString());
             layDSCTDatMonTheoPhieuDat();
         }
+
+        private void btn_Thoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

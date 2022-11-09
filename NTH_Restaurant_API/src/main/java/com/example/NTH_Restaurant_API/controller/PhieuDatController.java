@@ -22,6 +22,11 @@ public class PhieuDatController {
         return phieuDatService.layDSPhieuDatChuaCoHoaDon();
     }
 
+    @GetMapping("/phieudattruoc")
+    public List<PhieuDatDTO> layDSPhieuDatPhieuDatTruoc() {
+        return phieuDatService.layDSPhieuDatPhieuDatTruoc();
+    }
+
     @PostMapping("")
     public PhieuDatDTO themPhieuDat(@Valid @RequestBody PhieuDatDTO phieuDatDTO){
         return phieuDatService.themPhieuDat(phieuDatDTO);

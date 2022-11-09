@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PhieuDatServiceImpl implements PhieuDatService {
@@ -41,13 +42,16 @@ public class PhieuDatServiceImpl implements PhieuDatService {
                 ds.remove(ds.get(i));
                 i--;
             }
+            else if(ds.get(i).getIdpdt() != null){
+                ds.remove(ds.get(i));
+                i--;
+            }
         }
 
         List<PhieuDatDTO> list = new ArrayList<>();
 
         for (int i = 0; i < ds.size(); i++) {
-            List<CT_DatBanEntity> listCTDB = ct_datBanRepository.findByIdpd_IdPD(ds.get(i).getIdPD());
-            CT_DatBanEntity ct_datBanEntity = listCTDB.get(0);
+            CT_DatBanEntity ct_datBanEntity = ct_datBanRepository.findByIdpd_IdPD(ds.get(i).getIdPD());
             if (ct_datBanEntity != null) {
                 CT_BanEntity ct_banEntity = ct_banRepository.getById(ct_datBanEntity.getIdctb().getIdCTB());
                 list.add(new PhieuDatDTO(ds.get(i)));
@@ -125,5 +129,23 @@ public class PhieuDatServiceImpl implements PhieuDatService {
         catch (Exception e){
             return "false";
         }
+    }
+
+    @Override
+    public List<PhieuDatDTO> layDSPhieuDatPhieuDatTruoc() {
+        List<PhieuDatEntity> ds = phieuDatRepository.findAll();
+
+        for (int i = 0; i < ds.size(); i++) {
+            if (ds.get(i).getMahd() != null) {
+                ds.remove(ds.get(i));
+                i--;
+            }
+            else if(ds.get(i).getIdpdt() == null){
+                ds.remove(ds.get(i));
+                i--;
+            }
+        }
+
+        return ds.stream().map(PhieuDatDTO::new).collect(Collectors.toList());
     }
 }
