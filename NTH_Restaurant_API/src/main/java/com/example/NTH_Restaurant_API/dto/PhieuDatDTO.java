@@ -34,7 +34,6 @@ public class PhieuDatDTO {
     private String maPhong;
 
     private String tenPhong;
-
     private Integer idPDT;
 
     public PhieuDatDTO(PhieuDatEntity phieuDatEntity) {

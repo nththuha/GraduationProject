@@ -78,18 +78,21 @@ namespace NTH_Restaurant_Manager
             this.panelControl1.Controls.Add(this.gcPD);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(0, 30);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(976, 711);
+            this.panelControl1.Size = new System.Drawing.Size(1045, 711);
             this.panelControl1.TabIndex = 0;
             // 
             // gcPD
             // 
             this.gcPD.DataSource = this.bdsPD;
             this.gcPD.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcPD.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcPD.Location = new System.Drawing.Point(2, 2);
             this.gcPD.MainView = this.gvPD;
+            this.gcPD.Margin = new System.Windows.Forms.Padding(4);
             this.gcPD.Name = "gcPD";
-            this.gcPD.Size = new System.Drawing.Size(972, 403);
+            this.gcPD.Size = new System.Drawing.Size(1041, 401);
             this.gcPD.TabIndex = 0;
             this.gcPD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPD});
@@ -106,6 +109,7 @@ namespace NTH_Restaurant_Manager
             this.colhoTenNV,
             this.coltenBan,
             this.coltenPhong});
+            this.gvPD.DetailHeight = 437;
             this.gvPD.GridControl = this.gcPD;
             this.gvPD.Name = "gvPD";
             this.gvPD.OptionsBehavior.Editable = false;
@@ -115,51 +119,51 @@ namespace NTH_Restaurant_Manager
             // 
             this.colidPD.Caption = "ID PHIẾU ĐẶT";
             this.colidPD.FieldName = "idPD";
-            this.colidPD.MinWidth = 25;
+            this.colidPD.MinWidth = 31;
             this.colidPD.Name = "colidPD";
             this.colidPD.Visible = true;
             this.colidPD.VisibleIndex = 0;
-            this.colidPD.Width = 94;
+            this.colidPD.Width = 117;
             // 
             // colngay
             // 
             this.colngay.Caption = "NGÀY";
             this.colngay.FieldName = "ngay";
-            this.colngay.MinWidth = 25;
+            this.colngay.MinWidth = 31;
             this.colngay.Name = "colngay";
             this.colngay.Visible = true;
             this.colngay.VisibleIndex = 1;
-            this.colngay.Width = 94;
+            this.colngay.Width = 117;
             // 
             // colhoTenNV
             // 
             this.colhoTenNV.Caption = "NHÂN VIÊN LẬP PHẾU";
             this.colhoTenNV.FieldName = "hoTenNV";
-            this.colhoTenNV.MinWidth = 25;
+            this.colhoTenNV.MinWidth = 31;
             this.colhoTenNV.Name = "colhoTenNV";
             this.colhoTenNV.Visible = true;
             this.colhoTenNV.VisibleIndex = 2;
-            this.colhoTenNV.Width = 94;
+            this.colhoTenNV.Width = 117;
             // 
             // coltenBan
             // 
             this.coltenBan.Caption = "TÊN BÀN";
             this.coltenBan.FieldName = "tenBan";
-            this.coltenBan.MinWidth = 25;
+            this.coltenBan.MinWidth = 31;
             this.coltenBan.Name = "coltenBan";
             this.coltenBan.Visible = true;
             this.coltenBan.VisibleIndex = 4;
-            this.coltenBan.Width = 94;
+            this.coltenBan.Width = 117;
             // 
             // coltenPhong
             // 
             this.coltenPhong.Caption = "TÊN PHÒNG";
             this.coltenPhong.FieldName = "tenPhong";
-            this.coltenPhong.MinWidth = 25;
+            this.coltenPhong.MinWidth = 31;
             this.coltenPhong.Name = "coltenPhong";
             this.coltenPhong.Visible = true;
             this.coltenPhong.VisibleIndex = 3;
-            this.coltenPhong.Width = 94;
+            this.coltenPhong.Width = 117;
             // 
             // bdsCTDM
             // 
@@ -169,10 +173,12 @@ namespace NTH_Restaurant_Manager
             // 
             this.gcCTDM.DataSource = this.bdsCTDM;
             this.gcCTDM.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcCTDM.Location = new System.Drawing.Point(976, 30);
+            this.gcCTDM.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gcCTDM.Location = new System.Drawing.Point(1045, 30);
             this.gcCTDM.MainView = this.gvCTDM;
+            this.gcCTDM.Margin = new System.Windows.Forms.Padding(4);
             this.gcCTDM.Name = "gcCTDM";
-            this.gcCTDM.Size = new System.Drawing.Size(444, 405);
+            this.gcCTDM.Size = new System.Drawing.Size(588, 403);
             this.gcCTDM.TabIndex = 1;
             this.gcCTDM.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCTDM});
@@ -185,6 +191,7 @@ namespace NTH_Restaurant_Manager
             this.colgia,
             this.coltrangThai,
             this.colchuThich});
+            this.gvCTDM.DetailHeight = 437;
             this.gvCTDM.GridControl = this.gcCTDM;
             this.gvCTDM.Name = "gvCTDM";
             this.gvCTDM.OptionsBehavior.Editable = false;
@@ -193,51 +200,51 @@ namespace NTH_Restaurant_Manager
             // 
             this.coltenma.Caption = "TÊN MÓN ĂN";
             this.coltenma.FieldName = "tenma";
-            this.coltenma.MinWidth = 25;
+            this.coltenma.MinWidth = 31;
             this.coltenma.Name = "coltenma";
             this.coltenma.Visible = true;
             this.coltenma.VisibleIndex = 0;
-            this.coltenma.Width = 94;
+            this.coltenma.Width = 117;
             // 
             // colsoLuong
             // 
             this.colsoLuong.Caption = "SỐ LƯỢNG";
             this.colsoLuong.FieldName = "soLuong";
-            this.colsoLuong.MinWidth = 25;
+            this.colsoLuong.MinWidth = 31;
             this.colsoLuong.Name = "colsoLuong";
             this.colsoLuong.Visible = true;
             this.colsoLuong.VisibleIndex = 1;
-            this.colsoLuong.Width = 94;
+            this.colsoLuong.Width = 117;
             // 
             // colgia
             // 
             this.colgia.Caption = "GIÁ";
             this.colgia.FieldName = "gia";
-            this.colgia.MinWidth = 25;
+            this.colgia.MinWidth = 31;
             this.colgia.Name = "colgia";
             this.colgia.Visible = true;
             this.colgia.VisibleIndex = 2;
-            this.colgia.Width = 94;
+            this.colgia.Width = 117;
             // 
             // coltrangThai
             // 
             this.coltrangThai.Caption = "TRẠNG THÁI";
             this.coltrangThai.FieldName = "trangThai";
-            this.coltrangThai.MinWidth = 25;
+            this.coltrangThai.MinWidth = 31;
             this.coltrangThai.Name = "coltrangThai";
             this.coltrangThai.Visible = true;
             this.coltrangThai.VisibleIndex = 3;
-            this.coltrangThai.Width = 94;
+            this.coltrangThai.Width = 117;
             // 
             // colchuThich
             // 
             this.colchuThich.Caption = "CHÚ THÍCH";
             this.colchuThich.FieldName = "chuThich";
-            this.colchuThich.MinWidth = 25;
+            this.colchuThich.MinWidth = 31;
             this.colchuThich.Name = "colchuThich";
             this.colchuThich.Visible = true;
             this.colchuThich.VisibleIndex = 4;
-            this.colchuThich.Width = 94;
+            this.colchuThich.Width = 117;
             // 
             // barManager1
             // 
@@ -325,7 +332,7 @@ namespace NTH_Restaurant_Manager
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1420, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(1633, 30);
             // 
             // barDockControlBottom
             // 
@@ -333,7 +340,7 @@ namespace NTH_Restaurant_Manager
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 741);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1420, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1633, 0);
             // 
             // barDockControlLeft
             // 
@@ -347,7 +354,7 @@ namespace NTH_Restaurant_Manager
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1420, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1633, 30);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 711);
             // 
@@ -380,7 +387,7 @@ namespace NTH_Restaurant_Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1420, 741);
+            this.ClientSize = new System.Drawing.Size(1633, 741);
             this.Controls.Add(this.gcCTDM);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);

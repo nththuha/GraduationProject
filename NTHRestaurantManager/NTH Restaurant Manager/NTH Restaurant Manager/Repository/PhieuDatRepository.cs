@@ -30,6 +30,14 @@ namespace NTH_Restaurant_Manager.Repository
             return listPD;
         }
 
+        public async Task<List<PhieuDatModel>> layDSPhieuDatPhieuDatTruoc()
+        {
+            _response = await _client.GetAsync("phieudat/phieudattruoc");
+            var json = await _response.Content.ReadAsStringAsync();
+            var listPD = JsonConvert.DeserializeObject<List<PhieuDatModel>>(json);
+            return listPD;
+        }
+
         public async Task<String> themPhieuDatDuaTrenPhieuDatTruoc(PhieuDatTruocModel pdt)
         {
             var phieudattruoc = JsonConvert.SerializeObject(pdt);

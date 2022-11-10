@@ -103,6 +103,7 @@ public class PhieuDatServiceImpl implements PhieuDatService {
         pdt.setTrangThai("Đã đến");
         PhieuDatEntity pd = new PhieuDatEntity();
         pd.setIdpdt(pdt);
+        pd.setIdkh(pdt.getIdkh());
         pd.setIdnv(nhanVienRepository.getById(phieuDatTruocDTO.getIdnv()));
         pd.setNgay(new Date());
         try {
