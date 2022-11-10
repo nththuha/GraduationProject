@@ -65,7 +65,19 @@ namespace NTH_Restaurant_Manager
 
         private async void layDSCTThucDon()
         {
-            
+            try
+            {
+                var listCTTD = await _repositoryCTTD.layDSCTThucDonTheoCTDatBanTruoc(idCTDBT);
+                gcCTTD.DataSource = listCTTD;
+                if (listCTTD.Count > 0)
+                {
+                    idCTTD = listCTTD[0].idCTTD;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Lỗi lấy ds chi tiết thực đơn: " + e.Message, "Thông báo");
+            }
         }
 
         private void gvPD_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)

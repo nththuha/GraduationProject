@@ -30,6 +30,14 @@ namespace NTH_Restaurant_Manager.Repository
             return listCTTD;
         }
 
+        public async Task<List<CTThucDonModel>> layDSCTThucDonTheoCTDatBanTruoc(int idCTDBT)
+        {
+            _response = await _client.GetAsync("ctthucdon/ctdatbantruoc/" + idCTDBT);
+            var json = await _response.Content.ReadAsStringAsync();
+            var listCTTD = JsonConvert.DeserializeObject<List<CTThucDonModel>>(json);
+            return listCTTD;
+        }
+
         public async Task<String> themCTThucDon(CTThucDonModel ctTD)
         {
             var cttd = JsonConvert.SerializeObject(ctTD);

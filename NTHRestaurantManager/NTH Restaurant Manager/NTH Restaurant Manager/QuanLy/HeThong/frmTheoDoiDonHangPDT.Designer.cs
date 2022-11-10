@@ -240,7 +240,7 @@ namespace NTH_Restaurant_Manager
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(0, 30);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(862, 798);
+            this.panelControl1.Size = new System.Drawing.Size(959, 798);
             this.panelControl1.TabIndex = 4;
             // 
             // gcPD
@@ -251,7 +251,7 @@ namespace NTH_Restaurant_Manager
             this.gcPD.MainView = this.gvPD;
             this.gcPD.MenuManager = this.barManager1;
             this.gcPD.Name = "gcPD";
-            this.gcPD.Size = new System.Drawing.Size(858, 361);
+            this.gcPD.Size = new System.Drawing.Size(955, 361);
             this.gcPD.TabIndex = 0;
             this.gcPD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPD});
@@ -373,9 +373,9 @@ namespace NTH_Restaurant_Manager
             this.panelControl2.Controls.Add(this.gcCTTD);
             this.panelControl2.Controls.Add(this.gcCTDBT);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(862, 30);
+            this.panelControl2.Location = new System.Drawing.Point(959, 30);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(706, 798);
+            this.panelControl2.Size = new System.Drawing.Size(609, 798);
             this.panelControl2.TabIndex = 5;
             // 
             // gcCTTD
@@ -386,7 +386,7 @@ namespace NTH_Restaurant_Manager
             this.gcCTTD.MainView = this.gvCTTD;
             this.gcCTTD.MenuManager = this.barManager1;
             this.gcCTTD.Name = "gcCTTD";
-            this.gcCTTD.Size = new System.Drawing.Size(702, 433);
+            this.gcCTTD.Size = new System.Drawing.Size(605, 433);
             this.gcCTTD.TabIndex = 1;
             this.gcCTTD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCTTD});
@@ -464,7 +464,7 @@ namespace NTH_Restaurant_Manager
             this.gcCTDBT.MainView = this.gvCTDBT;
             this.gcCTDBT.MenuManager = this.barManager1;
             this.gcCTDBT.Name = "gcCTDBT";
-            this.gcCTDBT.Size = new System.Drawing.Size(702, 361);
+            this.gcCTDBT.Size = new System.Drawing.Size(605, 361);
             this.gcCTDBT.TabIndex = 0;
             this.gcCTDBT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCTDBT});
