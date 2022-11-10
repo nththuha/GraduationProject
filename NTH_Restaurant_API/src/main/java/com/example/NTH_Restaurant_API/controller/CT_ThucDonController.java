@@ -20,6 +20,11 @@ public class CT_ThucDonController {
         return ct_thucDonService.layDSCT_ThucDonTheoThucDon(idtd);
     }
 
+    @GetMapping("/ctdatbantruoc/{idctdbt}")
+    public List<CT_ThucDonDTO> layDSCT_ThucDonTheoCT_DatBanTruoc(@PathVariable Integer idctdbt){
+        return ct_thucDonService.layDSCT_ThucDonTheoCT_DatBanTruoc(idctdbt);
+    }
+
     @PostMapping("")
     public String themCT_ThucDon(@Valid @RequestBody CT_ThucDonDTO ct_thucDonDTO){
         return ct_thucDonService.themCT_ThucDon(ct_thucDonDTO);

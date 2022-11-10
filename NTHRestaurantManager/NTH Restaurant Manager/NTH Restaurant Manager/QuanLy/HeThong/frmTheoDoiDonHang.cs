@@ -1,4 +1,5 @@
-﻿using NTH_Restaurant_Manager.Repository;
+﻿using NTH_Restaurant_Manager.Model;
+using NTH_Restaurant_Manager.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

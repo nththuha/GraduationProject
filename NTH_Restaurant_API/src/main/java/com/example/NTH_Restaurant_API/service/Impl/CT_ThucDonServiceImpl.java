@@ -1,9 +1,11 @@
 package com.example.NTH_Restaurant_API.service.Impl;
 
 import com.example.NTH_Restaurant_API.dto.CT_ThucDonDTO;
+import com.example.NTH_Restaurant_API.entity.CT_DatBanTruocEntity;
 import com.example.NTH_Restaurant_API.entity.CT_ThucDonEntity;
 import com.example.NTH_Restaurant_API.entity.MonAnEntity;
 import com.example.NTH_Restaurant_API.entity.ThucDonEntity;
+import com.example.NTH_Restaurant_API.repository.CT_DatBanTruocRepository;
 import com.example.NTH_Restaurant_API.repository.CT_ThucDonRepository;
 import com.example.NTH_Restaurant_API.repository.MonAnRepository;
 import com.example.NTH_Restaurant_API.repository.ThucDonRepository;
@@ -24,6 +26,9 @@ public class CT_ThucDonServiceImpl implements CT_ThucDonService {
 
     @Autowired
     private ThucDonRepository thucDonRepository;
+
+    @Autowired
+    private CT_DatBanTruocRepository ct_datBanTruocRepository;
 
     @Override
     public List<CT_ThucDonDTO> layDSCT_ThucDonTheoThucDon(Integer idtd) {
@@ -58,5 +63,13 @@ public class CT_ThucDonServiceImpl implements CT_ThucDonService {
         catch (Exception e){
             return "false";
         }
+    }
+
+    @Override
+    public List<CT_ThucDonDTO> layDSCT_ThucDonTheoCT_DatBanTruoc(Integer idctdbt) {
+        if(!ct_datBanTruocRepository.existsByIdCTDBT(idctdbt)) return null;
+        CT_DatBanTruocEntity ct_datBanTruoc = ct_datBanTruocRepository.getById(idctdbt);
+        List<CT_ThucDonEntity> listCTTD = ct_thucDonRepository.findByIdtd_IdTD(ct_datBanTruoc.getIdtd().getIdTD());
+        return listCTTD.stream().map(CT_ThucDonDTO::new).collect(Collectors.toList());
     }
 }

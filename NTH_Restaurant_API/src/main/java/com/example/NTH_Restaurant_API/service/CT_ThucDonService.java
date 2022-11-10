@@ -10,4 +10,6 @@ public interface CT_ThucDonService {
     String themCT_ThucDon(CT_ThucDonDTO ct_thucDonDTO);
 
     String xoaCT_ThucDon(Integer idCTTD);
+
+    List<CT_ThucDonDTO> layDSCT_ThucDonTheoCT_DatBanTruoc(Integer idctdbt);
 }
