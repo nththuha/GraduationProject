@@ -227,6 +227,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\HoaDonPDModel.cs" />
+    <Compile Include="Model\HoaDonPDTModel.cs" />
     <Compile Include="QuanLy\HeThong\frmTheoDoiDonHangPDT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -582,6 +584,8 @@
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTPhieuNhapModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.CTThucDonModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.HoaDonModel.datasource" />
+    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.HoaDonPDModel1.datasource" />
+    <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.HoaDonPDTModel1.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.HuyPhieuDatTruocModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.KhachHangModel.datasource" />
     <None Include="Properties\DataSources\NTH_Restaurant_Manager.Model.LoaiMonAnModel.datasource" />

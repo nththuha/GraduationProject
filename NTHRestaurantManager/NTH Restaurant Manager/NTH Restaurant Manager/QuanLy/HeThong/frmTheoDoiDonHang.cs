@@ -66,5 +66,10 @@ namespace NTH_Restaurant_Manager
         {
             this.Close();
         }
+
+        private void btn_Reload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            layDSPhieuDat();
+        }
     }
 }

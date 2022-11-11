@@ -63,6 +63,18 @@ namespace NTH_Restaurant_Manager
             this.btn_CapNhat = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Luu = new DevExpress.XtraBars.BarButtonItem();
             this.btn_PhucHoi = new DevExpress.XtraBars.BarButtonItem();
+            this.gcPDTemp = new DevExpress.XtraGrid.GridControl();
+            this.gvPDTemp = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colidPD1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colngay1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colidnv = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colhoTenNV1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmaBan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltenBan1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmaPhong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltenPhong1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colidPDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colhoTenKH1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcPD)).BeginInit();
@@ -72,16 +84,19 @@ namespace NTH_Restaurant_Manager
             ((System.ComponentModel.ISupportInitialize)(this.gcCTDM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTDM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPDTemp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPDTemp)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.gcPDTemp);
             this.panelControl1.Controls.Add(this.gcPD);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(0, 30);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1045, 711);
+            this.panelControl1.Size = new System.Drawing.Size(1045, 772);
             this.panelControl1.TabIndex = 0;
             // 
             // gcPD
@@ -93,7 +108,7 @@ namespace NTH_Restaurant_Manager
             this.gcPD.MainView = this.gvPD;
             this.gcPD.Margin = new System.Windows.Forms.Padding(4);
             this.gcPD.Name = "gcPD";
-            this.gcPD.Size = new System.Drawing.Size(1041, 401);
+            this.gcPD.Size = new System.Drawing.Size(1041, 387);
             this.gcPD.TabIndex = 0;
             this.gcPD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPD});
@@ -190,7 +205,7 @@ namespace NTH_Restaurant_Manager
             this.gcCTDM.MainView = this.gvCTDM;
             this.gcCTDM.Margin = new System.Windows.Forms.Padding(4);
             this.gcCTDM.Name = "gcCTDM";
-            this.gcCTDM.Size = new System.Drawing.Size(588, 403);
+            this.gcCTDM.Size = new System.Drawing.Size(588, 389);
             this.gcCTDM.TabIndex = 1;
             this.gcCTDM.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCTDM});
@@ -328,6 +343,7 @@ namespace NTH_Restaurant_Manager
             this.btn_Reload.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Reload.ImageOptions.SvgImage")));
             this.btn_Reload.Name = "btn_Reload";
             this.btn_Reload.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_Reload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Reload_ItemClick);
             // 
             // btn_Thoat
             // 
@@ -350,7 +366,7 @@ namespace NTH_Restaurant_Manager
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 741);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 802);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1633, 0);
             // 
@@ -360,7 +376,7 @@ namespace NTH_Restaurant_Manager
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 711);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 772);
             // 
             // barDockControlRight
             // 
@@ -368,7 +384,7 @@ namespace NTH_Restaurant_Manager
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1633, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 711);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 772);
             // 
             // btn_CapNhat
             // 
@@ -395,11 +411,124 @@ namespace NTH_Restaurant_Manager
             this.btn_PhucHoi.Name = "btn_PhucHoi";
             this.btn_PhucHoi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
+            // gcPDTemp
+            // 
+            this.gcPDTemp.DataSource = this.bdsPD;
+            this.gcPDTemp.Location = new System.Drawing.Point(107, 447);
+            this.gcPDTemp.MainView = this.gvPDTemp;
+            this.gcPDTemp.MenuManager = this.barManager1;
+            this.gcPDTemp.Name = "gcPDTemp";
+            this.gcPDTemp.Size = new System.Drawing.Size(824, 261);
+            this.gcPDTemp.TabIndex = 1;
+            this.gcPDTemp.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvPDTemp});
+            // 
+            // gvPDTemp
+            // 
+            this.gvPDTemp.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colidPD1,
+            this.colngay1,
+            this.colidnv,
+            this.colhoTenNV1,
+            this.colmaBan,
+            this.coltenBan1,
+            this.colmaPhong,
+            this.coltenPhong1,
+            this.colidPDT,
+            this.colhoTenKH1});
+            this.gvPDTemp.GridControl = this.gcPDTemp;
+            this.gvPDTemp.Name = "gvPDTemp";
+            // 
+            // colidPD1
+            // 
+            this.colidPD1.Caption = "ID PHIẾU ĐẶT";
+            this.colidPD1.FieldName = "idPD";
+            this.colidPD1.MinWidth = 25;
+            this.colidPD1.Name = "colidPD1";
+            this.colidPD1.Visible = true;
+            this.colidPD1.VisibleIndex = 0;
+            this.colidPD1.Width = 94;
+            // 
+            // colngay1
+            // 
+            this.colngay1.Caption = "NGÀY";
+            this.colngay1.FieldName = "ngay";
+            this.colngay1.MinWidth = 25;
+            this.colngay1.Name = "colngay1";
+            this.colngay1.Visible = true;
+            this.colngay1.VisibleIndex = 1;
+            this.colngay1.Width = 94;
+            // 
+            // colidnv
+            // 
+            this.colidnv.FieldName = "idnv";
+            this.colidnv.MinWidth = 25;
+            this.colidnv.Name = "colidnv";
+            this.colidnv.Width = 94;
+            // 
+            // colhoTenNV1
+            // 
+            this.colhoTenNV1.Caption = "NHÂN VIÊN";
+            this.colhoTenNV1.FieldName = "hoTenNV";
+            this.colhoTenNV1.MinWidth = 25;
+            this.colhoTenNV1.Name = "colhoTenNV1";
+            this.colhoTenNV1.Visible = true;
+            this.colhoTenNV1.VisibleIndex = 2;
+            this.colhoTenNV1.Width = 94;
+            // 
+            // colmaBan
+            // 
+            this.colmaBan.FieldName = "maBan";
+            this.colmaBan.MinWidth = 25;
+            this.colmaBan.Name = "colmaBan";
+            this.colmaBan.Width = 94;
+            // 
+            // coltenBan1
+            // 
+            this.coltenBan1.Caption = "TÊN BÀN";
+            this.coltenBan1.FieldName = "tenBan";
+            this.coltenBan1.MinWidth = 25;
+            this.coltenBan1.Name = "coltenBan1";
+            this.coltenBan1.Visible = true;
+            this.coltenBan1.VisibleIndex = 4;
+            this.coltenBan1.Width = 94;
+            // 
+            // colmaPhong
+            // 
+            this.colmaPhong.FieldName = "maPhong";
+            this.colmaPhong.MinWidth = 25;
+            this.colmaPhong.Name = "colmaPhong";
+            this.colmaPhong.Width = 94;
+            // 
+            // coltenPhong1
+            // 
+            this.coltenPhong1.Caption = "TÊN PHÒNG";
+            this.coltenPhong1.FieldName = "tenPhong";
+            this.coltenPhong1.MinWidth = 25;
+            this.coltenPhong1.Name = "coltenPhong1";
+            this.coltenPhong1.Visible = true;
+            this.coltenPhong1.VisibleIndex = 3;
+            this.coltenPhong1.Width = 94;
+            // 
+            // colidPDT
+            // 
+            this.colidPDT.FieldName = "idPDT";
+            this.colidPDT.MinWidth = 25;
+            this.colidPDT.Name = "colidPDT";
+            this.colidPDT.Width = 94;
+            // 
+            // colhoTenKH1
+            // 
+            this.colhoTenKH1.FieldName = "hoTenKH";
+            this.colhoTenKH1.MinWidth = 25;
+            this.colhoTenKH1.Name = "colhoTenKH1";
+            this.colhoTenKH1.Width = 94;
+            // 
             // frmTheoDoiDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1633, 741);
+            this.ClientSize = new System.Drawing.Size(1633, 802);
             this.Controls.Add(this.gcCTDM);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -418,6 +547,8 @@ namespace NTH_Restaurant_Manager
             ((System.ComponentModel.ISupportInitialize)(this.gcCTDM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTDM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPDTemp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPDTemp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,5 +588,17 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraGrid.Columns.GridColumn coltenBan;
         private DevExpress.XtraGrid.Columns.GridColumn coltenPhong;
         private DevExpress.XtraGrid.Columns.GridColumn colhoTenKH;
+        private DevExpress.XtraGrid.GridControl gcPDTemp;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvPDTemp;
+        private DevExpress.XtraGrid.Columns.GridColumn colidPD1;
+        private DevExpress.XtraGrid.Columns.GridColumn colngay1;
+        private DevExpress.XtraGrid.Columns.GridColumn colidnv;
+        private DevExpress.XtraGrid.Columns.GridColumn colhoTenNV1;
+        private DevExpress.XtraGrid.Columns.GridColumn colmaBan;
+        private DevExpress.XtraGrid.Columns.GridColumn coltenBan1;
+        private DevExpress.XtraGrid.Columns.GridColumn colmaPhong;
+        private DevExpress.XtraGrid.Columns.GridColumn coltenPhong1;
+        private DevExpress.XtraGrid.Columns.GridColumn colidPDT;
+        private DevExpress.XtraGrid.Columns.GridColumn colhoTenKH1;
     }
 }
