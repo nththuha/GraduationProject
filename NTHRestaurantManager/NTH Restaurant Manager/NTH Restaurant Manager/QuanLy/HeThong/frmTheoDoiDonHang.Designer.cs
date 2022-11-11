@@ -280,6 +280,7 @@ namespace NTH_Restaurant_Manager
             this.btn_XuatHoaDon.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_XuatHoaDon.ImageOptions.LargeImage")));
             this.btn_XuatHoaDon.Name = "btn_XuatHoaDon";
             this.btn_XuatHoaDon.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_XuatHoaDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_XuatHoaDon_ItemClick);
             // 
             // btn_Reload
             // 

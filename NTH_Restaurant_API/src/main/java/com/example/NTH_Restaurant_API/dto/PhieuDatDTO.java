@@ -14,25 +14,15 @@ import java.util.Date;
 @AllArgsConstructor
 public class PhieuDatDTO {
     private Integer idPD;
-
     private Date ngay;
-
     private String mahd;
-
     private Integer idkh;
-
     private String hoTenKH;
-
     private Integer idnv;
-
     private String hoTenNV;
-
     private String maBan;
-
     private String tenBan;
-
     private String maPhong;
-
     private String tenPhong;
     private Integer idPDT;
 

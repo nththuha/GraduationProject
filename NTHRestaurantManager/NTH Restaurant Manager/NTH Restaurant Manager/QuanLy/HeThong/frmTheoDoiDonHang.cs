@@ -16,7 +16,6 @@ namespace NTH_Restaurant_Manager
     {
         PhieuDatRepository _repositoryPD = new PhieuDatRepository();
         CTDatMonRepository _repositoryCTDM = new CTDatMonRepository();
-        HoaDonRepository _repositoryHD = new HoaDonRepository();
 
         List<PhieuDatModel> listPD = new List<PhieuDatModel>();
         List<CTDatMonModel> listCTDM = new List<CTDatMonModel>();
@@ -148,6 +147,27 @@ namespace NTH_Restaurant_Manager
                 list.Add(i);
             }
             gcPDTemp.DataSource = list;
+        }
+
+        private void btn_XuatHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if(listPD.Count < 0)
+            {
+                MessageBox.Show("Vui lòng chọn phiếu đặt để lập hóa đơn", "Thông báo");
+                return;
+            }
+            DateTime aDate = DateTime.Now;
+            String ngay = aDate.ToString("yyyy-MM-dd");
+            String ngayGio = aDate.ToString("yy-MM-dd H m s");
+            Program.hoaDon = new HoaDonModel();
+            Program.hoaDon.maHD = "HD" + ngayGio;
+            Program.hoaDon.ngay = ngay;
+            Program.hoaDon.phieudatList = listPD;
+            Program.hoaDon.idnv = Program.nhanVienDangDangNhap.idNV;
+
+            Program.mesKhachHang_HD = new mesKhachHang_HD();
+            Program.mesKhachHang_HD.Show();
+            Program.frmChinh.Enabled = false;
         }
     }
 }

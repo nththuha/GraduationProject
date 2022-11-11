@@ -227,6 +227,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="mesKhachHang_HD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mesKhachHang_HD.Designer.cs">
+      <DependentUpon>mesKhachHang_HD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\HoaDonPDModel.cs" />
     <Compile Include="Model\HoaDonPDTModel.cs" />
     <Compile Include="QuanLy\HeThong\frmTheoDoiDonHangPDT.cs">
@@ -470,6 +476,15 @@
     <Compile Include="QuanLy\ThongKe\rpThongKeDoanhThuTheoThang1.Designer.cs">
       <DependentUpon>rpThongKeDoanhThuTheoThang1.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLy\HeThong\rpHoaDonPD.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QuanLy\HeThong\rpHoaDonPD.Designer.cs">
+      <DependentUpon>rpHoaDonPD.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="mesKhachHang_HD.resx">
+      <DependentUpon>mesKhachHang_HD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\HeThong\frmTheoDoiDonHangPDT.resx">
       <DependentUpon>frmTheoDoiDonHangPDT.cs</DependentUpon>
     </EmbeddedResource>
@@ -570,6 +585,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\ThongKe\rpThongKeDoanhThuTheoThang1.resx">
       <DependentUpon>rpThongKeDoanhThuTheoThang1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy\HeThong\rpHoaDonPD.resx">
+      <DependentUpon>rpHoaDonPD.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

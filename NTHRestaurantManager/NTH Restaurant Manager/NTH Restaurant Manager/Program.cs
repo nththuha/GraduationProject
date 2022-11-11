@@ -41,6 +41,7 @@ namespace NTH_Restaurant_Manager
         public static mesTienCoc mesTienCoc;
         public static mesHuyPhieuDatTruoc mesHuyPhieuDatTruoc;
         public static mesCTPN mesCTPN;
+        public static mesKhachHang_HD mesKhachHang_HD;
 
         public static String luaChonPB; //Phòng hay Bàn
         public static String actionPB; //Thêm, Cập nhật, Xóa
@@ -50,6 +51,8 @@ namespace NTH_Restaurant_Manager
         public static KhachHangModel khachHang;
 
         public static PhieuDatTruocModel pdt;
+
+        public static HoaDonModel hoaDon;
 
         public static String URL = "https://nth-restaurant-api.herokuapp.com/api/";
 
