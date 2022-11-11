@@ -16,8 +16,14 @@ namespace NTH_Restaurant_Manager
     {
         PhieuDatRepository _repositoryPD = new PhieuDatRepository();
         CTDatMonRepository _repositoryCTDM = new CTDatMonRepository();
+        HoaDonRepository _repositoryHD = new HoaDonRepository();
+
+        List<PhieuDatModel> listPD = new List<PhieuDatModel>();
+        List<CTDatMonModel> listCTDM = new List<CTDatMonModel>();
 
         int idPD;
+        int numPD;
+        int numPDTemp;
 
         public frmTheoDoiDonHang()
         {
@@ -30,6 +36,10 @@ namespace NTH_Restaurant_Manager
             try
             {
                 var listPD = await _repositoryPD.layDSPhieuDat();
+                for(int i = 0; i < listPD.Count; i++)
+                {
+                    listPD[i].ngay = listPD[i].ngay.Substring(8, 2) + "-" + listPD[i].ngay.Substring(5, 2) + "-" + listPD[i].ngay.Substring(0, 4);
+                }
                 gcPD.DataSource = listPD;
                 if(listPD.Count > 0)
                 {
@@ -47,7 +57,8 @@ namespace NTH_Restaurant_Manager
         {
             try
             {
-                var listCTDM = await _repositoryCTDM.layDSCTDatMonTheoPhieuDat(idPD);
+                listCTDM = new List<CTDatMonModel>();
+                listCTDM = await _repositoryCTDM.layDSCTDatMonTheoPhieuDat(idPD);
                 gcCTDM.DataSource = listCTDM;
             }
             catch (Exception e)
@@ -58,6 +69,7 @@ namespace NTH_Restaurant_Manager
 
         private void gvPD_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
+            numPD = e.RowHandle;
             idPD = int.Parse(gvPD.GetRowCellValue(e.RowHandle, "idPD").ToString());
             layDSCTDatMonTheoPhieuDat();
         }
@@ -70,6 +82,72 @@ namespace NTH_Restaurant_Manager
         private void btn_Reload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             layDSPhieuDat();
+        }
+
+        private Boolean kiemTraCTDMDaPV()
+        {
+            foreach(CTDatMonModel i in listCTDM)
+            {
+                if(!i.trangThai.Equals("Đã phục vụ"))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private void btn_Them_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!kiemTraCTDMDaPV())
+            {
+                MessageBox.Show("Món ăn vẫn chưa được phục vụ hết cho khách", "Thông báo");
+                return;
+            }
+
+            int idPD = int.Parse(gvPD.GetRowCellValue(numPD, "idPD").ToString());
+            String ngay = gvPD.GetRowCellValue(numPD, "ngay").ToString();
+            String tenPhong = gvPD.GetRowCellValue(numPD, "tenPhong").ToString();
+            String tenBan = gvPD.GetRowCellValue(numPD, "tenBan").ToString();
+
+            PhieuDatModel pd = new PhieuDatModel();
+            pd.idPD = idPD;
+            pd.ngay = ngay;
+            pd.tenPhong = tenPhong;
+            pd.tenBan = tenBan;
+
+            foreach (PhieuDatModel i in listPD)
+            {
+                if (i.idPD == idPD)
+                {
+                    MessageBox.Show("Phiếu đặt không được trùng!", "Thông báo");
+                    return;
+                }
+            }
+            listPD.Add(pd);
+
+            List<PhieuDatModel> list = new List<PhieuDatModel>();
+            foreach(PhieuDatModel i in listPD)
+            {
+                list.Add(i);
+            }
+            gcPDTemp.DataSource = list;
+        }
+
+        private void gvPDTemp_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            numPDTemp = e.RowHandle;
+        }
+
+        private void btn_Xoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            listPD.RemoveAt(numPDTemp);
+
+            List<PhieuDatModel> list = new List<PhieuDatModel>();
+            foreach (PhieuDatModel i in listPD)
+            {
+                list.Add(i);
+            }
+            gcPDTemp.DataSource = list;
         }
     }
 }
