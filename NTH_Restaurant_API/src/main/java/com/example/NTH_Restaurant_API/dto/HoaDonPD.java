@@ -13,28 +13,19 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class HDDTO {
+public class HoaDonPD {
     private String maHD;
-
     private Date ngay;
-
     private int trigia;
-
     private int giaSauThue;
-
     private String giaChu;
-
     private String masothue;
-
     private String hotenkh;
-
     private List<CT_DatMonDTO> ctDatMonList;
-
     private Integer idnv;
-
     private String hoTenNV;
 
-    public HDDTO(HoaDonEntity hoaDonEntity) {
+    public HoaDonPD(HoaDonEntity hoaDonEntity) {
         this.maHD = hoaDonEntity.getMaHD();
         this.ngay = hoaDonEntity.getNgay();
         this.trigia = hoaDonEntity.getTrigia();

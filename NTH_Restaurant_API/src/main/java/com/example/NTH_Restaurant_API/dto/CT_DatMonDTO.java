@@ -45,6 +45,7 @@ public class CT_DatMonDTO {
         this.chuThich = ct_datMonEntity.getChuThich();
         this.trangThai = ct_datMonEntity.getTrangThai();
         this.gia = ct_datMonEntity.getGia();
+        this.giaTungMon =  ct_datMonEntity.getGia() / ct_datMonEntity.getSoLuong();
         this.mama = ct_datMonEntity.getMama().getMaMA();
         this.tenma = ct_datMonEntity.getMama().getTenMA();
         this.hinhAnh = ct_datMonEntity.getMama().getHinhAnh();

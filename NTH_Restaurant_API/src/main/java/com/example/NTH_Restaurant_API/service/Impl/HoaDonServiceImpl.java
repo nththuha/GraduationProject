@@ -1,16 +1,36 @@
 package com.example.NTH_Restaurant_API.service.Impl;
 
-import com.example.NTH_Restaurant_API.repository.HoaDonRepository;
+import com.example.NTH_Restaurant_API.dto.*;
+import com.example.NTH_Restaurant_API.entity.*;
+import com.example.NTH_Restaurant_API.repository.*;
 import com.example.NTH_Restaurant_API.service.HoaDonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class HoaDonServiceImpl implements HoaDonService {
     @Autowired
     private HoaDonRepository hoaDonRepository;
+
+    @Autowired
+    private NhanVienRepository nhanVienRepository;
+
+    @Autowired
+    private CT_DatMonRepository ct_datMonRepository;
+
+    @Autowired
+    private PhieuDatRepository phieuDatRepository;
+
+    @Autowired
+    private CT_DatBanRepository ct_datBanRepository;
+
+    @Autowired
+    private CT_BanRepository ct_banRepository;
 
     public static HashMap<String, String> hm_tien = new HashMap<String, String>() {
         {
@@ -86,6 +106,74 @@ public class HoaDonServiceImpl implements HoaDonService {
             dem = m.length();
         }
         kq = new StringBuilder(kq.substring(0, kq.length() - 1));
-        return kq.toString();
+        String ketQua = kq.toString();
+        ketQua = ketQua.substring(0, 1).toUpperCase() + ketQua.substring(1);
+        return ketQua;
+    }
+
+    @Override
+    public HoaDonPD themHoaDonTheoPhieuDat(HoaDonDTO hoaDonDTO) {
+        NhanVienEntity nv = nhanVienRepository.getById(hoaDonDTO.getIdnv());
+        HoaDonEntity hoaDon = hoaDonDTO.toEntity();
+        hoaDon.setIdnv(nv);
+        List<CT_DatMonEntity> listCTDM = new ArrayList<>();
+        List<PhieuDatDTO> listPDDTO = hoaDonDTO.getPhieudatList();
+        List<PhieuDatEntity> listPD = new ArrayList<>();
+        for(PhieuDatDTO i:  listPDDTO){
+            listPD.add(phieuDatRepository.getById(i.getIdPD()));
+            List<CT_DatMonEntity> temp = ct_datMonRepository.findByIdpd_IdPD(i.getIdPD());
+            listCTDM.addAll(temp);
+
+            CT_DatBanEntity ct_datBan = ct_datBanRepository.findByIdpd_IdPD(i.getIdPD());
+            CT_BanEntity ctBan = ct_datBan.getIdctb();
+            ctBan.setTrangThai("Còn chỗ");
+            ct_banRepository.save(ctBan);
+
+        }
+        int tong = 0;
+        List<CT_DatMonEntity> listCT = new ArrayList<>();
+        for(int i = 0; i < listCTDM.size(); i++){
+            tong += listCTDM.get(i).getGia();
+            if(i == 0){
+                listCT.add(listCTDM.get(i));
+            }
+            else{
+                boolean xet =  false; //true -> vào dc if
+                for (CT_DatMonEntity ct_datMonEntity : listCT) {
+                    if (ct_datMonEntity.getMama().getMaMA().equals(listCTDM.get(i).getMama().getMaMA())) {
+                        xet = true;
+                        ct_datMonEntity.setGia(ct_datMonEntity.getGia() + listCTDM.get(i).getGia());
+                        ct_datMonEntity.setSoLuong(ct_datMonEntity.getSoLuong() + listCTDM.get(i).getSoLuong());
+                    }
+                }
+                if(!xet){
+                    listCT.add(listCTDM.get(i));
+                }
+            }
+        }
+
+        hoaDon.setTrigia(tong);
+        hoaDon.setGiaSauThue((int) (tong * 1.1));
+
+
+        try {
+            hoaDon = hoaDonRepository.save(hoaDon);
+            for(PhieuDatEntity i: listPD){
+                i.setMahd(hoaDon);
+                phieuDatRepository.save(i);
+            }
+            HoaDonPD hoaDonPD = new HoaDonPD(hoaDon);
+            hoaDonPD.setCtDatMonList(listCT.stream().map(CT_DatMonDTO::new).collect(Collectors.toList()));
+            hoaDonPD.setGiaChu(chuyenSangChu(hoaDon.getGiaSauThue().toString()));
+            return hoaDonPD;
+        }
+        catch (Exception e){
+            return null;
+        }
+    }
+
+    @Override
+    public HoaDonPDT themHoaDonTheoPhieuDatTruoc(HoaDonDTO hoaDonDTO) {
+        return null;
     }
 }
