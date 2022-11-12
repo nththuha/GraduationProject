@@ -162,12 +162,27 @@ namespace NTH_Restaurant_Manager
             Program.hoaDon = new HoaDonModel();
             Program.hoaDon.maHD = "HD" + ngayGio;
             Program.hoaDon.ngay = ngay;
+            for(int i = 0; i < listPD.Count; i++)
+            {
+                listPD[i].ngay = null;
+            }
             Program.hoaDon.phieudatList = listPD;
             Program.hoaDon.idnv = Program.nhanVienDangDangNhap.idNV;
 
             Program.mesKhachHang_HD = new mesKhachHang_HD();
             Program.mesKhachHang_HD.Show();
             Program.frmChinh.Enabled = false;
+        }
+
+        public void khoiTao()
+        {
+            Program.hoaDon = null;
+            listPD = new List<PhieuDatModel>();
+            listCTDM = new List<CTDatMonModel>();
+            gcPD.DataSource = null;
+            gcCTDM.DataSource = null;
+            gcPDTemp.DataSource = null;
+            layDSPhieuDat();
         }
     }
 }

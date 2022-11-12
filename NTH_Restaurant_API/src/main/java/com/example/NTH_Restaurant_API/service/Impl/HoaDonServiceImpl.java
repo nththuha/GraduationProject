@@ -128,7 +128,6 @@ public class HoaDonServiceImpl implements HoaDonService {
             CT_BanEntity ctBan = ct_datBan.getIdctb();
             ctBan.setTrangThai("Còn chỗ");
             ct_banRepository.save(ctBan);
-
         }
         int tong = 0;
         List<CT_DatMonEntity> listCT = new ArrayList<>();
