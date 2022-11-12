@@ -32,6 +32,18 @@ public class HoaDonServiceImpl implements HoaDonService {
     @Autowired
     private CT_BanRepository ct_banRepository;
 
+    @Autowired
+    private PhieuDatTruocRepository phieuDatTruocRepository;
+
+    @Autowired
+    private CT_DatMonTruocRepository ct_datMonTruocRepository;
+
+    @Autowired
+    private TienCocRepository tienCocRepository;
+
+    @Autowired
+    private CT_DatBanTruocRepository ct_datBanTruocRepository;
+
     public static HashMap<String, String> hm_tien = new HashMap<String, String>() {
         {
             put("0", "không");
@@ -108,7 +120,7 @@ public class HoaDonServiceImpl implements HoaDonService {
         kq = new StringBuilder(kq.substring(0, kq.length() - 1));
         String ketQua = kq.toString();
         ketQua = ketQua.substring(0, 1).toUpperCase() + ketQua.substring(1);
-        return ketQua;
+        return ketQua.trim();
     }
 
     @Override
@@ -173,6 +185,71 @@ public class HoaDonServiceImpl implements HoaDonService {
 
     @Override
     public HoaDonPDT themHoaDonTheoPhieuDatTruoc(HoaDonDTO hoaDonDTO) {
-        return null;
+        NhanVienEntity nv = nhanVienRepository.getById(hoaDonDTO.getIdnv());
+        HoaDonEntity hoaDon = hoaDonDTO.toEntity();
+        hoaDon.setIdnv(nv);
+
+        PhieuDatEntity phieuDat = phieuDatRepository.getById(hoaDonDTO.getPhieudatList().get(0).getIdPD());
+        PhieuDatTruocEntity phieuDatTruoc = phieuDatTruocRepository.findByIdpdt_IdPD(phieuDat.getIdPD());
+
+        List<CT_DatMonTruocEntity> listCTDM = ct_datMonTruocRepository.findByIdpdt_IdPDT(phieuDatTruoc.getIdPDT());
+        List<TienCocEntity> listTC = tienCocRepository.findByIdpdt_IdPDT(phieuDatTruoc.getIdPDT());
+
+        List<CT_DatBanTruocEntity> listCTDBT = ct_datBanTruocRepository.findByIdpdt_IdPDT(phieuDatTruoc.getIdPDT());
+
+        for(CT_DatBanTruocEntity i: listCTDBT){
+            CT_BanEntity ctBan = i.getIdctb();
+            ctBan.setTrangThai("Còn chỗ");
+            ct_banRepository.save(ctBan);
+        }
+
+        int tong = 0;
+        List<CT_DatMonTruocEntity> listCT = new ArrayList<>();
+        for(int i = 0; i < listCTDM.size(); i++){
+            tong += listCTDM.get(i).getGia();
+            if(i == 0){
+                listCT.add(listCTDM.get(i));
+            }
+            else{
+                boolean xet =  false; //true -> vào dc if
+                for (CT_DatMonTruocEntity ct_datMonTruoc : listCT) {
+                    if (ct_datMonTruoc.getMama().getMaMA().equals(listCTDM.get(i).getMama().getMaMA())) {
+                        xet = true;
+                        ct_datMonTruoc.setGia(ct_datMonTruoc.getGia() + listCTDM.get(i).getGia());
+                        ct_datMonTruoc.setSoluong(ct_datMonTruoc.getSoluong() + listCTDM.get(i).getSoluong());
+                    }
+                }
+                if(!xet){
+                    listCT.add(listCTDM.get(i));
+                }
+            }
+        }
+
+        int tongCoc = 0;
+        for(TienCocEntity i: listTC){
+            tongCoc += i.getTriGia();
+        }
+
+        hoaDon.setTrigia(tong);
+        hoaDon.setGiaSauThue((int) (tong * 1.1));
+
+        try {
+            hoaDon = hoaDonRepository.save(hoaDon);
+            phieuDat.setMahd(hoaDon);
+            phieuDatRepository.save(phieuDat);
+            phieuDatTruoc.setTrangThai("Đã sử dụng");
+            phieuDatTruocRepository.save(phieuDatTruoc);
+
+            HoaDonPDT hd = new HoaDonPDT(hoaDon);
+            hd.setCtDatMonTruocList(listCT.stream().map(CT_DatMonTruocDTO::new).collect(Collectors.toList()));
+            hd.setTienCocList(listTC.stream().map(TienCocDTO::new).collect(Collectors.toList()));
+            hd.setTongCoc(tongCoc);
+            hd.setGiaConLai((int) (tong * 1.1 - tongCoc));
+            hd.setGiaChu(chuyenSangChu(hd.getGiaConLai().toString()));
+            return hd;
+        }
+        catch (Exception e){
+            return null;
+        }
     }
 }
