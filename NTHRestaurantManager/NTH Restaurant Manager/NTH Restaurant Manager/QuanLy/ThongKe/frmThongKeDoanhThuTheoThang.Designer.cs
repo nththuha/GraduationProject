@@ -29,29 +29,19 @@ namespace NTH_Restaurant_Manager
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label ngayKTLabel;
             System.Windows.Forms.Label ngayBDLabel;
-            this.btn_XacNhan = new DevExpress.XtraEditors.SimpleButton();
-            this.de_NgayKT = new DevExpress.XtraEditors.DateEdit();
-            this.de_NgayBD = new DevExpress.XtraEditors.DateEdit();
+            System.Windows.Forms.Label ngayKTLabel;
             this.label1 = new System.Windows.Forms.Label();
-            ngayKTLabel = new System.Windows.Forms.Label();
+            this.de_NgayBD = new DevExpress.XtraEditors.DateEdit();
+            this.de_NgayKT = new DevExpress.XtraEditors.DateEdit();
+            this.btn_XacNhan = new DevExpress.XtraEditors.SimpleButton();
             ngayBDLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.de_NgayKT.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.de_NgayKT.Properties)).BeginInit();
+            ngayKTLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.de_NgayBD.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.de_NgayBD.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_NgayKT.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_NgayKT.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ngayKTLabel
-            // 
-            ngayKTLabel.AutoSize = true;
-            ngayKTLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            ngayKTLabel.Location = new System.Drawing.Point(314, 319);
-            ngayKTLabel.Name = "ngayKTLabel";
-            ngayKTLabel.Size = new System.Drawing.Size(147, 27);
-            ngayKTLabel.TabIndex = 10;
-            ngayKTLabel.Text = "Ngày kết thúc";
             // 
             // ngayBDLabel
             // 
@@ -63,32 +53,25 @@ namespace NTH_Restaurant_Manager
             ngayBDLabel.TabIndex = 9;
             ngayBDLabel.Text = "Ngày bắt đầu";
             // 
-            // btn_XacNhan
+            // ngayKTLabel
             // 
-            this.btn_XacNhan.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_XacNhan.Appearance.Options.UseFont = true;
-            this.btn_XacNhan.Location = new System.Drawing.Point(546, 426);
-            this.btn_XacNhan.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_XacNhan.Name = "btn_XacNhan";
-            this.btn_XacNhan.Size = new System.Drawing.Size(242, 70);
-            this.btn_XacNhan.TabIndex = 14;
-            this.btn_XacNhan.Text = "Xác nhận";
-            this.btn_XacNhan.Click += new System.EventHandler(this.btn_XacNhan_Click);
+            ngayKTLabel.AutoSize = true;
+            ngayKTLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            ngayKTLabel.Location = new System.Drawing.Point(314, 319);
+            ngayKTLabel.Name = "ngayKTLabel";
+            ngayKTLabel.Size = new System.Drawing.Size(147, 27);
+            ngayKTLabel.TabIndex = 10;
+            ngayKTLabel.Text = "Ngày kết thúc";
             // 
-            // de_NgayKT
+            // label1
             // 
-            this.de_NgayKT.EditValue = null;
-            this.de_NgayKT.Location = new System.Drawing.Point(546, 316);
-            this.de_NgayKT.Margin = new System.Windows.Forms.Padding(4);
-            this.de_NgayKT.Name = "de_NgayKT";
-            this.de_NgayKT.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.de_NgayKT.Properties.Appearance.Options.UseFont = true;
-            this.de_NgayKT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.de_NgayKT.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.de_NgayKT.Size = new System.Drawing.Size(501, 32);
-            this.de_NgayKT.TabIndex = 13;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(294, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(773, 45);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "THỐNG KÊ DOANH THU THEO THÁNG";
             // 
             // de_NgayBD
             // 
@@ -105,15 +88,32 @@ namespace NTH_Restaurant_Manager
             this.de_NgayBD.Size = new System.Drawing.Size(501, 32);
             this.de_NgayBD.TabIndex = 12;
             // 
-            // label1
+            // de_NgayKT
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(294, 102);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(773, 45);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "THỐNG KÊ DOANH THU THEO THÁNG";
+            this.de_NgayKT.EditValue = null;
+            this.de_NgayKT.Location = new System.Drawing.Point(546, 316);
+            this.de_NgayKT.Margin = new System.Windows.Forms.Padding(4);
+            this.de_NgayKT.Name = "de_NgayKT";
+            this.de_NgayKT.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.de_NgayKT.Properties.Appearance.Options.UseFont = true;
+            this.de_NgayKT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.de_NgayKT.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.de_NgayKT.Size = new System.Drawing.Size(501, 32);
+            this.de_NgayKT.TabIndex = 13;
+            // 
+            // btn_XacNhan
+            // 
+            this.btn_XacNhan.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_XacNhan.Appearance.Options.UseFont = true;
+            this.btn_XacNhan.Location = new System.Drawing.Point(546, 426);
+            this.btn_XacNhan.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_XacNhan.Name = "btn_XacNhan";
+            this.btn_XacNhan.Size = new System.Drawing.Size(242, 70);
+            this.btn_XacNhan.TabIndex = 14;
+            this.btn_XacNhan.Text = "Xác nhận";
+            this.btn_XacNhan.Click += new System.EventHandler(this.btn_XacNhan_Click);
             // 
             // frmThongKeDoanhThuTheoThang
             // 
@@ -129,10 +129,10 @@ namespace NTH_Restaurant_Manager
             this.Name = "frmThongKeDoanhThuTheoThang";
             this.Text = "THỐNG KÊ DOANH THU THEO THÁNG";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.de_NgayKT.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.de_NgayKT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.de_NgayBD.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.de_NgayBD.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_NgayKT.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_NgayKT.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,9 +140,9 @@ namespace NTH_Restaurant_Manager
 
         #endregion
 
-        private DevExpress.XtraEditors.SimpleButton btn_XacNhan;
-        private DevExpress.XtraEditors.DateEdit de_NgayKT;
-        private DevExpress.XtraEditors.DateEdit de_NgayBD;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.DateEdit de_NgayBD;
+        private DevExpress.XtraEditors.DateEdit de_NgayKT;
+        private DevExpress.XtraEditors.SimpleButton btn_XacNhan;
     }
 }
