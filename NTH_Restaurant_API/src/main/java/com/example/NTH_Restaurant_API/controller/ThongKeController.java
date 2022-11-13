@@ -16,7 +16,12 @@ public class ThongKeController {
     private ThongKeService thongKeService;
 
     @PostMapping("")
-    public List<ThongKeDTO> thongKe(@Valid @RequestBody ThongKeDTO thongKeDTO) {
+    public List<ThongKeDTO> thongKeDoanhThuTheoThang(@Valid @RequestBody ThongKeDTO thongKeDTO) {
         return thongKeService.thongKeDoanhThuTheoThang(thongKeDTO);
+    }
+
+    @PostMapping("/loinhuan")
+    public List<ThongKeDTO> thongKeLoiNhuanTheoThang(@Valid @RequestBody ThongKeDTO thongKeDTO){
+        return thongKeService.thongKeLoiNhuanTheoThang(thongKeDTO);
     }
 }

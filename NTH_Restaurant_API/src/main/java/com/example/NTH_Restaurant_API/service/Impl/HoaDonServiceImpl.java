@@ -170,7 +170,7 @@ public class HoaDonServiceImpl implements HoaDonService {
         try {
             hoaDon = hoaDonRepository.save(hoaDon);
             for(PhieuDatEntity i: listPD){
-                i.setMahd(hoaDon);
+                //i.setMahd(hoaDon);
                 phieuDatRepository.save(i);
             }
             HoaDonPD hoaDonPD = new HoaDonPD(hoaDon);
@@ -235,7 +235,7 @@ public class HoaDonServiceImpl implements HoaDonService {
 
         try {
             hoaDon = hoaDonRepository.save(hoaDon);
-            phieuDat.setMahd(hoaDon);
+            //phieuDat.setMahd(hoaDon);
             phieuDatRepository.save(phieuDat);
             phieuDatTruoc.setTrangThai("Đã sử dụng");
             phieuDatTruocRepository.save(phieuDatTruoc);

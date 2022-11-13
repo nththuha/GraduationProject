@@ -38,11 +38,11 @@ public class PhieuDatServiceImpl implements PhieuDatService {
         List<PhieuDatEntity> ds = phieuDatRepository.findAll();
 
         for (int i = 0; i < ds.size(); i++) {
-            if (ds.get(i).getMahd() != null) {
+            /*if (ds.get(i).getMahd() != null) {
                 ds.remove(ds.get(i));
                 i--;
-            }
-            else if(ds.get(i).getIdpdt() != null){
+            }*/
+            if(ds.get(i).getIdpdt() != null){
                 ds.remove(ds.get(i));
                 i--;
             }
@@ -136,11 +136,11 @@ public class PhieuDatServiceImpl implements PhieuDatService {
     public List<PhieuDatDTO> layDSPhieuDatPhieuDatTruoc() {
         List<PhieuDatEntity> ds = phieuDatRepository.findAll();
         for (int i = 0; i < ds.size(); i++) {
-            if (ds.get(i).getMahd() != null) {
+            /*if (ds.get(i).getMahd() != null) {
                 ds.remove(ds.get(i));
                 i--;
-            }
-            else if(ds.get(i).getIdpdt() == null){
+            }*/
+            if(ds.get(i).getIdpdt() == null){
                 ds.remove(ds.get(i));
                 i--;
             }

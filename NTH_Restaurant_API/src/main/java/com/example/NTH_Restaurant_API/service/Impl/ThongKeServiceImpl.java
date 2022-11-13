@@ -54,4 +54,25 @@ public class ThongKeServiceImpl implements ThongKeService {
         }
         return list;
     }
+
+    @Override
+    public List<ThongKeDTO> thongKeLoiNhuanTheoThang(ThongKeDTO thongKeDTO) {
+        SimpleDateFormat thang = new SimpleDateFormat("MM");
+        SimpleDateFormat nam = new SimpleDateFormat("yyyy");
+        List<ThongKeDTO> list = new ArrayList<>();
+
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(thongKeDTO.getNgayBD());
+
+        while (cal.getTime().getTime() <= thongKeDTO.getNgayKT().getTime()) {
+            ThongKeDTO thongKe = new ThongKeDTO();
+            thongKe.setThang(thang.format(cal.getTime()));
+            thongKe.setNam(nam.format(cal.getTime()));
+            thongKe.setDoanhThu(0);
+            list.add(thongKe);
+            cal.add(Calendar.MONTH, 1);
+        }
+
+        return null;
+    }
 }

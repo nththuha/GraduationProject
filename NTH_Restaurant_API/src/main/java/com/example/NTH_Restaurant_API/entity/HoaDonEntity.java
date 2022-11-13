@@ -43,8 +43,7 @@ public class HoaDonEntity {
     private String hotenkh;
 
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "mahd")
-    private List<PhieuDatEntity> phieudatList;
-
+    private List<CT_HoaDonEntity> ctHoadonList;
     @ManyToOne
     @JoinColumn(name = "IDNV")
     private NhanVienEntity idnv;

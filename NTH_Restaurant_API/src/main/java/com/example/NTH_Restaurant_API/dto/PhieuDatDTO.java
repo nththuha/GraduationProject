@@ -29,7 +29,6 @@ public class PhieuDatDTO {
     public PhieuDatDTO(PhieuDatEntity phieuDatEntity) {
         this.idPD = phieuDatEntity.getIdPD();
         this.ngay = phieuDatEntity.getNgay();
-        if (phieuDatEntity.getMahd() != null) this.mahd = phieuDatEntity.getMahd().getMaHD();
         this.idnv = phieuDatEntity.getIdnv().getIdNV();
         this.hoTenNV = phieuDatEntity.getIdnv().getHoTen();
         if(phieuDatEntity.getIdpdt() != null) this.idPDT = phieuDatEntity.getIdpdt().getIdPDT();

@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ThongKeService {
     List<ThongKeDTO> thongKeDoanhThuTheoThang(ThongKeDTO thongKeDTO);
+
+    List<ThongKeDTO> thongKeLoiNhuanTheoThang(ThongKeDTO thongKeDTO);
 }

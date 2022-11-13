@@ -35,14 +35,11 @@ public class PhieuDatEntity {
     @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idpd")
     private List<CT_DatBanEntity> ctDatbanList;
 
-    @ManyToOne
-    @JoinColumn(name = "MAHD")
-    private HoaDonEntity mahd;
-
+    @OneToMany(cascade = CascadeType.REFRESH, mappedBy = "idpd")
+    private List<CT_HoaDonEntity> ctHoadonList;
     @ManyToOne
     @JoinColumn(name = "IDKH")
     private KhachHangEntity idkh;
-
     @ManyToOne
     @JoinColumn(name = "IDNV")
     private NhanVienEntity idnv;

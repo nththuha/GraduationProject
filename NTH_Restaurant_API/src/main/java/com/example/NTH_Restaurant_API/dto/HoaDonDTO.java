@@ -27,8 +27,6 @@ public class HoaDonDTO {
         this.ngay = hoaDonEntity.getNgay();
         if (hoaDonEntity.getMasothue() != null) this.masothue = hoaDonEntity.getMasothue();
         if (hoaDonEntity.getHotenkh() != null) this.hotenkh = hoaDonEntity.getHotenkh();
-        if (hoaDonEntity.getPhieudatList() != null)
-            this.phieudatList = hoaDonEntity.getPhieudatList().stream().map(PhieuDatDTO::new).collect(Collectors.toList());
         this.idnv = hoaDonEntity.getIdnv().getIdNV();
     }
 
