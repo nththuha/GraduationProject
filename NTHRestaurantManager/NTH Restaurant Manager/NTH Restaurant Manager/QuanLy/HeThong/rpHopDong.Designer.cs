@@ -40,6 +40,7 @@ namespace NTH_Restaurant_Manager
             this.pageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.pageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrTable4 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow4 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -92,7 +93,6 @@ namespace NTH_Restaurant_Manager
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.lb_Tien = new DevExpress.XtraReports.UI.XRLabel();
             this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
-            this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
@@ -198,6 +198,20 @@ namespace NTH_Restaurant_Manager
             this.label1});
             this.ReportHeader.HeightF = 204.4165F;
             this.ReportHeader.Name = "ReportHeader";
+            // 
+            // xrLabel9
+            // 
+            this.xrLabel9.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel9.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(4.444453F, 41.44443F);
+            this.xrLabel9.Name = "xrLabel9";
+            this.xrLabel9.SizeF = new System.Drawing.SizeF(617F, 24.19433F);
+            this.xrLabel9.StyleName = "Title";
+            this.xrLabel9.StylePriority.UseFont = false;
+            this.xrLabel9.StylePriority.UseForeColor = false;
+            this.xrLabel9.StylePriority.UseTextAlignment = false;
+            this.xrLabel9.Text = "NTH RESTAURANT";
+            this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrTable4
             // 
@@ -387,7 +401,7 @@ namespace NTH_Restaurant_Manager
             this.table1.Name = "table1";
             this.table1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.tableRow1});
-            this.table1.SizeF = new System.Drawing.SizeF(627F, 28F);
+            this.table1.SizeF = new System.Drawing.SizeF(629.0001F, 28F);
             // 
             // tableRow1
             // 
@@ -443,7 +457,7 @@ namespace NTH_Restaurant_Manager
             this.tableCell4.StylePriority.UseTextAlignment = false;
             this.tableCell4.Text = "SỐ TIỀN";
             this.tableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell4.Weight = 0.24785668682761319D;
+            this.tableCell4.Weight = 0.25104657675820713D;
             // 
             // Detail
             // 
@@ -561,7 +575,7 @@ namespace NTH_Restaurant_Manager
             this.lb_TienCoc.Multiline = true;
             this.lb_TienCoc.Name = "lb_TienCoc";
             this.lb_TienCoc.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lb_TienCoc.SizeF = new System.Drawing.SizeF(152.4061F, 22.99999F);
+            this.lb_TienCoc.SizeF = new System.Drawing.SizeF(157.4061F, 22.99999F);
             this.lb_TienCoc.StylePriority.UseFont = false;
             this.lb_TienCoc.StylePriority.UseTextAlignment = false;
             this.lb_TienCoc.Text = "1,500,000";
@@ -750,7 +764,7 @@ namespace NTH_Restaurant_Manager
             this.lb_TongTien.Multiline = true;
             this.lb_TongTien.Name = "lb_TongTien";
             this.lb_TongTien.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lb_TongTien.SizeF = new System.Drawing.SizeF(151.906F, 22.99998F);
+            this.lb_TongTien.SizeF = new System.Drawing.SizeF(157.406F, 22.99997F);
             this.lb_TongTien.StylePriority.UseFont = false;
             this.lb_TongTien.StylePriority.UseTextAlignment = false;
             this.lb_TongTien.Text = "1,650,000";
@@ -776,7 +790,7 @@ namespace NTH_Restaurant_Manager
             this.lb_Thue.Multiline = true;
             this.lb_Thue.Name = "lb_Thue";
             this.lb_Thue.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lb_Thue.SizeF = new System.Drawing.SizeF(152.4062F, 23F);
+            this.lb_Thue.SizeF = new System.Drawing.SizeF(157.4062F, 23F);
             this.lb_Thue.StylePriority.UseFont = false;
             this.lb_Thue.StylePriority.UseTextAlignment = false;
             this.lb_Thue.Text = "150,000";
@@ -815,7 +829,7 @@ namespace NTH_Restaurant_Manager
             this.lb_Tien.Multiline = true;
             this.lb_Tien.Name = "lb_Tien";
             this.lb_Tien.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lb_Tien.SizeF = new System.Drawing.SizeF(152.406F, 23F);
+            this.lb_Tien.SizeF = new System.Drawing.SizeF(157.406F, 23F);
             this.lb_Tien.StylePriority.UseFont = false;
             this.lb_Tien.StylePriority.UseTextAlignment = false;
             this.lb_Tien.Text = "1,500,000";
@@ -825,20 +839,6 @@ namespace NTH_Restaurant_Manager
             // 
             this.objectDataSource1.DataSource = typeof(NTH_Restaurant_Manager.Model.PhieuDatCocModel);
             this.objectDataSource1.Name = "objectDataSource1";
-            // 
-            // xrLabel9
-            // 
-            this.xrLabel9.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel9.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(4.444453F, 41.44443F);
-            this.xrLabel9.Name = "xrLabel9";
-            this.xrLabel9.SizeF = new System.Drawing.SizeF(617F, 24.19433F);
-            this.xrLabel9.StyleName = "Title";
-            this.xrLabel9.StylePriority.UseFont = false;
-            this.xrLabel9.StylePriority.UseForeColor = false;
-            this.xrLabel9.StylePriority.UseTextAlignment = false;
-            this.xrLabel9.Text = "NTH RESTAURANT";
-            this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // rpHopDong
             // 

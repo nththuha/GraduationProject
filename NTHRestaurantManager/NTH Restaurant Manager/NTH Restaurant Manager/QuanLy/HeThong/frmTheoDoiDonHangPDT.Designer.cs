@@ -33,8 +33,6 @@ namespace NTH_Restaurant_Manager
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTheoDoiDonHangPDT));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.btn_Them = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Xoa = new DevExpress.XtraBars.BarButtonItem();
             this.btn_XuatHoaDon = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Reload = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Thoat = new DevExpress.XtraBars.BarButtonItem();
@@ -108,10 +106,8 @@ namespace NTH_Restaurant_Manager
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.btn_Them,
             this.btn_CapNhat,
             this.btn_Luu,
-            this.btn_Xoa,
             this.btn_Reload,
             this.btn_Thoat,
             this.btn_PhucHoi,
@@ -127,30 +123,12 @@ namespace NTH_Restaurant_Manager
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.FloatLocation = new System.Drawing.Point(143, 170);
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Them),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Xoa),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_XuatHoaDon),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Reload),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Thoat)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
-            // 
-            // btn_Them
-            // 
-            this.btn_Them.Caption = "Thêm";
-            this.btn_Them.Id = 0;
-            this.btn_Them.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Them.ImageOptions.SvgImage")));
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // btn_Xoa
-            // 
-            this.btn_Xoa.Caption = "Xóa";
-            this.btn_Xoa.Id = 3;
-            this.btn_Xoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Xoa.ImageOptions.SvgImage")));
-            this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // btn_XuatHoaDon
             // 
@@ -160,6 +138,7 @@ namespace NTH_Restaurant_Manager
             this.btn_XuatHoaDon.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_XuatHoaDon.ImageOptions.LargeImage")));
             this.btn_XuatHoaDon.Name = "btn_XuatHoaDon";
             this.btn_XuatHoaDon.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_XuatHoaDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_XuatHoaDon_ItemClick);
             // 
             // btn_Reload
             // 
@@ -168,6 +147,7 @@ namespace NTH_Restaurant_Manager
             this.btn_Reload.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Reload.ImageOptions.SvgImage")));
             this.btn_Reload.Name = "btn_Reload";
             this.btn_Reload.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_Reload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Reload_ItemClick);
             // 
             // btn_Thoat
             // 
@@ -598,8 +578,6 @@ namespace NTH_Restaurant_Manager
 
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar2;
-        private DevExpress.XtraBars.BarButtonItem btn_Them;
-        private DevExpress.XtraBars.BarButtonItem btn_Xoa;
         private DevExpress.XtraBars.BarButtonItem btn_XuatHoaDon;
         private DevExpress.XtraBars.BarButtonItem btn_Reload;
         private DevExpress.XtraBars.BarButtonItem btn_Thoat;

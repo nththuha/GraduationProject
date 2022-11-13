@@ -29,34 +29,7 @@ namespace NTH_Restaurant_Manager
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            /*Program.hoaDon = new HoaDonModel();
-            Program.hoaDon.maHD = "HD12-11-2022 12 12 12";
-            Program.hoaDon.idnv = 1;
-            Program.hoaDon.ngay = "2022-11-12";
-            List<PhieuDatModel> listPD = new List<PhieuDatModel>();
-            PhieuDatModel pd = new PhieuDatModel();
-            pd.idPD = 38;
-            listPD.Add(pd);
-            pd = new PhieuDatModel();
-            pd.idPD = 39;
-            listPD.Add(pd);
-            Program.hoaDon.phieudatList = listPD;*/
-
-            /*List<PhieuDatModel> listPD = new List<PhieuDatModel>();
-            foreach(PhieuDatModel i in Program.listPD)
-            {
-                listPD.Add(i);
-            }
-            Program.hoaDon.phieudatList = listPD;*/
-
-            MessageBox.Show("Mã hóa đơn: " + Program.hoaDon.maHD + "\n" +
-                            "ngay: " + Program.hoaDon.ngay + "\n" +
-                            "idnv: " + Program.hoaDon.idnv + "\n" +
-                            "phieudatlist: " + Program.hoaDon.phieudatList.Count + "\n" +
-                            "1: " + Program.hoaDon.phieudatList[0].idPD + "\n" +
-                            "2: " + Program.hoaDon.phieudatList[1].idPD + "\n");
-
+        { 
             if (!txt_HoTenKH.Text.Trim().Equals(""))
             {
                 Program.hoaDon.hotenkh = txt_HoTenKH.Text.Trim();

@@ -33,5 +33,17 @@ namespace NTH_Restaurant_Manager.Repository
             var hoadonPD = JsonConvert.DeserializeObject<HoaDonPDModel>(json);
             return hoadonPD;
         }
+
+        public async Task<HoaDonPDTModel> themHoaDonPDT(HoaDonModel hoaDon)
+        {
+            var hd = JsonConvert.SerializeObject(hoaDon);
+            var buffer = Encoding.UTF8.GetBytes(hd);
+            var byteContent = new ByteArrayContent(buffer);
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            _response = await _client.PostAsync("hoadon/phieudattruoc", byteContent);
+            var json = await _response.Content.ReadAsStringAsync();
+            var hoadonPDT = JsonConvert.DeserializeObject<HoaDonPDTModel>(json);
+            return hoadonPDT;
+        }
     }
 }

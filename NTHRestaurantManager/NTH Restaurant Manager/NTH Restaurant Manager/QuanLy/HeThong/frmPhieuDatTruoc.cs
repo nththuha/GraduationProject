@@ -20,7 +20,7 @@ namespace NTH_Restaurant_Manager
         TienCocRepository _repositoryTC = new TienCocRepository();
         PhieuDatRepository _repositoryPD = new PhieuDatRepository();
 
-        int num;
+        int num = -1;
 
         PhieuDatTruocModel pdt;
 
@@ -40,6 +40,7 @@ namespace NTH_Restaurant_Manager
 
         public async void layDSPhieuDatTheoNgay()
         {
+            num = -1;
             gcTC.DataSource = null;
             PhongNgay pn = new PhongNgay();
             pn.ngay = de_Ngay.DateTime.ToString("yyyy-MM-dd");
@@ -54,6 +55,7 @@ namespace NTH_Restaurant_Manager
                 gcPDT.DataSource = listPDT;
                 if(listPDT.Count > 0)
                 {
+                    num = 0;
                     layDSTienCocTheoPDT(listPDT[0].idPDT);
                 }
             }
@@ -96,6 +98,11 @@ namespace NTH_Restaurant_Manager
 
         private void btn_CapNhatDatBan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (num < 0)
+            {
+                MessageBox.Show("Không có phiếu đặt trước!", "Thông báo");
+                return;
+            }
             Program.pdt = new PhieuDatTruocModel();
             Program.pdt.idPDT = int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString());
             Program.pdt.idkh = int.Parse(gvPDT.GetRowCellValue(num, "idkh").ToString());
@@ -129,6 +136,11 @@ namespace NTH_Restaurant_Manager
 
         private void btn_InHopDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (num < 0)
+            {
+                MessageBox.Show("Không có phiếu đặt trước!", "Thông báo");
+                return;
+            }
             int idPDT = int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString());
             layPhieuDatCoc(idPDT);
         }
@@ -203,6 +215,11 @@ namespace NTH_Restaurant_Manager
 
         private void btn_CocTien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if(num < 0)
+            {
+                MessageBox.Show("Không có phiếu đặt trước!", "Thông báo");
+                return;
+            }
             Program.mesTienCoc = new mesTienCoc(gvPDT.GetRowCellValue(num, "hoTenKH").ToString(), gvPDT.GetRowCellValue(num, "sdt").ToString(), int.Parse(gvPDT.GetRowCellValue(num, "giaSauThue").ToString()), int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString()), tongCoc);
             Program.mesTienCoc.Show();
             Program.frmChinh.Enabled = false;
@@ -210,6 +227,11 @@ namespace NTH_Restaurant_Manager
 
         private void btn_Huy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (num < 0)
+            {
+                MessageBox.Show("Không có phiếu đặt trước!", "Thông báo");
+                return;
+            }
             int idPDT = int.Parse(gvPDT.GetRowCellValue(num, "idPDT").ToString());
             String hoTenKH = gvPDT.GetRowCellValue(num, "hoTenKH").ToString();
             String sdt = gvPDT.GetRowCellValue(num, "sdt").ToString();
@@ -224,6 +246,11 @@ namespace NTH_Restaurant_Manager
 
         private void btn_ChuyenThanhPhieuDat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (num < 0)
+            {
+                MessageBox.Show("Không có phiếu đặt trước!", "Thông báo");
+                return;
+            }
             DateTime aDate = DateTime.Now;
             String now = aDate.ToString("yyyy-MM-dd");
             String ngay = de_Ngay.DateTime.ToString("yyyy-MM-dd");
