@@ -44,6 +44,9 @@ public class HoaDonServiceImpl implements HoaDonService {
     @Autowired
     private CT_DatBanTruocRepository ct_datBanTruocRepository;
 
+    @Autowired
+    private CT_HoaDonRepository ct_hoaDonRepository;
+
     public static HashMap<String, String> hm_tien = new HashMap<String, String>() {
         {
             put("0", "không");
@@ -166,12 +169,13 @@ public class HoaDonServiceImpl implements HoaDonService {
         hoaDon.setTrigia(tong);
         hoaDon.setGiaSauThue((int) (tong * 1.1));
 
-
         try {
             hoaDon = hoaDonRepository.save(hoaDon);
             for(PhieuDatEntity i: listPD){
-                //i.setMahd(hoaDon);
-                phieuDatRepository.save(i);
+                CT_HoaDonEntity ct_hoaDonEntity = new CT_HoaDonEntity();
+                ct_hoaDonEntity.setMahd(hoaDon);
+                ct_hoaDonEntity.setIdpd(i);
+                ct_hoaDonRepository.save(ct_hoaDonEntity);
             }
             HoaDonPD hoaDonPD = new HoaDonPD(hoaDon);
             hoaDonPD.setCtDatMonList(listCT.stream().map(CT_DatMonDTO::new).collect(Collectors.toList()));
@@ -235,7 +239,8 @@ public class HoaDonServiceImpl implements HoaDonService {
 
         try {
             hoaDon = hoaDonRepository.save(hoaDon);
-            //phieuDat.setMahd(hoaDon);
+            CT_HoaDonEntity ct_hoaDonEntity = new CT_HoaDonEntity(null, hoaDon, phieuDat);
+            ct_hoaDonRepository.save(ct_hoaDonEntity);
             phieuDatRepository.save(phieuDat);
             phieuDatTruoc.setTrangThai("Đã sử dụng");
             phieuDatTruocRepository.save(phieuDatTruoc);
