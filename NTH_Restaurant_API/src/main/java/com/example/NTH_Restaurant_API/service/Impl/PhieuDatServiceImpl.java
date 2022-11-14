@@ -33,16 +33,20 @@ public class PhieuDatServiceImpl implements PhieuDatService {
     @Autowired
     private CT_DatBanTruocRepository ct_datBanTruocRepository;
 
+    @Autowired
+    private CT_HoaDonRepository ct_hoaDonRepository;
+
     @Override
     public List<PhieuDatDTO> layDSPhieuDatChuaCoHoaDon() {
         List<PhieuDatEntity> ds = phieuDatRepository.findAll();
 
         for (int i = 0; i < ds.size(); i++) {
-            /*if (ds.get(i).getMahd() != null) {
+            List<CT_HoaDonEntity> listCTHD = ct_hoaDonRepository.findByIdpd_IdPD(ds.get(i).getIdPD());
+            if (listCTHD.size() > 0) {
                 ds.remove(ds.get(i));
                 i--;
-            }*/
-            if(ds.get(i).getIdpdt() != null){
+            }
+            else if(ds.get(i).getIdpdt() != null){
                 ds.remove(ds.get(i));
                 i--;
             }
@@ -136,11 +140,12 @@ public class PhieuDatServiceImpl implements PhieuDatService {
     public List<PhieuDatDTO> layDSPhieuDatPhieuDatTruoc() {
         List<PhieuDatEntity> ds = phieuDatRepository.findAll();
         for (int i = 0; i < ds.size(); i++) {
-            /*if (ds.get(i).getMahd() != null) {
+            List<CT_HoaDonEntity> listCTHD = ct_hoaDonRepository.findByIdpd_IdPD(ds.get(i).getIdPD());
+            if (listCTHD.size() > 0) {
                 ds.remove(ds.get(i));
                 i--;
-            }*/
-            if(ds.get(i).getIdpdt() == null){
+            }
+            else if(ds.get(i).getIdpdt() != null){
                 ds.remove(ds.get(i));
                 i--;
             }
