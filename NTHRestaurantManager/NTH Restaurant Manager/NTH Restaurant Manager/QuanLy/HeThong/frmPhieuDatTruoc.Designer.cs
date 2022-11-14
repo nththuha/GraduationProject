@@ -47,17 +47,6 @@ namespace NTH_Restaurant_Manager
             this.bdsPDT = new System.Windows.Forms.BindingSource(this.components);
             this.gcPDT = new DevExpress.XtraGrid.GridControl();
             this.gvPDT = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colidPDT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colngayTao = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colngayDat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colgioDat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colgia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colgiaSauThue = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colidnv = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colhoTenNV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colidkh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colhoTenKH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colsdt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.de_Ngay = new DevExpress.XtraEditors.DateEdit();
             this.barToolbarsListItem1 = new DevExpress.XtraBars.BarToolbarsListItem();
@@ -72,6 +61,19 @@ namespace NTH_Restaurant_Manager
             this.colhoTenKH1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colidnv1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colidpdt1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colidPDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colngayTao = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colngayDat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colgioDat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colgia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colgiaSauThue = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colidnv = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colhoTenNV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colidkh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colhoTenKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsdt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsPDT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcPDT)).BeginInit();
@@ -249,114 +251,18 @@ namespace NTH_Restaurant_Manager
             this.colgioDat,
             this.colgia,
             this.colgiaSauThue,
+            this.coltrangThai,
             this.colidnv,
             this.colhoTenNV,
             this.colidkh,
             this.colhoTenKH,
-            this.colsdt});
+            this.colsdt,
+            this.gridColumn1});
             this.gvPDT.DetailHeight = 437;
             this.gvPDT.GridControl = this.gcPDT;
             this.gvPDT.Name = "gvPDT";
             this.gvPDT.OptionsBehavior.Editable = false;
             this.gvPDT.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvPDT_RowClick);
-            // 
-            // colidPDT
-            // 
-            this.colidPDT.FieldName = "idPDT";
-            this.colidPDT.MinWidth = 25;
-            this.colidPDT.Name = "colidPDT";
-            this.colidPDT.Width = 94;
-            // 
-            // colngayTao
-            // 
-            this.colngayTao.FieldName = "ngayTao";
-            this.colngayTao.MinWidth = 25;
-            this.colngayTao.Name = "colngayTao";
-            this.colngayTao.Width = 94;
-            // 
-            // colngayDat
-            // 
-            this.colngayDat.Caption = "NGÀY ĐẶT";
-            this.colngayDat.FieldName = "ngayDat";
-            this.colngayDat.MinWidth = 25;
-            this.colngayDat.Name = "colngayDat";
-            this.colngayDat.Visible = true;
-            this.colngayDat.VisibleIndex = 2;
-            this.colngayDat.Width = 94;
-            // 
-            // colgioDat
-            // 
-            this.colgioDat.Caption = "GIỜ ĐẶT";
-            this.colgioDat.FieldName = "gioDat";
-            this.colgioDat.MinWidth = 25;
-            this.colgioDat.Name = "colgioDat";
-            this.colgioDat.Visible = true;
-            this.colgioDat.VisibleIndex = 3;
-            this.colgioDat.Width = 94;
-            // 
-            // colgia
-            // 
-            this.colgia.Caption = "GIÁ";
-            this.colgia.FieldName = "gia";
-            this.colgia.MinWidth = 25;
-            this.colgia.Name = "colgia";
-            this.colgia.Visible = true;
-            this.colgia.VisibleIndex = 4;
-            this.colgia.Width = 94;
-            // 
-            // colgiaSauThue
-            // 
-            this.colgiaSauThue.Caption = "GIÁ SAU THUẾ";
-            this.colgiaSauThue.FieldName = "giaSauThue";
-            this.colgiaSauThue.MinWidth = 25;
-            this.colgiaSauThue.Name = "colgiaSauThue";
-            this.colgiaSauThue.Visible = true;
-            this.colgiaSauThue.VisibleIndex = 5;
-            this.colgiaSauThue.Width = 94;
-            // 
-            // colidnv
-            // 
-            this.colidnv.FieldName = "idnv";
-            this.colidnv.MinWidth = 25;
-            this.colidnv.Name = "colidnv";
-            this.colidnv.Width = 94;
-            // 
-            // colhoTenNV
-            // 
-            this.colhoTenNV.Caption = "NHÂN VIÊN LẬP";
-            this.colhoTenNV.FieldName = "hoTenNV";
-            this.colhoTenNV.MinWidth = 25;
-            this.colhoTenNV.Name = "colhoTenNV";
-            this.colhoTenNV.Visible = true;
-            this.colhoTenNV.VisibleIndex = 6;
-            this.colhoTenNV.Width = 94;
-            // 
-            // colidkh
-            // 
-            this.colidkh.FieldName = "idkh";
-            this.colidkh.MinWidth = 25;
-            this.colidkh.Name = "colidkh";
-            this.colidkh.Width = 94;
-            // 
-            // colhoTenKH
-            // 
-            this.colhoTenKH.Caption = "KHÁCH HÀNG";
-            this.colhoTenKH.FieldName = "hoTenKH";
-            this.colhoTenKH.MinWidth = 25;
-            this.colhoTenKH.Name = "colhoTenKH";
-            this.colhoTenKH.Visible = true;
-            this.colhoTenKH.VisibleIndex = 0;
-            this.colhoTenKH.Width = 94;
-            // 
-            // colsdt
-            // 
-            this.colsdt.Caption = "SỐ ĐIỆN THOẠI";
-            this.colsdt.FieldName = "sdt";
-            this.colsdt.MinWidth = 25;
-            this.colsdt.Name = "colsdt";
-            this.colsdt.Visible = true;
-            this.colsdt.VisibleIndex = 1;
-            this.colsdt.Width = 94;
             // 
             // panelControl2
             // 
@@ -493,6 +399,126 @@ namespace NTH_Restaurant_Manager
             this.colidpdt1.Name = "colidpdt1";
             this.colidpdt1.Width = 94;
             // 
+            // colidPDT
+            // 
+            this.colidPDT.FieldName = "idPDT";
+            this.colidPDT.MinWidth = 25;
+            this.colidPDT.Name = "colidPDT";
+            this.colidPDT.Width = 94;
+            // 
+            // colngayTao
+            // 
+            this.colngayTao.Caption = "NGÀY TẠO";
+            this.colngayTao.FieldName = "ngayTao";
+            this.colngayTao.MinWidth = 25;
+            this.colngayTao.Name = "colngayTao";
+            this.colngayTao.Visible = true;
+            this.colngayTao.VisibleIndex = 2;
+            this.colngayTao.Width = 94;
+            // 
+            // colngayDat
+            // 
+            this.colngayDat.Caption = "NGÀY ĐẶT";
+            this.colngayDat.FieldName = "ngayDat";
+            this.colngayDat.MinWidth = 25;
+            this.colngayDat.Name = "colngayDat";
+            this.colngayDat.Visible = true;
+            this.colngayDat.VisibleIndex = 3;
+            this.colngayDat.Width = 94;
+            // 
+            // colgioDat
+            // 
+            this.colgioDat.Caption = "GIỜ ĐẶT";
+            this.colgioDat.FieldName = "gioDat";
+            this.colgioDat.MinWidth = 25;
+            this.colgioDat.Name = "colgioDat";
+            this.colgioDat.Visible = true;
+            this.colgioDat.VisibleIndex = 4;
+            this.colgioDat.Width = 94;
+            // 
+            // colgia
+            // 
+            this.colgia.Caption = "GIÁ";
+            this.colgia.FieldName = "gia";
+            this.colgia.MinWidth = 25;
+            this.colgia.Name = "colgia";
+            this.colgia.Visible = true;
+            this.colgia.VisibleIndex = 5;
+            this.colgia.Width = 94;
+            // 
+            // colgiaSauThue
+            // 
+            this.colgiaSauThue.Caption = "GIÁ SAU THUẾ";
+            this.colgiaSauThue.FieldName = "giaSauThue";
+            this.colgiaSauThue.MinWidth = 25;
+            this.colgiaSauThue.Name = "colgiaSauThue";
+            this.colgiaSauThue.Visible = true;
+            this.colgiaSauThue.VisibleIndex = 7;
+            this.colgiaSauThue.Width = 94;
+            // 
+            // coltrangThai
+            // 
+            this.coltrangThai.Caption = "TRẠNG THÁI";
+            this.coltrangThai.FieldName = "trangThai";
+            this.coltrangThai.MinWidth = 25;
+            this.coltrangThai.Name = "coltrangThai";
+            this.coltrangThai.Visible = true;
+            this.coltrangThai.VisibleIndex = 8;
+            this.coltrangThai.Width = 94;
+            // 
+            // colidnv
+            // 
+            this.colidnv.FieldName = "idnv";
+            this.colidnv.MinWidth = 25;
+            this.colidnv.Name = "colidnv";
+            this.colidnv.Width = 94;
+            // 
+            // colhoTenNV
+            // 
+            this.colhoTenNV.FieldName = "hoTenNV";
+            this.colhoTenNV.MinWidth = 25;
+            this.colhoTenNV.Name = "colhoTenNV";
+            this.colhoTenNV.Width = 94;
+            // 
+            // colidkh
+            // 
+            this.colidkh.FieldName = "idkh";
+            this.colidkh.MinWidth = 25;
+            this.colidkh.Name = "colidkh";
+            this.colidkh.Width = 94;
+            // 
+            // colhoTenKH
+            // 
+            this.colhoTenKH.Caption = "KHÁCH HÀNG";
+            this.colhoTenKH.FieldName = "hoTenKH";
+            this.colhoTenKH.MinWidth = 25;
+            this.colhoTenKH.Name = "colhoTenKH";
+            this.colhoTenKH.Visible = true;
+            this.colhoTenKH.VisibleIndex = 0;
+            this.colhoTenKH.Width = 94;
+            // 
+            // colsdt
+            // 
+            this.colsdt.Caption = "SỐ ĐIỆN THOẠI";
+            this.colsdt.FieldName = "sdt";
+            this.colsdt.MinWidth = 25;
+            this.colsdt.Name = "colsdt";
+            this.colsdt.Visible = true;
+            this.colsdt.VisibleIndex = 1;
+            this.colsdt.Width = 94;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "THUẾ 10%";
+            this.gridColumn1.FieldName = "gridColumn1";
+            this.gridColumn1.MinWidth = 25;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.UnboundExpression = "[gia] * 1.1";
+            this.gridColumn1.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 6;
+            this.gridColumn1.Width = 94;
+            // 
             // frmPhieuDatTruoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -555,17 +581,19 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraGrid.Columns.GridColumn colhoTenKH1;
         private DevExpress.XtraGrid.Columns.GridColumn colidnv1;
         private DevExpress.XtraGrid.Columns.GridColumn colidpdt1;
+        private DevExpress.XtraBars.BarButtonItem btn_ChuyenThanhPhieuDat;
         private DevExpress.XtraGrid.Columns.GridColumn colidPDT;
         private DevExpress.XtraGrid.Columns.GridColumn colngayTao;
         private DevExpress.XtraGrid.Columns.GridColumn colngayDat;
         private DevExpress.XtraGrid.Columns.GridColumn colgioDat;
         private DevExpress.XtraGrid.Columns.GridColumn colgia;
         private DevExpress.XtraGrid.Columns.GridColumn colgiaSauThue;
+        private DevExpress.XtraGrid.Columns.GridColumn coltrangThai;
         private DevExpress.XtraGrid.Columns.GridColumn colidnv;
         private DevExpress.XtraGrid.Columns.GridColumn colhoTenNV;
         private DevExpress.XtraGrid.Columns.GridColumn colidkh;
         private DevExpress.XtraGrid.Columns.GridColumn colhoTenKH;
         private DevExpress.XtraGrid.Columns.GridColumn colsdt;
-        private DevExpress.XtraBars.BarButtonItem btn_ChuyenThanhPhieuDat;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

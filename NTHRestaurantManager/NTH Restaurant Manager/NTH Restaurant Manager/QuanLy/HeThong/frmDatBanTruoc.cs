@@ -34,6 +34,12 @@ namespace NTH_Restaurant_Manager
         {
             InitializeComponent();
             setUp();
+            this.de_NgayTao.Properties.DisplayFormat.FormatString = "dd-MM-yyyy";
+            this.de_NgayTao.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.de_NgayTao.Properties.EditFormat.FormatString = "dd-MM-yyyy";
+            this.de_NgayTao.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.de_NgayTao.Properties.Mask.EditMask = "dd-MM-yyyy";
+
             this.de_NgayDat.Properties.DisplayFormat.FormatString = "dd-MM-yyyy";
             this.de_NgayDat.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.de_NgayDat.Properties.EditFormat.FormatString = "dd-MM-yyyy";
@@ -66,6 +72,7 @@ namespace NTH_Restaurant_Manager
         private void khoiTao()
         {
             txt_HoTenKH.Text = "";
+            de_NgayTao.DateTime = DateTime.Now;
             de_NgayDat.DateTime = DateTime.Now;
             se_GioDat.Text = "0";
         }
@@ -88,9 +95,9 @@ namespace NTH_Restaurant_Manager
             }
             txt_HoTenKH.Focus();
             int gioDat = Program.doiSpinEditThanhInt(se_GioDat.Text);
-            if(gioDat < 7 || gioDat > 22)
+            if(gioDat < 7 || gioDat > 19)
             {
-                MessageBox.Show("Giờ đặt phải nằm trong khoảng 7h - 22h", "Thông báo");
+                MessageBox.Show("Giờ đặt phải nằm trong khoảng 7h - 19h", "Thông báo");
                 return;
             }
             Program.pdt = new PhieuDatTruocModel();

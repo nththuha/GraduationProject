@@ -32,8 +32,9 @@ namespace NTH_Restaurant_Manager
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label hoTenKHLabel;
             System.Windows.Forms.Label ngayDatLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatBanTruoc));
             System.Windows.Forms.Label gioDatLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatBanTruoc));
+            System.Windows.Forms.Label label2;
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btn_ThemPhieuDat = new DevExpress.XtraBars.BarButtonItem();
@@ -71,9 +72,10 @@ namespace NTH_Restaurant_Manager
             this.coltenPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.se_GioDat = new DevExpress.XtraEditors.SpinEdit();
+            this.bdsPDT = new System.Windows.Forms.BindingSource(this.components);
             this.btn_ChonKH = new DevExpress.XtraEditors.SimpleButton();
             this.de_NgayDat = new DevExpress.XtraEditors.DateEdit();
-            this.bdsPDT = new System.Windows.Forms.BindingSource(this.components);
             this.txt_HoTenKH = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.gcCTDBT = new DevExpress.XtraGrid.GridControl();
@@ -88,10 +90,11 @@ namespace NTH_Restaurant_Manager
             this.coltenBan1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmaPhong1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltenPhong1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.se_GioDat = new DevExpress.XtraEditors.SpinEdit();
+            this.de_NgayTao = new DevExpress.XtraEditors.DateEdit();
             hoTenKHLabel = new System.Windows.Forms.Label();
             ngayDatLabel = new System.Windows.Forms.Label();
             gioDatLabel = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -110,14 +113,16 @@ namespace NTH_Restaurant_Manager
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.se_GioDat.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsPDT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.de_NgayDat.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.de_NgayDat.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsPDT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_HoTenKH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCTDBT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsdCTDBT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTDBT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.se_GioDat.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_NgayTao.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_NgayTao.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // hoTenKHLabel
@@ -134,11 +139,21 @@ namespace NTH_Restaurant_Manager
             // 
             ngayDatLabel.AutoSize = true;
             ngayDatLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            ngayDatLabel.Location = new System.Drawing.Point(16, 132);
+            ngayDatLabel.Location = new System.Drawing.Point(16, 185);
             ngayDatLabel.Name = "ngayDatLabel";
             ngayDatLabel.Size = new System.Drawing.Size(99, 27);
             ngayDatLabel.TabIndex = 25;
             ngayDatLabel.Text = "Ngày đặt";
+            // 
+            // gioDatLabel
+            // 
+            gioDatLabel.AutoSize = true;
+            gioDatLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            gioDatLabel.Location = new System.Drawing.Point(19, 240);
+            gioDatLabel.Name = "gioDatLabel";
+            gioDatLabel.Size = new System.Drawing.Size(84, 27);
+            gioDatLabel.TabIndex = 27;
+            gioDatLabel.Text = "Giờ đặt";
             // 
             // barManager1
             // 
@@ -510,6 +525,8 @@ namespace NTH_Restaurant_Manager
             // 
             // panelControl4
             // 
+            this.panelControl4.Controls.Add(label2);
+            this.panelControl4.Controls.Add(this.de_NgayTao);
             this.panelControl4.Controls.Add(gioDatLabel);
             this.panelControl4.Controls.Add(this.se_GioDat);
             this.panelControl4.Controls.Add(this.btn_ChonKH);
@@ -524,6 +541,28 @@ namespace NTH_Restaurant_Manager
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(726, 438);
             this.panelControl4.TabIndex = 1;
+            // 
+            // se_GioDat
+            // 
+            this.se_GioDat.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsPDT, "gioDat", true));
+            this.se_GioDat.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.se_GioDat.Location = new System.Drawing.Point(254, 237);
+            this.se_GioDat.MenuManager = this.barManager1;
+            this.se_GioDat.Name = "se_GioDat";
+            this.se_GioDat.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.se_GioDat.Properties.Appearance.Options.UseFont = true;
+            this.se_GioDat.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.se_GioDat.Size = new System.Drawing.Size(377, 32);
+            this.se_GioDat.TabIndex = 28;
+            // 
+            // bdsPDT
+            // 
+            this.bdsPDT.DataSource = typeof(NTH_Restaurant_Manager.Model.PhieuDatTruocModel);
             // 
             // btn_ChonKH
             // 
@@ -540,7 +579,7 @@ namespace NTH_Restaurant_Manager
             // 
             this.de_NgayDat.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsPDT, "ngayDat", true));
             this.de_NgayDat.EditValue = null;
-            this.de_NgayDat.Location = new System.Drawing.Point(254, 127);
+            this.de_NgayDat.Location = new System.Drawing.Point(254, 180);
             this.de_NgayDat.MenuManager = this.barManager1;
             this.de_NgayDat.Name = "de_NgayDat";
             this.de_NgayDat.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -551,10 +590,6 @@ namespace NTH_Restaurant_Manager
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.de_NgayDat.Size = new System.Drawing.Size(377, 32);
             this.de_NgayDat.TabIndex = 26;
-            // 
-            // bdsPDT
-            // 
-            this.bdsPDT.DataSource = typeof(NTH_Restaurant_Manager.Model.PhieuDatTruocModel);
             // 
             // txt_HoTenKH
             // 
@@ -688,33 +723,32 @@ namespace NTH_Restaurant_Manager
             this.coltenPhong1.VisibleIndex = 0;
             this.coltenPhong1.Width = 94;
             // 
-            // gioDatLabel
+            // label2
             // 
-            gioDatLabel.AutoSize = true;
-            gioDatLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            gioDatLabel.Location = new System.Drawing.Point(19, 187);
-            gioDatLabel.Name = "gioDatLabel";
-            gioDatLabel.Size = new System.Drawing.Size(84, 27);
-            gioDatLabel.TabIndex = 27;
-            gioDatLabel.Text = "Giờ đặt";
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label2.Location = new System.Drawing.Point(16, 134);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(99, 27);
+            label2.TabIndex = 29;
+            label2.Text = "Ngày tạo";
             // 
-            // se_GioDat
+            // de_NgayTao
             // 
-            this.se_GioDat.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsPDT, "gioDat", true));
-            this.se_GioDat.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.se_GioDat.Location = new System.Drawing.Point(254, 184);
-            this.se_GioDat.MenuManager = this.barManager1;
-            this.se_GioDat.Name = "se_GioDat";
-            this.se_GioDat.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.se_GioDat.Properties.Appearance.Options.UseFont = true;
-            this.se_GioDat.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.de_NgayTao.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsPDT, "ngayDat", true));
+            this.de_NgayTao.EditValue = null;
+            this.de_NgayTao.Enabled = false;
+            this.de_NgayTao.Location = new System.Drawing.Point(254, 129);
+            this.de_NgayTao.MenuManager = this.barManager1;
+            this.de_NgayTao.Name = "de_NgayTao";
+            this.de_NgayTao.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.de_NgayTao.Properties.Appearance.Options.UseFont = true;
+            this.de_NgayTao.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.se_GioDat.Size = new System.Drawing.Size(377, 32);
-            this.se_GioDat.TabIndex = 28;
+            this.de_NgayTao.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.de_NgayTao.Size = new System.Drawing.Size(377, 32);
+            this.de_NgayTao.TabIndex = 30;
             // 
             // frmDatBanTruoc
             // 
@@ -748,14 +782,16 @@ namespace NTH_Restaurant_Manager
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.panelControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.se_GioDat.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsPDT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.de_NgayDat.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.de_NgayDat.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsPDT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_HoTenKH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCTDBT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsdCTDBT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTDBT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.se_GioDat.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_NgayTao.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.de_NgayTao.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -818,5 +854,6 @@ namespace NTH_Restaurant_Manager
         public DevExpress.XtraEditors.TextEdit txt_HoTenKH;
         private DevExpress.XtraBars.BarButtonItem btn_Load;
         private DevExpress.XtraEditors.SpinEdit se_GioDat;
+        private DevExpress.XtraEditors.DateEdit de_NgayTao;
     }
 }
