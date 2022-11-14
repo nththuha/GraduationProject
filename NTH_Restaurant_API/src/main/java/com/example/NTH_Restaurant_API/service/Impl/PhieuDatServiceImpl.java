@@ -55,10 +55,10 @@ public class PhieuDatServiceImpl implements PhieuDatService {
         List<PhieuDatDTO> list = new ArrayList<>();
 
         for (int i = 0; i < ds.size(); i++) {
+            list.add(new PhieuDatDTO(ds.get(i)));
             CT_DatBanEntity ct_datBanEntity = ct_datBanRepository.findByIdpd_IdPD(ds.get(i).getIdPD());
             if (ct_datBanEntity != null) {
                 CT_BanEntity ct_banEntity = ct_banRepository.getById(ct_datBanEntity.getIdctb().getIdCTB());
-                list.add(new PhieuDatDTO(ds.get(i)));
                 list.get(i).setMaPhong(ct_banEntity.getMaphong().getMaPhong());
                 list.get(i).setTenPhong(ct_banEntity.getMaphong().getTenPhong());
                 list.get(i).setMaBan(ct_banEntity.getMaban().getMaBan());
@@ -145,7 +145,7 @@ public class PhieuDatServiceImpl implements PhieuDatService {
                 ds.remove(ds.get(i));
                 i--;
             }
-            else if(ds.get(i).getIdpdt() != null){
+            else if(ds.get(i).getIdpdt() == null){
                 ds.remove(ds.get(i));
                 i--;
             }
