@@ -20,5 +20,5 @@ public interface HoaDonRepository extends JpaRepository<HoaDonEntity, String> {
             "where ngay >= :ngayBD and ngay <= :ngayKT\n" +
             "group by nam, thang \n" +
             "order by thang, nam desc", nativeQuery = true)
-    public List<TempDTO> layThongKeDoanhThu(@Param("ngayBD") Date ngayBD, @Param("ngayKT") Date ngayKT);
+    List<TempDTO> layThongKeDoanhThu(@Param("ngayBD") Date ngayBD, @Param("ngayKT") Date ngayKT);
 }

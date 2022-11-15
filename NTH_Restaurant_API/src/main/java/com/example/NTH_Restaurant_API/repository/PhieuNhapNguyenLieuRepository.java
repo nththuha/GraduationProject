@@ -23,5 +23,5 @@ public interface PhieuNhapNguyenLieuRepository extends JpaRepository<PhieuNhapNg
             "where t.idpn = ct.idpn\n" +
             "group by nam, thang\n" +
             "order by thang, nam desc", nativeQuery = true)
-    public List<TempDTO> layThongKeTienMuaNguyenLieu(@Param("ngayBD") Date ngayBD, @Param("ngayKT") Date ngayKT);
+    List<TempDTO> layThongKeTienMuaNguyenLieu(@Param("ngayBD") Date ngayBD, @Param("ngayKT") Date ngayKT);
 }
