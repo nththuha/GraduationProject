@@ -30,7 +30,6 @@ namespace NTH_Restaurant_Manager
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMonAn));
             System.Windows.Forms.Label tenlmaLabel;
             System.Windows.Forms.Label giaLabel;
             System.Windows.Forms.Label hinhAnhLabel;
@@ -38,6 +37,7 @@ namespace NTH_Restaurant_Manager
             System.Windows.Forms.Label chuThichLabel;
             System.Windows.Forms.Label tenMALabel;
             System.Windows.Forms.Label maMALabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMonAn));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btn_Them = new DevExpress.XtraBars.BarButtonItem();
@@ -62,7 +62,6 @@ namespace NTH_Restaurant_Manager
             this.colgia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltenlma = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.pb_HinhAnh = new System.Windows.Forms.PictureBox();
             this.cbb_TenLMA = new System.Windows.Forms.ComboBox();
             this.cbb_TrangThai = new System.Windows.Forms.ComboBox();
@@ -72,6 +71,7 @@ namespace NTH_Restaurant_Manager
             this.txt_TenMA = new DevExpress.XtraEditors.TextEdit();
             this.txt_MaMA = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             tenlmaLabel = new System.Windows.Forms.Label();
             giaLabel = new System.Windows.Forms.Label();
             hinhAnhLabel = new System.Windows.Forms.Label();
@@ -85,15 +85,85 @@ namespace NTH_Restaurant_Manager
             ((System.ComponentModel.ISupportInitialize)(this.gvMA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_HinhAnh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.se_Gia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_HinhAnh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ChuThich.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenMA.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_MaMA.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tenlmaLabel
+            // 
+            tenlmaLabel.AutoSize = true;
+            tenlmaLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tenlmaLabel.Location = new System.Drawing.Point(810, 547);
+            tenlmaLabel.Name = "tenlmaLabel";
+            tenlmaLabel.Size = new System.Drawing.Size(167, 27);
+            tenlmaLabel.TabIndex = 33;
+            tenlmaLabel.Text = "Tên loại món ăn";
+            // 
+            // giaLabel
+            // 
+            giaLabel.AutoSize = true;
+            giaLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            giaLabel.Location = new System.Drawing.Point(811, 502);
+            giaLabel.Name = "giaLabel";
+            giaLabel.Size = new System.Drawing.Size(46, 27);
+            giaLabel.TabIndex = 31;
+            giaLabel.Text = "Giá";
+            // 
+            // hinhAnhLabel
+            // 
+            hinhAnhLabel.AutoSize = true;
+            hinhAnhLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            hinhAnhLabel.Location = new System.Drawing.Point(811, 454);
+            hinhAnhLabel.Name = "hinhAnhLabel";
+            hinhAnhLabel.Size = new System.Drawing.Size(100, 27);
+            hinhAnhLabel.TabIndex = 30;
+            hinhAnhLabel.Text = "Hình ảnh";
+            // 
+            // trangThaiLabel
+            // 
+            trangThaiLabel.AutoSize = true;
+            trangThaiLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            trangThaiLabel.Location = new System.Drawing.Point(21, 607);
+            trangThaiLabel.Name = "trangThaiLabel";
+            trangThaiLabel.Size = new System.Drawing.Size(109, 27);
+            trangThaiLabel.TabIndex = 28;
+            trangThaiLabel.Text = "Trạng thái";
+            // 
+            // chuThichLabel
+            // 
+            chuThichLabel.AutoSize = true;
+            chuThichLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chuThichLabel.Location = new System.Drawing.Point(21, 555);
+            chuThichLabel.Name = "chuThichLabel";
+            chuThichLabel.Size = new System.Drawing.Size(106, 27);
+            chuThichLabel.TabIndex = 26;
+            chuThichLabel.Text = "Chú thích";
+            // 
+            // tenMALabel
+            // 
+            tenMALabel.AutoSize = true;
+            tenMALabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tenMALabel.Location = new System.Drawing.Point(21, 504);
+            tenMALabel.Name = "tenMALabel";
+            tenMALabel.Size = new System.Drawing.Size(126, 27);
+            tenMALabel.TabIndex = 24;
+            tenMALabel.Text = "Tên món ăn";
+            // 
+            // maMALabel
+            // 
+            maMALabel.AutoSize = true;
+            maMALabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            maMALabel.Location = new System.Drawing.Point(21, 455);
+            maMALabel.Name = "maMALabel";
+            maMALabel.Size = new System.Drawing.Size(121, 27);
+            maMALabel.TabIndex = 22;
+            maMALabel.Text = "Mã món ăn";
             // 
             // barManager1
             // 
@@ -314,6 +384,8 @@ namespace NTH_Restaurant_Manager
             // colgia
             // 
             this.colgia.Caption = "GIÁ";
+            this.colgia.DisplayFormat.FormatString = "{0:0,0}";
+            this.colgia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colgia.FieldName = "gia";
             this.colgia.MinWidth = 25;
             this.colgia.Name = "colgia";
@@ -356,15 +428,6 @@ namespace NTH_Restaurant_Manager
             this.panelControl2.Size = new System.Drawing.Size(1924, 810);
             this.panelControl2.TabIndex = 10;
             // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.gcMA);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 30);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1924, 380);
-            this.panelControl1.TabIndex = 15;
-            // 
             // pb_HinhAnh
             // 
             this.pb_HinhAnh.Location = new System.Drawing.Point(1581, 412);
@@ -399,26 +462,6 @@ namespace NTH_Restaurant_Manager
             this.cbb_TrangThai.Size = new System.Drawing.Size(478, 34);
             this.cbb_TrangThai.TabIndex = 35;
             // 
-            // tenlmaLabel
-            // 
-            tenlmaLabel.AutoSize = true;
-            tenlmaLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tenlmaLabel.Location = new System.Drawing.Point(810, 547);
-            tenlmaLabel.Name = "tenlmaLabel";
-            tenlmaLabel.Size = new System.Drawing.Size(167, 27);
-            tenlmaLabel.TabIndex = 33;
-            tenlmaLabel.Text = "Tên loại món ăn";
-            // 
-            // giaLabel
-            // 
-            giaLabel.AutoSize = true;
-            giaLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            giaLabel.Location = new System.Drawing.Point(811, 502);
-            giaLabel.Name = "giaLabel";
-            giaLabel.Size = new System.Drawing.Size(46, 27);
-            giaLabel.TabIndex = 31;
-            giaLabel.Text = "Giá";
-            // 
             // se_Gia
             // 
             this.se_Gia.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMA, "gia", true));
@@ -437,16 +480,6 @@ namespace NTH_Restaurant_Manager
             this.se_Gia.Size = new System.Drawing.Size(478, 32);
             this.se_Gia.TabIndex = 34;
             // 
-            // hinhAnhLabel
-            // 
-            hinhAnhLabel.AutoSize = true;
-            hinhAnhLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            hinhAnhLabel.Location = new System.Drawing.Point(811, 454);
-            hinhAnhLabel.Name = "hinhAnhLabel";
-            hinhAnhLabel.Size = new System.Drawing.Size(100, 27);
-            hinhAnhLabel.TabIndex = 30;
-            hinhAnhLabel.Text = "Hình ảnh";
-            // 
             // txt_HinhAnh
             // 
             this.txt_HinhAnh.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMA, "hinhAnh", true));
@@ -457,26 +490,6 @@ namespace NTH_Restaurant_Manager
             this.txt_HinhAnh.Properties.Appearance.Options.UseFont = true;
             this.txt_HinhAnh.Size = new System.Drawing.Size(478, 32);
             this.txt_HinhAnh.TabIndex = 32;
-            // 
-            // trangThaiLabel
-            // 
-            trangThaiLabel.AutoSize = true;
-            trangThaiLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            trangThaiLabel.Location = new System.Drawing.Point(21, 607);
-            trangThaiLabel.Name = "trangThaiLabel";
-            trangThaiLabel.Size = new System.Drawing.Size(109, 27);
-            trangThaiLabel.TabIndex = 28;
-            trangThaiLabel.Text = "Trạng thái";
-            // 
-            // chuThichLabel
-            // 
-            chuThichLabel.AutoSize = true;
-            chuThichLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chuThichLabel.Location = new System.Drawing.Point(21, 555);
-            chuThichLabel.Name = "chuThichLabel";
-            chuThichLabel.Size = new System.Drawing.Size(106, 27);
-            chuThichLabel.TabIndex = 26;
-            chuThichLabel.Text = "Chú thích";
             // 
             // txt_ChuThich
             // 
@@ -489,16 +502,6 @@ namespace NTH_Restaurant_Manager
             this.txt_ChuThich.Size = new System.Drawing.Size(478, 32);
             this.txt_ChuThich.TabIndex = 29;
             // 
-            // tenMALabel
-            // 
-            tenMALabel.AutoSize = true;
-            tenMALabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tenMALabel.Location = new System.Drawing.Point(21, 504);
-            tenMALabel.Name = "tenMALabel";
-            tenMALabel.Size = new System.Drawing.Size(126, 27);
-            tenMALabel.TabIndex = 24;
-            tenMALabel.Text = "Tên món ăn";
-            // 
             // txt_TenMA
             // 
             this.txt_TenMA.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMA, "tenMA", true));
@@ -509,16 +512,6 @@ namespace NTH_Restaurant_Manager
             this.txt_TenMA.Properties.Appearance.Options.UseFont = true;
             this.txt_TenMA.Size = new System.Drawing.Size(478, 32);
             this.txt_TenMA.TabIndex = 27;
-            // 
-            // maMALabel
-            // 
-            maMALabel.AutoSize = true;
-            maMALabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            maMALabel.Location = new System.Drawing.Point(21, 455);
-            maMALabel.Name = "maMALabel";
-            maMALabel.Size = new System.Drawing.Size(121, 27);
-            maMALabel.TabIndex = 22;
-            maMALabel.Text = "Mã món ăn";
             // 
             // txt_MaMA
             // 
@@ -541,6 +534,15 @@ namespace NTH_Restaurant_Manager
             this.label1.TabIndex = 23;
             this.label1.Text = "QUẢN LÝ MÓN ĂN";
             // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.gcMA);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 30);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1924, 380);
+            this.panelControl1.TabIndex = 15;
+            // 
             // frmMonAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -562,14 +564,14 @@ namespace NTH_Restaurant_Manager
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_HinhAnh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.se_Gia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_HinhAnh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ChuThich.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenMA.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_MaMA.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

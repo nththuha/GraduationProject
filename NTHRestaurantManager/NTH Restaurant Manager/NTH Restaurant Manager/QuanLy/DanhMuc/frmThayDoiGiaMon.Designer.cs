@@ -306,6 +306,8 @@ namespace NTH_Restaurant_Manager
             // colgia
             // 
             this.colgia.Caption = "GIÁ";
+            this.colgia.DisplayFormat.FormatString = "{0:0,0}";
+            this.colgia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colgia.FieldName = "gia";
             this.colgia.MinWidth = 25;
             this.colgia.Name = "colgia";
@@ -340,6 +342,8 @@ namespace NTH_Restaurant_Manager
             // colgia1
             // 
             this.colgia1.Caption = "GIÁ";
+            this.colgia1.DisplayFormat.FormatString = "{0:0,0}";
+            this.colgia1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colgia1.FieldName = "gia";
             this.colgia1.MinWidth = 25;
             this.colgia1.Name = "colgia1";

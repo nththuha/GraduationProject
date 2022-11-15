@@ -283,6 +283,8 @@ namespace NTH_Restaurant_Manager
             // colslTon
             // 
             this.colslTon.Caption = "SỐ LƯỢNG TỒN";
+            this.colslTon.DisplayFormat.FormatString = "{0:0,0}";
+            this.colslTon.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colslTon.FieldName = "slTon";
             this.colslTon.MinWidth = 25;
             this.colslTon.Name = "colslTon";
@@ -419,6 +421,8 @@ namespace NTH_Restaurant_Manager
             // colsoLuong
             // 
             this.colsoLuong.Caption = "SỐ LƯỢNG";
+            this.colsoLuong.DisplayFormat.FormatString = "{0:0,0}";
+            this.colsoLuong.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colsoLuong.FieldName = "soLuong";
             this.colsoLuong.MinWidth = 25;
             this.colsoLuong.Name = "colsoLuong";

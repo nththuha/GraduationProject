@@ -304,6 +304,8 @@ namespace NTH_Restaurant_Manager
             // colgia
             // 
             this.colgia.Caption = "GIÁ";
+            this.colgia.DisplayFormat.FormatString = "{0:0,0}";
+            this.colgia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colgia.FieldName = "gia";
             this.colgia.MinWidth = 25;
             this.colgia.Name = "colgia";
@@ -314,6 +316,8 @@ namespace NTH_Restaurant_Manager
             // colgiaSauThue
             // 
             this.colgiaSauThue.Caption = "GIÁ SAU THUẾ";
+            this.colgiaSauThue.DisplayFormat.FormatString = "{0:0,0}";
+            this.colgiaSauThue.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colgiaSauThue.FieldName = "giaSauThue";
             this.colgiaSauThue.MinWidth = 25;
             this.colgiaSauThue.Name = "colgiaSauThue";
@@ -375,10 +379,12 @@ namespace NTH_Restaurant_Manager
             // gridColumn1
             // 
             this.gridColumn1.Caption = "THUẾ 10%";
+            this.gridColumn1.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn1.FieldName = "gridColumn1";
             this.gridColumn1.MinWidth = 25;
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.UnboundExpression = "[gia] * 1.1";
+            this.gridColumn1.UnboundExpression = "[gia] * 0.1";
             this.gridColumn1.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 6;
@@ -478,6 +484,8 @@ namespace NTH_Restaurant_Manager
             // coltriGia
             // 
             this.coltriGia.Caption = "TIỀN CỌC";
+            this.coltriGia.DisplayFormat.FormatString = "{0:0,0}";
+            this.coltriGia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.coltriGia.FieldName = "triGia";
             this.coltriGia.MinWidth = 25;
             this.coltriGia.Name = "coltriGia";

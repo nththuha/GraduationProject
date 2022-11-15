@@ -54,6 +54,7 @@ namespace NTH_Restaurant_Manager
             txt_TenNL.Text = gvNL.GetRowCellValue(num, "tenNL").ToString();
             txt_DonVi.Text = gvNL.GetRowCellValue(num, "donVi").ToString();
             se_SLTon.Text = gvNL.GetRowCellValue(num, "slTon").ToString();
+            se_SLToiThieu.Text = gvNL.GetRowCellValue(num, "slToiThieu").ToString();
             slTon = int.Parse(gvNL.GetRowCellValue(num, "slTon").ToString());
         }
 

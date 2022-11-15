@@ -30,14 +30,16 @@ namespace NTH_Restaurant_Manager
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThucDon));
             System.Windows.Forms.Label tenTDLabel;
             System.Windows.Forms.Label loaitdLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThucDon));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btn_ThemTD = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Luu = new DevExpress.XtraBars.BarButtonItem();
             this.btn_XoaTD = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Luu = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_ThemCTTD = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_XoaCTTD = new DevExpress.XtraBars.BarButtonItem();
             this.btn_PhucHoi = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Reload = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Thoat = new DevExpress.XtraBars.BarButtonItem();
@@ -69,6 +71,8 @@ namespace NTH_Restaurant_Manager
             this.colloaitd = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.cbb_LoaiTD = new System.Windows.Forms.ComboBox();
+            this.txt_TenTD = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.gcCTTD = new DevExpress.XtraGrid.GridControl();
             this.bdsCTTD = new System.Windows.Forms.BindingSource(this.components);
@@ -79,10 +83,6 @@ namespace NTH_Restaurant_Manager
             this.coltenma = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colgia1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colidtd1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btn_ThemCTTD = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_XoaCTTD = new DevExpress.XtraBars.BarButtonItem();
-            this.txt_TenTD = new DevExpress.XtraEditors.TextEdit();
-            this.cbb_LoaiTD = new System.Windows.Forms.ComboBox();
             tenTDLabel = new System.Windows.Forms.Label();
             loaitdLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -98,11 +98,31 @@ namespace NTH_Restaurant_Manager
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TenTD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCTTD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCTTD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTTD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_TenTD.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tenTDLabel
+            // 
+            tenTDLabel.AutoSize = true;
+            tenTDLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tenTDLabel.Location = new System.Drawing.Point(29, 73);
+            tenTDLabel.Name = "tenTDLabel";
+            tenTDLabel.Size = new System.Drawing.Size(141, 27);
+            tenTDLabel.TabIndex = 14;
+            tenTDLabel.Text = "Tên thực đơn";
+            // 
+            // loaitdLabel
+            // 
+            loaitdLabel.AutoSize = true;
+            loaitdLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            loaitdLabel.Location = new System.Drawing.Point(29, 129);
+            loaitdLabel.Name = "loaitdLabel";
+            loaitdLabel.Size = new System.Drawing.Size(148, 27);
+            loaitdLabel.TabIndex = 15;
+            loaitdLabel.Text = "Loại thực đơn";
             // 
             // barManager1
             // 
@@ -149,10 +169,19 @@ namespace NTH_Restaurant_Manager
             // 
             this.btn_ThemTD.Caption = "Thêm thực đơn";
             this.btn_ThemTD.Id = 0;
-            this.btn_ThemTD.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Them.ImageOptions.SvgImage")));
+            this.btn_ThemTD.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_ThemTD.ImageOptions.SvgImage")));
             this.btn_ThemTD.Name = "btn_ThemTD";
             this.btn_ThemTD.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btn_ThemTD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ThemTD_ItemClick);
+            // 
+            // btn_XoaTD
+            // 
+            this.btn_XoaTD.Caption = "Xóa thực đơn";
+            this.btn_XoaTD.Id = 3;
+            this.btn_XoaTD.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_XoaTD.ImageOptions.SvgImage")));
+            this.btn_XoaTD.Name = "btn_XoaTD";
+            this.btn_XoaTD.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_XoaTD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_XoaTD_ItemClick);
             // 
             // btn_Luu
             // 
@@ -164,14 +193,23 @@ namespace NTH_Restaurant_Manager
             this.btn_Luu.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btn_Luu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Luu_ItemClick);
             // 
-            // btn_XoaTD
+            // btn_ThemCTTD
             // 
-            this.btn_XoaTD.Caption = "Xóa thực đơn";
-            this.btn_XoaTD.Id = 3;
-            this.btn_XoaTD.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Xoa.ImageOptions.SvgImage")));
-            this.btn_XoaTD.Name = "btn_XoaTD";
-            this.btn_XoaTD.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btn_XoaTD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_XoaTD_ItemClick);
+            this.btn_ThemCTTD.Caption = "Thêm CT thực đơn";
+            this.btn_ThemCTTD.Id = 7;
+            this.btn_ThemCTTD.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_ThemCTTD.ImageOptions.SvgImage")));
+            this.btn_ThemCTTD.Name = "btn_ThemCTTD";
+            this.btn_ThemCTTD.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_ThemCTTD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ThemCTTD_ItemClick);
+            // 
+            // btn_XoaCTTD
+            // 
+            this.btn_XoaCTTD.Caption = "Xóa CT thực đơn";
+            this.btn_XoaCTTD.Id = 8;
+            this.btn_XoaCTTD.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_XoaCTTD.ImageOptions.SvgImage")));
+            this.btn_XoaCTTD.Name = "btn_XoaCTTD";
+            this.btn_XoaCTTD.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_XoaCTTD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_XoaCTTD_ItemClick);
             // 
             // btn_PhucHoi
             // 
@@ -328,6 +366,8 @@ namespace NTH_Restaurant_Manager
             // colgia2
             // 
             this.colgia2.Caption = "GIÁ";
+            this.colgia2.DisplayFormat.FormatString = "{0:0,0}";
+            this.colgia2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colgia2.FieldName = "gia";
             this.colgia2.MinWidth = 25;
             this.colgia2.Name = "colgia2";
@@ -457,6 +497,31 @@ namespace NTH_Restaurant_Manager
             this.panelControl3.Size = new System.Drawing.Size(756, 403);
             this.panelControl3.TabIndex = 1;
             // 
+            // cbb_LoaiTD
+            // 
+            this.cbb_LoaiTD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsTD, "loaitd", true));
+            this.cbb_LoaiTD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_LoaiTD.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_LoaiTD.FormattingEnabled = true;
+            this.cbb_LoaiTD.Items.AddRange(new object[] {
+            "Nhà hàng",
+            "Khách"});
+            this.cbb_LoaiTD.Location = new System.Drawing.Point(209, 126);
+            this.cbb_LoaiTD.Name = "cbb_LoaiTD";
+            this.cbb_LoaiTD.Size = new System.Drawing.Size(407, 34);
+            this.cbb_LoaiTD.TabIndex = 16;
+            // 
+            // txt_TenTD
+            // 
+            this.txt_TenTD.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsTD, "tenTD", true));
+            this.txt_TenTD.Location = new System.Drawing.Point(209, 70);
+            this.txt_TenTD.MenuManager = this.barManager1;
+            this.txt_TenTD.Name = "txt_TenTD";
+            this.txt_TenTD.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TenTD.Properties.Appearance.Options.UseFont = true;
+            this.txt_TenTD.Size = new System.Drawing.Size(407, 32);
+            this.txt_TenTD.TabIndex = 15;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -535,6 +600,8 @@ namespace NTH_Restaurant_Manager
             // colgia1
             // 
             this.colgia1.Caption = "GIÁ";
+            this.colgia1.DisplayFormat.FormatString = "{0:0,0}";
+            this.colgia1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colgia1.FieldName = "gia";
             this.colgia1.MinWidth = 25;
             this.colgia1.Name = "colgia1";
@@ -548,69 +615,6 @@ namespace NTH_Restaurant_Manager
             this.colidtd1.MinWidth = 25;
             this.colidtd1.Name = "colidtd1";
             this.colidtd1.Width = 94;
-            // 
-            // btn_ThemCTTD
-            // 
-            this.btn_ThemCTTD.Caption = "Thêm CT thực đơn";
-            this.btn_ThemCTTD.Id = 7;
-            this.btn_ThemCTTD.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_ThemCTTD.ImageOptions.SvgImage")));
-            this.btn_ThemCTTD.Name = "btn_ThemCTTD";
-            this.btn_ThemCTTD.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btn_ThemCTTD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ThemCTTD_ItemClick);
-            // 
-            // btn_XoaCTTD
-            // 
-            this.btn_XoaCTTD.Caption = "Xóa CT thực đơn";
-            this.btn_XoaCTTD.Id = 8;
-            this.btn_XoaCTTD.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
-            this.btn_XoaCTTD.Name = "btn_XoaCTTD";
-            this.btn_XoaCTTD.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btn_XoaCTTD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_XoaCTTD_ItemClick);
-            // 
-            // tenTDLabel
-            // 
-            tenTDLabel.AutoSize = true;
-            tenTDLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tenTDLabel.Location = new System.Drawing.Point(29, 73);
-            tenTDLabel.Name = "tenTDLabel";
-            tenTDLabel.Size = new System.Drawing.Size(141, 27);
-            tenTDLabel.TabIndex = 14;
-            tenTDLabel.Text = "Tên thực đơn";
-            // 
-            // txt_TenTD
-            // 
-            this.txt_TenTD.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsTD, "tenTD", true));
-            this.txt_TenTD.Location = new System.Drawing.Point(209, 70);
-            this.txt_TenTD.MenuManager = this.barManager1;
-            this.txt_TenTD.Name = "txt_TenTD";
-            this.txt_TenTD.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TenTD.Properties.Appearance.Options.UseFont = true;
-            this.txt_TenTD.Size = new System.Drawing.Size(407, 32);
-            this.txt_TenTD.TabIndex = 15;
-            // 
-            // loaitdLabel
-            // 
-            loaitdLabel.AutoSize = true;
-            loaitdLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            loaitdLabel.Location = new System.Drawing.Point(29, 129);
-            loaitdLabel.Name = "loaitdLabel";
-            loaitdLabel.Size = new System.Drawing.Size(148, 27);
-            loaitdLabel.TabIndex = 15;
-            loaitdLabel.Text = "Loại thực đơn";
-            // 
-            // cbb_LoaiTD
-            // 
-            this.cbb_LoaiTD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsTD, "loaitd", true));
-            this.cbb_LoaiTD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_LoaiTD.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_LoaiTD.FormattingEnabled = true;
-            this.cbb_LoaiTD.Items.AddRange(new object[] {
-            "Nhà hàng",
-            "Khách"});
-            this.cbb_LoaiTD.Location = new System.Drawing.Point(209, 126);
-            this.cbb_LoaiTD.Name = "cbb_LoaiTD";
-            this.cbb_LoaiTD.Size = new System.Drawing.Size(407, 34);
-            this.cbb_LoaiTD.TabIndex = 16;
             // 
             // frmThucDon
             // 
@@ -639,10 +643,10 @@ namespace NTH_Restaurant_Manager
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TenTD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcCTTD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCTTD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCTTD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_TenTD.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
