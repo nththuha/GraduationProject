@@ -494,6 +494,12 @@
     <Compile Include="QuanLy\HeThong\rpHoaDonPDT.Designer.cs">
       <DependentUpon>rpHoaDonPDT.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLy\ThongKe\rpThongKeLoiNhuanTheoThang.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QuanLy\ThongKe\rpThongKeLoiNhuanTheoThang.Designer.cs">
+      <DependentUpon>rpThongKeLoiNhuanTheoThang.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="QuanLy\HeThong\mesKhacHang_HD_PDT.resx">
       <DependentUpon>mesKhacHang_HD_PDT.cs</DependentUpon>
     </EmbeddedResource>
@@ -606,6 +612,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\HeThong\rpHoaDonPDT.resx">
       <DependentUpon>rpHoaDonPDT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy\ThongKe\rpThongKeLoiNhuanTheoThang.resx">
+      <DependentUpon>rpThongKeLoiNhuanTheoThang.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
