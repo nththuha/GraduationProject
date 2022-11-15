@@ -3,6 +3,7 @@ package com.example.NTH_Restaurant_API.service.Impl;
 import com.example.NTH_Restaurant_API.dto.TempDTO;
 import com.example.NTH_Restaurant_API.dto.ThongKeDTO;
 import com.example.NTH_Restaurant_API.repository.HoaDonRepository;
+import com.example.NTH_Restaurant_API.repository.PhieuNhapNguyenLieuRepository;
 import com.example.NTH_Restaurant_API.service.ThongKeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,9 @@ import java.util.List;
 public class ThongKeServiceImpl implements ThongKeService {
     @Autowired
     private HoaDonRepository hoaDonRepository;
+
+    @Autowired
+    private PhieuNhapNguyenLieuRepository phieuNhapNguyenLieuRepository;
 
     @Override
     public List<ThongKeDTO> thongKeDoanhThuTheoThang(ThongKeDTO ngayDTO) {
@@ -35,7 +39,7 @@ public class ThongKeServiceImpl implements ThongKeService {
             cal.add(Calendar.MONTH, 1);
         }
 
-        List<TempDTO> listTemp = hoaDonRepository.layThongKe(ngayDTO.getNgayBD(), ngayDTO.getNgayKT());
+        List<TempDTO> listTemp = hoaDonRepository.layThongKeDoanhThu(ngayDTO.getNgayBD(), ngayDTO.getNgayKT());
         List<ThongKeDTO> listT = new ArrayList<>();
         for (TempDTO temp : listTemp) {
             ThongKeDTO thongKeDTO = new ThongKeDTO();
@@ -73,6 +77,24 @@ public class ThongKeServiceImpl implements ThongKeService {
             cal.add(Calendar.MONTH, 1);
         }
 
-        return null;
+        //lấy tổng thu nhập
+        List<TempDTO> listDoanhThu = hoaDonRepository.layThongKeDoanhThu(thongKeDTO.getNgayBD(), thongKeDTO.getNgayKT());
+        //lấy tổng tiền chi để mua nguyên liệu
+        List<TempDTO> listMuaNL = phieuNhapNguyenLieuRepository.layThongKeTienMuaNguyenLieu(thongKeDTO.getNgayBD(), thongKeDTO.getNgayKT());
+
+        for(ThongKeDTO i: list){
+            for(TempDTO doanhThu: listDoanhThu){
+                if(doanhThu.getThang().equals(i.getThang()) && doanhThu.getNam().equals(i.getNam())){
+                    i.setDoanhThu(doanhThu.getDoanhthu());
+                }
+            }
+            for(TempDTO muaNL: listMuaNL){
+                if(muaNL.getThang().equals(i.getThang()) && muaNL.getNam().equals(i.getNam())){
+                    i.setDoanhThu(i.getDoanhThu() - muaNL.getDoanhthu());
+                }
+            }
+        }
+
+        return list;
     }
 }
