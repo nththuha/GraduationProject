@@ -19,7 +19,7 @@ public interface PhieuNhapNguyenLieuRepository extends JpaRepository<PhieuNhapNg
     @Query(value = "select to_char(ngay, 'yyyy') as nam, to_char(ngay, 'MM') as thang, sum(ct.gia) as doanhthu\n" +
             "from(select p.idpn , p.ngay \n" +
             "\t\tfrom phieunhapnguyenlieu as p\n" +
-            "\t\twhere p.ngay >= '2022-01-01' and ngay <= '2022-11-15') as t, ctpn_nguyenlieu as ct\n" +
+            "\t\twhere p.ngay >= :ngayBD and ngay <= :ngayKT) as t, ctpn_nguyenlieu as ct\n" +
             "where t.idpn = ct.idpn\n" +
             "group by nam, thang\n" +
             "order by thang, nam desc", nativeQuery = true)

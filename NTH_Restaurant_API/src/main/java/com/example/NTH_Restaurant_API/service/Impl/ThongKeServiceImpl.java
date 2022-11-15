@@ -82,18 +82,18 @@ public class ThongKeServiceImpl implements ThongKeService {
         //lấy tổng tiền chi để mua nguyên liệu
         List<TempDTO> listMuaNL = phieuNhapNguyenLieuRepository.layThongKeTienMuaNguyenLieu(thongKeDTO.getNgayBD(), thongKeDTO.getNgayKT());
 
-//        for(ThongKeDTO i: list){
-//            for(TempDTO doanhThu: listDoanhThu){
-//                if(doanhThu.getThang().equals(i.getThang()) && doanhThu.getNam().equals(i.getNam())){
-//                    i.setDoanhThu(doanhThu.getDoanhthu());
-//                }
-//            }
-//            for(TempDTO muaNL: listMuaNL){
-//                if(muaNL.getThang().equals(i.getThang()) && muaNL.getNam().equals(i.getNam())){
-//                    i.setDoanhThu(i.getDoanhThu() - muaNL.getDoanhthu());
-//                }
-//            }
-//        }
+        for(ThongKeDTO i: list){
+            for(TempDTO doanhThu: listDoanhThu){
+                if(doanhThu.getThang().equals(i.getThang()) && doanhThu.getNam().equals(i.getNam())){
+                    i.setDoanhThu(doanhThu.getDoanhthu());
+                }
+            }
+            for(TempDTO muaNL: listMuaNL){
+                if(muaNL.getThang().equals(i.getThang()) && muaNL.getNam().equals(i.getNam())){
+                    i.setDoanhThu(i.getDoanhThu() - muaNL.getDoanhthu());
+                }
+            }
+        }
 
         return list;
     }
