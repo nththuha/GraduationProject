@@ -19,14 +19,12 @@ public class PhieuMuaNguyenLieuDTO {
     private Date ngay;
     private Integer idnv;
     private String hoTenNV;
-    private List<CT_PhieuMuaDTO> listCTPM;
 
     public PhieuMuaNguyenLieuDTO(PhieuMuaNguyenLieuEntity phieuMuaNguyenLieuEntity){
         this.idPM = phieuMuaNguyenLieuEntity.getIdPM();
         this.ngay = phieuMuaNguyenLieuEntity.getNgay();
         this.idnv = phieuMuaNguyenLieuEntity.getIdnv().getIdNV();
         this.hoTenNV = phieuMuaNguyenLieuEntity.getIdnv().getHoTen();
-        this.listCTPM = phieuMuaNguyenLieuEntity.getCtPhieumuaList().stream().map(CT_PhieuMuaDTO::new).collect(Collectors.toList());
     }
 
     public PhieuMuaNguyenLieuEntity toEntity(){
