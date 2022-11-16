@@ -75,6 +75,7 @@ public class PhieuNhapNguyenLieuServiceImpl implements PhieuNhapNguyenLieuServic
     public PhieuNhapNguyenLieuDTO layThongTinPhieuNhap(Integer idPN) {
         if(!phieuNhapNguyenLieuRepository.existsByIdPN(idPN)) return null;
         PhieuNhapNguyenLieuEntity phieuNhap = phieuNhapNguyenLieuRepository.getById(idPN);
-        return new PhieuNhapNguyenLieuDTO(phieuNhap);
+        PhieuNhapNguyenLieuDTO pn = new PhieuNhapNguyenLieuDTO(phieuNhap);
+        return pn;
     }
 }
