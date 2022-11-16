@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface CT_PhieuMuaRepository extends JpaRepository<CT_PhieuMuaEntity, Integer> {
     List<CT_PhieuMuaEntity> findByIdpm_Ngay(Date ngay);
+
+    List<CT_PhieuMuaEntity> findByIdpm_IdPM(Integer idPM);
 }

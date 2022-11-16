@@ -4,4 +4,8 @@ import com.example.NTH_Restaurant_API.dto.PhieuNhapNguyenLieuDTO;
 
 public interface PhieuNhapNguyenLieuService {
     PhieuNhapNguyenLieuDTO themPhieuNhapNguyenLieu(PhieuNhapNguyenLieuDTO phieuNhapNguyenLieuDTO);
+
+    String chuyenPhieuMuaThanhPhieuNhap(Integer idPM);
+
+    PhieuNhapNguyenLieuDTO layThongTinPhieuNhap(Integer idPN);
 }

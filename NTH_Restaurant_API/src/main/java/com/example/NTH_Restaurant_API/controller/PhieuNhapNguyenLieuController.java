@@ -5,6 +5,7 @@ import com.example.NTH_Restaurant_API.service.PhieuNhapNguyenLieuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.GeneratedValue;
 import javax.validation.Valid;
 
 @RestController
@@ -17,5 +18,15 @@ public class PhieuNhapNguyenLieuController {
     @PostMapping("")
     public PhieuNhapNguyenLieuDTO themPhieuNhapNguyenLieu(@Valid @RequestBody PhieuNhapNguyenLieuDTO phieuNhapNguyenLieuDTO){
         return phieuNhapNguyenLieuService.themPhieuNhapNguyenLieu(phieuNhapNguyenLieuDTO);
+    }
+
+    @PostMapping("/{idPM}")
+    public String chuyenPhieuMuaThanhPhieuNhap(@PathVariable Integer idPM){
+        return phieuNhapNguyenLieuService.chuyenPhieuMuaThanhPhieuNhap(idPM);
+    }
+
+    @GetMapping("/{idPN}")
+    public PhieuNhapNguyenLieuDTO layThongTinPhieuNhap(@PathVariable Integer idPN){
+        return phieuNhapNguyenLieuService.layThongTinPhieuNhap(idPN);
     }
 }

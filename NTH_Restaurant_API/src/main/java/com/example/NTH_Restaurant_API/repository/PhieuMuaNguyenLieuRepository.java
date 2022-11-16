@@ -14,6 +14,8 @@ import java.util.List;
 public interface PhieuMuaNguyenLieuRepository extends JpaRepository<PhieuMuaNguyenLieuEntity, Integer> {
     Boolean existsByNgay(Date ngay);
 
+    Boolean existsByIdPM(Integer idPM);
+
     PhieuMuaNguyenLieuEntity findByNgay(Date ngay);
 
     @Transactional
