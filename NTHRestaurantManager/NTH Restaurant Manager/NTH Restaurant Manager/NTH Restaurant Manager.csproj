@@ -445,6 +445,7 @@
     <Compile Include="Repository\CTDatMonRepository.cs" />
     <Compile Include="Repository\CTDatMonTruocRepository.cs" />
     <Compile Include="Repository\CTMonAnRepository.cs" />
+    <Compile Include="Repository\CTPhieuMuaRepository.cs" />
     <Compile Include="Repository\CTPhieuNhapRepository.cs" />
     <Compile Include="Repository\CTThucDonRepository.cs" />
     <Compile Include="Repository\HoaDonRepository.cs" />

@@ -15,8 +15,12 @@ namespace NTH_Restaurant_Manager
 {
     public partial class frmPhieuMua : Form
     {
-        PhieuMuaNguyenLieuRepository _repository = new PhieuMuaNguyenLieuRepository();
+        PhieuMuaNguyenLieuRepository _repositoryPM = new PhieuMuaNguyenLieuRepository();
+        CTPhieuMuaRepository _repositoryCTPM = new CTPhieuMuaRepository();
+
         PhieuMuaNguyenLieuModel pmnl;
+
+        int idPM;
 
         public frmPhieuMua()
         {
@@ -27,20 +31,48 @@ namespace NTH_Restaurant_Manager
             this.de_Ngay.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.de_Ngay.Properties.Mask.EditMask = "dd-MM-yyyy";
             de_Ngay.DateTime = DateTime.Now;
+
+            layDSPhieuMuaNguyenLieu();
         }
 
-        private void btn_XacNhan_Click(object sender, EventArgs e)
+        private async void layDSPhieuMuaNguyenLieu()
         {
-            pmnl = new PhieuMuaNguyenLieuModel();
-            String ngay = de_Ngay.DateTime.ToString("yyyy-MM-dd");
-            pmnl.ngay = ngay;
-            pmnl.idnv = Program.nhanVienDangDangNhap.idNV;
-            lapPhieuMuaNguyenLieuTheoNgay();
+            try
+            {
+                var listPM = await _repositoryPM.layDSPhieuMuaNguyenLieu();
+                for (int i = 0; i < listPM.Count; i++)
+                {
+                    listPM[i].ngay = listPM[i].ngay.Substring(8, 2) + "-" + listPM[i].ngay.Substring(5, 2) + "-" + listPM[i].ngay.Substring(0, 4);
+                }
+                gcPM.DataSource = listPM;
+                if(listPM.Count > 0)
+                {
+                    idPM = listPM[0].idPM;
+                    layDSCTPhieuMuaTheoPhieuMua();
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Lỗi lấy ds phiếu mua nguyên liệu: " + e.Message, "Thông báo");
+            }
+        }
+
+        private async void layDSCTPhieuMuaTheoPhieuMua()
+        {
+            try
+            {
+                var listCTPM = await _repositoryCTPM.layDSCTPhieuMuaTheoPhieuMua(idPM);
+                gcCTPM.DataSource = listCTPM;
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Lỗi lấy ds chi tiết phiếu mua nguyên liệu: " + e.Message, "Thông báo");
+            }
         }
 
         private async void lapPhieuMuaNguyenLieuTheoNgay()
         {
-            List<CTPhieuMuaModel> listCTPM = await _repository.layDSBanTheoPhongTheoNgay(pmnl);
+            List<CTPhieuMuaModel> listCTPM = await _repositoryPM.layDSNguyenLieuCanMua(pmnl);
             if (listCTPM == null)
             {
                 MessageBox.Show("Lập phiếu đi chợ thất bại!", "Thông báo");
@@ -69,6 +101,36 @@ namespace NTH_Restaurant_Manager
                 ReportPrintTool print = new ReportPrintTool(rp);
                 print.ShowPreviewDialog();
             }
+        }
+
+        private void btn_Them_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            pmnl = new PhieuMuaNguyenLieuModel();
+            String ngay = de_Ngay.DateTime.ToString("yyyy-MM-dd");
+            pmnl.ngay = ngay;
+            pmnl.idnv = Program.nhanVienDangDangNhap.idNV;
+            lapPhieuMuaNguyenLieuTheoNgay();
+        }
+
+        private void gvPM_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            idPM = int.Parse(gvPM.GetRowCellValue(e.RowHandle, "idPM").ToString());
+            layDSCTPhieuMuaTheoPhieuMua();
+        }
+
+        private void btn_Reload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            layDSPhieuMuaNguyenLieu();
+        }
+
+        private void btn_Thoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_Chuyen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }
