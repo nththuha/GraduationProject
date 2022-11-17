@@ -42,6 +42,18 @@ namespace NTH_Restaurant_Manager.Repository
             return check;
         }
 
+        public async Task<String> suaCTPhieuNhap(CTPhieuNhapModel ctPN)
+        {
+            var ctpn = JsonConvert.SerializeObject(ctPN);
+            var buffer = Encoding.UTF8.GetBytes(ctpn);
+            var byteContent = new ByteArrayContent(buffer);
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            _response = await _client.PutAsync("ctphieunhap", byteContent);
+            var json = await _response.Content.ReadAsStringAsync();
+            var check = JsonConvert.DeserializeObject<String>(json);
+            return check;
+        }
+
         public async Task<String> xoaCTPhieuNhap(int idCTPN)
         {
             _response = await _client.DeleteAsync("ctphieunhap/" + idCTPN);
