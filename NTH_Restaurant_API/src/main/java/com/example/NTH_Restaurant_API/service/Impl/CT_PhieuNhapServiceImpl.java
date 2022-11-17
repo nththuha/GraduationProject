@@ -9,6 +9,7 @@ import com.example.NTH_Restaurant_API.repository.NguyenLieuRepository;
 import com.example.NTH_Restaurant_API.repository.PhieuNhapNguyenLieuRepository;
 import com.example.NTH_Restaurant_API.service.CT_PhieuNhapService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -62,6 +63,24 @@ public class CT_PhieuNhapServiceImpl implements CT_PhieuNhapService {
             return "true";
         }
         catch (Exception e){
+            return "false";
+        }
+    }
+
+    @Override
+    public String suaCT_PhieuNhap(CT_PhieuNhapDTO ct_phieuNhapDTO) {
+        if(!ct_phieuNhapRepository.existsByIdCTPN(ct_phieuNhapDTO.getIdCTPN())) return "false";
+        CT_PhieuNhapEntity ct_phieuNhap = ct_phieuNhapDTO.toEntity();
+        PhieuNhapNguyenLieuEntity phieuNhap = phieuNhapNguyenLieuRepository.getById(ct_phieuNhapDTO.getIdpn());
+        NguyenLieuEntity nguyenLieu = nguyenLieuRepository.getById(ct_phieuNhapDTO.getManl());
+        ct_phieuNhap.setIdpn(phieuNhap);
+        ct_phieuNhap.setManl(nguyenLieu);
+
+        try {
+            ct_phieuNhapRepository.save(ct_phieuNhap);
+            return "true";
+        }
+        catch (Exception e) {
             return "false";
         }
     }

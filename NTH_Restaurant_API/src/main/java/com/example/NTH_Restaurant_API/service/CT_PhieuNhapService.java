@@ -10,4 +10,6 @@ public interface CT_PhieuNhapService {
     String themCt_PhieuNhap(CT_PhieuNhapDTO ct_phieuNhapDTO);
 
     String xoaCT_PhieuNhap(Integer idCTPN);
+
+    String suaCT_PhieuNhap(CT_PhieuNhapDTO ct_phieuNhapDTO);
 }

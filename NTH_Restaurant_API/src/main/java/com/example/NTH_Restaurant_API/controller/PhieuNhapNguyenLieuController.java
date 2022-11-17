@@ -1,5 +1,7 @@
 package com.example.NTH_Restaurant_API.controller;
 
+import com.example.NTH_Restaurant_API.dto.CT_PhieuMuaDTO;
+import com.example.NTH_Restaurant_API.dto.CT_PhieuNhapDTO;
 import com.example.NTH_Restaurant_API.dto.PhieuNhapNguyenLieuDTO;
 import com.example.NTH_Restaurant_API.service.PhieuNhapNguyenLieuService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +25,5 @@ public class PhieuNhapNguyenLieuController {
     @PostMapping("/{idPM}")
     public String chuyenPhieuMuaThanhPhieuNhap(@PathVariable Integer idPM){
         return phieuNhapNguyenLieuService.chuyenPhieuMuaThanhPhieuNhap(idPM);
-    }
-
-    @GetMapping("/{idPN}")
-    public PhieuNhapNguyenLieuDTO layThongTinPhieuNhap(@PathVariable Integer idPN){
-        return phieuNhapNguyenLieuService.layThongTinPhieuNhap(idPN);
     }
 }

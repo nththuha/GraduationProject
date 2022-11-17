@@ -6,6 +6,4 @@ public interface PhieuNhapNguyenLieuService {
     PhieuNhapNguyenLieuDTO themPhieuNhapNguyenLieu(PhieuNhapNguyenLieuDTO phieuNhapNguyenLieuDTO);
 
     String chuyenPhieuMuaThanhPhieuNhap(Integer idPM);
-
-    PhieuNhapNguyenLieuDTO layThongTinPhieuNhap(Integer idPN);
 }

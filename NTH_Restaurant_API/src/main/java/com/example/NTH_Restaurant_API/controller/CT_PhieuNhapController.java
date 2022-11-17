@@ -26,6 +26,11 @@ public class CT_PhieuNhapController {
         return ct_phieuNhapService.themCt_PhieuNhap(ct_phieuNhapDTO);
     }
 
+    @PutMapping("")
+    public String suaCT_PhieuNhap(@Valid @RequestBody CT_PhieuNhapDTO ct_phieuNhapDTO){
+        return ct_phieuNhapService.suaCT_PhieuNhap(ct_phieuNhapDTO);
+    }
+
     @DeleteMapping("/{idCTPN}")
     public String xoaCT_PhieuNhap(@PathVariable Integer idCTPN){
         return ct_phieuNhapService.xoaCT_PhieuNhap(idCTPN);

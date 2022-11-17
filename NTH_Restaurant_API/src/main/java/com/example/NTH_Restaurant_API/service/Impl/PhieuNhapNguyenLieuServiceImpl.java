@@ -1,5 +1,6 @@
 package com.example.NTH_Restaurant_API.service.Impl;
 
+import com.example.NTH_Restaurant_API.dto.CT_PhieuMuaDTO;
 import com.example.NTH_Restaurant_API.dto.PhieuNhapNguyenLieuDTO;
 import com.example.NTH_Restaurant_API.entity.*;
 import com.example.NTH_Restaurant_API.repository.*;
@@ -72,12 +73,5 @@ public class PhieuNhapNguyenLieuServiceImpl implements PhieuNhapNguyenLieuServic
         catch (Exception e){
             return "false";
         }
-    }
-
-    @Override
-    public PhieuNhapNguyenLieuDTO layThongTinPhieuNhap(Integer idPN) {
-        if(!phieuNhapNguyenLieuRepository.existsByIdPN(idPN)) return null;
-        PhieuNhapNguyenLieuEntity phieuNhap = phieuNhapNguyenLieuRepository.getById(idPN);
-        return new PhieuNhapNguyenLieuDTO(phieuNhap);
     }
 }

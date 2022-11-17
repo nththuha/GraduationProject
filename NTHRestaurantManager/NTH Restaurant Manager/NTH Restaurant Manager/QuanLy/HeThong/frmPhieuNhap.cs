@@ -21,15 +21,13 @@ namespace NTH_Restaurant_Manager
         PhieuNhapNguyenLieuModel phieuNhap;
 
         int idPN;
-
-        String maNL;
-        String tenNL;
-        String donVi;
-
         int idCTPN;
+
+        String maNL, tenNL, donVi;
 
         public frmPhieuNhap()
         {
+            InitializeComponent();
         } 
 
         public void khoiTao(int idPN)
@@ -42,8 +40,7 @@ namespace NTH_Restaurant_Manager
         {
             try
             {
-                var phieuNhap = await _repositoryPN.layThongTinPhieuNhap(idPN);
-                var listCTPN = phieuNhap.listCTPN;
+                var listCTPN = await _repositoryCTPN.layDSCTPhieuNhapTheoPhieuNhap(idPN);
                 gcCTPN.DataSource = listCTPN;
                 if (listCTPN.Count > 0)
                 {
@@ -59,11 +56,6 @@ namespace NTH_Restaurant_Manager
         private void btn_Thoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
-        }
-
-        private void gvCTPN_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {
-            idCTPN = int.Parse(gvCTPN.GetRowCellValue(e.RowHandle, "idCTPN").ToString());
         }
 
         private void btn_XoaChiTietPhieuMua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -88,15 +80,19 @@ namespace NTH_Restaurant_Manager
             layDSCTPhieuNhap();
         }
 
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void gvCTPN_RowClick_1(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            idCTPN = int.Parse(gvCTPN.GetRowCellValue(e.RowHandle, "idCTPN").ToString());
+        }
+
         private void btn_Load_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            phieuNhap = null;
-
-            List<CTPhieuMuaModel> listCTPN = new List<CTPhieuMuaModel>();
-            gcCTPN.DataSource = listCTPN;
-
-            panelControl2.Enabled = true;
-            btn_ThemChiTietPhieuMua.Enabled = btn_XoaChiTietPhieuMua.Enabled = btn_Load.Enabled = false;
+            layDSCTPhieuNhap();
         }
 
         private void btn_ThemChiTietPhieuMua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
