@@ -11,5 +11,6 @@ namespace NTH_Restaurant_Manager.Model
         public int idPN { get; set; }
         public String ngay { get; set; }
         public int idnv { get; set; }
+        public List<CTPhieuNhapModel> listCTPN { get; set; }
     }
 }

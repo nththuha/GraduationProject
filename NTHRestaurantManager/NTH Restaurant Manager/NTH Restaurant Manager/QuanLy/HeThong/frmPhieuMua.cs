@@ -16,6 +16,7 @@ namespace NTH_Restaurant_Manager
     public partial class frmPhieuMua : Form
     {
         PhieuMuaNguyenLieuRepository _repositoryPM = new PhieuMuaNguyenLieuRepository();
+        PhieuNhapNguyenLieuRepository _repositoryPN = new PhieuNhapNguyenLieuRepository();
         CTPhieuMuaRepository _repositoryCTPM = new CTPhieuMuaRepository();
 
         PhieuMuaNguyenLieuModel pmnl;
@@ -100,6 +101,7 @@ namespace NTH_Restaurant_Manager
                 rp.DataSource = ds;
                 ReportPrintTool print = new ReportPrintTool(rp);
                 print.ShowPreviewDialog();
+                layDSPhieuMuaNguyenLieu();
             }
         }
 
@@ -130,7 +132,19 @@ namespace NTH_Restaurant_Manager
 
         private void btn_Chuyen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            chuyenPhieuMuaThanhPhieuNhap(sender, e);
+        }
 
+        private async void chuyenPhieuMuaThanhPhieuNhap(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var check = await _repositoryPN.chuyenPhieuMuaThanhPhieuNhap(idPM);
+            if (check.Equals("false"))
+            {
+                MessageBox.Show("Chuyển thất bại!", "Thông báo");
+                return;
+            }
+            Program.frmChinh.btn_PhieuNhap_ItemClick(sender, e);
+            Program.formPhieuNhap.khoiTao(int.Parse(check));
         }
     }
 }

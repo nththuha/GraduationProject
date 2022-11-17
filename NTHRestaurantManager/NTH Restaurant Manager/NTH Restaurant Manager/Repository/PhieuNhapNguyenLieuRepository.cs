@@ -22,6 +22,14 @@ namespace NTH_Restaurant_Manager.Repository
             _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
+        public async Task<PhieuNhapNguyenLieuModel> layThongTinPhieuNhap(int idPN)
+        {
+            _response = await _client.GetAsync("phieumuanguyenlieu/" + idPN);
+            var json = await _response.Content.ReadAsStringAsync();
+            var phieuNhap = JsonConvert.DeserializeObject<PhieuNhapNguyenLieuModel>(json);
+            return phieuNhap;
+        }
+
         public async Task<PhieuNhapNguyenLieuModel> themPhieuNhapNguyenLieu(PhieuNhapNguyenLieuModel pn)
         {
             var phieuNhap = JsonConvert.SerializeObject(pn);
@@ -32,6 +40,18 @@ namespace NTH_Restaurant_Manager.Repository
             var json = await _response.Content.ReadAsStringAsync();
             var phieunhap = JsonConvert.DeserializeObject<PhieuNhapNguyenLieuModel>(json);
             return phieunhap;
+        }
+
+        public async Task<String> chuyenPhieuMuaThanhPhieuNhap(int idPM)
+        {
+            var phieuNhap = JsonConvert.SerializeObject(idPM);
+            var buffer = Encoding.UTF8.GetBytes(phieuNhap);
+            var byteContent = new ByteArrayContent(buffer);
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            _response = await _client.PostAsync("phieunhapnguyenlieu/" + idPM, byteContent);
+            var json = await _response.Content.ReadAsStringAsync();
+            var idPN = JsonConvert.DeserializeObject<String>(json);
+            return idPN;
         }
     }
 }

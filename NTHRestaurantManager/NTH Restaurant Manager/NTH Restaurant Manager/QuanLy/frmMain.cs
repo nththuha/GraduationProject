@@ -265,7 +265,7 @@ namespace NTH_Restaurant_Manager
             }
         }
 
-        private void btn_PhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        public void btn_PhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = this.CheckExists(typeof(frmPhieuNhap));
             if (frm != null) frm.Activate();

@@ -46,6 +46,9 @@ public class PhieuNhapNguyenLieuServiceImpl implements PhieuNhapNguyenLieuServic
         if(!phieuMuaNguyenLieuRepository.existsByIdPM(idPM)) return "false";
 
         PhieuMuaNguyenLieuEntity phieuMua = phieuMuaNguyenLieuRepository.getById(idPM);
+        if(phieuMua.getPhieunhapnguyenlieuList().size() > 0){
+            return phieuMua.getPhieunhapnguyenlieuList().get(0).getIdPN().toString();
+        }
         PhieuNhapNguyenLieuEntity phieuNhap = new PhieuNhapNguyenLieuEntity();
         phieuNhap.setNgay(phieuMua.getNgay());
         phieuNhap.setIdnv(phieuMua.getIdnv());
