@@ -13,6 +13,7 @@ namespace NTH_Restaurant_Manager.Model
         public int gia { get; set; }
         public String manl { get; set; }
         public String tennl { get; set; }
+        public String donVi { get; set; }
         public int idpn { get; set; }
     }
 }

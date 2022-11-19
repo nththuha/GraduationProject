@@ -36,11 +36,19 @@ namespace NTH_Restaurant_Manager
             this.gcCTPN = new DevExpress.XtraGrid.GridControl();
             this.bdsCTPN = new System.Windows.Forms.BindingSource(this.components);
             this.gvCTPN = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colidCTPN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colgia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmanl = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltennl = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colidpn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
-            this.btn_Load = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ThemChiTietPhieuMua = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_XoaChiTietPhieuMua = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Load = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Thoat = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -49,13 +57,6 @@ namespace NTH_Restaurant_Manager
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.colidCTPN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colsoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colgia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmanl = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltennl = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colidpn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -109,11 +110,73 @@ namespace NTH_Restaurant_Manager
             this.colgia,
             this.colmanl,
             this.coltennl,
-            this.colidpn});
+            this.colidpn,
+            this.gridColumn1});
             this.gvCTPN.GridControl = this.gcCTPN;
             this.gvCTPN.Name = "gvCTPN";
             this.gvCTPN.OptionsBehavior.Editable = false;
             this.gvCTPN.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvCTPN_RowClick_1);
+            // 
+            // colidCTPN
+            // 
+            this.colidCTPN.FieldName = "idCTPN";
+            this.colidCTPN.MinWidth = 25;
+            this.colidCTPN.Name = "colidCTPN";
+            this.colidCTPN.Width = 94;
+            // 
+            // colsoLuong
+            // 
+            this.colsoLuong.Caption = "SỐ LƯỢNG";
+            this.colsoLuong.FieldName = "soLuong";
+            this.colsoLuong.MinWidth = 25;
+            this.colsoLuong.Name = "colsoLuong";
+            this.colsoLuong.Visible = true;
+            this.colsoLuong.VisibleIndex = 1;
+            this.colsoLuong.Width = 94;
+            // 
+            // colgia
+            // 
+            this.colgia.Caption = "GIÁ";
+            this.colgia.FieldName = "gia";
+            this.colgia.MinWidth = 25;
+            this.colgia.Name = "colgia";
+            this.colgia.Visible = true;
+            this.colgia.VisibleIndex = 3;
+            this.colgia.Width = 94;
+            // 
+            // colmanl
+            // 
+            this.colmanl.FieldName = "manl";
+            this.colmanl.MinWidth = 25;
+            this.colmanl.Name = "colmanl";
+            this.colmanl.Width = 94;
+            // 
+            // coltennl
+            // 
+            this.coltennl.Caption = "TÊN NGUYÊN LIỆU";
+            this.coltennl.FieldName = "tennl";
+            this.coltennl.MinWidth = 25;
+            this.coltennl.Name = "coltennl";
+            this.coltennl.Visible = true;
+            this.coltennl.VisibleIndex = 0;
+            this.coltennl.Width = 94;
+            // 
+            // colidpn
+            // 
+            this.colidpn.FieldName = "idpn";
+            this.colidpn.MinWidth = 25;
+            this.colidpn.Name = "colidpn";
+            this.colidpn.Width = 94;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "ĐƠN VỊ";
+            this.gridColumn1.FieldName = "donVi";
+            this.gridColumn1.MinWidth = 25;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 2;
+            this.gridColumn1.Width = 94;
             // 
             // barManager1
             // 
@@ -149,32 +212,45 @@ namespace NTH_Restaurant_Manager
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Main menu";
             // 
-            // btn_Load
-            // 
-            this.btn_Load.Caption = "Reload";
-            this.btn_Load.Id = 7;
-            this.btn_Load.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Load.ImageOptions.SvgImage")));
-            this.btn_Load.Name = "btn_Load";
-            this.btn_Load.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btn_Load.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Load_ItemClick);
-            // 
             // btn_ThemChiTietPhieuMua
             // 
             this.btn_ThemChiTietPhieuMua.Caption = "Thêm";
+            this.btn_ThemChiTietPhieuMua.Enabled = false;
             this.btn_ThemChiTietPhieuMua.Id = 1;
             this.btn_ThemChiTietPhieuMua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_ThemChiTietPhieuMua.ImageOptions.SvgImage")));
             this.btn_ThemChiTietPhieuMua.Name = "btn_ThemChiTietPhieuMua";
             this.btn_ThemChiTietPhieuMua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btn_ThemChiTietPhieuMua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ThemChiTietPhieuMua_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Cập nhật";
+            this.barButtonItem1.Enabled = false;
+            this.barButtonItem1.Id = 0;
+            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // btn_XoaChiTietPhieuMua
             // 
             this.btn_XoaChiTietPhieuMua.Caption = "Xóa";
+            this.btn_XoaChiTietPhieuMua.Enabled = false;
             this.btn_XoaChiTietPhieuMua.Id = 3;
             this.btn_XoaChiTietPhieuMua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_XoaChiTietPhieuMua.ImageOptions.SvgImage")));
             this.btn_XoaChiTietPhieuMua.Name = "btn_XoaChiTietPhieuMua";
             this.btn_XoaChiTietPhieuMua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btn_XoaChiTietPhieuMua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_XoaChiTietPhieuMua_ItemClick);
+            // 
+            // btn_Load
+            // 
+            this.btn_Load.Caption = "Reload";
+            this.btn_Load.Enabled = false;
+            this.btn_Load.Id = 7;
+            this.btn_Load.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Load.ImageOptions.SvgImage")));
+            this.btn_Load.Name = "btn_Load";
+            this.btn_Load.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_Load.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Load_ItemClick);
             // 
             // btn_Thoat
             // 
@@ -247,66 +323,6 @@ namespace NTH_Restaurant_Manager
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 682);
             // 
-            // colidCTPN
-            // 
-            this.colidCTPN.FieldName = "idCTPN";
-            this.colidCTPN.MinWidth = 25;
-            this.colidCTPN.Name = "colidCTPN";
-            this.colidCTPN.Width = 94;
-            // 
-            // colsoLuong
-            // 
-            this.colsoLuong.Caption = "SỐ LƯỢNG";
-            this.colsoLuong.FieldName = "soLuong";
-            this.colsoLuong.MinWidth = 25;
-            this.colsoLuong.Name = "colsoLuong";
-            this.colsoLuong.Visible = true;
-            this.colsoLuong.VisibleIndex = 1;
-            this.colsoLuong.Width = 94;
-            // 
-            // colgia
-            // 
-            this.colgia.Caption = "GIÁ";
-            this.colgia.FieldName = "gia";
-            this.colgia.MinWidth = 25;
-            this.colgia.Name = "colgia";
-            this.colgia.Visible = true;
-            this.colgia.VisibleIndex = 2;
-            this.colgia.Width = 94;
-            // 
-            // colmanl
-            // 
-            this.colmanl.FieldName = "manl";
-            this.colmanl.MinWidth = 25;
-            this.colmanl.Name = "colmanl";
-            this.colmanl.Width = 94;
-            // 
-            // coltennl
-            // 
-            this.coltennl.Caption = "TÊN NGUYÊN LIỆU";
-            this.coltennl.FieldName = "tennl";
-            this.coltennl.MinWidth = 25;
-            this.coltennl.Name = "coltennl";
-            this.coltennl.Visible = true;
-            this.coltennl.VisibleIndex = 0;
-            this.coltennl.Width = 94;
-            // 
-            // colidpn
-            // 
-            this.colidpn.FieldName = "idpn";
-            this.colidpn.MinWidth = 25;
-            this.colidpn.Name = "colidpn";
-            this.colidpn.Width = 94;
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Cập nhật";
-            this.barButtonItem1.Id = 0;
-            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
-            // 
             // frmPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -359,5 +375,6 @@ namespace NTH_Restaurant_Manager
         private DevExpress.XtraGrid.Columns.GridColumn coltennl;
         private DevExpress.XtraGrid.Columns.GridColumn colidpn;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

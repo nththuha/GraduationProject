@@ -16,30 +16,34 @@ namespace NTH_Restaurant_Manager
     {
         String maNL;
         int idPN;
+        int idCTPN;
 
         CTPhieuNhapRepository _repository = new CTPhieuNhapRepository();
         CTPhieuNhapModel ctPhieuNhap;
 
-        public mesCTPN(String maNL, String tenNL, String donVi, int idPN)
+        public mesCTPN(int idCTPN, String maNL, String tenNL, String donVi, int idPN, int soLuong, int gia)
         {
             InitializeComponent();
+            this.idCTPN = idCTPN;
             this.maNL = maNL;
             this.idPN = idPN;
 
             txt_TenNL.Text = tenNL;
             txt_DonVi.Text = donVi;
+            se_SoLuong.Text = soLuong.ToString();
+            se_Gia.Text = gia.ToString();
         }
 
-        private async void themCTPhieuNhap()
+        private async void suaCTPhieuNhap()
         {
-            var check = await _repository.themCTPhieuNhap(ctPhieuNhap);
+            var check = await _repository.suaCTPhieuNhap(ctPhieuNhap);
             if (check.Equals("false"))
             {
-                MessageBox.Show("Thêm chi tiết phiếu nhập thất bại!", "Thông báo");
+                MessageBox.Show("Cập nhật chi tiết phiếu nhập thất bại!", "Thông báo");
             }
             else
             {
-                MessageBox.Show("Thêm chi tiết phiếu nhập thành công!", "Thông báo");
+                MessageBox.Show("Cập nhật chi tiết phiếu nhập thành công!", "Thông báo");
                 Program.formPhieuNhap.layDSCTPhieuNhap();
                 this.Close();
             }
@@ -68,12 +72,13 @@ namespace NTH_Restaurant_Manager
                 return;
             }
             ctPhieuNhap = new CTPhieuNhapModel();
+            ctPhieuNhap.idCTPN = idCTPN;
             ctPhieuNhap.idpn = idPN;
             ctPhieuNhap.manl = maNL;
             ctPhieuNhap.soLuong = soLuong;
             ctPhieuNhap.gia = gia;
 
-            themCTPhieuNhap();
+            suaCTPhieuNhap();
         }
     }
 }

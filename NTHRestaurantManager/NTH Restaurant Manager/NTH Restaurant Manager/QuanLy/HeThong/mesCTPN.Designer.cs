@@ -135,11 +135,11 @@ namespace NTH_Restaurant_Manager
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(131, 62);
+            this.label1.Location = new System.Drawing.Point(120, 65);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(412, 32);
+            this.label1.Size = new System.Drawing.Size(469, 32);
             this.label1.TabIndex = 7;
-            this.label1.Text = "THÊM CHI TIẾT PHIẾU NHẬP";
+            this.label1.Text = "CẬP NHẬT CHI TIẾT PHIẾU NHẬP";
             // 
             // btn_Them
             // 
@@ -179,7 +179,7 @@ namespace NTH_Restaurant_Manager
             this.Controls.Add(this.txt_TenNL);
             this.Name = "mesCTPN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "THÊM CHI TIẾT PHIẾU NHẬP";
+            this.Text = "CẬP NHẬT CHI TIẾT PHIẾU NHẬP";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mesCTPN_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenNL.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.se_SoLuong.Properties)).EndInit();

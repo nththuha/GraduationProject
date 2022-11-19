@@ -18,10 +18,9 @@ namespace NTH_Restaurant_Manager
         CTPhieuNhapRepository _repositoryCTPN = new CTPhieuNhapRepository();
         PhieuNhapNguyenLieuRepository _repositoryPN = new PhieuNhapNguyenLieuRepository();
 
-        PhieuNhapNguyenLieuModel phieuNhap;
-
         int idPN;
         int idCTPN;
+        int soLuong, gia;
 
         String maNL, tenNL, donVi;
 
@@ -34,6 +33,7 @@ namespace NTH_Restaurant_Manager
         {
             this.idPN = idPN;
             layDSCTPhieuNhap();
+            btn_Load.Enabled = btn_ThemChiTietPhieuMua.Enabled = btn_XoaChiTietPhieuMua.Enabled = barButtonItem1.Enabled = true;
         }
 
         public async void layDSCTPhieuNhap()
@@ -45,6 +45,11 @@ namespace NTH_Restaurant_Manager
                 if (listCTPN.Count > 0)
                 {
                     idCTPN = listCTPN[0].idCTPN;
+                    maNL = listCTPN[0].manl;
+                    tenNL = listCTPN[0].tennl;
+                    donVi = listCTPN[0].donVi;
+                    soLuong = listCTPN[0].soLuong;
+                    gia = listCTPN[0].gia;
                 }
             }
             catch(Exception e)
@@ -82,7 +87,7 @@ namespace NTH_Restaurant_Manager
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Program.mesCTPN = new mesCTPN(maNL, tenNL, donVi, phieuNhap.idPN);
+            Program.mesCTPN = new mesCTPN(idCTPN, maNL, tenNL, donVi, idPN, soLuong, gia);
             Program.mesCTPN.Show();
             Program.frmChinh.Enabled = false;
         }
@@ -92,6 +97,9 @@ namespace NTH_Restaurant_Manager
             idCTPN = int.Parse(gvCTPN.GetRowCellValue(e.RowHandle, "idCTPN").ToString());
             maNL = gvCTPN.GetRowCellValue(e.RowHandle, "manl").ToString();
             tenNL = gvCTPN.GetRowCellValue(e.RowHandle, "tennl").ToString();
+            donVi = gvCTPN.GetRowCellValue(e.RowHandle, "donVi").ToString();
+            soLuong = int.Parse(gvCTPN.GetRowCellValue(e.RowHandle, "soLuong").ToString());
+            gia = int.Parse(gvCTPN.GetRowCellValue(e.RowHandle, "gia").ToString());
         }
 
         private void btn_Load_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -101,9 +109,9 @@ namespace NTH_Restaurant_Manager
 
         private void btn_ThemChiTietPhieuMua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Program.mesCTPN = new mesCTPN(maNL, tenNL, donVi, phieuNhap.idPN);
+            /*Program.mesCTPN = new mesCTPN(maNL, tenNL, donVi, phieuNhap.idPN);
             Program.mesCTPN.Show();
-            Program.frmChinh.Enabled = false;
+            Program.frmChinh.Enabled = false;*/
         }
     }
 }
