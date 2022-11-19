@@ -109,9 +109,7 @@ namespace NTH_Restaurant_Manager
 
         private void btn_ThemChiTietPhieuMua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            /*Program.mesCTPN = new mesCTPN(maNL, tenNL, donVi, phieuNhap.idPN);
-            Program.mesCTPN.Show();
-            Program.frmChinh.Enabled = false;*/
+            
         }
     }
 }
