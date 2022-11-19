@@ -82,12 +82,16 @@ namespace NTH_Restaurant_Manager
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            Program.mesCTPN = new mesCTPN(maNL, tenNL, donVi, phieuNhap.idPN);
+            Program.mesCTPN.Show();
+            Program.frmChinh.Enabled = false;
         }
 
         private void gvCTPN_RowClick_1(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             idCTPN = int.Parse(gvCTPN.GetRowCellValue(e.RowHandle, "idCTPN").ToString());
+            maNL = gvCTPN.GetRowCellValue(e.RowHandle, "manl").ToString();
+            tenNL = gvCTPN.GetRowCellValue(e.RowHandle, "tennl").ToString();
         }
 
         private void btn_Load_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -12,15 +12,11 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CT_PhieuNhapDTO {
     private Integer idCTPN;
-
     private Integer soLuong;
-
     private Integer gia;
-
     private String manl;
-
     private String tennl;
-
+    private String donVi;
     private Integer idpn;
 
     public CT_PhieuNhapDTO(CT_PhieuNhapEntity ct_phieuNhap) {
@@ -29,6 +25,7 @@ public class CT_PhieuNhapDTO {
         this.gia = ct_phieuNhap.getGia();
         this.manl = ct_phieuNhap.getManl().getMaNL();
         this.tennl = ct_phieuNhap.getManl().getTenNL();
+        this.donVi = ct_phieuNhap.getManl().getDonVi();
         this.idpn = ct_phieuNhap.getIdpn().getIdPN();
     }
 
