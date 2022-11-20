@@ -24,6 +24,8 @@ namespace NTH_Restaurant_Manager
 
         String maNL, tenNL, donVi;
 
+        List<CTPhieuNhapModel> listCTPN;
+
         public frmPhieuNhap()
         {
             InitializeComponent();
@@ -40,7 +42,8 @@ namespace NTH_Restaurant_Manager
         {
             try
             {
-                var listCTPN = await _repositoryCTPN.layDSCTPhieuNhapTheoPhieuNhap(idPN);
+                listCTPN = new List<CTPhieuNhapModel>();
+                listCTPN = await _repositoryCTPN.layDSCTPhieuNhapTheoPhieuNhap(idPN);
                 gcCTPN.DataSource = listCTPN;
                 if (listCTPN.Count > 0)
                 {
@@ -109,7 +112,21 @@ namespace NTH_Restaurant_Manager
 
         private void btn_ThemChiTietPhieuMua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            Program.mesThemCTPN = new mesThemCTPN(idPN);
+            Program.mesThemCTPN.Show();
+            Program.frmChinh.Enabled = false;
+        }
+        
+        public bool kiemTraTrungCTPN(String maNL) // true là trùng, false là không trùng
+        {
+            foreach(CTPhieuNhapModel i in listCTPN)
+            {
+                if (i.manl.Equals(maNL))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

@@ -41,6 +41,7 @@ namespace NTH_Restaurant_Manager
         public static mesTienCoc mesTienCoc;
         public static mesHuyPhieuDatTruoc mesHuyPhieuDatTruoc;
         public static mesCTPN mesCTPN;
+        public static mesThemCTPN mesThemCTPN;
         public static mesKhachHang_HD mesKhachHang_HD;
         public static mesKhacHang_HD_PDT mesKhachHang_HD_PDT;
 

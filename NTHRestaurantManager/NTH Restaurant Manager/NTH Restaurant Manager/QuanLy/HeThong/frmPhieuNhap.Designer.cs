@@ -93,7 +93,7 @@ namespace NTH_Restaurant_Manager
             this.gcCTPN.MainView = this.gvCTPN;
             this.gcCTPN.MenuManager = this.barManager1;
             this.gcCTPN.Name = "gcCTPN";
-            this.gcCTPN.Size = new System.Drawing.Size(1416, 473);
+            this.gcCTPN.Size = new System.Drawing.Size(1416, 515);
             this.gcCTPN.TabIndex = 0;
             this.gcCTPN.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCTPN});
