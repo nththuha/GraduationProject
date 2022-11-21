@@ -36,6 +36,9 @@ public class PhieuDatServiceImpl implements PhieuDatService {
     @Autowired
     private CT_HoaDonRepository ct_hoaDonRepository;
 
+    @Autowired
+    private CT_DatMonRepository ct_datMonRepository;
+
     @Override
     public List<PhieuDatDTO> layDSPhieuDatChuaCoHoaDon() {
         List<PhieuDatEntity> ds = phieuDatRepository.findAll();
@@ -64,7 +67,16 @@ public class PhieuDatServiceImpl implements PhieuDatService {
                 list.get(i).setMaBan(ct_banEntity.getMaban().getMaBan());
                 list.get(i).setTenBan(ct_banEntity.getMaban().getTenBan());
             }
+
+            List<CT_DatMonEntity> listCTDM = ct_datMonRepository.findByIdpd_IdPD(ds.get(i).getIdPD());
+            int t = 0;
+            for(CT_DatMonEntity j: listCTDM){
+                t += j.getGia();
+            }
+            list.get(i).setGia(t);
+            list.get(i).setGiaSauThue((int) (t * 1.1));
         }
+
         return list;
     }
 

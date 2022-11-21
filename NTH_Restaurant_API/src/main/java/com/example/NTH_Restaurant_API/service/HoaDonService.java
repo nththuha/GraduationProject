@@ -1,8 +1,8 @@
 package com.example.NTH_Restaurant_API.service;
 
-import com.example.NTH_Restaurant_API.dto.HoaDonDTO;
-import com.example.NTH_Restaurant_API.dto.HoaDonPD;
-import com.example.NTH_Restaurant_API.dto.HoaDonPDT;
+import com.example.NTH_Restaurant_API.dto.*;
+
+import java.util.List;
 
 public interface HoaDonService {
     public String chuyenSangChu(String x);
@@ -10,4 +10,6 @@ public interface HoaDonService {
     HoaDonPD themHoaDonTheoPhieuDat(HoaDonDTO hoaDonDTO);
 
     HoaDonPDT themHoaDonTheoPhieuDatTruoc(HoaDonDTO hoaDonDTO);
+
+    List<HoaDonTach> tachHoaDon(List<TachHoaDon> listHD);
 }

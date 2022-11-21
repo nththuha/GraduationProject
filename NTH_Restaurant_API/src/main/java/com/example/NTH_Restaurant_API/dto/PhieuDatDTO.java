@@ -25,6 +25,8 @@ public class PhieuDatDTO {
     private String maPhong;
     private String tenPhong;
     private Integer idPDT;
+    private Integer gia;
+    private Integer giaSauThue;
 
     public PhieuDatDTO(PhieuDatEntity phieuDatEntity) {
         this.idPD = phieuDatEntity.getIdPD();

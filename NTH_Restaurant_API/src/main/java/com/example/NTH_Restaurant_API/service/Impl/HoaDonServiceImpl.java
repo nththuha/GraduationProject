@@ -257,4 +257,36 @@ public class HoaDonServiceImpl implements HoaDonService {
             return null;
         }
     }
+
+    @Override
+    public List<HoaDonTach> tachHoaDon(List<TachHoaDon> listHD) {
+        NhanVienEntity nv = nhanVienRepository.getById(listHD.get(0).getIdNV());
+        PhieuDatEntity pd = phieuDatRepository.getById(listHD.get(0).getIdPD());
+
+        CT_DatBanEntity ctdb = ct_datBanRepository.findByIdpd_IdPD(pd.getIdPD());
+        CT_BanEntity ctBan = ctdb.getIdctb();
+        ctBan.setTrangThai("Còn chỗ");
+
+        List<HoaDonTach> listHDT = new ArrayList<>();
+
+        try {
+            for(TachHoaDon i: listHD){
+                HoaDonEntity hd = i.toEntity();
+                hd.setIdnv(nv);
+                hoaDonRepository.save(hd);
+
+                CT_HoaDonEntity ct_hoaDon = new CT_HoaDonEntity(null, hd, pd);
+                ct_hoaDonRepository.save(ct_hoaDon);
+
+                HoaDonTach hoaDonTach = new HoaDonTach(i);
+                listHDT.add(hoaDonTach);
+            }
+
+            ct_banRepository.save(ctBan);
+            return listHDT;
+        }
+        catch (Exception e){
+            return null;
+        }
+    }
 }
