@@ -227,6 +227,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="QuanLy\HeThong\mesKhachHang_THD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy\HeThong\mesKhachHang_THD.Designer.cs">
+      <DependentUpon>mesKhachHang_THD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HoaDonTachModel.cs" />
+    <Compile Include="Model\TachHoaDonModel.cs" />
     <Compile Include="QuanLy\HeThong\mesThemCTPN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -507,6 +515,9 @@
     <Compile Include="QuanLy\ThongKe\rpThongKeLoiNhuanTheoThang.Designer.cs">
       <DependentUpon>rpThongKeLoiNhuanTheoThang.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QuanLy\HeThong\mesKhachHang_THD.resx">
+      <DependentUpon>mesKhachHang_THD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\HeThong\mesThemCTPN.resx">
       <DependentUpon>mesThemCTPN.cs</DependentUpon>
     </EmbeddedResource>

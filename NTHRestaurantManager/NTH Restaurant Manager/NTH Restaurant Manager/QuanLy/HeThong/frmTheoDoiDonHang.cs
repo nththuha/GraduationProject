@@ -107,12 +107,14 @@ namespace NTH_Restaurant_Manager
             String ngay = gvPD.GetRowCellValue(numPD, "ngay").ToString();
             String tenPhong = gvPD.GetRowCellValue(numPD, "tenPhong").ToString();
             String tenBan = gvPD.GetRowCellValue(numPD, "tenBan").ToString();
+            int giaSauThue = int.Parse(gvPD.GetRowCellValue(numPD, "giaSauThue").ToString());
 
             PhieuDatModel pd = new PhieuDatModel();
             pd.idPD = idPD;
             pd.ngay = ngay;
             pd.tenPhong = tenPhong;
             pd.tenBan = tenBan;
+            pd.giaSauThue = giaSauThue;
 
             foreach (PhieuDatModel i in listPD)
             {
@@ -183,6 +185,23 @@ namespace NTH_Restaurant_Manager
             gcCTDM.DataSource = null;
             gcPDTemp.DataSource = null;
             layDSPhieuDat();
+        }
+
+        private void btn_TachHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (listPD.Count < 0)
+            {
+                MessageBox.Show("Vui lòng chọn phiếu đặt để lập hóa đơn", "Thông báo");
+                return;
+            }
+            if (listPD.Count > 1)
+            {
+                MessageBox.Show("Chỉ tách hóa đơn cho 1 phiếu đặt", "Thông báo");
+                return;
+            }
+            Program.mesKhachHang_THD = new mesKhachHang_THD(listPD[0].idPD, listPD[0].giaSauThue);
+            Program.mesKhachHang_THD.Show();
+            Program.frmChinh.Enabled = false;
         }
     }
 }
