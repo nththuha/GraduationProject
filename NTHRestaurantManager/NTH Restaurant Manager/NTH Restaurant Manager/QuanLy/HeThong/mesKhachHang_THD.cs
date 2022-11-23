@@ -1,4 +1,5 @@
-﻿using NTH_Restaurant_Manager.Model;
+﻿using DevExpress.XtraReports.UI;
+using NTH_Restaurant_Manager.Model;
 using NTH_Restaurant_Manager.Repository;
 using System;
 using System.Collections.Generic;
@@ -216,7 +217,7 @@ namespace NTH_Restaurant_Manager
             thd.maHD = maHD;
             thd.hoTenKH = hoTenKH;
             thd.maSoThue = maSoThue;
-            thd.noiDung = maHD;
+            thd.noiDung = noiDung;
             thd.ngay = ngay;
             thd.soTien = soTien;
             thd.idPD = idPD;
@@ -227,6 +228,38 @@ namespace NTH_Restaurant_Manager
         private async void tachHoaDon()
         {
             List<HoaDonTachModel> listHDT = await _repository.tachHoaDon(listTHD);
+
+            if(listHDT.Count < 0)
+            {
+                MessageBox.Show("Tách hóa đơn thất bại!", "Thông báo");
+            }
+            else
+            {
+                MessageBox.Show("Tách hóa đơn thành công!", "Thông báo");
+                foreach(HoaDonTachModel i in listHDT)
+                {
+                    rpTachHoaDon rp = new rpTachHoaDon();
+                    var triGia = String.Format("{0:0,0 VND}", i.gia);
+                    var thue = String.Format("{0:0,0 VND}", i.giaSauThue - i.gia);
+                    var giaSauThue = String.Format("{0:0,0 VND}", i.giaSauThue);
+
+                    rp.lb_Gia.Text = triGia.ToString();
+                    rp.lb_Thue.Text = thue.ToString();
+                    rp.lb_GiaSauThue.Text = giaSauThue.ToString();
+                    rp.lb_GiaChu.Text = "Tiền chữ: " + i.tienChu;
+                    rp.lb_MaHD.Text = i.maHD;
+                    rp.lb_Ngay.Text = i.ngay.Substring(8, 2) + "/" + i.ngay.Substring(5, 2) + "/" + i.ngay.Substring(0, 4);
+                    rp.lb_MaSoThue.Text = i.maSoThue;
+                    rp.lb_HoTenKH.Text = i.hoTenKh;
+                    rp.lb_HoTenNV.Text = Program.nhanVienDangDangNhap.hoTen;
+                    rp.lb_NoiDung.Text = i.noiDung;
+                    rp.lb_Tien.Text = triGia;
+
+                    ReportPrintTool print = new ReportPrintTool(rp);
+                    print.ShowPreviewDialog();
+                }
+                this.Close();
+            }
         }
     }
 }
