@@ -34,8 +34,13 @@ namespace NTH_Restaurant_Manager
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.lb_Tien = new DevExpress.XtraReports.UI.XRLabel();
+            this.lb_NoiDung = new DevExpress.XtraReports.UI.XRLabel();
+            this.table1 = new DevExpress.XtraReports.UI.XRTable();
+            this.tableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.tableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.tableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.label1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
@@ -48,12 +53,7 @@ namespace NTH_Restaurant_Manager
             this.lb_Ngay = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
             this.lb_MaSoThue = new DevExpress.XtraReports.UI.XRLabel();
-            this.table1 = new DevExpress.XtraReports.UI.XRTable();
-            this.tableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.tableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.tableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.lb_NoiDung = new DevExpress.XtraReports.UI.XRLabel();
-            this.lb_Tien = new DevExpress.XtraReports.UI.XRLabel();
+            this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.lb_Gia = new DevExpress.XtraReports.UI.XRLabel();
@@ -89,6 +89,78 @@ namespace NTH_Restaurant_Manager
             this.Detail.HeightF = 100.9724F;
             this.Detail.Name = "Detail";
             // 
+            // lb_Tien
+            // 
+            this.lb_Tien.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Tien.LocationFloat = new DevExpress.Utils.PointFloat(460.2682F, 27.99998F);
+            this.lb_Tien.Multiline = true;
+            this.lb_Tien.Name = "lb_Tien";
+            this.lb_Tien.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lb_Tien.SizeF = new System.Drawing.SizeF(189.7318F, 72.97241F);
+            this.lb_Tien.StylePriority.UseFont = false;
+            this.lb_Tien.StylePriority.UseTextAlignment = false;
+            this.lb_Tien.Text = "HD123";
+            this.lb_Tien.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // lb_NoiDung
+            // 
+            this.lb_NoiDung.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_NoiDung.LocationFloat = new DevExpress.Utils.PointFloat(0F, 27.99998F);
+            this.lb_NoiDung.Multiline = true;
+            this.lb_NoiDung.Name = "lb_NoiDung";
+            this.lb_NoiDung.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lb_NoiDung.SizeF = new System.Drawing.SizeF(460.2682F, 72.97241F);
+            this.lb_NoiDung.StylePriority.UseFont = false;
+            this.lb_NoiDung.StylePriority.UseTextAlignment = false;
+            this.lb_NoiDung.Text = "HD123";
+            this.lb_NoiDung.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // table1
+            // 
+            this.table1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.table1.Name = "table1";
+            this.table1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
+            this.tableRow1});
+            this.table1.SizeF = new System.Drawing.SizeF(650F, 28F);
+            // 
+            // tableRow1
+            // 
+            this.tableRow1.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.tableCell1,
+            this.tableCell2});
+            this.tableRow1.Name = "tableRow1";
+            this.tableRow1.Weight = 1D;
+            // 
+            // tableCell1
+            // 
+            this.tableCell1.BackColor = System.Drawing.Color.Gray;
+            this.tableCell1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.tableCell1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableCell1.ForeColor = System.Drawing.Color.White;
+            this.tableCell1.Name = "tableCell1";
+            this.tableCell1.StylePriority.UseBackColor = false;
+            this.tableCell1.StylePriority.UseBorders = false;
+            this.tableCell1.StylePriority.UseFont = false;
+            this.tableCell1.StylePriority.UseForeColor = false;
+            this.tableCell1.StylePriority.UseTextAlignment = false;
+            this.tableCell1.Text = "NỘI DUNG";
+            this.tableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.tableCell1.Weight = 0.73407998478862591D;
+            // 
+            // tableCell2
+            // 
+            this.tableCell2.BackColor = System.Drawing.Color.Gray;
+            this.tableCell2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableCell2.ForeColor = System.Drawing.Color.White;
+            this.tableCell2.Name = "tableCell2";
+            this.tableCell2.StylePriority.UseBackColor = false;
+            this.tableCell2.StylePriority.UseFont = false;
+            this.tableCell2.StylePriority.UseForeColor = false;
+            this.tableCell2.StylePriority.UseTextAlignment = false;
+            this.tableCell2.Text = "THÀNH TIỀN";
+            this.tableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.tableCell2.Weight = 0.30260260484198009D;
+            // 
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -106,20 +178,6 @@ namespace NTH_Restaurant_Manager
             this.lb_MaSoThue});
             this.ReportHeader.HeightF = 163.1943F;
             this.ReportHeader.Name = "ReportHeader";
-            // 
-            // ReportFooter
-            // 
-            this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel3,
-            this.xrLabel1,
-            this.lb_Gia,
-            this.xrLabel4,
-            this.lb_Thue,
-            this.lb_GiaSauThue,
-            this.xrLabel2,
-            this.lb_GiaChu});
-            this.ReportFooter.HeightF = 147.5001F;
-            this.ReportFooter.Name = "ReportFooter";
             // 
             // label1
             // 
@@ -277,87 +335,30 @@ namespace NTH_Restaurant_Manager
             this.lb_MaSoThue.Text = "0123456789";
             this.lb_MaSoThue.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
-            // table1
+            // ReportFooter
             // 
-            this.table1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.table1.Name = "table1";
-            this.table1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
-            this.tableRow1});
-            this.table1.SizeF = new System.Drawing.SizeF(650F, 28F);
-            // 
-            // tableRow1
-            // 
-            this.tableRow1.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.tableCell1,
-            this.tableCell2});
-            this.tableRow1.Name = "tableRow1";
-            this.tableRow1.Weight = 1D;
-            // 
-            // tableCell1
-            // 
-            this.tableCell1.BackColor = System.Drawing.Color.Gray;
-            this.tableCell1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.tableCell1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableCell1.ForeColor = System.Drawing.Color.White;
-            this.tableCell1.Name = "tableCell1";
-            this.tableCell1.StylePriority.UseBackColor = false;
-            this.tableCell1.StylePriority.UseBorders = false;
-            this.tableCell1.StylePriority.UseFont = false;
-            this.tableCell1.StylePriority.UseForeColor = false;
-            this.tableCell1.StylePriority.UseTextAlignment = false;
-            this.tableCell1.Text = "NỘI DUNG";
-            this.tableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell1.Weight = 0.73407998478862591D;
-            // 
-            // tableCell2
-            // 
-            this.tableCell2.BackColor = System.Drawing.Color.Gray;
-            this.tableCell2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableCell2.ForeColor = System.Drawing.Color.White;
-            this.tableCell2.Name = "tableCell2";
-            this.tableCell2.StylePriority.UseBackColor = false;
-            this.tableCell2.StylePriority.UseFont = false;
-            this.tableCell2.StylePriority.UseForeColor = false;
-            this.tableCell2.StylePriority.UseTextAlignment = false;
-            this.tableCell2.Text = "THÀNH TIỀN";
-            this.tableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell2.Weight = 0.30260260484198009D;
-            // 
-            // lb_NoiDung
-            // 
-            this.lb_NoiDung.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_NoiDung.LocationFloat = new DevExpress.Utils.PointFloat(0F, 27.99998F);
-            this.lb_NoiDung.Multiline = true;
-            this.lb_NoiDung.Name = "lb_NoiDung";
-            this.lb_NoiDung.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lb_NoiDung.SizeF = new System.Drawing.SizeF(460.2682F, 72.97241F);
-            this.lb_NoiDung.StylePriority.UseFont = false;
-            this.lb_NoiDung.StylePriority.UseTextAlignment = false;
-            this.lb_NoiDung.Text = "HD123";
-            this.lb_NoiDung.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // lb_Tien
-            // 
-            this.lb_Tien.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Tien.LocationFloat = new DevExpress.Utils.PointFloat(460.2682F, 27.99998F);
-            this.lb_Tien.Multiline = true;
-            this.lb_Tien.Name = "lb_Tien";
-            this.lb_Tien.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lb_Tien.SizeF = new System.Drawing.SizeF(189.7318F, 72.97241F);
-            this.lb_Tien.StylePriority.UseFont = false;
-            this.lb_Tien.StylePriority.UseTextAlignment = false;
-            this.lb_Tien.Text = "HD123";
-            this.lb_Tien.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel3,
+            this.xrLabel1,
+            this.lb_Gia,
+            this.xrLabel4,
+            this.lb_Thue,
+            this.lb_GiaSauThue,
+            this.xrLabel2,
+            this.lb_GiaChu});
+            this.ReportFooter.HeightF = 147.5001F;
+            this.ReportFooter.Name = "ReportFooter";
             // 
             // xrLabel3
             // 
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(42.50003F, 0F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(5F, 0F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(607F, 15.10093F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(644.5F, 15.10093F);
             this.xrLabel3.StylePriority.UseTextAlignment = false;
-            this.xrLabel3.Text = "______________________________________________________________________________";
+            this.xrLabel3.Text = "_________________________________________________________________________________" +
+    "_";
             this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // xrLabel1
