@@ -30,16 +30,11 @@ namespace NTH_Restaurant_Manager
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.lb_Tien = new DevExpress.XtraReports.UI.XRLabel();
             this.lb_NoiDung = new DevExpress.XtraReports.UI.XRLabel();
-            this.table1 = new DevExpress.XtraReports.UI.XRTable();
-            this.tableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.tableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.tableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
             this.label1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
@@ -62,14 +57,14 @@ namespace NTH_Restaurant_Manager
             this.lb_GiaSauThue = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.lb_GiaChu = new DevExpress.XtraReports.UI.XRLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
+            this.tableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.tableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.tableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.table1 = new DevExpress.XtraReports.UI.XRTable();
+            this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
-            // 
-            // objectDataSource1
-            // 
-            this.objectDataSource1.DataSource = typeof(NTH_Restaurant_Manager.Model.HoaDonTachModel);
-            this.objectDataSource1.Name = "objectDataSource1";
             // 
             // TopMargin
             // 
@@ -113,53 +108,7 @@ namespace NTH_Restaurant_Manager
             this.lb_NoiDung.StylePriority.UseFont = false;
             this.lb_NoiDung.StylePriority.UseTextAlignment = false;
             this.lb_NoiDung.Text = "HD123";
-            this.lb_NoiDung.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // table1
-            // 
-            this.table1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.table1.Name = "table1";
-            this.table1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
-            this.tableRow1});
-            this.table1.SizeF = new System.Drawing.SizeF(650F, 28F);
-            // 
-            // tableRow1
-            // 
-            this.tableRow1.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.tableCell1,
-            this.tableCell2});
-            this.tableRow1.Name = "tableRow1";
-            this.tableRow1.Weight = 1D;
-            // 
-            // tableCell1
-            // 
-            this.tableCell1.BackColor = System.Drawing.Color.Gray;
-            this.tableCell1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.tableCell1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableCell1.ForeColor = System.Drawing.Color.White;
-            this.tableCell1.Name = "tableCell1";
-            this.tableCell1.StylePriority.UseBackColor = false;
-            this.tableCell1.StylePriority.UseBorders = false;
-            this.tableCell1.StylePriority.UseFont = false;
-            this.tableCell1.StylePriority.UseForeColor = false;
-            this.tableCell1.StylePriority.UseTextAlignment = false;
-            this.tableCell1.Text = "NỘI DUNG";
-            this.tableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell1.Weight = 0.73407998478862591D;
-            // 
-            // tableCell2
-            // 
-            this.tableCell2.BackColor = System.Drawing.Color.Gray;
-            this.tableCell2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableCell2.ForeColor = System.Drawing.Color.White;
-            this.tableCell2.Name = "tableCell2";
-            this.tableCell2.StylePriority.UseBackColor = false;
-            this.tableCell2.StylePriority.UseFont = false;
-            this.tableCell2.StylePriority.UseForeColor = false;
-            this.tableCell2.StylePriority.UseTextAlignment = false;
-            this.tableCell2.Text = "THÀNH TIỀN";
-            this.tableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell2.Weight = 0.30260260484198009D;
+            this.lb_NoiDung.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // ReportHeader
             // 
@@ -452,6 +401,64 @@ namespace NTH_Restaurant_Manager
             this.lb_GiaChu.Text = "Một triệu bốn trăm lẻ năm ngàn năm trăm đồng";
             this.lb_GiaChu.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
+            // tableCell2
+            // 
+            this.tableCell2.BackColor = System.Drawing.Color.Gray;
+            this.tableCell2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "")});
+            this.tableCell2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableCell2.ForeColor = System.Drawing.Color.White;
+            this.tableCell2.Name = "tableCell2";
+            this.tableCell2.StylePriority.UseBackColor = false;
+            this.tableCell2.StylePriority.UseFont = false;
+            this.tableCell2.StylePriority.UseTextAlignment = false;
+            this.tableCell2.Text = "THÀNH TIỀN";
+            this.tableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.tableCell2.Weight = 0.30260260484198009D;
+            // 
+            // tableCell1
+            // 
+            this.tableCell1.BackColor = System.Drawing.Color.Gray;
+            this.tableCell1.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
+            this.tableCell1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.tableCell1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableCell1.ForeColor = System.Drawing.Color.White;
+            this.tableCell1.Name = "tableCell1";
+            this.tableCell1.StylePriority.UseFont = false;
+            this.tableCell1.StylePriority.UseTextAlignment = false;
+            this.tableCell1.Text = "NỘI DUNG";
+            this.tableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.tableCell1.Weight = 0.73407998478862591D;
+            // 
+            // tableRow1
+            // 
+            this.tableRow1.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.tableCell1,
+            this.tableCell2});
+            this.tableRow1.Name = "tableRow1";
+            this.tableRow1.Weight = 1D;
+            // 
+            // table1
+            // 
+            this.table1.BackColor = System.Drawing.Color.Transparent;
+            this.table1.BorderColor = System.Drawing.Color.White;
+            this.table1.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Dash;
+            this.table1.BorderWidth = 1F;
+            this.table1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.table1.Name = "table1";
+            this.table1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
+            this.tableRow1});
+            this.table1.SizeF = new System.Drawing.SizeF(650F, 28F);
+            this.table1.StylePriority.UseBackColor = false;
+            this.table1.StylePriority.UseBorderColor = false;
+            this.table1.StylePriority.UseBorderDashStyle = false;
+            this.table1.StylePriority.UseBorderWidth = false;
+            // 
+            // objectDataSource1
+            // 
+            this.objectDataSource1.DataSource = typeof(NTH_Restaurant_Manager.Model.HoaDonTachModel);
+            this.objectDataSource1.Name = "objectDataSource1";
+            // 
             // rpTachHoaDon
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -466,8 +473,8 @@ namespace NTH_Restaurant_Manager
             this.Font = new System.Drawing.Font("Arial", 9.75F);
             this.Margins = new System.Drawing.Printing.Margins(100, 100, 100, 314);
             this.Version = "19.2";
-            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objectDataSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -492,10 +499,6 @@ namespace NTH_Restaurant_Manager
         public DevExpress.XtraReports.UI.XRLabel lb_Ngay;
         private DevExpress.XtraReports.UI.XRLabel xrLabel10;
         public DevExpress.XtraReports.UI.XRLabel lb_MaSoThue;
-        private DevExpress.XtraReports.UI.XRTable table1;
-        private DevExpress.XtraReports.UI.XRTableRow tableRow1;
-        private DevExpress.XtraReports.UI.XRTableCell tableCell1;
-        private DevExpress.XtraReports.UI.XRTableCell tableCell2;
         public DevExpress.XtraReports.UI.XRLabel lb_Tien;
         public DevExpress.XtraReports.UI.XRLabel lb_NoiDung;
         private DevExpress.XtraReports.UI.XRLabel xrLabel3;
@@ -506,5 +509,9 @@ namespace NTH_Restaurant_Manager
         public DevExpress.XtraReports.UI.XRLabel lb_GiaSauThue;
         public DevExpress.XtraReports.UI.XRLabel xrLabel2;
         public DevExpress.XtraReports.UI.XRLabel lb_GiaChu;
+        private DevExpress.XtraReports.UI.XRTable table1;
+        private DevExpress.XtraReports.UI.XRTableRow tableRow1;
+        private DevExpress.XtraReports.UI.XRTableCell tableCell1;
+        private DevExpress.XtraReports.UI.XRTableCell tableCell2;
     }
 }
