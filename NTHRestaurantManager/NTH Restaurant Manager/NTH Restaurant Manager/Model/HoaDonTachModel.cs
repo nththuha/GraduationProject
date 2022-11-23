@@ -15,5 +15,6 @@ namespace NTH_Restaurant_Manager.Model
         public String noiDung { get; set; }
         public double gia { get; set; }
         public int giaSauThue { get; set; }
+        public String tienChu { get; set; }
     }
 }

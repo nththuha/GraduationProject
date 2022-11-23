@@ -16,6 +16,7 @@ public class HoaDonTach {
     private String noiDung;
     private double gia;
     private Integer giaSauThue;
+    private String tienChu;
 
     public HoaDonTach(TachHoaDon tachHoaDon){
         this.maHD = tachHoaDon.getMaHD();

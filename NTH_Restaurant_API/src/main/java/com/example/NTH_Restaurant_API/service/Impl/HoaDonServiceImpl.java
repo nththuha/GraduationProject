@@ -279,6 +279,7 @@ public class HoaDonServiceImpl implements HoaDonService {
                 ct_hoaDonRepository.save(ct_hoaDon);
 
                 HoaDonTach hoaDonTach = new HoaDonTach(i);
+                hoaDonTach.setTienChu(chuyenSangChu(hoaDonTach.getGiaSauThue().toString()));
                 listHDT.add(hoaDonTach);
             }
 
