@@ -46,6 +46,7 @@ namespace NTH_Restaurant_Manager
             txt_TenNL.Text = "";
             txt_DonVi.Text = "";
             se_SLTon.Text = "0";
+            se_SLToiThieu.Text = "0";
         }
 
         private void setGiaTri(int num)
@@ -172,6 +173,7 @@ namespace NTH_Restaurant_Manager
             nguyenLieu.tenNL = txt_TenNL.Text.Trim();
             nguyenLieu.donVi = txt_DonVi.Text.Trim();
             nguyenLieu.slTon = tam;
+            nguyenLieu.slToiThieu = slTT;
             if (button.Equals("Thêm"))
             {
                 themNguyenLieu();
@@ -185,6 +187,12 @@ namespace NTH_Restaurant_Manager
             panelControl1.Enabled = btn_Them.Enabled = btn_CapNhat.Enabled = btn_Reload.Enabled = btn_Xoa.Enabled = true;
             btn_Luu.Enabled = btn_PhucHoi.Enabled = false;
             panelControl2.Enabled = false;
+        }
+
+        private void btn_Reload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            khoiTao();
+            layDSNguyenLieu();
         }
     }
 }

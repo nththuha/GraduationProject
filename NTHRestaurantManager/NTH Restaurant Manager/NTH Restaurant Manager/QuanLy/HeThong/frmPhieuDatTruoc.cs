@@ -262,7 +262,7 @@ namespace NTH_Restaurant_Manager
             }
             int gioHT = int.Parse(aDate.ToString("HH"));
             int gioDat = int.Parse(gvPDT.GetRowCellValue(num, "gioDat").ToString());
-            if(gioDat > gioHT + 1 || gioDat < gioHT)
+            if(gioDat > gioHT || gioDat < gioHT)
             {
                 MessageBox.Show("Giờ đặt không hợp lý", "Thông báo");
                 return;

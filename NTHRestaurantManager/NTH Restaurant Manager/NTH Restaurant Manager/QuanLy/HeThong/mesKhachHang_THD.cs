@@ -119,7 +119,7 @@ namespace NTH_Restaurant_Manager
                 }
                 if(gia1 + gia2 != tongTien)
                 {
-                    MessageBox.Show("Tiền của các hóa đơn phải nhỏ hơn hoặc bằng tổng tiền", "Thông báo");
+                    MessageBox.Show("Tiền của các hóa đơn phải bằng tổng tiền", "Thông báo");
                     return;
                 }
                 TachHoaDonModel thd1 = ganGiaTriTachHoaDon("HD" + ngayGio + "_1", txt_HoTenKH.Text.Trim(), txt_MaSoThue.Text.Trim(), txt_NoiDung.Text.Trim(), ngay, gia1);
@@ -153,7 +153,7 @@ namespace NTH_Restaurant_Manager
                 }
                 if (gia1 + gia2 + gia3 != tongTien)
                 {
-                    MessageBox.Show("Tiền của các hóa đơn phải nhỏ hơn hoặc bằng tổng tiền", "Thông báo");
+                    MessageBox.Show("Tiền của các hóa đơn phải hoặc bằng tổng tiền", "Thông báo");
                     return;
                 }
                 TachHoaDonModel thd1 = ganGiaTriTachHoaDon("HD" + ngayGio + "_1", txt_HoTenKH.Text.Trim(), txt_MaSoThue.Text.Trim(), txt_NoiDung.Text.Trim(), ngay, gia1);
@@ -196,7 +196,7 @@ namespace NTH_Restaurant_Manager
                 }
                 if (gia1 + gia2 + gia3 + gia4 != tongTien)
                 {
-                    MessageBox.Show("Tiền của các hóa đơn phải nhỏ hơn hoặc bằng tổng tiền", "Thông báo");
+                    MessageBox.Show("Tiền của các hóa đơn phải bằng tổng tiền", "Thông báo");
                     return;
                 }
                 TachHoaDonModel thd1 = ganGiaTriTachHoaDon("HD" + ngayGio + "_1", txt_HoTenKH.Text.Trim(), txt_MaSoThue.Text.Trim(), txt_NoiDung.Text.Trim(), ngay, gia1);

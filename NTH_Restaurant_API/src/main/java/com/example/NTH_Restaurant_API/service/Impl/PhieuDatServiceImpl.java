@@ -39,6 +39,9 @@ public class PhieuDatServiceImpl implements PhieuDatService {
     @Autowired
     private CT_DatMonRepository ct_datMonRepository;
 
+    @Autowired
+    private CT_DatMonTruocRepository ct_datMonTruocRepository;
+
     @Override
     public List<PhieuDatDTO> layDSPhieuDatChuaCoHoaDon() {
         List<PhieuDatEntity> ds = phieuDatRepository.findAll();
@@ -156,6 +159,17 @@ public class PhieuDatServiceImpl implements PhieuDatService {
                 i--;
             }
         }
-        return ds.stream().map(PhieuDatDTO::new).collect(Collectors.toList());
+        List<PhieuDatDTO> listPD = ds.stream().map(PhieuDatDTO::new).collect(Collectors.toList());
+        for(PhieuDatDTO i: listPD){
+            List<CT_DatMonTruocEntity> listCTDMT = ct_datMonTruocRepository.findByIdpdt_IdPDT(i.getIdPDT());
+            int tong = 0;
+            for(CT_DatMonTruocEntity j: listCTDMT){
+                tong += j.getGia();
+            }
+            i.setGia(tong);
+            i.setGiaSauThue((int) (tong * 1.1));
+        }
+
+        return listPD;
     }
 }

@@ -127,6 +127,8 @@ namespace NTH_Restaurant_Manager
             // colsoLuong
             // 
             this.colsoLuong.Caption = "SỐ LƯỢNG";
+            this.colsoLuong.DisplayFormat.FormatString = "{0:0,0}";
+            this.colsoLuong.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colsoLuong.FieldName = "soLuong";
             this.colsoLuong.MinWidth = 25;
             this.colsoLuong.Name = "colsoLuong";
@@ -137,6 +139,8 @@ namespace NTH_Restaurant_Manager
             // colgia
             // 
             this.colgia.Caption = "GIÁ";
+            this.colgia.DisplayFormat.FormatString = "{0:0,0}";
+            this.colgia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colgia.FieldName = "gia";
             this.colgia.MinWidth = 25;
             this.colgia.Name = "colgia";

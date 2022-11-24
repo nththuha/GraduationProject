@@ -89,6 +89,7 @@ namespace NTH_Restaurant_Manager
                 if(listMA.Count > 0)
                 {
                     maMA = listMA[0].maMA;
+                    gia = listMA[0].gia;
                 }
             }
             catch (Exception e)
@@ -141,7 +142,7 @@ namespace NTH_Restaurant_Manager
         public async void themCTThucDon()
         {
             cTThucDon = new CTThucDonModel();
-            cTThucDon.gia = gia;
+            cTThucDon.gia = gia * Program.soLuong;
             cTThucDon.mama = maMA;
             cTThucDon.soLuong = Program.soLuong;
             cTThucDon.idtd = idTD;

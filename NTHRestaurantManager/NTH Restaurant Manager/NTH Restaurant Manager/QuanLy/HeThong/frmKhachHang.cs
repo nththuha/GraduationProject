@@ -77,9 +77,9 @@ namespace NTH_Restaurant_Manager
         {
             bdsKH.CancelEdit();
             layDSKhachHang();
-            gcKH.Enabled = false;
-            panelControl2.Enabled = btn_Them.Enabled = btn_Xoa.Enabled = btn_CapNhat.Enabled = btn_Thoat.Enabled = btn_Reload.Enabled = true;
-            btn_PhucHoi.Enabled = btn_Luu.Enabled = false;
+            gcKH.Enabled = true;
+            btn_Them.Enabled = btn_Xoa.Enabled = btn_CapNhat.Enabled = btn_Thoat.Enabled = btn_Reload.Enabled = true;
+            btn_PhucHoi.Enabled = btn_Luu.Enabled = panelControl2.Enabled = false;
         }
 
         private async void themKhachHang()
