@@ -36,6 +36,10 @@ namespace NTH_Restaurant_Manager
             try
             {
                 var listPD = await _repositoryPD.layDSPhieuDatPhieuDatTruoc();
+                for (int i = 0; i < listPD.Count; i++)
+                {
+                    listPD[i].ngay = listPD[i].ngay.Substring(8, 2) + "-" + listPD[i].ngay.Substring(5, 2) + "-" + listPD[i].ngay.Substring(0, 4);
+                }
                 gcPD.DataSource = listPD;
                 if(listPD.Count > 0)
                 {

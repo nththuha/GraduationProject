@@ -40,7 +40,7 @@ public class ThucDonServiceImpl implements ThucDonService {
             int t = 0;
             for(CT_ThucDonEntity j: i.getCtThucdonList()){
                 int gia = thayDoiGiaMonService.layGiaHienTai(j.getMama().getMaMA());
-                j.setGia(gia);
+                j.setGia(gia * j.getSoLuong());
                 ct_thucDonRepository.save(j);
                 t += gia;
             }
