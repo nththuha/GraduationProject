@@ -42,7 +42,7 @@ public class ThucDonServiceImpl implements ThucDonService {
                 int gia = thayDoiGiaMonService.layGiaHienTai(j.getMama().getMaMA());
                 j.setGia(gia * j.getSoLuong());
                 ct_thucDonRepository.save(j);
-                t += gia;
+                t += j.getGia();
             }
             i.setGia(t);
             thucDonRepository.save(i);
