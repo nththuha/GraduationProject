@@ -116,7 +116,8 @@ namespace NTH_Restaurant_Manager
             Program.hoaDon.maHD = "HD" + ngayGio;
             Program.hoaDon.ngay = ngay;
             List<PhieuDatModel> listPD = new List<PhieuDatModel>();
-            PhieuDatModel pd = new PhieuDatModel(); pd.idPD = idPD;
+            PhieuDatModel pd = new PhieuDatModel(); 
+            pd.idPD = idPD;
             listPD.Add(pd);
             Program.hoaDon.phieudatList = listPD;
             Program.hoaDon.idnv = Program.nhanVienDangDangNhap.idNV;
