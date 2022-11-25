@@ -8,12 +8,16 @@
       <root url="jar://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/6413dafff62faf5be8d1ee7544e6196f/transformed/coil-1.2.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/6413dafff62faf5be8d1ee7544e6196f/transformed/coil-1.2.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/transforms-3/6413dafff62faf5be8d1ee7544e6196f/transformed/coil-1.2.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6413dafff62faf5be8d1ee7544e6196f/transformed/coil-1.2.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/6413dafff62faf5be8d1ee7544e6196f/transformed/coil-1.2.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/modules-2/files-2.1/io.coil-kt/coil/1.2.0/b908a0cf9f7826fb572c8c022ddf237bedb8de44/coil-1.2.0-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.coil-kt/coil/1.2.0/b908a0cf9f7826fb572c8c022ddf237bedb8de44/coil-1.2.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/Downloads/Retrofit-Authorization-Token-master/caches/modules-2/files-2.1/io.coil-kt/coil/1.2.0/c306b3021f4682d99f921cf260b93b272d0bf640/coil-1.2.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.coil-kt/coil/1.2.0/c306b3021f4682d99f921cf260b93b272d0bf640/coil-1.2.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
