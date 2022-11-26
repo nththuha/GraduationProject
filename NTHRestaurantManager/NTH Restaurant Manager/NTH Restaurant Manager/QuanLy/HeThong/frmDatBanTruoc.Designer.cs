@@ -159,7 +159,7 @@ namespace NTH_Restaurant_Manager
             // 
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label2.Location = new System.Drawing.Point(16, 134);
+            label2.Location = new System.Drawing.Point(19, 132);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(99, 27);
             label2.TabIndex = 29;

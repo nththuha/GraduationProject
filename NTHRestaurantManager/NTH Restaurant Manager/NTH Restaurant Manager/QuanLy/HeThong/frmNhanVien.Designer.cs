@@ -53,6 +53,12 @@ namespace NTH_Restaurant_Manager
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.bdsNVTK = new System.Windows.Forms.BindingSource(this.components);
             this.gvNVTK = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colmaTK = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colhoTen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsdt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colemail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltenBP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcNVTK = new DevExpress.XtraGrid.GridControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.cbb_TenBP = new System.Windows.Forms.ComboBox();
@@ -63,12 +69,6 @@ namespace NTH_Restaurant_Manager
             this.txt_SDT = new DevExpress.XtraEditors.TextEdit();
             this.txt_HoTen = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
-            this.colmaTK = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colhoTen = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colsdt = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colemail = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltenBP = new DevExpress.XtraGrid.Columns.GridColumn();
             hoTenLabel = new System.Windows.Forms.Label();
             sDTLabel = new System.Windows.Forms.Label();
             diaChiLabel = new System.Windows.Forms.Label();
@@ -156,9 +156,9 @@ namespace NTH_Restaurant_Manager
             tenBPLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             tenBPLabel.Location = new System.Drawing.Point(25, 289);
             tenBPLabel.Name = "tenBPLabel";
-            tenBPLabel.Size = new System.Drawing.Size(132, 27);
+            tenBPLabel.Size = new System.Drawing.Size(93, 27);
             tenBPLabel.TabIndex = 18;
-            tenBPLabel.Text = "Tên bộ phận";
+            tenBPLabel.Text = "Bộ phận";
             // 
             // barManager1
             // 
@@ -311,6 +311,66 @@ namespace NTH_Restaurant_Manager
             this.gvNVTK.OptionsBehavior.Editable = false;
             this.gvNVTK.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvNVTK_RowClick);
             // 
+            // colmaTK
+            // 
+            this.colmaTK.Caption = "MÃ TÀI KHOẢN";
+            this.colmaTK.FieldName = "maTK";
+            this.colmaTK.MinWidth = 25;
+            this.colmaTK.Name = "colmaTK";
+            this.colmaTK.Visible = true;
+            this.colmaTK.VisibleIndex = 0;
+            this.colmaTK.Width = 94;
+            // 
+            // colhoTen
+            // 
+            this.colhoTen.Caption = "HỌ TÊN";
+            this.colhoTen.FieldName = "hoTen";
+            this.colhoTen.MinWidth = 25;
+            this.colhoTen.Name = "colhoTen";
+            this.colhoTen.Visible = true;
+            this.colhoTen.VisibleIndex = 1;
+            this.colhoTen.Width = 94;
+            // 
+            // colsdt
+            // 
+            this.colsdt.Caption = "SỐ ĐIỆN THOẠI";
+            this.colsdt.FieldName = "sdt";
+            this.colsdt.MinWidth = 25;
+            this.colsdt.Name = "colsdt";
+            this.colsdt.Visible = true;
+            this.colsdt.VisibleIndex = 2;
+            this.colsdt.Width = 94;
+            // 
+            // coldiaChi
+            // 
+            this.coldiaChi.Caption = "ĐỊA CHỈ";
+            this.coldiaChi.FieldName = "diaChi";
+            this.coldiaChi.MinWidth = 25;
+            this.coldiaChi.Name = "coldiaChi";
+            this.coldiaChi.Visible = true;
+            this.coldiaChi.VisibleIndex = 3;
+            this.coldiaChi.Width = 94;
+            // 
+            // colemail
+            // 
+            this.colemail.Caption = "EMAIL";
+            this.colemail.FieldName = "email";
+            this.colemail.MinWidth = 25;
+            this.colemail.Name = "colemail";
+            this.colemail.Visible = true;
+            this.colemail.VisibleIndex = 4;
+            this.colemail.Width = 94;
+            // 
+            // coltenBP
+            // 
+            this.coltenBP.Caption = "TÊN BỘ PHẬN";
+            this.coltenBP.FieldName = "tenBP";
+            this.coltenBP.MinWidth = 25;
+            this.coltenBP.Name = "coltenBP";
+            this.coltenBP.Visible = true;
+            this.coltenBP.VisibleIndex = 5;
+            this.coltenBP.Width = 94;
+            // 
             // gcNVTK
             // 
             this.gcNVTK.DataSource = this.bdsNVTK;
@@ -428,66 +488,6 @@ namespace NTH_Restaurant_Manager
             this.label1.Size = new System.Drawing.Size(332, 35);
             this.label1.TabIndex = 12;
             this.label1.Text = "QUẢN LÝ NHÂN VIÊN";
-            // 
-            // colmaTK
-            // 
-            this.colmaTK.Caption = "MÃ TÀI KHOẢN";
-            this.colmaTK.FieldName = "maTK";
-            this.colmaTK.MinWidth = 25;
-            this.colmaTK.Name = "colmaTK";
-            this.colmaTK.Visible = true;
-            this.colmaTK.VisibleIndex = 0;
-            this.colmaTK.Width = 94;
-            // 
-            // colhoTen
-            // 
-            this.colhoTen.Caption = "HỌ TÊN";
-            this.colhoTen.FieldName = "hoTen";
-            this.colhoTen.MinWidth = 25;
-            this.colhoTen.Name = "colhoTen";
-            this.colhoTen.Visible = true;
-            this.colhoTen.VisibleIndex = 1;
-            this.colhoTen.Width = 94;
-            // 
-            // colsdt
-            // 
-            this.colsdt.Caption = "SỐ ĐIỆN THOẠI";
-            this.colsdt.FieldName = "sdt";
-            this.colsdt.MinWidth = 25;
-            this.colsdt.Name = "colsdt";
-            this.colsdt.Visible = true;
-            this.colsdt.VisibleIndex = 2;
-            this.colsdt.Width = 94;
-            // 
-            // coldiaChi
-            // 
-            this.coldiaChi.Caption = "ĐỊA CHỈ";
-            this.coldiaChi.FieldName = "diaChi";
-            this.coldiaChi.MinWidth = 25;
-            this.coldiaChi.Name = "coldiaChi";
-            this.coldiaChi.Visible = true;
-            this.coldiaChi.VisibleIndex = 3;
-            this.coldiaChi.Width = 94;
-            // 
-            // colemail
-            // 
-            this.colemail.Caption = "EMAIL";
-            this.colemail.FieldName = "email";
-            this.colemail.MinWidth = 25;
-            this.colemail.Name = "colemail";
-            this.colemail.Visible = true;
-            this.colemail.VisibleIndex = 4;
-            this.colemail.Width = 94;
-            // 
-            // coltenBP
-            // 
-            this.coltenBP.Caption = "TÊN BỘ PHẬN";
-            this.coltenBP.FieldName = "tenBP";
-            this.coltenBP.MinWidth = 25;
-            this.coltenBP.Name = "coltenBP";
-            this.coltenBP.Visible = true;
-            this.coltenBP.VisibleIndex = 5;
-            this.coltenBP.Width = 94;
             // 
             // frmNhanVien
             // 

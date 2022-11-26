@@ -50,6 +50,7 @@ namespace NTH_Restaurant_Manager
             this.btn_Them = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Xoa = new DevExpress.XtraBars.BarButtonItem();
             this.btn_XuatHoaDon = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_TachHoaDon = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Reload = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Thoat = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -78,7 +79,6 @@ namespace NTH_Restaurant_Manager
             this.colgia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colchuThich = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btn_TachHoaDon = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcPDTemp)).BeginInit();
@@ -288,6 +288,15 @@ namespace NTH_Restaurant_Manager
             this.btn_XuatHoaDon.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btn_XuatHoaDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_XuatHoaDon_ItemClick);
             // 
+            // btn_TachHoaDon
+            // 
+            this.btn_TachHoaDon.Caption = "Tách hóa đơn";
+            this.btn_TachHoaDon.Id = 8;
+            this.btn_TachHoaDon.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_TachHoaDon.ImageOptions.SvgImage")));
+            this.btn_TachHoaDon.Name = "btn_TachHoaDon";
+            this.btn_TachHoaDon.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_TachHoaDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_TachHoaDon_ItemClick);
+            // 
             // btn_Reload
             // 
             this.btn_Reload.Caption = "Reload";
@@ -496,13 +505,13 @@ namespace NTH_Restaurant_Manager
             // gcCTDM
             // 
             this.gcCTDM.DataSource = this.bdsCTDM;
-            this.gcCTDM.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcCTDM.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcCTDM.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcCTDM.Location = new System.Drawing.Point(1045, 30);
             this.gcCTDM.MainView = this.gvCTDM;
             this.gcCTDM.Margin = new System.Windows.Forms.Padding(4);
             this.gcCTDM.Name = "gcCTDM";
-            this.gcCTDM.Size = new System.Drawing.Size(588, 389);
+            this.gcCTDM.Size = new System.Drawing.Size(588, 772);
             this.gcCTDM.TabIndex = 1;
             this.gcCTDM.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvCTDM});
@@ -571,15 +580,6 @@ namespace NTH_Restaurant_Manager
             this.colchuThich.Visible = true;
             this.colchuThich.VisibleIndex = 4;
             this.colchuThich.Width = 117;
-            // 
-            // btn_TachHoaDon
-            // 
-            this.btn_TachHoaDon.Caption = "Tách hóa đơn";
-            this.btn_TachHoaDon.Id = 8;
-            this.btn_TachHoaDon.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_TachHoaDon.ImageOptions.SvgImage")));
-            this.btn_TachHoaDon.Name = "btn_TachHoaDon";
-            this.btn_TachHoaDon.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btn_TachHoaDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_TachHoaDon_ItemClick);
             // 
             // frmTheoDoiDonHang
             // 
