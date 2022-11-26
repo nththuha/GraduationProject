@@ -51,8 +51,7 @@ public class PhieuDatServiceImpl implements PhieuDatService {
             if (listCTHD.size() > 0) {
                 ds.remove(ds.get(i));
                 i--;
-            }
-            else if(ds.get(i).getIdpdt() != null){
+            } else if (ds.get(i).getIdpdt() != null) {
                 ds.remove(ds.get(i));
                 i--;
             }
@@ -73,7 +72,7 @@ public class PhieuDatServiceImpl implements PhieuDatService {
 
             List<CT_DatMonEntity> listCTDM = ct_datMonRepository.findByIdpd_IdPD(ds.get(i).getIdPD());
             int t = 0;
-            for(CT_DatMonEntity j: listCTDM){
+            for (CT_DatMonEntity j : listCTDM) {
                 t += j.getGia();
             }
             list.get(i).setGia(t);
@@ -110,8 +109,7 @@ public class PhieuDatServiceImpl implements PhieuDatService {
             ct_datBanRepository.save(ct_datBan);
 
             return new PhieuDatDTO(pd);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             return null;
         }
     }
@@ -131,7 +129,7 @@ public class PhieuDatServiceImpl implements PhieuDatService {
 
             List<CT_DatBanTruocEntity> listCTDBT = ct_datBanTruocRepository.findByIdpdt_IdPDT(pdt.getIdPDT());
             List<CT_BanEntity> listCTB = new ArrayList<>();
-            for(CT_DatBanTruocEntity i: listCTDBT){
+            for (CT_DatBanTruocEntity i : listCTDBT) {
                 CT_BanEntity ctBan = i.getIdctb();
                 ctBan.setTrangThai("Hết chỗ");
                 listCTB.add(ctBan);
@@ -139,8 +137,7 @@ public class PhieuDatServiceImpl implements PhieuDatService {
             ct_banRepository.saveAll(listCTB);
 
             return "true";
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             return "false";
         }
     }
@@ -153,17 +150,16 @@ public class PhieuDatServiceImpl implements PhieuDatService {
             if (listCTHD.size() > 0) {
                 ds.remove(ds.get(i));
                 i--;
-            }
-            else if(ds.get(i).getIdpdt() == null){
+            } else if (ds.get(i).getIdpdt() == null) {
                 ds.remove(ds.get(i));
                 i--;
             }
         }
         List<PhieuDatDTO> listPD = ds.stream().map(PhieuDatDTO::new).collect(Collectors.toList());
-        for(PhieuDatDTO i: listPD){
+        for (PhieuDatDTO i : listPD) {
             List<CT_DatMonTruocEntity> listCTDMT = ct_datMonTruocRepository.findByIdpdt_IdPDT(i.getIdPDT());
             int tong = 0;
-            for(CT_DatMonTruocEntity j: listCTDMT){
+            for (CT_DatMonTruocEntity j : listCTDMT) {
                 tong += j.getGia();
             }
             i.setGia(tong);
