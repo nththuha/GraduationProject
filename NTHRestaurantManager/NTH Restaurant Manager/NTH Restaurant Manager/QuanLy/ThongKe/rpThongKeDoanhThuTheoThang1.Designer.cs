@@ -326,7 +326,7 @@ namespace NTH_Restaurant_Manager
             // 
             // lb_Tong
             // 
-            this.lb_Tong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Tong.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Tong.LocationFloat = new DevExpress.Utils.PointFloat(235.2385F, 15.10091F);
             this.lb_Tong.Multiline = true;
             this.lb_Tong.Name = "lb_Tong";
