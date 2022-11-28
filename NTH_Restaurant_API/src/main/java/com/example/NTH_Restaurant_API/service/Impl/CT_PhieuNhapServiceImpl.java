@@ -70,14 +70,16 @@ public class CT_PhieuNhapServiceImpl implements CT_PhieuNhapService {
     @Override
     public String suaCT_PhieuNhap(CT_PhieuNhapDTO ct_phieuNhapDTO) {
         if(!ct_phieuNhapRepository.existsByIdCTPN(ct_phieuNhapDTO.getIdCTPN())) return "false";
+        CT_PhieuNhapEntity temp = ct_phieuNhapRepository.getById(ct_phieuNhapDTO.getIdCTPN());
         CT_PhieuNhapEntity ct_phieuNhap = ct_phieuNhapDTO.toEntity();
         PhieuNhapNguyenLieuEntity phieuNhap = phieuNhapNguyenLieuRepository.getById(ct_phieuNhapDTO.getIdpn());
         NguyenLieuEntity nguyenLieu = nguyenLieuRepository.getById(ct_phieuNhapDTO.getManl());
         ct_phieuNhap.setIdpn(phieuNhap);
         ct_phieuNhap.setManl(nguyenLieu);
-
+        nguyenLieu.setSlTon(nguyenLieu.getSlTon() - temp.getSoLuong() + ct_phieuNhapDTO.getSoLuong());
         try {
             ct_phieuNhapRepository.save(ct_phieuNhap);
+            nguyenLieuRepository.save(nguyenLieu);
             return "true";
         }
         catch (Exception e) {

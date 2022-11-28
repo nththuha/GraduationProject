@@ -8,6 +8,7 @@ import com.example.NTH_Restaurant_API.service.PhieuNhapNguyenLieuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -26,6 +27,9 @@ public class PhieuNhapNguyenLieuServiceImpl implements PhieuNhapNguyenLieuServic
 
     @Autowired
     private CT_PhieuNhapRepository ct_phieuNhapRepository;
+
+    @Autowired
+    private NguyenLieuRepository nguyenLieuRepository;
 
     @Override
     public PhieuNhapNguyenLieuDTO themPhieuNhapNguyenLieu(PhieuNhapNguyenLieuDTO phieuNhapNguyenLieuDTO) {
@@ -56,7 +60,6 @@ public class PhieuNhapNguyenLieuServiceImpl implements PhieuNhapNguyenLieuServic
         phieuNhap.setIdpm(phieuMua);
 
         List<CT_PhieuMuaEntity> listCTPM = ct_phieuMuaRepository.findByIdpm_IdPM(idPM);
-
         try {
             phieuNhap = phieuNhapNguyenLieuRepository.save(phieuNhap);
 
@@ -67,6 +70,9 @@ public class PhieuNhapNguyenLieuServiceImpl implements PhieuNhapNguyenLieuServic
                 ct_phieuNhap.setGia(0);
                 ct_phieuNhap.setIdpn(phieuNhap);
                 ct_phieuNhapRepository.save(ct_phieuNhap);
+                NguyenLieuEntity nguyenLieu = i.getManl();
+                nguyenLieu.setSlTon(nguyenLieu.getSlTon() + i.getSoLuong());
+                nguyenLieuRepository.save(nguyenLieu);
             }
             return phieuNhap.getIdPN().toString();
         }
