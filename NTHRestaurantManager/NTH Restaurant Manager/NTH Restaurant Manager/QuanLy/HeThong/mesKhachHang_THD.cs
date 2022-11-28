@@ -28,6 +28,7 @@ namespace NTH_Restaurant_Manager
             InitializeComponent();
             this.idPD = idPD;
             this.tongTien = tongTien;
+            lb_TongTien.Text = "Tổng tiền: " + tongTien;
             se_Gia1.Visible = se_Gia2.Visible = se_Gia3.Visible = se_Gia4.Visible = false;
             lb_Gia1.Visible = lb_Gia2.Visible = lb_Gia3.Visible = lb_Gia4.Visible = false;
             hienComponent(false);
