@@ -263,7 +263,7 @@ namespace NTH_Restaurant_Manager
             this.xrTableCell2.StyleName = "DetailCaption1";
             this.xrTableCell2.StylePriority.UseFont = false;
             this.xrTableCell2.StylePriority.UseTextAlignment = false;
-            this.xrTableCell2.Text = "DOANH THU";
+            this.xrTableCell2.Text = "LỢI NHUẬN";
             this.xrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell2.Weight = 0.61604700894637165D;
             // 
