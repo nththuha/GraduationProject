@@ -106,13 +106,14 @@ public class HoaDonServiceImpl implements HoaDonService {
                         kq.append(hm_tien.get(dau)).append(" ");
                         flag10 = 0;
                     }
+                    else flag10 = 1;
                 }
                 if (dem % 3 != 1 && m.startsWith("0")) {
                     //lẻ -> do nothing
                 } else {
                     if (dem % 3 == 2 && (m.startsWith("1") || m.startsWith("0"))) {
                         //mười -> do nothing
-                    } else {
+                    } else if(flag10 == 0) {
                         kq.append(hm_hanh.get(dem + "")).append(" ");
                     }
                 }
@@ -123,6 +124,7 @@ public class HoaDonServiceImpl implements HoaDonService {
         kq = new StringBuilder(kq.substring(0, kq.length() - 1));
         String ketQua = kq.toString();
         ketQua = ketQua.substring(0, 1).toUpperCase() + ketQua.substring(1);
+        if(!ketQua.endsWith("đồng")) ketQua += " đồng";
         return ketQua.trim();
     }
 

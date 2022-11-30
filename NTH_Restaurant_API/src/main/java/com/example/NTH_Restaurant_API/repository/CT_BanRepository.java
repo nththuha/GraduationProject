@@ -25,25 +25,25 @@ public interface CT_BanRepository extends JpaRepository<CT_BanEntity, Integer> {
 
     @Transactional
     @Modifying
-    @Query(value = "select t.idctb, t.maphong, t.maban \n" +
-            "from (select idpdt \n" +
-            "from phieudattruoc \n" +
-            "where ngaydat = :ngay and giodat - 4 < :gio and giodat + 4 > :gio and trangthai != 'Hủy phiếu') pdt,\n" +
-            "(select ctb.idctb, ctb.maban, ctb.maphong, dbt.idpdt\n" +
-            "from ct_ban ctb, ct_datbantruoc dbt \n" +
-            "where ctb.idctb = dbt.idctb and ctb.maphong = :maPhong) t \n" +
+    @Query(value = "select t.idctb, t.maphong, t.maban " +
+            "from (select idpdt " +
+            "from phieudattruoc " +
+            "where ngaydat = :ngay and giodat - 4 < :gio and giodat + 4 > :gio and trangthai != 'Hủy phiếu') pdt," +
+            "(select ctb.idctb, ctb.maban, ctb.maphong, dbt.idpdt " +
+            "from ct_ban ctb, ct_datbantruoc dbt " +
+            "where ctb.idctb = dbt.idctb and ctb.maphong = :maPhong) t " +
             "where pdt.idpdt = t.idpdt", nativeQuery = true)
     List<BanDaDat> layCTBanDaDat(@Param("ngay") Date ngay, @Param("gio") Integer gio, @Param("maPhong") String maPhong);
 
     @Transactional
     @Modifying
-    @Query(value = "select t.idctb, t.maphong, t.maban \n" +
-            "from (select idpdt \n" +
-            "from phieudattruoc \n" +
-            "where ngaydat = :ngay and giodat - 4 < :gio and giodat + 4 > :gio and trangthai = 'Đã đặt') pdt,\n" +
-            "(select ctb.idctb, ctb.maban, ctb.maphong, dbt.idpdt\n" +
+    @Query(value = "select t.idctb, t.maphong, t.maban " +
+            "from (select idpdt " +
+            "from phieudattruoc " +
+            "where ngaydat = :ngay and giodat - 4 < :gio and giodat + 4 > :gio and trangthai = 'Đã đặt') pdt," +
+            "(select ctb.idctb, ctb.maban, ctb.maphong, dbt.idpdt " +
             "from ct_ban ctb, ct_datbantruoc dbt \n" +
-            "where ctb.idctb = dbt.idctb and ctb.maphong = :maPhong) t \n" +
+            "where ctb.idctb = dbt.idctb and ctb.maphong = :maPhong) t " +
             "where pdt.idpdt = t.idpdt", nativeQuery = true)
     List<BanDaDat> layCTBanDaDatTrongNgay(@Param("ngay") Date ngay, @Param("gio") Integer gio, @Param("maPhong") String maPhong);
 }

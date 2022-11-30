@@ -27,14 +27,14 @@ public interface PhieuMuaNguyenLieuRepository extends JpaRepository<PhieuMuaNguy
 
     @Transactional
     @Modifying
-    @Query(value = "select t.manl as manl, sum(t.soluong) as soluong\n" +
-            "from (select ctma.manl, (ctma.soluong * ma.soluong) as soluong\n" +
-            "from (select td.mama, td.soluong\n" +
-            "from (select p.idpdt\n" +
-            "from phieudattruoc p \n" +
-            "where p.ngaydat = :ngay) pdt, ct_datbantruoc dbt, ct_thucdon td\n" +
-            "where pdt.idpdt = dbt.idpdt and dbt.idtd = td.idtd) ma, ct_monan ctma\n" +
-            "where ma.mama = ctma.mama) as t\n" +
+    @Query(value = "select t.manl as manl, sum(t.soluong) as soluong " +
+            "from (select ctma.manl, (ctma.soluong * ma.soluong) as soluong " +
+            "from (select td.mama, td.soluong " +
+            "from (select p.idpdt " +
+            "from phieudattruoc p " +
+            "where p.ngaydat = :ngay) pdt, ct_datbantruoc dbt, ct_thucdon td " +
+            "where pdt.idpdt = dbt.idpdt and dbt.idtd = td.idtd) ma, ct_monan ctma " +
+            "where ma.mama = ctma.mama) as t " +
             "group by t.manl", nativeQuery = true)
     List<NguyenLieuCanMua> layDSNguyenLieuCanMuaTheoNgay(@Param("ngay") Date ngay);
 }

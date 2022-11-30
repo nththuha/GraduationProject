@@ -17,11 +17,11 @@ public interface PhieuNhapNguyenLieuRepository extends JpaRepository<PhieuNhapNg
     @Transactional
     @Modifying
     @Query(value = "select to_char(ngay, 'yyyy') as nam, to_char(ngay, 'MM') as thang, sum(ct.gia) as doanhthu\n" +
-            "from(select p.idpn , p.ngay \n" +
-            "\t\tfrom phieunhapnguyenlieu as p\n" +
-            "\t\twhere p.ngay >= :ngayBD and ngay <= :ngayKT) as t, ctpn_nguyenlieu as ct\n" +
-            "where t.idpn = ct.idpn\n" +
-            "group by nam, thang\n" +
+            "from(select p.idpn , p.ngay " +
+            "from phieunhapnguyenlieu as p " +
+            "where p.ngay >= :ngayBD and ngay <= :ngayKT) as t, ctpn_nguyenlieu as ct " +
+            "where t.idpn = ct.idpn " +
+            "group by nam, thang " +
             "order by thang, nam desc", nativeQuery = true)
     List<TempDTO> layThongKeTienMuaNguyenLieu(@Param("ngayBD") Date ngayBD, @Param("ngayKT") Date ngayKT);
 }

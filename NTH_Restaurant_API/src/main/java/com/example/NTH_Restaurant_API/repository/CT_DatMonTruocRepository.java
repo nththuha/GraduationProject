@@ -15,10 +15,10 @@ public interface CT_DatMonTruocRepository extends JpaRepository<CT_DatMonTruocEn
 
     @Transactional
     @Modifying
-    @Query(value = "select ct_thucdon.mama ,ct_thucdon.soluong ,ct_thucdon.gia\n" +
-            "from ct_thucdon, (select cd.idtd\n" +
-            "from ct_datbantruoc cd \n" +
-            "where cd.idpdt = :idPDT) as t\n" +
+    @Query(value = "select ct_thucdon.mama ,ct_thucdon.soluong ,ct_thucdon.gia " +
+            "from ct_thucdon, (select cd.idtd " +
+            "from ct_datbantruoc cd " +
+            "where cd.idpdt = :idPDT) as t " +
             "where ct_thucdon.idtd = t.idtd", nativeQuery = true)
     public List<CTDatMon> layDSChiTietDatMon(@Param("idPDT") int idPDT);
 }
