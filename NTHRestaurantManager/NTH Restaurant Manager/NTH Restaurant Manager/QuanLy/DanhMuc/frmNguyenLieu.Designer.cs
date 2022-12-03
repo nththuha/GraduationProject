@@ -404,6 +404,8 @@ namespace NTH_Restaurant_Manager
             this.se_SLToiThieu.Properties.Appearance.Options.UseFont = true;
             this.se_SLToiThieu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.se_SLToiThieu.Properties.DisplayFormat.FormatString = "n0";
+            this.se_SLToiThieu.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.se_SLToiThieu.Size = new System.Drawing.Size(561, 32);
             this.se_SLToiThieu.TabIndex = 26;
             // 
@@ -422,6 +424,8 @@ namespace NTH_Restaurant_Manager
             this.se_SLTon.Properties.Appearance.Options.UseFont = true;
             this.se_SLTon.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.se_SLTon.Properties.DisplayFormat.FormatString = "n0";
+            this.se_SLTon.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.se_SLTon.Size = new System.Drawing.Size(561, 32);
             this.se_SLTon.TabIndex = 24;
             // 
