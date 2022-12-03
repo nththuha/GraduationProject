@@ -57,13 +57,20 @@ namespace NTH_Restaurant_Manager
 
         public static HoaDonModel hoaDon;
 
-        public static String URL = "https://nth-restaurant-api.herokuapp.com/api/";
+        //public static String URL = "https://nth-restaurant-api.herokuapp.com/api/";
+        public static String URL = "http://localhost:8080/api/";
 
         public static int doiSpinEditThanhInt(String a)
         {
             String temp = a;
-            if (temp.EndsWith(".")) temp = temp.Substring(0, temp.Length - 1); ;
-            return int.Parse(temp);
+            if (temp.EndsWith(".")) temp = temp.Substring(0, temp.Length - 1);
+            String[] tam = temp.Split(',');
+            String st = "";
+            for (int i = 0; i < tam.Length; i++)
+            {
+                st += tam[i];
+            }
+            return int.Parse(st);
         }
 
         [STAThread]

@@ -334,7 +334,7 @@ namespace NTH_Restaurant_Manager
             // colslTon
             // 
             this.colslTon.Caption = "SỐ LƯỢNG TỒN";
-            this.colslTon.DisplayFormat.FormatString = "{0:0,0}";
+            this.colslTon.DisplayFormat.FormatString = "n0";
             this.colslTon.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colslTon.FieldName = "slTon";
             this.colslTon.MinWidth = 25;
@@ -346,7 +346,7 @@ namespace NTH_Restaurant_Manager
             // colslToiThieu
             // 
             this.colslToiThieu.Caption = "SỐ LƯỢNG TỐI THIỂU";
-            this.colslToiThieu.DisplayFormat.FormatString = "{0:0,0}";
+            this.colslToiThieu.DisplayFormat.FormatString = "n0";
             this.colslToiThieu.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colslToiThieu.FieldName = "slToiThieu";
             this.colslToiThieu.MinWidth = 25;
@@ -358,7 +358,7 @@ namespace NTH_Restaurant_Manager
             // gridColumn1
             // 
             this.gridColumn1.Caption = "CHÊNH LỆCH";
-            this.gridColumn1.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn1.DisplayFormat.FormatString = "n0";
             this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn1.FieldName = "gridColumn1";
             this.gridColumn1.MinWidth = 25;

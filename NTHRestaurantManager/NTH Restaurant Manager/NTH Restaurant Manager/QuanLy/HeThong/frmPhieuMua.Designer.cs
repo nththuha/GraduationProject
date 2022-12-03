@@ -156,7 +156,7 @@ namespace NTH_Restaurant_Manager
             // 
             this.btn_Chuyen.Caption = "Chuyển thành phiếu nhập nguyên liệu";
             this.btn_Chuyen.Id = 1;
-            this.btn_Chuyen.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_CapNhat.ImageOptions.SvgImage")));
+            this.btn_Chuyen.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Chuyen.ImageOptions.SvgImage")));
             this.btn_Chuyen.Name = "btn_Chuyen";
             this.btn_Chuyen.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btn_Chuyen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Chuyen_ItemClick);
@@ -326,6 +326,8 @@ namespace NTH_Restaurant_Manager
             // colsoLuong
             // 
             this.colsoLuong.Caption = "SỐ LƯỢNG";
+            this.colsoLuong.DisplayFormat.FormatString = "n0";
+            this.colsoLuong.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colsoLuong.FieldName = "soLuong";
             this.colsoLuong.MinWidth = 25;
             this.colsoLuong.Name = "colsoLuong";

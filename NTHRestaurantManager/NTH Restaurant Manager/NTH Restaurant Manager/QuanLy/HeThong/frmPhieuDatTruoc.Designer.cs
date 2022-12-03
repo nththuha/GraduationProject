@@ -304,7 +304,7 @@ namespace NTH_Restaurant_Manager
             // colgia
             // 
             this.colgia.Caption = "GIÁ";
-            this.colgia.DisplayFormat.FormatString = "{0:0,0}";
+            this.colgia.DisplayFormat.FormatString = "n0";
             this.colgia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colgia.FieldName = "gia";
             this.colgia.MinWidth = 25;
@@ -316,7 +316,7 @@ namespace NTH_Restaurant_Manager
             // colgiaSauThue
             // 
             this.colgiaSauThue.Caption = "GIÁ SAU THUẾ";
-            this.colgiaSauThue.DisplayFormat.FormatString = "{0:0,0}";
+            this.colgiaSauThue.DisplayFormat.FormatString = "n0";
             this.colgiaSauThue.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colgiaSauThue.FieldName = "giaSauThue";
             this.colgiaSauThue.MinWidth = 25;
@@ -379,7 +379,7 @@ namespace NTH_Restaurant_Manager
             // gridColumn1
             // 
             this.gridColumn1.Caption = "THUẾ 10%";
-            this.gridColumn1.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn1.DisplayFormat.FormatString = "n0";
             this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn1.FieldName = "gridColumn1";
             this.gridColumn1.MinWidth = 25;
@@ -484,7 +484,7 @@ namespace NTH_Restaurant_Manager
             // coltriGia
             // 
             this.coltriGia.Caption = "TIỀN CỌC";
-            this.coltriGia.DisplayFormat.FormatString = "{0:0,0}";
+            this.coltriGia.DisplayFormat.FormatString = "n0";
             this.coltriGia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.coltriGia.FieldName = "triGia";
             this.coltriGia.MinWidth = 25;

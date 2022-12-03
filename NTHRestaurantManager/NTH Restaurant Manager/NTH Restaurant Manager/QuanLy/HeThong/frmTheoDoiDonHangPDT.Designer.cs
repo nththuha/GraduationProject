@@ -47,6 +47,19 @@ namespace NTH_Restaurant_Manager
             this.gcPD = new DevExpress.XtraGrid.GridControl();
             this.bdsPD = new System.Windows.Forms.BindingSource(this.components);
             this.gvPD = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colidPD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colngay = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colidnv = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colhoTenNV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmaBan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltenBan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmaPhong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltenPhong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colidPDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colhoTenKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colgia1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colgiaSauThue = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gcCTTD = new DevExpress.XtraGrid.GridControl();
             this.bdsCTTD = new System.Windows.Forms.BindingSource(this.components);
@@ -69,19 +82,6 @@ namespace NTH_Restaurant_Manager
             this.coltenBan1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmaPhong1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltenPhong1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colidPD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colngay = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colidnv = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colhoTenNV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmaBan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltenBan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmaPhong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltenPhong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colidPDT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colhoTenKH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colgia1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colgiaSauThue = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -262,6 +262,126 @@ namespace NTH_Restaurant_Manager
             this.gvPD.Name = "gvPD";
             this.gvPD.OptionsBehavior.Editable = false;
             this.gvPD.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvPD_RowClick);
+            // 
+            // colidPD
+            // 
+            this.colidPD.Caption = "IDPD";
+            this.colidPD.FieldName = "idPD";
+            this.colidPD.MinWidth = 25;
+            this.colidPD.Name = "colidPD";
+            this.colidPD.Visible = true;
+            this.colidPD.VisibleIndex = 0;
+            this.colidPD.Width = 94;
+            // 
+            // colngay
+            // 
+            this.colngay.Caption = "NGÀY";
+            this.colngay.FieldName = "ngay";
+            this.colngay.MinWidth = 25;
+            this.colngay.Name = "colngay";
+            this.colngay.Visible = true;
+            this.colngay.VisibleIndex = 1;
+            this.colngay.Width = 94;
+            // 
+            // colidnv
+            // 
+            this.colidnv.FieldName = "idnv";
+            this.colidnv.MinWidth = 25;
+            this.colidnv.Name = "colidnv";
+            this.colidnv.Width = 94;
+            // 
+            // colhoTenNV
+            // 
+            this.colhoTenNV.Caption = "NHÂN VIÊN";
+            this.colhoTenNV.FieldName = "hoTenNV";
+            this.colhoTenNV.MinWidth = 25;
+            this.colhoTenNV.Name = "colhoTenNV";
+            this.colhoTenNV.Visible = true;
+            this.colhoTenNV.VisibleIndex = 6;
+            this.colhoTenNV.Width = 94;
+            // 
+            // colmaBan
+            // 
+            this.colmaBan.FieldName = "maBan";
+            this.colmaBan.MinWidth = 25;
+            this.colmaBan.Name = "colmaBan";
+            this.colmaBan.Width = 94;
+            // 
+            // coltenBan
+            // 
+            this.coltenBan.FieldName = "tenBan";
+            this.coltenBan.MinWidth = 25;
+            this.coltenBan.Name = "coltenBan";
+            this.coltenBan.Width = 94;
+            // 
+            // colmaPhong
+            // 
+            this.colmaPhong.FieldName = "maPhong";
+            this.colmaPhong.MinWidth = 25;
+            this.colmaPhong.Name = "colmaPhong";
+            this.colmaPhong.Width = 94;
+            // 
+            // coltenPhong
+            // 
+            this.coltenPhong.FieldName = "tenPhong";
+            this.coltenPhong.MinWidth = 25;
+            this.coltenPhong.Name = "coltenPhong";
+            this.coltenPhong.Width = 94;
+            // 
+            // colidPDT
+            // 
+            this.colidPDT.FieldName = "idPDT";
+            this.colidPDT.MinWidth = 25;
+            this.colidPDT.Name = "colidPDT";
+            this.colidPDT.Width = 94;
+            // 
+            // colhoTenKH
+            // 
+            this.colhoTenKH.Caption = "KHÁCH HÀNG";
+            this.colhoTenKH.FieldName = "hoTenKH";
+            this.colhoTenKH.MinWidth = 25;
+            this.colhoTenKH.Name = "colhoTenKH";
+            this.colhoTenKH.Visible = true;
+            this.colhoTenKH.VisibleIndex = 2;
+            this.colhoTenKH.Width = 94;
+            // 
+            // colgia1
+            // 
+            this.colgia1.Caption = "GIÁ";
+            this.colgia1.DisplayFormat.FormatString = "n0";
+            this.colgia1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colgia1.FieldName = "gia";
+            this.colgia1.MinWidth = 25;
+            this.colgia1.Name = "colgia1";
+            this.colgia1.Visible = true;
+            this.colgia1.VisibleIndex = 3;
+            this.colgia1.Width = 94;
+            // 
+            // colgiaSauThue
+            // 
+            this.colgiaSauThue.Caption = "GIÁ SAU THUẾ";
+            this.colgiaSauThue.DisplayFormat.FormatString = "n0";
+            this.colgiaSauThue.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colgiaSauThue.FieldName = "giaSauThue";
+            this.colgiaSauThue.MinWidth = 25;
+            this.colgiaSauThue.Name = "colgiaSauThue";
+            this.colgiaSauThue.Visible = true;
+            this.colgiaSauThue.VisibleIndex = 5;
+            this.colgiaSauThue.Width = 94;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "THUẾ 10%";
+            this.gridColumn1.DisplayFormat.FormatString = "n0";
+            this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn1.FieldName = "gridColumn1";
+            this.gridColumn1.MinWidth = 25;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.UnboundExpression = "[gia] * 0.1";
+            this.gridColumn1.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 4;
+            this.gridColumn1.Width = 94;
             // 
             // panelControl2
             // 
@@ -456,120 +576,6 @@ namespace NTH_Restaurant_Manager
             this.coltenPhong1.Visible = true;
             this.coltenPhong1.VisibleIndex = 0;
             this.coltenPhong1.Width = 94;
-            // 
-            // colidPD
-            // 
-            this.colidPD.Caption = "IDPD";
-            this.colidPD.FieldName = "idPD";
-            this.colidPD.MinWidth = 25;
-            this.colidPD.Name = "colidPD";
-            this.colidPD.Visible = true;
-            this.colidPD.VisibleIndex = 0;
-            this.colidPD.Width = 94;
-            // 
-            // colngay
-            // 
-            this.colngay.Caption = "NGÀY";
-            this.colngay.FieldName = "ngay";
-            this.colngay.MinWidth = 25;
-            this.colngay.Name = "colngay";
-            this.colngay.Visible = true;
-            this.colngay.VisibleIndex = 1;
-            this.colngay.Width = 94;
-            // 
-            // colidnv
-            // 
-            this.colidnv.FieldName = "idnv";
-            this.colidnv.MinWidth = 25;
-            this.colidnv.Name = "colidnv";
-            this.colidnv.Width = 94;
-            // 
-            // colhoTenNV
-            // 
-            this.colhoTenNV.Caption = "NHÂN VIÊN";
-            this.colhoTenNV.FieldName = "hoTenNV";
-            this.colhoTenNV.MinWidth = 25;
-            this.colhoTenNV.Name = "colhoTenNV";
-            this.colhoTenNV.Visible = true;
-            this.colhoTenNV.VisibleIndex = 6;
-            this.colhoTenNV.Width = 94;
-            // 
-            // colmaBan
-            // 
-            this.colmaBan.FieldName = "maBan";
-            this.colmaBan.MinWidth = 25;
-            this.colmaBan.Name = "colmaBan";
-            this.colmaBan.Width = 94;
-            // 
-            // coltenBan
-            // 
-            this.coltenBan.FieldName = "tenBan";
-            this.coltenBan.MinWidth = 25;
-            this.coltenBan.Name = "coltenBan";
-            this.coltenBan.Width = 94;
-            // 
-            // colmaPhong
-            // 
-            this.colmaPhong.FieldName = "maPhong";
-            this.colmaPhong.MinWidth = 25;
-            this.colmaPhong.Name = "colmaPhong";
-            this.colmaPhong.Width = 94;
-            // 
-            // coltenPhong
-            // 
-            this.coltenPhong.FieldName = "tenPhong";
-            this.coltenPhong.MinWidth = 25;
-            this.coltenPhong.Name = "coltenPhong";
-            this.coltenPhong.Width = 94;
-            // 
-            // colidPDT
-            // 
-            this.colidPDT.FieldName = "idPDT";
-            this.colidPDT.MinWidth = 25;
-            this.colidPDT.Name = "colidPDT";
-            this.colidPDT.Width = 94;
-            // 
-            // colhoTenKH
-            // 
-            this.colhoTenKH.Caption = "KHÁCH HÀNG";
-            this.colhoTenKH.FieldName = "hoTenKH";
-            this.colhoTenKH.MinWidth = 25;
-            this.colhoTenKH.Name = "colhoTenKH";
-            this.colhoTenKH.Visible = true;
-            this.colhoTenKH.VisibleIndex = 2;
-            this.colhoTenKH.Width = 94;
-            // 
-            // colgia1
-            // 
-            this.colgia1.Caption = "GIÁ";
-            this.colgia1.FieldName = "gia";
-            this.colgia1.MinWidth = 25;
-            this.colgia1.Name = "colgia1";
-            this.colgia1.Visible = true;
-            this.colgia1.VisibleIndex = 3;
-            this.colgia1.Width = 94;
-            // 
-            // colgiaSauThue
-            // 
-            this.colgiaSauThue.Caption = "GIÁ SAU THUẾ";
-            this.colgiaSauThue.FieldName = "giaSauThue";
-            this.colgiaSauThue.MinWidth = 25;
-            this.colgiaSauThue.Name = "colgiaSauThue";
-            this.colgiaSauThue.Visible = true;
-            this.colgiaSauThue.VisibleIndex = 5;
-            this.colgiaSauThue.Width = 94;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "THUẾ 10%";
-            this.gridColumn1.FieldName = "gridColumn1";
-            this.gridColumn1.MinWidth = 25;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.UnboundExpression = "[gia] * 0.1";
-            this.gridColumn1.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 4;
-            this.gridColumn1.Width = 94;
             // 
             // frmTheoDoiDonHangPDT
             // 

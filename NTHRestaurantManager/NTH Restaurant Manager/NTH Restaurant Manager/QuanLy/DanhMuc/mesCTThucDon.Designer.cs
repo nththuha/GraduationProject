@@ -42,7 +42,7 @@ namespace NTH_Restaurant_Manager
             this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(149, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(459, 38);
+            this.label1.Size = new System.Drawing.Size(445, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "CHỌN SỐ LƯỢNG MÓN ĂN";
             // 
@@ -80,6 +80,8 @@ namespace NTH_Restaurant_Manager
             this.se_SoLuong.Properties.Appearance.Options.UseFont = true;
             this.se_SoLuong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.se_SoLuong.Properties.DisplayFormat.FormatString = "n0";
+            this.se_SoLuong.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.se_SoLuong.Size = new System.Drawing.Size(444, 32);
             this.se_SoLuong.TabIndex = 4;
             // 

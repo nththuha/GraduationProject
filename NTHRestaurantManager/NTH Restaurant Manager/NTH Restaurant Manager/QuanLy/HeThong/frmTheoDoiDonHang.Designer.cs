@@ -463,7 +463,7 @@ namespace NTH_Restaurant_Manager
             // gridColumn1
             // 
             this.gridColumn1.Caption = "GIÁ";
-            this.gridColumn1.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn1.DisplayFormat.FormatString = "n0";
             this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn1.FieldName = "gia";
             this.gridColumn1.MinWidth = 25;
@@ -475,7 +475,7 @@ namespace NTH_Restaurant_Manager
             // gridColumn2
             // 
             this.gridColumn2.Caption = "GIÁ SAU THUẾ";
-            this.gridColumn2.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn2.DisplayFormat.FormatString = "n0";
             this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn2.FieldName = "giaSauThue";
             this.gridColumn2.MinWidth = 25;
@@ -487,7 +487,7 @@ namespace NTH_Restaurant_Manager
             // gridColumn3
             // 
             this.gridColumn3.Caption = "THUẾ 10%";
-            this.gridColumn3.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn3.DisplayFormat.FormatString = "n0";
             this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn3.FieldName = "gridColumn3";
             this.gridColumn3.MinWidth = 25;
@@ -542,6 +542,8 @@ namespace NTH_Restaurant_Manager
             // colsoLuong
             // 
             this.colsoLuong.Caption = "SỐ LƯỢNG";
+            this.colsoLuong.DisplayFormat.FormatString = "n0";
+            this.colsoLuong.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colsoLuong.FieldName = "soLuong";
             this.colsoLuong.MinWidth = 31;
             this.colsoLuong.Name = "colsoLuong";
@@ -552,7 +554,7 @@ namespace NTH_Restaurant_Manager
             // colgia
             // 
             this.colgia.Caption = "GIÁ";
-            this.colgia.DisplayFormat.FormatString = "{0:0,0}";
+            this.colgia.DisplayFormat.FormatString = "n0";
             this.colgia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colgia.FieldName = "gia";
             this.colgia.MinWidth = 31;

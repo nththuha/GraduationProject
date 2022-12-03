@@ -75,6 +75,66 @@ namespace NTH_Restaurant_Manager
             ngayDatLabel.TabIndex = 1;
             ngayDatLabel.Text = "Ngày đặt";
             // 
+            // hoTenKHLabel
+            // 
+            hoTenKHLabel.AutoSize = true;
+            hoTenKHLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            hoTenKHLabel.Location = new System.Drawing.Point(81, 114);
+            hoTenKHLabel.Name = "hoTenKHLabel";
+            hoTenKHLabel.Size = new System.Drawing.Size(193, 27);
+            hoTenKHLabel.TabIndex = 3;
+            hoTenKHLabel.Text = "Họ tên khách hàng";
+            // 
+            // sdtLabel
+            // 
+            sdtLabel.AutoSize = true;
+            sdtLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            sdtLabel.Location = new System.Drawing.Point(81, 174);
+            sdtLabel.Name = "sdtLabel";
+            sdtLabel.Size = new System.Drawing.Size(137, 27);
+            sdtLabel.TabIndex = 5;
+            sdtLabel.Text = "Số điện thoại";
+            // 
+            // giaSauThueLabel
+            // 
+            giaSauThueLabel.AutoSize = true;
+            giaSauThueLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            giaSauThueLabel.Location = new System.Drawing.Point(81, 353);
+            giaSauThueLabel.Name = "giaSauThueLabel";
+            giaSauThueLabel.Size = new System.Drawing.Size(103, 27);
+            giaSauThueLabel.TabIndex = 7;
+            giaSauThueLabel.Text = "Tổng tiền";
+            // 
+            // ngayDatLabel1
+            // 
+            ngayDatLabel1.AutoSize = true;
+            ngayDatLabel1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            ngayDatLabel1.Location = new System.Drawing.Point(81, 236);
+            ngayDatLabel1.Name = "ngayDatLabel1";
+            ngayDatLabel1.Size = new System.Drawing.Size(99, 27);
+            ngayDatLabel1.TabIndex = 9;
+            ngayDatLabel1.Text = "Ngày tạo";
+            // 
+            // soTienLabel
+            // 
+            soTienLabel.AutoSize = true;
+            soTienLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            soTienLabel.Location = new System.Drawing.Point(81, 502);
+            soTienLabel.Name = "soTienLabel";
+            soTienLabel.Size = new System.Drawing.Size(160, 27);
+            soTienLabel.TabIndex = 11;
+            soTienLabel.Text = "Số tiền hoàn lại";
+            // 
+            // triGiaLabel
+            // 
+            triGiaLabel.AutoSize = true;
+            triGiaLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            triGiaLabel.Location = new System.Drawing.Point(81, 408);
+            triGiaLabel.Name = "triGiaLabel";
+            triGiaLabel.Size = new System.Drawing.Size(101, 27);
+            triGiaLabel.TabIndex = 13;
+            triGiaLabel.Text = "Tổng cọc";
+            // 
             // de_NgayDat
             // 
             this.de_NgayDat.EditValue = null;
@@ -90,16 +150,6 @@ namespace NTH_Restaurant_Manager
             this.de_NgayDat.Size = new System.Drawing.Size(447, 32);
             this.de_NgayDat.TabIndex = 2;
             // 
-            // hoTenKHLabel
-            // 
-            hoTenKHLabel.AutoSize = true;
-            hoTenKHLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            hoTenKHLabel.Location = new System.Drawing.Point(81, 114);
-            hoTenKHLabel.Name = "hoTenKHLabel";
-            hoTenKHLabel.Size = new System.Drawing.Size(193, 27);
-            hoTenKHLabel.TabIndex = 3;
-            hoTenKHLabel.Text = "Họ tên khách hàng";
-            // 
             // txt_HoTenKH
             // 
             this.txt_HoTenKH.Enabled = false;
@@ -110,16 +160,6 @@ namespace NTH_Restaurant_Manager
             this.txt_HoTenKH.Size = new System.Drawing.Size(447, 32);
             this.txt_HoTenKH.TabIndex = 4;
             // 
-            // sdtLabel
-            // 
-            sdtLabel.AutoSize = true;
-            sdtLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            sdtLabel.Location = new System.Drawing.Point(81, 174);
-            sdtLabel.Name = "sdtLabel";
-            sdtLabel.Size = new System.Drawing.Size(137, 27);
-            sdtLabel.TabIndex = 5;
-            sdtLabel.Text = "Số điện thoại";
-            // 
             // txt_SDT
             // 
             this.txt_SDT.Enabled = false;
@@ -129,16 +169,6 @@ namespace NTH_Restaurant_Manager
             this.txt_SDT.Properties.Appearance.Options.UseFont = true;
             this.txt_SDT.Size = new System.Drawing.Size(447, 32);
             this.txt_SDT.TabIndex = 6;
-            // 
-            // giaSauThueLabel
-            // 
-            giaSauThueLabel.AutoSize = true;
-            giaSauThueLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            giaSauThueLabel.Location = new System.Drawing.Point(81, 353);
-            giaSauThueLabel.Name = "giaSauThueLabel";
-            giaSauThueLabel.Size = new System.Drawing.Size(103, 27);
-            giaSauThueLabel.TabIndex = 7;
-            giaSauThueLabel.Text = "Tổng tiền";
             // 
             // se_TongTien
             // 
@@ -154,18 +184,10 @@ namespace NTH_Restaurant_Manager
             this.se_TongTien.Properties.Appearance.Options.UseFont = true;
             this.se_TongTien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.se_TongTien.Properties.DisplayFormat.FormatString = "n0";
+            this.se_TongTien.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.se_TongTien.Size = new System.Drawing.Size(447, 32);
             this.se_TongTien.TabIndex = 8;
-            // 
-            // ngayDatLabel1
-            // 
-            ngayDatLabel1.AutoSize = true;
-            ngayDatLabel1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            ngayDatLabel1.Location = new System.Drawing.Point(81, 236);
-            ngayDatLabel1.Name = "ngayDatLabel1";
-            ngayDatLabel1.Size = new System.Drawing.Size(99, 27);
-            ngayDatLabel1.TabIndex = 9;
-            ngayDatLabel1.Text = "Ngày tạo";
             // 
             // de_NgayTao
             // 
@@ -182,16 +204,6 @@ namespace NTH_Restaurant_Manager
             this.de_NgayTao.Size = new System.Drawing.Size(447, 32);
             this.de_NgayTao.TabIndex = 10;
             // 
-            // soTienLabel
-            // 
-            soTienLabel.AutoSize = true;
-            soTienLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            soTienLabel.Location = new System.Drawing.Point(81, 502);
-            soTienLabel.Name = "soTienLabel";
-            soTienLabel.Size = new System.Drawing.Size(160, 27);
-            soTienLabel.TabIndex = 11;
-            soTienLabel.Text = "Số tiền hoàn lại";
-            // 
             // se_SoTienHoan
             // 
             this.se_SoTienHoan.EditValue = new decimal(new int[] {
@@ -205,18 +217,10 @@ namespace NTH_Restaurant_Manager
             this.se_SoTienHoan.Properties.Appearance.Options.UseFont = true;
             this.se_SoTienHoan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.se_SoTienHoan.Properties.DisplayFormat.FormatString = "n0";
+            this.se_SoTienHoan.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.se_SoTienHoan.Size = new System.Drawing.Size(447, 32);
             this.se_SoTienHoan.TabIndex = 12;
-            // 
-            // triGiaLabel
-            // 
-            triGiaLabel.AutoSize = true;
-            triGiaLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            triGiaLabel.Location = new System.Drawing.Point(81, 408);
-            triGiaLabel.Name = "triGiaLabel";
-            triGiaLabel.Size = new System.Drawing.Size(101, 27);
-            triGiaLabel.TabIndex = 13;
-            triGiaLabel.Text = "Tổng cọc";
             // 
             // se_TongCoc
             // 
@@ -232,6 +236,8 @@ namespace NTH_Restaurant_Manager
             this.se_TongCoc.Properties.Appearance.Options.UseFont = true;
             this.se_TongCoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.se_TongCoc.Properties.DisplayFormat.FormatString = "n0";
+            this.se_TongCoc.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.se_TongCoc.Size = new System.Drawing.Size(447, 32);
             this.se_TongCoc.TabIndex = 14;
             // 

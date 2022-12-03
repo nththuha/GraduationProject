@@ -112,6 +112,8 @@ namespace NTH_Restaurant_Manager
             this.se_SoLuong.Properties.Appearance.Options.UseFont = true;
             this.se_SoLuong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.se_SoLuong.Properties.DisplayFormat.FormatString = "n0";
+            this.se_SoLuong.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.se_SoLuong.Size = new System.Drawing.Size(389, 32);
             this.se_SoLuong.TabIndex = 4;
             // 
@@ -128,6 +130,8 @@ namespace NTH_Restaurant_Manager
             this.se_Gia.Properties.Appearance.Options.UseFont = true;
             this.se_Gia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.se_Gia.Properties.DisplayFormat.FormatString = "n0";
+            this.se_Gia.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.se_Gia.Size = new System.Drawing.Size(389, 32);
             this.se_Gia.TabIndex = 6;
             // 

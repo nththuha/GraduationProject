@@ -160,6 +160,8 @@ namespace NTH_Restaurant_Manager
             this.se_Gia1.Properties.Appearance.Options.UseFont = true;
             this.se_Gia1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.se_Gia1.Properties.DisplayFormat.FormatString = "n0";
+            this.se_Gia1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.se_Gia1.Size = new System.Drawing.Size(401, 32);
             this.se_Gia1.TabIndex = 15;
             // 
@@ -176,6 +178,8 @@ namespace NTH_Restaurant_Manager
             this.se_Gia2.Properties.Appearance.Options.UseFont = true;
             this.se_Gia2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.se_Gia2.Properties.DisplayFormat.FormatString = "n0";
+            this.se_Gia2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.se_Gia2.Size = new System.Drawing.Size(401, 32);
             this.se_Gia2.TabIndex = 17;
             // 
@@ -202,6 +206,8 @@ namespace NTH_Restaurant_Manager
             this.se_Gia3.Properties.Appearance.Options.UseFont = true;
             this.se_Gia3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.se_Gia3.Properties.DisplayFormat.FormatString = "n0";
+            this.se_Gia3.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.se_Gia3.Size = new System.Drawing.Size(401, 32);
             this.se_Gia3.TabIndex = 19;
             // 
@@ -228,6 +234,8 @@ namespace NTH_Restaurant_Manager
             this.se_Gia4.Properties.Appearance.Options.UseFont = true;
             this.se_Gia4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.se_Gia4.Properties.DisplayFormat.FormatString = "n0";
+            this.se_Gia4.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.se_Gia4.Size = new System.Drawing.Size(401, 32);
             this.se_Gia4.TabIndex = 21;
             // 
