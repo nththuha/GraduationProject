@@ -12,8 +12,8 @@ import retrofit2.http.*
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-private const val BASE_URL =
-    "https://nth-restaurant-api.herokuapp.com/api/"
+private const val BASE_URL = "http://192.168.0.196:8080/api/"
+//    "https://nth-restaurant-api.herokuapp.com/api/"
 
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
