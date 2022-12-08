@@ -30,8 +30,8 @@ public interface PhieuNhapNguyenLieuRepository extends JpaRepository<PhieuNhapNg
     @Modifying
     @Query(value = "select manl , soluong , gia\n" +
             "from ctpn_nguyenlieu cn, (select idpn\n" +
-            "\t\t\t\t\t\t\tfrom phieunhapnguyenlieu\n" +
-            "\t\t\t\t\t\t\twhere to_char(ngay, 'yyyy') = :nam and to_char(ngay, 'MM') = :thang) as t \n" +
+            "from phieunhapnguyenlieu\n" +
+            "where to_char(ngay, 'yyyy') = :nam and to_char(ngay, 'MM') = :thang) as t \n" +
             "where cn.idpn = t.idpn and cn.manl = :maNL\t", nativeQuery = true)
     List<NguyenLieuMua> layThongTinNguyenLieuDaMua(@Param("nam") String nam, @Param("thang") String thang, @Param("maNL") String maNL);
 }

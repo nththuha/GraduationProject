@@ -36,12 +36,12 @@ public interface HoaDonRepository extends JpaRepository<HoaDonEntity, String> {
     @Modifying
     @Query(value = "select temp.nam, temp. thang, cm.manl , sum(temp.soluong * cm.soluong) as soluong\n" +
             "from ct_monan cm , (select t.nam, t.thang, cd.mama , sum(cd.soluong) as soluong\n" +
-            "\t\t\t\t\tfrom ct_datmon cd, (select idpd , idpdt, to_char(ngay, 'yyyy') as nam, to_char(ngay, 'MM') as thang\n" +
-            "\t\t\t\t\t\t\t\t\t\tfrom phieudat  \n" +
-            "\t\t\t\t\t\t\t\t\t\twhere ngay >= :ngayBD and ngay <= :ngayKT) as t\n" +
-            "\t\t\t\t\twhere cd.idpd = t.idpd\t\t\t\t\t\n" +
-            "\t\t\t\t\tgroup by nam, thang, mama \n" +
-            "\t\t\t\t\torder by thang, nam desc) as temp \n" +
+            "from ct_datmon cd, (select idpd , idpdt, to_char(ngay, 'yyyy') as nam, to_char(ngay, 'MM') as thang\n" +
+            "from phieudat  \n" +
+            "where ngay >= :ngayBD and ngay <= :ngayKT) as t\n" +
+            "where cd.idpd = t.idpd\n" +
+            "group by nam, thang, mama \n" +
+            "order by thang, nam desc) as temp \n" +
             "where cm.mama = temp.mama\t\n" +
             "group by nam, thang, manl ", nativeQuery = true)
     List<NguyenLieu> laySoNguyenLieuSuDung(@Param("ngayBD") Date ngayBD, @Param("ngayKT") Date ngayKT);
