@@ -1,7 +1,6 @@
 package com.example.NTH_Restaurant_API.service.Impl;
 
-import com.example.NTH_Restaurant_API.dto.TempDTO;
-import com.example.NTH_Restaurant_API.dto.ThongKeDTO;
+import com.example.NTH_Restaurant_API.dto.*;
 import com.example.NTH_Restaurant_API.repository.HoaDonRepository;
 import com.example.NTH_Restaurant_API.repository.PhieuNhapNguyenLieuRepository;
 import com.example.NTH_Restaurant_API.service.ThongKeService;
@@ -76,11 +75,20 @@ public class ThongKeServiceImpl implements ThongKeService {
             list.add(thongKe);
             cal.add(Calendar.MONTH, 1);
         }
-
-        //lấy tổng thu nhập
-        List<TempDTO> listDoanhThu = hoaDonRepository.layThongKeDoanhThu(thongKeDTO.getNgayBD(), thongKeDTO.getNgayKT());
-        //lấy tổng tiền chi để mua nguyên liệu
-        List<TempDTO> listMuaNL = phieuNhapNguyenLieuRepository.layThongKeTienMuaNguyenLieu(thongKeDTO.getNgayBD(), thongKeDTO.getNgayKT());
+        List<TempDTO> listDoanhThu = hoaDonRepository.layTongTriGiaHoaDonTheoThang(thongKeDTO.getNgayBD(), thongKeDTO.getNgayKT());
+        List<NguyenLieu> listTongTG = hoaDonRepository.laySoNguyenLieuSuDung(thongKeDTO.getNgayBD(), thongKeDTO.getNgayKT());
+        List<TienMuaNguyenLieu> listTMNL = new ArrayList<>();
+        for(NguyenLieu i: listTongTG){
+            List<NguyenLieuMua> listNLM = phieuNhapNguyenLieuRepository.layThongTinNguyenLieuDaMua(i.getNam(), i.getThang(), i.getManl());
+            if(listNLM.size() > 0){
+                TienMuaNguyenLieu temp = new TienMuaNguyenLieu();
+                temp.setThang(i.getThang());
+                temp.setNam(i.getNam());
+                temp.setMaNL(i.getManl());
+                temp.setTriGia(listNLM.get(0).getGia() / listNLM.get(0).getSoluong() * i.getSoluong());
+                listTMNL.add(temp);
+            }
+        }
 
         for(ThongKeDTO i: list){
             for(TempDTO doanhThu: listDoanhThu){
@@ -88,9 +96,9 @@ public class ThongKeServiceImpl implements ThongKeService {
                     i.setDoanhThu(doanhThu.getDoanhthu());
                 }
             }
-            for(TempDTO muaNL: listMuaNL){
-                if(muaNL.getThang().equals(i.getThang()) && muaNL.getNam().equals(i.getNam())){
-                    i.setDoanhThu(i.getDoanhThu() - muaNL.getDoanhthu());
+            for(TienMuaNguyenLieu tienMuaNguyenLieu: listTMNL){
+                if(tienMuaNguyenLieu.getThang().equals(i.getThang()) && tienMuaNguyenLieu.getNam().equals(i.getNam())){
+                    i.setDoanhThu(i.getDoanhThu() - tienMuaNguyenLieu.getTriGia());
                 }
             }
         }
