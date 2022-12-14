@@ -76,7 +76,11 @@ public class ThongKeServiceImpl implements ThongKeService {
             cal.add(Calendar.MONTH, 1);
         }
         List<TempDTO> listDoanhThu = hoaDonRepository.layTongTriGiaHoaDonTheoThang(thongKeDTO.getNgayBD(), thongKeDTO.getNgayKT());
-        List<NguyenLieu> listTongTG = hoaDonRepository.laySoNguyenLieuSuDung(thongKeDTO.getNgayBD(), thongKeDTO.getNgayKT());
+        List<NguyenLieu> listTongTGPD = hoaDonRepository.laySoNguyenLieuSuDungPD(thongKeDTO.getNgayBD(), thongKeDTO.getNgayKT());
+        List<NguyenLieu> listTongTGPDT = hoaDonRepository.laySoNguyenLieuSuDungPDT(thongKeDTO.getNgayBD(), thongKeDTO.getNgayKT());
+        List<NguyenLieu> listTongTG = new ArrayList<>();
+        listTongTG.addAll(listTongTGPD);
+        listTongTG.addAll(listTongTGPDT);
         List<TienMuaNguyenLieu> listTMNL = new ArrayList<>();
         for(NguyenLieu i: listTongTG){
             List<NguyenLieuMua> listNLM = phieuNhapNguyenLieuRepository.layThongTinNguyenLieuDaMua(i.getNam(), i.getThang(), i.getManl());
@@ -89,7 +93,6 @@ public class ThongKeServiceImpl implements ThongKeService {
                 listTMNL.add(temp);
             }
         }
-
         for(ThongKeDTO i: list){
             for(TempDTO doanhThu: listDoanhThu){
                 if(doanhThu.getThang().equals(i.getThang()) && doanhThu.getNam().equals(i.getNam())){

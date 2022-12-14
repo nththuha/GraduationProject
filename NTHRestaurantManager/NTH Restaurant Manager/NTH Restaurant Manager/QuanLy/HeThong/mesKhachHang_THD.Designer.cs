@@ -164,6 +164,7 @@ namespace NTH_Restaurant_Manager
             this.se_Gia1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.se_Gia1.Size = new System.Drawing.Size(401, 32);
             this.se_Gia1.TabIndex = 15;
+            this.se_Gia1.EditValueChanged += new System.EventHandler(this.se_Gia1_EditValueChanged);
             // 
             // se_Gia2
             // 
@@ -182,6 +183,7 @@ namespace NTH_Restaurant_Manager
             this.se_Gia2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.se_Gia2.Size = new System.Drawing.Size(401, 32);
             this.se_Gia2.TabIndex = 17;
+            this.se_Gia2.EditValueChanged += new System.EventHandler(this.se_Gia2_EditValueChanged);
             // 
             // lb_Gia2
             // 
@@ -210,6 +212,7 @@ namespace NTH_Restaurant_Manager
             this.se_Gia3.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.se_Gia3.Size = new System.Drawing.Size(401, 32);
             this.se_Gia3.TabIndex = 19;
+            this.se_Gia3.EditValueChanged += new System.EventHandler(this.se_Gia3_EditValueChanged);
             // 
             // lb_Gia3
             // 
@@ -290,7 +293,7 @@ namespace NTH_Restaurant_Manager
             // 
             this.lb_TongTien.AutoSize = true;
             this.lb_TongTien.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_TongTien.Location = new System.Drawing.Point(379, 83);
+            this.lb_TongTien.Location = new System.Drawing.Point(436, 83);
             this.lb_TongTien.Name = "lb_TongTien";
             this.lb_TongTien.Size = new System.Drawing.Size(103, 27);
             this.lb_TongTien.TabIndex = 25;

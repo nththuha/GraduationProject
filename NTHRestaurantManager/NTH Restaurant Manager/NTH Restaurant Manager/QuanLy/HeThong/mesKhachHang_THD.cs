@@ -28,7 +28,7 @@ namespace NTH_Restaurant_Manager
             InitializeComponent();
             this.idPD = idPD;
             this.tongTien = tongTien;
-            lb_TongTien.Text = "Tổng tiền: " + tongTien;
+            lb_TongTien.Text = "Tổng tiền: " + String.Format("{0:0,0 VND}", tongTien);
             se_Gia1.Visible = se_Gia2.Visible = se_Gia3.Visible = se_Gia4.Visible = false;
             lb_Gia1.Visible = lb_Gia2.Visible = lb_Gia3.Visible = lb_Gia4.Visible = false;
             hienComponent(false);
@@ -260,6 +260,52 @@ namespace NTH_Restaurant_Manager
                     print.ShowPreviewDialog();
                 }
                 this.Close();
+            }
+        }
+
+        private void se_Gia1_EditValueChanged(object sender, EventArgs e)
+        {
+            int gia1 = Program.doiSpinEditThanhInt(se_Gia1.Text);
+            if (soHoaDon == 2)
+            {
+                se_Gia2.Text = (tongTien - gia1).ToString();
+            }
+            else if(soHoaDon == 3)
+            {
+                int gia2 = Program.doiSpinEditThanhInt(se_Gia2.Text);
+                se_Gia3.Text = (tongTien - gia1 - gia2).ToString();
+            }
+            else if(soHoaDon == 4)
+            {
+                int gia2 = Program.doiSpinEditThanhInt(se_Gia2.Text);
+                int gia3 = Program.doiSpinEditThanhInt(se_Gia3.Text);
+                se_Gia4.Text = (tongTien - gia1 - gia2 - gia3).ToString();
+            }
+        }
+
+        private void se_Gia2_EditValueChanged(object sender, EventArgs e)
+        {
+            int gia1 = Program.doiSpinEditThanhInt(se_Gia1.Text);
+            int gia2 = Program.doiSpinEditThanhInt(se_Gia2.Text);
+            if (soHoaDon == 3)
+            {
+                se_Gia3.Text = (tongTien - gia1 - gia2).ToString();
+            }
+            else if(soHoaDon == 4)
+            {
+                int gia3 = Program.doiSpinEditThanhInt(se_Gia3.Text);
+                se_Gia4.Text = (tongTien - gia1 - gia2 - gia3).ToString();
+            }
+        }
+
+        private void se_Gia3_EditValueChanged(object sender, EventArgs e)
+        {
+            int gia1 = Program.doiSpinEditThanhInt(se_Gia1.Text);
+            int gia2 = Program.doiSpinEditThanhInt(se_Gia2.Text);
+            int gia3 = Program.doiSpinEditThanhInt(se_Gia3.Text);
+            if (soHoaDon == 4)
+            {
+                se_Gia4.Text = (tongTien - gia1 - gia2 - gia3).ToString();
             }
         }
     }
