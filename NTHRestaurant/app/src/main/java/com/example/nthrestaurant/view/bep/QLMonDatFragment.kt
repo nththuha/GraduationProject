@@ -12,6 +12,10 @@ import com.example.nthrestaurant.showToast
 import com.example.nthrestaurant.view.adapter.ChiTietMonDatAdapter
 import com.example.nthrestaurant.viewmodel.BepViewModel
 import com.example.nthrestaurant.viewmodel.PhaCheViewModel
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class QLMonDatFragment : Fragment() {
     private var _binding: FragmentQLMonDatBinding? = null
@@ -36,7 +40,7 @@ class QLMonDatFragment : Fragment() {
                 1 -> { //Đang làm
                     if (viewModel.suaTrangThaiDangLam(it)) {
                         showToast("Chuyển trạng thái đang được làm")
-                        loadDSCTDMPhaChe()
+                        loadDSCTDMBep()
                     } else {
                         showToast("Chuyển trạng thái thất bại!")
                     }
@@ -44,7 +48,7 @@ class QLMonDatFragment : Fragment() {
                 2 -> { //Chờ phục vụ
                     if (viewModel.suaTrangThaiChoPhucVu(it)) {
                         showToast("Chuyển trạng thái chờ được phục vụ")
-                        loadDSCTDMPhaChe()
+                        loadDSCTDMBep()
                     } else {
                         showToast("Chuyển trạng thái thất bại!")
                     }
@@ -54,17 +58,25 @@ class QLMonDatFragment : Fragment() {
                 }
             }
         }
-        loadDSCTDMPhaChe()
+        loadDSCTDMBep()
         binding.apply {
             rvMonDat.adapter = adapter
             srMonDat.setOnRefreshListener {
-                loadDSCTDMPhaChe()
+                loadDSCTDMBep()
                 srMonDat.isRefreshing = false
+            }
+        }
+        val scope = MainScope() // could also use an other scope such as viewModelScope if available
+        var job: Job? = null
+        job = scope.launch {
+            while(true) {
+                loadDSCTDMBep() // the function that should be ran every second
+                delay(5000)
             }
         }
     }
 
-    private fun loadDSCTDMPhaChe() {
+    private fun loadDSCTDMBep() {
         viewModel.layDSDatMonMonAn().observe(viewLifecycleOwner) { dsCTDM ->
             adapter?.submitList(dsCTDM)
         }

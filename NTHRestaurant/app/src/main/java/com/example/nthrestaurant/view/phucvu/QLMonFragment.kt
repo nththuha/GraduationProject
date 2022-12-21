@@ -1,6 +1,7 @@
 package com.example.nthrestaurant.view.phucvu
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,13 @@ import com.example.nthrestaurant.databinding.FragmentQLMonBinding
 import com.example.nthrestaurant.showToast
 import com.example.nthrestaurant.view.adapter.ChiTietDatMonChuaPhucVuAdapter
 import com.example.nthrestaurant.viewmodel.PhucVuViewModel
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import java.time.LocalDateTime
+import java.util.*
+import java.util.concurrent.TimeUnit
 
 class QLMonFragment : Fragment() {
     private var _binding: FragmentQLMonBinding? = null
@@ -18,6 +26,7 @@ class QLMonFragment : Fragment() {
     private val viewModel: PhucVuViewModel by activityViewModels()
 
     private var adapter: ChiTietDatMonChuaPhucVuAdapter? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,6 +49,14 @@ class QLMonFragment : Fragment() {
         binding.srMonChoPV.setOnRefreshListener {
             loadDSCTDM()
             binding.srMonChoPV.isRefreshing = false
+        }
+        val scope = MainScope() // could also use an other scope such as viewModelScope if available
+        var job: Job? = null
+        job = scope.launch {
+            while(true) {
+                loadDSCTDM() // the function that should be ran every second
+                delay(5000)
+            }
         }
     }
 

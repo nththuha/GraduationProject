@@ -12,7 +12,7 @@ import retrofit2.http.*
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-private const val BASE_URL = "http://192.168.0.103:8080/api/"
+private const val BASE_URL = "http://172.31.39.236:8080/api/"
 //    "https://nth-restaurant-api.herokuapp.com/api/"
 
 private val moshi = Moshi.Builder()

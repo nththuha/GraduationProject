@@ -45,7 +45,7 @@ namespace NTH_Restaurant_Manager
         {
             HoaDonPDModel hd = await _repositoryHD.themHoaDon(Program.hoaDon);
 
-            if (hd.maHD == null)
+            if (hd == null)
             {
                 MessageBox.Show("Lập hóa đơn thất bại!", "Thông báo");
             }
