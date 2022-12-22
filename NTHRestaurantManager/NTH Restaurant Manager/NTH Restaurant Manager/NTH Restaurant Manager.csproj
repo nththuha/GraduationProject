@@ -227,6 +227,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="QuanLy\ThongKe\frmThongKeTienDiCho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLy\ThongKe\frmThongKeTienDiCho.Designer.cs">
+      <DependentUpon>frmThongKeTienDiCho.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLy\HeThong\mesKhachHang_THD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -521,6 +527,15 @@
     <Compile Include="QuanLy\HeThong\rpTachHoaDon.Designer.cs">
       <DependentUpon>rpTachHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLy\ThongKe\rpThongKeTienDiCho.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QuanLy\ThongKe\rpThongKeTienDiCho.Designer.cs">
+      <DependentUpon>rpThongKeTienDiCho.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="QuanLy\ThongKe\frmThongKeTienDiCho.resx">
+      <DependentUpon>frmThongKeTienDiCho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\HeThong\mesKhachHang_THD.resx">
       <DependentUpon>mesKhachHang_THD.cs</DependentUpon>
     </EmbeddedResource>
@@ -645,6 +660,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\HeThong\rpTachHoaDon.resx">
       <DependentUpon>rpTachHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy\ThongKe\rpThongKeTienDiCho.resx">
+      <DependentUpon>rpThongKeTienDiCho.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

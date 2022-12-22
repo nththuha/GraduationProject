@@ -34,4 +34,16 @@ public interface PhieuNhapNguyenLieuRepository extends JpaRepository<PhieuNhapNg
             "where to_char(ngay, 'yyyy') = :nam and to_char(ngay, 'MM') = :thang) as t \n" +
             "where cn.idpn = t.idpn and cn.manl = :maNL\t", nativeQuery = true)
     List<NguyenLieuMua> layThongTinNguyenLieuDaMua(@Param("nam") String nam, @Param("thang") String thang, @Param("maNL") String maNL);
+
+    @Transactional
+    @Modifying
+    @Query(value = "select t.ngay, t.thang, t.nam, sum(ct.gia) as doanhthu " +
+            "from ctpn_nguyenlieu ct, (select p.idpn, to_char(p.ngay, 'yyyy') as nam, to_char(p.ngay, 'MM') as thang, to_char(p.ngay, 'dd') as ngay " +
+            "from phieunhapnguyenlieu p " +
+            "where p.ngay >= :ngayBD and p.ngay <= :ngayKT " +
+            "group by nam, thang, ngay, p.idpn " +
+            "order by thang, nam, ngay desc) as t " +
+            "where t.idpn = ct.idpn " +
+            "group by t.nam, t.thang, t.ngay", nativeQuery = true)
+    List<TempDTO> thongKeTienDiChoTheoNgay(@Param("ngayBD") Date ngayBD, @Param("ngayKT") Date ngayKT);
 }

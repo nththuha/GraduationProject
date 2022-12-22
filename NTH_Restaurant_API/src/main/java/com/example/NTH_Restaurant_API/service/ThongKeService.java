@@ -8,4 +8,6 @@ public interface ThongKeService {
     List<ThongKeDTO> thongKeDoanhThuTheoThang(ThongKeDTO thongKeDTO);
 
     List<ThongKeDTO> thongKeLoiNhuanTheoThang(ThongKeDTO thongKeDTO);
+
+    List<ThongKeDTO> thongKeTienDiChoTheoNgay(ThongKeDTO thongKeDTO);
 }

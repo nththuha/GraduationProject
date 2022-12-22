@@ -24,4 +24,9 @@ public class ThongKeController {
     public List<ThongKeDTO> thongKeLoiNhuanTheoThang(@Valid @RequestBody ThongKeDTO thongKeDTO){
         return thongKeService.thongKeLoiNhuanTheoThang(thongKeDTO);
     }
+
+    @PostMapping("/tiendicho")
+    public List<ThongKeDTO> thongKeTienDiChoTheoNgay(@Valid @RequestBody ThongKeDTO thongKeDTO){
+        return thongKeService.thongKeTienDiChoTheoNgay(thongKeDTO);
+    }
 }

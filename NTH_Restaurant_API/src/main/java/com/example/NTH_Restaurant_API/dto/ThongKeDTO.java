@@ -12,6 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ThongKeDTO {
+    private String ngay;
     private String thang;
     private String nam;
     private Integer doanhThu;

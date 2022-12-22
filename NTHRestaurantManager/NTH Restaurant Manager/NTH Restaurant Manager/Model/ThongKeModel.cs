@@ -8,6 +8,7 @@ namespace NTH_Restaurant_Manager.Model
 {
     class ThongKeModel
     {
+        public String ngay { get; set; }
         public String thang { get; set; }
         public String nam { get; set; }
         public int doanhThu { get; set; }

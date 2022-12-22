@@ -108,4 +108,36 @@ public class ThongKeServiceImpl implements ThongKeService {
 
         return list;
     }
+
+    @Override
+    public List<ThongKeDTO> thongKeTienDiChoTheoNgay(ThongKeDTO thongKeDTO) {
+        SimpleDateFormat ngay = new SimpleDateFormat("dd");
+        SimpleDateFormat thang = new SimpleDateFormat("MM");
+        SimpleDateFormat nam = new SimpleDateFormat("yyyy");
+        List<ThongKeDTO> list = new ArrayList<>();
+
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(thongKeDTO.getNgayBD());
+
+        while (cal.getTime().getTime() <= thongKeDTO.getNgayKT().getTime()) {
+            ThongKeDTO thongKe = new ThongKeDTO();
+            thongKe.setNgay(ngay.format(cal.getTime()));
+            thongKe.setThang(thang.format(cal.getTime()));
+            thongKe.setNam(nam.format(cal.getTime()));
+            thongKe.setDoanhThu(0);
+            list.add(thongKe);
+            cal.add(Calendar.DATE, 1);
+        }
+
+        List<TempDTO> listTDC = phieuNhapNguyenLieuRepository.thongKeTienDiChoTheoNgay(thongKeDTO.getNgayBD(), thongKeDTO.getNgayKT());
+        for (ThongKeDTO keDTO : list) {
+            for (TempDTO j : listTDC) {
+                if (j.getNgay().equals(keDTO.getNgay()) && j.getThang().equals(keDTO.getThang()) && j.getNam().equals(keDTO.getNam())) {
+                    keDTO.setDoanhThu(j.getDoanhthu());
+                    break;
+                }
+            }
+        }
+        return list;
+    }
 }

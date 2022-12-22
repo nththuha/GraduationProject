@@ -34,6 +34,7 @@ namespace NTH_Restaurant_Manager
         public static frmChiTietPhong formChiTietPhong;
         public static frmThongKeDoanhThuTheoThang formThongKeDoanhThuTheoThang;
         public static frmThongKeLoiNhuanTheoThang formThongKeLoiNhuanTheoThang;
+        public static frmThongKeTienDiCho formThongKeTienDiCho;
 
         public static mesPhongBan mesPhongBan;
         public static mesCTThucDon mesCTThucDon;

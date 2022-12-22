@@ -45,5 +45,17 @@ namespace NTH_Restaurant_Manager.Repository
             var listTK = JsonConvert.DeserializeObject<List<ThongKeModel>>(json);
             return listTK;
         }
+
+        public async Task<List<ThongKeModel>> thongKeTienDiCho(ThongKeModel thongKe)
+        {
+            var b = JsonConvert.SerializeObject(thongKe);
+            var buffer = Encoding.UTF8.GetBytes(b);
+            var byteContent = new ByteArrayContent(buffer);
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            _response = await _client.PostAsync("thongke/tiendicho", byteContent);
+            var json = await _response.Content.ReadAsStringAsync();
+            var listTK = JsonConvert.DeserializeObject<List<ThongKeModel>>(json);
+            return listTK;
+        }
     }
 }
