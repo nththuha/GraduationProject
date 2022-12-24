@@ -126,5 +126,10 @@ namespace NTH_Restaurant_Manager
             Program.mesKhachHang_HD_PDT.Show();
             Program.frmChinh.Enabled = false;
         }
+
+        private void btn_Thoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
