@@ -38,7 +38,8 @@ public interface PhieuNhapNguyenLieuRepository extends JpaRepository<PhieuNhapNg
     @Transactional
     @Modifying
     @Query(value = "select t.ngay, t.thang, t.nam, sum(ct.gia) as doanhthu " +
-            "from ctpn_nguyenlieu ct, (select p.idpn, to_char(p.ngay, 'yyyy') as nam, to_char(p.ngay, 'MM') as thang, to_char(p.ngay, 'dd') as ngay " +
+            "from ctpn_nguyenlieu ct, " +
+            "(select p.idpn, to_char(p.ngay, 'yyyy') as nam, to_char(p.ngay, 'MM') as thang, to_char(p.ngay, 'dd') as ngay " +
             "from phieunhapnguyenlieu p " +
             "where p.ngay >= :ngayBD and p.ngay <= :ngayKT " +
             "group by nam, thang, ngay, p.idpn " +
